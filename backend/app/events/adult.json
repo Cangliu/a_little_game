@@ -1,0 +1,5729 @@
+[
+  {
+    "id": "adt_m_001",
+    "text": "你在河边洗澡，被村里姑娘撞个正着。",
+    "expanded_text": "盛夏正午，你在河边脱光了泡进凉水里，正惬意地仰着脸晒太阳。忽听上游传来一声尖叫——你猛地睁眼，三个洗衣裳的姑娘正提着木盆站在岸上，眼睛瞪得像铜铃。你慌乱中找不到衣服，索性一头扎进水里。等你憋着气浮上来，岸上空空如也，只剩你的裤子整整齐齐叠在一块石头上。从那天起，村里的姑娘见你都偷偷捂嘴笑。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 22,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 1,
+      "add_tags": [
+        "near_water",
+        "romance_experienced"
+      ]
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_001",
+    "text": "你在河边洗澡，被村里小子隔着草丛偷看。",
+    "expanded_text": "你脱了衣裳走进溪水，长发散在水面上像一朵黑色的莲。突然你听见草丛里一声响，扭头一看，七八双眼睛立刻缩了回去。你气得浑身发抖，又不敢喊出声——喊出来全村都知道了。你抓起一块石头朝草丛狠狠砸去，传来一声惨叫。第二天，村东头那个总跟你说话的木匠儿子，顶着个大青包来你家提亲。你把扫帚抡得满院跑。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 22,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 1,
+      "add_tags": [
+        "near_water",
+        "romance_experienced"
+      ]
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_002",
+    "text": "你做了一场让人面红耳赤的春梦。",
+    "expanded_text": "梦里那个女子穿着近乎透明的红纱，骑在你身上。她的指尖沿你胸口一寸寸划下去，划过小腹，继续往下——你的身体像被丢进了滚油里。她俯身贴上来，胸前两团柔软压着你，唇衔住你的耳垂轻轻吮。你想抓住她，手指陷进那段腰肢时她发出一声极轻的喘息。然后梦境像潮水一样将你淹没……你是被自己的喘息声吵醒的。亵裤湿了一大片，小腹的余韵还在一阵阵地抽。你盯着天花板，觉得自己完了。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 22,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 1,
+      "add_tag": "romance_experienced"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_002",
+    "text": "你做了一场让人脸红的春梦。",
+    "expanded_text": "梦里那个男子把你抵在墙上，膝盖挤进你两腿之间。他一手扣你的腰，一手解你的衣带——布料滑落时凉意激得你起了一层疙瘩。他低头咬你的锁骨，舌尖描过那道凹陷。你仰起脖子，身体不自觉地弓起来贴向他。他的唇继续向下，经过胸口时你浑身一颤——像有电流从那一点炸开。你攥紧他的头发，腿缠上他的腰……然后梦碎了。你大汗淋漓地醒来，双腿还夹着被角，中衣湿透贴在身上。你把脸埋进枕头喘了半刻钟，不敢睁眼。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 22,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 1,
+      "add_tag": "romance_experienced"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_003",
+    "text": "镇上来了走江湖的舞姬，你看得入了神。",
+    "expanded_text": "戏台上那位红衣舞姬腰肢柔软如柳，转身时裙裾飞起，露出一截白生生的脚踝。你站在人群里看得移不开眼，连吃在嘴里的肉包子都忘了咽。舞姬眼波流转，似乎冲你笑了一下——你的心跳得像擂鼓。舞罢人散，你才发觉腰间钱袋空空——被三两个扒手摸得干干净净。你苦笑着踱回家，可那一晚做的梦里，全是她飞扬的红色裙摆。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 30,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "fortune": -1,
+      "add_tags": [
+        "in_market",
+        "romance_experienced"
+      ]
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_003",
+    "text": "镇上戏班子来了个俊俏小生，迷得你魂不守舍。",
+    "expanded_text": "那少年扮演书生，眉如远山，唇红齿白。你和闺中姐妹挤在台下，看他一颦一笑，连呼吸都忘了。散场后你壮着胆子跑到后台想送他一方手帕，却看见他正搂着一个浓妆艳抹的花旦说话。你愣在原地，手帕从指间滑下。回家路上你哭了一路，娘还以为你撞了邪。可第二天戏开锣，你又坐在了第一排——傻气都是从这种地方学的。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 1,
+      "add_tags": [
+        "in_market",
+        "romance_experienced"
+      ]
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_004",
+    "text": "隔壁美人深夜敲你的门。",
+    "expanded_text": "她只穿了件薄衫，月光把那层布照得近乎透明。你开门时她就贴了上来，柔软的身体像水一样涌进你怀里。她踮脚吻你，你的手不知何时搂住了她的腰。你们跌跌撞撞进了屋——门被她踢上。烛火摇了一夜，最终在某个时刻无声地灭了。天亮时她已经走了，枕上留着一缕发丝和桂花香。你掀开被子，发现颈侧、胸口、小腹上全是深浅不一的红痕——像一幅无声的证词。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 35,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "constitution": -1,
+      "add_tag": "romance_experienced"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_004",
+    "text": "村里一位翩翩公子半夜爬你的窗。",
+    "expanded_text": "他翻窗进来时你刚沐浴完，只裹了件中衣。他的目光钉在你锁骨上水珠滑落的那道痕迹上，喉结上下滚动。他说来送诗——可诗还没念完他就吻了你。你的后背撞上墙，他的手从你腰侧探入衣内，掌心灼热。你咬住他的肩膀才没叫出声。那一夜窗外的月亮被云遮了又露、露了又遮。天亮时他走了，你发现内衣的带子是重新系过的——不是你的打结方式。腿间隐隐的酸软让你在床上多躺了半个时辰。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "add_tags": [
+        "has_companion",
+        "romance_experienced"
+      ]
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_005",
+    "text": "你与青梅竹马在桃林深处偷偷亲吻。",
+    "expanded_text": "你把她按在桃树上亲。她的嘴唇是甜的。你的手从她衣领探进去时她没拒绝，只是攥紧了你的袖子。花瓣一片片落在你们肩上，你把她的衣襟又推开了一些。她的呼吸碎得像春风。后来你们从树下滑到了草地上——满地的桃花瓣被压得碎了一层。那个下午过得极慢，也极快。你们起身时，她的裙子皱得不像样，你的背上全是草痕。她红着脸整理衣裳，小声说：「你得对我负责。」",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 22,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 1,
+      "add_tags": [
+        "has_companion",
+        "romance_experienced"
+      ]
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_005",
+    "text": "你和青梅竹马在桃林深处忘情相拥。",
+    "expanded_text": "他吻你吻得你几乎窒息。你的后背贴着桃树，花瓣落了你一头。他的手掌很烫，从你腰间滑进衣内时你的腰软了。你攀住他的肩，他把你整个人抱起来——你的双腿缠上他的腰。桃林深处静得只剩风声，这一次没有人打断。后来你们躺在桃花瓣铺成的地毯上，他的外袍盖在你身上，你枕着他的臂弯。你的身体还在微微发颤，像一根被拨动的琴弦余音未消。他吻你额头：「疼不疼？」你摇头，把脸埋进他胸口。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 22,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 1,
+      "add_tags": [
+        "has_companion",
+        "romance_experienced"
+      ]
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_006",
+    "text": "你被青楼老鸨硬塞进了花魁的房间。",
+    "expanded_text": "花魁把你推倒在锦榻上时，空气里的迷情香已让你头脑昏沉。她一层一层解开你的衣带，动作慢得像在拆一件礼物。她的发丝垂下来扫过你的胸口，痒得你浑身一缩。然后她整个人覆上来——像一匹丝绸盖住了你。烛火映出两道交缠的影子在墙上起伏，像潮水一轮接一轮。你记不清那一夜翻了几次身，只记得每次以为结束了，她又凑到你耳边说：「再来。」天亮时你连手指都抬不起来，而她妆容丝毫未乱，笑着给你穿衣：「公子底子不错，明晚继续。」",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 40,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "fortune": -1,
+      "add_tags": [
+        "in_market",
+        "romance_experienced"
+      ]
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_006",
+    "text": "你被恶霸盯上，险些被掳进青楼。",
+    "expanded_text": "他们盯了你三天，第四天傍晚动手。你正在巷口洗菜，几条壮汉一拥而上，拿黑布罩了你的头。你拼命挣扎，咬到一只脏手，被一耳光打得眼冒金星。眼看就要上马车，巷口忽然出现一个游方道士，他随手一拂，几个汉子全栽倒在地。道士掀开你头上的布，淡淡说：「姑娘，要走仙缘吗？」你跪下磕了三个头——从那天起，你跟着他离了村，踏上了修仙之路。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 22,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 1,
+      "add_tags": [
+        "has_master",
+        "romance_experienced"
+      ]
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_007",
+    "text": "宗门浴池你误闯女弟子专区。",
+    "expanded_text": "你推开门的瞬间蒸汽扑面而来。三四位女弟子正在池中，有的水只没到腰——你看见了不该看的一切。水珠沿着她们的肩头滑落，雾气掩盖不住那些流畅的线条。你呆了足足三息才反应过来，一声尖叫刺入耳膜。你转身逃跑时摔了一跤，脸先着地，鼻血直流。被长老罚抄戒律三百遍时，你脑中全是那片若隐若现的白。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "max_age": 30,
+      "gender": "male",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": -1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_007",
+    "text": "宗门浴池你误闯男弟子专区。",
+    "expanded_text": "你误入男弟子浴区时他们正在打闹——所有人赤身裸体。你愣在门口一息，看见了无数坦荡的胸膛和结实的腰线。最前排那个师兄回过头来，水从他下巴滴到胸肌上。你尖叫着捂眼，可指缝太大了，什么都挡不住。你夺门而出后在走廊里站了好久，耳朵烧得能煮蛋。那天起你看谁都像没穿衣服。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "max_age": 30,
+      "gender": "female",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": -1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_008",
+    "text": "一位妖艳女修主动邀你双修。",
+    "expanded_text": "她凑得很近，你能闻到她身上一股奇异的花香。她的手搭上你的肩，指尖在你衣领处打转：「我双修之术需要一位元阳充沛的男修。放心，只是灵肉相融，不伤根基。」她的唇几乎贴到你的耳朵：「而且……我保证你会舒服的。」你的喉结上下滚了一下。你最后是怎么拒绝的，你自己也记不清了——可你记得她离开时那一回头的笑，艳得烧心。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "cultivation": 80,
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_008",
+    "text": "一位俊美男修执意要与你结成道侣。",
+    "expanded_text": "他在你面前单膝跪下时你闻到了他身上的松木香。他握着你的手放到唇边轻吻了一下：「我此生只想与你结伴修行，若你答应，我愿以身相许。」他抬眼看你时瞳孔里映着你的影子。他的指腹在你手背轻轻摩挲，那一点点触碰让你的心跳乱了节拍。你想抽手，可身体比你的脑子诚实——你的指尖不自觉地扣住了他。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "cultivation": 80,
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_009",
+    "text": "你被一头狐妖看上，每晚梦中采你精元。",
+    "expanded_text": "她每夜都来，披着你最渴望的皮相。梦里她骑在你腰上，九条尾巴一条缠你的手腕、一条绕你的脖颈，剩下的……你记不清缠在了哪里。你只知道那种感觉像在滚烫的蜜里溺水，甜到窒息。每次你「醒来」——其实是她餍足了放开你。日复一日你越来越瘦，脸颊凹陷，可每到夜晚你还是忍不住闭上眼期待。师父把你拎走那天你还在挣扎，嘴里喊着「不要」——不是不要她来，是不要她走。你恨自己。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "constitution": -2,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_009",
+    "text": "你被一头蛇妖盯上，每晚化作美男缠你梦中。",
+    "expanded_text": "蛇妖在梦中化作温润如玉的男子。他的身体冰凉，缠上你时像一条活的丝带。他的唇从你耳根游到锁骨，从锁骨游到……更下面。你在梦里无法反抗，只能感受那股寒意一点点渗入你的骨髓。每次醒来你都浑身无力，腰酸得像被人折过，脖子和胸口遍布紫红的吻痕。最可怕的是——你开始盼着入夜。师姐发现时你已经瘦了两圈，她看了看你脖子上的痕迹，什么都没说，只是红着脸帮你布了驱邪阵。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "constitution": -2,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_010",
+    "text": "你在温泉中遇到一位绝色女修。",
+    "expanded_text": "她走入池中时水面只到她的腰。你看见了一切：锁骨以下那段流畅的线条，水珠在其上滑行的轨迹。她发现了你——但没遮挡，只是朝你笑了笑，然后朝你游了过来。后面发生的事被温泉的蒸汽和夜色一起裹住了。你只记得水很热、她的皮肤更热，水花溅得到处都是，你的手掌下那段腰肢柔韧得惊人。天亮时你们各自沉默地穿好衣服。你看见她脖颈上有一道你留下的红痕——她没遮，反而笑着摸了摸：「温泉的功效——活血化瘀。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 2,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_010",
+    "text": "你在温泉中遇到一位玉树临风的男修。",
+    "expanded_text": "他发现你之后并没有避开。他朝你游过来时水面波光粼粼，你看清了他小腹上的人鱼线一路延伸到水面以下。他在你面前站定，水只到他的胯——你的视线不知该往哪放。「既然遇上了，」他的声音低沉，「便是缘分。」那一夜的温泉水似乎格外烫，又似乎是你自己的体温。你记得水花、记得蒸汽、记得他粗重的呼吸和自己压不住的声音。次日醒来你泡在浅水中，靠在他胸口。腰像断了一样酸，但你没起来——他的手臂环着你，很安心。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 2,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_011",
+    "text": "你被青楼花魁一眼看中，软玉温香一夜春宵。",
+    "expanded_text": "花魁引你入室，薄纱后的身体只剩朦胧轮廓。她把灯吹灭了，黑暗中只剩她的香气和你的心跳。她的手沿着你的身体游走，像一条温热的蛇。你感觉自己被一层一层剥开——不只是衣服。那一夜像一场漫长的溺水：你沉下去、浮上来、又沉下去。每一次以为到了尽头，潮水又涌上来。天亮时你浑身的力气像被抽干了，床榻上一片狼藉。你的胸口、腰侧、大腿内侧全是牙印和指痕。她趴在你身上笑：「公子是块璞玉——可惜只撑了一夜。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "male",
+      "required_tags": [
+        "in_market"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 100,
+      "charisma": 1,
+      "add_tag": "in_market"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_011",
+    "text": "你被一名贵公子重金包养做侍妾。",
+    "expanded_text": "他把你安置在一座金丝楠木的院落里，每日送来鲜花与灵果。你以为自己只是个摆设——可第一夜他来了。他笨拙得出奇，手抖得连你的腰带都解不开。你反过来牵他的手教他。他红着脸，额角冒汗，最后把脸埋在你肩上小声说了句「我只想对你好。」那些夜晚像一场漫长的温水——没有烈火，只有慢慢升温。你渐渐分不清这是交易还是别的什么。三年后你攒够了灵石还他——他不接。他跪下来说：「我不要钱。我要你。不是侍妾——是妻。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "comprehension": 1,
+      "willpower": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_012",
+    "text": "魔教圣女向你求欢，你犹豫间被反将一军。",
+    "expanded_text": "她把你按在墙上，一条腿卡进你双腿之间。黑纱下那双眼含着笑：「你若不从，死；从了……也许会死。但至少死得舒服。」她贴上来时你能感觉到她胸前的柔软隔着衣料挤压着你。你的身体比你的嘴诚实——她低头看了一眼，笑了。那之后的事像一场暴风雨：她是风暴的中心，你是被卷入的船。你记得自己被推倒，记得她伏在你身上时长发倾泻如瀑，记得墙上两道影子的起伏频率越来越快……最后的最后，你只记得她咬了你的锁骨一口：「这是本座的记号。谁问都说——你是我的人。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 100,
+      "constitution": -1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_012",
+    "text": "魔教少主邀你共修，你将他打了个满地找牙。",
+    "expanded_text": "魔教少主捏着你的下巴，黑瞳里映着你的脸：「本座看上你了。」你一巴掌扇过去，他脸一偏又笑着凑回来：「辣。我喜欢。」他把你拉进怀里，你闻到他身上血腥和冰雪混合的气味。他的手掐着你的腰不肯松，你运功想挣脱，可他的唇已经贴到你耳根：「乖，别动。」你一膝顶上去——他闷哼着蹲下。你踩着他肩膀翻墙跑了，心脏却跳得快碎。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 2,
+      "charisma": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_013",
+    "text": "你修炼采阴补阳之术，一夜临幸三十六位女子。",
+    "expanded_text": "三十六人，从黄昏到天明。她们一个接一个，像潮水涨了退、退了涨。你是那块礁石——被反复冲刷，到最后连自己的形状都快记不清了。你记得第一个人时还有些紧张；到第十个你已经麻木；到第二十个你开始数头顶的房梁有几根。她们的体温、她们的气息、她们抓在你肩上的力度，像三十六场不同的梦依次流过。天亮时你躺在一片狼藉中，身上的痕迹像一幅抽象画。丹田是满了——可你觉得别的什么地方，空了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "cultivation": 150,
+      "willpower": -2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_013",
+    "text": "你修炼采阳补阴之术，一夜采尽七名男修元阳。",
+    "expanded_text": "你坐在密室中央，他们一个个走进来。你的唇贴上他们的喉结时能感觉到脉搏的跳动——那是元阳最旺盛的位置。你吸取时他们会发出短促的喘息，身体弓起来，手指痉挛地抓紧什么。一夜七人。到最后一个时你的嘴唇已经红得像血，肌肤白得发光。你从铜镜里看见自己——美得不真实，也冷得不真实。那七个人第二天醒来时面色苍白如纸，看你的眼神又恐惧又痴迷。你没有回头看他们。采阳之道，不需要感情。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "cultivation": 150,
+      "willpower": -2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_014",
+    "text": "你被一位千年女鬼缠上，她说你像她生前的爱人。",
+    "expanded_text": "她每夜都来，半透明的身影坐在你枕边。起初她只是看你——后来她开始碰你。灵体的指尖划过你的脸颊时像一阵凉风，你却觉得那里在发烫。三个月后她能化出实体。她趴在你背上时你感觉到了重量——冰凉的、柔软的。她在你耳边叹息：「你和他真像……连体温都像。」你翻过身面对她时，她的眼里有泪也有渴望。那一夜她的实体只维持了一个时辰——但你们好像把一千年的遗憾都补上了。天亮时枕上一片冰凉的湿痕，不知是她的泪还是别的什么。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "comprehension": 1,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_014",
+    "text": "你被一位千年男鬼缠上，他说他等了你十世。",
+    "expanded_text": "他每月十五来看你。起初隔着三丈远。后来是一丈。再后来他会坐在你床边。第十世终于找到你的那一夜他哭了很久，冰凉的泪落在你手背上。「我可以碰你吗？」他小心翼翼问。你点头。他颤抖着把你拉入一个冰凉的拥抱——可你心口却像被烘暖了。他的唇贴上你的额头时你闭上了眼。那一夜月光照着两道重叠的影子——一道实、一道虚。天亮时他消失了。你的颈窝留着一片凉意，像一个不肯消散的吻。你等着下一个十五。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "comprehension": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_015",
+    "text": "你与师姐密室双修走火，差点炸了禁地。",
+    "expanded_text": "师姐解了外衣，只着亵衣与你掌心相对。灵力流转时你能感觉她体内的热——像岩浆在经脉中奔涌。随着真气越融越深，你们的身体不自觉地靠拢。她的呼吸喷在你的唇上，你闻到她身上沐浴后的皂角香。灵力暴动的那一瞬你们撞在一起——不是掌心了，是整个人。她被你压在身下，你们额头相抵，胸膛紧贴，连心跳都同步了。然后真气如洪水决堤般在两人体内乱窜——你不知道那是灵力还是别的什么，只知道那种感觉让你几乎疯狂。禁地的阵法炸了。你们从废墟中爬出来时衣衫不整，师姐打了你一拳：「跟谁都不许说。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "gender": "male",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 30,
+      "charisma": -1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_015",
+    "text": "你与师兄密室双修走火，差点炸了禁地。",
+    "expanded_text": "师兄只着单衣与你对坐。灵力交融时他的气息如火——顺着真气一寸寸渗入你体内。你的身体开始发颤，不是因为冷。一股酥麻从丹田升起，蔓延到四肢百骸。你咬唇忍住了某种声音。灵力越来越汹涌，像两条大河的交汇——终于在某一刻冲破堤坝。你被气浪推倒，他压上来。那一刻你感觉灵魂在燃烧，身体的每一个毛孔都在叫嚣。你不知道持续了多久。阵法炸裂时你们才分开——浑身汗湿，气喘如牛，亵衣凌乱。你不敢看他的脸。他也没看你。但你们都知道——那不只是灵力。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "gender": "female",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 30,
+      "charisma": -1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_016",
+    "text": "一位面纱女子主动献吻别，留下一枚玉佩。",
+    "expanded_text": "她在拍卖会上替你举牌，让你以低价拿下了一件法宝。散场后你想道谢，却被她拉到无人的廊下。她忽然摘下面纱——你看见一张惊为天人的脸。她踮起脚尖，在你唇上轻轻一吻，然后塞给你一枚玉佩：「记得我。」她转身走入人海，再不见。你反复研究那枚玉佩，发现里面藏着一份珍稀功法。从那以后，你修炼时常常想起那个来不及看清的吻。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "male",
+      "required_tags": [
+        "in_market"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 50,
+      "charisma": 2,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_016",
+    "text": "一位戴着面具的男子在拍卖会救你一命，留下一枚玉佩。",
+    "expanded_text": "你被人盯上，他在你出门时挡在你身前，三招就将刺客击退。他没摘面具，只在你手心放了一枚温润的玉佩：「日后有难，捏碎它。」你刚要问他名字，他已经飘然离去。三年后你陷入绝境，捏碎玉佩——半空中突然降下一道紫色剑光，将围攻你的敌人尽数斩杀。你抬头，云端有道身影朝你点头，又消失。你这一生再没见过他，可那一夜，你哭了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 50,
+      "willpower": 1,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_017",
+    "text": "风流师叔撞破你与师妹厮混，反送你一本秘籍。",
+    "expanded_text": "师叔推开门时你们还没来得及分开——师妹坐在你腿上，衣襟已经散到锁骨以下。你愣住了，师妹一声尖叫把你推出去三丈远。师叔站在门口，嘴角抽搐了半天，最后哈哈大笑。他从怀里掏出一本秘籍塞给你：「合欢双修经——看看第七章，你那姿势不对。」你脸烧得能着火，师妹已经把脸埋在膝盖里不肯抬头。师叔走了之后你们面对面坐着沉默了半个时辰。「……看不看第七章？」师妹红着耳尖问。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "male",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "comprehension": 1,
+      "cultivation": 30,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_017",
+    "text": "你撞破男师叔与女妖在密室幽会，被他塞了一本秘籍封口。",
+    "expanded_text": "你推开门时师叔正把那女妖压在书案上。两人衣衫凌乱，女妖的尾巴缠着师叔的腰，案上的书被扫落一地。你看见了不该看的一切——他们纠缠的姿态，师叔背上的指痕，女妖仰起头时那副餍足的表情。你「啊」了一声捂住眼。师叔连裤子都来不及提好就追出来塞给你一本古籍：「师侄——这事不能说！」你点头如捣蒜。回去之后好奇翻了翻那本秘籍——越看越脸红，越红越想看。那天夜里你梦见了门后的画面，辗转到天明。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "female",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "comprehension": 2,
+      "cultivation": 50
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_018",
+    "text": "你不慎喝下掺了媚药的灵酒，那一夜的事打死不愿提起。",
+    "expanded_text": "第三杯酒下肚时你就知道不对了。血管像被灌了火油，皮肤敏感到连风吹过都让你战栗。你的理智在融化——世界缩小到只剩身边那具柔软的身体。后面的事……你只有碎片：一段白皙的脖颈、一声压抑的喘息、锦被下起伏的轮廓、最后一声像是哭又像是笑的叹息。天亮时你看见满床的证据——散落的衣物、凌乱的床帐、枕上的长发、自己身上从颈到腰数不清的红痕。你冲到窗边干呕了半天。你不记得对方是谁。这件事烂在了你心底最深处。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "male",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": -1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_018",
+    "text": "你不慎喝下了掺了媚药的灵酒，那一夜的事打死不愿提起。",
+    "expanded_text": "药效发作时像有一千只蚂蚁在你皮肤下爬。你的身体变得不是你的——它渴望触碰、渴望温度、渴望一切你清醒时绝不会要的东西。你最后的记忆是自己扯开了某人的衣领。然后一切化作混沌。你是被疼痛唤醒的——身体深处一种陌生的酸楚。你蜷在陌生的床上，身上只裹着一件不属于自己的外袍，大腿内侧有青紫的指印。你不知道发生了什么——又什么都知道。你把那件外袍烧了，可那股陌生的气味在记忆里留了一辈子。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "female",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": -1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_019",
+    "text": "你的道侣发现你私藏的春宫图。",
+    "expanded_text": "道侣打扫时在你床板下翻出了那卷古画。你回来时她正端坐在榻上，画卷摊开搁在桌面——那上面画的是什么不用说了。她盯着你，脸色铁青又微微发红。「解释。」你跪了一整夜。第二天她扔掉了画卷——可第三天你发现它又出现在枕头底下。不是你放的。入夜时她红着脸背对你说了句：「……第四页那个。我们试试。」你差点从床上滚下去。那一夜烛火灭得比平时早了两个时辰。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "gender": "male",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_019",
+    "text": "你的道侣发现你私藏的话本，全是你与他的同人。",
+    "expanded_text": "道侣好奇打开你的玉匣——看见你写的话本。他一页页翻过去，脸色从好奇变到震惊再到通红。「这……这是我俩？」你想抢过来已经来不及了。他读到第七章时喉结滚了一下，合上书，沉默了很久。你恨不得找个地缝钻进去。可入夜时他忽然把话本翻到某一页搁在枕边：「你写的……这个。现实中做不做得到？」你呆了一息，然后慢慢红了脸——慢慢笑了。那本话本后来又多了三章……全是他口述，你执笔。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "gender": "female",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_020",
+    "text": "你被魅惑系修士迷住，险些献出元阳。",
+    "expanded_text": "她对你笑时你的魂就丢了。你跟着她回到客栈，浑身像烧起来一样。她把你推在床上，手指解开你第一颗扣子时你已经无法思考了。她骑在你腰上，俯身——唇贴到你耳根时你的手已经搂住了她的腰。她的指尖滑到你小腹——一声脆响！护身玉佩自爆，迷魂术碎裂。你猛地清醒——看见她那双碧绿色的竖瞳和阴冷的笑。你从床上滚落，发现衣服已经被解了大半。你浑身冷汗地逃了。你不敢想如果玉佩晚碎一息——你会把什么交出去。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "male",
+      "required_tags": [
+        "has_treasure"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_020",
+    "text": "你被一位魅惑男修迷住，险些被采阴。",
+    "expanded_text": "他俊美得让你无法移开视线。你跟他进了别院时脑中已经一片空白。他把你按在椅上，俯身时你闻到一股致命的甜香——他的唇贴上你的脖颈，你仰起头，身体不由自主地发软。他的手从你肩上滑下，指尖勾住你的衣带——一声脆响。颈间玉环自爆。你浑身一震清醒过来：他的面容还是那样俊美，可那双眼里是冰冷的贪婪。你的衣带已经被解开了一半。你一脚踹翻他夺门而出，跑了十里路才敢停。你浑身发抖——不只是因为后怕，还因为那几息的感觉你没法忘记。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "female",
+      "required_tags": [
+        "has_treasure"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_021",
+    "text": "你在秘境中救下一位衣衫被撕烂的女修。",
+    "expanded_text": "你用外袍盖住她时她还在发抖。她只剩几缕碎布挂在身上，你硬逼自己不看。你护送她出秘境时她一直抓着你的袖子不放。伤好之后她跪在你面前：「大恩大德无以为报——奴家以身……」你慌忙扶她起来说不用。可那天晚上她悄悄来了你的房间。门没锁。她穿着你给她的那件外袍，里面什么都没有。她的眼睛亮得像星星——也湿得像星星。你说了「不可以」。她说了「可以的」。天亮时你的外袍还在她身上，只不过系法变了——不是你系的。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18,
+      "gender": "male",
+      "required_tags": [
+        "explorer"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_021",
+    "text": "你在秘境中救下一位被剥光衣裳的男修。",
+    "expanded_text": "他被锁链捆在祭坛上，赤身一丝不挂，浑身是伤。你斩断锁链时目光不知道该往哪放——最后盯着他的脸。你把外袍披在他肩上，他攥住你的手腕久久不放。养伤的一个月他跟你寸步不离——给你做饭、练剑、缝衣。某天你洗完澡出来撞见他在门口等，他的目光落在你湿漉漉的头发上，然后缓缓移到你的唇。「……我欠你一条命。让我用这辈子还。」他一步步走近你——你退了一步，又停住了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18,
+      "gender": "female",
+      "required_tags": [
+        "explorer"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_022",
+    "text": "你的剑灵化形为美貌的人形，每晚钻进你的被窝。",
+    "expanded_text": "她每夜都来钻你的被窝。灵体没有温度——可她贴上你时你的心跳如同擂鼓。她喜欢把脸埋在你颈窝，一条腿搭上你的腰，手指在你胸口慢慢画圈。你每次都想赶她走——可她哼曲子时的气息洒在你耳根上，酥得你骨头都软了。有几次你在半睡半醒间似乎对她做了些什么——第二天剑身上会泛起一层可疑的红晕，像是害了羞。你们谁都不提。可她每晚准时来，你再也不关窗了。某种意义上——你们已经比大多数道侣还亲密了。只是没人知道。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "required_tags": [
+        "sword_user"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 50,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_023",
+    "text": "你与对手在生死决斗中产生了奇妙的羁绊，最终化敌为侣。",
+    "expanded_text": "三天三夜的搏杀。你们身上全是对方的伤——刀痕、剑伤、掌印——像在对方身上刻字。最后一招两人同时力竭，你们跌倒在断崖边。她（他）忽然笑了：「我恨你三十年——现在不恨了。」你翻过身看她，她的衣甲已碎得只剩几片。你也差不多。两具伤痕累累的身体靠在一起时——不知是为了取暖还是别的什么。你记得那夜星空很亮，记得她的体温从冰凉慢慢变暖，记得最后入睡前她的手指扣住了你的。第二天你们穿着各自仅存的碎布下山——路人以为你们打了一架。没错，打了。但不只是那种打。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_024",
+    "text": "你在仙宴上喝醉，拉着长老女儿吟诗，第二天就被请去提亲。",
+    "expanded_text": "那场仙宴你喝了不知多少坛灵酒。迷迷糊糊间你拉着邻座的姑娘谈天说地，吟诗作赋。你把会的诗全念了一遍，又把不会的临时编了一遍。她笑得花枝乱颤。等你醒来时已是第二天午后，你的洞府门口站着十几个长老——那姑娘是当朝某位大长老的独女，长老们是来商量你们的婚事的。你欲哭无泪，可她的脸又确实生得动人。三个月后你们成了亲。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_024",
+    "text": "你在仙宴上喝醉，把长老的独子按倒强吻了。",
+    "expanded_text": "灵酒后劲太大。你借着酒胆扑过去把他按在桌上。他惊得瞪大了眼——你的唇已经压上了他的。整个仙宴鸦雀无声。你吻得很凶——带着酒味和某种压抑了很久的东西。他僵了一息——然后他的手搂住了你的后脑。仙宴炸了锅。你清醒后恨不得找个地洞钻进去。可他第二天主动来找你了，耳尖红红的：「昨晚那个……你只是喝醉了，还是……」你沉默了很久。然后吻了他第二次。这次你没醉。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_025",
+    "text": "一位上古大能的遗孀看上你，她已三千岁。",
+    "expanded_text": "她三千岁了，可容颜定格在最美的年纪。她请你到她的仙宫饮茶，茶喝了三壶，话说了三个时辰。第四壶时她说：「我寂寞了三千年。」第五壶时她站起来，走到你面前，弯腰——锁骨以下的风光在你眼前一览无余。她的指尖点了点你的唇：「今夜——就当做梦吧。」那一夜仙宫里的灵烛明了又暗、暗了又明。你像一叶扁舟被丢进了三千年的深海。天亮时你已精疲力竭，她却容光焕发，笑着帮你整理衣冠：「小家伙——不错。比我夫君年轻时还……嗯。」你落荒而逃。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "cultivation": 200,
+      "comprehension": 2
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_025",
+    "text": "一位上古大能的遗孤看上你，他已三千岁。",
+    "expanded_text": "他说他三千岁了。可他的脸像个二十来岁的少年。他请你到他的洞府下棋，棋下到一半他忽然说：「我等了三千年，终于等到一个像你的人。」他把棋盘推开，握住你的手放到他胸口——那颗三千年的心跳得极快。「留下来。」他的声音低如呢喃。那一夜他温柔得不像一个活了三千年的人——每一个动作都像在对待一件珍宝。天亮时你枕着他的手臂，他的另一只手在你发间轻抚。你的身体还有些酸软。「三千年学了不少花样。」你小声嘟囔。他笑了，吻了吻你的额头。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "cultivation": 200,
+      "comprehension": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_026",
+    "text": "你的道侣突然走火入魔，扑向你想要采补。",
+    "expanded_text": "她冲出丹房时眼睛是绿的。她一把扑上来掐住你的脖子把你按在地上，指甲嵌入你的皮肤。她的力气大得惊人——她撕你的衣服像撕纸。你喊她的名字，可她眼里没有你——只有猎物。她趴在你身上时你能感觉到她的体温异常滚烫，嘴唇贴上你的脖颈在吸取什么。你的精气在飞速流失——你拼尽最后的力气一掌拍在她天灵盖。她昏过去趴在你胸口。你浑身瘫软，衣服已经碎了一半。你搂着她喘了很久，庆幸她只是昏了——而不是你先撑不住。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 28,
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_027",
+    "text": "一对双胞胎女修同时看上你，要你二选一。",
+    "expanded_text": "她们一左一右靠着你，一模一样的脸上带着一模一样的笑。「选一个？」左边那个说。「不选也行——」右边那个补充，「我们可以一起。」你差点把茶杯摔了。最后你谁也没选——她们却谁也没走。那一夜你的洞府里多了两个人，一左一右占据了你的床。你僵硬地躺在中间，像一块夹心饼。她们的呼吸一个热一个凉，洒在你两侧耳根上。你一夜没睡——到天亮时你发现自己的两只手不知什么时候各被一个人牵着。你不敢动。可你的心跳已经出卖了一切。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": 1,
+      "constitution": -1,
+      "add_tag": "traveling"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_027",
+    "text": "一对双胞胎师兄同时向你提亲，你索性两个都嫁了。",
+    "expanded_text": "两个一模一样的师兄站在你面前：「嫁我！」「不，嫁我！」你看了看左边又看了看右边——说了句：「都嫁。」整个修真界轰动了。洞房夜两个人都紧张得像块木头——你反而是最淡定的那个。他们一左一右站着不敢动，你叹了口气把他俩的手拉过来搭在自己腰上：「都百年修士了，害什么臊？」那一夜的事你们三个谁都没对外说过——但从此以后你发现自己永远不缺热水、暖被窝、还有两个抢着给你捏肩的人。幸福得有些过分了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_028",
+    "text": "你被女魔头掳走，关在洞府里日夜调教。",
+    "expanded_text": "她每天来时都换一身衣裳，一件比一件少。她命令你为她做各种事——倒酒、捏肩、梳头、宽衣。你反抗时她就把你按在床上，凑到你面前说：「不听话的宠物，要受罚的。」你不知道「罚」是什么，但每次醒来身上都多出新的痕迹。三个月后你逃出来时，你瘦了十斤，身上从脖子到大腿没有一处完好的皮肤。有人问你那三个月经历了什么——你宁愿死也不开口。可最让你恐惧的不是那些痕迹，而是你在某些夜里……居然开始回味。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 100,
+      "willpower": -1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_028",
+    "text": "你被一位魔头掳走，他每天给你倒水梳头讲故事。",
+    "expanded_text": "他号称魔界第一凶人——可他给你倒水会洒，梳头会扯，讲故事讲到情话就结巴。你被他逗得忍不住笑。三个月后你不想走了。某夜你发现他站在你房门口犹豫了很久——你把门打开了。他呆呆地看着你，月光照着他通红的耳根。「我……你……能不能……」他支支吾吾了一刻钟也没说完。你踮脚吻了他。他整个人石化了三息——然后像溺水的人一样抱紧了你。那扇门，后来再没关过。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_029",
+    "text": "你练成御女剑法，江湖中追杀你的女子排到三千里。",
+    "expanded_text": "御女剑法本是上古风流剑客的传承，剑光如水，所到之处女修无不动心。你贪了便宜练成此法，结果惹了大祸。第一年你斩获七位女修芳心，第二年三十位，第三年——一百二十位，全是名门正派的女弟子。她们家长门派联合发布通缉令，悬赏你的人头。你只好开始亡命天涯。可怪的是，每到危急关头，总会有不知名的女修偷偷救你。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 26,
+      "gender": "male",
+      "required_tags": [
+        "sword_user"
+      ]
+    },
+    "weight": 8,
+    "effects": {
+      "cultivation": 100,
+      "charisma": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_029",
+    "text": "你练成迷魂步法，江湖男修无不为你倾倒。",
+    "expanded_text": "你偶得「九转回眸步」，每行一步皆生百媚。第一次施展是在斗剑大会，你只走了七步，台下三十位男修当场跪下求亲。你哭笑不得，正想解释，台下又跪了三十位。最后你硬是被几百名男修堵在剑台上下不来，靠师傅扔了一颗烟雾丹才逃走。从此你不敢用这步法——可男修们的提亲信仍像雪片一样飞来。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 22,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": 3,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_030",
+    "text": "你不小心烧了师妹的护身衣，整个练功场鸦雀无声。",
+    "expanded_text": "那是宗门大比，你与师妹切磋。你一招火灵剑出去，她身上的护身衣应声化灰——只剩一件薄薄的中衣，被剑气吹得猎猎飞动。整个练功场瞬间安静，所有男弟子的眼睛都瞪圆了。师妹脸刷地一下白了又红，捂着脸哭着跑了。你跪在练功场中央想自尽。后来师傅罚你扫了一年茅厕，可那件事到现在还是宗门最经典的笑话。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "gender": "male",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": -2,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_030",
+    "text": "你打坐时灵气暴动，把自己衣服烧了个精光。",
+    "expanded_text": "你刚突破到筑基期，激动之下走火入魔——丹田内的火灵气狂泻而出。等你回过神来，洞府着了火，你身上的衣服全部成了灰烬。你浑身赤裸地坐在地中央时，正好师叔来巡视——他被你这一幕吓得连退三步，转身飞奔出去再没回头。第二天宗门里所有人都知道了。你脸红了整整一年，从此走路都低着头。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18,
+      "gender": "female",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 50,
+      "charisma": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_031",
+    "category": "social",
+    "weight": 10,
+    "text": "你被宗门最严厉的女长老叫去问话，结果反被她调戏。",
+    "expanded_text": "她挑起你的下巴时你闻到了她身上的兰香——三百年的修为压得你动弹不得。她绕着你转了一圈，目光像在打量一件货物：「长得不错。修为差了点。」她忽然欺身上来，唇贴着你的耳廓：「小子——女长老也是女人。今天你陪我喝酒。」那一夜她灌了你三壶烈酒。你记得她越喝越放浪，到后来整个人靠在你肩上，手指在你胸口画圈。你僵得像块石头——可你不敢推开她。天亮时你从她洞府出来，衣领上沾着她的口脂印。你谁都没告诉。但从此以后她看你的眼神变了——带着一丝……笑意。",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "male",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "effects": {
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_031",
+    "category": "social",
+    "weight": 10,
+    "text": "你被宗门最威严的男长老单独召见，结果他竟手足无措。",
+    "expanded_text": "他是宗门第一高手——可此刻他红着脸不敢看你。他掏出一枚玉佩递给你，手抖得像筛糠：「这个……给你。我自己炼的。贴身佩戴……可保平安。」你接过来时指尖碰到他的掌心——他像被雷劈了一样缩回手。你忽然起了坏心：「长老要不帮我戴上？」他的耳尖瞬间红到滴血。他颤抖着走过来——在你颈后系绳结时你能感觉到他的指尖冰凉、还在发抖。他的呼吸洒在你的后颈上。你闭上眼享受了一小会——然后轻声说：「多谢长老。」他逃了。你笑了一整天。",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "gender": "female",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "effects": {
+      "charisma": 2,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_032",
+    "category": "social",
+    "weight": 10,
+    "text": "深夜你的洞府窗台多了一封情书，落款是你的死对头。",
+    "expanded_text": "情书写得极工整：「与君斗法十年，心中只有你。望君笑纳此心。」落款是与你斗了十年的死对头女修。你读完愣了半天，又翻来覆去看了三遍。第二天你飞去她洞府，她见你来了脸都白了——这分明是她醉酒乱写的，根本没打算给你看。你笑着把情书收进怀里，说：「斗了十年，是该有个结果了。」她羞得想杀你，最后却被你抱进了怀里。",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "gender": "male",
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "effects": {
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_032",
+    "category": "social",
+    "weight": 10,
+    "text": "你打开洞府发现死对头跪在门口求亲。",
+    "expanded_text": "他与你斗了二十年，今日竟提着九十九朵青莲跪在你洞府门口。整条街的修士都来围观。他朗声道：「这二十年我斗你，是因为只有你能让我心动。请你嫁我！」你站在门口愣住，又羞又怒——这阵仗实在太大。你冷冷扔出一句：「滚！」转身关门。可三天后你还是开门接了那束花。从那天起修真界少了一对死敌，多了一对欢喜冤家。",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "gender": "female",
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "effects": {
+      "charisma": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_033",
+    "category": "social",
+    "weight": 8,
+    "text": "你在魔窟救出一名女鬼，她从此跟着你。",
+    "expanded_text": "她被囚在魔窟最深处，你斩破封印那一刻，她跪在地上感激涕零。她说自己已死了三百年，是被魔修以血祭炼制成的器灵。你救了她，她无以为报，便要跟着你。从此你的洞府多了一个忽明忽暗的身影，每天给你温酒研墨，倒是颇为体贴。三年后她的怨气完全消散，化作一缕清魂去投胎了——临走前她在你额上一吻，说：「下辈子我做人，找你。」",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "male"
+    },
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_033",
+    "category": "social",
+    "weight": 8,
+    "text": "你在魔窟救出一名男鬼，他从此守护你左右。",
+    "expanded_text": "他在魔窟里被钉了三百年，你救他出来时他已经几乎魂飞魄散。你用秘法暂时凝聚他的残魂，他从此追随你左右——不能远离你三里之外。他做你的护道童子，斗法时给你引路，闭关时给你守门。三年后你帮他重塑金身，他却选择离去——他说不能耽误你的修行。可三百年后你飞升那天，他在云端等你。你一笑：「等很久了？」他答：「还行。」",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "female"
+    },
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_034",
+    "category": "social",
+    "weight": 8,
+    "text": "你被女妖王盯上，她把你当成心头宠物。",
+    "expanded_text": "她把你关在妖界，穿什么、吃什么、几时睡——全她说了算。她喜欢看你穿薄衫的样子。她坐在高处俯瞰你时，金色竖瞳里满是占有欲：「本座的东西，不许别人碰。」她有时会走过来捏你的下巴、摸你的脸颊、指尖划过你的喉结。你每次都咬牙忍着——可她的手指凉凉的，划过你皮肤时会留下一阵酥麻。某天夜里她喝了酒，把你拉到她身边。她的尾巴缠住你的腰不肯松——你天亮时才被放开。你身上没有伤，只有一身她的妖香，三天洗不掉。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "male"
+    },
+    "effects": {
+      "lifespan": 2,
+      "willpower": -1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_034",
+    "category": "social",
+    "weight": 8,
+    "text": "你被一头痴情龙王盯上，他要娶你做龙后。",
+    "expanded_text": "他每天送珍珠，一颗比一颗大。你拒绝了七十二次。第七十三次他没送珍珠——他送了自己。他化作人形站在你门口，浑身湿淋淋的。「嫁不嫁？」你叹气：「不嫁。」他蹲下来像只被遗弃的大狗。你心软了。那天你让他进了门。他小心翼翼坐在你的椅上，不敢碰任何东西。你给他倒茶时他偷偷握了一下你的指尖——又像被烫到一样缩回去。你忽然觉得一个千岁龙王红着脸不敢碰你，是一件很要命的事。你亲了他。他的尾巴在身后「啪」地甩了一下——把你桌子打翻了。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 22,
+      "gender": "female"
+    },
+    "effects": {
+      "charisma": 2,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_035",
+    "category": "social",
+    "weight": 10,
+    "text": "你的初恋转世投胎找上门来。",
+    "expanded_text": "她在你练气期就已死去，你一直放不下。三百年后你已是金丹真人，那夜一名陌生女子闯入你洞府，开口就问：「你认得我吗？」你浑身一震——她的眼神，分明就是初恋的眼神。她说她转世后保留了一些前世记忆，找了你三十年。你抱住她哭得像个孩子。从那夜起你们再没分开过，她说她这辈子要陪你走到飞升。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "male"
+    },
+    "effects": {
+      "charisma": 2,
+      "willpower": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_035",
+    "category": "social",
+    "weight": 10,
+    "text": "你的初恋转世重生，竟成了你的师弟。",
+    "expanded_text": "他在你筑基期就死了。你修了三百年，至金丹巅峰。那日宗门来了批新弟子，其中一个少年抬头看你，你心头一震——是他！他一脸困惑地说：「师姐我们好像见过？」你强忍泪水点头。从那以后你格外照顾他，传他功法，护他周全。可他终究不是当年那个他了——他没有前世记忆，只把你当作温柔的师姐。你把所有的爱都藏在心里，看着他成长。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "female",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "effects": {
+      "willpower": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_036",
+    "category": "social",
+    "weight": 8,
+    "text": "你被一群女修轮流上门表白，七天没合过眼。",
+    "expanded_text": "你不知怎么的成了修真界的「美男子之首」。这七天里，三十六位女修轮番上门表白，递的诗笺贴满了你洞府的门。你白天躲，晚上熬，第七天终于被堵在了厨房里——她们围成一圈，要你必须给个答复。你心一横，跑出去爬到山顶大喊：「我宁可孤独终身！」山下传来一阵悲鸣。从此再没有人来烦你——可你独自坐在山顶看星空时，心里其实有点空。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 26,
+      "gender": "male"
+    },
+    "effects": {
+      "willpower": 1,
+      "charisma": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_036",
+    "category": "social",
+    "weight": 8,
+    "text": "三十六位男修联名向你提亲，差点踏破你的洞府门槛。",
+    "expanded_text": "你刚破境，外貌竟越来越年轻。一夜之间，提亲的信件像雪片飞来。三十六位男修联名签了一份「群妻协议」——你只要嫁，他们三十六个甘当二房三房，绝不抱怨。你被这份协议气笑了，把信当众烧了。可三天后他们又联名写了第二份，这次是「群兄协议」——你嫁谁都行，其他三十五人就当哥哥。你叹了口气——修仙者的脑回路，真是没救了。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 26,
+      "gender": "female"
+    },
+    "effects": {
+      "charisma": 2,
+      "willpower": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_037",
+    "category": "social",
+    "weight": 10,
+    "text": "你救下一只白狐，她化形后非要做你妻子。",
+    "expanded_text": "你在山中救下一只受伤的白狐，本以为这就完了。三个月后一名穿白衣的少女敲你的门：「我是那只白狐，我要嫁给你。」你哭笑不得想拒绝，她一把抱住你的腿不撒手。你只好答应，可没想到她虽然是妖，却比谁都贤惠。她为你料理洞府，做的灵食比仙馔还美味。三百年后她为你诞下一子一女——一个是人，一个是小白狐。",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "male"
+    },
+    "effects": {
+      "charisma": 2,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_037",
+    "category": "social",
+    "weight": 10,
+    "text": "你救下一只小黑龙，他化形后非要给你做夫君。",
+    "expanded_text": "那只小黑龙被一群妖兽追杀，你出手救了它。三个月后一名俊美的黑发少年闯入你的洞府：「我是那只小黑龙，长大了来娶你。」你被他这话噎得说不出话。他一脸认真地跪下来送上聘礼——一颗龙珠。你把他赶了出去，他第二天又来了。如此往复一百次，你终于松口。从此你的洞府多了一个时不时变成黑龙带你飞的夫君，日子过得比神仙还美。",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "female"
+    },
+    "effects": {
+      "charisma": 2,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_038",
+    "category": "social",
+    "weight": 8,
+    "text": "你被仇家放出的色蛊偷袭，幸好师叔及时赶到。",
+    "expanded_text": "色蛊入体后你的身体变成了一座活火山。你的呼吸急促得像跑了十万里路，下腹的热度让你几乎站不住。每一个路过的女修——不，每一个活物的轮廓都在你眼中变得致命地诱人。你拼命往洞府跑，途中咬穿了自己的舌头。你把自己锁在房里，浑身发抖地蜷在角落。师叔破门而入打晕你时，你已经把衣服抓碎了。七天后你醒来，师叔只说了一句：「幸亏关得住你。」你没敢问自己昏迷时说了什么——从师叔不敢看你的表情来看，一定很不堪。",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "male",
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_038",
+    "category": "social",
+    "weight": 8,
+    "text": "你被仇家在饭中下了情蛊，险些扑倒师兄。",
+    "expanded_text": "情蛊发作时你觉得自己的身体被点着了。师兄从对面走来——他的脸、他的手、他衣领下若隐若现的锁骨——一切都变得不可抗拒。你的双腿在发抖，不是因为害怕。你控制不住自己——你扑上去把他按在墙上，扯开他的衣领，嘴唇贴上他的脖颈。他僵了一息然后拼命推你：「师妹！不是你！」你听不见。你只想——你一掌拍在你天灵盖上。一切归于黑暗。三天后你醒来，看见师兄坐在你床边，衣领遮得严严实实。他的脖子上有你的牙印。你想死。",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "female",
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "effects": {
+      "willpower": 2,
+      "charisma": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_039",
+    "category": "social",
+    "weight": 10,
+    "text": "你与道侣双修十年，终于一起突破。",
+    "expanded_text": "十年双修，从掌心到全身。到第十年那夜，灵力已不再经由经脉——而是从每一寸肌肤的接触处直接渡入。你环抱着她，她的额头抵在你的胸口。你们的心跳同步了，呼吸同步了，连灵魂都在某一个瞬间重叠。那种感觉像两滴水融为一体——分不清你是你还是她是她。突破的那一刻你们同时发出一声长叹，像溺水者终于浮出水面。事后她趴在你胸口，身上覆着薄汗，手指在你心口画圈。你亲了亲她的发顶。她的耳尖通红。什么都不用说——一切都在那一声叹息里了。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 40,
+      "gender": "male",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "effects": {
+      "cultivation": 200,
+      "charisma": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_039",
+    "category": "social",
+    "weight": 10,
+    "text": "你与道侣双修百年，他终于敢牵你的手。",
+    "expanded_text": "百年了。你终于把他的手拉到你腰上。他僵了一息——然后他的手指收紧了。像忍了一百年的洪水终于决堤：他把你拉进怀里，下巴抵着你的头顶，整个人在发抖。「我不知道……该怎么做。」你抬头看他，然后踮脚吻了他。那一吻像打开了某个开关——灵力暴涨，两人同时突破。你们从蒲团上滚到地上，他压在你身上，额头抵着你的，汗水滴在你脸颊。你们喘着气对视，他的手还在你腰上，比一百年来任何一刻都用力。「还是……太笨了。」你笑着说。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 40,
+      "gender": "female",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "effects": {
+      "cultivation": 100,
+      "charisma": 2
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_040",
+    "category": "social",
+    "weight": 8,
+    "text": "你在春宴上被三位仙女轮番敬酒，醉后失了童真。",
+    "expanded_text": "仙露入喉的瞬间你的血液就沸腾了。三位仙女围上来时你的意识已如薄雾——她们的手指像六簇火焰，走过你的每一寸。你记得自己被推倒在花丛中，记得月光下三具流光溢彩的身体交错着覆上来，记得花瓣贴在汗湿的皮肤上，记得潮水般一浪高过一浪的感觉将你完全淹没。你失去意识前最后听见的是自己的喘息和她们银铃般的笑声。天亮时你赤身躺在落花中，身上像被碾过——从肩到小腹全是唇印和指痕。你的童真——用一夜繁华换走了。",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 50,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 200,
+      "charisma": 1,
+      "willpower": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_040",
+    "category": "social",
+    "weight": 8,
+    "text": "你被请去仙宫赴宴，被三位上仙抢走了元阴。",
+    "expanded_text": "三位上仙的灵力灌入你体内时像三股寒冰。你的身体弓了起来，一种从未体验过的感觉从身体最深处涌上来——你不知该称之为痛还是别的什么。整个过程像一场漫长的酷刑，也像一场猛烈到窒息的风暴。你哭了，又笑了，最后连声音都发不出了。天亮后你躺在玉榻上无法移动。身上的青紫印记如同刺青一般遍布——那是灵力从体表渗入的痕迹。你的元阴去了大半，换来了两层修为。值不值？你的身体替你回答了——它在发抖，可不全是因为害怕。",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 50,
+      "gender": "female"
+    },
+    "effects": {
+      "willpower": 3,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_041",
+    "category": "social",
+    "weight": 10,
+    "text": "你与一位女剑修剑下定情，她说要嫁给打败她的人。",
+    "expanded_text": "她是修真界第一女剑修，发誓要嫁给打败她的人。你不过是好奇上前比剑，没想到她剑法虽然犀利，却被你一招化解。你茫然地看着她，她却跪下来——这是她一生第一次跪人。「师傅说一言九鼎。」她抬头看你，眼神清澈：「我嫁你。」你哭笑不得，但还是娶了她。从此你过上了又被欺负又被宠爱的日子——她比你强，可她为你做饭。",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "male",
+      "required_tags": [
+        "sword_user"
+      ]
+    },
+    "effects": {
+      "charisma": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_041",
+    "category": "social",
+    "weight": 10,
+    "text": "你与一位男剑修剑下定情，他说要嫁给打败他的人。",
+    "expanded_text": "他是个怪人——他发誓要嫁给打败他的人。你听说后觉得有趣，前去切磋。他剑法刚猛，你避其锋芒，三十招后他被你一剑封喉。他放下剑笑了：「我言出必行。」当日他随你回了门派。门派上下震惊——一位剑修第一的男人，竟做了你的「男道侣」。他不在意外人的眼光，每天给你磨剑做饭。你这才知道，原来一辈子的幸福，是这么简单的事。",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "gender": "female",
+      "required_tags": [
+        "sword_user"
+      ]
+    },
+    "effects": {
+      "charisma": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_042",
+    "category": "social",
+    "weight": 8,
+    "text": "你被女鬼缠身，竟与她有了一段地府姻缘。",
+    "expanded_text": "半年后她能化出实体。第一次她试探着碰了你的手——冰凉的，可你没躲。她哭了。那之后每夜她都来，趴在你胸口听你的心跳。后来她整个人缩在你怀里——到后来她的实体越来越暖了，你分不清是她变暖还是你把温度给了她。某一夜月圆，她忽然说「我想要一次……真正的。」你低头看她——她半透明的脸上有泪也有渴望。那一夜她的身体从头到尾都是温热的——比任何一次都真实。天亮时她变回了虚影，可她在笑。枕上有一枚温热的泪痕——不是冰凉的了。",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "gender": "male"
+    },
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_042",
+    "category": "social",
+    "weight": 8,
+    "text": "你被一名男鬼相思而死，他死后还来找你三百年。",
+    "expanded_text": "他每月十五来看你。三百年了。他从不碰你——只是坐在你床边看你。直到某个月圆夜你主动握住了他的手。他的手冰凉——可他整个人都在颤抖。「我碰你……你会不会害怕？」你摇头。他小心翼翼把你拉入怀中——冰凉的怀抱，可你觉得自己从未被这么温柔地抱过。他的唇贴上你的额头时你听见他在你头顶说：「三百年……值了。」那一夜你枕在一片冰凉又柔软的虚影上。天亮他走了。可你脖颈上残留的一点凉意，到下一个十五还没消散。",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 50,
+      "gender": "female"
+    },
+    "effects": {
+      "charisma": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_043",
+    "category": "social",
+    "weight": 10,
+    "text": "你在山中误入一处仙女浴池。",
+    "expanded_text": "仙女们看见你时不仅没尖叫，领头那位还朝你招手。你稀里糊涂地脱了衣服下了水——热泉包裹住你的那一刻你几乎叹了出来。她们游过来围住你，六只手在水下不知在碰什么。你的脑子炸成了空白。那个下午……你只记得水花、笑声、还有一些让你耳根发烫的画面。你从池中爬出来时腿都是软的，走了十步摔了三跤。那三位仙女在身后笑得前仰后合。你再也没找到过那个池子——可能是你不敢再去。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 100,
+      "charisma": 1,
+      "lifespan": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_043",
+    "category": "social",
+    "weight": 10,
+    "text": "你在山中误入一处仙人洗剑潭。",
+    "expanded_text": "他在你面前转过身时你看见了一切——从喉结到人鱼线到再往下。你应该跑的。可他朝你走过来了。「小姑娘独自来洗剑？」他在你面前站定，水只到膝盖。你的视线根本不知道该往哪放——可又哪都想看。后来的事……你不记得是谁先动的手。只记得潭水很凉，他的身体很热，两种温度交替冲刷着你。你趴在岸边的石头上喘息时，他从背后把外袍披在你肩上：「下次别一个人来。」你没回头，可你知道——会有下次。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 100,
+      "add_tag": "sword_user"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_044",
+    "category": "social",
+    "weight": 8,
+    "text": "你被一位狐妖夫人调戏。",
+    "expanded_text": "她化作一个三十来岁的丰腴美妇，斜倚在你洞府的椅上翘着腿。她的衣裙开得很低，你能看见一大片雪白。「小修士，」她的声音又甜又腻，「本座看上你了。过来让我摸摸。」你退了一步，她便笑着站起来走过来——她比你高半头，低头看你时那双金色狐瞳满是戏谑。她一指头点在你胸口，你退到墙角再无处可退。她俯身，唇贴着你的耳朵：「怕什么？本座又不会吃了你——顶多……舔一舔。」",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "male"
+    },
+    "effects": {
+      "willpower": 2,
+      "fortune": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_044",
+    "category": "social",
+    "weight": 8,
+    "text": "你被一位老魔的内侍勾引，差点动了真情。",
+    "expanded_text": "他本是老魔的贴身侍从，容颜如画。他送茶时总是多看你两眼，手指不经意碰到你的——后来越来越大胆：帮你整理衣领时贴得太近，你能闻到他颈间的木香。一次你洗完澡出来撞见他在门口等，他的目光毫不掩饰地从你湿发上滑到锁骨再到腰——然后他喉结滚了一下，红着耳根转身走了。你的心「砰砰」跳了一晚。你不敢承认，可你开始……故意在他面前松着衣领。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "female"
+    },
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_045",
+    "category": "social",
+    "weight": 10,
+    "text": "你的女徒弟暗恋你三百年，终于在你飞升前夜表白。",
+    "expanded_text": "她是你最得意的女徒弟，跟你三百年。你一直以为她只是尊敬你这个师傅。直到你飞升的前一夜，她跪在你面前红着眼说：「师傅，我喜欢你三百年了。」你愣了——你已年过五百，她也已三百岁，你们之间是修真界最荒唐的师徒关系。你犹豫许久，最终摇头：「下辈子吧。」她哭了一夜。你飞升时她跪在地上送你，三百年后她也飞升，第一件事就是来上界找你。",
+    "conditions": {
+      "min_realm": 5,
+      "min_age": 60,
+      "gender": "male"
+    },
+    "effects": {
+      "willpower": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_045",
+    "category": "social",
+    "weight": 10,
+    "text": "你的男徒弟暗恋你三百年，终于在你飞升前夜表白。",
+    "expanded_text": "他是你收的小徒弟，跟你三百年。你一直把他当孩子看。飞升前夜他跪在你榻前，整整跪了一夜。「师傅，我从十五岁就喜欢你。」你的心怔了一下——他三百年从未提起，你也从未察觉。他抬头：「下辈子……能让我做你的相公吗？」你抚摸他的头：「傻孩子。」你飞升那刻，他跪在山顶哭得撕心裂肺。三百年后他也飞升上界，你已等他三百年。",
+    "conditions": {
+      "min_realm": 5,
+      "min_age": 60,
+      "gender": "female"
+    },
+    "effects": {
+      "willpower": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_046",
+    "category": "social",
+    "weight": 8,
+    "text": "你与一位女魔头对峙时，她却脱了衣服。",
+    "expanded_text": "她的外袍落地那一瞬你的招式就乱了。亵衣薄如蝉翼，战斗中随她的动作起伏——每一寸都在你视线里燃烧。第五十招时她故意贴身近战，你能感觉到她呼吸的热度、她身上薄汗的咸味。第六十招她一脚勾住你的腿，你仰面跌倒——她整个人压了下来。「认输？」她的唇贴着你的问。你没答话——可你也没推开她。那一战没有分出胜负。但第二天你们起身时，地上的衣服已经混在一起，分不清你的还是她的了。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 28,
+      "gender": "male",
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "effects": {
+      "willpower": 2,
+      "cultivation": 50,
+      "charisma": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_046",
+    "category": "social",
+    "weight": 8,
+    "text": "你与一位男魔头对峙时，他却脱了衣服。",
+    "expanded_text": "他撕掉上衣时你的心跳漏了一拍。伤疤纵横的躯体像一件粗粝的艺术品——你的视线粘在他的胸肌上多停了一息。就这一息，他已近身。他灼热的胸膛贴上你的后背，一只手锁住你的腰，另一只手扣住你的手腕。他的唇贴着你的耳廓：「认输？」你浑身发颤。你挣脱了——又好像没完全挣脱。那一战打到最后你们滚在地上，他在上面，你的手撑着他的胸口。你们喘着气对视了很久。然后你们同时放弃了——放弃了战斗。那夜的月亮看了一整场它不该看的东西。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 28,
+      "gender": "female",
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "effects": {
+      "willpower": 2,
+      "cultivation": 50
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_047",
+    "category": "social",
+    "weight": 10,
+    "text": "你救下一位被禁制困住的仙女，她以仙果相报。",
+    "expanded_text": "她被囚禁在上古禁地的水晶柱中已有三万年。你机缘巧合下破开禁制，她从柱中飘出，长发飘飘宛若天人。她惊讶你竟能解开禁制，从腰间解下一颗紫色仙果送给你：「公子大恩，三千年内必报。」她飘上天，化作一道紫光消失。你吃下那颗仙果，丹田如同大江奔涌——你直接突破了两个大境界！从那天起你修真界声名远扬，可那位仙女再也没出现过。",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 50,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 300,
+      "lifespan": 3,
+      "comprehension": 2
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_047",
+    "category": "social",
+    "weight": 10,
+    "text": "你救下一位被封印的仙人，他以一缕仙气相报。",
+    "expanded_text": "他被仇家封印在山腹之中三万年。你修炼时无意间感受到呼救，破开封印放他出来。他飘出洞府时已经修为大失，但威严犹在。他朝你拱手：「姑娘大恩。」从袖中飞出一缕紫色仙气：「这是我留给后人的最后一份机缘，请收下。」仙气融入你眉心，你瞬间感受到一份古老的智慧涌入脑海。一年后你修为大进，可那位仙人，从此再没在世间出现过。",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 50,
+      "gender": "female"
+    },
+    "effects": {
+      "comprehension": 3,
+      "cultivation": 200,
+      "lifespan": 3
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_048",
+    "category": "social",
+    "weight": 8,
+    "text": "你被无数女修写进话本里，成了修真界头号偶像。",
+    "expanded_text": "你不知道为什么——可能是因为你救过几次人，可能是因为你长得周正——总之你成了修真界头号偶像。各种话本如雪片般出版，主角全是你，配角是各种各样的女修。你气得想找出版商算账，可越打压越火。最后你认命了，索性自己也写了一本——把所有传言一次性写进去。这本书反而成了最畅销的，你被尊为「话本之祖」。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "male"
+    },
+    "effects": {
+      "charisma": 2,
+      "fortune": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_048",
+    "category": "social",
+    "weight": 8,
+    "text": "你成为修真界画师笔下的「仙子」，画像被疯抢。",
+    "expanded_text": "某个游方画师在论道大会上看见了你，回去之后画了一幅你的画像。这幅画后来流传出去，引发了修真界画像收藏热——你的画像在拍卖会上被炒到天价，假货层出不穷。你哭笑不得，索性自己开了一家画坊，专卖自己的真迹。这门生意意外地好——你不仅赚足了灵石，还顺便揭穿了一群假冒画师。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 30,
+      "gender": "female"
+    },
+    "effects": {
+      "charisma": 2,
+      "fortune": 2,
+      "add_tag": "in_market"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_049",
+    "category": "social",
+    "weight": 8,
+    "text": "你的女道侣怀孕了，竟是你前世仇人的转世。",
+    "expanded_text": "她查出有了身孕，你欣喜若狂。可掌门请来的高人推算后大惊：肚里的孩子是你前世仇敌的转世。你脸色铁青，问该怎么办。高人说：「打掉吧，否则后患无穷。」你犹豫了三天，最终摇头：「这一世他做我的孩子，前世恩怨就此了断。」十月后你的儿子出生，眉目间确实有几分前世仇敌的样子。你抱着他笑了——这一世，你来教他做个好人。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 35,
+      "gender": "male",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "effects": {
+      "willpower": 2,
+      "fortune": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_049",
+    "category": "social",
+    "weight": 8,
+    "text": "你怀了道侣的孩子，可她却是上古魔神转世。",
+    "expanded_text": "你怀孕的喜讯还没传开，宗门高人就推算出——你肚里的孩子是上古魔神转世，将来必生大祸。所有人都劝你打掉，包括你的相公。你站在丹田前犹豫了一夜，最终摇头：「她是我的孩子。」你顶着所有人的反对生下了她。她长大后果然天赋惊人，可她也是你最孝顺的女儿。她终于解决了上古魔神的执念，化作一道清光融入天地——你的女儿，渡了上古魔神。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 35,
+      "gender": "female",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "effects": {
+      "willpower": 3,
+      "fortune": 2
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_050",
+    "category": "social",
+    "weight": 8,
+    "text": "你的红颜知己跨越生死之门来见你最后一面。",
+    "expanded_text": "她是你少年时的红颜知己，凡人之身，三十年前已死。可她的执念太深，化作一缕魂魄等了三十年。那夜你修炼时她出现在你身后，半透明的身影朝你笑：「我来看看你，要走了。」你转身想抓住她，她已经渐渐淡去：「下辈子，我还做你的红颜知己。」她消散后你修炼时常常独自落泪——人有情，仙有义，可生死，是真的过不去。",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 50,
+      "gender": "male"
+    },
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_050",
+    "text": "夜宴归来，你与醉酒的师妹同榻，醒时已成她的人。",
+    "expanded_text": "你是被一股暖意唤醒的——一具身体从背后贴着你，手臂环住你的腰。你迷迷糊糊翻过身，鼻尖抵着一张熟悉的脸。你应该推开的——可酒意还在。你凑上去吻了她（他）的唇角。然后一切像坠入温水——慢慢的、暖暖的、理所当然的。你记得被子被踢落，记得月光照在纠缠的肢体上，记得某个瞬间你忍不住出了声被她捂住了嘴。天亮时你枕着她的臂弯，她的手还搭在你的腰上——衣带早已散尽。你轻轻把被子拉上来盖住两个人。完了。但好像——也没什么不好。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "max_age": 35,
+      "gender": "female",
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 6,
+    "effects": {
+      "willpower": 1,
+      "luck": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "romance"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_051",
+    "text": "古墓寻宝，棺中佳人睁眼，竟道：「等你千年。」",
+    "expanded_text": "她把你拽进棺中时你跌进了一片冰凉与馨香之中。她搂住你的脖子，双腿缠上你的腰：「师兄——我等了一千年。补偿我。」你想说你不是她的师兄——可她的唇已经堵住了你。她的身体凉如玉，可每一处碰触都让你觉得自己在融化。棺椁很窄，两个人挤在一起几乎无法动弹——但她似乎不需要空间。那一夜漫长得像一千年。天亮时你从棺中爬出来，浑身酸软，身上的咬痕凉冰冰的——像被盖了一千年的印章。你回头看了一眼——她闭着眼睡在棺中，唇角含笑。你跑了。可那温度你至今忘不掉。",
+    "category": "exploration",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 25,
+      "gender": "male",
+      "required_tags": [
+        "explorer"
+      ]
+    },
+    "weight": 4,
+    "effects": {
+      "comprehension": 2,
+      "luck": -1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "mystery"
+    ],
+    "event_type": "special"
+  },
+  {
+    "id": "adt_f_051",
+    "text": "古墓寻宝，棺中俊美男修睁眼，握住你的手不肯松开。",
+    "expanded_text": "他握住你的手放到他胸口时，那里没有心跳——可掌下的肌肤微温。他的另一只手搂住你的腰把你拉进棺中。空间逼仄，你不得不整个人贴在他身上。他的唇从你额头一路吻到你的嘴角：「一千年……太久了。」他的指尖沿着你的脊背缓缓下滑，你浑身一颤——可你没有挣扎。那一夜棺椁里像有另一个世界。天亮时你从棺中出来，双腿发软，身上沾满了他的冷香。你的腰上有他五指的印记——凉的，三天才消。你再没回过那座古墓。可有时夜里你会梦见那股冷香。",
+    "category": "exploration",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 25,
+      "gender": "female",
+      "required_tags": [
+        "explorer"
+      ]
+    },
+    "weight": 4,
+    "effects": {
+      "comprehension": 2,
+      "luck": -1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "mystery"
+    ],
+    "event_type": "special"
+  },
+  {
+    "id": "adt_m_052",
+    "text": "酒楼遇刺，红衣女侠救你性命，伤重之时索吻偿恩。",
+    "expanded_text": "她拽住你衣领把你拉低时还带着满身的血。她吻你的方式凶狠又霸道——像在战场上抢夺什么。她咬你的下唇咬出了血，然后用舌尖舔掉：「这是定金。」她翻身坐起，伤口早已不流血了。她笑着扯开你的衣领在你锁骨上用力吮了一口——痛得你倒吸凉气。「这是本息。」她站起身，理了理被血染红的衣裙，头也不回地走了。你摸着锁骨上那枚浮了的红印——像一枚烙铁盖的章。三天后集市上再遇到她，她隔着人群朝你的锁骨方向看了一眼，挑了挑眉。你的脸烧了一整天。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 1,
+      "min_age": 20,
+      "max_age": 40,
+      "gender": "male"
+    },
+    "weight": 5,
+    "effects": {
+      "willpower": 1,
+      "luck": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_100",
+    "text": "庙会上你与卖花姑娘对视一眼，她偷塞给你一朵桃花。",
+    "expanded_text": "她把桃花塞进你掌心时指尖在你手心划了一下——像是无意又像是故意。入夜你循着白日的记忆找到她收摊的巷子。她还在等。月色下她仰起脸时你吻了上去——她的唇有桃花的甜。她拉着你进了巷里的小屋，门一关她便贴上来。你闻到她身上淡淡的花香，手忍不住探进她的衣襟。她没推开你——只是红着脸把灯吹了。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 30,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 1,
+      "fortune": 1,
+      "add_tag": "in_market"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_101",
+    "text": "雨夜你借宿一户农家，半夜寡居农妇悄悄推开你的房门。",
+    "expanded_text": "半夜你被门轴的吱呀声惊醒。她端着油灯站在门口，外衫没系，里面只穿了件薄薄的肚兜。「怕你冷——给你加床被子。」她坐到你榻边时你闻到她身上寡淡的皂角味。她放下被子却没起身——你的手覆上她的手时她浑身一颤。灯灭了。她钻进被子时冰凉的脚贴上你的小腿，你搂住她时她的呼吸急促起来。窗外雨声很大——大到可以盖住一切。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 40,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "fortune": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_102",
+    "text": "大户人家小姐为躲婚事翻墙投奔你。",
+    "expanded_text": "她翻墙时裙摆挂在了墙头——你接住她时她整个人跌进你怀里。她气喘吁吁抱着你不撒手：「他们要逼我嫁！」你拉她进屋关了门。她浑身还在抖——你拍她的背安抚。后来不知怎的她抬起头吻了你——带着哭腔的、绝望的吻。她的手扯你的衣领，你的手托住她的腰。那一夜她说「反正我已经逃了——不差这一件」。天亮后她还在你怀里，睡得像个孩子。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 30,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_103",
+    "text": "醉酒后醒来，身旁躺着一位你完全不认识的姑娘。",
+    "expanded_text": "你宿醉醒来时头疼欲裂。转头看见一张陌生的脸——她侧卧着还在睡。被子只盖了半身，锁骨以下一片春色。你的衣服散落一地，她的裙子挂在椅背上。你想起来一些片段：酒桌上她灌你、巷子里她拉着你跑、关上门后她把你推倒在榻上。你悄悄起身想走——她却翻了个身拽住你的手腕：「想走？——昨晚可不是这样说的。」",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 35,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": -1,
+      "fortune": -1,
+      "constitution": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_104",
+    "text": "你在井边偶遇邻村姑娘汲水，她主动与你搭话。",
+    "expanded_text": "她汲水时故意把桶放得离你很近。聊了几次后她约你到村后树林「帮她摘果子」。林子深处她靠在树干上看你——眼波流转。你走过去时她没退。你的手撑在她头侧的树干上时她仰起脸。第一个吻笨拙得牙齿磕在一起——可后面的越来越熟练。她的后背贴着粗糙的树皮，你的手探进她的衣摆。她咬着唇轻轻「嗯」了一声。草丛里有虫在叫，盖住了所有声响。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 28,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_105",
+    "text": "你护送商队北上，途中商队女主人夜叩你帐。",
+    "expanded_text": "她夜里来叩你的帐篷——只穿了件寝衣，外面披了件斗篷。「帐中冷——拼个火可好？」她坐到你毡子上时你闻到她颈间的脂粉味。聊着聊着她靠在你肩上——你偏头时唇恰好蹭到她的额角。她抬起眼看你，灯火在她眸中跳。后面的事发生得顺理成章——斗篷铺在地上，寝衣滑落，她的指甲嵌进你的背。帐外篝火噼啪响了一夜。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 20,
+      "max_age": 35,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "fortune": 2,
+      "charisma": 1,
+      "add_tag": "traveling"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_106",
+    "text": "青楼老板娘看你五官端正，硬要收你做「红倌儿」。",
+    "expanded_text": "老板娘把你堵在后院：「这副模样——做红倌比卖苦力强。」你拒绝。可她不死心，第二夜亲自来教你「规矩」。她比你大十岁——身段丰腴，手法老练得让你无处可逃。你挣扎了一下便放弃了。她在你身上时像一条柔软的蛇——把你缠得喘不过气。天亮你落荒而逃。可那一夜的感觉你忘了很久都没忘掉。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 28,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "fortune": 2,
+      "charisma": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_107",
+    "text": "你与表姐在瓜田私会，被村里乡邻撞了个正着。",
+    "expanded_text": "你和表姐在瓜田里本来只是说话——可月色太好、她坐得太近。你鬼使神差吻了她。她推了你一下，又把你拽回来。瓜藤做的棚子摇摇晃晃——你们没注意到远处有脚步声。灯笼照过来时你们衣衫不整地蹲在瓜棚下。整个村子第二天都在议论。族长罚你跪了三天祠堂——可你一点不后悔。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": -2,
+      "willpower": 1,
+      "fortune": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_108",
+    "text": "你为暗恋的姑娘打跑了几个混混，她却把你当成更凶的混混。",
+    "expanded_text": "你替她出头挨了一顿揍——鼻血流了一身。可她看你的眼神像看瘟神。你心灰意冷往家走，她突然从后面追上来。「你……伤到哪了？」她扯开你的衣领看你胸口的伤时手在抖。你还没反应过来她就红着眼吻了你——带着血腥味的、又气又急的吻。她的眼泪滴在你脸上。那天晚上她没回家——在你破屋里照顾了你一夜。只是照顾。但天亮前她钻进了你的被窝：「冷。」",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": -1,
+      "willpower": 1,
+      "constitution": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_109",
+    "text": "你与同村寡居小娘子互生情愫，她为你守身十年。",
+    "expanded_text": "十年。她在隔壁守了十年寡。你知道村里人怎么看她——可你不在乎。你第一次进她的门时她的手指绞着衣角。你握住她的手——粗糙的、长满薄茧的手。她低着头半天才抬起来——眼眶是红的。那一夜你们什么也没做——只是抱着睡了。可第二夜她主动解了自己的衣带。她在你身下时紧紧闭着眼，泪从眼角滑进鬓角。你吻掉那些泪：「往后不用再一个人了。」",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 22,
+      "max_age": 40,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1,
+      "lifespan": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_110",
+    "text": "七夕夜，你在桥头捡到一封不知是谁丢下的情书。",
+    "expanded_text": "你在桥头等到三更都没人来。正要走时有人从后面抱住了你的腰。你转头——她跑得满头是汗，鬓边银钗歪了。「等……等一下——我……」她还没说完你就吻了她。一个素未谋面的姑娘——可那封信你读了百遍。她的唇比你想象的软。她攀住你的脖子时银钗落到了桥面上。「明年——还在这。」她红着脸跑了。你蹲下来捡起那枚银钗——还带着她的体温。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 30,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "fortune": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_111",
+    "text": "你在云游途中救下一名比丘尼，她还俗与你共度三月。",
+    "expanded_text": "她还俗那天剃度的短发刚长到耳下。她说她欠你一条命——愿以身相报三月。你说不必。可第一夜她便来了你房中：「施主——不……公子。贫……我想报恩。」她的吻青涩得像个初学者。三个月里她从什么都不会到渐渐学会了在你耳边喘息、学会缠住你的腰、学会在你肩头留下齿印。第九十天她走时你追了十里路。她没回头。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 20,
+      "max_age": 35,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "comprehension": 1,
+      "willpower": 1,
+      "charisma": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_112",
+    "text": "屠夫家做学徒，被屠夫女儿强行招了上门女婿。",
+    "expanded_text": "她把斧头往桌上一拍：「今晚圆房。」你缩在床角——她比你高半头，胳膊比你粗一圈。她倒酒灌你，灌了三碗你便晕乎乎由她摆布了。她的力气大得惊人——你被她翻来覆去像个布偶。可你不得不承认——那一夜之后你的腰酸了三天，但某种程度上……也没那么恐惧了。后来你甚至开始期待她每晚关门后的那声「过来」。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 30,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "constitution": 2,
+      "willpower": 1,
+      "charisma": -1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_113",
+    "text": "你被村里媒人塞了一封婚帖，三日后就要成亲。",
+    "expanded_text": "三日后你莫名其妙成了亲。掀开盖头——不丑。她红着脸偷看你，你也偷看她。洞房烛火摇曳，你们面对面坐着谁也不动。最后还是她先伸了手——拉了你的衣角：「天……天凉了。」你懂了。你吹了蜡烛。她钻进被子时浑身都在抖——你抱住她说「别怕」。后来她咬着枕头闷哼了一声——你心疼地停下。她拽住你：「没……没事。继续。」",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 30,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_114",
+    "text": "卖艺杂耍班入村，班中绳上美人与你眉来眼去。",
+    "expanded_text": "她在绳上翻飞时你看见了她腰间一片白皙的肌肤。散场后她在后台换衣时帘子没拉严——你的目光和她对上了。她没尖叫——反而朝你勾了勾手指。帘子后面很窄，你们贴得极近。她身上有汗——不难闻，带着年轻女人的体味。她把你推坐在箱子上自己跨了上来——走绳的人腰腿都有力。你第一次知道女人也可以这么主动。天亮前她翻了你三次。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 30,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "fortune": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_115",
+    "text": "元宵灯会，你与一位戴帷帽的姑娘共度一夜，再未相见。",
+    "expanded_text": "她的帷帽下是一张极美的脸——美到你记了一辈子。你们在灯会上走了一圈便拐进了旁边的客栈。她从头到尾没说过自己的名字。进了房她便解了外衣——像做过很多次一样从容。你却紧张得手在抖。她笑了笑牵过你的手贴在她腰间：「别怕。」那一夜漫长如一生。天明她穿好衣服戴上帷帽——走时只留下一句：「灯会年年有。可今夜只有一次。」",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 30,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1,
+      "fortune": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_116",
+    "text": "你被纨绔逼着假扮女子陪酒，被识破后狼狈逃出酒楼。",
+    "expanded_text": "你被强按着涂脂抹粉、穿上女装。酒桌上那些纨绔搂着你灌酒——有人的手伸进了你的裙摆。你一掌拍开他那只手抄起酒壶砸了他满脸——撕掉假发翻窗就跑。你跑了三条街才停下。身上还穿着那身女装——胸口揣的假乳滑到了肚子上。你蹲在巷子里把那套东西扒得一件不剩。这辈子最屈辱的一晚。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": -2,
+      "willpower": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_117",
+    "text": "你与酒肆老板女儿偷偷相好，被老板打断了一条腿。",
+    "expanded_text": "你在酒肆后院和她幽会——正亲热时门被踹开了。她爹抡着擀面杖冲进来——第一杖就打在你膝盖上。你疼得跪地，她尖叫着挡在你面前。她爹骂了你半个时辰，把你拖出去扔在街上。你的腿瘸了三个月。可三个月后她又偷偷来找你了——这一次你们约在城外破庙里。你瘸着腿抱住她——什么伤都值了。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 28,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "constitution": -2,
+      "willpower": 1,
+      "charisma": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_118",
+    "text": "一位粗野农妇缠上你，每夜来你窗下嚷嚷要嫁。",
+    "expanded_text": "她每晚蹲你窗下——嗓门能让全村听见：「王老三！你今晚娶不娶我！」你躲在被窝里装死。可第七天夜里下暴雨她还蹲在那，你终于把门打开了。她浑身湿透——衣服紧贴着那副结实的身板。你把她拉进屋给她擦头发时她突然安静了。她低着头红着脸——原来不嚷嚷的时候也会害羞。那一夜你没赶她走。她的力气确实大——但也确实暖和。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 35,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "constitution": 1,
+      "willpower": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_119",
+    "text": "端午龙舟赛后，对村姑娘约你在芦苇荡里相会。",
+    "expanded_text": "芦苇荡里她拉着你跑——笑声像银铃。跑到深处看不见人了她才停下喘气。她的脸因为跑步和害羞红得像熟透的桃。你吻她时芦苇在身边沙沙响。她的手攥着你的衣角——犹豫了一下便松了手。你把外衫铺在地上——芦苇比人高，谁也看不见谁。她躺下来时闭着眼——睫毛在抖。河风从芦苇缝里吹进来——凉的。可你们是热的。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 28,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "constitution": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_120",
+    "text": "你与青梅竹马的姑娘终于成婚，洞房之夜泪如雨下。",
+    "expanded_text": "洞房花烛——你掀开盖头时她抬眼看你。你们从七岁认识到现在——她的每一个样子你都记得。可今夜的她你没见过——凤冠霞帔下的那双眼又羞又喜。你替她卸钗、解衣——手在抖。她攥着你的手指笑出了泪：「我等了你好多年。」后来她窝在你怀里说：「有点疼——但是开心。」你吻她的额头——从今往后每一夜都是洞房。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 2,
+      "willpower": 1,
+      "lifespan": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_121",
+    "text": "你被城中花魁连续点了七夜，传遍全城。",
+    "expanded_text": "第七夜她从楼上翻下来找你——只披了件薄纱：「往常恩客到第三夜便腻了。你——不一样。」她推你倒在榻上时手法是惯熟的——可她看你的眼神不是。你握住她的手腕：「今夜不做那些。」她愣了。你把她拉进怀里只是抱着——她的身体僵了一瞬，然后颤抖着软下来。她在你胸口哭了很久。后来她说：「你是第一个不碰我的人。」——可那一夜结束时，是她主动的。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 28,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": 2,
+      "fortune": -2,
+      "willpower": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_122",
+    "text": "你在田间救下一位逃难的格格，她非要你做她夫君。",
+    "expanded_text": "她虽是格格，衣裳却破得露出半截肩。你把她背回家时她昏过去了——你给她换药时不得不解开她的衣裳。你偏过头不看——可手下的皮肤滑得让你心跳加速。她醒来后抓着你的手死活不松：「你看过我了——得负责。」你哭笑不得。可后来她伤好了也没走——每夜在你那张窄床上缩成一团。某天夜里她突然转过来面对你。漆黑中你只看见她的眼睛在亮。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 20,
+      "max_age": 35,
+      "gender": "male"
+    },
+    "weight": 6,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1,
+      "fortune": -1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_123",
+    "text": "村里寡妇联手把你拉到庙会上「挑女婿」。",
+    "expanded_text": "四个寡妇把你围在庙会角落挑来拣去。你挣脱时被最小的那个拽住了——她抬起脸看你的眼神不像在开玩笑。散了集你送她回村——走到半路她把你拉进路边的草垛：「我选你了。」她比你大三岁，什么都懂——你什么都不会。草垛扎人、天上有星星、她的喘息声在你耳边——你的第一次就这样给了一个认识不到两个时辰的女人。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 30,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 2,
+      "willpower": -1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_m_124",
+    "text": "成婚之夜你掀开盖头——新娘竟是早死姐姐的脸。",
+    "expanded_text": "你掀开盖头那一刻手指冰凉——因为那张脸和死去的姐姐一模一样。你整晚没碰她。她跪在榻边哭了一夜。第二天你去打听——她是你姐姐在世时过继的远房表妹。她说：「我不是她——但如果你需要我是，我也可以。」你抱住她失声痛哭。后来你们还是圆了房——在第三夜。她搂着你的脖子说：「叫我自己的名字就好。」",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 30,
+      "gender": "male"
+    },
+    "weight": 6,
+    "effects": {
+      "charisma": 1,
+      "willpower": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_100",
+    "text": "庙会上你与卖糖的小哥对视一眼，他偷塞给你一串糖葫芦。",
+    "expanded_text": "他把糖葫芦塞进你手里时手指蹭了你的掌心——一道电流从手心窜到脚底。散集后你绕回他的摊位——他收了摊在等你。他拉着你的手往巷子深处走时心跳快得能听见。他的嘴唇有糖的甜——吻你时甜得发腻。你的后背贴着冰凉的墙壁，前面是他热烘烘的胸膛。他说「明天还来吗」时声音哑得像变了个人。你点头。后来每个庙会你都去找他——不为买糖。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 1,
+      "fortune": 1,
+      "add_tag": "in_market"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_101",
+    "text": "雨夜你借宿在一书生家，他将榻让给你，自己睡冷地。",
+    "expanded_text": "他把榻让给你时你看见他在冷地上只铺了件单衣。半夜你冷得睡不着——「过来吧。」你说。他犹豫了很久才上来——规矩得身体绷成一条线。你背对着他缩成一团——他的体温隔着一拳的距离传来。后来你冷得发抖——是你先翻了身贴过去。他的身体僵了一瞬，然后慢慢伸出手臂环住了你。他的心跳声就在你耳边——快得像擂鼓。那一夜你们只是抱着——但你的脸烧了一整宿。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 30,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1,
+      "fortune": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_102",
+    "text": "县里大公子看上你，强行下了聘礼要纳你为妾。",
+    "expanded_text": "他来下聘时你躲在后院哭——你不想做妾。可你爹已经收了银子。大公子来接你那天你咬碎了银牙——他倒也不强来。只是每夜在你房外坐着——坐了整整一月。第三十一天你打开门——他抬起头看你的眼神竟是真心实意的。「我等你愿意。」他说。你不知道自己为什么就红了眼。那一夜你让他进了门——他笨手笨脚像个初哥。你笑了——笑着笑着又哭了。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_103",
+    "text": "醉酒后醒来，身旁躺着一个你完全不认识的男子。",
+    "expanded_text": "你宿醉醒来浑身酸痛——身上什么都没穿。他躺在你身旁，胸膛上有你咬出的牙印。你完全想不起来昨晚发生了什么。你慌忙拽过被子裹住自己——他也醒了。你们对视了三秒——他的脸比你还红。「你……昨晚……」「你先动的。」他说着把脸埋进枕头里。你低头看自己的身体——腿根处有淤青。你把脸埋进手掌——完了。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 28,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": -1,
+      "willpower": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_104",
+    "text": "井边洗衣，邻村小伙借口打水搭话，眼神却老往你身上瞄。",
+    "expanded_text": "他每天来井边——明明他们村有井。你心里清楚他来干嘛——可你还是每天都打扮得漂漂亮亮来打水。他的眼神老往你胸口的系带上飘——你气恼又得意。有一天你故意把水桶弄翻了——他弯腰帮你捞时你看见他耳根红透了。你凑近他耳朵：「看够了没？」他像被烫了一样弹起来——那张窘迫的脸让你笑了一整天。后来他跑了五里路来你家提亲。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 1,
+      "fortune": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_105",
+    "text": "你随商队北上做账房，护卫小哥与你日久生情。",
+    "expanded_text": "他肩上的刀伤被你缝了五针——每一针他都一声不吭。你给他包扎时距离很近——近到能闻到他身上的汗味和铁锈味。他握住你的手按在他心口：「别怕。」你的手掌下是有力的心跳。商队散后他在你家门口站了一夜——你开门时他递过一枚木簪。那一晚你把木簪插在发间，把他拉进了屋。他的手粗糙——可抚在你脸上时轻得像怕碰碎你。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 28,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1,
+      "fortune": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_106",
+    "text": "你被青楼老鸨骗签了卖身契，被一位富家公子赎了出来。",
+    "expanded_text": "赎你的那个公子长了一张书生脸——白净、瘦弱。你以为他也是来买笑的。可他把你带回府后只让你住在后院——半月没来看过你。你好奇去找他——他在书房写字。看见你时耳尖红了：「我……不是那个意思。你自由了。想走随时可以走。」你没走。你站在他书桌前解了自己的系带。他的笔掉在地上——「你……你不必……」「我愿意。」你说。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 6,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1,
+      "fortune": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_107",
+    "text": "你与表哥在瓜田相会被族人撞破，被罚跪祠堂三日。",
+    "expanded_text": "你和表哥在瓜田里只是接了个吻——可被族人一照灯笼，你们仿佛做了天大的坏事。跪祠堂三天你没哭——倒是他跪在你旁边哭得稀里哗啦：「都怪我。」你偷偷握住他的手。三天后出祠堂第一件事——他跪在你爹面前说「我娶她」。当晚他翻了你家院墙来找你——你来不及骂他他就吻了上来。你们在杂物间里——站着就把落下的功课补完了。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 22,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": -2,
+      "willpower": 2
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_108",
+    "text": "你为暗恋的男子出头反被他骂为多管闲事。",
+    "expanded_text": "他骂你多管闲事时你红着眼走了——走出十步他追上来。「那个……我不是……」你没理他。他追了你整条街。最后在你家门口他拽住你的袖子——你回头甩了他一耳光。他挨了也不躲。你气得哭了——他手足无措地站在原地。「你就是个木头！」你把门摔上了。半夜你开门倒脏水——他还蹲在门口。「我不是木头。」他说。然后吻了你。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_109",
+    "text": "邻家鳏夫为你忍了十年没说出口的话。",
+    "expanded_text": "他在隔壁住了十年——每天从你家门前过，见你必低头让路。十年后的一个雪夜他敲了你的门——手里捧着一碗热汤：「怕你冷。」你让他进屋坐——他坐了半个时辰一直在搓手。「有话就说。」你说。他的嘴唇动了半天：「我……能不能……以后每天都给你送汤？」你笑了。你走过去握住他的手——冰凉的。你把他的手按在你脸上。他愣了。然后他红了。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 25,
+      "max_age": 40,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1,
+      "lifespan": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_110",
+    "text": "七夕你收到一封情书，落款是城中第一公子。",
+    "expanded_text": "城中第一公子——你见过他。飞扬跋扈、目中无人。可信上的字温柔得不像一个人写的。七夕他来赴约时穿了件素色的袍子——不像平时那样张扬。他见你便愣了：「比我想的更好看。」你笑了——他也笑了。他牵你的手逛灯会时掌心出了汗。全城都看着你们——可他不在乎。他送你回家时在你门口站了很久。「那我……走了？」你拉住他的袖子：「别走。」",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_111",
+    "text": "你救下一位游方道士，他教你一夜采补养身之术。",
+    "expanded_text": "他说这是感恩——用一门「养身之术」报你救命之恩。你心想是什么正经术法。他让你躺平、闭眼、放松——然后他的手掌贴上了你的后腰。一股热流从他掌心渗入你的脊椎——你的身体像触电般弓了起来。那种酥麻从腰间蔓延到全身——你咬住嘴唇不让自己出声。「放松——」他在你耳边低声说。他的手沿着你的脊椎缓缓向上——你彻底交出了理智。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 20,
+      "max_age": 35,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "lifespan": 3,
+      "constitution": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_112",
+    "text": "你在屠夫家做帮工，被屠夫儿子强行招了女婿。",
+    "expanded_text": "屠夫儿子人高马大，你站在他面前像只小鸡。拜堂那天你想逃——可他拽住你的手轻得出乎意料：「别跑。我不会欺负你。」洞房夜他坐在床沿不敢靠近你——这么大个子缩着肩像个犯了错的孩子。你心软了。你走过去坐到他旁边——他的身体绷得像条紧弦。你把头靠在他肩上。他过了好一会儿才敢伸手——那只拿惯了杀猪刀的手，轻得像抚摸一片羽毛。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 28,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "constitution": 1,
+      "charisma": 1,
+      "fortune": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_113",
+    "text": "爹娘将你许给富商做填房，新婚夜你翻墙逃了。",
+    "expanded_text": "新婚夜你翻了后墙——撕破了新嫁衣也不回头。你跑了三里路到青梅竹马家敲门。他开门看见你愣了——你扑进他怀里。「带我走。」他什么也没问——背起你就跑。你们跑到了隔壁县城——在一间破旅店落了脚。你哭了半夜，他抱着你没说话。后来你主动吻了他——你穿着那身破烂的嫁衣、嫁给了你真正想嫁的人。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 22,
+      "gender": "female"
+    },
+    "weight": 6,
+    "effects": {
+      "willpower": 3,
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_114",
+    "text": "卖艺班的俊俏小生在你窗外唱了一夜情歌。",
+    "expanded_text": "他唱了一夜——你躲在被窝里听了一夜。他的声音真好听——低沉又带着点哑。第二天夜里他又来了。第三天。第四天。第七天你开了窗——他蹲在窗下仰头看你。月光照在他脸上——确实好看。「你——到底要唱到什么时候？」「唱到你愿意开窗。」他笑了。你把窗开得更大了些——大到他可以翻进来。他翻进来时你的心跳快得像要炸开。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1,
+      "lifespan": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_115",
+    "text": "元宵灯会，一位戴帷帽的公子拉你共赏一夜花灯。",
+    "expanded_text": "帷帽下那张脸让你心跳漏了一拍。他拉你逛了一整夜灯会——在人群中他的手一直紧紧握着你。后来灯灭了、人散了。他拉你进了客栈。你跟着他——像被施了蛊。房门一关他便摘了帷帽看你：「今夜不问姓名——只问你愿不愿意。」你看着那双眼——点了头。他吻你时极轻——后来极重。天亮他走时你只看到一个背影。他说的对——今夜只有一次。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1,
+      "fortune": 1,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_116",
+    "text": "你被县老爷强抢做妾，连夜被丫鬟放出后门。",
+    "expanded_text": "县老爷的手刚碰到你的肩——丫鬟便从后门塞了把钥匙。你踩着夜色从后门逃出去时赤着脚、衣裙散乱。跑了十里路你躲进一座荒庙——浑身发抖。那一夜你抱着自己缩在角落——庆幸走得及时，什么都没被夺走。天亮后你拍干净身上的灰——决定这辈子不再回那个县城。你拥有的不多——但至少身子是自己的。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 22,
+      "gender": "female"
+    },
+    "weight": 6,
+    "effects": {
+      "willpower": 3,
+      "constitution": 1,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_117",
+    "text": "你与酒肆老板儿子私会，被老板娘赶出家门。",
+    "expanded_text": "你和他约在酒肆后院——你们只有打烊后的那点时间。他吻你时急急切切的像偷来的——本来就是偷来的。他解你的系带时手在抖——你握住他的手贴在自己心口。他的呼吸急促了——下一秒门被踹开。他娘站在门口——酒壶砸过来碎在你脚边。你被赶了出去——他在你身后喊你名字。可你没回头。直到三个月后他找到了你——「我出来了。我要娶你。」",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": -1,
+      "willpower": 2,
+      "fortune": -1
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_118",
+    "text": "村里痴汉每夜来你窗下唱情歌，吵得全村睡不好。",
+    "expanded_text": "这个痴汉又来了——全村恨不得打死他。可你注意到他每次唱的歌都不一样——有的是他自己编的。有一句「你笑起来像五月的麦穗」让你愣了半天。第九天夜里他又蹲在你窗下——淋了一身雨还在唱。你开了门。他看见你时呆了一瞬——然后笑得像个傻子。「进来吧。」你说。「别唱了。」他浑身湿透地站在你屋里——乖得一声不吭。你递给他干衣服时碰到了他的手——烫的。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 28,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 1,
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_f_119",
+    "text": "端午龙舟赛后，对村的小伙将你拉进芦苇荡。",
+    "expanded_text": "他拉你进芦苇荡时你的心跳得像要飞出来。龙舟赛后所有人都喝了酒——你也晕乎乎的。他把你拉到没人的地方——芦苇比人高。「我从去年就想跟你说——」他没说完你就踮脚吻了他。芦苇沙沙响，河风凉飕飕——可他的身体是热的。他的手紧紧搂着你的腰——你靠在他怀里，听着远处的鞭炮声和他咚咚的心跳。那个端午你记了一辈子。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "constitution": 1,
+      "fortune": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_120",
+    "text": "你与青梅竹马成婚，洞房之夜你笑出了眼泪。",
+    "expanded_text": "洞房烛影——他掀盖头时手在抖。你抬头看他——那张从七岁看到现在的脸此刻红得像火烧。他笨手笨脚替你摘钗——被你的头发缠了三次。你笑出了声——笑着笑着泪就掉了。你等了他太久了。他捧着你的脸擦泪时你握住他的手贴在脸上。「终于等到你了。」他的声音也在抖。那一夜你们把积攒了好多年的思念全都还清了。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 22,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "charisma": 2,
+      "willpower": 1,
+      "lifespan": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_121",
+    "text": "绣坊老板娘看你手巧，欲收你做关门弟子。",
+    "expanded_text": "绣坊老板娘看你绣的鸳鸯戏水图愣了半天：「你这小丫头——没经历过事怎么绣得这么……逼真？」你红了脸。她拍拍你的手：「收你做弟子——以后吃穿不愁。」你跟她学了三年——不只学了刺绣，还学了一些别的。她教你认识自己的身体：「女人得先懂自己——才能知道以后要什么样的男人。」你后来感激了她一辈子。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 30,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "comprehension": 2,
+      "charisma": 1,
+      "constitution": -1,
+      "fortune": 1,
+      "add_tag": "in_market"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_122",
+    "text": "你救下一位走失的世家少爷，他回府后非要你做正妻。",
+    "expanded_text": "他回府后三天就派人来下聘——金银满车。你娘吓得差点跪下。你去见他时他还穿着那身你救他时脏兮兮的衣裳：「我不换——这是你第一次见我的样子。」你笑了。他跪在你面前行大礼——你扶他起来：「别跪了。」他站起来时你发现他比你高了整整一头。他看你的眼神——你知道那不是感恩，是喜欢。你红了脸——没躲。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 6,
+    "effects": {
+      "charisma": 2,
+      "willpower": 1,
+      "fortune": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_123",
+    "text": "村里寡妇拉你上庙会「挑男人」，你随手指了一个穷书生。",
+    "expanded_text": "你随手一指——他穿着打了补丁的长衫站在角落，瘦得风吹就倒。你本是开玩笑——可他红着脸走过来认认真真鞠了一躬：「姑娘……在下……愿意。」你被他逗笑了。后来他考了秀才——你已经不记得当初为什么指了他。可你记得他抱你的力气一年比一年大、他在你耳边说的话一年比一年甜。寡妇们都笑你眼光好——你只是运气好。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 28,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": 1,
+      "fortune": 3,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_124",
+    "text": "成婚之夜你掀开盖头——新郎竟是早死哥哥的脸。",
+    "expanded_text": "盖头掀开那一瞬你险些尖叫——那张脸和你死去的哥哥一模一样。你撑着跑完了整场婚礼，夜里缩在床角发抖。他坐在离你最远的角落，轻声说：「我知道你在怕什么。我不是他——也不会逼你。」他在地上睡了十天。第十一天你握住了他伸过来的手。他的手和哥哥不一样——更瘦、更凉。可那份温柔让你慢慢放下了戒备。",
+    "category": "social",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 25,
+      "gender": "female"
+    },
+    "weight": 6,
+    "effects": {
+      "charisma": 1,
+      "willpower": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_200",
+    "text": "你与同门师妹在闭关结束后情难自禁，结为道侣。",
+    "expanded_text": "闭关三月你与她共处一洞——气息纠缠日深。出关那夜她红着脸解了外衫：「师兄——我听说双修可以……」她没说完你便吻住了她。她的身体在灵力流转中愈发敏感——你每渡一口灵气她便轻颤一次。你将她压在闭关的石榻上时她攀住你的肩喘着气说：「轻……轻一些。」你没能轻下来。石榻在你们身下吱呀响了一夜。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 3,
+      "min_age": 16,
+      "max_age": 60,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 30,
+      "charisma": 1,
+      "willpower": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_201",
+    "text": "你在秘境中救下一位狐族少女，她以身相许报恩。",
+    "expanded_text": "狐女化形时满身白毛褪去、露出一段莹白的肌肤——她跪在你面前，尾巴还未完全收回，毛茸茸地扫过你的手背。「恩公——奴以身相报。」她靠过来时身上有股奇异的麝香。你本想拒绝——可她的唇已经贴上了你的喉结。她的吻从脖颈一路往下——尾巴悄悄缠上了你的大腿。你最后的理智在她跨坐上来的那一刻彻底碎了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 18,
+      "max_age": 100,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "cultivation": 80,
+      "comprehension": 1,
+      "lifespan": 10,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_202",
+    "text": "你在丹房值守，被偷溜进来的师姐拉着行了双修之事。",
+    "expanded_text": "师姐关了丹房的门——阵法一起，外面谁也听不见。她解衣时坦然得让你不敢看。「看我。」她抬起你的下巴，「双修需要看着对方。」她骑在你身上引导灵力时整个人发着淡蓝的光——你的灵力如潮水般被她引动。她的腰肢柔韧得不像练剑的人。你忍不住攥紧她的胯——她笑着按住你的手：「急什么。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2,
+      "min_age": 18,
+      "max_age": 50,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "cultivation": 50,
+      "charisma": 1,
+      "willpower": -1
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_203",
+    "text": "你与魔门妖女在断崖下纠缠一夜，从此心魔种下。",
+    "expanded_text": "魔门妖女在断崖月光下解了你的衣——一寸寸地、慢得像在折磨。她的指尖有魔气缭绕——滑过你胸口时留下一道烧灼的热感。你知道这是毒——可你推不开。她在你身上时眼中有噬人的红光——每一下都像在把什么东西种进你体内。天亮后她衣衫完整地走了。你躺在断崖上动弹不得——身上满是她的齿痕。从此夜夜梦见她——心魔就此种下。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 4,
+      "min_age": 20,
+      "max_age": 80,
+      "gender": "male"
+    },
+    "weight": 6,
+    "effects": {
+      "cultivation": -50,
+      "comprehension": 2,
+      "willpower": -2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_204",
+    "text": "你与道侣双修圆满，竟一举突破练气期！",
+    "expanded_text": "你与道侣第一次正式双修——她紧张得浑身僵硬。你以灵力渡入她体内时她的身体猛地弓起——「好烫……」你放缓了节奏。灵力在两人之间如潮汐般往复——每一个来回都让你们的默契更深一层。当灵力汇聚在丹田之时你们同时感到了突破的契机。她在你怀中完成了突破——浑身汗湿、嘴角却带着笑。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 1,
+      "min_age": 18,
+      "max_age": 80,
+      "gender": "male",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 4,
+    "effects": {
+      "realm_up": true,
+      "cultivation": 50,
+      "charisma": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation",
+      "breakthrough"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_m_205",
+    "text": "你于药圃误闯入师姐沐浴之处，被她拉下水。",
+    "expanded_text": "师姐转头看见你时并未遮挡——灵泉中她的身体在水下隐约可见。她勾了勾手指你就像被提线木偶般走了过去。泉水没过胸口的一刻她便贴了上来——温热的水和她更温热的身体。她按着你的肩把你往水下压：「既然来了——给师姐搓个背。」你的手贴上她的后背时她舒服地叹了一声——后来你们搓的就不只是背了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 3,
+      "min_age": 18,
+      "max_age": 50,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "cultivation": 25,
+      "charisma": 2,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_206",
+    "text": "你于域外秘境中遇见一位被困千年的圣女。",
+    "expanded_text": "她被困千年——灵力枯竭、衣衫破碎。你打破封印时她已虚弱到站不起来。你以灵力渡她时需要尽可能多的接触面积——她默认地闭了眼。你的灵力从掌心灌入她苍白的皮肤——她的体温在你掌下一度度回升。她醒来时发现自己赤身在你怀中——你紧张地别过脸。她看了你一会儿，忽然笑了：「你脸红什么——你都看过了。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 30,
+      "max_age": 200,
+      "gender": "male"
+    },
+    "weight": 4,
+    "effects": {
+      "cultivation": 200,
+      "comprehension": 3,
+      "lifespan": 30,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_207",
+    "text": "你被宗门赐婚于敌对宗的师姐，洞房夜她剑指你喉。",
+    "expanded_text": "洞房夜她的剑抵着你的喉——冰凉。「我们是政治联姻——别碰我。」你举起双手表示臣服。可三个月后你发现她剑还是每晚抵着你——只不过剑尖越来越偏。第九十天她把剑扔了——自己翻上来吻了你。她咬你的唇咬出了血：「说了不准碰我——是我碰你。」她骑在你身上时凌厉得像在使剑——你只需要接招。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 20,
+      "max_age": 100,
+      "gender": "male"
+    },
+    "weight": 6,
+    "effects": {
+      "cultivation": 40,
+      "willpower": 2,
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_208",
+    "text": "你与同门女修共闯试炼，被困石室七日终成道侣。",
+    "expanded_text": "石室密闭、灵气匮乏——你们只能以双修维系修为。第一天她别过脸：「只是为了活命。」第三天她不再别脸。第五天她开始主动靠近你。第七天出去时你们已经默契到不需要言语——一个眼神便能让对方的灵力共鸣。她没有当众承认什么——但那天晚上她又来敲你的洞府：「里面……还有余毒。需要继续……双修。」她的脸红得像着了火。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 3,
+      "min_age": 18,
+      "max_age": 50,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 20,
+      "charisma": 1,
+      "willpower": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_209",
+    "text": "你被千年蛇妖看中，要你做她的人间夫君。",
+    "expanded_text": "蛇妖的人形极美——腰肢柔软得不像人类能做到的弧度。她缠上你时像一条活的绸缎——浑身冰凉却带着奇异的舒适感。她的瞳孔是竖的——盯着你时有种被捕食的错觉。她在你颈间吐着蛇信：「做我的夫君——我让你长生。」她的身体冰凉、可内里却烫得惊人。你被她缠了整整一夜——天亮时全身被她的蛇尾勒出了红痕。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 5,
+      "min_age": 25,
+      "max_age": 150,
+      "gender": "male"
+    },
+    "weight": 5,
+    "effects": {
+      "cultivation": 100,
+      "lifespan": 20,
+      "willpower": -1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_210",
+    "text": "你与师妹在传功阁顶违禁双修，被掌门发现。",
+    "expanded_text": "传功阁顶——你和师妹本来只是偷偷练一套禁术。可那套功法需要肌肤相贴——练着练着便不对了。她的呼吸越来越急促、你也是。灵力不知何时从修炼变成了情欲的催化。你把她压在阵眼上时她咬着唇不敢出声——传功阁下面就是弟子的寝房。可你们最终还是被震动的灵力波动暴露了——掌门站在阁顶时你们衣衫尽乱。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2,
+      "min_age": 18,
+      "max_age": 40,
+      "gender": "male"
+    },
+    "weight": 6,
+    "effects": {
+      "cultivation": -20,
+      "comprehension": 2,
+      "willpower": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_211",
+    "text": "你于药王谷遇上一位炼药女仙，她以药浴助你淬体。",
+    "expanded_text": "药浴的温度极高——她说这是淬体必经之苦。你泡在其中只觉全身毛孔都在尖叫。她走过来坐在浴池边为你引导灵力——她的手从你肩头一路沿脊椎滑下，按住穴位时指力精准。你的身体在药浴和她的手下变得异常敏感——每一次穴位的刺激都让你控制不住地颤。她低头在你耳边：「还撑得住吗？」你撑不住了——但你没说。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 20,
+      "max_age": 100,
+      "gender": "male"
+    },
+    "weight": 6,
+    "effects": {
+      "cultivation": 60,
+      "constitution": 3,
+      "lifespan": 10
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_212",
+    "text": "你被魔教圣女虏去地宫，被迫与她双修十日。",
+    "expanded_text": "魔教地宫阴冷——她坐在高台上看你如同看猎物。「乖乖配合——我不为难你。」她的魔功需要你的阳元。十日——她来了十次。每一次她骑在你身上催动魔功时你都感到自己被抽走一层修为——可那种被抽取的快感让你根本无力反抗。第十日你奄奄一息地被丢出地宫——修为折了三成，可你居然有一瞬的不舍。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 4,
+      "min_age": 20,
+      "max_age": 80,
+      "gender": "male"
+    },
+    "weight": 4,
+    "effects": {
+      "cultivation": 120,
+      "willpower": -2,
+      "constitution": -1,
+      "lifespan": -5,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_213",
+    "text": "你与道侣一同闭关，她为助你护法竟反哺自身道基。",
+    "expanded_text": "她为你护法时将自己的道基反哺了三成——你醒来时发现她面色苍白蜷在你身旁。你抱起她时她轻得像一片落叶。你以灵力温养了她三个月——每夜以双修之法渡灵力给她。她起初虚弱到只能躺着承受——到后来她有了力气回应你。第九十天她终于能站起来时你红了眼——她踮脚吻了你的眼角：「别哭。我好了。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 25,
+      "max_age": 100,
+      "gender": "male",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 6,
+    "effects": {
+      "cultivation": 80,
+      "comprehension": 1,
+      "willpower": 2,
+      "lifespan": 5
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_214",
+    "text": "你与道侣完成阴阳双修圆满之法，一举突破金丹境！",
+    "expanded_text": "阴阳双修圆满之法——你们准备了十年。那一夜你与她以最契合的方式交融——灵力在两人体内形成完美的周天。你感到金丹在丹田中旋转加速——越来越快。她攀紧你的肩——「要来了——」金丹碎裂的一瞬你们同时喊出声。金色的光从你们的结合处爆发——照亮了整个洞府。你们抱着彼此在金光中大笑——突破了！",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 3,
+      "min_age": 30,
+      "max_age": 200,
+      "gender": "male",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 3,
+    "effects": {
+      "realm_up": true,
+      "cultivation": 100,
+      "comprehension": 2,
+      "lifespan": 50
+    },
+    "tags": [
+      "adult",
+      "cultivation",
+      "breakthrough"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_m_215",
+    "text": "你在散修城遇上一位剑修女子，她豪饮三斤要与你比剑。",
+    "expanded_text": "比剑你险胜——她豪爽地灌了你三碗：「输了便随你。」你没打算当真。可当夜她踹开你客栈的门时只穿了件薄衫——「我说话算话。」她力气极大——你被她推倒在榻上。她坐上来时眼中带着挑衅：「怎么？赢了剑却怕了人？」你不怕。你翻身将她压住——她笑了：「这才有意思。」那一夜你们像在打另一场——不用剑。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 4,
+      "min_age": 25,
+      "max_age": 150,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "cultivation": 40,
+      "constitution": 1,
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_216",
+    "text": "你执掌门令前往凡间寻仙缘，途中遇上一位凡间美貌女子。",
+    "expanded_text": "她是凡间女子——不知修仙为何物。可她的美让你停了三日脚步。你以仙法变出满屋花时她惊喜地笑了。三日后你该走了——她拉着你的衣角没说话。你低头吻了她。她是凡人——脆弱得像一瓣花。你搂着她时不敢用一丝灵力——怕伤了她。她在你怀里仰起脸：「我知道你明天要走——可今夜是我的。」你把她抱进了屋。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 4,
+      "min_age": 25,
+      "max_age": 100,
+      "gender": "male"
+    },
+    "weight": 8,
+    "effects": {
+      "charisma": 1,
+      "fortune": 1,
+      "willpower": -1,
+      "lifespan": -2
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_217",
+    "text": "你在血池秘境救下一位被魔修囚禁的仙子。",
+    "expanded_text": "她被魔修关在血池旁——衣裳尽碎、灵力全无。你斩了封印将她抱出来时她已昏迷。你以灵力渡她时她浑身是伤——你的灵力循着她的经脉走了一遍，她在昏迷中因疼痛攥紧了你的手。三日后她醒来——看见你的第一眼便落了泪。她颤抖着抱住你埋在你胸口：「你是谁——可你救了我。」你搂住她没说话——你连她的名字都还不知道。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 5,
+      "min_age": 30,
+      "max_age": 200,
+      "gender": "male"
+    },
+    "weight": 4,
+    "effects": {
+      "cultivation": 150,
+      "comprehension": 2,
+      "lifespan": 30,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_218",
+    "text": "你与小师妹在山洞避雨，一夜之间她成了你的女人。",
+    "expanded_text": "山洞里滴水的声音在回响——外面大雨如注。你生了堆火——她缩在火边瑟瑟发抖。你把外袍披给她时她拽住了你的手。火光映着她的脸——年轻、害怕、又带着一点别的什么。你坐到她身旁——她的头靠在你肩上。后来火灭了。黑暗中她转过来找到你的唇。洞外的雨下了一整夜——洞内你们也忙了一整夜。天明她趴在你胸口画圈：「师兄——往后每次下雨都来找我。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 3,
+      "min_age": 18,
+      "max_age": 50,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 20,
+      "charisma": 1,
+      "willpower": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_219",
+    "text": "你被妖魔以幻术诱惑，险些被她抽干阳元。",
+    "expanded_text": "幻术中的她是你年少时最想要的样子——温柔、顺从、美得不真实。你沉溺了三天才察觉不对——真气被抽走了一层又一层。你咬破舌尖破了幻——眼前的「美人」化作一只半人半妖的怪物。她的舌头黏腻地划过你的脸颊：「再多给我一点嘛——」你一剑斩了她的头。可接下来整整一个月你夜夜梦见幻术中的画面——身体每次都有反应。你恨自己。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 25,
+      "max_age": 150,
+      "gender": "male"
+    },
+    "weight": 4,
+    "effects": {
+      "cultivation": -80,
+      "willpower": 2,
+      "comprehension": 1,
+      "constitution": -2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_220",
+    "text": "你于灵山顶遇到一位等了你五百年的女剑仙。",
+    "expanded_text": "她站在崖顶——白衣如雪。「五百年前你答应过我。」你前世的誓言——今世不记得。可她取出那枚旧物时你的心猛地跳了一下。她抚你的脸——指尖冰凉如玉：「这一世你不必记得。我记得就好。」她带你上了崖顶——星空下她解了白衣。她说五百年来她一直在等——你该还她的。你不记得——但你的身体似乎记得。天明时她化光飞升——只留你一身修为和满身她的气息。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 35,
+      "max_age": 300,
+      "gender": "male"
+    },
+    "weight": 3,
+    "effects": {
+      "cultivation": 300,
+      "comprehension": 3,
+      "lifespan": 50,
+      "willpower": 2,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_221",
+    "text": "你与道侣天劫前最后一次双修，互助度劫。",
+    "expanded_text": "天劫明日便来——成败在此一举。今夜她什么也不说——只是解了衣带看着你。「若明日……」她没说完。你按住她的唇：「不说那些。」你们以最后一次双修温养彼此的灵力——可与其说是修炼不如说是告别。你抱紧她的力度几乎要把她嵌进自己体内。她在你肩上留了一排齿印——「记着我。不管明天怎样——记着我。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 50,
+      "max_age": 500,
+      "gender": "male",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 3,
+    "effects": {
+      "cultivation": -200,
+      "willpower": 3,
+      "comprehension": 2,
+      "lifespan": 100
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_m_222",
+    "text": "你于妖兽巢穴中收伏一头雌兽，她化人形以身相伴。",
+    "expanded_text": "雌兽化形后是一位野性十足的女子——肌肤呈小麦色，犬齿尖尖地露出一点。她表达爱意的方式是蹭你——用脸蹭、用身体蹭。你推不开她。到后来她学会了人类的亲密方式——可骨子里还是兽。她会在兴奋时咬你、会在高潮时发出低沉的喉音——不像呻吟更像在呼噜。你习惯了。甚至开始觉得她比人类女子更加坦然率真。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 5,
+      "min_age": 30,
+      "max_age": 200,
+      "gender": "male"
+    },
+    "weight": 5,
+    "effects": {
+      "cultivation": 80,
+      "constitution": 2,
+      "lifespan": 20,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_223",
+    "text": "你被同门女修暗中下了情蛊，须双修方可解。",
+    "expanded_text": "情蛊发作时你浑身燥热——像有一万只蚂蚁在皮肤下爬。她跪在你面前红着脸：「是我下的——对不起。只有双修才能解。」你已痛到无法思考。她解了你的衣带时手在抖——她比你还紧张。可当她贴上来时灼热感退了一半——另一半化作了别的什么。你按住她的腰不让她退——蛊毒让你的每一根神经都在尖叫。她哭着说对不起——同时也没停下来。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 4,
+      "min_age": 25,
+      "max_age": 100,
+      "gender": "male"
+    },
+    "weight": 5,
+    "effects": {
+      "cultivation": 30,
+      "willpower": -1,
+      "charisma": -2,
+      "lifespan": -3
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_m_224",
+    "text": "你在历劫途中遇到一位失忆的仙子，与她相伴三百年。",
+    "expanded_text": "她失忆了——不记得自己是谁、来自哪里。你收留她——三百年。她温柔、顺从，却偶尔在梦中喊出你听不懂的话。你们从相伴到相恋用了一百年。她第一次主动吻你时你等了一个世纪那么久。三百年够你们做很多事——足够深入了解彼此的每一寸。可第三百零一年她记忆恢复——看你的眼神变了：「我……该走了。」她走时你才知道她是谁——可已来不及。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 50,
+      "max_age": 500,
+      "gender": "male"
+    },
+    "weight": 3,
+    "effects": {
+      "cultivation": 250,
+      "comprehension": 2,
+      "lifespan": 100,
+      "charisma": 2,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_200",
+    "text": "你在师门后山溪边沐浴，竟被师兄无意中撞见。",
+    "expanded_text": "你在溪边沐浴时感到一道目光——转头看见师兄立在岸石上。你没尖叫——倒是他先红了脸。「对……对不起——」他转身要走，你叫住了他：「都看了——还跑什么。」他愣在原地。你从水中站起来时溪水顺着你的肌肤流下。他的目光像火——烧在你身上每一寸被水珠覆盖的地方。你朝他伸出手。他像梦游一样走了过来——靴子踏进了水里都没注意到。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 3,
+      "min_age": 16,
+      "max_age": 60,
+      "gender": "female"
+    },
+    "weight": 8,
+    "effects": {
+      "cultivation": 30,
+      "charisma": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_201",
+    "text": "你与道侣双修圆满，竟一举突破练气期！",
+    "expanded_text": "双修的感觉像是灵魂被他触碰——比肉体更深一层的快感。他的灵力温热地灌入你的经脉——你的每一条脉络都在为之颤栗。当灵力汇聚于丹田时你感到突破的契机——连同他在你体内的存在一起冲破了那层屏障。你在突破的狂喜中尖叫出声——他揽紧你的腰没让你从他身上滑落。破境的金光在你们交合处绽开——照亮了整间丹房。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 1,
+      "min_age": 18,
+      "max_age": 80,
+      "gender": "female",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 4,
+    "effects": {
+      "realm_up": true,
+      "cultivation": 50,
+      "comprehension": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation",
+      "breakthrough"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_f_202",
+    "text": "你在荒山遇到一位俊美男仙，与他云雨三日。",
+    "expanded_text": "他在荒山出现时如天人一般——白衣胜雪、剑眉星目。他说你身有奇缘——要助你修行。可所谓「助你修行」竟是这般——三日三夜他以仙力灌注你全身。你在他身下时只觉天旋地转——仙人的体力果然不是凡俗能比。每一次你以为已经到了极限时他都会再推你一步。三日后你境界连升两级——浑身酸软到下不了床。他温柔地吻你额头：「下次再来渡你。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 5,
+      "min_age": 18,
+      "max_age": 200,
+      "gender": "female"
+    },
+    "weight": 6,
+    "effects": {
+      "cultivation": 50,
+      "lifespan": 10,
+      "charisma": 2,
+      "comprehension": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_203",
+    "text": "你被一位魔尊掳走，被迫为他暖炉鼎三年。",
+    "expanded_text": "魔尊的手冰凉如铁——扣着你的腰不让你动。你是他的炉鼎——三年。起初你恨他入骨——每一次都咬着牙不让自己出声。可他的魔功在你体内流转时那种灼热让你渐渐无法自持。第一年你哭。第二年你不哭了。第三年你开始回应他——你恨自己的身体比恨他还多。他放你走的那天你头也不回——可午夜梦回时你的身体依然记得他的温度。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 4,
+      "min_age": 20,
+      "max_age": 100,
+      "gender": "female"
+    },
+    "weight": 4,
+    "effects": {
+      "cultivation": 80,
+      "willpower": -2,
+      "charisma": -1,
+      "comprehension": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_204",
+    "text": "你在深山救下一只受伤的灵狐，他化形为美男子报恩。",
+    "expanded_text": "灵狐化形的那一刻你看见了全过程——白毛褪去、骨骼重塑，一个赤身的美男子跪在你面前。他的眸子是琥珀色的，竖瞳微缩。「恩人——请受报。」他的吻柔软得不像男人——后来你知道那是狐族的天赋。他的身体热得惊人——像一团裹了人皮的火。他在你体内时你感到他的灵力温柔地包裹着你的经脉——狐族的双修术让你舒服到落泪。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 4,
+      "min_age": 20,
+      "max_age": 150,
+      "gender": "female"
+    },
+    "weight": 5,
+    "effects": {
+      "lifespan": 30,
+      "comprehension": 2,
+      "charisma": 2,
+      "cultivation": 60
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_205",
+    "text": "你闭关时心魔来袭，化作旧日情郎诱惑你。",
+    "expanded_text": "心魔化作他的模样来诱惑你——连那颗下巴上的痣都一模一样。你知道是假的——可你的身体不知道。他吻你时你的理智在喊「是假的」，可他的手法与记忆中分毫不差。你在幻境中被他翻覆了不知多少次——每一次你的修为都在流失。最终你咬破自己的舌尖——痛楚让你清醒。心魔散去时你跌坐在地——浑身汗透，双腿还在发软。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 30,
+      "max_age": 200,
+      "gender": "female"
+    },
+    "weight": 6,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 1,
+      "cultivation": -20
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_f_206",
+    "text": "你与同门师弟于丹房双修被掌门撞见。",
+    "expanded_text": "他在丹房门口发现了你们——你还骑在师弟身上来不及下来。掌门的脸色铁青——你慌忙拽过衣裳遮住自己。师弟吓得面色煞白。你红着脸跪下去：「弟子……弟子是双修……」「双修？」掌门冷笑——「双修要报宗门审批。」你和师弟被罚了三个月禁闭——分开关。三个月里你想他想到快疯了。出关那天你直接冲进他洞府——门都没关就扑上去了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 3,
+      "min_age": 20,
+      "max_age": 80,
+      "gender": "female"
+    },
+    "weight": 6,
+    "effects": {
+      "charisma": -1,
+      "cultivation": 30,
+      "willpower": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_207",
+    "text": "你在秘境遇到一位剑修少年，剑下论道又花下交欢。",
+    "expanded_text": "他的剑术与你在伯仲之间——百招不分胜负。最后你们打到了花树下——剑脱了手、气喘吁吁地对视。他眸中有你没见过的光。你们同时动了——不是出剑，是接吻。花瓣在你们纠缠时簌簌落下。他把你压在花树下时身上还带着剑修的锐利——可手放在你腰间时温柔得像另一个人。你们在满地落花中忘了比剑这件事——也忘了时间。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 4,
+      "min_age": 18,
+      "max_age": 120,
+      "gender": "female"
+    },
+    "weight": 6,
+    "effects": {
+      "cultivation": 60,
+      "comprehension": 1,
+      "charisma": 1,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_208",
+    "text": "你受宗门所派降伏一只蛟龙，反与它结下双修之契。",
+    "expanded_text": "蛟龙化人形后是个高大沉默的男子——黑发及腰、眸色如渊。降伏变成了双修——你骑在他身上时他的蛟鳞在皮肤下若隐若现。他的体温比人高——像烧了把火在你体内。他的力气大到你根本无法挣脱——被他翻过来时你只能抓紧身下的兽皮。他在你耳边低沉地喘——声音像远方的雷。双修契约在你们的交合中彻底成形。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 30,
+      "max_age": 300,
+      "gender": "female"
+    },
+    "weight": 4,
+    "effects": {
+      "cultivation": 100,
+      "lifespan": 20,
+      "comprehension": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_209",
+    "text": "你于药园中误食春情草，由师弟以身解毒。",
+    "expanded_text": "春情草的药效从小腹烧到全身——你浑身发软跌坐在药圃里。师弟闻声赶来时你已经意识模糊。他抱起你——你攀住他的脖子在他颈间乱蹭。「师……师姐——你……」他的声音在抖。「求你……」你已经说不出完整的话。他咬牙做了决定。他笨拙紧张——可药效让你根本不在乎好不好——你只要他在。解毒用了一整夜。天亮后你们都没脸看对方。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 3,
+      "min_age": 18,
+      "max_age": 60,
+      "gender": "female"
+    },
+    "weight": 7,
+    "effects": {
+      "cultivation": 40,
+      "charisma": 1,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_210",
+    "text": "你与道侣双修圆满，孕育出婴儿状元神。",
+    "expanded_text": "阴阳双修至极致时你感到丹田中有什么在成形——一个拇指大的光团。他看着你小腹上浮现的金色纹路惊呆了——「元神雏形！」你的元神竟在双修的欢愉中凝成了婴形。那种感觉奇妙至极——身体的极乐与灵魂的蜕变同时发生。你在他怀中颤抖着完成了蜕变——一道金光从你的丹田冲天而起。他抱着你笑了——带着骄傲和满足。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 50,
+      "max_age": 500,
+      "gender": "female",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 3,
+    "effects": {
+      "cultivation": 200,
+      "comprehension": 2,
+      "lifespan": 50
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_f_211",
+    "text": "你于赤霞峰被妖王劫去做压寨夫人，他却出乎意料地温柔。",
+    "expanded_text": "妖王的洞穴出乎意料地温暖——铺着柔软的兽皮。他虽是妖——做的却是人事。他第一夜没碰你——只是坐在远处看着你。第二夜他在你身旁坐下，粗糙的指腹小心地擦你脸上的泪：「别哭。我不会伤你。」他的温柔让你困惑——也让你渐渐卸下了防备。等你意识到自己在回应他的吻时已经太晚了——你在敌人的巢穴中陷落了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 25,
+      "max_age": 200,
+      "gender": "female"
+    },
+    "weight": 4,
+    "effects": {
+      "cultivation": 80,
+      "lifespan": 30,
+      "charisma": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_212",
+    "text": "你贵为圣女却为一名凡夫破戒私奔。",
+    "expanded_text": "你放弃了圣女之位、放弃了百年修为——只为一个凡人。他甚至不知道你曾是什么人。他只知道你会做饭、会笑、夜里会蜷在他怀里。你当了他三年凡妻——褪去仙骨过凡人日子。他爱你如命——凡夫的爱质朴笨拙却真。你偶尔想起仙门时会心痛——但他在你耳边呼吸的热度让你觉得值。你选择了他——也选择了有限的一生。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 5,
+      "min_age": 30,
+      "max_age": 200,
+      "gender": "female"
+    },
+    "weight": 3,
+    "effects": {
+      "cultivation": -150,
+      "charisma": -2,
+      "willpower": 3,
+      "lifespan": -20
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_213",
+    "text": "你与一名魔修双修采阳补阴，反将他元阳吸尽。",
+    "expanded_text": "采阳补阴之术你修习已久——他只是你选中的猎物。你用幻术将他引入你的洞府——他毫无防备地倒在你榻上。你骑上他时开始抽取他的元阳——每抽一分你的修为便涨一分。他在你身下愈来越虚弱——双眼涣散。你本打算将他抽干——可他伸手碰了你的脸：「你……好美。」那一瞬你的心跳了一下。你停了手——把他丢出了洞外。活了。你转身掩面——怎么回事？",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 25,
+      "max_age": 150,
+      "gender": "female"
+    },
+    "weight": 4,
+    "effects": {
+      "cultivation": 120,
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_214",
+    "text": "你与道侣于金丹期双修，竟一举突破至元婴！",
+    "expanded_text": "元婴突破需要阴阳合一——你与道侣准备了十年。那一夜他以最温柔的方式进入你——灵力在你们体内形成完美的循环。金丹在你丹田中震颤——越来越快。他攥紧你的手——「来了——」破碎的一瞬你喊出了声。光芒从你腹部绽开——婴儿般的元神从金丹中挣脱而出。你在极乐中哭了——他吻干你的泪：「成了。」",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 3,
+      "min_age": 40,
+      "max_age": 200,
+      "gender": "female",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 3,
+    "effects": {
+      "realm_up": true,
+      "cultivation": 50,
+      "comprehension": 1,
+      "lifespan": 20
+    },
+    "tags": [
+      "adult",
+      "cultivation",
+      "breakthrough"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_f_215",
+    "text": "你于药王谷救下一名重伤男修，他以身相许。",
+    "expanded_text": "你替他疗伤时需要以灵力贯通他的全身经脉——衣服是障碍。他昏迷着任你摆布——你解开他衣裳时手在抖。他的身体有很多伤疤——每一条你都仔细渡过灵力。他醒来时第一眼看见你趴在他胸口睡着了——你的手还按在他心口上。他没有叫醒你——只是轻轻抽出你压住的手，又轻轻握回去。你后来才知道——他从那一刻就决定了余生。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 4,
+      "min_age": 20,
+      "max_age": 120,
+      "gender": "female"
+    },
+    "weight": 6,
+    "effects": {
+      "cultivation": 50,
+      "charisma": 2,
+      "lifespan": 20,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_216",
+    "text": "你于幻境中被九尾狐迷惑数百年。",
+    "expanded_text": "幻境中的数百年——你沉溺在九尾狐编织的梦中。他化为你梦中最渴望的情人——满足你每一个隐秘的幻想。百年的温存让你彻底迷失——你甚至忘了自己是修仙者。直到有一天你在幻境中看见自己的手——苍老了。你猛然惊醒——九尾狐盘踞在你身旁，正餐你的精元。你一剑斩了他——可那百年的记忆清晰如昨。你恨他——也恨自己的软弱。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 30,
+      "max_age": 200,
+      "gender": "female"
+    },
+    "weight": 4,
+    "effects": {
+      "lifespan": -30,
+      "comprehension": 2,
+      "willpower": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_217",
+    "text": "你于月夜湖边遇见一位剑仙公子，他赠你飞剑又解你罗带。",
+    "expanded_text": "月夜湖光如银——他的剑仙气度让你移不开目光。飞剑赠你时他的指尖划过你的掌心。然后他拉你入怀——「剑赠了——还有一样东西想赠你。」他解你腰间罗带时手法利落如收剑——一气呵成、不给你反应的时间。你被他放倒在湖边细软的草上——月光洒在你身上。他俯身看你时剑眉微蹙——像在端详一件珍品。「真美。」然后他低下了头。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 25,
+      "max_age": 200,
+      "gender": "female"
+    },
+    "weight": 5,
+    "effects": {
+      "cultivation": 70,
+      "charisma": 2,
+      "comprehension": 1,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_218",
+    "text": "你被同门师弟暗中下了情蛊，须双修方可解。",
+    "expanded_text": "情蛊发作时你浑身发烫——理智在你脑中一片一片碎裂。师弟跪在你面前哭着认罪——「师姐——是我……只有双修能解……对不起……」你已经无暇怪他。你拽着他的衣领把他拉了过来——蛊毒让你完全失去了矜持。他在你身下颤抖着——又害怕又愧疚又……别的什么。蛊解之后你们对视了很久。你没打他——只说了一句「下不为例」。他的耳朵红了三天。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 4,
+      "min_age": 25,
+      "max_age": 100,
+      "gender": "female"
+    },
+    "weight": 5,
+    "effects": {
+      "cultivation": 30,
+      "willpower": -1,
+      "charisma": -2,
+      "lifespan": -3
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "adt_f_219",
+    "text": "你于历劫途中遇到一位失忆的仙君，与他相伴三百年。",
+    "expanded_text": "他不记得自己是仙君——只知道你是他在这世间唯一认识的人。三百年你们相伴——从陌生到熟悉到相爱。他的力量偶尔会不受控地泄漏——每到那时你便抱住他渡灵力稳他的心神。你们的肌肤相贴从最初的权宜之计变成了后来的习以为常。三百年的温存——你以为会是一辈子。可当他记忆恢复的那一刻——他看你的眼神里多了悲悯。你知道——他要走了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 50,
+      "max_age": 500,
+      "gender": "female"
+    },
+    "weight": 3,
+    "effects": {
+      "cultivation": 250,
+      "comprehension": 2,
+      "lifespan": 100,
+      "charisma": 2,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_220",
+    "text": "你于药鼎旁与道侣行采阴补阳之礼，反成炼丹助力。",
+    "expanded_text": "药鼎旁灵火熊熊——你与道侣的双修竟意外成了炼丹的催化。你在他身上起伏时体内灵力的周天运转恰好与鼎内丹方合拍——丹鼎共振、异香升腾。他攥着你的腰惊喜道：「成了——九转还魂丹！」你还来不及高兴便被快感吞没——灵力和欲望的双重巅峰让你瘫软在他怀里。鼎中丹成——你们的双修竟炼出了一炉绝品灵丹。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 30,
+      "max_age": 200,
+      "gender": "female",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 5,
+    "effects": {
+      "cultivation": 80,
+      "charisma": 1,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_f_221",
+    "text": "你与道侣于度劫之时双修共度天劫。",
+    "expanded_text": "天劫将至——你与道侣最后一次双修是为了互相温养灵力。可你们的动作比任何一次都用力——像在确认对方的存在。他的指尖嵌入你背脊时你能感到他的不安。你吻他的眉心——「一起渡。」天劫落下时你们的灵力交缠如一——九道雷劫劈在你们周身的灵力屏障上。疼——但他的手一直攥着你。最后一道劫雷散去时你们抱在一起——活了。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 100,
+      "max_age": 800,
+      "gender": "female",
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 2,
+    "effects": {
+      "cultivation": 300,
+      "lifespan": 100,
+      "comprehension": 2
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_f_222",
+    "text": "你与师弟于秘境同入欢喜禅定，悟出双修真意。",
+    "expanded_text": "欢喜禅定是一种极高深的双修心法——入定之时灵与肉需同频共振。你与师弟在秘境中尝试了三日才终于找到那个临界点。当你们同时达到时——意识仿佛脱离了肉体，升腾到半空中。你看见了自己和他缠绕在一起的身体——被金色的灵光包裹。那种超越肉体的快感让你的道心在一瞬间通透了——你悟了。回过神时他还在你身下喘息，目中流转着同样的了悟。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 5,
+      "min_age": 40,
+      "max_age": 300,
+      "gender": "female"
+    },
+    "weight": 3,
+    "effects": {
+      "comprehension": 3,
+      "cultivation": 100,
+      "willpower": 2
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_f_223",
+    "text": "你被妖族王子相中，献身换取宗门安宁。",
+    "expanded_text": "你咬着唇走进了妖族王子的寝殿——一步一步像在丈量自己的命。他坐在榻上看你——竖瞳中有光。「你来了。」「宗门安宁——我的条件。」他点头。那一夜他并不粗暴——甚至称得上温柔。可你知道这只是交易。你在他身下闭着眼——脑中想着师门的弟子们。值得。天亮后你穿好衣服走出去时他在你身后说了一句：「你是我见过最刚烈的人类。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 25,
+      "max_age": 200,
+      "gender": "female"
+    },
+    "weight": 4,
+    "effects": {
+      "cultivation": 50,
+      "willpower": 2,
+      "charisma": -1,
+      "lifespan": 10
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_224",
+    "text": "你与上界谪仙结道侣之缘，他赠你逆天造化。",
+    "expanded_text": "他自九重天而来——一身玄色仙袍，周身缭绕着凡间不可能有的灵压。他说你有仙缘——要结道侣之契。你不知道「结契」是这般——他的仙力灌入你的每一条经脉时那种膨胀感几乎要把你撑裂。你在他怀中承受了三天三夜——凡人的身体在仙力中重塑。痛与乐交织——你数次昏厥又数次被他唤醒。第四日你蜕变完成——他将一枚蕴含万年道韵的仙玉嵌入你掌心：「此后——你自己走。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 200,
+      "max_age": 1000,
+      "gender": "female"
+    },
+    "weight": 2,
+    "effects": {
+      "cultivation": 200,
+      "lifespan": 80,
+      "charisma": 2,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_m_225",
+    "text": "你与同门师姐在灵泉中双修，灵力交融。",
+    "expanded_text": "灵泉水温恰到好处。她解了外衫只着里衣便没入水中，浸湿的白纱贴着身体的曲线。她牵过你的手贴在自己心口：「灵力从这里渡。」你感到指尖下是她胸口的柔软与心跳。灵力入体的瞬间她轻颤了一下，唇间溢出一声低吟。你们的呼吸渐渐同频，灵力像两尾纠缠的鱼在你们体内互相追逐。她攀住你的肩将脸埋在你颈窝——泉水晃荡间你感到她的腿缠上了你的腰。",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2,
+      "min_age": 18,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 15,
+      "comprehension": 1
+    },
+    "weight": 8,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_226",
+    "text": "一名女修以采补之术接近你，你险些失了道心。",
+    "expanded_text": "她的薄纱下什么也没穿——月光勾勒出每一寸起伏。她跨坐在你身上时你已来不及推开。她的指尖划过你胸口种下一道阵纹，灵力便随着那道纹路被抽走。你感到身体在她手下酥软无力——可那种被抽取灵力的感觉竟带着一种危险的愉悦。你咬破舌尖才挣脱——她嗤笑着从你身上滑下来时眼底全是不甘：「真无趣。」你冷汗涔涔，身体却诚实地起了反应。",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2,
+      "min_age": 18,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": -5,
+      "willpower": 2
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_227",
+    "text": "你与一位散修女子结为道侣，夜间互相引导灵气。",
+    "expanded_text": "每晚她赤着脚走进你的洞府，只穿一件亵衣便钻入你的被褥。她说凡人夫妻如此，修士道侣亦该如此。她把冰凉的脚伸进你怀里取暖时你绷紧了全身。她背对着你将你的手引到她腰间——灵力从掌心渡入，她舒服得微微弓起了背。后来灵力渡着渡着她便翻了身，吻上了你。你们在灵力交融中做了很多修炼之外的事。",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 3,
+      "min_age": 20,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 20,
+      "willpower": 1
+    },
+    "weight": 8,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_228",
+    "text": "你在修炼功法时意外引动情欲之火，险些走火入魔。",
+    "expanded_text": "那股燥热从丹田升起直冲天灵——你知道这是功法出了岔子。可你的身体像被点着了一般，下腹紧绷得发疼。你扯开衣领试图用寒冰诀降温——无用。心魔化作你日思夜想的那张脸出现在识海中，朝你伸出手。你挣扎了整整一夜，指甲嵌入掌心才没有沉沦。天明时你全身湿透，亵裤被体液浸得一塌糊涂。可——你撑过来了。",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2,
+      "min_age": 16,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": -10,
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_229",
+    "text": "你与邻洞的女修互生情愫，在月圆之夜共修阴阳之法。",
+    "expanded_text": "她红着脸把功法递给你时手在抖。月圆之夜你们面对面坐下，她解开了上衣露出肩头——功法需要肌肤相贴引导灵力。你的手贴上她后背时她倒吸一口气。灵力流转之间你感到她的体温在升高——你的也是。她转过头看你，眼中有一层水光。后来你已记不清是谁先动的——只记得月光下她的身体如玉般莹润，你们的灵力在最深处交汇时她咬着你的肩闷哼出声。",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2,
+      "min_age": 18,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 15,
+      "fortune": 1
+    },
+    "weight": 8,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_225",
+    "text": "你与同门师兄在丹房中共修，灵力相融之间情愫暗生。",
+    "expanded_text": "丹房中他站在你身后，掌心贴着你的背心。灵力渡入的瞬间你浑身一颤——像一道电流从脊椎窜上头顶。他的呼吸就在你耳后，温热而均匀。「放松。」他低声说。可你的身体在他的灵力抚慰下不受控制地绵软下来，乳尖在衣襟下微微硬挺。他似乎也察觉了——渡灵力的手指微微收紧了。你咬住唇不让自己出声。那一夜你们没有越界——但次日你洗亵衣时，发现它已经湿透了。",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2,
+      "min_age": 18,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "weight": 8,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_226",
+    "text": "一名男修对你施展魅惑之术，你识破后反将他制服。",
+    "expanded_text": "他的魅惑术失效的一瞬你反手扣住了他的脉门。他趴在地上时你才看清——不过是个面皮好看的三流货色。你跨坐在他背上将他的手反剪，灵力碾压着他的经脉。他疼得浑身发抖却不忘求饶。你俯身在他耳边说：「你想用这点微末伎俩睡我？」他抖得更厉害了——可你分明感到他身下硬了。你嗤笑一声，多废了他两成修为才起身离开。",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2,
+      "min_age": 18,
+      "gender": "female"
+    },
+    "effects": {
+      "willpower": 2,
+      "cultivation": 5
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_227",
+    "text": "你与一位剑修结为道侣，他以剑意为你温养经脉。",
+    "expanded_text": "他的剑指点在你锁骨下方的穴位上——冰凉的剑意沿着经脉漫延。你的身体不自觉地向他靠近，呼吸越来越浅。他的指尖一路向下梳理经脉，每过一处你便轻颤一次。当剑意流经腰腹时你忍不住攥紧了他的衣襟——那种酥麻让你双腿发软。他的耳尖红了，手指却没停。事后他将你裹在怀里，你感到他的心跳比你还快。",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 3,
+      "min_age": 18,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 18,
+      "constitution": 1
+    },
+    "weight": 8,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_228",
+    "text": "你偶遇一位受伤的男修，以双修之法助他疗伤。",
+    "expanded_text": "他的经脉断了七根——你必须以灵力渡入。你解开他的衣襟将手掌贴上他赤裸的胸膛。灵力渡入时他痛得弓起了身——手无意识地抓住了你的腰。你伏在他胸口不断渡灵力，感到他的体温在掌下一寸寸回暖。他迷糊间将你拉得更近——你的身体贴着他的身体，灵力在两人之间像热酒般流转。天明时他清醒过来发现你趴在他胸口，而你们的衣衫早已凌乱。",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2,
+      "min_age": 18,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": -5,
+      "fortune": 1,
+      "charisma": 1
+    },
+    "weight": 7,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_229",
+    "text": "你在灵泉疗伤时被同门撞见，竟因此结下一段缘。",
+    "expanded_text": "你在灵泉中只着亵衣——他闯进来时你还没反应过来。他看了你一眼便猛地转过身去。可你分明看见他耳根红透了。你气得掷出一道水刃——他躲开后在泉边坐下背对着你：「我……帮你守着。」他坐了一夜没回头。可你出泉穿衣时发现他的衣摆下……支起了一个明显的弧度。你没戳穿。从那以后他看你的眼神总是闪躲——可你知道他那晚一定想了你很久。",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2,
+      "min_age": 16,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 10,
+      "charisma": 1
+    },
+    "weight": 8,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_230",
+    "text": "你与道侣以金丹互照之法共修，彼此丹田共鸣。",
+    "expanded_text": "你们额间的神识之光交缠在一起如同交颈的蛇。金丹互照之时她解了所有衣物——功法需要气机通畅无碍。你的灵力从她丹田贯入、沿着奇经八脉在她体内周游一圈再回到你体中。每经过她一处敏感穴位她便战栗一次——锁骨、胸口、小腹。到后来她浑身泛着粉色的光，喘息不止。你抱住她时感到金丹在丹田中剧烈震颤——那是道侣间灵肉合一才有的「共鸣」。",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4,
+      "min_age": 40,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 40,
+      "comprehension": 2
+    },
+    "weight": 7,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_231",
+    "text": "一位化形的狐妖主动以身相许，要与你双修百日。",
+    "expanded_text": "她的本体是九尾白狐——化形后肌肤胜雪，每一寸都散发着淡淡的妖香。百日双修的第一夜她便坦然褪去了衣物：「妖族不讲你们人族那些规矩。」她的妖力从皮肤渗入你体内，带着一种令人上瘾的酥麻。你的灵力灌入她体内时她仰起头露出修长的颈——九条尾巴在身后一根根展开又卷起。第九十九夜你们已完全契合——她高潮时尾巴绞紧了你的腰，耳朵颤抖着从发间竖起。",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4,
+      "min_age": 50,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 50,
+      "fortune": 2,
+      "lifespan": 3
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_232",
+    "text": "你偷习禁术「九转还阳功」，需采阴补阳方能成就。",
+    "expanded_text": "九转还阳——说白了就是在欢好之际互渡灵力。第一转时你在她体内运功，她的阴元如潮水般涌入你的金丹。你只觉浑身酥透——连骨头都在颤。到第五转时你们已默契到不需要言语——只凭灵力交汇的频率便能感知对方的需索。她伏在你身下时金丹发出嗡鸣，你知道她正渡给你最精纯的一缕元阴。九转功成那一刻你们同时登顶——灵力爆散开来将洞府的禁制都震碎了两层。",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 5,
+      "min_age": 60,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 60,
+      "willpower": 1,
+      "constitution": 1
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_230",
+    "text": "你与道侣以心神交融之法双修，神识在对方识海中共舞。",
+    "expanded_text": "他的神识探入你的识海时你感到一种比肉体接触更深的侵入感——他看见了你的一切。你也进入了他的识海。你看见他初见你时的心跳、暗中凝视你的无数个夜晚。你的脸烧了起来。两道神识在识海中缠绕纠结——那种感受远超肉体欢愉。你们的身体在外界也不自觉地贴合在一起——他的手不知何时已探入了你的衣内。你没有推开。在神魂与肉体双重交融中你彻底沦陷了。",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4,
+      "min_age": 40,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 35,
+      "comprehension": 2,
+      "willpower": 1
+    },
+    "weight": 7,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_231",
+    "text": "你以双修之法助道侣突破瓶颈，自身修为亦有精进。",
+    "expanded_text": "你以灵力冲击他金丹上的瓶颈——这需要你将灵力从最私密的穴位渡入。你跨坐在他身上，丹田贴着丹田。灵力猛然灌入的一刻他弓起身来，双手攥紧了你的腰。你感到他的金丹在你灵力的冲击下裂开——他疼得发出低吼，却本能地将你抱得更紧。当金丹碎裂重组的一瞬你们体内的灵力同时爆开——那种灵肉双层的冲击让你瘫软在他胸口失声呻吟。",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4,
+      "min_age": 50,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 45,
+      "constitution": 1
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_232",
+    "text": "你修炼玄阴功法，需至阳之体为你淬炼丹田。",
+    "expanded_text": "他的纯阳灵力灌入你体内时你感到小腹处像有一团火在烧——又疼又舒服。你咬着他的肩把呻吟闷回去。过盛的阴气被一缕缕逼出体外——从你的肌肤上蒸腾为淡蓝的雾。他的手臂从你身后环住你不让你挣扎，唇贴在你耳边说：「忍一下。」你用力抓住他后背——指甲划出一道道红痕。当阴阳终于归于平衡时你浑身脱力地挂在他身上，浑身汗湿如刚从水中捞出来一般。",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 5,
+      "min_age": 50,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 55,
+      "constitution": 2
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_233",
+    "text": "你与道侣的元婴在识海中相拥，神魂层面的交融令你悟道。",
+    "expanded_text": "两道元婴脱体相会——你的三寸小人拥住她的那一刻，一种远超肉体的快感贯穿了你的神魂。那是灵魂层面的触碰——比任何肌肤之亲都更深刻。你感到她元婴的每一寸都在向你敞开。你们的元婴在识海中交缠在一起时，外面的肉身也不自觉地贴合——衣物早已散落一地。灵魂与肉体同时交融的双重快感让你几近失控，你抱紧她在最深处与她的元婴彻底合一。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 80,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 80,
+      "comprehension": 3
+    },
+    "weight": 7,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_234",
+    "text": "你在秘境中遭遇一名女修，以双修渡过死劫。",
+    "expanded_text": "毒雾中你们衣衫尽碎——灵力交融需要尽可能多的肌肤接触。她的元婴已裂开三道口子，每一道都在淌灵力如同淌血。你将她拥入怀中从胸口渡灵力入她体内——她的身体在你怀里止不住地颤抖。当你的灵力缝合她元婴裂痕时她痛极了咬住你的锁骨——破了皮。劫后余生的拥抱渐渐变了味——她的腿缠上了你的。你们在秘境中赤裸相拥直到天明。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 80,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 60,
+      "constitution": 2,
+      "willpower": 1
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_235",
+    "text": "你的道侣以元婴喂养你的本命法器，你愧疚万分。",
+    "expanded_text": "她催动元婴灌注你残碎的法器——那意味着她在用最核心的力量喂养一件死物。你看着她面色苍白、嘴唇发紫，心疼得攥紧了拳。百日后她虚弱得连路都走不了。你将她横抱回寝室，用自己的灵力一点点为她温养。她蜷在你怀里如同一只虚弱的猫——你吻她额头、眼角、唇。她微弱地回应你时你发誓：余生你的命就是她的命。那一夜你将她抱得极紧极紧。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 100,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 30,
+      "willpower": 3,
+      "lifespan": -3
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_236",
+    "text": "你以元婴之力为道侣渡过心魔劫，两人从此神魂相连。",
+    "expanded_text": "你的元婴冲入她的识海斩杀心魔——那些怪物化作她年少时的噩梦、化作伤害过她的人。你一一斩碎它们时感到她的恐惧在一层层消退。当最后一道心魔碎裂你的元婴几乎透明——可她醒了。她抱住你哭得浑身发抖，嘴唇胡乱吻着你的脸颊、嘴角、脖颈。你翻身将她压在身下——你想让她知道从此所有的噩梦都有你挡。她拽着你的衣领将你拉向自己：「不要走。」你没走。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 100,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 70,
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_237",
+    "text": "你与一位元婴期女修论道至深夜，最终以双修印证各自所悟。",
+    "expanded_text": "你们论道七日终于找到了交汇点——阴阳互补。她说「试试？」你点头。你们在星空下解衣以最原始的姿态面对彼此。她的灵力如水漫入你体内，你的灵力如火灌入她体中——水火在两人交合之处猛烈碰撞。你感到前所未有的畅快——像大道本身正从你们的结合处诞生。她仰起头发出一声悠长的呻吟——那不是情欲，是悟道。你们在巅峰之际同时大笑出声。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 100,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 90,
+      "comprehension": 3
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_238",
+    "text": "你沉迷于一位魔修的双修邀约，差点走入魔道。",
+    "expanded_text": "她的魔功每缠你一次便抽走你一分灵力——可那种被抽取的感觉……像有一百只手在你体内同时抚摸。你明知这是毒——可当她骑在你身上催动魔功时你根本无法抵抗。她将你的灵力一口口吞下，每吞一口便发出满足的叹息。你被她榨取了七次才终于在看到元婴表面的黑气时惊醒——可你的身体至今仍记得那种灭顶的快感。你恨她——也恨自己。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 80,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 50,
+      "willpower": -1,
+      "fortune": -1
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_239",
+    "text": "你的道侣以命魂为你挡了一劫，你以双修之法为她续命。",
+    "expanded_text": "以元婴相融渡命魂——代价是五百年寿元。你将半颗元婴强行灌入她的识海时痛得视线模糊。可你感到她将死的命魂在你元婴的灌注下一丝丝回暖——像快要熄灭的烛火被人用手心捂住。你把一切都给了她。她醒来时你的面容已苍老了数百年。她哭着吻你沟壑纵横的脸——你擦掉她的泪：「没事。值得。」",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 100,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": -30,
+      "lifespan": -5,
+      "willpower": 3
+    },
+    "weight": 4,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_240",
+    "text": "你与道侣在雷池中以灵力护持彼此，共渡天雷。",
+    "expanded_text": "雷池中的天雷劈下时你们赤身相对——衣物会导雷。你将灵力护盾推向她那一侧时第三道雷正好劈在你脊背上。痛到骨髓。可你感到她的灵力也在同一时刻灌入你体内为你疗伤。你们就这样在雷光中互相守护——每挨一道雷便多渡一次灵力。到最后你们的身体贴在一起已分不清是在抗雷还是在做别的什么。雷散后你们相拥瘫倒在雷池中——浑身焦黑却忍不住笑了出来。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 80,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 75,
+      "constitution": 2,
+      "willpower": 1
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_241",
+    "text": "你以梦境之术与道侣在梦中重温初遇，恍如隔世。",
+    "expanded_text": "梦境中你们回到了最年轻的时候。她十七岁的模样，你十九岁。你们重演了那场本该发生却终究没有发生的初夜——在少年时共住的那间破旧厢房里。梦境中没有修为、没有规矩，只有两个年轻人笨拙又认真的第一次。她红着脸说疼，你手忙脚乱地停下。后来她搂住你的脖子说：「没事——继续。」醒来时她枕在你臂弯里笑着哭了：「要是当年真的这样就好了。」",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 120,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 20,
+      "willpower": 2,
+      "charisma": 1
+    },
+    "weight": 7,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_242",
+    "text": "你闭关时道侣以身为炉为你温养元婴，你感激涕零。",
+    "expanded_text": "她闯入你的闭关——你的元婴快碎了。她将全部灵力灌入你体内时你感到有一股温暖的力量包裹住了你摇摇欲碎的元婴。她趴在你身上一刻不停地渡灵力——七日。你能感到她的心跳、她的汗珠、她的眼泪滴在你胸口。你醒来时她瘦得颧骨都凸出来了。你抱住她什么话也说不出来——只是翻身将她护在身下，用唇堵住了她说「没事」的嘴。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 100,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 65,
+      "constitution": 1,
+      "willpower": 2
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_233",
+    "text": "你与道侣元婴相拥，灵魂交融之时你窥见了他的道。",
+    "expanded_text": "他的元婴自眉心飞出——三寸小人朝你的元婴伸出了手。当两道元婴触碰的瞬间你的灵魂如同被电击——一种深入骨髓的酥麻从神魂深处蔓延到肉体的每一个末梢。你在他的元婴中看见了他千年的孤独——以及在那孤独尽头等着你的一团光。你的元婴哭了——泪化作金光融入他体内。外面的你们紧紧相拥，肌肤相贴，他在你耳边说：「我等了你好久。」",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 80,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 85,
+      "comprehension": 3
+    },
+    "weight": 7,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_234",
+    "text": "你以双修之法助道侣凝聚元婴，自身也因此获益。",
+    "expanded_text": "他的金丹在你元婴之力的催化下终于裂开——一道小小的元婴从中升起。他的元婴睁开眼便朝你伸出了手。你的元婴握住他的——一种灵魂层面的牵绊在那一刻成型。外面的你累得倒在他怀中，浑身的力气都用尽了。他将你抱起放在榻上——你迷糊中感到他的唇落在你眉心、鼻尖、然后是嘴唇。你扯住他衣领不让他起来：「陪我。」他没再起来。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 100,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 70,
+      "comprehension": 2
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_235",
+    "text": "你与一位元婴老祖论道，以阴阳互补之法共悟天道。",
+    "expanded_text": "他八百岁了却精力充沛得像个年轻人。你们在星空下修炼阴阳之法——他的至阳灵力灌入你体内如同烈日。你感到从小腹到胸口都在发烫，呼吸变得急促。他低头吻住你的锁骨渡了一口灵气——那口灵气顺着经脉窜遍全身。你的手指攥紧了身下的青草。他的手覆上你的小腹引导灵力归入丹田——你在那只手的热度下彻底溃败了。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 100,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 95,
+      "comprehension": 3
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_236",
+    "text": "你的道侣以神魂为你挡下心魔，你以双修为他疗伤。",
+    "expanded_text": "他为你斩心魔时神魂碎了七道口子。三个月你夜夜以灵力修补他的元婴——那需要你的神识像绣花针一样穿入他灵魂最脆弱的裂缝。每到深处他便疼得浑身发抖、汗水浸透衣衫。你只能抱紧他——用体温、用灵力、用唇贴着他额间一遍遍说「我在」。有时他疼极了会本能地攥紧你——力道大到在你腰上留下淤青。你一次也没喊过疼。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 100,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 50,
+      "willpower": 3,
+      "lifespan": -2
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_237",
+    "text": "你与道侣在万年寒冰之下双修，以情念融化坚冰。",
+    "expanded_text": "万年寒冰下你们以双修之热融化封印。他的灵力入体时你感到内脏都暖了——像冬天喝下一壶滚烫的酒。冰层一层层消融，冰水打湿了你们的衣袍——湿透的薄衫紧贴着你的身体，他的目光顿了一瞬。你没有躲避他的视线。当最后一层冰融化时你们浑身湿透相拥在冰洞之中——他的唇很烫，落在你冰凉的肩头像在融化你。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 80,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 80,
+      "fortune": 2,
+      "constitution": 1
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_238",
+    "text": "你修炼太阴真经，需至阳元婴之力为你开脉。",
+    "expanded_text": "他的元婴化作一道阳气冲入你的太阴命脉——你的身体像被贯穿了一般弓起来。太烫了。你的指甲划过他的后背留下深深的痕迹——可他没有停。他的灵力精准地在你体内寸进，每过一处穴位你都忍不住发出声音。当最后那条隐脉被彻底冲开时——你全身痉挛了一瞬，眼前白光大盛。你瘫在他怀里喘了许久才回过神来。他吻着你额间的汗珠：「辛苦了。」",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 80,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 75,
+      "constitution": 2
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_239",
+    "text": "一位魔修以情惑之术困住你，你的道侣拼死救你脱险。",
+    "expanded_text": "他斩断最后一道情丝时手上的血溅在你脸上。他跪在地上抱住你的头——「我来了。」你浑身发软地靠在他胸口。他将你打横抱起时你感到他的手在抖。回到洞府他为你检查经脉时手指划过你每一寸肌肤——确认你安然无恙。你抓住他的手贴在自己脸上：「我没事。」他终于忍不住低头吻你——那个吻带着血腥味和劫后余生的疯狂。你们在那个吻里纠缠到天明。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 80,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": -20,
+      "willpower": 3,
+      "fortune": 1
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_240",
+    "text": "你在渡劫前夜与道侣相守，以灵力为彼此温养元婴。",
+    "expanded_text": "明日就要冲击瓶颈了。今夜他什么也没说，只是将你拉进被褥中。你们的元婴在识海中握着手——灵力缓缓流转。外面的你们也紧紧相贴——他的手臂环着你的腰，鼻尖埋在你的发间。你转过身面对他。他看着你的眼睛——里面什么话都有。你吻上去时他的手收紧了。那一夜你们做了很多事情——缓慢的、温柔的、像是在说最后的告别和最初的承诺。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 100,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 40,
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "weight": 7,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_241",
+    "text": "你与道侣以梦境术重温旧事，他在梦中再一次向你表白。",
+    "expanded_text": "梦境中他恢复了少年模样——那个在街角笨手笨脚跟着你的男孩。你笑着走过去拉起他的手。在梦境中你们重演了六百年前本该有的那个夜晚——不是元婴期的深邃交融，而是少年人的心跳加速和面红耳赤。他的手不知道该放哪里——你握着他的手放在你心口。他红着脸在你唇上印了一下便缩回去。你笑了，把他拉回来。梦中的你们有整整一千年可以慢慢来。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 120,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 25,
+      "willpower": 2,
+      "charisma": 1
+    },
+    "weight": 7,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_242",
+    "text": "你的元婴在双修中进化，表面浮现道侣的灵纹印记。",
+    "expanded_text": "那一夜的双修后你的元婴上多了他的灵纹——剑形的标记深入本源。你感到灵魂深处多了一道烙印——那是他的存在在你身上留下的永恒印记。你摸着那枚灵纹时感到一股温暖从其中渗出。古籍说这是「此生不可磨灭」的道侣之印——连转世都不会消失。你靠在他胸口追问：「你的呢？」他撩开衣领给你看——一枚莲花印记正落在他心口正中。你将唇印在那朵莲花上。",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 100,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 60,
+      "fortune": 2,
+      "comprehension": 1
+    },
+    "weight": 6,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_243",
+    "text": "你与道侣在虚空中双修，引动天地法则共鸣。",
+    "expanded_text": "化神之境在虚空中双修——周围的空间法则被你们的灵力扭曲成旋涡。她悬浮在你身前，星河在她身后如瀑布般倾泻。你拥住她时感到天地间所有的灵气都在朝你们涌来——如同朝圣。你的灵力贯穿她时她仰起头——从喉间溢出的不只是呻吟，而是一道天地法则的共鸣之音。漫天星辰在那一刻暗了一瞬——是你们的灵力压过了星光。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 150,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 150,
+      "comprehension": 3,
+      "willpower": 2
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_244",
+    "text": "你欲渡劫飞升，道侣说要与你共赴空间节点。",
+    "expanded_text": "她说「生同衾死同穴」时你便知道今夜她不会让你独睡。你们在洞府中从暮色做到天明。她不哭——只是每一次高潮都将你抱得更紧一些。你知道她在害怕明天——害怕你进入空间节点后再也回不来。你在她体内深处停下来，额抵着她的额：「我会回来。」她闭着眼点头——下一秒又将你翻了过去压在身下。她不要你温柔——她要你记住她。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 200,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 100,
+      "willpower": 3
+    },
+    "weight": 4,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_245",
+    "text": "你以化神之力凝聚分身，令分身陪伴道侣修炼。",
+    "expanded_text": "你凝聚分身留给她时注入了一缕完整的神念。数百年间分身替你陪她——陪她修炼、陪她赏月、陪她入寝。你收回分身时她千年来的每一个夜晚尽数涌入你识海——有她独守洞府的孤寂，有她抱着你分身哭泣的深夜，也有她与分身相拥入眠时从梦中叫你名字的那些瞬间。你将她揽入怀中——真正的你，热的，活的：「我回来了。不走了。」",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 150,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 80,
+      "willpower": 2,
+      "charisma": 1
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_246",
+    "text": "你与道侣以法则之力双修，周身空间为之扭曲。",
+    "expanded_text": "双修之时灵力浓郁到空间扭曲——洞府中的物件悬浮起来，你们的身体也浮在半空。失重中的一切变得不同——她的长发散开像一匹黑缎漂浮在你们周围。你拥着她在扭曲的空间中缓慢旋转——灵力构成的光柱从你们的结合处冲天而起。方圆百里的修士抬头望向那道光柱——而你只望着她的眼。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 150,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 130,
+      "comprehension": 2,
+      "constitution": 1
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_247",
+    "text": "你在大限将至时与道侣做最后一次双修，将毕生修为尽数渡给她。",
+    "expanded_text": "你将毕生修为灌入她体内时像在把命渡给她。灵力从你的丹田源源不断涌向她——你的意识越来越模糊，可你不停。她哭着想推开你——你将她锁在怀里不让她动。你感到自己的存在像退潮的水一样在消散——可她的气息在一点点变强。最后一丝灵光散去前你吻了她的额头。你没有力气再说话——但你知道她收到了。全部的你。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 200,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": -100,
+      "lifespan": -10,
+      "willpower": 4
+    },
+    "weight": 3,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_248",
+    "text": "你以天道之眼窥见道侣的前世——你们已相守了九世。",
+    "expanded_text": "天道之眼开启之际你看见了九世轮回——每一世你们都在一起。第三世的你死在她怀中；第五世的她为你殉道；第七世你们是仇人之后却仍在战场上相拥。九世纠缠、九世不舍。你收回天眼时泪已流尽。她在你身旁安睡——不知你看见了什么。你俯身在她唇上印了一个极轻的吻：来世——不，以后的每一世——都请继续选我。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 200,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 120,
+      "fortune": 3,
+      "comprehension": 2
+    },
+    "weight": 4,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_249",
+    "text": "你以神念凝聚一方小世界，在其中与道侣度过千年光阴。",
+    "expanded_text": "你在识海中凝聚了一方桃花源——只有你和她。在那方世界里你们度过了一千年：做凡人夫妻，生儿育女，日出而作日落而息。没有修为、没有劫数——只有柴米油盐和窗前白发。那一千年里你们过完了修士永远不可能过的一生。回到现实时只过了一月。她睁开眼看你的目光温柔如水——像看了你一千年的妻子看丈夫的目光。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 150,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 60,
+      "willpower": 3,
+      "charisma": 2
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_m_250",
+    "text": "你感知到空间节点将现，与道侣在最后一夜以灵力相融为誓。",
+    "expanded_text": "她将一缕神念封入你的元婴——那比任何誓言都重。你感到她的存在像一颗种子种在了你灵魂最深处。「带着我去。」她说。你闭上眼握紧她的手——不管明天的空间节点带来什么，你的灵魂里永远有她。那一夜你们没有做别的——只是十指相扣额头相抵，灵力在指尖缓缓流转如同心跳。这比任何双修都要亲密——因为这是永恒。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 200,
+      "gender": "male"
+    },
+    "effects": {
+      "cultivation": 100,
+      "willpower": 4
+    },
+    "weight": 4,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_243",
+    "text": "你与道侣在星河之下双修，天地灵气为你们旋转。",
+    "expanded_text": "星河在你们头顶旋转——是你们的灵力引动了天象。他在星光下拥住你时你感到自己的身体正在与天地融为一体。灵气自四面八方涌来没入你们交合之处——你的感官被放大了千百倍。他的每一次律动都牵引着天地法则的共鸣。你攀住他的肩——从喉间溢出的声音连你自己都认不出来。在天地至高处与他合为一体——这是化神之境才有的极乐。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 150,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 140,
+      "comprehension": 3,
+      "willpower": 1
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_244",
+    "text": "你以化神之力为道侣重塑经脉，他以余生为你守道。",
+    "expanded_text": "你以化神之力为他重塑经脉——你的神识在他体内穿梭了整整一年。每一根经脉都是你一寸寸织出来的——比原来的更宽更韧。那是最私密的触碰——你的神识走遍了他身体的每一个角落。他有时会在你织经脉时握紧你的手——那意味着你碰到了痛处。你便放轻力度，以唇贴在他手背上做无声的安抚。一年后他痊愈——你是世上最了解他身体的人。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 150,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 50,
+      "willpower": 3,
+      "charisma": 1
+    },
+    "weight": 5,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_245",
+    "text": "你修至化神巅峰，以最后一缕情念凝聚护道法器赠予道侣。",
+    "expanded_text": "你以最后一缕情念凝聚护道法器——那需要你回忆与他相关的一切。你闭目将千年间的每一个吻、每一次相拥、每一个他叫你名字的瞬间尽数灌入那枚玉佩。凝聚完成时你感到心中空了一块——那一缕情念已经不在你体内了。可你看着那枚温暖的玉佩——那里面是完整的你对他的爱。你将它挂在他胸前时他不知内情——只说：「好暖。」你笑了，没告诉他那是什么。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 200,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": -50,
+      "willpower": 4,
+      "fortune": 2
+    },
+    "weight": 4,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_246",
+    "text": "你与道侣在时间法则的缝隙中共度百年，外界只过一瞬。",
+    "expanded_text": "时间裂缝内你们度过了一百年——没有修炼、没有争斗的一百年。你们在那方慢世界里做了凡人夫妻——他种田你织布，他酿酒你煮茶。夜里你们挤在窄小的木床上——没有灵力、没有法术，只有最原始的体温和心跳。他的鬓角添了白发——你的眼角有了细纹。可你们看着对方笑得像十七岁那年初见。走出裂缝时外界才过了半个时辰。他看着你：「再来一次？」",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 150,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 100,
+      "lifespan": 5,
+      "willpower": 2
+    },
+    "weight": 4,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_247",
+    "text": "你以天道之眼窥见自己与道侣的来世——他在等你飞升。",
+    "expanded_text": "你以天眼看见了未来——他在仙门之后等你。等了三百年。你收回天眼时哭了。他在你身旁安睡，呼吸均匀。你侧身看着他的睡颜——千年间这张脸从少年变成青年再变成如今的成熟模样。你轻轻描摹他的眉骨、鼻梁、嘴唇。他在你的触碰下微微皱眉——然后在梦中伸手把你揽了过去。你贴在他胸口听他的心跳：我一定会去。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 200,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 110,
+      "willpower": 3,
+      "fortune": 2
+    },
+    "weight": 4,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_248",
+    "text": "你在大限将至前与道侣做最后一次双修，将护道之力留给他。",
+    "expanded_text": "你将半生修为渡给他时感到自己在一点点消散。他拼命想推开你——你按住他：「这是我最后能给你的。」灵力化作金色光膜覆在他元婴表面。你笑着吻了他的眉心——没有力气再说更多。你的意识在模糊前最后看见的是他的脸——满是泪的、破碎的、心疼的脸。你想伸手擦掉他的泪——可手已经抬不起来了。没关系。有他在。就够了。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 200,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": -80,
+      "lifespan": -8,
+      "willpower": 4
+    },
+    "weight": 3,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "adt_f_249",
+    "text": "空间节点将现之夜，你与道侣以神念为誓——来世再续此缘。",
+    "expanded_text": "他将神念封入玉简递给你时手很稳——可你看见他的眼眶红了。你也将一缕神念封入暖玉递给他：「来世你若忘了我——就握着它。」他接过暖玉贴在心口。然后他将你拉入怀中——不是拥抱，是占有。他吻你的方式像要把你的味道刻进灵魂里。你搂紧他的脖颈回应他——明日空间节点降临。今夜——只有今夜。你们把所有来不及说的话都融进了彼此的身体里。",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 200,
+      "gender": "female"
+    },
+    "effects": {
+      "cultivation": 90,
+      "willpower": 4,
+      "fortune": 1
+    },
+    "weight": 4,
+    "category": "adult",
+    "tags": [
+      "adult",
+      "cultivation"
+    ],
+    "event_type": "normal"
+  }
+]

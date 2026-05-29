@@ -1,0 +1,1495 @@
+[
+  {
+    "id": "world_0000",
+    "text": "仙门大比在即，各派弟子齐聚。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "normal",
+    "expanded_text": "消息传来时你正在闭关。仙门大比——百年一度，各宗精锐尽出，胜者可入天阙阁选取一件宝物。你掐指算了算日子，还有三月。这三月里，你知道整个修真界都会躁动起来。有人为荣誉而战，有人为资源拼命，也有人只是想在那个舞台上看清自己究竟走了多远。"
+  },
+  {
+    "id": "world_0001",
+    "text": "有人在拍卖会上拍出天价灵物。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "add_tag": "in_market"
+    },
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你从坊市回来时听人议论：今日拍卖会上，一枚筑基丹被人叫到了三千灵石的天价。三千灵石——你算了算，自己攒上一百年也未必凑得齐。这个世界就是这样，有人为一枚丹药一掷千金，有人为一块灵石奔命半生。你叹了口气，转身回了洞府。"
+  },
+  {
+    "id": "world_0002",
+    "text": "一处上古遗迹被发现，各方势力蜂拥而至。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "normal",
+    "expanded_text": "那座遗迹重见天日的消息像野火般传遍了整个修真界。据说里面有上古修士的传承，有万年灵药，有逆天功法。三天之内你就看到了不下二十拨修士朝那个方向飞去——其中不乏元婴期的大修士。你没有去凑那个热闹。你知道，去的人里能活着回来的不到一半。"
+  },
+  {
+    "id": "world_0003",
+    "text": "修真界传出一则惊天秘闻。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "normal",
+    "expanded_text": "茶馆里坐满了人，每个人都在压低嗓音说着同一件事。据说是某位大修士的丑闻，又有人说是某个宗门的秘辛。你竖着耳朵听了半天，版本少说有七八个。真假难辨，但这种事最怕的不是假——而是万一有一个版本是真的。你默默记在心里，以后行事更加小心。"
+  },
+  {
+    "id": "world_0004",
+    "text": "一位大能陨落，天地为之悲鸣。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "normal",
+    "expanded_text": "那一日天地骤然暗了三分，仿佛有什么巨大的存在从这个世界抽离了。你抬头望天，乌云翻涌如墨，天际边有若有若无的哀鸣声。修真界人人都感受到了——一位立于巅峰的大能，陨落了。你不认识他，但那股从天地间消散的威压让你脊背发凉。何等强大的存在，说没就没了。"
+  },
+  {
+    "id": "world_0005",
+    "text": "魔道中人再次作乱，正道联盟讨伐。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "normal",
+    "expanded_text": "正道联盟的讨伐令传到你这里时已经是第三天了。魔道中人再次越界屠了一个小镇，三百余人无一幸免。联盟征召所有筑基以上修士参战。你看着那张血红的告示，心情复杂。战争……不论哪一方获胜，死的都是底层的修士。可你没有资格拒绝。"
+  },
+  {
+    "id": "world_0006",
+    "text": "灵气潮汐来临，修炼速度倍增。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你打坐时忽然觉得四周的灵气浓了三倍不止。睁开眼，天空中隐隐有七彩流光闪烁——灵气潮汐来了。这是数十年一遇的机缘，修炼效率可以翻倍。你立刻盘膝运功，贪婪地吸纳着浓郁的灵气。整个修真界此刻怕是都在疯狂修炼，一秒都舍不得浪费。"
+  },
+  {
+    "id": "world_0007",
+    "text": "天降异象，预示着大事将发生。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "normal",
+    "expanded_text": "那天傍晚你亲眼看到了——西方天际的云层裂开一道口子，金色的光芒从裂缝中倾泻而下，照亮了半边天空。所有人都停下了手中的事，仰头凝望。有老修士喃喃：「百年一遇的天象……有大事要发生了。」没人知道这预示着什么，但每个人心中都隐隐生出了不安。"
+  },
+  {
+    "id": "world_0008",
+    "text": "一场修真者之间的大战波及方圆百里。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "important",
+    "expanded_text": "今日修真界两大势力终于打了起来。法力波及方圆百里，天空被染成血色，山川为之颤动。你站在远处的山头观战，看见无数金光银芒在云端碰撞，每一击都是雷霆。你心里清楚——一个时代，正在你眼前更替。"
+  },
+  {
+    "id": "world_0009",
+    "text": "传说中的仙器出世，引得万人争抢。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "important",
+    "expanded_text": "传说中的那件仙器今日重现于世。消息一出，整个修真界都疯了。无数人朝那个方向赶去，连许多深居简出的老怪都现了身。你也心动，可你心里清楚——能争到的，未必是有福的；能放下的，才是真自在。"
+  },
+  {
+    "id": "world_0010",
+    "text": "一座飞升台重现人间。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "important",
+    "expanded_text": "听闻南海之滨重现一座飞升台。修真界为之震动——那本是上古遗物，传说能助修士直登仙界。一时间无数高人都赶往南海。你站在山门口望着那个方向，心里第一次起了真正去看一眼的念头。"
+  },
+  {
+    "id": "world_0011",
+    "text": "古老的预言开始应验。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "important",
+    "expanded_text": "古老的预言里说，「日蚀三现，百川断流，则世变」。今年这三件事都齐了。整个修真界惶惶不可终日，宗门长老闭门商议日夜不歇。你抬头看天，第一次真正意识到——你正活在一段载入史书的岁月里。"
+  },
+  {
+    "id": "world_0012",
+    "text": "域外天魔降临。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "important",
+    "expanded_text": "今日天空裂开一道黑缝，无数面目狰狞的天魔从中钻出。它们目无悲喜，所到之处皆是焦土。修真界各大势力第一次放下成见联手御敌。你身在其中，亲眼看见同辈一个个倒下——这一战，你将永生难忘。"
+  },
+  {
+    "id": "world_0013",
+    "text": "修真界大洗牌，诸多势力消亡。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "important",
+    "expanded_text": "这一年修真界天翻地覆。曾经威震一方的几大门派接连陨落，许多熟悉的名字从此湮灭于历史。你站在自家山门前看着那些消失的山头，心里说不出是什么滋味——你曾经熟悉的世界，正在被改写。"
+  },
+  {
+    "id": "world_0014",
+    "text": "一条通往更高界域的通道被发现。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "world_event"
+    ],
+    "event_type": "important",
+    "expanded_text": "今日传出一条惊天消息：在某处禁地之中，有人发现了一道通往更高界域的通道。整个修真界为之沸腾。你听到这个消息时正在闭关，可那一刻你便知——自己迟早要去看一眼那条通道的尽头。"
+  },
+  {
+    "id": "nature_0000",
+    "text": "灵气暴动，天地变色。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5
+    },
+    "tags": [
+      "nature"
+    ],
+    "event_type": "danger",
+    "expanded_text": "那天清晨你正在打坐，忽然丹田中的灵力毫无征兆地开始暴动——不只是你，方圆百里的草木都在疯狂生长，池塘里的水开始沸腾。天地灵气失去了平衡，如同一锅被搅乱的粥。你拼命压制体内翻涌的灵力，冷汗湿透了后背。这一劫足足持续了三个时辰。"
+  },
+  {
+    "id": "nature_0001",
+    "text": "一场灵雨降临，万物复苏。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "constitution": 1
+    },
+    "tags": [
+      "nature"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "先是天空变成了淡紫色，然后雨就落了下来。不是普通的雨——每一滴都晶莹剔透，散发着淡淡的荧光。落在皮肤上不是冰凉而是温热的，像是被什么东西轻柔地抚过。你张开双臂站在灵雨中，任凭它浸透全身。四周的枯草在眼前以肉眼可见的速度返绿抽芽。"
+  },
+  {
+    "id": "nature_0002",
+    "text": "雷暴席卷大地，你借雷修炼。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 20,
+      "willpower": 1
+    },
+    "tags": [
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "乌云翻滚如海，闪电将天空撕成碎片。你站在山巅，狂风将你的衣袍吹得猎猎作响。一道紫色天雷在百丈外劈下——你没有躲，反而迎了上去。雷霆之力涌入体内的瞬间你几乎痉挛，可那股暴烈的能量在经脉中奔腾时，竟有一种酣畅淋漓的快意。痛，但值得。"
+  },
+  {
+    "id": "nature_0003",
+    "text": "地龙翻身，你的洞府崩塌。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "fortune": -1,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "nature"
+    ],
+    "event_type": "danger",
+    "expanded_text": "地面忽然开始剧烈摇晃。你从定中惊醒时头顶已经落下了第一块巨石——洞府的穹顶出现了裂缝。你手忙脚乱地抢出几件重要的东西，踉跄着跑出洞口。身后传来轰隆巨响，回头看时你的洞府已经面目全非。数十年经营，一朝化为废墟。你站在尘土中，无言以对。"
+  },
+  {
+    "id": "nature_0004",
+    "text": "一棵古树突然开花结果，灵气浓郁。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "nature"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "那棵枯了不知多少年的古树一夜之间开满了花。清晨你路过时差点以为自己在做梦——灿烂的金色花朵挂满枝头，每一朵都散发着令人沉醉的灵气。更令人惊奇的是，午后它竟结出了拳头大的果实。方圆百里的灵兽都被吸引而来，你小心翼翼地靠近，摘下了一枚。"
+  },
+  {
+    "id": "nature_0005",
+    "text": "流星雨划过天际，蕴含天地精华。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 18,
+      "comprehension": 1
+    },
+    "tags": [
+      "nature"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "那个夜晚你永远记得。万千流星拖着银白色的尾巴划过天幕，比任何烟火都壮丽。你本来只是在欣赏这份美景，却忽然发现——每一颗流星坠落时都会在空气中留下一丝极细微的能量。你赶忙运功吸纳，那些来自星辰的精华温润而绵长，缓缓融入你的丹田。"
+  },
+  {
+    "id": "nature_0006",
+    "text": "大雾弥漫，你在雾中迷失了方向。",
+    "category": "world",
+    "conditions": {
+      "max_realm": 2
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "大雾是一瞬间涌来的，浓得像棉絮塞在眼前。你伸出手都看不见自己的五指。你尝试用灵识探路，却发现灵识也被这雾气阻隔——这不是普通的雾。你在原地走了不知多久，每一步似乎都回到了原点。直到三天后雾散，你才发现自己竟然还在原地，一步都没移动过。"
+  },
+  {
+    "id": "nature_0007",
+    "text": "一条灵脉从地下浮现。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 25
+    },
+    "tags": [
+      "nature"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "最先是脚下的泥土变得温热，然后你看见远处的地面裂开一条缝——不是地震，而是一条灵脉从地底缓缓升起。纯净的灵气如泉水般从裂缝中涌出，将方圆数里都笼罩在一层淡淡的光晕之中。你深吸一口气，胸中灵力竟自行运转了起来。天赐之地，可遇不可求。"
+  },
+  {
+    "id": "nature_0008",
+    "text": "日月同辉，天地间灵气暴涨。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 30
+    },
+    "tags": [
+      "nature"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "那是正午，太阳高悬。可你抬头时却看见了月亮——一轮满月与烈日并排挂在天空。日月同辉，传说中百年难得一见的异象。天地间的灵气像被搅动了一般变得浓稠黏腻，呼吸之间都能感到灵力在增长。你赶紧盘膝坐下，这等机缘错过就再无下次。"
+  },
+  {
+    "id": "nature_0009",
+    "text": "狂风呼啸，卷起漫天黄沙。",
+    "category": "world",
+    "conditions": {
+      "max_realm": 2
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "风来得毫无预兆。一开始只是微风，三息之后便成了飓风——漫天黄沙遮蔽了日光，你几乎站不稳。你蹲下身护住面门，心中暗骂今日出行不该。狂风呼啸中你隐约听见了某种奇怪的声响，像是有什么东西在沙尘中穿行。你不敢多看，只是把自己埋得更低。"
+  },
+  {
+    "id": "ext_season_0000",
+    "text": "春雷惊蛰，你借天地之力修炼。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 15
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "惊蛰那日的第一声春雷在卯时准时炸响。你早已在山顶等候多时。雷声震动天地的瞬间，体内的灵力像是被某种力量唤醒了一般自行运转。你顺势引导，借天地之威冲击经脉中的淤塞。一声一声，每一次春雷都像一记锤，将你体内的杂质一点点震碎。"
+  },
+  {
+    "id": "ext_season_0001",
+    "text": "夏日炎炎，你在火山口感悟火之大道。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 18,
+      "comprehension": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "火山口的热浪扑面而来，你的眉毛都被灼卷了。可你选择在这里打坐是有原因的——地底涌出的火系灵力纯净而暴烈。你盘坐在岩浆翻涌的边缘，任凭滚烫的气流冲刷身体。汗水蒸发的一瞬间，你忽然捕捉到了一丝关于「焚」的奥义。火之大道，以毁灭为始。"
+  },
+  {
+    "id": "ext_season_0002",
+    "text": "秋风萧瑟，落叶归根，你有所感悟。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 12,
+      "willpower": 1
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "一片枯叶从枝头旋转着飘落，你看了很久。它曾经嫩绿，曾经苍翠，如今金黄干枯，却落得无声无息。万物生长消亡，周而复始——你在这片落叶中看见了一条法则的影子。秋风起时，你闭上眼。体内的灵力开始了一次缓慢的脱胎换骨，如同树木褪去旧叶等待新生。"
+  },
+  {
+    "id": "ext_season_0003",
+    "text": "冬雪纷飞，你在冰天雪地中磨炼心志。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 10
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "大雪封山已经第七天了。你盘坐在崖边，积雪覆了满肩。寒风像刀子一样割在脸上，可你纹丝不动。你在磨炼自己的心志——如果连天地的严酷都承受不了，又怎么承受修道路上的那些劫难？当第八天的朝阳升起时，你感到丹田中多了一份从未有过的坚定。"
+  },
+  {
+    "id": "ext_season_0004",
+    "text": "月圆之夜，你吸收月华精气。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 20
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "月圆之夜，清辉如水。你坐在无遮无拦的山顶，任凭月华洒满全身。那是一种极为柔和的能量——不像日光的刚烈，而是如丝如缕地渗入每一寸肌肤。你缓缓运功，引导月华之力沿经脉流转。一整夜下来，你觉得自己像是被月光泡洗过一遍，通体透亮。"
+  },
+  {
+    "id": "ext_season_0005",
+    "text": "日出之时，你面朝东方打坐。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "寅时起身，面东而坐。天际的第一缕曙光出现时你已调息完毕。朝阳初升那一刻的光芒最为纯粹——蕴含着蓬勃的生机与至阳之力。你张口吐纳，将那一缕金色的光吞入体内。温暖从胸口蔓延至四肢百骸，像是喝了一碗热汤。日出修炼，贵在坚持。"
+  },
+  {
+    "id": "ext_season_0006",
+    "text": "暴风雨中，你感悟水之法则。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 15,
+      "comprehension": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "暴风雨来时海面翻涌如沸。你站在礁石上，任凭巨浪一次次拍打。每一次海水冲刷，你都尝试去感知水流中的力量——它柔时无孔不入，刚时摧枯拉朽。你在浪涛的间隙中捕捉到了那一丝规律：水之法则，不在于力，在于势。你全身湿透，却笑了出来。"
+  },
+  {
+    "id": "ext_season_0007",
+    "text": "地震之后，你感悟了大地之力。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "constitution": 1,
+      "cultivation": 10
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "地震过后满目疮痍。你看着大地上纵横交错的裂缝，看着山体滑坡后裸露的岩层。那一瞬间你忽然理解了什么——大地之力，不动则已，动则山河变色。你单膝跪地，将手掌贴在龟裂的泥土上。一股浑厚而沉稳的力量从地底传入体内，如同大地的脉搏。"
+  },
+  {
+    "id": "ext_season_0008",
+    "text": "彩虹出现，灵气格外充沛。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 18
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "雨后的彩虹横跨天际，七种色光交织在一起美得不像真的。你坐在彩虹正下方，发现这里的灵气格外充沛——像是被七色光过滤了一遍，变得纯净而温和。你贪婪地吸纳着，觉得这是老天给你的一份意外之喜。毕竟不是每场雨后都有彩虹，也不是每个人都能坐在虹下。"
+  },
+  {
+    "id": "ext_season_0009",
+    "text": "极光闪耀，你心旷神怡。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "你这辈子第一次看到极光。绿色、紫色、蓝色的光幕在天空中缓缓舞动，像是天神在铺展一匹巨大的绸缎。你忘了修炼，忘了一切，只是痴痴地看着。心中某个紧绷了很久的东西忽然松了开来。这一刻你什么都不想做，只想就这么安安静静地坐着，看天上的光。"
+  },
+  {
+    "id": "ext_season_0010",
+    "text": "天降流火，蕴含纯阳之力。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 22,
+      "constitution": 1
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "那团火从天际坠落，拖着一条长长的赤红尾巴。落地之时地面被砸出一个深坑，可你感知到的不是破坏——而是一团极为纯粹的阳性灵力。你走近那块还在发烫的陨石，伸手覆上。灼热从掌心传入，丹田中的灵力像是被点燃了一般猛然活跃起来。天降流火，实乃大补。"
+  },
+  {
+    "id": "ext_season_0011",
+    "text": "海啸来袭，你在风浪中领悟水遁之术。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 20,
+      "comprehension": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "浪头有十丈高。你脚踩一片木板在巨浪间起伏，每一刻都可能被拍入水底。可你的注意力全在脚下——水流在你身下分合聚散，每一次涌动都暗含着某种玄妙的轨迹。你在生死之间领悟到了水遁之术的关键：不要对抗水，要成为水。你的身形开始像鱼一样在浪间穿梭。"
+  },
+  {
+    "id": "ext_season_0012",
+    "text": "飓风过境，你借风势修炼。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 16
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "飓风过境时方圆百里内寸草难存。可你站在风眼之中，周围的一切都在高速旋转——只有你脚下这一方是静止的。你感受着风从四面八方掠过，试着将那股力量引入体内。痛，像千刀万剐。但痛过之后，你发现自己的灵力多了一丝风的锋利。值了。"
+  },
+  {
+    "id": "ext_season_0013",
+    "text": "大旱三月，你以此磨炼心性。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "normal",
+    "expanded_text": "井干了，河也干了。三个月没落一滴雨，大地龟裂如蛛网。你躺在滚烫的地面上，嘴唇干裂出血。辟谷可以不吃饭，但水还是需要的。你选择不喝——以此磨炼自己的意志。在极度的口渴中，你的心反而渐渐平静了下来。你悟到了一件事：真正的修行，从忍耐开始。"
+  },
+  {
+    "id": "ext_season_0014",
+    "text": "瑞雪兆丰年，灵气复苏。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 14,
+      "fortune": 1
+    },
+    "tags": [
+      "seasonal",
+      "nature"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "今冬的第一场雪下得很大，很静。万物被白色覆盖时，天地间的灵气也跟着沉淀了下来——像是经过了一遍过滤，变得更加纯净。你在雪地中打坐，每一次呼吸都能感到清冽的灵气涌入肺腑。瑞雪兆丰年，对修士来说，这场雪兆的是修为的精进。"
+  },
+  {
+    "id": "ext_lore_0015",
+    "text": "你发现了一段上古历史的记载。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "comprehension": 1
+    },
+    "tags": [
+      "lore",
+      "history"
+    ],
+    "event_type": "normal",
+    "expanded_text": "那卷竹简藏在一具白骨的怀中，你几乎没注意到。展开时字迹已经模糊，但你还是辨认出了几行——那是一段关于上古大战的记载。两位仙人在此交手，一击之下大地碎裂百里。你抬头看看周围的地貌……难怪这里寸草不生。万年过去了，伤痕犹在。"
+  },
+  {
+    "id": "ext_lore_0016",
+    "text": "你听闻了一位上古大能的传说。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "lore",
+      "history"
+    ],
+    "event_type": "normal",
+    "expanded_text": "酒馆里的老修士喝多了，开始讲他师父的师父讲给他师父听的故事。一位上古大能——据说他一剑斩了一条真龙，又以龙血铸了一座城。城在哪？没人知道。你本以为只是醉话，可当他说出那个名字时，你注意到酒馆里的所有人都安静了一瞬。"
+  },
+  {
+    "id": "ext_lore_0017",
+    "text": "你找到了一处被遗忘的古战场。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "fortune": 1
+    },
+    "tags": [
+      "lore",
+      "history"
+    ],
+    "event_type": "normal",
+    "expanded_text": "杂草丛生的平原上隐约能看出一些规律——那些凹陷是剑痕，那些凸起是法术轰击后的隆起。你站在古战场中央，仿佛还能嗅到千年前的血腥气。风过时你似乎听见了兵器碰撞声和惨叫声。你蹲下身，在泥土中翻出了一片碎甲。锈迹斑驳，但仍残留着一丝灵性。"
+  },
+  {
+    "id": "ext_lore_0018",
+    "text": "你在古籍中发现了一个秘密。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "comprehension": 1,
+      "fortune": 1
+    },
+    "tags": [
+      "lore",
+      "history"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "你原本只是随手翻翻那本发霉的旧书。可当你看到第七十三页时，手停了下来。那是一段被人刻意涂抹过的文字，但你用灵识一扫，被涂掉的内容赫然浮现。上面记载着一个你从未听过的名字，以及一段被修真界集体遗忘的历史。你合上书，心跳加速。"
+  },
+  {
+    "id": "ext_lore_0019",
+    "text": "你遇到了一位记忆了千年的灵魂。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "comprehension": 2
+    },
+    "tags": [
+      "lore",
+      "history"
+    ],
+    "event_type": "important",
+    "expanded_text": "你于一座古洞中遇到了一缕残魂。他自称已存在了千年，看尽了你想象不到的兴衰。他与你聊了三天三夜，每一句话都像翻开一本古老的史书。临别时他对你说：「记住我说的，因为这世上，总有一天没人会再讲这些故事。」"
+  },
+  {
+    "id": "ext_lore_0020",
+    "text": "你见证了一个王朝的覆灭。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "lore",
+      "history"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你亲眼看着那座王城的城墙倒下。火光冲天，哭喊声传出数里。一个传承了八百年的凡人王朝，在修士的一场争斗中化为飞灰。你站在远处的山头，觉得胃里翻涌。那些凡人做错了什么？什么都没做。他们只是住在了不该住的地方。修士的世界，凡人无处可逃。"
+  },
+  {
+    "id": "ext_lore_0021",
+    "text": "你发现了通往上古秘境的线索。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "fortune": 2,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "lore",
+      "history"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "那块石碑上的符文你花了三天才勉强译出一半。内容指向一处上古秘境——据说是某位飞升者留下的修炼之地。你将坐标默记于心，觉得心跳得厉害。这可能是你此生最大的机缘，也可能是一个致命的陷阱。你没有立即出发，而是坐下来想了很久。"
+  },
+  {
+    "id": "ext_lore_0022",
+    "text": "你在石壁上看到了远古修士留下的壁画。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "comprehension": 1,
+      "cultivation": 8
+    },
+    "tags": [
+      "lore",
+      "history"
+    ],
+    "event_type": "normal",
+    "expanded_text": "壁画画的是一个人，站在万千尸骸之上，朝着天空伸出了手。笔触粗犷而有力，即便过了不知多少年仍栩栩如生。你盯着那幅画看了很久——那人的眼神中没有喜悦，没有悲伤，只有一种说不清道不明的孤独。你忽然理解了一件事：走到最后的人，或许都是孤独的。"
+  },
+  {
+    "id": "ext_lore_0023",
+    "text": "你找到了一份远古地图。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "fortune": 1
+    },
+    "tags": [
+      "lore",
+      "history"
+    ],
+    "event_type": "normal",
+    "expanded_text": "地图是画在一张兽皮上的，线条已经褪色大半。你花了整整一夜才将它与如今的地形对应上。上面标注了三个位置——其中一个就在你脚下百里之内。你的手微微发抖。这张图在这里躺了不知多少年等着有人发现，而你恰好是那个人。运气？还是命？"
+  },
+  {
+    "id": "ext_lore_0024",
+    "text": "你听到了来自远古的回声。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "lore",
+      "history"
+    ],
+    "event_type": "important",
+    "expanded_text": "深山之中你忽然听见一阵远古的回声。它似乎从山岩深处传来，唱的是一种你不认识的语言。你站在原地听了整整一夜。第二日你试着把那调子哼出来，山中的鸟兽竟齐齐应和——原来有些东西，从未真正消失。"
+  },
+  {
+    "id": "final_mystery_0264",
+    "text": "你看到了一个不应该存在的影子。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "你于深夜抬眼，看见了墙上一个不该存在的影子。那影子比你高了一头，做着与你不同的动作。你心头一凛，却没有出声——你装作没看见，缓缓闭眼。等你再睁眼，影子已不在。可你心里清楚——它，看见你了。"
+  },
+  {
+    "id": "final_mystery_0265",
+    "text": "深夜里你听到了古怪的低语声。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "深夜里你在床上忽然醒来。屋子里黑漆漆的，可你听见角落里传来低低的语声——是有人在说话，可那语言你听不懂。你不敢动，连呼吸都屏住。那声音持续了整整一炷香，然后消失。你那一夜没有再睡。"
+  },
+  {
+    "id": "final_mystery_0266",
+    "text": "你的法器突然自己发出了光芒。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "你的法器素来安静地躺在剑架上。这一日傍晚它忽然开始发光，光芒越来越亮，最后整间屋子都被照成了白昼。你不敢碰，只是远远看着。半个时辰后光芒褪去，法器恢复如常——可它从此再不应你的召。"
+  },
+  {
+    "id": "final_mystery_0267",
+    "text": "你在镜中看到了另一个自己。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "你照镜子时怔住了。镜中那个「你」眨了眨眼——而你自己没有眨。你与「他」对视了许久，他忽然朝你笑了一笑。你没敢回笑，转身离开了那面镜子。从此你绕着那间屋子走，再不愿照见自己。"
+  },
+  {
+    "id": "final_mystery_0268",
+    "text": "时间似乎在这一刻静止了。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "正午时分你站在山道上，忽然觉得周围一切都凝固了。鸟不动了、风不吹了、连流水都在半空中悬着。你伸手碰一片叶子，它竟然像石头一样硬。这种状态持续了短短三息，又恢复如初。可那三息，你将记一辈子。"
+  },
+  {
+    "id": "final_mystery_0269",
+    "text": "你感到有什么东西在注视着你。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "你在山中独行时总觉得有目光黏在身上。你回头，只见空山无人。可那感觉始终未散——像是有什么东西，正隔着一种你看不见的方式在看你。你一夜未眠，从此再不敢独自上那座山。"
+  },
+  {
+    "id": "final_mystery_0270",
+    "text": "天空中出现了一只巨大的眼睛。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "今日天空出现了异象——一只巨大无比的眼睛，缓缓睁开俯视大地。所有看见的人都不约而同地跪了下去，包括你。那目光中无情绪，只是在「看」。看了一炷香后，它缓缓闭上，消失了。从此你心里多了一种敬畏。"
+  },
+  {
+    "id": "final_mystery_0271",
+    "text": "你收到了一封来自未来的信。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "今日你收到一封信。信上的字迹是你自己的，可信中描述的事情还没有发生。你看完，手抖得停不下来。那是一封来自未来的信——是「未来的你」托信给「现在的你」。你不知该不该照着上面做。"
+  },
+  {
+    "id": "final_mystery_0272",
+    "text": "你的影子突然动了一下。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "你坐在烛光下读书，忽然瞥见自己的影子动了一下——而你没动。你怔怔看着那影子，它似乎也在看你。你尝试挥手，影子并未跟着挥。等你再回神，影子已恢复正常。可你知道，那不是错觉。"
+  },
+  {
+    "id": "final_mystery_0273",
+    "text": "你在空无一人的地方听到了掌声。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "你独自走在空山里，忽然听见一阵掌声。你停下回头，山中无一人，可掌声依然清晰。它不慢不快，仿佛是为你这一刻而响。你站了许久，才硬着头皮继续往前走——你不知道是谁在为你鼓掌，也不敢知道。"
+  },
+  {
+    "id": "final_mystery_0274",
+    "text": "你做了一个关于末日的梦。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "你梦到了世界的尽头。天空崩裂，山川倒灌，无数熟悉的面孔在尘埃中消散。你想跑却跑不动，只能眼睁睁看着一切坍塌。醒来时一身冷汗。你写下了梦境，藏在床下——你直觉地知道，这梦不只是梦。"
+  },
+  {
+    "id": "final_mystery_0275",
+    "text": "你的手掌心出现了一个奇怪的纹路。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "你这一日洗手时发现掌心多了一道纹路——细细的，蜷曲的，像某种古文字。你试过冲洗、擦拭、用灵力刮，都消不去。每每修炼到关键处，那纹路便会发出微微的光。你知道——那是你的命数，被人或被天，刻在了你身上。"
+  },
+  {
+    "id": "final_mystery_0276",
+    "text": "你在水面上看到了另一个世界。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "你俯身于一汪清泉照面，水中倒映的却不是你这间屋子，而是另一片天地——那里有山有海，有楼阁有飞鸟，有一个穿青衣的「你」正回头朝这边望。你抬头，泉水已变回常态。可你心里清楚，那是真实的另一个世界。"
+  },
+  {
+    "id": "final_mystery_0277",
+    "text": "你突然忘记了过去一天的事情。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "你早上醒来发现自己忘了昨日做了什么。想了一整天，只有一片空白。你问家人，他们说你昨日如常起居，与他们说话、用饭，无半点异样。可你就是想不起来——那一日，对你而言，并不存在。"
+  },
+  {
+    "id": "final_mystery_0278",
+    "text": "你在修炼时看到了无数平行世界。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "修炼时你的元神突然飘飞，看见了无数个「自己」——每一个都活在不同的可能里。一个早死、一个飞升、一个堕入魔道、一个甚至从未修行。你看了许久才回神，从此对自己的每一个选择都更加慎重。"
+  },
+  {
+    "id": "final_mystery_0279",
+    "text": "你的法宝突然消失，三日后又出现了。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "那件法宝是你最珍视之物，可这一日清晨它就从床头消失了。你寻遍了整座山门也找不到，绝望了三日。第四日清晨它又静静躺回床头，仿佛从未离开。你拿起来感觉，似乎有什么气息在它上面流转——它去过别处。"
+  },
+  {
+    "id": "final_mystery_0280",
+    "text": "你遇到了一个自称来自未来的人。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "市集上你遇到一个目光锐利的少年，他朝你笑：「前辈，我是从未来回来的。」你以为是疯话，可他说出了你今日才发生的几件秘事。你浑身一凉，正要细问，他却已消失在人群里——只留下一句：「珍重。」"
+  },
+  {
+    "id": "final_mystery_0281",
+    "text": "你在梦中死了一次，醒来后浑身冷汗。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "你在梦中看见自己死了。死法清晰无比，连最后那口血溅到衣襟上的位置都看得分明。你猛地惊醒，浑身冷汗。你试着把梦境写下，期望自己能避过——可写完你苦笑了：若命数已定，写下又能如何？"
+  },
+  {
+    "id": "final_mystery_0282",
+    "text": "你发现自己的记忆中多了一段不属于自己的经历。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "今日整理记忆时你忽然发觉，识海里多了一段不属于自己的经历——你在一座白塔之下听人讲道，而你这一世从未去过白塔。你试图甩掉那段记忆，却发现它就像本来就该在那里。也许，是某个版本的你，把自己的故事寄给了你。"
+  },
+  {
+    "id": "final_mystery_0283",
+    "text": "天地间突然安静了一瞬，万籁俱寂。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious",
+      "atmosphere"
+    ],
+    "event_type": "important",
+    "expanded_text": "今日午时天地之间忽然安静了一瞬。鸟不鸣、风不动、流水亦无声，连人的心跳都仿佛停了。那一瞬持续了不过半息，可整个修真界都察觉到了。无人知道发生了什么，只能在事后议论纷纷。你心里却隐隐知道——那是天，眨了一下眼。"
+  },
+  {
+    "id": "last_rumor_0000",
+    "text": "有人说某处出现了上古仙器。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "茶馆里有人压低声音说：北疆冰原出现了一件上古仙器。据说那东西自己飞出了冰层，悬在半空发出嗡鸣。你听着心动了一瞬——但随即冷静下来。上古仙器……多少修士为了一件宝物命丧黄泉。你选择按兵不动。又不是只有你一个人听到了这个消息。"
+  },
+  {
+    "id": "last_rumor_0001",
+    "text": "传言某位大能即将飞升。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "传言说南山的那位老前辈要飞升了。他闭关已有三百年，近日洞府上方频频出现异象。如果是真的，这将是近千年来第一次有人飞升。你仰头望天，心中生出一股说不清的向往——仙路，真的存在吗？你把这个念头记在了心底。"
+  },
+  {
+    "id": "last_rumor_0002",
+    "text": "据说某个秘境即将开启。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你在三个不同的地方听到了同一个消息：幽冥秘境即将开启。百年一开，每次只容纳百人。里面据说有可以洗髓换骨的天材地宝。你掰着指头算自己的实力……还是差了些。但这个消息本身让你修炼的劲头又足了几分。下次开启时，你要有资格进去。"
+  },
+  {
+    "id": "last_rumor_0003",
+    "text": "有人声称发现了长生不死的方法。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "有人声称找到了长生不死的秘密。你嗤笑——修仙界最不缺的就是这种骗子。可传着传着你发现这次有点不一样。好几个可靠的消息源都在说同一件事，而且说话的那个人确实活了比他的境界所能支撑的时间更久。你放下了嗤笑，开始认真琢磨。"
+  },
+  {
+    "id": "last_rumor_0004",
+    "text": "传闻魔道又有了新动作。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "魔道又不安分了。你从过路修士的闲聊中听到了只言片语：某个魔道宗门在秘密培育什么东西。是什么？没人说得清。但你注意到最近几个月边境地区的失踪案多了起来。你暗暗提高了警惕——魔道每次有大动作，遭殃的总是普通修士。"
+  },
+  {
+    "id": "last_rumor_0005",
+    "text": "听说远方爆发了一场大战。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你听到那个消息时手里的茶杯差点掉了。东海之上，两位化神期大修士动手了。据说方圆千里的海面被蒸干，三座岛屿沉入了海底。死了多少人？没人提。大家关心的只是谁赢了。你突然觉得心凉——在那个层次的战斗面前，你连棋子都算不上。"
+  },
+  {
+    "id": "last_rumor_0006",
+    "text": "据说有人炼出了九品仙丹。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "九品仙丹——传说中的东西，据说吃一颗直接突破大境界。你本来是不信的，可今日你亲眼看见一位结丹期的修士将一枚金色丹药小心翼翼地收入乾坤袋，那枚丹药散发出的灵压让你膝盖发软。那真的是……仙丹？你咽了口唾沫，把目光移开了。别看，会死。"
+  },
+  {
+    "id": "last_rumor_0007",
+    "text": "传言某位失踪已久的前辈现身了。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "失踪了五百年的前辈……回来了？你跟一群修士围在布告前，上面的画像你不认识，但旁边的老修士认出来了——脸都白了。据说这位前辈当年实力通天，消失前曾放话要去某个禁地。他居然活着回来了，这意味着那个禁地……并非死路。你记住了那个地名。"
+  },
+  {
+    "id": "last_rumor_0008",
+    "text": "有人在讨论最近的天象异变。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "最近修真界都在讨论那天夜里的天象——天空出现了一个血红色的月亮，持续了整整一个时辰。有人说是魔劫将至，有人说是仙人渡劫的余波，还有人说是某件远古封印松动了。你不知道哪个是真的，但那个夜晚你的丹田确实异常躁动了一次。不是好兆头。"
+  },
+  {
+    "id": "last_rumor_0009",
+    "text": "据说妖族和人族要议和了。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你第一反应是不信。妖族和人族？议和？这两个种族打了几万年了，怎么可能说和就和。可消息越传越真——据说双方的大能已经坐下谈了三次。如果是真的，那修真界的格局要变天了。有人欢喜有人忧。你还在琢磨：和平之后，那些靠剿妖吃饭的人怎么办？"
+  },
+  {
+    "id": "last_rumor_0010",
+    "text": "传闻有人打通了通往仙界的路。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "通往仙界的路……你攥紧了手中的酒杯。如果真有人打通了，那意味着什么？意味着飞升不再是传说。你不知道这消息是真是假，但那天晚上你打坐时多运了三个周天。万一呢？万一真的有一条路通往那里？你不想到时候站在路口，却发现自己走不动。"
+  },
+  {
+    "id": "last_rumor_0011",
+    "text": "听说某个门派被灭了满门。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "灭门。你听到这两个字时后背一阵发凉。那个门派你听过——不大，但也有三四百人。一夜之间被屠了个干干净净，连门派驻地都被夷为平地。是谁干的？没人敢说。你看了看自己脚下这座不起眼的小山头，突然觉得自己应该把防护阵法再加固几层。"
+  },
+  {
+    "id": "last_rumor_0012",
+    "text": "有人声称看到了真龙。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "那人喝得醉醺醺地拍桌子：「我看见了！真龙！就在东海上空！」大家都笑他吹牛。可你注意到他描述细节时眼神中没有编造的痕迹——翅展三百丈、鳞片如金、一声龙吟海面裂开数十里。你不动声色地将这些细节记在心里。真龙……如果是真的，这天下怕是要不太平了。"
+  },
+  {
+    "id": "last_rumor_0013",
+    "text": "传言某处灵脉即将枯竭。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "灵脉枯竭的消息让整个坊市都炸了锅。那条灵脉供养着附近七八个小门派，一旦枯了，数百修士都要被迫迁居。你虽然不在那条灵脉上修炼，但这消息让你后背发凉——灵脉怎么会枯？是天道之变，还是有人在暗中吸取？无论哪种，都不是小事。"
+  },
+  {
+    "id": "last_rumor_0014",
+    "text": "据说天道即将降下大劫。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "大劫。你在角落里听到这两个字时手心沁出了冷汗。有人推算出天道即将降下大劫，规模是千年未遇的那种。你想问更多细节，但说话的人已经匆匆离去了。你坐在那里，心中翻涌不定。如果是真的……你现在的境界扛得住吗？"
+  },
+  {
+    "id": "last_rumor_0015",
+    "text": "听说有人逆天改命成功了。",
+    "category": "world",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {},
+    "tags": [
+      "rumor",
+      "world"
+    ],
+    "event_type": "normal",
+    "expanded_text": "逆天改命——你原以为这只是话本里的情节。可据说真的有人做到了。一个注定活不过三十的凡人，硬是靠某种秘法改写了自己的天命，如今已经修至元婴。你不知道该敬佩还是恐惧。改命的代价是什么？没人说。但你觉得——那代价一定不小。"
+  }
+]

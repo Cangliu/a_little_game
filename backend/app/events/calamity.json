@@ -1,0 +1,6552 @@
+[
+  {
+    "id": "calamity_000",
+    "text": "妖兽袭村，你奋力抵抗。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你听到惨叫声时正在吃饭——碗都来不及放下就冲了出去。一头浑身漆黑的妖兽正在村口撕咬一个人。你抄起墙边的铁叉冲了上去，在它的肋下狠狠刺了一叉。它吼叫着转向你，你看见了它血红的眼睛。那一夜你不知道自己是怎么活下来的，只知道第二天醒来时满身是血，分不清哪些是自己的。"
+  },
+  {
+    "id": "calamity_001",
+    "text": "山洪暴发，你险些被冲走。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "水来得太快了。一开始只是溪水暴涨，你还没反应过来整个山谷就灌满了。你被洪水裹挟着撞在石头上、树干上，嘴里灌满了泥水。你拼命抓住了一根浮木——指甲断了三根。等水退了你趴在一片狼藉中，浑身上下没有一处不疼的。你活了。但你的家没了。"
+  },
+  {
+    "id": "calamity_002",
+    "text": "你误入邪修的领地，被追杀三日。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 2,
+      "cultivation": -10,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你是在第二天才意识到自己闯入了什么地方的——那些树上挂着的不是果子，是人头。你掉头就跑，但晚了。三个黑袍人从林中飘出来追了上来。你跑了三天三夜，中间挨了两剑，最后是躲进一条地下暗河才甩掉他们的。你趴在河岸上喘气，心想这辈子再也不乱走了。"
+  },
+  {
+    "id": "calamity_003",
+    "text": "天劫突至，你毫无准备。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -2,
+      "willpower": 2
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "天劫。没有征兆，没有前奏——乌云在三息之内凝聚，第一道雷就直接劈了下来。你连防御法器都没来得及祭出，硬生生挨了一道天雷。全身焦黑，骨头都在响。你咬着牙撑过了九道雷——每一道都比上一道猛。等雷散了你趴在地上半死不活，庆幸自己还有一口气在。"
+  },
+  {
+    "id": "calamity_004",
+    "text": "你遭遇心魔，在幻境中沉沦。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": -2,
+      "cultivation": -15
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你不知道自己是什么时候陷进去的。等你意识到不对劲时已经置身于一个虚幻的世界——里面有你想要的一切。师长的认可、惊世的修为、倾心的道侣。你差一点就留下了。是那一丝残存的理智救了你——你狠狠咬破了舌尖，鲜血的味道让你清醒。睁开眼时冷汗已经湿透了三层衣裳。"
+  },
+  {
+    "id": "calamity_005",
+    "text": "一头上古妖兽苏醒，横扫方圆千里。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "fortune": -1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "大地在颤抖。那头东西从山脉下面钻出来时，半座山都塌了。它有多大？你不知道。你只看到了一只脚——光那只脚就比你的洞府还大。方圆千里的修士都在拼命逃跑。你也在跑，跑得肺都快炸了。你回头看了一眼就后悔了——那双眼睛里没有任何情感，只有远古的饥饿。"
+  },
+  {
+    "id": "calamity_006",
+    "text": "你被困在禁地中，苦苦挣扎。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 2,
+      "cultivation": -20,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "禁地里的一切都在试图杀死你。地上的草会绊脚、树上的藤会缠颈、水里有看不见的东西在拽你的腿。你用了三天才走出了第一层，然后发现还有第二层、第三层……你在里面困了整整一个月，瘦了二十斤，差点疯掉。出来那天你跪在地上亲了亲泥土——再也不去那种鬼地方了。"
+  },
+  {
+    "id": "calamity_007",
+    "text": "宗门大战爆发，生灵涂炭。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 1,
+      "charisma": -1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "号角声震耳欲聋。漫天的法术轰击让天空都变了颜色。你站在战场边缘，看着两个宗门的弟子像蝼蚁一样成片倒下。有人冲你飞来一剑——你甚至不认识对方。你格开了，但旁边的师兄没格开。他倒在你面前，胸口一个血洞。你想救他，可更多的攻击已经飞来了。"
+  },
+  {
+    "id": "calamity_008",
+    "text": "天地异变，灵气枯竭。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": -25
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "最先是草枯了。然后是灵池干了。再然后——你发现自己根本无法运转灵力。天地间的灵气像是被什么东西抽干了一样，空气中一丝灵力都没有。你的修为在一点一点流失。周围的修士都在恐慌。三天后灵气才恢复，但你的修为已经退了一个小境界。"
+  },
+  {
+    "id": "calamity_009",
+    "text": "你遇到了走火入魔的邪修。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "他的眼睛是红的。你跟他打了照面的瞬间就知道——这人走火入魔了，已经失去了理智。他朝你扑来时你甚至能闻到他身上散发出的血腥气。你拼尽全力才挡住了他的三招，然后转身就跑。跑的时候你能听到他在你身后笑——那笑声比鬼叫还吓人。"
+  },
+  {
+    "id": "calamity_010",
+    "text": "你的修炼出了岔子，经脉尽断。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": -40,
+      "constitution": -3
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "就是那一瞬间的分心——灵力运转出了岔子，暴走的灵气像利刃一样切割着你的经脉。你疼得整个人弓了起来，额头上的青筋根根暴起。等你勉强稳住时已经来不及了——你能清楚地感觉到自己体内有七八条经脉碎了。多年修行，一朝尽毁。你瘫坐在地上，脑子一片空白。"
+  },
+  {
+    "id": "calamity_011",
+    "text": "魔族入侵，人间炼狱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 2,
+      "fortune": -2
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "天裂开了一道口子——不是比喻，天真的裂了。黑色的东西从裂缝中涌出，铺天盖地。魔族。你看到的第一个魔族士兵有三丈高，手持一根带刺的铁棒。它看了你一眼——你被那一眼钉在了原地。它没有杀你，只是从你身旁走了过去。可你身后的那座镇子……一个活人都没留下。"
+  },
+  {
+    "id": "calamity_012",
+    "text": "一场天灾席卷大陆。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "fortune": -1
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你亲眼看着那片大陆裂开了。不是地震——是整块大陆像饼干一样碎了。海水涌入裂缝，蒸汽直冲云霄。你站在飞剑上俯瞰——方圆万里内，城池、山脉、河流……全部消失了。代替它们的是一片茫茫泽国。死了多少人？你不敢想。不知道是天罚还是人祸，但这片土地完了。"
+  },
+  {
+    "id": "calamity_013",
+    "text": "你在渡劫时被人偷袭。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": -30,
+      "willpower": 2
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "第七道天雷落下时你已经快要撑不住了——可最难的还在后面。一道黑影在雷光的间隙中闪现，一剑刺向你的后心。你本能地侧身，那一剑擦着你的肋骨划过。天雷和暗杀同时降临——这算什么？你红了眼，一边抵抗天雷一边转身迎战。那个偷袭者大概没料到你还能还手。"
+  },
+  {
+    "id": "calamity_014",
+    "text": "你的道心出现裂痕。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": -3,
+      "cultivation": -20
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你不知道什么时候开始怀疑的。修仙为何？长生为何？你杀过的那些人真的该死吗？这些念头像蛀虫一样日夜啃食着你的心志。你打坐时无法入定，修炼时灵力涣散。道心出现了裂缝——你能感觉到它在一点点扩大。如果不尽快弥合，你可能会从巅峰跌落谷底。"
+  },
+  {
+    "id": "calamity_015",
+    "text": "你中了剧毒，修为散失大半。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": -35,
+      "constitution": -2,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你中毒的那一刻没有任何感觉。等你发现不对时毒已经入了骨髓——经脉中的灵力开始一丝丝地流失，像沙漏一样止不住。你试了七八种解毒丹都没用。三天后你的修为散失了大半，整个人虚弱得连走路都颤。你不知道是谁下的毒，也不知道什么时候中的。但你很清楚——有人要你死。"
+  },
+  {
+    "id": "calamity_016",
+    "text": "你被人下了禁制，灵力封印。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": -25,
+      "add_tag": "formation_user"
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你是在睡梦中被人动的手脚。醒来时发现自己的灵力完全无法调动——胸口多了一个看不见的禁制，像一把无形的锁将你的灵力牢牢封住。你试着冲击了几次，每次都像撞在铁壁上。你现在跟个普通人没有区别。谁？为什么？你攥紧了拳头，指甲嵌入掌心。"
+  },
+  {
+    "id": "calamity_017",
+    "text": "你进入一处死地，生死一线。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 3,
+      "fortune": -1
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "进去的时候你就知道不对——空气里有腐肉的味道，地上有干涸的血迹。但退路已经封死了。你往前走，每一步都可能踩中陷阱。第三天你被一个机关射中了肩膀，第五天你差点掉进一个深不见底的裂缝。第七天你看到了出口——代价是身上多了十一道伤。但你活着走出来了。"
+  },
+  {
+    "id": "calamity_018",
+    "text": "天道降罚，雷劫加身。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -2,
+      "willpower": 3
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "天雷不是一道一道劈的——是一片一片砸下来的。你整个人被雷光包裹，身体里每一根骨头都在震颤。这是天道的惩罚——也许是你杀了不该杀的人，也许是你窃取了不该取的东西。你在雷海中咬牙硬撑，每一秒都是煎熬。等雷散时你的衣裳全烧没了，浑身焦黑如炭。但你没死。"
+  },
+  {
+    "id": "calamity_019",
+    "text": "你触犯了天条，遭受天谴。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": -50,
+      "willpower": 2
+    },
+    "tags": [
+      "calamity",
+      "danger"
+    ],
+    "event_type": "danger",
+    "expanded_text": "天谴。两个字。说起来简单，落到头上才知道什么叫恐惧。你不知道自己做了什么触犯了天条——也许是修了某个禁忌功法，也许是无意中破坏了什么天规。惩罚来得毫无预兆：你的修为被强行削去了三成，像是有一只看不见的手把你丹田里的灵力生生抽走了。疼得你在地上打了三个滚。"
+  },
+  {
+    "id": "ext_combat_0150",
+    "text": "你遭遇了一头赤焰蛟，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "赤焰蛟从岩浆中破出时带起了一片火雨。它通体赤红，鳞片像燃烧的炭火，每一次呼吸都喷出灼热的气浪。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0151",
+    "text": "你遭遇了一头赤焰蛟，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "赤焰蛟从岩浆中破出时带起了一片火雨。它通体赤红，鳞片像燃烧的炭火，每一次呼吸都喷出灼热的气浪。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0152",
+    "text": "你遭遇了一头赤焰蛟，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "赤焰蛟从岩浆中破出时带起了一片火雨。它通体赤红，鳞片像燃烧的炭火，每一次呼吸都喷出灼热的气浪。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0153",
+    "text": "你遭遇了一头赤焰蛟，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "赤焰蛟从岩浆中破出时带起了一片火雨。它通体赤红，鳞片像燃烧的炭火，每一次呼吸都喷出灼热的气浪。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0154",
+    "text": "你遭遇了一头赤焰蛟，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "赤焰蛟从岩浆中破出时带起了一片火雨。它通体赤红，鳞片像燃烧的炭火，每一次呼吸都喷出灼热的气浪。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0155",
+    "text": "你遭遇了一头赤焰蛟，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "赤焰蛟从岩浆中破出时带起了一片火雨。它通体赤红，鳞片像燃烧的炭火，每一次呼吸都喷出灼热的气浪。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0156",
+    "text": "你遭遇了一头赤焰蛟，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "赤焰蛟从岩浆中破出时带起了一片火雨。它通体赤红，鳞片像燃烧的炭火，每一次呼吸都喷出灼热的气浪。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0157",
+    "text": "你遭遇了一只九尾妖狐，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "九尾妖狐现身时你差点被它的幻术迷住——它化作了一个绝色女子的模样。但九条银色的尾巴暴露了它的身份。它笑着朝你扑来，尾尖如银针般锐利。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0158",
+    "text": "你遭遇了一只九尾妖狐，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "九尾妖狐现身时你差点被它的幻术迷住——它化作了一个绝色女子的模样。但九条银色的尾巴暴露了它的身份。它笑着朝你扑来，尾尖如银针般锐利。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0159",
+    "text": "你遭遇了一只九尾妖狐，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "九尾妖狐现身时你差点被它的幻术迷住——它化作了一个绝色女子的模样。但九条银色的尾巴暴露了它的身份。它笑着朝你扑来，尾尖如银针般锐利。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0160",
+    "text": "你遭遇了一只九尾妖狐，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "九尾妖狐现身时你差点被它的幻术迷住——它化作了一个绝色女子的模样。但九条银色的尾巴暴露了它的身份。它笑着朝你扑来，尾尖如银针般锐利。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0161",
+    "text": "你遭遇了一只九尾妖狐，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "九尾妖狐现身时你差点被它的幻术迷住——它化作了一个绝色女子的模样。但九条银色的尾巴暴露了它的身份。它笑着朝你扑来，尾尖如银针般锐利。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0162",
+    "text": "你遭遇了一只九尾妖狐，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "九尾妖狐现身时你差点被它的幻术迷住——它化作了一个绝色女子的模样。但九条银色的尾巴暴露了它的身份。它笑着朝你扑来，尾尖如银针般锐利。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0163",
+    "text": "你遭遇了一只九尾妖狐，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "九尾妖狐现身时你差点被它的幻术迷住——它化作了一个绝色女子的模样。但九条银色的尾巴暴露了它的身份。它笑着朝你扑来，尾尖如银针般锐利。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0164",
+    "text": "你遭遇了一群山贼，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "十几个山贼从四面八方围了上来。为首的那个拎着一把缺了口的大刀，满脸横肉。他们不是修士，但人多势众，而且显然不是第一次杀人。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0165",
+    "text": "你遭遇了一群山贼，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "十几个山贼从四面八方围了上来。为首的那个拎着一把缺了口的大刀，满脸横肉。他们不是修士，但人多势众，而且显然不是第一次杀人。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0166",
+    "text": "你遭遇了一群山贼，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "十几个山贼从四面八方围了上来。为首的那个拎着一把缺了口的大刀，满脸横肉。他们不是修士，但人多势众，而且显然不是第一次杀人。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0167",
+    "text": "你遭遇了一群山贼，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "十几个山贼从四面八方围了上来。为首的那个拎着一把缺了口的大刀，满脸横肉。他们不是修士，但人多势众，而且显然不是第一次杀人。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0168",
+    "text": "你遭遇了一群山贼，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "十几个山贼从四面八方围了上来。为首的那个拎着一把缺了口的大刀，满脸横肉。他们不是修士，但人多势众，而且显然不是第一次杀人。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0169",
+    "text": "你遭遇了一群山贼，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "十几个山贼从四面八方围了上来。为首的那个拎着一把缺了口的大刀，满脸横肉。他们不是修士，但人多势众，而且显然不是第一次杀人。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0170",
+    "text": "你遭遇了一群山贼，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "十几个山贼从四面八方围了上来。为首的那个拎着一把缺了口的大刀，满脸横肉。他们不是修士，但人多势众，而且显然不是第一次杀人。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0171",
+    "text": "你遭遇了一位堕落修士，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你认出了他身上残破的宗门服饰——曾经也是正道中人。但如今他双目赤红，身上的灵力带着诡异的血色。堕落修士，比魔道中人更难缠。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0172",
+    "text": "你遭遇了一位堕落修士，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你认出了他身上残破的宗门服饰——曾经也是正道中人。但如今他双目赤红，身上的灵力带着诡异的血色。堕落修士，比魔道中人更难缠。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0173",
+    "text": "你遭遇了一位堕落修士，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你认出了他身上残破的宗门服饰——曾经也是正道中人。但如今他双目赤红，身上的灵力带着诡异的血色。堕落修士，比魔道中人更难缠。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0174",
+    "text": "你遭遇了一位堕落修士，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你认出了他身上残破的宗门服饰——曾经也是正道中人。但如今他双目赤红，身上的灵力带着诡异的血色。堕落修士，比魔道中人更难缠。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0175",
+    "text": "你遭遇了一位堕落修士，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "你认出了他身上残破的宗门服饰——曾经也是正道中人。但如今他双目赤红，身上的灵力带着诡异的血色。堕落修士，比魔道中人更难缠。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0176",
+    "text": "你遭遇了一位堕落修士，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "你认出了他身上残破的宗门服饰——曾经也是正道中人。但如今他双目赤红，身上的灵力带着诡异的血色。堕落修士，比魔道中人更难缠。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0177",
+    "text": "你遭遇了一位堕落修士，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你认出了他身上残破的宗门服饰——曾经也是正道中人。但如今他双目赤红，身上的灵力带着诡异的血色。堕落修士，比魔道中人更难缠。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0178",
+    "text": "你遭遇了一头铁背熊，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "铁背熊从树丛中撞出来时带倒了三棵大树。它足有两丈高，背上的毛发坚硬如铁刺。它用后腿站立起来拍打胸膛时，你觉得地面都在震。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0179",
+    "text": "你遭遇了一头铁背熊，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "铁背熊从树丛中撞出来时带倒了三棵大树。它足有两丈高，背上的毛发坚硬如铁刺。它用后腿站立起来拍打胸膛时，你觉得地面都在震。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0180",
+    "text": "你遭遇了一头铁背熊，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "铁背熊从树丛中撞出来时带倒了三棵大树。它足有两丈高，背上的毛发坚硬如铁刺。它用后腿站立起来拍打胸膛时，你觉得地面都在震。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0181",
+    "text": "你遭遇了一头铁背熊，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "铁背熊从树丛中撞出来时带倒了三棵大树。它足有两丈高，背上的毛发坚硬如铁刺。它用后腿站立起来拍打胸膛时，你觉得地面都在震。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0182",
+    "text": "你遭遇了一头铁背熊，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "铁背熊从树丛中撞出来时带倒了三棵大树。它足有两丈高，背上的毛发坚硬如铁刺。它用后腿站立起来拍打胸膛时，你觉得地面都在震。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0183",
+    "text": "你遭遇了一头铁背熊，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "铁背熊从树丛中撞出来时带倒了三棵大树。它足有两丈高，背上的毛发坚硬如铁刺。它用后腿站立起来拍打胸膛时，你觉得地面都在震。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0184",
+    "text": "你遭遇了一头铁背熊，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "铁背熊从树丛中撞出来时带倒了三棵大树。它足有两丈高，背上的毛发坚硬如铁刺。它用后腿站立起来拍打胸膛时，你觉得地面都在震。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0185",
+    "text": "你遭遇了一条毒蛇精，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "那条毒蛇精藏在草丛中你根本没看见——是它吐出的信子惊了你。它有十丈长，身上的花纹像是涂了毒液在流动。空气中弥漫着甜腻的毒气。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0186",
+    "text": "你遭遇了一条毒蛇精，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "那条毒蛇精藏在草丛中你根本没看见——是它吐出的信子惊了你。它有十丈长，身上的花纹像是涂了毒液在流动。空气中弥漫着甜腻的毒气。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0187",
+    "text": "你遭遇了一条毒蛇精，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "那条毒蛇精藏在草丛中你根本没看见——是它吐出的信子惊了你。它有十丈长，身上的花纹像是涂了毒液在流动。空气中弥漫着甜腻的毒气。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0188",
+    "text": "你遭遇了一条毒蛇精，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "那条毒蛇精藏在草丛中你根本没看见——是它吐出的信子惊了你。它有十丈长，身上的花纹像是涂了毒液在流动。空气中弥漫着甜腻的毒气。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0189",
+    "text": "你遭遇了一条毒蛇精，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "那条毒蛇精藏在草丛中你根本没看见——是它吐出的信子惊了你。它有十丈长，身上的花纹像是涂了毒液在流动。空气中弥漫着甜腻的毒气。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0190",
+    "text": "你遭遇了一条毒蛇精，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "那条毒蛇精藏在草丛中你根本没看见——是它吐出的信子惊了你。它有十丈长，身上的花纹像是涂了毒液在流动。空气中弥漫着甜腻的毒气。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0191",
+    "text": "你遭遇了一条毒蛇精，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "那条毒蛇精藏在草丛中你根本没看见——是它吐出的信子惊了你。它有十丈长，身上的花纹像是涂了毒液在流动。空气中弥漫着甜腻的毒气。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0192",
+    "text": "你遭遇了一只金翅大鹏，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "金翅大鹏从云层中俯冲下来时速度快得你根本看不清——只看到一道金色的闪电。它的翅展遮住了半边天空，利爪如钩刀般向你抓来。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0193",
+    "text": "你遭遇了一只金翅大鹏，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "金翅大鹏从云层中俯冲下来时速度快得你根本看不清——只看到一道金色的闪电。它的翅展遮住了半边天空，利爪如钩刀般向你抓来。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0194",
+    "text": "你遭遇了一只金翅大鹏，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "金翅大鹏从云层中俯冲下来时速度快得你根本看不清——只看到一道金色的闪电。它的翅展遮住了半边天空，利爪如钩刀般向你抓来。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0195",
+    "text": "你遭遇了一只金翅大鹏，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "金翅大鹏从云层中俯冲下来时速度快得你根本看不清——只看到一道金色的闪电。它的翅展遮住了半边天空，利爪如钩刀般向你抓来。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0196",
+    "text": "你遭遇了一只金翅大鹏，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "金翅大鹏从云层中俯冲下来时速度快得你根本看不清——只看到一道金色的闪电。它的翅展遮住了半边天空，利爪如钩刀般向你抓来。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0197",
+    "text": "你遭遇了一只金翅大鹏，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "金翅大鹏从云层中俯冲下来时速度快得你根本看不清——只看到一道金色的闪电。它的翅展遮住了半边天空，利爪如钩刀般向你抓来。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0198",
+    "text": "你遭遇了一只金翅大鹏，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "金翅大鹏从云层中俯冲下来时速度快得你根本看不清——只看到一道金色的闪电。它的翅展遮住了半边天空，利爪如钩刀般向你抓来。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0199",
+    "text": "你遭遇了一头穷奇，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "穷奇——上古凶兽。它有虎身牛尾，背生双翼，浑身散发着浓郁的煞气。你从它的眼睛里读到了嗜血的欲望。这东西不是你该碰的。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0200",
+    "text": "你遭遇了一头穷奇，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "穷奇——上古凶兽。它有虎身牛尾，背生双翼，浑身散发着浓郁的煞气。你从它的眼睛里读到了嗜血的欲望。这东西不是你该碰的。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0201",
+    "text": "你遭遇了一头穷奇，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "穷奇——上古凶兽。它有虎身牛尾，背生双翼，浑身散发着浓郁的煞气。你从它的眼睛里读到了嗜血的欲望。这东西不是你该碰的。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0202",
+    "text": "你遭遇了一头穷奇，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "穷奇——上古凶兽。它有虎身牛尾，背生双翼，浑身散发着浓郁的煞气。你从它的眼睛里读到了嗜血的欲望。这东西不是你该碰的。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0203",
+    "text": "你遭遇了一头穷奇，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "穷奇——上古凶兽。它有虎身牛尾，背生双翼，浑身散发着浓郁的煞气。你从它的眼睛里读到了嗜血的欲望。这东西不是你该碰的。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0204",
+    "text": "你遭遇了一头穷奇，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "穷奇——上古凶兽。它有虎身牛尾，背生双翼，浑身散发着浓郁的煞气。你从它的眼睛里读到了嗜血的欲望。这东西不是你该碰的。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0205",
+    "text": "你遭遇了一头穷奇，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "穷奇——上古凶兽。它有虎身牛尾，背生双翼，浑身散发着浓郁的煞气。你从它的眼睛里读到了嗜血的欲望。这东西不是你该碰的。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0206",
+    "text": "你遭遇了一位魔道修士，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "那魔道修士浑身笼罩在黑气中，看不清面目。他祭出的法器是一面人皮鼓——每敲一下你的心跳就乱一拍。他的功法以吞噬他人灵力为生。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0207",
+    "text": "你遭遇了一位魔道修士，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "那魔道修士浑身笼罩在黑气中，看不清面目。他祭出的法器是一面人皮鼓——每敲一下你的心跳就乱一拍。他的功法以吞噬他人灵力为生。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0208",
+    "text": "你遭遇了一位魔道修士，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "那魔道修士浑身笼罩在黑气中，看不清面目。他祭出的法器是一面人皮鼓——每敲一下你的心跳就乱一拍。他的功法以吞噬他人灵力为生。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0209",
+    "text": "你遭遇了一位魔道修士，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "那魔道修士浑身笼罩在黑气中，看不清面目。他祭出的法器是一面人皮鼓——每敲一下你的心跳就乱一拍。他的功法以吞噬他人灵力为生。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0210",
+    "text": "你遭遇了一位魔道修士，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "那魔道修士浑身笼罩在黑气中，看不清面目。他祭出的法器是一面人皮鼓——每敲一下你的心跳就乱一拍。他的功法以吞噬他人灵力为生。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0211",
+    "text": "你遭遇了一位魔道修士，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "那魔道修士浑身笼罩在黑气中，看不清面目。他祭出的法器是一面人皮鼓——每敲一下你的心跳就乱一拍。他的功法以吞噬他人灵力为生。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0212",
+    "text": "你遭遇了一位魔道修士，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "那魔道修士浑身笼罩在黑气中，看不清面目。他祭出的法器是一面人皮鼓——每敲一下你的心跳就乱一拍。他的功法以吞噬他人灵力为生。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0213",
+    "text": "你遭遇了一群尸傀，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "尸傀从地下成群冒出来——是被人炼化的死尸，没有思想，不知疲倦。它们行动僵硬但力大无穷。最可怕的是它们不会停，打碎了一个还有十个。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0214",
+    "text": "你遭遇了一群尸傀，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "尸傀从地下成群冒出来——是被人炼化的死尸，没有思想，不知疲倦。它们行动僵硬但力大无穷。最可怕的是它们不会停，打碎了一个还有十个。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0215",
+    "text": "你遭遇了一群尸傀，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "尸傀从地下成群冒出来——是被人炼化的死尸，没有思想，不知疲倦。它们行动僵硬但力大无穷。最可怕的是它们不会停，打碎了一个还有十个。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0216",
+    "text": "你遭遇了一群尸傀，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "尸傀从地下成群冒出来——是被人炼化的死尸，没有思想，不知疲倦。它们行动僵硬但力大无穷。最可怕的是它们不会停，打碎了一个还有十个。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0217",
+    "text": "你遭遇了一群尸傀，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "尸傀从地下成群冒出来——是被人炼化的死尸，没有思想，不知疲倦。它们行动僵硬但力大无穷。最可怕的是它们不会停，打碎了一个还有十个。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0218",
+    "text": "你遭遇了一群尸傀，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "尸傀从地下成群冒出来——是被人炼化的死尸，没有思想，不知疲倦。它们行动僵硬但力大无穷。最可怕的是它们不会停，打碎了一个还有十个。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0219",
+    "text": "你遭遇了一群尸傀，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "尸傀从地下成群冒出来——是被人炼化的死尸，没有思想，不知疲倦。它们行动僵硬但力大无穷。最可怕的是它们不会停，打碎了一个还有十个。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0220",
+    "text": "你遭遇了一只千年蜘蛛精，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "蜘蛛精的巢穴里到处是黏腻的丝线。它有磨盘那么大，八条长腿上挂着前一个猎物的残骸。它用八只眼睛同时看着你——每一只都闪着贪婪的光。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0221",
+    "text": "你遭遇了一只千年蜘蛛精，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "蜘蛛精的巢穴里到处是黏腻的丝线。它有磨盘那么大，八条长腿上挂着前一个猎物的残骸。它用八只眼睛同时看着你——每一只都闪着贪婪的光。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0222",
+    "text": "你遭遇了一只千年蜘蛛精，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "蜘蛛精的巢穴里到处是黏腻的丝线。它有磨盘那么大，八条长腿上挂着前一个猎物的残骸。它用八只眼睛同时看着你——每一只都闪着贪婪的光。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0223",
+    "text": "你遭遇了一只千年蜘蛛精，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "蜘蛛精的巢穴里到处是黏腻的丝线。它有磨盘那么大，八条长腿上挂着前一个猎物的残骸。它用八只眼睛同时看着你——每一只都闪着贪婪的光。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0224",
+    "text": "你遭遇了一只千年蜘蛛精，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "蜘蛛精的巢穴里到处是黏腻的丝线。它有磨盘那么大，八条长腿上挂着前一个猎物的残骸。它用八只眼睛同时看着你——每一只都闪着贪婪的光。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0225",
+    "text": "你遭遇了一只千年蜘蛛精，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "蜘蛛精的巢穴里到处是黏腻的丝线。它有磨盘那么大，八条长腿上挂着前一个猎物的残骸。它用八只眼睛同时看着你——每一只都闪着贪婪的光。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0226",
+    "text": "你遭遇了一只千年蜘蛛精，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "蜘蛛精的巢穴里到处是黏腻的丝线。它有磨盘那么大，八条长腿上挂着前一个猎物的残骸。它用八只眼睛同时看着你——每一只都闪着贪婪的光。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0227",
+    "text": "你遭遇了一头饕餮，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "饕餮张开嘴的瞬间你感到一股巨大的吸力——它在吞噬一切，连灵气都在往它嘴里涌。那张嘴占了它身体的一半，里面密密麻麻全是獠牙。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0228",
+    "text": "你遭遇了一头饕餮，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "饕餮张开嘴的瞬间你感到一股巨大的吸力——它在吞噬一切，连灵气都在往它嘴里涌。那张嘴占了它身体的一半，里面密密麻麻全是獠牙。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0229",
+    "text": "你遭遇了一头饕餮，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "饕餮张开嘴的瞬间你感到一股巨大的吸力——它在吞噬一切，连灵气都在往它嘴里涌。那张嘴占了它身体的一半，里面密密麻麻全是獠牙。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0230",
+    "text": "你遭遇了一头饕餮，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "饕餮张开嘴的瞬间你感到一股巨大的吸力——它在吞噬一切，连灵气都在往它嘴里涌。那张嘴占了它身体的一半，里面密密麻麻全是獠牙。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0231",
+    "text": "你遭遇了一头饕餮，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "饕餮张开嘴的瞬间你感到一股巨大的吸力——它在吞噬一切，连灵气都在往它嘴里涌。那张嘴占了它身体的一半，里面密密麻麻全是獠牙。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0232",
+    "text": "你遭遇了一头饕餮，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "饕餮张开嘴的瞬间你感到一股巨大的吸力——它在吞噬一切，连灵气都在往它嘴里涌。那张嘴占了它身体的一半，里面密密麻麻全是獠牙。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0233",
+    "text": "你遭遇了一头饕餮，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "饕餮张开嘴的瞬间你感到一股巨大的吸力——它在吞噬一切，连灵气都在往它嘴里涌。那张嘴占了它身体的一半，里面密密麻麻全是獠牙。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0234",
+    "text": "你遭遇了一位上古僵尸，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "僵尸从棺中坐起时你闻到了千年腐朽的气息。它的皮肤呈铁灰色，坚硬如金石。它没有理智，没有痛觉——只有无尽的杀欲。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0235",
+    "text": "你遭遇了一位上古僵尸，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "僵尸从棺中坐起时你闻到了千年腐朽的气息。它的皮肤呈铁灰色，坚硬如金石。它没有理智，没有痛觉——只有无尽的杀欲。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0236",
+    "text": "你遭遇了一位上古僵尸，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "僵尸从棺中坐起时你闻到了千年腐朽的气息。它的皮肤呈铁灰色，坚硬如金石。它没有理智，没有痛觉——只有无尽的杀欲。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0237",
+    "text": "你遭遇了一位上古僵尸，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "僵尸从棺中坐起时你闻到了千年腐朽的气息。它的皮肤呈铁灰色，坚硬如金石。它没有理智，没有痛觉——只有无尽的杀欲。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0238",
+    "text": "你遭遇了一位上古僵尸，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "僵尸从棺中坐起时你闻到了千年腐朽的气息。它的皮肤呈铁灰色，坚硬如金石。它没有理智，没有痛觉——只有无尽的杀欲。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0239",
+    "text": "你遭遇了一位上古僵尸，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "僵尸从棺中坐起时你闻到了千年腐朽的气息。它的皮肤呈铁灰色，坚硬如金石。它没有理智，没有痛觉——只有无尽的杀欲。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0240",
+    "text": "你遭遇了一位上古僵尸，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "僵尸从棺中坐起时你闻到了千年腐朽的气息。它的皮肤呈铁灰色，坚硬如金石。它没有理智，没有痛觉——只有无尽的杀欲。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0241",
+    "text": "你遭遇了一群血蝙蝠，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "漫天的血蝙蝠遮住了视线——数以千计，每一只都只有巴掌大，但獠牙锋利得能咬穿你的护体灵光。它们的叫声刺耳如针。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0242",
+    "text": "你遭遇了一群血蝙蝠，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "漫天的血蝙蝠遮住了视线——数以千计，每一只都只有巴掌大，但獠牙锋利得能咬穿你的护体灵光。它们的叫声刺耳如针。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0243",
+    "text": "你遭遇了一群血蝙蝠，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "漫天的血蝙蝠遮住了视线——数以千计，每一只都只有巴掌大，但獠牙锋利得能咬穿你的护体灵光。它们的叫声刺耳如针。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0244",
+    "text": "你遭遇了一群血蝙蝠，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "漫天的血蝙蝠遮住了视线——数以千计，每一只都只有巴掌大，但獠牙锋利得能咬穿你的护体灵光。它们的叫声刺耳如针。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0245",
+    "text": "你遭遇了一群血蝙蝠，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "漫天的血蝙蝠遮住了视线——数以千计，每一只都只有巴掌大，但獠牙锋利得能咬穿你的护体灵光。它们的叫声刺耳如针。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0246",
+    "text": "你遭遇了一群血蝙蝠，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "漫天的血蝙蝠遮住了视线——数以千计，每一只都只有巴掌大，但獠牙锋利得能咬穿你的护体灵光。它们的叫声刺耳如针。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0247",
+    "text": "你遭遇了一群血蝙蝠，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "漫天的血蝙蝠遮住了视线——数以千计，每一只都只有巴掌大，但獠牙锋利得能咬穿你的护体灵光。它们的叫声刺耳如针。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "ext_combat_0248",
+    "text": "你遭遇了一头玄冰蟒，你苦战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "玄冰蟒从冰层下钻出时你的眉毛瞬间结了霜。它有水桶那么粗，通体泛着幽蓝的寒光。周围的温度骤降，你呼出的气都变成了白雾。这场战斗打得极为艰难。你几乎耗尽了所有灵力，身上新添了七八道伤口，最深的一处差点伤及内脏。但你赢了——靠着一股不服输的狠劲硬生生撑到了对手先倒下。你瘫坐在地上大口喘气。赢是赢了，但再来一次你可能就没这么幸运了。"
+  },
+  {
+    "id": "ext_combat_0249",
+    "text": "你遭遇了一头玄冰蟒，你轻松击败了对手。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "normal",
+    "expanded_text": "玄冰蟒从冰层下钻出时你的眉毛瞬间结了霜。它有水桶那么粗，通体泛着幽蓝的寒光。周围的温度骤降，你呼出的气都变成了白雾。你出手极快——三招之内便锁定了对手的破绽。一击，精准而致命。对手甚至没来得及反应就被你击退。你收回法器时脸上没有太多表情。这场战斗对你来说不算什么——但你没有掉以轻心。能轻松赢的时候就该快速结束。"
+  },
+  {
+    "id": "ext_combat_0250",
+    "text": "你遭遇了一头玄冰蟒，你被打得狼狈逃窜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": -5,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "玄冰蟒从冰层下钻出时你的眉毛瞬间结了霜。它有水桶那么粗，通体泛着幽蓝的寒光。周围的温度骤降，你呼出的气都变成了白雾。你打不过。这个认知在第三招交手后就清晰无比了。你果断转身就跑——活着比面子重要。你跑了整整半天才甩掉了对手，中间挨了两下重击，一条胳膊几乎抬不起来。你躲在一处隐蔽的角落里喘息，发誓下次一定绕着走。"
+  },
+  {
+    "id": "ext_combat_0251",
+    "text": "你遭遇了一头玄冰蟒，你与对手两败俱伤。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "玄冰蟒从冰层下钻出时你的眉毛瞬间结了霜。它有水桶那么粗，通体泛着幽蓝的寒光。周围的温度骤降，你呼出的气都变成了白雾。你们的实力不相上下。打到最后你浑身是血，对手也好不到哪里去。最后一招你们同时击中了对方——你飞出去撞断了三棵树，对手也向后翻滚了数十丈。你们互相看了一眼，谁都没有力气再追。各自拖着残躯离开了。"
+  },
+  {
+    "id": "ext_combat_0252",
+    "text": "你遭遇了一头玄冰蟒，你以巧计取胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "玄冰蟒从冰层下钻出时你的眉毛瞬间结了霜。它有水桶那么粗，通体泛着幽蓝的寒光。周围的温度骤降，你呼出的气都变成了白雾。硬碰硬你未必打得过。但你没打算硬碰硬——你引着对手进入了一处地形复杂的区域，利用环境设了个局。等对手反应过来时已经落入了你的陷阱。不是力量的胜利，是头脑的胜利。你拍了拍手上的灰。修行路上光有蛮力可不够。"
+  },
+  {
+    "id": "ext_combat_0253",
+    "text": "你遭遇了一头玄冰蟒，你获得了战利品。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "fortune": 1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "玄冰蟒从冰层下钻出时你的眉毛瞬间结了霜。它有水桶那么粗，通体泛着幽蓝的寒光。周围的温度骤降，你呼出的气都变成了白雾。战斗结束后你在对手的残骸中找到了一些有价值的东西——灵材、丹药、或者某种你从没见过的材料。你小心翼翼地收好了它们。九死一生换来的东西，总不能白打。你检查完战利品后满意地点了点头。不亏。"
+  },
+  {
+    "id": "ext_combat_0254",
+    "text": "你遭遇了一头玄冰蟒，你差点丢了性命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "combat",
+      "encounter"
+    ],
+    "event_type": "danger",
+    "expanded_text": "玄冰蟒从冰层下钻出时你的眉毛瞬间结了霜。它有水桶那么粗，通体泛着幽蓝的寒光。周围的温度骤降，你呼出的气都变成了白雾。你差一点就死了。真的差一点。致命的一击从你耳边擦过——再偏半寸就是脑袋。你的护身法器碎了，丹田中的灵力几乎见底。你是靠着最后一丝运气才脱身的。事后你躺在地上回想刚才的经过，后背全是冷汗。今天你跟死亡之间的距离只有半寸。"
+  },
+  {
+    "id": "final_battle_0048",
+    "text": "你在荒野中遭遇邪修，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "荒野寂静如死。枯草没过膝盖，天地间只有风声。对方是个邪修——身上的灵力带着腥臭，功法诡异难测。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0049",
+    "text": "你在荒野中遭遇妖兽，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "荒野寂静如死。枯草没过膝盖，天地间只有风声。那头妖兽已经开了灵智，眼中闪着狡诈的光。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0050",
+    "text": "你在荒野中遭遇鬼修，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "荒野寂静如死。枯草没过膝盖，天地间只有风声。鬼修阴气森森，形体若隐若现，你的攻击好几次都打了空。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0051",
+    "text": "你在荒野中遭遇散修，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "荒野寂静如死。枯草没过膝盖，天地间只有风声。对方是个老牌散修，出手狠辣，招招致命。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0052",
+    "text": "你在荒野中遭遇魔族弟子，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "荒野寂静如死。枯草没过膝盖，天地间只有风声。魔族弟子浑身缠绕着黑色魔气，力量远超同阶修士。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0053",
+    "text": "你在荒野中遭遇上古傀儡，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "荒野寂静如死。枯草没过膝盖，天地间只有风声。上古傀儡浑身金属构成，刀枪不入，只会执行一个指令：杀。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0054",
+    "text": "你在荒野中遭遇化形妖精，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "荒野寂静如死。枯草没过膝盖，天地间只有风声。那妖精变化多端，忽男忽女忽大忽小，让你根本无法判断她的攻击从哪来。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0055",
+    "text": "你在荒野中遭遇拦路匪徒，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "荒野寂静如死。枯草没过膝盖，天地间只有风声。一群拦路的匪修，虽然单打独斗不是你的对手，但他们配合默契。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0056",
+    "text": "你在荒野中遭遇暗杀者，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "荒野寂静如死。枯草没过膝盖，天地间只有风声。暗杀者从暗处现身时匕首已经到了你面前——快、准、狠。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0057",
+    "text": "你在荒野中遭遇远古守卫，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "荒野寂静如死。枯草没过膝盖，天地间只有风声。远古守卫是这片区域的看门人，石像一样沉默，出手却快得不可思议。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0058",
+    "text": "你在城门前遭遇邪修，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "城门前人来人往，你们的交手引来了无数目光。对方是个邪修——身上的灵力带着腥臭，功法诡异难测。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0059",
+    "text": "你在城门前遭遇妖兽，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "城门前人来人往，你们的交手引来了无数目光。那头妖兽已经开了灵智，眼中闪着狡诈的光。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0060",
+    "text": "你在城门前遭遇鬼修，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "城门前人来人往，你们的交手引来了无数目光。鬼修阴气森森，形体若隐若现，你的攻击好几次都打了空。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0061",
+    "text": "你在城门前遭遇散修，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "城门前人来人往，你们的交手引来了无数目光。对方是个老牌散修，出手狠辣，招招致命。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0062",
+    "text": "你在城门前遭遇魔族弟子，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "城门前人来人往，你们的交手引来了无数目光。魔族弟子浑身缠绕着黑色魔气，力量远超同阶修士。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0063",
+    "text": "你在城门前遭遇上古傀儡，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "城门前人来人往，你们的交手引来了无数目光。上古傀儡浑身金属构成，刀枪不入，只会执行一个指令：杀。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0064",
+    "text": "你在城门前遭遇化形妖精，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "城门前人来人往，你们的交手引来了无数目光。那妖精变化多端，忽男忽女忽大忽小，让你根本无法判断她的攻击从哪来。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0065",
+    "text": "你在城门前遭遇拦路匪徒，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "城门前人来人往，你们的交手引来了无数目光。一群拦路的匪修，虽然单打独斗不是你的对手，但他们配合默契。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0066",
+    "text": "你在城门前遭遇暗杀者，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "城门前人来人往，你们的交手引来了无数目光。暗杀者从暗处现身时匕首已经到了你面前——快、准、狠。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0067",
+    "text": "你在城门前遭遇远古守卫，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "城门前人来人往，你们的交手引来了无数目光。远古守卫是这片区域的看门人，石像一样沉默，出手却快得不可思议。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0068",
+    "text": "你在山谷里遭遇邪修，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "狭窄的山谷两侧是陡峭的石壁，退无可退。对方是个邪修——身上的灵力带着腥臭，功法诡异难测。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0069",
+    "text": "你在山谷里遭遇妖兽，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "狭窄的山谷两侧是陡峭的石壁，退无可退。那头妖兽已经开了灵智，眼中闪着狡诈的光。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0070",
+    "text": "你在山谷里遭遇鬼修，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "狭窄的山谷两侧是陡峭的石壁，退无可退。鬼修阴气森森，形体若隐若现，你的攻击好几次都打了空。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0071",
+    "text": "你在山谷里遭遇散修，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "狭窄的山谷两侧是陡峭的石壁，退无可退。对方是个老牌散修，出手狠辣，招招致命。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0072",
+    "text": "你在山谷里遭遇魔族弟子，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "狭窄的山谷两侧是陡峭的石壁，退无可退。魔族弟子浑身缠绕着黑色魔气，力量远超同阶修士。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0073",
+    "text": "你在山谷里遭遇上古傀儡，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "狭窄的山谷两侧是陡峭的石壁，退无可退。上古傀儡浑身金属构成，刀枪不入，只会执行一个指令：杀。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0074",
+    "text": "你在山谷里遭遇化形妖精，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "狭窄的山谷两侧是陡峭的石壁，退无可退。那妖精变化多端，忽男忽女忽大忽小，让你根本无法判断她的攻击从哪来。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0075",
+    "text": "你在山谷里遭遇拦路匪徒，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "狭窄的山谷两侧是陡峭的石壁，退无可退。一群拦路的匪修，虽然单打独斗不是你的对手，但他们配合默契。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0076",
+    "text": "你在山谷里遭遇暗杀者，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "狭窄的山谷两侧是陡峭的石壁，退无可退。暗杀者从暗处现身时匕首已经到了你面前——快、准、狠。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0077",
+    "text": "你在山谷里遭遇远古守卫，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "狭窄的山谷两侧是陡峭的石壁，退无可退。远古守卫是这片区域的看门人，石像一样沉默，出手却快得不可思议。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0078",
+    "text": "你在河岸边遭遇邪修，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "脚下是湍急的河流，水声震耳。对方是个邪修——身上的灵力带着腥臭，功法诡异难测。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0079",
+    "text": "你在河岸边遭遇妖兽，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "脚下是湍急的河流，水声震耳。那头妖兽已经开了灵智，眼中闪着狡诈的光。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0080",
+    "text": "你在河岸边遭遇鬼修，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "脚下是湍急的河流，水声震耳。鬼修阴气森森，形体若隐若现，你的攻击好几次都打了空。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0081",
+    "text": "你在河岸边遭遇散修，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "脚下是湍急的河流，水声震耳。对方是个老牌散修，出手狠辣，招招致命。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0082",
+    "text": "你在河岸边遭遇魔族弟子，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "脚下是湍急的河流，水声震耳。魔族弟子浑身缠绕着黑色魔气，力量远超同阶修士。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0083",
+    "text": "你在河岸边遭遇上古傀儡，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "脚下是湍急的河流，水声震耳。上古傀儡浑身金属构成，刀枪不入，只会执行一个指令：杀。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0084",
+    "text": "你在河岸边遭遇化形妖精，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "脚下是湍急的河流，水声震耳。那妖精变化多端，忽男忽女忽大忽小，让你根本无法判断她的攻击从哪来。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0085",
+    "text": "你在河岸边遭遇拦路匪徒，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "脚下是湍急的河流，水声震耳。一群拦路的匪修，虽然单打独斗不是你的对手，但他们配合默契。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0086",
+    "text": "你在河岸边遭遇暗杀者，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "脚下是湍急的河流，水声震耳。暗杀者从暗处现身时匕首已经到了你面前——快、准、狠。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0087",
+    "text": "你在河岸边遭遇远古守卫，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "脚下是湍急的河流，水声震耳。远古守卫是这片区域的看门人，石像一样沉默，出手却快得不可思议。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0088",
+    "text": "你在密林深处遭遇邪修，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "密林中光线昏暗，藤蔓纠缠如网。对方是个邪修——身上的灵力带着腥臭，功法诡异难测。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0089",
+    "text": "你在密林深处遭遇妖兽，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "密林中光线昏暗，藤蔓纠缠如网。那头妖兽已经开了灵智，眼中闪着狡诈的光。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0090",
+    "text": "你在密林深处遭遇鬼修，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "密林中光线昏暗，藤蔓纠缠如网。鬼修阴气森森，形体若隐若现，你的攻击好几次都打了空。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0091",
+    "text": "你在密林深处遭遇散修，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "密林中光线昏暗，藤蔓纠缠如网。对方是个老牌散修，出手狠辣，招招致命。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0092",
+    "text": "你在密林深处遭遇魔族弟子，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "密林中光线昏暗，藤蔓纠缠如网。魔族弟子浑身缠绕着黑色魔气，力量远超同阶修士。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0093",
+    "text": "你在密林深处遭遇上古傀儡，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "密林中光线昏暗，藤蔓纠缠如网。上古傀儡浑身金属构成，刀枪不入，只会执行一个指令：杀。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0094",
+    "text": "你在密林深处遭遇化形妖精，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "密林中光线昏暗，藤蔓纠缠如网。那妖精变化多端，忽男忽女忽大忽小，让你根本无法判断她的攻击从哪来。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0095",
+    "text": "你在密林深处遭遇拦路匪徒，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "密林中光线昏暗，藤蔓纠缠如网。一群拦路的匪修，虽然单打独斗不是你的对手，但他们配合默契。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0096",
+    "text": "你在密林深处遭遇暗杀者，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "密林中光线昏暗，藤蔓纠缠如网。暗杀者从暗处现身时匕首已经到了你面前——快、准、狠。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0097",
+    "text": "你在密林深处遭遇远古守卫，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "密林中光线昏暗，藤蔓纠缠如网。远古守卫是这片区域的看门人，石像一样沉默，出手却快得不可思议。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0098",
+    "text": "你在古墓入口遭遇邪修，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "古墓的入口散发着阴森的气息，石门上刻满了警告。对方是个邪修——身上的灵力带着腥臭，功法诡异难测。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0099",
+    "text": "你在古墓入口遭遇妖兽，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "古墓的入口散发着阴森的气息，石门上刻满了警告。那头妖兽已经开了灵智，眼中闪着狡诈的光。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0100",
+    "text": "你在古墓入口遭遇鬼修，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "古墓的入口散发着阴森的气息，石门上刻满了警告。鬼修阴气森森，形体若隐若现，你的攻击好几次都打了空。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0101",
+    "text": "你在古墓入口遭遇散修，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "古墓的入口散发着阴森的气息，石门上刻满了警告。对方是个老牌散修，出手狠辣，招招致命。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0102",
+    "text": "你在古墓入口遭遇魔族弟子，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "古墓的入口散发着阴森的气息，石门上刻满了警告。魔族弟子浑身缠绕着黑色魔气，力量远超同阶修士。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0103",
+    "text": "你在古墓入口遭遇上古傀儡，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "古墓的入口散发着阴森的气息，石门上刻满了警告。上古傀儡浑身金属构成，刀枪不入，只会执行一个指令：杀。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0104",
+    "text": "你在古墓入口遭遇化形妖精，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "古墓的入口散发着阴森的气息，石门上刻满了警告。那妖精变化多端，忽男忽女忽大忽小，让你根本无法判断她的攻击从哪来。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0105",
+    "text": "你在古墓入口遭遇拦路匪徒，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "古墓的入口散发着阴森的气息，石门上刻满了警告。一群拦路的匪修，虽然单打独斗不是你的对手，但他们配合默契。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0106",
+    "text": "你在古墓入口遭遇暗杀者，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "古墓的入口散发着阴森的气息，石门上刻满了警告。暗杀者从暗处现身时匕首已经到了你面前——快、准、狠。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0107",
+    "text": "你在古墓入口遭遇远古守卫，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "古墓的入口散发着阴森的气息，石门上刻满了警告。远古守卫是这片区域的看门人，石像一样沉默，出手却快得不可思议。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0108",
+    "text": "你在空中遭遇邪修，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你们在高空中交手，云层在脚下翻涌。对方是个邪修——身上的灵力带着腥臭，功法诡异难测。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0109",
+    "text": "你在空中遭遇妖兽，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "你们在高空中交手，云层在脚下翻涌。那头妖兽已经开了灵智，眼中闪着狡诈的光。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0110",
+    "text": "你在空中遭遇鬼修，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "你们在高空中交手，云层在脚下翻涌。鬼修阴气森森，形体若隐若现，你的攻击好几次都打了空。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0111",
+    "text": "你在空中遭遇散修，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你们在高空中交手，云层在脚下翻涌。对方是个老牌散修，出手狠辣，招招致命。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0112",
+    "text": "你在空中遭遇魔族弟子，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你们在高空中交手，云层在脚下翻涌。魔族弟子浑身缠绕着黑色魔气，力量远超同阶修士。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0113",
+    "text": "你在空中遭遇上古傀儡，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你们在高空中交手，云层在脚下翻涌。上古傀儡浑身金属构成，刀枪不入，只会执行一个指令：杀。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0114",
+    "text": "你在空中遭遇化形妖精，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "你们在高空中交手，云层在脚下翻涌。那妖精变化多端，忽男忽女忽大忽小，让你根本无法判断她的攻击从哪来。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0115",
+    "text": "你在空中遭遇拦路匪徒，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "你们在高空中交手，云层在脚下翻涌。一群拦路的匪修，虽然单打独斗不是你的对手，但他们配合默契。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0116",
+    "text": "你在空中遭遇暗杀者，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你们在高空中交手，云层在脚下翻涌。暗杀者从暗处现身时匕首已经到了你面前——快、准、狠。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0117",
+    "text": "你在空中遭遇远古守卫，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你们在高空中交手，云层在脚下翻涌。远古守卫是这片区域的看门人，石像一样沉默，出手却快得不可思议。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0118",
+    "text": "你在地下遭遇邪修，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "地下空间逼仄压抑，灵光照不了几丈远。对方是个邪修——身上的灵力带着腥臭，功法诡异难测。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0119",
+    "text": "你在地下遭遇妖兽，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "地下空间逼仄压抑，灵光照不了几丈远。那头妖兽已经开了灵智，眼中闪着狡诈的光。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0120",
+    "text": "你在地下遭遇鬼修，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "地下空间逼仄压抑，灵光照不了几丈远。鬼修阴气森森，形体若隐若现，你的攻击好几次都打了空。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0121",
+    "text": "你在地下遭遇散修，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "地下空间逼仄压抑，灵光照不了几丈远。对方是个老牌散修，出手狠辣，招招致命。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0122",
+    "text": "你在地下遭遇魔族弟子，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "地下空间逼仄压抑，灵光照不了几丈远。魔族弟子浑身缠绕着黑色魔气，力量远超同阶修士。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0123",
+    "text": "你在地下遭遇上古傀儡，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "地下空间逼仄压抑，灵光照不了几丈远。上古傀儡浑身金属构成，刀枪不入，只会执行一个指令：杀。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0124",
+    "text": "你在地下遭遇化形妖精，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "地下空间逼仄压抑，灵光照不了几丈远。那妖精变化多端，忽男忽女忽大忽小，让你根本无法判断她的攻击从哪来。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0125",
+    "text": "你在地下遭遇拦路匪徒，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "地下空间逼仄压抑，灵光照不了几丈远。一群拦路的匪修，虽然单打独斗不是你的对手，但他们配合默契。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0126",
+    "text": "你在地下遭遇暗杀者，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "地下空间逼仄压抑，灵光照不了几丈远。暗杀者从暗处现身时匕首已经到了你面前——快、准、狠。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0127",
+    "text": "你在地下遭遇远古守卫，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "地下空间逼仄压抑，灵光照不了几丈远。远古守卫是这片区域的看门人，石像一样沉默，出手却快得不可思议。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0128",
+    "text": "你在海面上遭遇邪修，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "脚踩浪涛，海水翻涌如沸。四面皆水，无处可避。对方是个邪修——身上的灵力带着腥臭，功法诡异难测。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0129",
+    "text": "你在海面上遭遇妖兽，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "脚踩浪涛，海水翻涌如沸。四面皆水，无处可避。那头妖兽已经开了灵智，眼中闪着狡诈的光。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0130",
+    "text": "你在海面上遭遇鬼修，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "脚踩浪涛，海水翻涌如沸。四面皆水，无处可避。鬼修阴气森森，形体若隐若现，你的攻击好几次都打了空。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0131",
+    "text": "你在海面上遭遇散修，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "脚踩浪涛，海水翻涌如沸。四面皆水，无处可避。对方是个老牌散修，出手狠辣，招招致命。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0132",
+    "text": "你在海面上遭遇魔族弟子，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "脚踩浪涛，海水翻涌如沸。四面皆水，无处可避。魔族弟子浑身缠绕着黑色魔气，力量远超同阶修士。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0133",
+    "text": "你在海面上遭遇上古傀儡，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "脚踩浪涛，海水翻涌如沸。四面皆水，无处可避。上古傀儡浑身金属构成，刀枪不入，只会执行一个指令：杀。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0134",
+    "text": "你在海面上遭遇化形妖精，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "脚踩浪涛，海水翻涌如沸。四面皆水，无处可避。那妖精变化多端，忽男忽女忽大忽小，让你根本无法判断她的攻击从哪来。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0135",
+    "text": "你在海面上遭遇拦路匪徒，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "脚踩浪涛，海水翻涌如沸。四面皆水，无处可避。一群拦路的匪修，虽然单打独斗不是你的对手，但他们配合默契。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0136",
+    "text": "你在海面上遭遇暗杀者，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "脚踩浪涛，海水翻涌如沸。四面皆水，无处可避。暗杀者从暗处现身时匕首已经到了你面前——快、准、狠。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0137",
+    "text": "你在海面上遭遇远古守卫，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "脚踩浪涛，海水翻涌如沸。四面皆水，无处可避。远古守卫是这片区域的看门人，石像一样沉默，出手却快得不可思议。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0138",
+    "text": "你在悬崖之巅遭遇邪修，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "悬崖之巅风大得让人站不稳，脚下是万丈深渊。对方是个邪修——身上的灵力带着腥臭，功法诡异难测。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0139",
+    "text": "你在悬崖之巅遭遇妖兽，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "悬崖之巅风大得让人站不稳，脚下是万丈深渊。那头妖兽已经开了灵智，眼中闪着狡诈的光。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0140",
+    "text": "你在悬崖之巅遭遇鬼修，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "悬崖之巅风大得让人站不稳，脚下是万丈深渊。鬼修阴气森森，形体若隐若现，你的攻击好几次都打了空。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0141",
+    "text": "你在悬崖之巅遭遇散修，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "悬崖之巅风大得让人站不稳，脚下是万丈深渊。对方是个老牌散修，出手狠辣，招招致命。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0142",
+    "text": "你在悬崖之巅遭遇魔族弟子，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_sect"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "悬崖之巅风大得让人站不稳，脚下是万丈深渊。魔族弟子浑身缠绕着黑色魔气，力量远超同阶修士。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "final_battle_0143",
+    "text": "你在悬崖之巅遭遇上古傀儡，一场恶战后你与对手不分胜负。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "悬崖之巅风大得让人站不稳，脚下是万丈深渊。上古傀儡浑身金属构成，刀枪不入，只会执行一个指令：杀。你们打了整整三个时辰。谁都奈何不了谁。最后对方冷笑一声转身离去，你也没有追——你知道追也追不上。平局。但你心里憋着一口气。下次再遇到，你一定要分出胜负。"
+  },
+  {
+    "id": "final_battle_0144",
+    "text": "你在悬崖之巅遭遇化形妖精，一场恶战后你一招制敌。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "comprehension": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "悬崖之巅风大得让人站不稳，脚下是万丈深渊。那妖精变化多端，忽男忽女忽大忽小，让你根本无法判断她的攻击从哪来。你抓住了那一瞬间的破绽——对方的一个微小的失误暴露了防御的空隙。你毫不犹豫出手，一击便定了胜负。对方倒下时脸上还带着不可置信的表情。利落。干净。这就是实力的差距。"
+  },
+  {
+    "id": "final_battle_0145",
+    "text": "你在悬崖之巅遭遇拦路匪徒，一场恶战后你大获全胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "悬崖之巅风大得让人站不稳，脚下是万丈深渊。一群拦路的匪修，虽然单打独斗不是你的对手，但他们配合默契。从交手到结束不过百息。你的每一招都精准到位，对方根本找不到反击的机会。等你收手时对方已经瘫倒在地。你连衣角都没弄脏。你抖了抖袖子，转身离开。今天的对手太弱了。"
+  },
+  {
+    "id": "final_battle_0146",
+    "text": "你在悬崖之巅遭遇暗杀者，一场恶战后你惨胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "悬崖之巅风大得让人站不稳，脚下是万丈深渊。暗杀者从暗处现身时匕首已经到了你面前——快、准、狠。你赢了，但代价惨重。你的法器断了，肋骨碎了三根，体内的灵力几乎耗尽。你跌跌撞撞地站在原地，嘴角挂着血。对手倒下了——但你也差点跟着倒下。这种胜利，赢了也不值得高兴。"
+  },
+  {
+    "id": "final_battle_0147",
+    "text": "你在悬崖之巅遭遇远古守卫，一场恶战后你被迫撤退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 30,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "悬崖之巅风大得让人站不稳，脚下是万丈深渊。远古守卫是这片区域的看门人，石像一样沉默，出手却快得不可思议。你打不下去了。灵力见底，伤势过重，再打下去只有死路一条。你咬着牙脱离了战斗，对方没有追——也许它也打累了。你狼狈地退出了战场，心中既有不甘也有庆幸。活着，才有机会卷土重来。"
+  },
+  {
+    "id": "ultra_combat_0000",
+    "text": "你在断魂崖遭遇邪修，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "断魂崖上寒风如刀，崖壁赤红如血——据说是千年前无数修士的鲜血浸染的。那邪修实力比你预估的还高——他的每一招都带着噬魂之力，挨上一下神魂就要震荡。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0001",
+    "text": "你在断魂崖遭遇妖兽，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "断魂崖上寒风如刀，崖壁赤红如血——据说是千年前无数修士的鲜血浸染的。妖兽咆哮着冲来，它的体型庞大到遮天蔽日。每一次挥爪都带着毁灭性的力量。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0002",
+    "text": "你在断魂崖遭遇魔将，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "断魂崖上寒风如刀，崖壁赤红如血——据说是千年前无数修士的鲜血浸染的。魔将身披黑甲，手持一杆漆黑长枪。他的气势凝重如山——这是真正上过战场杀过千人的存在。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0003",
+    "text": "你在断魂崖遭遇尸王，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "断魂崖上寒风如刀，崖壁赤红如血——据说是千年前无数修士的鲜血浸染的。尸王从万年古棺中爬出。它的身体坚硬如神铁，双眼燃着鬼火。比僵尸更强、更快、更凶。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0004",
+    "text": "你在断魂崖遭遇鬼将，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "断魂崖上寒风如刀，崖壁赤红如血——据说是千年前无数修士的鲜血浸染的。鬼将率领着一群怨灵出现。它穿着破烂的铠甲，手持一把锈蚀的长刀——可那把刀斩的是魂魄。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0005",
+    "text": "你在断魂崖遭遇邪灵，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "断魂崖上寒风如刀，崖壁赤红如血——据说是千年前无数修士的鲜血浸染的。邪灵没有实体——它是纯粹的恶意凝聚而成。你的物理攻击穿透了它的身体，毫无效果。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0006",
+    "text": "你在断魂崖遭遇毒修，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "断魂崖上寒风如刀，崖壁赤红如血——据说是千年前无数修士的鲜血浸染的。毒修还没出手空气就已经变了颜色。你闻到了七八种毒的气味混在一起——每一种都致命。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0007",
+    "text": "你在断魂崖遭遇剑修，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "断魂崖上寒风如刀，崖壁赤红如血——据说是千年前无数修士的鲜血浸染的。那剑修一出剑你就知道麻烦了——剑意如匹练横空，锋锐得割裂了你的护体灵光。纯粹的剑道强者。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0008",
+    "text": "你在断魂崖遭遇魔兽，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "断魂崖上寒风如刀，崖壁赤红如血——据说是千年前无数修士的鲜血浸染的。魔兽与妖兽不同——它没有灵智，只有纯粹的杀戮本能。它的血是黑色的，力量远超寻常。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0009",
+    "text": "你在断魂崖遭遇傀儡，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "断魂崖上寒风如刀，崖壁赤红如血——据说是千年前无数修士的鲜血浸染的。傀儡巨大如山，浑身由不知名的金属铸成。它的攻击没有花哨，只有纯粹的力量碾压。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0010",
+    "text": "你在血染谷遭遇邪修，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "血染谷的土壤是暗红色的，草木也带着诡异的血色。这里曾经死过太多人了。那邪修实力比你预估的还高——他的每一招都带着噬魂之力，挨上一下神魂就要震荡。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0011",
+    "text": "你在血染谷遭遇妖兽，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "血染谷的土壤是暗红色的，草木也带着诡异的血色。这里曾经死过太多人了。妖兽咆哮着冲来，它的体型庞大到遮天蔽日。每一次挥爪都带着毁灭性的力量。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0012",
+    "text": "你在血染谷遭遇魔将，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "血染谷的土壤是暗红色的，草木也带着诡异的血色。这里曾经死过太多人了。魔将身披黑甲，手持一杆漆黑长枪。他的气势凝重如山——这是真正上过战场杀过千人的存在。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0013",
+    "text": "你在血染谷遭遇尸王，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "血染谷的土壤是暗红色的，草木也带着诡异的血色。这里曾经死过太多人了。尸王从万年古棺中爬出。它的身体坚硬如神铁，双眼燃着鬼火。比僵尸更强、更快、更凶。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0014",
+    "text": "你在血染谷遭遇鬼将，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "血染谷的土壤是暗红色的，草木也带着诡异的血色。这里曾经死过太多人了。鬼将率领着一群怨灵出现。它穿着破烂的铠甲，手持一把锈蚀的长刀——可那把刀斩的是魂魄。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0015",
+    "text": "你在血染谷遭遇邪灵，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "血染谷的土壤是暗红色的，草木也带着诡异的血色。这里曾经死过太多人了。邪灵没有实体——它是纯粹的恶意凝聚而成。你的物理攻击穿透了它的身体，毫无效果。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0016",
+    "text": "你在血染谷遭遇毒修，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "血染谷的土壤是暗红色的，草木也带着诡异的血色。这里曾经死过太多人了。毒修还没出手空气就已经变了颜色。你闻到了七八种毒的气味混在一起——每一种都致命。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0017",
+    "text": "你在血染谷遭遇剑修，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "血染谷的土壤是暗红色的，草木也带着诡异的血色。这里曾经死过太多人了。那剑修一出剑你就知道麻烦了——剑意如匹练横空，锋锐得割裂了你的护体灵光。纯粹的剑道强者。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0018",
+    "text": "你在血染谷遭遇魔兽，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "血染谷的土壤是暗红色的，草木也带着诡异的血色。这里曾经死过太多人了。魔兽与妖兽不同——它没有灵智，只有纯粹的杀戮本能。它的血是黑色的，力量远超寻常。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0019",
+    "text": "你在血染谷遭遇傀儡，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "血染谷的土壤是暗红色的，草木也带着诡异的血色。这里曾经死过太多人了。傀儡巨大如山，浑身由不知名的金属铸成。它的攻击没有花哨，只有纯粹的力量碾压。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0020",
+    "text": "你在幽冥洞遭遇邪修，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "幽冥洞中伸手不见五指，只有磷火闪烁。回声在四面八方乱窜，让你分不清方向。那邪修实力比你预估的还高——他的每一招都带着噬魂之力，挨上一下神魂就要震荡。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0021",
+    "text": "你在幽冥洞遭遇妖兽，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "幽冥洞中伸手不见五指，只有磷火闪烁。回声在四面八方乱窜，让你分不清方向。妖兽咆哮着冲来，它的体型庞大到遮天蔽日。每一次挥爪都带着毁灭性的力量。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0022",
+    "text": "你在幽冥洞遭遇魔将，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "幽冥洞中伸手不见五指，只有磷火闪烁。回声在四面八方乱窜，让你分不清方向。魔将身披黑甲，手持一杆漆黑长枪。他的气势凝重如山——这是真正上过战场杀过千人的存在。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0023",
+    "text": "你在幽冥洞遭遇尸王，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "幽冥洞中伸手不见五指，只有磷火闪烁。回声在四面八方乱窜，让你分不清方向。尸王从万年古棺中爬出。它的身体坚硬如神铁，双眼燃着鬼火。比僵尸更强、更快、更凶。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0024",
+    "text": "你在幽冥洞遭遇鬼将，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "幽冥洞中伸手不见五指，只有磷火闪烁。回声在四面八方乱窜，让你分不清方向。鬼将率领着一群怨灵出现。它穿着破烂的铠甲，手持一把锈蚀的长刀——可那把刀斩的是魂魄。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0025",
+    "text": "你在幽冥洞遭遇邪灵，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "幽冥洞中伸手不见五指，只有磷火闪烁。回声在四面八方乱窜，让你分不清方向。邪灵没有实体——它是纯粹的恶意凝聚而成。你的物理攻击穿透了它的身体，毫无效果。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0026",
+    "text": "你在幽冥洞遭遇毒修，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "幽冥洞中伸手不见五指，只有磷火闪烁。回声在四面八方乱窜，让你分不清方向。毒修还没出手空气就已经变了颜色。你闻到了七八种毒的气味混在一起——每一种都致命。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0027",
+    "text": "你在幽冥洞遭遇剑修，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "幽冥洞中伸手不见五指，只有磷火闪烁。回声在四面八方乱窜，让你分不清方向。那剑修一出剑你就知道麻烦了——剑意如匹练横空，锋锐得割裂了你的护体灵光。纯粹的剑道强者。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0028",
+    "text": "你在幽冥洞遭遇魔兽，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "幽冥洞中伸手不见五指，只有磷火闪烁。回声在四面八方乱窜，让你分不清方向。魔兽与妖兽不同——它没有灵智，只有纯粹的杀戮本能。它的血是黑色的，力量远超寻常。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0029",
+    "text": "你在幽冥洞遭遇傀儡，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "幽冥洞中伸手不见五指，只有磷火闪烁。回声在四面八方乱窜，让你分不清方向。傀儡巨大如山，浑身由不知名的金属铸成。它的攻击没有花哨，只有纯粹的力量碾压。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0030",
+    "text": "你在九幽渊遭遇邪修，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "九幽渊深不见底，阴气浓得像实质。你每呼吸一口都觉得肺在结冰。那邪修实力比你预估的还高——他的每一招都带着噬魂之力，挨上一下神魂就要震荡。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0031",
+    "text": "你在九幽渊遭遇妖兽，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "九幽渊深不见底，阴气浓得像实质。你每呼吸一口都觉得肺在结冰。妖兽咆哮着冲来，它的体型庞大到遮天蔽日。每一次挥爪都带着毁灭性的力量。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0032",
+    "text": "你在九幽渊遭遇魔将，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "九幽渊深不见底，阴气浓得像实质。你每呼吸一口都觉得肺在结冰。魔将身披黑甲，手持一杆漆黑长枪。他的气势凝重如山——这是真正上过战场杀过千人的存在。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0033",
+    "text": "你在九幽渊遭遇尸王，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "九幽渊深不见底，阴气浓得像实质。你每呼吸一口都觉得肺在结冰。尸王从万年古棺中爬出。它的身体坚硬如神铁，双眼燃着鬼火。比僵尸更强、更快、更凶。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0034",
+    "text": "你在九幽渊遭遇鬼将，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "九幽渊深不见底，阴气浓得像实质。你每呼吸一口都觉得肺在结冰。鬼将率领着一群怨灵出现。它穿着破烂的铠甲，手持一把锈蚀的长刀——可那把刀斩的是魂魄。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0035",
+    "text": "你在九幽渊遭遇邪灵，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "九幽渊深不见底，阴气浓得像实质。你每呼吸一口都觉得肺在结冰。邪灵没有实体——它是纯粹的恶意凝聚而成。你的物理攻击穿透了它的身体，毫无效果。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0036",
+    "text": "你在九幽渊遭遇毒修，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "九幽渊深不见底，阴气浓得像实质。你每呼吸一口都觉得肺在结冰。毒修还没出手空气就已经变了颜色。你闻到了七八种毒的气味混在一起——每一种都致命。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0037",
+    "text": "你在九幽渊遭遇剑修，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "九幽渊深不见底，阴气浓得像实质。你每呼吸一口都觉得肺在结冰。那剑修一出剑你就知道麻烦了——剑意如匹练横空，锋锐得割裂了你的护体灵光。纯粹的剑道强者。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0038",
+    "text": "你在九幽渊遭遇魔兽，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "九幽渊深不见底，阴气浓得像实质。你每呼吸一口都觉得肺在结冰。魔兽与妖兽不同——它没有灵智，只有纯粹的杀戮本能。它的血是黑色的，力量远超寻常。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0039",
+    "text": "你在九幽渊遭遇傀儡，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "九幽渊深不见底，阴气浓得像实质。你每呼吸一口都觉得肺在结冰。傀儡巨大如山，浑身由不知名的金属铸成。它的攻击没有花哨，只有纯粹的力量碾压。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0040",
+    "text": "你在风暴海遭遇邪修，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "风暴海上空雷电交织，巨浪有山那么高。在这里战斗本身就是在玩命。那邪修实力比你预估的还高——他的每一招都带着噬魂之力，挨上一下神魂就要震荡。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0041",
+    "text": "你在风暴海遭遇妖兽，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "风暴海上空雷电交织，巨浪有山那么高。在这里战斗本身就是在玩命。妖兽咆哮着冲来，它的体型庞大到遮天蔽日。每一次挥爪都带着毁灭性的力量。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0042",
+    "text": "你在风暴海遭遇魔将，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "风暴海上空雷电交织，巨浪有山那么高。在这里战斗本身就是在玩命。魔将身披黑甲，手持一杆漆黑长枪。他的气势凝重如山——这是真正上过战场杀过千人的存在。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0043",
+    "text": "你在风暴海遭遇尸王，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "风暴海上空雷电交织，巨浪有山那么高。在这里战斗本身就是在玩命。尸王从万年古棺中爬出。它的身体坚硬如神铁，双眼燃着鬼火。比僵尸更强、更快、更凶。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0044",
+    "text": "你在风暴海遭遇鬼将，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "风暴海上空雷电交织，巨浪有山那么高。在这里战斗本身就是在玩命。鬼将率领着一群怨灵出现。它穿着破烂的铠甲，手持一把锈蚀的长刀——可那把刀斩的是魂魄。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0045",
+    "text": "你在风暴海遭遇邪灵，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "风暴海上空雷电交织，巨浪有山那么高。在这里战斗本身就是在玩命。邪灵没有实体——它是纯粹的恶意凝聚而成。你的物理攻击穿透了它的身体，毫无效果。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0046",
+    "text": "你在风暴海遭遇毒修，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "风暴海上空雷电交织，巨浪有山那么高。在这里战斗本身就是在玩命。毒修还没出手空气就已经变了颜色。你闻到了七八种毒的气味混在一起——每一种都致命。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0047",
+    "text": "你在风暴海遭遇剑修，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "风暴海上空雷电交织，巨浪有山那么高。在这里战斗本身就是在玩命。那剑修一出剑你就知道麻烦了——剑意如匹练横空，锋锐得割裂了你的护体灵光。纯粹的剑道强者。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0048",
+    "text": "你在风暴海遭遇魔兽，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "风暴海上空雷电交织，巨浪有山那么高。在这里战斗本身就是在玩命。魔兽与妖兽不同——它没有灵智，只有纯粹的杀戮本能。它的血是黑色的，力量远超寻常。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0049",
+    "text": "你在风暴海遭遇傀儡，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12,
+      "add_tag": "near_water"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "风暴海上空雷电交织，巨浪有山那么高。在这里战斗本身就是在玩命。傀儡巨大如山，浑身由不知名的金属铸成。它的攻击没有花哨，只有纯粹的力量碾压。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0050",
+    "text": "你在死灵沼遭遇邪修，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "死灵沼泽中腐臭弥漫，灰色的泥浆下不知埋了多少枯骨。每一步都可能踩空。那邪修实力比你预估的还高——他的每一招都带着噬魂之力，挨上一下神魂就要震荡。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0051",
+    "text": "你在死灵沼遭遇妖兽，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "死灵沼泽中腐臭弥漫，灰色的泥浆下不知埋了多少枯骨。每一步都可能踩空。妖兽咆哮着冲来，它的体型庞大到遮天蔽日。每一次挥爪都带着毁灭性的力量。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0052",
+    "text": "你在死灵沼遭遇魔将，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "死灵沼泽中腐臭弥漫，灰色的泥浆下不知埋了多少枯骨。每一步都可能踩空。魔将身披黑甲，手持一杆漆黑长枪。他的气势凝重如山——这是真正上过战场杀过千人的存在。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0053",
+    "text": "你在死灵沼遭遇尸王，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "死灵沼泽中腐臭弥漫，灰色的泥浆下不知埋了多少枯骨。每一步都可能踩空。尸王从万年古棺中爬出。它的身体坚硬如神铁，双眼燃着鬼火。比僵尸更强、更快、更凶。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0054",
+    "text": "你在死灵沼遭遇鬼将，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "死灵沼泽中腐臭弥漫，灰色的泥浆下不知埋了多少枯骨。每一步都可能踩空。鬼将率领着一群怨灵出现。它穿着破烂的铠甲，手持一把锈蚀的长刀——可那把刀斩的是魂魄。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0055",
+    "text": "你在死灵沼遭遇邪灵，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "死灵沼泽中腐臭弥漫，灰色的泥浆下不知埋了多少枯骨。每一步都可能踩空。邪灵没有实体——它是纯粹的恶意凝聚而成。你的物理攻击穿透了它的身体，毫无效果。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0056",
+    "text": "你在死灵沼遭遇毒修，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "死灵沼泽中腐臭弥漫，灰色的泥浆下不知埋了多少枯骨。每一步都可能踩空。毒修还没出手空气就已经变了颜色。你闻到了七八种毒的气味混在一起——每一种都致命。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0057",
+    "text": "你在死灵沼遭遇剑修，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "死灵沼泽中腐臭弥漫，灰色的泥浆下不知埋了多少枯骨。每一步都可能踩空。那剑修一出剑你就知道麻烦了——剑意如匹练横空，锋锐得割裂了你的护体灵光。纯粹的剑道强者。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0058",
+    "text": "你在死灵沼遭遇魔兽，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "死灵沼泽中腐臭弥漫，灰色的泥浆下不知埋了多少枯骨。每一步都可能踩空。魔兽与妖兽不同——它没有灵智，只有纯粹的杀戮本能。它的血是黑色的，力量远超寻常。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0059",
+    "text": "你在死灵沼遭遇傀儡，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "死灵沼泽中腐臭弥漫，灰色的泥浆下不知埋了多少枯骨。每一步都可能踩空。傀儡巨大如山，浑身由不知名的金属铸成。它的攻击没有花哨，只有纯粹的力量碾压。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0060",
+    "text": "你在烈焰山遭遇邪修，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "烈焰山的岩浆在脚下翻涌，热浪扭曲了视线。空气中充满了硫磺的恶臭。那邪修实力比你预估的还高——他的每一招都带着噬魂之力，挨上一下神魂就要震荡。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0061",
+    "text": "你在烈焰山遭遇妖兽，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "烈焰山的岩浆在脚下翻涌，热浪扭曲了视线。空气中充满了硫磺的恶臭。妖兽咆哮着冲来，它的体型庞大到遮天蔽日。每一次挥爪都带着毁灭性的力量。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0062",
+    "text": "你在烈焰山遭遇魔将，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "烈焰山的岩浆在脚下翻涌，热浪扭曲了视线。空气中充满了硫磺的恶臭。魔将身披黑甲，手持一杆漆黑长枪。他的气势凝重如山——这是真正上过战场杀过千人的存在。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0063",
+    "text": "你在烈焰山遭遇尸王，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "烈焰山的岩浆在脚下翻涌，热浪扭曲了视线。空气中充满了硫磺的恶臭。尸王从万年古棺中爬出。它的身体坚硬如神铁，双眼燃着鬼火。比僵尸更强、更快、更凶。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0064",
+    "text": "你在烈焰山遭遇鬼将，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "烈焰山的岩浆在脚下翻涌，热浪扭曲了视线。空气中充满了硫磺的恶臭。鬼将率领着一群怨灵出现。它穿着破烂的铠甲，手持一把锈蚀的长刀——可那把刀斩的是魂魄。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0065",
+    "text": "你在烈焰山遭遇邪灵，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "烈焰山的岩浆在脚下翻涌，热浪扭曲了视线。空气中充满了硫磺的恶臭。邪灵没有实体——它是纯粹的恶意凝聚而成。你的物理攻击穿透了它的身体，毫无效果。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0066",
+    "text": "你在烈焰山遭遇毒修，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "烈焰山的岩浆在脚下翻涌，热浪扭曲了视线。空气中充满了硫磺的恶臭。毒修还没出手空气就已经变了颜色。你闻到了七八种毒的气味混在一起——每一种都致命。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0067",
+    "text": "你在烈焰山遭遇剑修，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "烈焰山的岩浆在脚下翻涌，热浪扭曲了视线。空气中充满了硫磺的恶臭。那剑修一出剑你就知道麻烦了——剑意如匹练横空，锋锐得割裂了你的护体灵光。纯粹的剑道强者。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0068",
+    "text": "你在烈焰山遭遇魔兽，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "烈焰山的岩浆在脚下翻涌，热浪扭曲了视线。空气中充满了硫磺的恶臭。魔兽与妖兽不同——它没有灵智，只有纯粹的杀戮本能。它的血是黑色的，力量远超寻常。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0069",
+    "text": "你在烈焰山遭遇傀儡，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12,
+      "add_tag": "in_mountains"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "烈焰山的岩浆在脚下翻涌，热浪扭曲了视线。空气中充满了硫磺的恶臭。傀儡巨大如山，浑身由不知名的金属铸成。它的攻击没有花哨，只有纯粹的力量碾压。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0070",
+    "text": "你在寒冰原遭遇邪修，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "寒冰原上万里无垠的冰面如镜。气温低到灵力运转都变得迟钝了三分。那邪修实力比你预估的还高——他的每一招都带着噬魂之力，挨上一下神魂就要震荡。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0071",
+    "text": "你在寒冰原遭遇妖兽，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "寒冰原上万里无垠的冰面如镜。气温低到灵力运转都变得迟钝了三分。妖兽咆哮着冲来，它的体型庞大到遮天蔽日。每一次挥爪都带着毁灭性的力量。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0072",
+    "text": "你在寒冰原遭遇魔将，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "寒冰原上万里无垠的冰面如镜。气温低到灵力运转都变得迟钝了三分。魔将身披黑甲，手持一杆漆黑长枪。他的气势凝重如山——这是真正上过战场杀过千人的存在。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0073",
+    "text": "你在寒冰原遭遇尸王，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "寒冰原上万里无垠的冰面如镜。气温低到灵力运转都变得迟钝了三分。尸王从万年古棺中爬出。它的身体坚硬如神铁，双眼燃着鬼火。比僵尸更强、更快、更凶。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0074",
+    "text": "你在寒冰原遭遇鬼将，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "寒冰原上万里无垠的冰面如镜。气温低到灵力运转都变得迟钝了三分。鬼将率领着一群怨灵出现。它穿着破烂的铠甲，手持一把锈蚀的长刀——可那把刀斩的是魂魄。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0075",
+    "text": "你在寒冰原遭遇邪灵，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "寒冰原上万里无垠的冰面如镜。气温低到灵力运转都变得迟钝了三分。邪灵没有实体——它是纯粹的恶意凝聚而成。你的物理攻击穿透了它的身体，毫无效果。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0076",
+    "text": "你在寒冰原遭遇毒修，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "寒冰原上万里无垠的冰面如镜。气温低到灵力运转都变得迟钝了三分。毒修还没出手空气就已经变了颜色。你闻到了七八种毒的气味混在一起——每一种都致命。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0077",
+    "text": "你在寒冰原遭遇剑修，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "寒冰原上万里无垠的冰面如镜。气温低到灵力运转都变得迟钝了三分。那剑修一出剑你就知道麻烦了——剑意如匹练横空，锋锐得割裂了你的护体灵光。纯粹的剑道强者。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0078",
+    "text": "你在寒冰原遭遇魔兽，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "寒冰原上万里无垠的冰面如镜。气温低到灵力运转都变得迟钝了三分。魔兽与妖兽不同——它没有灵智，只有纯粹的杀戮本能。它的血是黑色的，力量远超寻常。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0079",
+    "text": "你在寒冰原遭遇傀儡，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "寒冰原上万里无垠的冰面如镜。气温低到灵力运转都变得迟钝了三分。傀儡巨大如山，浑身由不知名的金属铸成。它的攻击没有花哨，只有纯粹的力量碾压。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0080",
+    "text": "你在混沌域遭遇邪修，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "混沌域中时空扭曲，天地颠倒。你的感官在这里完全不可信——左可能是右，上可能是下。那邪修实力比你预估的还高——他的每一招都带着噬魂之力，挨上一下神魂就要震荡。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0081",
+    "text": "你在混沌域遭遇妖兽，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "混沌域中时空扭曲，天地颠倒。你的感官在这里完全不可信——左可能是右，上可能是下。妖兽咆哮着冲来，它的体型庞大到遮天蔽日。每一次挥爪都带着毁灭性的力量。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0082",
+    "text": "你在混沌域遭遇魔将，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "混沌域中时空扭曲，天地颠倒。你的感官在这里完全不可信——左可能是右，上可能是下。魔将身披黑甲，手持一杆漆黑长枪。他的气势凝重如山——这是真正上过战场杀过千人的存在。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0083",
+    "text": "你在混沌域遭遇尸王，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "混沌域中时空扭曲，天地颠倒。你的感官在这里完全不可信——左可能是右，上可能是下。尸王从万年古棺中爬出。它的身体坚硬如神铁，双眼燃着鬼火。比僵尸更强、更快、更凶。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0084",
+    "text": "你在混沌域遭遇鬼将，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "混沌域中时空扭曲，天地颠倒。你的感官在这里完全不可信——左可能是右，上可能是下。鬼将率领着一群怨灵出现。它穿着破烂的铠甲，手持一把锈蚀的长刀——可那把刀斩的是魂魄。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0085",
+    "text": "你在混沌域遭遇邪灵，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "混沌域中时空扭曲，天地颠倒。你的感官在这里完全不可信——左可能是右，上可能是下。邪灵没有实体——它是纯粹的恶意凝聚而成。你的物理攻击穿透了它的身体，毫无效果。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0086",
+    "text": "你在混沌域遭遇毒修，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "混沌域中时空扭曲，天地颠倒。你的感官在这里完全不可信——左可能是右，上可能是下。毒修还没出手空气就已经变了颜色。你闻到了七八种毒的气味混在一起——每一种都致命。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0087",
+    "text": "你在混沌域遭遇剑修，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "混沌域中时空扭曲，天地颠倒。你的感官在这里完全不可信——左可能是右，上可能是下。那剑修一出剑你就知道麻烦了——剑意如匹练横空，锋锐得割裂了你的护体灵光。纯粹的剑道强者。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0088",
+    "text": "你在混沌域遭遇魔兽，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "混沌域中时空扭曲，天地颠倒。你的感官在这里完全不可信——左可能是右，上可能是下。魔兽与妖兽不同——它没有灵智，只有纯粹的杀戮本能。它的血是黑色的，力量远超寻常。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0089",
+    "text": "你在混沌域遭遇傀儡，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "混沌域中时空扭曲，天地颠倒。你的感官在这里完全不可信——左可能是右，上可能是下。傀儡巨大如山，浑身由不知名的金属铸成。它的攻击没有花哨，只有纯粹的力量碾压。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0090",
+    "text": "你在虚空界遭遇邪修，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "虚空界中没有上下左右，没有天地。你们悬浮在一片虚无中，只有彼此是真实的。那邪修实力比你预估的还高——他的每一招都带着噬魂之力，挨上一下神魂就要震荡。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0091",
+    "text": "你在虚空界遭遇妖兽，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "虚空界中没有上下左右，没有天地。你们悬浮在一片虚无中，只有彼此是真实的。妖兽咆哮着冲来，它的体型庞大到遮天蔽日。每一次挥爪都带着毁灭性的力量。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0092",
+    "text": "你在虚空界遭遇魔将，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "虚空界中没有上下左右，没有天地。你们悬浮在一片虚无中，只有彼此是真实的。魔将身披黑甲，手持一杆漆黑长枪。他的气势凝重如山——这是真正上过战场杀过千人的存在。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0093",
+    "text": "你在虚空界遭遇尸王，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "虚空界中没有上下左右，没有天地。你们悬浮在一片虚无中，只有彼此是真实的。尸王从万年古棺中爬出。它的身体坚硬如神铁，双眼燃着鬼火。比僵尸更强、更快、更凶。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0094",
+    "text": "你在虚空界遭遇鬼将，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "虚空界中没有上下左右，没有天地。你们悬浮在一片虚无中，只有彼此是真实的。鬼将率领着一群怨灵出现。它穿着破烂的铠甲，手持一把锈蚀的长刀——可那把刀斩的是魂魄。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0095",
+    "text": "你在虚空界遭遇邪灵，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "虚空界中没有上下左右，没有天地。你们悬浮在一片虚无中，只有彼此是真实的。邪灵没有实体——它是纯粹的恶意凝聚而成。你的物理攻击穿透了它的身体，毫无效果。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "ultra_combat_0096",
+    "text": "你在虚空界遭遇毒修，激战后斩杀之。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 18,
+      "willpower": 1,
+      "add_tag": "exposed_poison"
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "虚空界中没有上下左右，没有天地。你们悬浮在一片虚无中，只有彼此是真实的。毒修还没出手空气就已经变了颜色。你闻到了七八种毒的气味混在一起——每一种都致命。最后一击你倾尽了全力——剑光斩落的瞬间你看到了对手眼中的不甘。它倒下了。你喘着粗气站在原地，手中的法器还在颤。这是一场殊死搏杀，你活下来了。你在它的遗骸旁站了一会，然后头也不回地离开了。"
+  },
+  {
+    "id": "ultra_combat_0097",
+    "text": "你在虚空界遭遇剑修，激战后将其击退。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 12
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "虚空界中没有上下左右，没有天地。你们悬浮在一片虚无中，只有彼此是真实的。那剑修一出剑你就知道麻烦了——剑意如匹练横空，锋锐得割裂了你的护体灵光。纯粹的剑道强者。你没能杀死它——但你打得它退了。它在撤退前发出了一声愤怒的嘶吼，像是在说：我记住你了。你目送着它消失在远方，松了一口气。今天能逼退这种对手已经是极限了。你该庆幸你还活着。"
+  },
+  {
+    "id": "ultra_combat_0098",
+    "text": "你在虚空界遭遇魔兽，激战后险胜。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "cultivation": 10,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "normal",
+    "expanded_text": "虚空界中没有上下左右，没有天地。你们悬浮在一片虚无中，只有彼此是真实的。魔兽与妖兽不同——它没有灵智，只有纯粹的杀戮本能。它的血是黑色的，力量远超寻常。这场战斗打到最后你已经看不清了——是血糊了眼还是灵力耗尽导致的视线模糊你分不清。你只知道自己最后挥出了一击，然后对手倒了。你也差点倒了。险胜。生与死之间的那条线，你今天又踩了一脚。"
+  },
+  {
+    "id": "ultra_combat_0099",
+    "text": "你在虚空界遭遇傀儡，激战后负伤逃脱。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 28,
+    "effects": {
+      "willpower": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "combat"
+    ],
+    "event_type": "danger",
+    "expanded_text": "虚空界中没有上下左右，没有天地。你们悬浮在一片虚无中，只有彼此是真实的。傀儡巨大如山，浑身由不知名的金属铸成。它的攻击没有花哨，只有纯粹的力量碾压。你输了。没有悬念地输了。在挨了致命一击之前你拼着最后一口气施展了遁术——管他三七二十一先跑了再说。你在百里之外的一个山洞里倒下，浑身上下没有一处不在流血。你活了——但这次的代价让你三个月都无法战斗。"
+  },
+  {
+    "id": "vio_001",
+    "text": "你目睹一场械斗，鲜血溅了你一脸，从此夜夜梦见那双死不瞑目的眼。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 0,
+      "max_age": 0
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你就站在三步之外。那把刀捅进那人胸口的时候你清楚地看见了他的表情——先是不敢置信，然后是恐惧。血溅了你一脸，温热的。你呆住了，连擦都忘了擦。那双眼睛——死不瞑目的眼睛——直直地盯着你。你转身就跑。那夜之后你再也没睡过一个完整的觉。"
+  },
+  {
+    "id": "vio_002",
+    "text": "村里两户人家因水源大打出手，你不慎被卷入，鼻血流了一地。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 5,
+      "max_age": 15
+    },
+    "weight": 12,
+    "effects": {
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你本只想吓唬它。可石头砸下去的位置不对——正中它的太阳穴。那只野狗抽搐了两下就不动了。你蹲下来时看见它的眼睛还睁着，舌头伸在外面，一丝血从耳朵里流出来。你的手在发抖。你试着推它——它的身体还是软的、热的。你突然意识到你杀了一条命。你把它埋了。埋的时候发现它的肚子鼓鼓的——它怀着崽。你跪在土坑旁边干呕了半天，指甲缝里塞满了带血的泥土。"
+  },
+  {
+    "id": "vio_003",
+    "text": "你在街市看见官差当众处决一名江洋大盗，人头落地的画面让你三日吃不下饭。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 8,
+      "max_age": 20
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "normal",
+    "expanded_text": "鬼头刀落下那一瞬你看清了一切：刀刃切入脖颈时先是皮肉翻开——红色的白色的交错——然后才是骨头的「咔」一声。头颅滚了两圈停在你脚边，断面还在往外冒血，一股一股的，像打翻了的酒壶。那双眼睛还睁着，瞳孔在你面前慢慢散开。血的铁锈味灌满了你的鼻腔——温热的，带着一股奇怪的甜。你吐了。母亲把你拖走时你还在干呕，三天没吃下饭。但你发现——第二次见到血时，你不吐了。人就是这么习惯的。"
+  },
+  {
+    "id": "vio_004",
+    "text": "山贼夜袭村庄，你躲在草垛中目睹邻居被砍死。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 10,
+      "max_age": 25
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "马蹄声像闷雷。你趴在草垛里不敢呼吸。透过草缝你看见一个老镖师被从马上拖下来——三把弯刀同时落下，他的手臂和半边肩膀一起被卸了下来。他惨叫了一声就没了声息，断口处的骨头白得刺眼，血像喷泉一样涌出来浇了一地。你的牙齿咬得吱嘎响，裤裆湿了一片。你在草垛里躲了一整夜，他们走后你才爬出来——满地的血已经干成了黑色硬壳，踩上去「咔嚓」作响。"
+  },
+  {
+    "id": "vio_005",
+    "text": "你失手打死了一只偷食的野狗，看着它抽搐的样子，心里五味杂陈。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 8,
+      "max_age": 30
+    },
+    "weight": 12,
+    "effects": {
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "normal",
+    "expanded_text": "它只是来偷吃的。你气昏了头抄起棍子就打——第一下它惨叫着跑了，你追上去又打了第二下。然后它不动了。你看着它躺在地上抽搐——肚子一鼓一鼓的，血从嘴角流出来。你手里的棍子掉了。你蹲下来摸它的头，它的眼睛慢慢失去了光。你后悔了。可后悔也来不及了。"
+  },
+  {
+    "id": "vio_006",
+    "text": "你与人争执，一拳打掉对方两颗牙，第一次尝到了暴力的滋味。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 12,
+      "max_age": 25
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": 1,
+      "add_tag": "violent_temper"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "normal",
+    "expanded_text": "悍匪从山坡上冲下来时像一群嗜血的狼。前面的镖师还没拔刀就被一箭贯穿了喉咙——箭尖从后颈穿出来时带出一蓬血雾，他双手抓住箭杆，嘴里只来得及发出一声咕噜就倒了。你抽出短刀护在马车前。一个悍匪冲到你面前，你一刀捅进他的小腹——比你想象中容易得多，像刺进一块熟透的肉。他的内脏热得烫手，你抽刀时带出了一截什么——你没敢看。你活下来了，可衣服上的血腥味三天也没洗掉。"
+  },
+  {
+    "id": "vio_007",
+    "text": "你目睹两名修士斗法，一人被剑气拦腰斩断，上半身还在咒骂。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "normal",
+    "expanded_text": "腰斩。那个字你只在书上读过——此刻它活生生发生在你眼前。金光一闪，那个筑基修士的身体从腰部断成两截。上半身还在动，双手撑着地面往前爬了三步——身后拖出一长串肠子和不明物体，冒着热气。他的嘴还在张合，可发不出声。下半截还保持着站立的姿势，又过了一息才轰然倒下。你在原地干呕了半天——从此你再也不小看任何一场斗法。"
+  },
+  {
+    "id": "vio_008",
+    "text": "你第一次出手杀人，对方临死前的眼神让你良久不能平静。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "first_kill"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "他倒在你面前的时候你的剑还在滴血。你也不知道自己是怎么做到的——一切发生得太快了。他的嘴张了张，像是想说什么，但最终什么都没说出来。他的眼睛最后看的人是你。那个眼神——不是恨，是不解。你站在原地很久很久。你的手止不住地抖。你杀了一个人。你成了杀人的人。"
+  },
+  {
+    "id": "vio_009",
+    "text": "你在荒野遇到一具被妖兽撕碎的修士尸体，肠子挂在树上。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "normal",
+    "expanded_text": "尸体已经肿胀了，可你一眼就认出那是修士——他的衣袍残片上还有宗门标记。最先映入眼帘的是他的腹腔：像被什么东西从里面撕开的，肠子挂在旁边的矮树上，颜色已经发黑，表面爬满了蝇虫。尸臭扑面——那股甜腻的、腐烂的味道让你当场蹲下干呕。他的脸已经看不清了，被啄食得只剩半边。你逃也似的离开了——可那股味道嵌进了你的鼻腔，三天没有散。"
+  },
+  {
+    "id": "vio_010",
+    "text": "你目睹一名魔修以人为药，将一个孩童活活炼成血丹。你出手救人，结下血仇。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你循着哭声闯进山洞——三具孩童的尸体被掏空了内脏，肋骨像被掰开的花瓣一样外翻着。地上的血已经凝成黑色的壳，踩上去咔嚓作响。一个活着的女孩被绑在血祭台上，魔修的匕首正往她的胸口划——你看见她皮肤裂开、血珠渗出的那一幕时大脑炸了。你抽剑冲上去——一剑削掉了魔修的半只手。他惨叫着逃了，断手还在地上抽搐。你抱起女孩往外跑，她的血浸透了你整个前襟。她活了——你也活了。可那三具小小的尸体，你做了一辈子的噩梦。"
+  },
+  {
+    "id": "vio_011",
+    "text": "你与一名同阶修士死战三日，最终将对方碾碎成肉泥。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": 1,
+      "add_tag": "first_kill"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "三天三夜。你们互相在对方身上留下了上百道伤——他的骨头断了九根，你的肋骨少了三根。到最后你已经不是在斗法了——你在用拳头砸。一拳一拳砸在他的脸上，直到你的拳面下没有了骨骼的阻挡感——只剩软的、烂的、一滩分不清是脸还是肉泥的东西。你停手时他已经看不出人形了。你跪在他的尸体旁边喘了半个时辰，满手的脑浆和碎骨在颤抖。你吐了七次。但你活着——他不活了。仅此而已。"
+  },
+  {
+    "id": "vio_012",
+    "text": "兽潮袭来，你与同伴血战三天三夜，脚下踩着齐膝的血水。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": 1,
+      "willpower": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "兽潮来时地面在震动。你面前的同门被一头铁背豹咬住了脖子——他的颈椎发出「嘎嘣」一声就断了，头以一个不可能的角度耷拉下来。你来不及悲伤——一只血角犀已经朝你冲来。你侧身一剑捅进它的眼眶，剑尖从后脑穿出时带出一股温热的液体喷了你满脸。三天后兽潮退去，你站在尸山上——人的、兽的混在一起，血流成河字面意思。你的剑已经卷了刃，你的手磨得看得见骨头。你还活着。但身边少了十七个人。"
+  },
+  {
+    "id": "vio_013",
+    "text": "你被仇家围攻，杀红了眼连斩七人，回过神时已浑身是血。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": 1,
+      "add_tag": "violent_temper"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "第三个人倒下时你已经不再数了。你只记得刀入肉的感觉——一次比一次顺畅。你的视野变成了红色——不是比喻，是血溅进了你的眼睛里。你杀红了眼时的记忆是断片的：闪避、出刀、血雾、惨叫、骨断——像一部被快进的画面。等你清醒过来时脚下躺了七具尸体，你的衣服湿得能拧出水——全是血。你的刀缺了三个口。你站在尸堆里喘了很久，然后慢慢笑了出来——一种让你自己都害怕的笑。"
+  },
+  {
+    "id": "vio_014",
+    "text": "你目睹一名筑基修士被金丹老怪一巴掌拍成肉酱，连法宝都没来得及祭出。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "normal",
+    "expanded_text": "老怪只是随手一挥——那个筑基修士的整个上半身就炸了。不是切开、不是碎裂——是直接从腰以上化成了血雾和碎肉。你离得只有三丈，一块碎骨打在你脸上划出一道口子——温热的血肉碎片洒了你一身。那个人一秒前还在说话——下一秒只剩两条腿还站着，断面像一朵绽开的红花，内脏往外滑落，冒着热气。你吓得连滚带爬退了十丈——从此你明白了什么叫碾压。金丹和筑基之间，不是战斗——是屠杀。"
+  },
+  {
+    "id": "vio_015",
+    "text": "你在战场上发现一种修炼者的尸骨可以入药，强忍恶心收集了一大堆。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "comprehension": 1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "normal",
+    "expanded_text": "那是修罗场的第三天清晨。你蹲在尸堆中收拾自家门人遗骸，不经意发现一具元婴老怪的残骨竟泛着淡淡金光——这是上佳的炼丹材料。你环顾四周，所有人都忙着自己的死活，没人注意到你。你深吸一口气，强忍恶心把骨头一根根敲下来塞进储物袋。那一夜你做了噩梦，可第二天你照样去了——人命可贱，丹药可贵，世道便是如此。"
+  },
+  {
+    "id": "vio_016",
+    "text": "你被迫当众处决一名叛门弟子，挥刀的那一刻手抖了三下。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "first_kill"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你举刀时手抖了三下。他跪在你面前，满脸是血，还在喊你的名字——你们入门时是同一批。刀落下去时你闭了眼——可你还是听见了那声「噗」。比你想象的闷。你睁眼时血已经溅到了你的鞋面上。他的头颅偏了一个角度——你没一刀砍断，脖颈的皮肉还连着一片。你咬牙补了第二刀。这次干脆多了。你转身走了十步就蹲下来吐了。长老拍你的肩说「做得好」——你浑身冰凉地点头。那天夜里你梦见他跪在你面前喊你的名字。此后每个月十五都梦见。"
+  },
+  {
+    "id": "vio_017",
+    "text": "你目睹一场屠村，三百口人无一活口，你的剑没能救下任何人。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "三百口人。你赶到时什么都迟了。村路上一具一具地躺着——男女老幼，姿态各异。有人的头被反过来扭着、有人的手臂被扯离了身体、一个女人把孩子压在身下可两人都死了——孩子的脑壳被踩得扁了。你在村中走了一圈，鞋底的血迹越来越厚。井里也是人——你看见了三张浮在水面上的白色的脸。你蹲在村口哭了一个时辰——不是恐惧，是纯粹的、什么也做不了的愤怒。你回去后闭关了半年——出来时修为涨了一层。恨，有时候比爱更好修炼。"
+  },
+  {
+    "id": "vio_018",
+    "text": "你练成了一门嗜血剑法，每杀一人剑身就吸饱一抹血色。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "add_tag": "sword_user",
+      "cultivation": 50
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "每杀一人，剑身就多一道红纹。起初你还在意——后来你开始享受那一刻：刀锋切入血肉时传来的轻微震颤，温热的血沿着剑槽回流到你手上时的感觉——像一条活物在舔你的掌心。你的剑越来越红，到后来通体如血。师父看到时脸色铁青让你换一把——你拒绝了。它跟你、你跟它，已经分不清谁在养谁了。夜里它在剑匣中嗡嗡作响，像是饥渴。你有时会划破自己的手指喂它一口——这让你觉得自己还没完全疯。"
+  },
+  {
+    "id": "vio_019",
+    "text": "你的法宝沾染了过多血煞，竟在夜里发出婴儿般的啼哭声。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "那声啼哭总在三更。起初很轻——像婴儿刚睡醒的哼唧。后来越来越尖锐、越来越像惨叫。你的法宝上沾了太多命——一百三十七条，你数过。它上面附着的血煞已经凝成了肉眼可见的暗红光晕。你不敢用灵识去探——上次探的时候，你看见了一百三十七张脸在对你哭。你想封印它——可它跟了你太久了，你离不开它。就像它离不开你一样。"
+  },
+  {
+    "id": "vio_020",
+    "text": "你为练功活捉了一个魔修，慢慢凌迟取血，三日后才让他咽气。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你花了三天。一刀一刀，从他小腿开始——每一刀只割下一片指甲大的肉。他在前半天还在骂你、求饶、威胁——到第二天只剩哭嚎——第三天连哭的力气都没了，只有嘴唇无声地翕动。你取够了血——三千六百刀，恰好一大缸。你最后一刀捅进他的心脏时，他的眼睛里甚至有了感激——终于结束了。你用他的血练成了一件宝物。你不后悔——但从那天起你再也不照镜子了。你怕看见自己的表情。"
+  },
+  {
+    "id": "vio_021",
+    "text": "你目睹两个金丹真人为了一颗丹药同归于尽，碎肉飞了你一身。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "normal",
+    "expanded_text": "你只是个跑腿的小卒，被派来观望一场拍卖。压轴的是一颗筑基丹，结果两位金丹真人同时看上了它。竞价升到天价后，两人当场翻脸，从拍卖会一直打到外面荒原。你跟着看了一天一夜，最后两位真人元气尽失，索性同归于尽。爆炸方圆十里寸草不生，你被冲击波震得吐血。等尘埃落定，你在焦土中找到了那颗完好无损的丹药——这就是命。"
+  },
+  {
+    "id": "vio_022",
+    "text": "你在血池中泡了七天七夜，肉身大成，但从此对鲜血有种异样的渴望。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": 2,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "fortune",
+    "expanded_text": "血池的温度像洗澡水。你泡在里面时能感觉到那些精血渗入你的毛孔——刺痛、灼烧，像有无数只蚂蚁在啃食你的皮肤。第三天你的表皮开始脱落——整片整片地从身上滑下来，露出下面鲜红的嫩肉。你痛得咬碎了三颗牙。第五天你的骨头开始响——每一根都在重塑。第七天你从池中站起来时，旧皮肤像蛇蜕一样漂浮在血水中。你的肉身脱胎换骨了——可你的梦里从此多了无数惨叫。那些血——是从活人身上放的。"
+  },
+  {
+    "id": "vio_023",
+    "text": "你将仇家全族连根拔起，一百三十七口，从襁褓婴儿到耄耋老人。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "add_tag": "has_enemies",
+      "willpower": -1
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你花了一夜。从外门弟子开始清——灵力碾压，一道剑光划过去，十几颗头颅落地的声音像一串糖葫芦断了线。你没有犹豫、没有留情——哪怕其中有老人、有孩子。你师父说过：仇要报尽，根要拔净。最后一个是他们的族长——一个白发苍苍的元婴老怪。他没有反抗，只说了一句：「因果循环，终有你还的时候。」你一剑刺穿他的眉心。天亮时你站在废墟中央——满地的尸体还冒着热气。你忽然觉得——自己好像也死了一部分。"
+  },
+  {
+    "id": "vio_024",
+    "text": "你与对手斗法引发地脉爆裂，方圆百里寸草不生。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "你们斗到第三天，灵力溢出引发了地脉共振。整片山脉开始崩塌，岩浆从地底涌出，方圆百里寸草不生。可你和对手都没有停手——这一战不分胜负，谁也下不了山。最后你险胜半招，斩下对方头颅时，整座山也塌了下来。你拖着重伤的身体爬出焦土，回头看那一片狼藉，忽然觉得自己赢得很是空虚。"
+  },
+  {
+    "id": "vio_025",
+    "text": "你的对手在临死前自爆元婴，你被反震得吐血昏迷七日。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": -1,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "calamity"
+    ],
+    "event_type": "danger",
+    "expanded_text": "他临死前笑了——然后元婴炸了。那股气浪将你掀飞出百丈，你撞在山壁上肋骨断了四根。你还没来得及感受疼痛——碎片已经到了。他的骨头、血肉、法器碎片裹着灵力冲击波扫过来——你的防御被瞬间撕碎，左臂上被一块碎骨贯穿，一直钉到肉里。你低头看着那块骨头——那是他的——还带着温度。你忍着痛把它拔出来时，鲜血喷射而出。你活着。可你身上永远留着他的一块骨头留下的疤——像一个诅咒。"
+  }
+]

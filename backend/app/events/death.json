@@ -1,0 +1,1257 @@
+[
+  {
+    "id": "death_universal_001",
+    "text": "你的寿元耗尽，安详离世。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 0
+    },
+    "weight": 5,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "寿终正寝",
+    "expanded_text": "那一日你盘坐于蒲团之上，感到体内最后一缕真元如细沙般从指缝间流走。你没有挣扎，只是平静地看着窗外的落日。活了这么久，该看的风景都看过了。你缓缓闭上双眼，嘴角似乎还挂着一丝微笑。修仙问道数百载，到头来不过一捧黄土、一缕清风。"
+  },
+  {
+    "id": "death_universal_002",
+    "text": "一场突如其来的瘟疫带走了你。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 1
+    },
+    "weight": 4,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "染疫而亡",
+    "expanded_text": "最初只是隔壁张家的老汉倒下了，接着是街尾的孩子，然后是半条街。你以为凭修为可以扛过去，可这瘟疫连灵力都侵蚀。你感到体内的气血一点点被抽空，四肢渐渐冰冷。最后你倒在床榻上，意识模糊间似乎看见黑白无常在门外等候。"
+  },
+  {
+    "id": "death_universal_003",
+    "text": "你在修炼中走火入魔，经脉尽断。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 4,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "走火入魔",
+    "expanded_text": "那股暴戾的灵力忽然在丹田中失控，像一头被激怒的野兽横冲直撞。你拼命想要镇压，可经脉中传来一阵阵撕裂般的剧痛。一条、两条……经脉像枯藤般断裂。你口中涌出一股腥甜，眼前的世界变得漆黑。最后一个念头是：当初不该贪那一步突破。"
+  },
+  {
+    "id": "death_universal_004",
+    "text": "你在睡梦中悄然离世，走得很安详。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 0
+    },
+    "weight": 5,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "寿终正寝",
+    "expanded_text": "那晚月色极好。你躺在榻上，看着洒落的银辉出神。不知何时起，呼吸变得越来越浅，像湖面上最后一圈涟漪。你做了一个很长的梦，梦里回到了小时候的村子，母亲在灶前烧饭，炊烟袅袅。你想喊一声娘，却发现自己已经说不出话了。就这样吧。"
+  },
+  {
+    "id": "death_universal_005",
+    "text": "你突发恶疾，药石无灵。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2
+    },
+    "weight": 4,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "病故",
+    "expanded_text": "先是持续的胸闷，然后是止不住的咳血。你找遍了方圆百里的灵药，试遍了所有你知道的丹方，可那股病气如同扎了根一般深入骨髓。你日渐消瘦，灵力也在一天天衰减。到最后你连盘膝打坐的力气都没有了，只能无力地靠在墙角，看着自己一点点熄灭。"
+  },
+  {
+    "id": "death_alch_001",
+    "text": "你炼丹时药鼎突然爆炸，你被炸成碎片。早知道就不贪那一炉了。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "alchemist"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "炼丹爆体",
+    "expanded_text": "你本以为这一炉已经稳了。丹火温度恰到好处，药材投入的顺序分毫不差。可就在最后凝丹的刹那，药鼎中传来一声怪响。你还来不及反应，鼎盖便如流星般飞出——紧接着是一声震天巨响。白光吞没了一切。你最后的念头是：早知道就不贪那一炉了。"
+  },
+  {
+    "id": "death_alch_002",
+    "text": "长年炼丹积累的丹毒终于爆发，你七窍流血而亡。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "alchemist"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "丹毒爆发",
+    "expanded_text": "你的指尖最先变黑，然后是指节，然后是掌心。丹毒在体内积累了太多年，你一直以为能压住，可那只是自欺欺人。今日清晨你打坐时忽然觉得五脏六腑都在燃烧，七窍间涌出黑血。你看着镜中自己发黑的面孔，苦笑一声。炼了一辈子丹，到头来死在自己炼的药里。"
+  },
+  {
+    "id": "death_alch_003",
+    "text": "你试图炼制一颗超越自身境界的丹药，灵火失控将你焚为灰烬。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "alchemist"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "灵火焚身",
+    "expanded_text": "明知炼不了，你还是点了火。那颗丹药所需的灵力远超你的极限，可你太想突破了。灵火在掌中越烧越旺，鼎中的药液沸腾翻涌。你觉得身体开始发烫，但还是不肯停手。直到灵火彻底失控的那一刻，你被自己一手催生的烈焰吞噬，化为飞灰散落。"
+  },
+  {
+    "id": "death_alch_004",
+    "text": "你品鉴自己新炼的丹药，没想到配方出了问题，当场毒发身亡。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "alchemist"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "试药中毒",
+    "expanded_text": "新炼出的丹药色泽圆润，丹香浓郁，你满意地点了点头。按照惯例先尝一颗试试效果——入口即化，灵力涌动。可三息之后你的脸色骤变，腹中传来绞痛。配方……哪一步出了问题？你拼命回想，可剧毒已经蔓延全身。你倒在丹房的地上，手里还攥着那枚害死自己的丹药。"
+  },
+  {
+    "id": "death_sword_001",
+    "text": "你的飞剑突然失控，反噬了你的神识。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "sword_user"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "剑意反噬",
+    "expanded_text": "那柄陪了你数十年的飞剑忽然在识海中剧烈震颤。你正要安抚，一股尖锐的反噬之力直冲神识——就像有人在你脑中钉了一根钉子。你的瞳孔骤缩，来不及发出任何声音便仰面倒下。飞剑落在身旁，剑身上的光泽缓缓暗淡，像是也在为主人默哀。"
+  },
+  {
+    "id": "death_sword_002",
+    "text": "你从御剑飞行时突然灵力中断，高空坠落，粉身碎骨。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "sword_user"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "御剑坠亡",
+    "expanded_text": "御剑万里并不是说说而已。你在千丈高空之上驰骋时灵力忽然中断——或许是经脉出了问题，或许是连日赶路太过疲惫。脚下的飞剑如同熄了火的烛台，你的身体失去了支撑。风呼啸着灌入耳中，大地以可怕的速度逼近。你想挣扎，可全身已经没有一丝灵力。"
+  },
+  {
+    "id": "death_sword_003",
+    "text": "你的剑灵产生了自我意识，在你入定时反杀了你。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 4,
+      "required_tags": [
+        "sword_user"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "剑灵弑主",
+    "expanded_text": "你入定之时，剑匣中传来一声低吟。那柄你日夜温养的飞剑不知何时生出了灵智。它看着闭目打坐的你，仿佛在审视一件已经不需要的容器。剑光闪过，快得你连痛苦都来不及感受。当你的身体倒下时，那柄剑已经破窗而去，从此天高海阔，再无主人。"
+  },
+  {
+    "id": "death_sword_004",
+    "text": "你在练习新剑法时，剑气暴走斩断了自己的经脉。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "sword_user"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "剑气伤身",
+    "expanded_text": "新悟的剑诀你迫不及待想试一试。第一式尚可控制，第二式便开始吃力——到第三式时，剑气像脱缰野马从你体内暴涌而出。你低头看见自己的衣袍被剑气割开，然后是皮肉，然后是经脉。血雾弥漫中你想收回灵力，可一切已经来不及了。"
+  },
+  {
+    "id": "death_exp_001",
+    "text": "你在探索遗迹时触发了远古禁制，被当场击杀。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "explorer"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "禁制击杀",
+    "expanded_text": "遗迹中的光线昏暗，墙壁上的符文早已褪色。你小心翼翼地迈步，却没注意到脚下那块石板微微下陷。一道金光从虚空中暴射而出，快得你连眼睛都来不及眨。胸口传来灼热的痛感——你低头看去，那里已经被贯穿了一个透明的窟窿。远古的杀阵，至今威力不减。"
+  },
+  {
+    "id": "death_exp_002",
+    "text": "你在秘境中迷失方向，灵力耗尽后活活饿死。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "explorer"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "困死秘境",
+    "expanded_text": "你已经在这片浓雾中走了三天。每一条路看起来都一样，每一个转角之后都是无尽的白。储物袋中最后一枚辟谷丹已经吃完了，灵力也在不断消散。你靠着一棵枯树坐下，觉得很累很累。闭上眼的时候你还在想：出口应该就在前面不远了吧。"
+  },
+  {
+    "id": "death_exp_003",
+    "text": "你打开了一个上古封印，里面的远古邪物苏醒后一口将你吞噬。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "explorer"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "释放邪物",
+    "expanded_text": "那枚封印上的裂缝本该引起你的警觉，可宝物近在眼前的诱惑蒙蔽了你的判断。你伸手触碰的一刹那，封印碎裂——一只硕大的眼球从黑暗中睁开，瞳孔中是无尽的饥渴。一条漆黑的触手卷住了你的腰，你被缓缓拖入那片不见底的深渊。"
+  },
+  {
+    "id": "death_exp_004",
+    "text": "遗迹突然坍塌，你被埋在了万丈地底。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "explorer"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "遗迹坍塌",
+    "expanded_text": "头顶传来「嘎吱」一声，细碎的沙石如雨般落下。你猛然抬头——遗迹的穹顶上出现了蛛网般的裂纹，而且在迅速扩大。你转身就跑，可后方的通道已经被落石堵死。千万吨的岩石轰然倒塌，将你和这座沉睡万年的遗迹一同埋葬。"
+  },
+  {
+    "id": "death_exp_005",
+    "text": "你在洞府中发现了一具远古强者的尸体，残留的威压将你神魂震碎。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "explorer"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "残威震杀",
+    "expanded_text": "洞府深处的石台上，一具身着华服的尸骸端坐如生。你好奇地走近——只一步，便如遭雷击。那具尸骸上残留的威压如山岳倾覆，你的神魂在这股力量面前脆弱得如同风中残烛。你甚至看到自己的灵魂碎片在飘散。一位强者死后万年，余威尚能杀人。"
+  },
+  {
+    "id": "death_beast_001",
+    "text": "你驯养的灵兽突然暴走，把你当成了第一顿饭。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "beast_tamer"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "灵兽暴走",
+    "expanded_text": "你永远也想不到那只跟了你三十年的灵兽会在今日暴走。它的双目赤红，口中的咆哮再不是往日的亲昵低吼。你喊它的名字，试图唤醒它的神志——然后它扑了过来。你甚至不想躲，因为那是你从小养大的伙伴。可它的利爪没有丝毫犹豫。"
+  },
+  {
+    "id": "death_beast_002",
+    "text": "你的灵兽进化失败走火入魔，失去理智后将你撕碎。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "beast_tamer"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "灵兽噬主",
+    "expanded_text": "它的进化本该是一件喜事。你为它准备了灵果，布好了护阵，守在旁边寸步不离。可当那道暴戾的灵光从它体内爆发时，你知道失败了。它睁开眼，那双你熟悉的眸子里已经没有了任何智慧。它看你的眼神，像看一块肉。你来不及悲伤，它已经动了。"
+  },
+  {
+    "id": "death_beast_003",
+    "text": "你尝试收服一头实力远超你的妖兽，反被其一尾扫成齑粉。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "beast_tamer"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "收兽失败",
+    "expanded_text": "你不该来的。那头妖兽卧在山巅，仅仅是呼吸就带起飓风。你鼓起勇气掷出缚灵索——它看都没看，尾巴随意一扫。你感觉自己像被一座山撞中了，身体中的骨骼在那一瞬间全部碎裂。你被高高抛起，视线中天地旋转。最后的念头是：它甚至都没认真对待你。"
+  },
+  {
+    "id": "death_enemy_001",
+    "text": "你的仇家终于找到了你，趁你闭关时偷袭将你击杀。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "weight": 14,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "仇家暗算",
+    "expanded_text": "你以为换了三次洞府就能甩掉他们。你以为闭关时布下的禁制足够安全。你错了。灵识被屏蔽的那一刻你才惊醒——可一柄长刀已经悬在你的头顶。仇家脸上的笑容是你见到的最后一幕。他说了句什么，你没听清。然后是一片黑暗。"
+  },
+  {
+    "id": "death_enemy_002",
+    "text": "你被仇人设下的天罗地网围杀，寡不敌众。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "围杀致死",
+    "expanded_text": "四面八方都是杀气。你拔剑环顾——东面三人，西面两人，头顶还有一位。他们步步逼近，合围之势无懈可击。你拼尽全力斩杀了两人，可灵力也到了极限。最后一剑你都握不稳了。一道剑光从背后刺入时，你甚至觉得：终于可以歇一歇了。"
+  },
+  {
+    "id": "death_enemy_003",
+    "text": "仇家在你的食物中下了无色无味的慢性毒药，你毒发身亡。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "被人投毒",
+    "expanded_text": "你一直觉得最近几天菜的味道有些不对，但又说不上哪里怪。直到今日清晨你发现自己连下床的力气都没有了。丹田中的灵力像被什么东西一点点蚕食，你全身经脉酸软无力。你挣扎着去够床头的解毒丹——手伸到一半就垂了下来。门外传来脚步声，不紧不慢。"
+  },
+  {
+    "id": "death_enemy_004",
+    "text": "你的仇敌转世重修后比你更强了，这一世你输了。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 3,
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "仇敌复仇",
+    "expanded_text": "你怎么也没想到会在这里再见到他。你记得他上辈子的样子，那时候他还不是你的对手。可如今他站在你面前，气息深不可测，境界比你高了整整两个大境。他对你笑了笑：「上辈子的债，该还了。」你提起剑，明知挡不住，但还是出了剑。"
+  },
+  {
+    "id": "death_dark_001",
+    "text": "你修炼的邪功终于反噬，身体从内部开始腐烂。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "dark_arts"
+      ]
+    },
+    "weight": 14,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "邪功反噬",
+    "expanded_text": "最初只是皮肤表面偶尔出现黑色纹路，你没在意。后来黑纹越来越深，像是有什么东西在皮肤下面蠕动。今日你打坐时忽然闻到一股腐臭——低头一看，左手的皮肉正在以肉眼可见的速度溃烂。邪功的反噬来了。你拼命运功对抗，可那股腐蚀之力已经侵入五脏。"
+  },
+  {
+    "id": "death_dark_002",
+    "text": "你的心魔趁你入定时化为实体，取代了你的存在。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 3,
+      "required_tags": [
+        "dark_arts"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "心魔取代",
+    "expanded_text": "你第一次发现心魔化为实体是在一面铜镜中。镜中的你对着你笑，那笑容你从未在自己脸上见过——阴冷而贪婪。你猛然回头，什么都没有。可之后的每个夜晚，你都觉得身后多了一个呼吸声。直到某日入定之后，你再也没能「醒来」。醒来的是它。"
+  },
+  {
+    "id": "death_dark_003",
+    "text": "你触碰禁忌之道招来天罚，被九道天雷轰成灰烬。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 4,
+      "required_tags": [
+        "dark_arts"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "天罚降世",
+    "expanded_text": "天际骤然聚起浓黑的雷云。你早该想到的——碰了不该碰的东西，就要承受代价。第一道天雷落下时你还能硬抗。第二道让你口喷鲜血。到第三道时你的护体灵光已经碎裂。后面的六道你已经数不清了，只记得最后一瞬天地间一片白茫茫。"
+  },
+  {
+    "id": "death_dark_004",
+    "text": "你修炼采补之术时因果报应降临，万剑穿心。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "dark_arts"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "因果报应",
+    "expanded_text": "因果报应这种事你从来不信，直到那一日——你正在运功采补时，忽然心口一阵剧痛。你低头看去，一柄由因果之力凝聚而成的虚幻长剑正从胸口贯穿而过。紧接着是第二柄、第三柄……万剑穿心。那些你曾伤害过的人的怨念化作了利刃，一齐讨还。"
+  },
+  {
+    "id": "death_treas_001",
+    "text": "匹夫无罪怀璧其罪，你的宝物被人觊觎，出门时遭截杀夺宝。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "has_treasure"
+      ]
+    },
+    "weight": 14,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "财宝惹祸",
+    "expanded_text": "那件宝物你本该藏好的。可你太喜欢了，忍不住在人前用了一次。然后就有了跟踪的目光、打探的话语、以及今日，埋伏在出城路上的二十余道身影。你拔剑迎敌，可对面出手的全是比你境界高的修士。你到死都紧紧攥着那件宝物。其实松手就能活，但你不甘心。"
+  },
+  {
+    "id": "death_treas_002",
+    "text": "你佩戴的法宝中封印的远古魔灵苏醒，吞噬了你的灵魂。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "has_treasure"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "器灵反噬",
+    "expanded_text": "那件法宝你得到时就隐隐觉得不对——它太完美了，完美到不像是凡人能造的东西。直到某日夜间你被一股强大的精神波动惊醒，法宝中的封印裂了一道缝。一只虚幻的手从裂缝中伸出，按住了你的额头。你感到灵魂被一点点抽离，像水被虹吸一般。"
+  },
+  {
+    "id": "death_treas_003",
+    "text": "你的法宝被人毁坏，与法宝命魂相连的你当场魂飞魄散。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 3,
+      "required_tags": [
+        "has_treasure"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "法宝碎裂",
+    "expanded_text": "你曾以命魂为代价祭炼了那件法宝，从此人宝一体，休戚与共。所以当对手那一击碎裂宝身的时候，你同时感受到了灵魂深处的撕裂。你捂着胸口倒下，口中呢喃：「碎了……碎了……」法宝碎成齑粉飘散，而你的命魂也随之消散于天地之间。"
+  },
+  {
+    "id": "death_sect_001",
+    "text": "你被同门师兄暗算，抢走了你的修炼资源后灭口。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "同门暗杀",
+    "expanded_text": "你永远没想到下手的会是他。同门十年，你信他如信自己的手足。那日他约你去后山切磋，你欣然前往。可第一招他就用了十成力——你猝不及防被震飞，撞断了两棵大树。他走过来，居高临下地看着你，眼中是你从未见过的冷漠。「你的那份资源，师弟我收了。」"
+  },
+  {
+    "id": "death_sect_002",
+    "text": "宗门大比中，对手暗下杀手，你被一掌拍碎心脉。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "比武身亡",
+    "expanded_text": "台上的对手冲你笑了一下，你以为那是善意。比试开始后他的招式凌厉但不致命，你渐渐放松了警惕。然后在你格挡一记右拳时，他的左掌已经印在了你的胸口——心脉寸断。裁判赶到时你已经倒在血泊中。台下有人惊呼，也有人面色如常。这就是宗门大比。"
+  },
+  {
+    "id": "death_sect_003",
+    "text": "你卷入了宗门内部的权力斗争，成了政治牺牲品。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "门派内斗",
+    "expanded_text": "你不懂政治，也不想懂。可当你成了两派相争的棋子时，不懂也不行了。那封构陷你叛门的信不知是谁写的，但宗门长老堂前，你跪了一整天也没人信你的辩解。到最后你甚至懒得再说了。剑落脖颈的那一刻，你只觉得荒唐。你明明什么都没做。"
+  },
+  {
+    "id": "death_sect_004",
+    "text": "你得罪了宗门长老的嫡传弟子，被安排了一个必死的任务。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "暗中陷害",
+    "expanded_text": "那个任务明眼人都看得出是去送死——单人前往七阶妖兽的领地采集灵草。你去找掌门申诉，掌门只是淡淡看了你一眼。你知道了，得罪那位嫡传弟子的代价就是这个。你还是去了，不去的话连累家人。走入妖兽领地的那一刻你就知道，回不来了。"
+  },
+  {
+    "id": "death_comp_001",
+    "text": "你的道侣暗中修炼了采补之术，在你最虚弱时吸干了你的精元。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "道侣背叛",
+    "expanded_text": "你一直以为她修炼的是和你同门的功法。直到那个夜晚，你双修之后浑身脱力，而她的气息反而愈发强盛。你茫然地看着她，她低头贴着你的额，温柔地说：「谢谢你。」你想问什么，可声音已经发不出来了。她真的很美。这是你最后的念头。"
+  },
+  {
+    "id": "death_comp_002",
+    "text": "你的道侣被仇家控制，在你熟睡时对你下了杀手。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "至亲杀害",
+    "expanded_text": "你做了个噩梦，梦见她拿着匕首站在你床边。你猛然惊醒——她真的站在你床边，手里真的有匕首。可她的眼神空洞无神，像个提线木偶。你叫她的名字，她没有反应，手中的匕首已经刺了下来。你挡住了致命的一击，但她的第二刀你没能躲过。她的眼角有泪。"
+  },
+  {
+    "id": "death_comp_003",
+    "text": "你为救道侣挡下致命一击，含笑而终。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "has_companion"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "为爱牺牲",
+    "expanded_text": "那一击本是冲着她去的。你不知道自己哪来的速度，只是身体比脑子快一步。疼痛像潮水般涌来的时候，你已经倒在她怀里了。她在哭，泪水一滴滴落在你脸上。你想抬手擦去她的泪，可手已经抬不起来了。「别哭了……」你用尽最后的力气笑了一下。值得的。"
+  },
+  {
+    "id": "death_water_001",
+    "text": "你在湖边修炼时被水中蛟龙拖入深水，溺亡。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "near_water"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "溺水身亡",
+    "expanded_text": "你本只是在湖边打坐吐纳。水面平静如镜，一切都很安详。然后你感到脚踝被什么东西缠住了——一根冰冷滑腻的触须。你还来不及运功，整个人就被猛然拖入水中。湖水灌入口鼻，你拼命挣扎，却看见幽深的水底有一双巨大的竖瞳正盯着你。"
+  },
+  {
+    "id": "death_water_002",
+    "text": "你渡河时遇上山洪，被大水冲走再没回来。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "near_water"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "洪水冲走",
+    "expanded_text": "雨下了三天三夜。你觉得区区洪水拦不住你，运起轻功就要跃过河面。可脚尖触碰水面的那一瞬间，一股远超预料的暗流将你拽入水底。灵力在水中施展不开，你在浑浊的泥水中翻滚，分不清上下。你很快便没了力气。河水将你冲向远方，再没有人见过你。"
+  },
+  {
+    "id": "death_water_003",
+    "text": "你在海边采集灵药时被巨浪卷走，尸骨无存。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "near_water"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "巨浪卷走",
+    "expanded_text": "那株灵药就长在海崖边的石缝里。你垂绳而下，小心翼翼地伸手去够——指尖刚触到叶片，你余光瞥见一道白色的墙壁正向你涌来。一个浪头将你拍离崖壁，你在冰冷的海水中沉浮。第二个浪头来时，你已经再没有力气浮出水面了。"
+  },
+  {
+    "id": "death_mtn_001",
+    "text": "你在悬崖采药时脚下一滑，坠入万丈深渊。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "in_mountains"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "坠崖身亡",
+    "expanded_text": "那条山路你走过无数遍了，从未失过脚。可今日一块松动的碎石在你踩上的瞬间崩落——你整个人失去平衡，向悬崖外倾去。你下意识想御剑，可脚下已是万丈虚空，灵力根本来不及凝聚。风声呼啸中，你看着崖顶越来越远，越来越小。"
+  },
+  {
+    "id": "death_mtn_002",
+    "text": "你在山中遇到山体滑坡，被泥石流掩埋。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 0,
+      "required_tags": [
+        "in_mountains"
+      ],
+      "max_realm": 2
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "山崩掩埋",
+    "expanded_text": "最先传来的是闷雷般的声响。你抬头望向山顶——一道泥石洪流正以不可阻挡之势倾泻而下。你转身就跑，可在山体滑坡面前人力渺小得可笑。泥浆裹挟着巨石将你吞没，你觉得全身的骨头都在碎裂。黑暗将你层层包裹，整座山成了你的坟墓。"
+  },
+  {
+    "id": "death_mtn_003",
+    "text": "你在山洞修炼时遭遇洞穴坍塌，被活活压死。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "in_mountains"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "洞穴坍塌",
+    "expanded_text": "那个山洞你闭关已有两年。正当你即将突破之时，头顶传来沉闷的「喀拉」声——落石如雨般砸下。你睁开双眼想要闪避，可盘膝太久的双腿一时僵硬。一块巨石精准地砸中了你的头顶。你最后看见的是洞口那一线正在消失的天光。"
+  },
+  {
+    "id": "death_poison_001",
+    "text": "你长期接触毒物积累的毒素终于爆发，回天乏术。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 0,
+      "required_tags": [
+        "exposed_poison"
+      ]
+    },
+    "weight": 14,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "毒素积累",
+    "expanded_text": "你的指甲在半年前就开始变黑了，只是你选择忽视。那些年与毒物打交道积累的毒素早已渗入骨髓。今日你忽然剧烈咳嗽，咳出的血是紫黑色的。你苦笑——毒修的宿命，终究还是来了。身体像一盏枯尽灯油的灯，在最后几下闪烁后彻底熄灭。"
+  },
+  {
+    "id": "death_poison_002",
+    "text": "你之前中的毒虽然暂时压制住了，但终究还是毒发身亡。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 0,
+      "required_tags": [
+        "exposed_poison"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "旧毒复发",
+    "expanded_text": "你以为那日的解毒已经将毒素清除了。事实上它只是蛰伏了下来，在你的五脏六腑间安了一个窝。三年后的某天清晨你像往常一样起身——然后毫无征兆地跌倒在地。毒素卷土重来，比上次猛烈十倍。你拼命去拿架上的丹药，指尖堪堪触及瓶身便力竭倒地。"
+  },
+  {
+    "id": "death_poison_003",
+    "text": "你试图以毒攻毒解体内余毒，结果两毒相撞，七窍流血而亡。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "exposed_poison"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "以毒攻毒失败",
+    "expanded_text": "以毒攻毒，这法子你翻了无数古籍才找到的。你将两种毒素同时引入丹田对冲——理论上它们会相互抵消。可现实是它们相遇后像干柴遇上烈火般爆燃。你的五脏像是被灌入了沸水，七窍间同时溢出鲜血。理论和实践之间的差距，有时候是一条命。"
+  },
+  {
+    "id": "death_travel_001",
+    "text": "你在游历途中遭遇山贼劫道，寡不敌众被杀害。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 0,
+      "required_tags": [
+        "traveling"
+      ],
+      "max_realm": 1
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "遭贼劫杀",
+    "expanded_text": "你本以为这条官道是安全的。可当四面山林中涌出数十个蒙面人时你才意识到——这里早就不太平了。你拔剑与为首的几人交手，剑法凌厉，但对方人多势众。背后一柄暗刀刺入时你才明白，寡不敌众时再高的武功也无用。你跪倒在路中央，血染黄土。"
+  },
+  {
+    "id": "death_travel_002",
+    "text": "你路过一处战场遗址，残留的杀阵突然启动将你斩杀。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "traveling"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "误入杀阵",
+    "expanded_text": "你只是路过而已。可脚踩上那片枯草的瞬间，一道刺目的光芒从地底升起——残留了不知多少年的杀阵被你的脚步激活了。剑气如暴雨般从四面八方射来，密得连苍蝇都飞不出去。你拼尽全力抵挡了前三息——第四息时护体灵光碎裂，你被万千剑光淹没。"
+  },
+  {
+    "id": "death_travel_003",
+    "text": "你在荒野中迷路，找不到灵脉补给，灵力和体力同时耗尽。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "traveling"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "荒野迷失",
+    "expanded_text": "你在这片荒野里已经走了七天。灵力一点点消散，你感到越来越冷。没有灵脉可以补给，储物袋中的灵石也早已耗尽。你想找个村落歇脚，可放眼望去只有无尽的荒原。你坐了下来，想歇一歇再走。可这一坐下就再也没能站起来。"
+  },
+  {
+    "id": "death_form_001",
+    "text": "你布阵时阵法暴走，被阵法反噬轰成灰烬。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "formation_user"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "阵法反噬",
+    "expanded_text": "第三十七枚阵旗插入地面的瞬间你就知道出事了——灵力的走向完全不对。阵纹扭曲变形，原本温顺的灵力像被激怒了一般暴涨。你想抽离，可阵法已经将你锁定为核心节点。反噬之力从脚底涌起，像无数只手将你拽向虚无。你连惨叫都来不及发出。"
+  },
+  {
+    "id": "death_form_002",
+    "text": "你被困在自己布下的阵法中，活活耗死。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "formation_user"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "困于自阵",
+    "expanded_text": "你很确定自己布下的迷阵没有破绽——因为现在连你自己都找不到出路了。每一步都回到原点，每一次破解都导向死胡同。你布阵时太完美了，完美到连造阵者本人都无法逃脱。灵力一天天衰减，你在自己的杰作中慢慢枯竭，像困在琥珀中的虫。"
+  },
+  {
+    "id": "death_form_003",
+    "text": "你破解禁制时出了差错，禁制爆发将你化为虚无。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 2,
+      "required_tags": [
+        "formation_user"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "破阵失败",
+    "expanded_text": "那道禁制的结构比你想象的复杂十倍。你小心翼翼地拆解到最后一层——手指一颤，触碰了不该碰的节点。你听到一声清脆的「叮」，然后整个禁制像被引爆的火药桶般轰然炸开。灼热的光芒吞噬了你的视野，吞噬了你的身体，吞噬了一切。"
+  },
+  {
+    "id": "death_market_001",
+    "text": "你在坊市买到了假丹药，服用后经脉尽断而亡。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "in_market"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "假药害命",
+    "expanded_text": "坊市里买东西本就是赌运气。那枚丹药色泽正常、丹香浓郁，你验了三遍都没发现问题。回到住处服下后灵力确实有所提升——然后就开始经脉绞痛。假丹中的毒素被灵力运转加速扩散至全身。你拼命催动真元想要排毒，却只是让毒素蔓延得更快。"
+  },
+  {
+    "id": "death_market_002",
+    "text": "你在拍卖会上高调出价后被人盯上，出城后遭截杀。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 1,
+      "required_tags": [
+        "in_market"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "拍卖惹祸",
+    "expanded_text": "你拍下那件灵宝时，全场的目光都聚在了你身上。你当时以为那只是羡慕的眼神。出城时天色已暗，你加快了脚步——可还是慢了一步。几道身影从暗处现身时你就明白了：今日你不只买了一件灵宝，还给自己买了一口棺材。他们出手极快，你连求饶的机会都没有。"
+  },
+  {
+    "id": "death_high_001",
+    "text": "你试图窥探天机，遭到天道反噬，魂飞魄散。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 6,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "窥探天机",
+    "expanded_text": "天机不可窥探——这句话你一直当作前人故弄玄虚。直到你以秘法强行推演天道运转的那一瞬，你才知道这是真的。无穷无尽的信息洪流灌入识海，你的神魂像一叶扁舟被巨浪吞没。眼中的光迅速暗淡，神识如同被撕碎的纸片般消散在天地之间。"
+  },
+  {
+    "id": "death_high_002",
+    "text": "你的道心在漫长岁月中产生裂缝，某日默默坐化。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 6,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "道心崩碎",
+    "expanded_text": "你也不知道是从何时开始动摇的。修道千年，你见过太多人来人去，太多聚散离合。某一日你打坐时忽然想不起自己为何要修道了。道心裂缝一旦出现就再也合不上。你不再修炼，不再服丹，只是坐在崖边发呆。某个清晨弟子们发现你已坐化，面容平静，像是终于释然。"
+  },
+  {
+    "id": "death_high_003",
+    "text": "你在虚空中穿行时遭遇空间裂缝，身体被撕碎。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 6,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "空间撕裂",
+    "expanded_text": "穿越虚空本是你最擅长的术法。可今日的空间似乎格外不稳定——你刚撕开裂缝便觉得不对，可惯性已经将你带入了虚空。一道肉眼不可见的空间裂缝从你身侧掠过。你低头看见自己的身体被整齐地分成了两半。甚至没有血，伤口处直接化为虚无。"
+  },
+  {
+    "id": "death_high_004",
+    "text": "九道天劫同时降下，你无力抵抗，化为齑粉。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 6,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "天劫降身",
+    "expanded_text": "第一道天劫你挡了。第二道也挡了。可天空中依然在不断凝聚新的雷云——三道、五道、九道。前所未见的九九天劫同时降下，你仰头看着那片遮天蔽日的雷海，嘴角竟浮起一丝苦笑。你双手撑天，接下了第三道、第四道……到第七道时你的意识已经模糊了。"
+  },
+  {
+    "id": "death_high_006",
+    "text": "你触碰了世界的法则边界，被更高维度的意志抹除了存在。",
+    "category": "death",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 6,
+    "effects": {
+      "death": true
+    },
+    "tags": [
+      "death"
+    ],
+    "event_type": "danger",
+    "death_reason": "高维抹杀",
+    "expanded_text": "你触碰到了某种不该触碰的东西。天地间仿佛有一只无形的大手轻轻一捏——你的身体、灵魂、记忆，乃至你存在过的痕迹，都在一瞬间被抹去。没有痛苦，没有过程。就好像你从未存在过一样。这片天地继续运转，万物如常，无人记得你的名字。"
+  }
+]

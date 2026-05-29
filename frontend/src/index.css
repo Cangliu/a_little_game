@@ -1,0 +1,415 @@
+@import "tailwindcss";
+
+@theme {
+  /* === Warm Cultivation Palette (鬼谷八荒 style) === */
+  --color-scroll-bg: #f0e6d2;
+  --color-scroll-paper: #fffcf0;
+  --color-scroll-paper-light: #f5efe0;
+  --color-scroll-gold: #8b6914;
+  --color-scroll-gold-dim: #b8963e;
+  --color-scroll-gold-light: #d4b96a;
+  --color-scroll-red: #c0392b;
+  --color-scroll-red-light: #e74c3c;
+  --color-scroll-jade: #2d8a5e;
+  --color-scroll-jade-light: #3daa70;
+  --color-scroll-text: #3d2b1f;
+  --color-scroll-text-dim: #8c7b6b;
+  --color-scroll-purple: #6c3483;
+  --color-scroll-purple-light: #8e44ad;
+  --color-scroll-blue: #2471a3;
+  --color-scroll-blue-light: #5dade2;
+  --color-scroll-cloud: #ede5d5;
+  --color-scroll-ink: #2c1810;
+  --color-scroll-mist: rgba(240, 230, 210, 0.85);
+  --color-scroll-pink: #c0607a;
+  --color-scroll-peach: #d4956a;
+  --color-scroll-lavender: #8a7ab0;
+
+  --font-kai: 'ZCOOL XiaoWei', 'KaiTi', 'STKaiti', serif;
+  --font-song: 'Noto Serif SC', 'SimSun', 'STSong', serif;
+  /* 霞鹜文楷：主要用于事件扩展叙述的长文，阅读体验最佳 */
+  --font-wenkai: 'LXGW WenKai', 'LXGW WenKai TC', 'KaiTi', 'STKaiti', '楷体', serif;
+  /* 事件标题：手写书法风，凸显事件起始 */
+  --font-title: 'Ma Shan Zheng', 'LXGW WenKai', 'KaiTi', 'STKaiti', serif;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-song);
+    background: linear-gradient(180deg, #f5ede0 0%, #f8f2e8 30%, #f5ede0 60%, #eee6d8 100%);
+    color: var(--color-scroll-text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-scroll-paper-light);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-scroll-gold-dim);
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  /* Ink-wash mountain background */
+  .mountain-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .mountain-bg::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background:
+      /* Close mountain - lighter green tints */
+      radial-gradient(ellipse 120% 50% at 20% 100%, rgba(80, 160, 110, 0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 100% 60% at 80% 100%, rgba(90, 150, 120, 0.05) 0%, transparent 65%),
+      /* Mid mountain */
+      radial-gradient(ellipse 150% 45% at 50% 95%, rgba(100, 170, 130, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 40% at 10% 90%, rgba(90, 160, 120, 0.04) 0%, transparent 55%),
+      radial-gradient(ellipse 90% 35% at 90% 88%, rgba(80, 150, 110, 0.03) 0%, transparent 50%),
+      /* Distant peaks */
+      radial-gradient(ellipse 200% 30% at 40% 80%, rgba(120, 170, 200, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse 180% 25% at 70% 75%, rgba(140, 180, 170, 0.03) 0%, transparent 45%);
+  }
+
+  .mountain-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background:
+      radial-gradient(ellipse 60% 40% at 20% 30%, rgba(255, 210, 130, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 30% at 80% 20%, rgba(220, 200, 170, 0.06) 0%, transparent 50%),
+      linear-gradient(180deg, rgba(255, 240, 200, 0.1) 0%, transparent 40%);
+  }
+
+  /* === Aurora animated background (for GameScreen) ===
+     Multiple slowly drifting colored blobs create a flowing, vibrant
+     atmosphere without harming text readability since blobs sit behind
+     a translucent content card. */
+  .aurora-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fff8ec 0%, #fff2e0 40%, #f5ede0 70%, #ece8e8 100%);
+  }
+
+  .aurora-bg::before,
+  .aurora-bg::after {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .aurora-bg::before {
+    background:
+      radial-gradient(circle at 20% 30%, rgba(255, 200, 130, 0.55) 0%, transparent 35%),
+      radial-gradient(circle at 80% 20%, rgba(255, 160, 180, 0.45) 0%, transparent 35%),
+      radial-gradient(circle at 70% 70%, rgba(140, 200, 230, 0.5) 0%, transparent 40%),
+      radial-gradient(circle at 30% 80%, rgba(170, 220, 170, 0.45) 0%, transparent 40%);
+    animation: auroraDrift1 12s ease-in-out infinite alternate;
+  }
+
+  .aurora-bg::after {
+    background:
+      radial-gradient(circle at 60% 40%, rgba(220, 170, 240, 0.4) 0%, transparent 35%),
+      radial-gradient(circle at 15% 60%, rgba(255, 220, 140, 0.5) 0%, transparent 38%),
+      radial-gradient(circle at 85% 85%, rgba(255, 180, 200, 0.45) 0%, transparent 40%),
+      radial-gradient(circle at 50% 10%, rgba(180, 230, 220, 0.4) 0%, transparent 35%);
+    animation: auroraDrift2 15s ease-in-out infinite alternate;
+    mix-blend-mode: screen;
+  }
+
+  /* Light particle layer overlaid on aurora */
+  .aurora-particles {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .aurora-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 240, 200, 0.85);
+    box-shadow: 0 0 12px rgba(255, 220, 140, 0.7), 0 0 24px rgba(255, 200, 120, 0.4);
+  }
+
+  /* Floating clouds animation */
+  .cloud-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .cloud {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(30px);
+    opacity: 0.3;
+  }
+
+  /* Ancient styled button */
+  .ancient-button {
+    @apply relative px-8 py-3 font-kai text-lg tracking-widest
+           transition-all duration-300 cursor-pointer rounded-lg;
+    background: linear-gradient(180deg, #f0c860 0%, #d4a040 50%, #c08830 100%);
+    color: #fffef5;
+    border: 2px solid rgba(255,230,150,0.6);
+    box-shadow: 0 4px 15px rgba(200,150,50,0.3), inset 0 1px 0 rgba(255,255,255,0.35);
+    text-shadow: 0 1px 2px rgba(120,70,0,0.35);
+  }
+
+  .ancient-button:hover {
+    background: linear-gradient(180deg, #ffd870 0%, #e0b050 50%, #cc9838 100%);
+    box-shadow: 0 6px 25px rgba(220,160,50,0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+    transform: translateY(-2px);
+  }
+
+  .ancient-button:active {
+    transform: translateY(0);
+  }
+
+  .ancient-button::before,
+  .ancient-button::after {
+    content: '';
+    @apply absolute w-3 h-3;
+    border-color: rgba(255, 253, 247, 0.5);
+  }
+
+  .ancient-button::before {
+    @apply top-[-1px] left-[-1px] border-t border-l;
+  }
+
+  .ancient-button::after {
+    @apply bottom-[-1px] right-[-1px] border-b border-r;
+  }
+
+  /* Scroll-style panel */
+  .scroll-panel {
+    @apply relative rounded-lg;
+    background: rgba(255, 253, 245, 0.92);
+    border: 1px solid rgba(200, 160, 80, 0.2);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(150, 100, 30, 0.06), 0 1px 3px rgba(150, 100, 30, 0.04);
+  }
+
+  .scroll-panel::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none rounded-lg;
+    border: 1px solid rgba(180, 140, 60, 0.08);
+    margin: 3px;
+  }
+
+  /* Realm badge */
+  .realm-badge {
+    @apply inline-block px-3 py-1 text-sm font-kai rounded-full;
+    border: 1px solid rgba(180, 130, 40, 0.3);
+    background: rgba(212, 160, 74, 0.1);
+  }
+
+  /* 事件标题行（一句话概述）：楷体加重，颜色鲜明 */
+  .event-line {
+    @apply py-2.5 px-4 border-l-3 leading-relaxed
+           animate-[fadeIn_0.5s_ease-in] rounded-r-md;
+    border-left-color: rgba(180, 140, 60, 0.45);
+    color: var(--color-scroll-text);
+    font-family: var(--font-wenkai);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .event-line-important {
+    border-left-color: #b8862b;
+    color: #8b6914;
+    font-weight: 700;
+  }
+
+  .event-line-danger {
+    border-left-color: var(--color-scroll-red);
+    color: var(--color-scroll-red);
+    font-weight: 700;
+  }
+
+  .event-line-fortune {
+    border-left-color: #2d8a5e;
+    color: #2d8a5e;
+    font-weight: 700;
+  }
+
+  /* 事件扩展叙述（100-300 字轻小说）：霞鹜文楷，颜色柔和，叙事感 */
+  .event-narrative {
+    font-family: var(--font-wenkai);
+    font-size: 14.5px;
+    line-height: 2;
+    letter-spacing: 0.05em;
+    color: rgba(80, 60, 40, 0.78);
+    padding: 6px 0 10px 18px;
+    margin: 4px 0 6px 12px;
+    border-left: 1px dashed rgba(180, 140, 60, 0.28);
+    text-indent: 2em;        /* 首行缩进，业内阅读习惯 */
+    white-space: pre-wrap;
+    text-align: justify;
+  }
+
+  /* 打字机光标闪烁 */
+  .tw-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    color: rgba(180, 140, 60, 0.7);
+    animation: twBlink 0.9s steps(1, end) infinite;
+  }
+
+  @keyframes twBlink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+  }
+
+  /* Elegant divider */
+  .ink-divider {
+    @apply w-full h-[1.5px] my-4;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(150, 110, 40, 0.15) 15%,
+      rgba(180, 130, 50, 0.35) 50%,
+      rgba(150, 110, 40, 0.15) 85%,
+      transparent 100%
+    );
+  }
+
+  /* Glow text for titles */
+  .glow-text {
+    text-shadow:
+      0 0 20px rgba(212, 160, 74, 0.4),
+      0 0 40px rgba(255, 200, 100, 0.2),
+      0 2px 4px rgba(80, 50, 20, 0.15);
+  }
+
+  /* Petal / particle decorations */
+  .petal {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50% 0 50% 0;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  /* Sparkle effects */
+  .sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 6px rgba(162, 155, 254, 0.8), 0 0 12px rgba(108, 92, 231, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    animation: sparkleAnim 3s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollUnroll {
+    from { max-height: 0; opacity: 0; }
+    to { max-height: 1000px; opacity: 1; }
+  }
+
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 4px 12px rgba(150, 100, 30, 0.3); }
+    50% { box-shadow: 0 6px 25px rgba(180, 120, 30, 0.45); }
+  }
+
+  @keyframes sparkleAnim {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.4; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  @keyframes driftCloud {
+    0% { transform: translateX(-100%) translateY(0); }
+    50% { transform: translateX(0%) translateY(-10px); }
+    100% { transform: translateX(100vw) translateY(0); }
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.25; transform: scale(1.05); }
+  }
+
+@keyframes auroraDrift1 {
+    0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
+    50%  { transform: translate(12%, -8%) rotate(20deg) scale(1.15); }
+    100% { transform: translate(-10%, 10%) rotate(-18deg) scale(1.12); }
+  }
+
+@keyframes auroraDrift2 {
+    0%   { transform: translate(0, 0) rotate(0deg) scale(1.05); }
+    50%  { transform: translate(-13%, 9%) rotate(-22deg) scale(1.2); }
+    100% { transform: translate(10%, -11%) rotate(18deg) scale(1.1); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+
+  .animate-scroll-unroll {
+    animation: scrollUnroll 0.8s ease-out forwards;
+  }
+
+  .animate-pulse-gold {
+    animation: pulse-gold 2s infinite;
+  }
+}

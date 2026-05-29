@@ -1,0 +1,1119 @@
+[
+  {
+    "id": "vio_m_001",
+    "text": "村口械斗，你成了无辜围观者。",
+    "expanded_text": "两伙人抄起锄头扁担就打上了。你被挤在中间，一根扁担贴着你头皮飞过——风声尖锐得像哨子。你还没反应过来，旁边一个老汉的额头就被开了瓢，血顺着他的眼角往下淌，滴在地上的白菜上。他的眼神还是茫然的。你被人推倒在泥里，有人踩过你的手——你听见自己的指骨发出一声脆响。等你爬起来时，满地的血混着泥浆，分不清是谁的。你的手指肿了三天才消，可做噩梦做了一整年。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 6,
+      "max_age": 16,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_f_001",
+    "text": "你目睹邻家娘子被恶霸打死。",
+    "expanded_text": "恶霸按住她的头往墙上撞。第一下她还在哭喊，第二下声音就弱了，第三下只剩闷响。你隔着矮墙看见她的脸已经不像脸了——鼻梁塌了，血从眼眶里往外涌，像一只被踩烂的桃子。她滑到地上时手还在动，指甲在地砖上刮出白痕。你捂住嘴蹲下来，浑身发抖——你想喊救命，可你发不出声。那天夜里你吐了三次，此后每次看见桃子都会恶心。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 8,
+      "max_age": 18,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_002",
+    "text": "你失手打死了偷食的野狗。",
+    "expanded_text": "你本只想吓唬它。可石头砸下去的位置不对——正中它的太阳穴。那只野狗抽搐了两下就不动了。你蹲下来时看见它的眼睛还睁着，舌头伸在外面，一丝血从耳朵里流出来。你的手在发抖。你试着推它——它的身体还是软的、热的。你突然意识到你杀了一条命。你把它埋了。埋的时候发现它的肚子鼓鼓的——它怀着崽。你跪在土坑旁边干呕了半天，指甲缝里塞满了带血的泥土。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 8,
+      "max_age": 30
+    },
+    "weight": 12,
+    "effects": {
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "vio_003",
+    "text": "市集斩首，你看了个全程。",
+    "expanded_text": "鬼头刀落下那一瞬你看清了一切：刀刃切入脖颈时先是皮肉翻开——红色的白色的交错——然后才是骨头的「咔」一声。头颅滚了两圈停在你脚边，断面还在往外冒血，一股一股的，像打翻了的酒壶。那双眼睛还睁着，瞳孔在你面前慢慢散开。血的铁锈味灌满了你的鼻腔——温热的，带着一股奇怪的甜。你吐了。母亲把你拖走时你还在干呕，三天没吃下饭。但你发现——第二次见到血时，你不吐了。人就是这么习惯的。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 8,
+      "max_age": 25
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_004",
+    "text": "山贼夜袭，你躲在草垛中颤抖。",
+    "expanded_text": "马蹄声像闷雷。你趴在草垛里不敢呼吸。透过草缝你看见一个老镖师被从马上拖下来——三把弯刀同时落下，他的手臂和半边肩膀一起被卸了下来。他惨叫了一声就没了声息，断口处的骨头白得刺眼，血像喷泉一样涌出来浇了一地。你的牙齿咬得吱嘎响，裤裆湿了一片。你在草垛里躲了一整夜，他们走后你才爬出来——满地的血已经干成了黑色硬壳，踩上去「咔嚓」作响。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 10,
+      "max_age": 25
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_m_005",
+    "text": "你与人争执，第一次尝到打架的味道。",
+    "expanded_text": "你的拳头砸在他颧骨上时，骨头在皮肤下发出一声闷响。他的嘴角崩裂了——门牙带着一坨血肉飞了出去。你看见它弹在地上滚了两圈。你愣了一息——然后又挥了第二拳。这一拳打在他鼻梁上，你的拳面上沾了滑腻的东西——是血还是鼻涕你分不清。他倒在地上捂着脸嚎哭，你站着喘气，手指关节上的皮磨破了，一抽一抽地疼。可你心里有一种黑暗的、滚烫的快意——你终于不是被打的那一个了。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 14,
+      "max_age": 30,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": 1,
+      "add_tag": "violent_temper"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "vio_f_005",
+    "text": "你被纨绔子弟纠缠，抄起石头砸碎了他的脑袋。",
+    "expanded_text": "你抄起河边的石头时没想过会出人命。可石头砸上去的声音不对——不是皮肉被击打的闷响，而是一声清脆的「咔」。他的太阳穴塌了一块进去，眼珠子鼓了出来。他直挺挺地倒了，嘴里涌出粉红色的泡沫——你知道那是脑浆混着血。你手里的石头掉了，上面沾着头发和碎骨。你在原地站了一炷香，然后把石头扔进河里，转身走了。你的手抖了七天。但你不后悔——那个畜生活该。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 14,
+      "max_age": 30,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "violent_temper"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_006",
+    "text": "你随商队走镖，遭遇悍匪截道。",
+    "expanded_text": "悍匪从山坡上冲下来时像一群嗜血的狼。前面的镖师还没拔刀就被一箭贯穿了喉咙——箭尖从后颈穿出来时带出一蓬血雾，他双手抓住箭杆，嘴里只来得及发出一声咕噜就倒了。你抽出短刀护在马车前。一个悍匪冲到你面前，你一刀捅进他的小腹——比你想象中容易得多，像刺进一块熟透的肉。他的内脏热得烫手，你抽刀时带出了一截什么——你没敢看。你活下来了，可衣服上的血腥味三天也没洗掉。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 16,
+      "max_age": 35
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "traveling"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_007",
+    "text": "你目睹两修士斗法，一人腰斩当场。",
+    "expanded_text": "腰斩。那个字你只在书上读过——此刻它活生生发生在你眼前。金光一闪，那个筑基修士的身体从腰部断成两截。上半身还在动，双手撑着地面往前爬了三步——身后拖出一长串肠子和不明物体，冒着热气。他的嘴还在张合，可发不出声。下半截还保持着站立的姿势，又过了一息才轰然倒下。你在原地干呕了半天——从此你再也不小看任何一场斗法。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "vio_m_008",
+    "text": "你第一次出手杀人。",
+    "expanded_text": "你的剑刺进他胸口时比你想象中轻。像切进一块泡水的绵。他低头看了看胸口那柄剑——然后看你。他的眼神不是恐惧，是困惑。你拔剑时带出了一串血珠，溅了你一脸——温热的，带着铁锈味。他跪下去时双手还在抓你的衣角。你看着他的瞳孔一点点涣散——直到什么都看不见了。你的手抖得握不住剑，它「啷」一声掉在地上。你蹲下来吐了。这是你第一次杀人。以后会习惯的。但今天——你恨自己。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "gender": "male"
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "sword_user"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_f_008",
+    "text": "你用一根银针了结了背叛你的同门。",
+    "expanded_text": "银针没入他眉心时几乎没有声音——只有一声极轻的「嗤」。他的身体僵了一瞬，然后像断了线的木偶一样倒下去。没有血，没有惨叫，只有你发出银针时手腕的轻微震颤。你站着看了他的尸体很久。他的脸上还带着之前背叛你时那副得意洋洋的笑——可现在那笑容凝固了，开始变得扭曲。你从他身上踩过去走了。你的手很稳——可你的心跳乱了一整夜。杀人比你想象的简单。这让你害怕。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "gender": "female"
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_009",
+    "text": "你在荒野遇到一具修士尸体，肠子挂在树上。",
+    "expanded_text": "尸体已经肿胀了，可你一眼就认出那是修士——他的衣袍残片上还有宗门标记。最先映入眼帘的是他的腹腔：像被什么东西从里面撕开的，肠子挂在旁边的矮树上，颜色已经发黑，表面爬满了蝇虫。尸臭扑面——那股甜腻的、腐烂的味道让你当场蹲下干呕。他的脸已经看不清了，被啄食得只剩半边。你逃也似的离开了——可那股味道嵌进了你的鼻腔，三天没有散。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 14
+    },
+    "weight": 12,
+    "effects": {
+      "add_tag": "explorer"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "vio_010",
+    "text": "你目睹魔修以幼童炼血丹，出手相救结下血仇。",
+    "expanded_text": "你循着哭声闯进山洞——三具孩童的尸体被掏空了内脏，肋骨像被掰开的花瓣一样外翻着。地上的血已经凝成黑色的壳，踩上去咔嚓作响。一个活着的女孩被绑在血祭台上，魔修的匕首正往她的胸口划——你看见她皮肤裂开、血珠渗出的那一幕时大脑炸了。你抽剑冲上去——一剑削掉了魔修的半只手。他惨叫着逃了，断手还在地上抽搐。你抱起女孩往外跑，她的血浸透了你整个前襟。她活了——你也活了。可那三具小小的尸体，你做了一辈子的噩梦。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_011",
+    "text": "你与同阶修士死战三日，最终将其碾成肉泥。",
+    "expanded_text": "三天三夜。你们互相在对方身上留下了上百道伤——他的骨头断了九根，你的肋骨少了三根。到最后你已经不是在斗法了——你在用拳头砸。一拳一拳砸在他的脸上，直到你的拳面下没有了骨骼的阻挡感——只剩软的、烂的、一滩分不清是脸还是肉泥的东西。你停手时他已经看不出人形了。你跪在他的尸体旁边喘了半个时辰，满手的脑浆和碎骨在颤抖。你吐了七次。但你活着——他不活了。仅此而已。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": 1,
+      "willpower": 1,
+      "add_tag": "first_kill"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_012",
+    "text": "兽潮席卷，你与同伴血战三天。",
+    "expanded_text": "兽潮来时地面在震动。你面前的同门被一头铁背豹咬住了脖子——他的颈椎发出「嘎嘣」一声就断了，头以一个不可能的角度耷拉下来。你来不及悲伤——一只血角犀已经朝你冲来。你侧身一剑捅进它的眼眶，剑尖从后脑穿出时带出一股温热的液体喷了你满脸。三天后兽潮退去，你站在尸山上——人的、兽的混在一起，血流成河字面意思。你的剑已经卷了刃，你的手磨得看得见骨头。你还活着。但身边少了十七个人。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 16
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": 1,
+      "willpower": 1,
+      "add_tag": "beast_tamer"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_013",
+    "text": "你被仇家围攻，杀红了眼连斩七人。",
+    "expanded_text": "第三个人倒下时你已经不再数了。你只记得刀入肉的感觉——一次比一次顺畅。你的视野变成了红色——不是比喻，是血溅进了你的眼睛里。你杀红了眼时的记忆是断片的：闪避、出刀、血雾、惨叫、骨断——像一部被快进的画面。等你清醒过来时脚下躺了七具尸体，你的衣服湿得能拧出水——全是血。你的刀缺了三个口。你站在尸堆里喘了很久，然后慢慢笑了出来——一种让你自己都害怕的笑。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": 1,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_014",
+    "text": "金丹老怪一巴掌将筑基修士拍成肉泥。",
+    "expanded_text": "老怪只是随手一挥——那个筑基修士的整个上半身就炸了。不是切开、不是碎裂——是直接从腰以上化成了血雾和碎肉。你离得只有三丈，一块碎骨打在你脸上划出一道口子——温热的血肉碎片洒了你一身。那个人一秒前还在说话——下一秒只剩两条腿还站着，断面像一朵绽开的红花，内脏往外滑落，冒着热气。你吓得连滚带爬退了十丈——从此你明白了什么叫碾压。金丹和筑基之间，不是战斗——是屠杀。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 16
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "vio_015",
+    "text": "你在战场上发现修士尸骨可入药。",
+    "expanded_text": "那是修罗场的第三天清晨。你蹲在尸堆中收拾自家门人遗骸，不经意发现一具元婴老怪的残骨竟泛着淡淡金光——这是上佳的炼丹材料。你环顾四周，所有人都忙着自己的死活，没人注意到你。你深吸一口气，强忍恶心把骨头一根根敲下来塞进储物袋。那一夜你做了噩梦，可第二天你照样去了——人命可贱，丹药可贵，世道便是如此。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 20
+    },
+    "weight": 12,
+    "effects": {
+      "comprehension": 1,
+      "add_tag": "alchemist"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "normal"
+  },
+  {
+    "id": "vio_016",
+    "text": "你被命令处决叛门弟子，挥刀时手抖了三下。",
+    "expanded_text": "你举刀时手抖了三下。他跪在你面前，满脸是血，还在喊你的名字——你们入门时是同一批。刀落下去时你闭了眼——可你还是听见了那声「噗」。比你想象的闷。你睁眼时血已经溅到了你的鞋面上。他的头颅偏了一个角度——你没一刀砍断，脖颈的皮肉还连着一片。你咬牙补了第二刀。这次干脆多了。你转身走了十步就蹲下来吐了。长老拍你的肩说「做得好」——你浑身冰凉地点头。那天夜里你梦见他跪在你面前喊你的名字。此后每个月十五都梦见。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18,
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "first_kill"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_017",
+    "text": "你目睹屠村，三百口人无一活口。",
+    "expanded_text": "三百口人。你赶到时什么都迟了。村路上一具一具地躺着——男女老幼，姿态各异。有人的头被反过来扭着、有人的手臂被扯离了身体、一个女人把孩子压在身下可两人都死了——孩子的脑壳被踩得扁了。你在村中走了一圈，鞋底的血迹越来越厚。井里也是人——你看见了三张浮在水面上的白色的脸。你蹲在村口哭了一个时辰——不是恐惧，是纯粹的、什么也做不了的愤怒。你回去后闭关了半年——出来时修为涨了一层。恨，有时候比爱更好修炼。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_018",
+    "text": "你练成嗜血剑法，每杀一人剑身吸血一抹。",
+    "expanded_text": "每杀一人，剑身就多一道红纹。起初你还在意——后来你开始享受那一刻：刀锋切入血肉时传来的轻微震颤，温热的血沿着剑槽回流到你手上时的感觉——像一条活物在舔你的掌心。你的剑越来越红，到后来通体如血。师父看到时脸色铁青让你换一把——你拒绝了。它跟你、你跟它，已经分不清谁在养谁了。夜里它在剑匣中嗡嗡作响，像是饥渴。你有时会划破自己的手指喂它一口——这让你觉得自己还没完全疯。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 20
+    },
+    "weight": 12,
+    "effects": {
+      "cultivation": 50,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "vio_019",
+    "text": "你的法宝沾染血煞过重，夜里发出婴儿啼哭声。",
+    "expanded_text": "那声啼哭总在三更。起初很轻——像婴儿刚睡醒的哼唧。后来越来越尖锐、越来越像惨叫。你的法宝上沾了太多命——一百三十七条，你数过。它上面附着的血煞已经凝成了肉眼可见的暗红光晕。你不敢用灵识去探——上次探的时候，你看见了一百三十七张脸在对你哭。你想封印它——可它跟了你太久了，你离不开它。就像它离不开你一样。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 24,
+      "required_tags": [
+        "has_treasure"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": -1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_020",
+    "text": "你活捉魔修凌迟取血，三日后才让他咽气。",
+    "expanded_text": "你花了三天。一刀一刀，从他小腿开始——每一刀只割下一片指甲大的肉。他在前半天还在骂你、求饶、威胁——到第二天只剩哭嚎——第三天连哭的力气都没了，只有嘴唇无声地翕动。你取够了血——三千六百刀，恰好一大缸。你最后一刀捅进他的心脏时，他的眼睛里甚至有了感激——终于结束了。你用他的血练成了一件宝物。你不后悔——但从那天起你再也不照镜子了。你怕看见自己的表情。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 22,
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": -1,
+      "add_tag": "alchemist"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_021",
+    "text": "两金丹真人为一颗丹药同归于尽。",
+    "expanded_text": "你只是个跑腿的小卒，被派来观望一场拍卖。压轴的是一颗筑基丹，结果两位金丹真人同时看上了它。竞价升到天价后，两人当场翻脸，从拍卖会一直打到外面荒原。你跟着看了一天一夜，最后两位真人元气尽失，索性同归于尽。爆炸方圆十里寸草不生，你被冲击波震得吐血。等尘埃落定，你在焦土中找到了那颗完好无损的丹药——这就是命。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 20,
+      "required_tags": [
+        "in_market"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "fortune": 1,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "vio_022",
+    "text": "你在血池中泡了七天七夜，肉身大成。",
+    "expanded_text": "血池的温度像洗澡水。你泡在里面时能感觉到那些精血渗入你的毛孔——刺痛、灼烧，像有无数只蚂蚁在啃食你的皮肤。第三天你的表皮开始脱落——整片整片地从身上滑下来，露出下面鲜红的嫩肉。你痛得咬碎了三颗牙。第五天你的骨头开始响——每一根都在重塑。第七天你从池中站起来时，旧皮肤像蛇蜕一样漂浮在血水中。你的肉身脱胎换骨了——可你的梦里从此多了无数惨叫。那些血——是从活人身上放的。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 22
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": 2,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "vio_023",
+    "text": "你将仇家全族连根拔起。",
+    "expanded_text": "你花了一夜。从外门弟子开始清——灵力碾压，一道剑光划过去，十几颗头颅落地的声音像一串糖葫芦断了线。你没有犹豫、没有留情——哪怕其中有老人、有孩子。你师父说过：仇要报尽，根要拔净。最后一个是他们的族长——一个白发苍苍的元婴老怪。他没有反抗，只说了一句：「因果循环，终有你还的时候。」你一剑刺穿他的眉心。天亮时你站在废墟中央——满地的尸体还冒着热气。你忽然觉得——自己好像也死了一部分。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 30,
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": -1,
+      "add_tag": "dark_arts"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_024",
+    "text": "你与对手斗法引发地脉爆裂。",
+    "expanded_text": "你们斗到第三天，灵力溢出引发了地脉共振。整片山脉开始崩塌，岩浆从地底涌出，方圆百里寸草不生。可你和对手都没有停手——这一战不分胜负，谁也下不了山。最后你险胜半招，斩下对方头颅时，整座山也塌了下来。你拖着重伤的身体爬出焦土，回头看那一片狼藉，忽然觉得自己赢得很是空虚。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 30
+    },
+    "weight": 12,
+    "effects": {
+      "add_tag": "has_enemies",
+      "constitution": -1
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_025",
+    "text": "你的对手临死前自爆元婴。",
+    "expanded_text": "他临死前笑了——然后元婴炸了。那股气浪将你掀飞出百丈，你撞在山壁上肋骨断了四根。你还没来得及感受疼痛——碎片已经到了。他的骨头、血肉、法器碎片裹着灵力冲击波扫过来——你的防御被瞬间撕碎，左臂上被一块碎骨贯穿，一直钉到肉里。你低头看着那块骨头——那是他的——还带着温度。你忍着痛把它拔出来时，鲜血喷射而出。你活着。可你身上永远留着他的一块骨头留下的疤——像一个诅咒。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 30,
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_026",
+    "text": "山中盗匪夜袭，你抄起锅铲反杀三人。",
+    "expanded_text": "那夜你正在客栈灶房值夜班烧水，突然听见前堂喊杀声。三个蒙面盗匪冲进来抢钱，第一个倒霉鬼就被你用铁锅闷头扣住，然后是滚烫的开水，然后是锅铲对准了脖子大动脉。其余两个还没反应过来，你手里的锅铲已经飞了出去——你竟然忘了自己年轻时是个屠户。客栈老板第二天送了你一面金匾，上书」厨神在世」。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 50
+    },
+    "weight": 10,
+    "effects": {
+      "constitution": 1,
+      "add_tag": "violent_temper"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "vio_027",
+    "text": "你目睹一头修罗般的兽人撕裂修士。",
+    "expanded_text": "那东西不是人——有人形，但不是人。它的手臂粗得像你的腰，它抓住一个金丹修士的头就像抓一个苹果——然后「咔嚓」捏碎了。脑浆和碎骨从它指缝间挤出来，滴在地上。它把无头的尸体丢出去像丢一根柴火。你在暗处看着它撕裂第二个、第三个——每一次都伴随着骨骼断裂的脆响和飞溅的血雾。你不敢呼吸。当它的目光扫过你藏身的方向时——你尿了裤子。你这辈子第一次真正理解什么叫「食物链底端」。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_m_028",
+    "text": "你为护妻女与人拼命，砍翻五人。",
+    "expanded_text": "贼人闯进家门时你正在炖鸡。你来不及多想，抄起厨刀就冲了上去。第一个被你削飞了半边脸，第二个被你劈断了胳膊，第三个想跑，被你飞出去的刀钉在了门板上。你妻子抱着孩子在屋里哭，你浑身是血站在门口大喘气。等官差来时你才发现自己身上中了三刀。你笑了一下，倒在了血泊里——但你知道，妻女活下来了。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 22,
+      "max_age": 50,
+      "gender": "male"
+    },
+    "weight": 10,
+    "effects": {
+      "constitution": 1,
+      "willpower": 2,
+      "add_tag": "has_companion"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_f_028",
+    "text": "你为护幼子削去歹人耳鼻，提刀立于门前。",
+    "expanded_text": "歹人来劫舍那夜，你将熟睡的孩子塞到米缸里。三个汉子破门而入，你早已蹲在门后。第一个迈过门槛的瞬间，你提刀斩下，他的耳朵和半截鼻子掉在地上。另外两人骇然后退，你提着滴血的刀走出去，眼神冰冷如井底。他们看了你一眼，转身就跑——他们见过杀人犯，可没见过比杀人犯更狠的母亲。从此十里八乡再没人敢动你的家。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 22,
+      "max_age": 50,
+      "gender": "female"
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 2,
+      "constitution": 1,
+      "add_tag": "violent_temper"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "vio_029",
+    "text": "你独闯魔窟，斩魔三百。",
+    "expanded_text": "三百头魔修。你的剑从第一头砍到最后一头时已经钝得像根铁棍。你记不清自己挨了多少下——只知道你的衣服已经被血浸透了，自己的和别人的混在一起，分不清。你的视线被血糊住过三次——每次你都用袖子抹开继续砍。最后一个魔修被你一脚踩住脖子——你用残剑锯了七八下才把他的头割下来。你把那颗头提在手里站在尸山上——满山的血腥气里，你忽然哈哈大笑。你知道自己疯了一小会。但你不在乎了。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 24,
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "cultivation": 100,
+      "willpower": 2,
+      "add_tag": "sword_user"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "vio_030",
+    "text": "你被仇敌捉去，受了三个月的酷刑。",
+    "expanded_text": "他们用铁钩穿过你的锁骨把你挂起来。第一天是鞭子——九节鞭，每一节上带着倒刺，打下去时会把皮肉一起带出来。第二天是盐水——往你的伤口上浇，你痛得把自己的舌头都咬穿了。第三天……第三天的事你不记得了，你昏过去了。等你被人救出来时，你的背上已经看不见完整的皮肤了——全是交叠的伤疤和新鲜的烂肉。你养了半年才能下地。你没有哭——你把三个月里每一个折磨你的人的脸都记住了。十年后你一个一个找回去。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "weight": 12,
+    "effects": {
+      "willpower": 3,
+      "constitution": -1,
+      "add_tag": "violent_temper"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_031",
+    "text": "比武擂台，你失手打死师弟。",
+    "expanded_text": "本是切磋，谁料对方不肯认输，几次三番偷袭你后心。你气血上涌，最后一招用了七分力——结果对方挡得太迟，整个胸膛被你一掌轰碎。鲜血喷了你一脸，他还没断气，瞪着你说：「师兄，我赢不了你也得让你不痛快。」说完才咽气。你站在擂台上发了好半天呆，从此封手三年，再没正式比武过。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_032",
+    "text": "你目睹一名化神大能陨落。",
+    "expanded_text": "你当时正在天空中某一座云楼附近闲游，忽见一道紫芒贯穿云海，那位你景仰已久的化神前辈被某个未现身的存在一招击成飞灰。最后只剩一缕残魂飘到你面前，他费力地说：「小友……记住……天外有天……」说完便彻底消散。你站在云海中良久不语——原来再强的人，也终有一日是别人的尘埃。从那天起你的修炼之路平添了一丝敬畏。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 30
+    },
+    "weight": 8,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 1
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "vio_033",
+    "text": "你与人斗酒输了，被罚陪斩首示众。",
+    "expanded_text": "本来是镇上的一场斗酒，你输了三坛烧刀子，照规矩要去刑场陪斩——就是站在死囚旁边壮胆。你硬着头皮上了刑场，原以为只是站个样子，结果监斩官的酒喝多了，竟把你和死囚搞混。鬼头刀都举起来了，你才嘶哑地喊出：「官爷我是来陪斩的——」刀停在你头顶半寸处。从那天起你戒了酒，整整三十年滴酒不沾。",
+    "category": "calamity",
+    "conditions": {
+      "max_realm": 0,
+      "min_age": 18,
+      "max_age": 40
+    },
+    "weight": 8,
+    "effects": {
+      "willpower": 2,
+      "fortune": 1
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "vio_034",
+    "text": "你练剑走火，半个剑院被你削平。",
+    "expanded_text": "那天你领悟新的剑意，灵感如泉涌。你独自一人到剑院后山练剑，一招接一招，越来越快，越来越凶。等你回过神来，方圆三里的山林被你削得平整如镜，连后山的练剑石阵都被你劈得稀烂。剑院掌门赶来时脸都黑了，罚你扫了三年茅厕。可你心里偷着乐——这一招你练成了。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 30,
+      "add_tag": "sword_user"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "vio_035",
+    "text": "你与魔修同归于尽，重伤回门。",
+    "expanded_text": "你与那魔修缠斗了七天七夜，最终选择了同归于尽。你引爆了自己的丹田，他引爆了他的元婴，两道光柱同时刺破云霄。你浑身是血飞回宗门时，连呼吸都疼。师傅救活了你，但你修为跌回了练气初期。你养伤的三年里，每天看着自己空空如也的丹田，竟没有一丝懊悔——他死了，那就够了。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22,
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "constitution": -2,
+      "willpower": 2
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_036",
+    "text": "你目睹妖修剥皮制鼓。",
+    "expanded_text": "他们活生生地剥——从后背开始。那个修士被钉在木架上，嘴里塞着布。刀划开皮肤时发出一声「嘶」，像撕绸子。妖修的手法娴熟得可怕——一整张人皮被完整揭下来时上面连纹路都没破。那修士还没死——他的肉身暴露在空气中，红白交错的肌肉在颤抖。他们把那张皮绷在鼓架上——湿淋淋的还在滴血。你躲在暗处浑身冰凉。那面鼓后来被敲响时——你听见了比任何乐器都凄厉的声音。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_037",
+    "text": "你斩杀了一头远古凶兽。",
+    "expanded_text": "那头凶兽据说是上古遗种，已经吃了七位金丹真人。你用了三个月时间布阵围猎，又用了半年时间疲敌——直到它精力耗尽。最后一战你拼上了一切，剑光直贯它的命门。它倒下时大地震动，你也累得吐了三大口血。你剥下它的皮做了战袍，取下它的牙做了佩刀，从此声名鹊起。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 26,
+      "required_tags": [
+        "beast_tamer"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 100,
+      "constitution": 2,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "vio_038",
+    "text": "你目睹一场修罗血祭。",
+    "expanded_text": "血祭台上躺着十二具尸体——不，还有活的。他们的胸腔被活生生掰开，心脏还在跳，有管子接着把血引入中央的法阵。那些心脏一颗一颗停下来时，法阵就亮一分。你目睹最后一颗心脏停止——法阵轰然大亮，一头远古凶物从中钻出。你看见那些尸体的脸——全是十六七岁的孩子。你转身跑了——你知道自己打不过。你跑了整整三天。可那十二张年轻的脸，你到死都没有忘记。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 24
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_039",
+    "text": "你被钉在十字木桩上示众三日。",
+    "expanded_text": "铁钉穿过你手掌时你听见了自己骨头碎裂的声音——不是「咔」，是「嚓嚓嚓」——慢慢碾碎的声音。你没有叫——你咬穿了嘴唇忍住了。第二颗钉穿过你的肩胛骨时你终于叫了出来。三天日晒雨淋。你的伤口开始发炎、溃烂，蝇虫在上面产卵。第三天有人来泼水——不是为了给你喝，是为了让你多清醒一会。你被救下来时双手已经废了。你花了三年才恢复。三年里你每天看着自己手掌心那两个圆形的疤——那是你发誓复仇的证据。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 16,
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_040",
+    "text": "你看见同门活活被丹炉烧死。",
+    "expanded_text": "丹炉爆裂时他离得最近。火焰把他整个人吞了——你看见他的衣服在一瞬间烧尽，皮肤在你眼前从白变红、变黑、起泡、龟裂。他在火里扑腾了三息——发出一种不像人的尖叫。等你终于冲上去把火扑灭时——他还活着。可他的脸已经熔成了一团，五官分不清了，嘴唇没了，牙齿暴露在外面。他活了三天。那三天里你守着他——他只能用喉咙里的气泡声跟你沟通。第三天早上他安静了。你给他盖上布时手一直在抖。活着——有时候比死更可怕。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1,
+      "min_age": 18,
+      "required_tags": [
+        "alchemist"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_041",
+    "text": "你的弟子叛变，你忍痛将其格杀。",
+    "expanded_text": "你的剑刺进他胸口时，他喊的是「师父」——不是求饶。那声「师父」比剑伤更疼。你把剑抽出来时手上全是他的血——温热的，跟他小时候摔伤流的血一个温度。他跪下来时还在看你，眼里没有恨——是困惑，像一个不明白自己做错了什么的孩子。你看着他倒下去。你没有哭。你在他身边坐了一夜——直到他的身体变凉、变硬。天亮时你亲手埋了他。你给他立了碑。碑上写的是——爱徒之墓。你跪在碑前跪了三天。此后你再没收过徒弟。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 50,
+      "required_tags": [
+        "in_sect"
+      ]
+    },
+    "weight": 8,
+    "effects": {
+      "willpower": -1,
+      "comprehension": 1
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_042",
+    "text": "你与自家剑灵展开殊死搏斗。",
+    "expanded_text": "你养了三百年的剑灵突然有了自己的意志，它要吞噬你的肉身夺舍。你与自己的剑灵展开了一场只有你看得见的内心搏杀。这场战斗持续了七天七夜，你的肉身在外边一动不动，神识却在剑中血流成河。最后你斩断了剑灵的根基，与它同归于尽——你保住了肉身，但失去了陪伴你三百年的爱剑。从此你佩剑不离身，可再没敢养过剑灵。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 50,
+      "required_tags": [
+        "sword_user"
+      ]
+    },
+    "weight": 8,
+    "effects": {
+      "willpower": 2,
+      "add_tag": "violent_temper"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_043",
+    "text": "你被仇人斩去一臂。",
+    "expanded_text": "那一刀从你肩膀处斜劈而下——你先是觉得凉，然后才是疼。你低头看见自己的左臂挂在一条皮肉连接上，骨头的白色断面在阳光下刺眼。血从断面涌出来——不是流，是喷。你用右手捂住断口，血从指缝间涌出，热得发烫。你的视线开始发黑——你咬牙给自己灌了一颗保命丹。那只手最终没保住。你后来换了一只由灵木制成的假臂——可每到阴天，断口处都还会隐隐作痛。像一个永远不会愈合的提醒。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "required_tags": [
+        "has_enemies"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "constitution": -1,
+      "willpower": 2,
+      "add_tag": "sword_user"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_044",
+    "text": "你目睹了一座城被魔潮吞没。",
+    "expanded_text": "魔潮席卷过来时像一面黑色的墙——所过之处一切消融。你看见城墙上的守卫试图抵抗——魔气碰到他们的肉身时，皮肤像被酸液腐蚀一样一层层脱落。他们的惨叫只持续了几息就变成了不成人形的肉泥。一座十万人的城——被黑潮淹没时连哭喊声都汇成了一片。你站在远处的山头看着这一切，拳头攥到指甲嵌入肉中。你什么也做不了。这是你此生最深的无力感。十万人——像一个数字一样消失了。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 18
+    },
+    "weight": 8,
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "vio_045",
+    "text": "你为夺一颗丹药，与三人混战一夜。",
+    "expanded_text": "那是颗能延寿百年的灵丹，被人发现拍卖，结果路上被劫。劫匪有四人，你是其中之一。最后只能活一个，丹药归一个。从傍晚打到天明，地面被血浸透。你身中七刀两剑，对方三人尽数毙命。你颤抖着捡起丹药，咽下去之前犹豫了一瞬——这一颗丹药值得吗？可你转念一想，自己已经走到这一步，回不了头了。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 22
+    },
+    "weight": 10,
+    "effects": {
+      "lifespan": 2,
+      "constitution": -1,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "vio_046",
+    "text": "你目睹一名道侣杀夫夺宝。",
+    "expanded_text": "那对夫妻在你眼里恩爱了百年。可那天你路过他们洞府，亲眼看见女修一剑刺穿丈夫的心脏，然后冷静地从他身上摘走了储物袋。她转身时看见了你，居然没有动手——她只是冷笑：「看见就看见了，反正你也斗不过我。」她飞走了，留下你独自面对那具尸体。从那天起你不再相信道侣，你只信自己。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 26
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "saw_blood"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_047",
+    "text": "你与同伴争夺机缘，反目成仇。",
+    "expanded_text": "你们四人一同进入秘境，本是生死之交。可秘境深处只有一颗仙果，谁吃了谁就能突破。你们对视片刻，谁也没说话，下一刻就拔剑相向。你侥幸活到了最后——三具同伴的尸体倒在你脚下，他们生前最后的眼神都望着你。你含泪吃下了那颗仙果，丹田传来突破的轰鸣。可那一夜你做了三天三夜的噩梦，梦里都是他们的脸。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "required_tags": [
+        "explorer"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 80,
+      "willpower": -1,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "vio_048",
+    "text": "你被刺客行刺，反杀对方。",
+    "expanded_text": "银光一闪——你本能侧身。匕首划过你的肋下，切开了三层衣服和两层皮肉。痛觉慢了半息才追上来——像被火烫了一下。你顺着惯性旋身出掌——你的手掌击穿了他的胸腔。你的手臂整个没入他的身体——你的指尖碰到了他的脊柱骨。温热的血涌上你的小臂。你拔出手时带出了一些不该在体外的东西——肠子或者肺叶你分不清。他瞪着你倒下了。你的手在发抖——上面挂着丝状的组织。你花了很久才把它洗干净。更久才把那个触感从记忆里洗掉。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 28
+    },
+    "weight": 10,
+    "effects": {
+      "willpower": 1,
+      "add_tag": "first_kill"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_049",
+    "text": "你目睹元婴老怪自爆，方圆百里夷为平地。",
+    "expanded_text": "老怪自爆时——天地变了颜色。一颗拳头大的元婴化作纯粹的灵力爆炸——白光吞没了一切。冲击波到达你时——你面前的三个人同时被气浪撕碎了。字面意义上的——碎肉、碎骨、血雾弥漫。你被掀飞出去撞断了两棵树才停下来。你耳朵里只有嗡嗡声。等你爬起来时——方圆百里只剩一个深坑。坑底还在冒烟。你的左耳从此再也听不见了。而那三个被气浪撕碎的人——连骨灰都找不到了。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 26
+    },
+    "weight": 8,
+    "effects": {
+      "constitution": -1,
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "danger"
+  },
+  {
+    "id": "vio_050",
+    "text": "你独战一城魔修，剑入鞘时已是日落。",
+    "expanded_text": "你的剑从日出砍到日落。最后一个魔修倒下时太阳刚好沉入地平线——余晖把满地的血照成了金色。你把剑收入鞘中——剑身上裹着的血已经干了，像一层红漆。你低头看自己——从头到脚没有一处干净的地方。你的手在抖、腿在抖、连呼吸都在抖。你身后是半座城的活人——他们看你的眼神像看一尊杀神。你转身朝他们笑了笑——他们后退了一步。你收起笑容，独自走入夕阳里。一城人——你救了。可你觉得自己丢了什么东西。好像是——人味。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "min_age": 30,
+      "required_tags": [
+        "sword_user"
+      ]
+    },
+    "weight": 8,
+    "effects": {
+      "cultivation": 100,
+      "willpower": 2,
+      "add_tag": "has_enemies"
+    },
+    "tags": [
+      "violence"
+    ],
+    "event_type": "fortune"
+  }
+]
