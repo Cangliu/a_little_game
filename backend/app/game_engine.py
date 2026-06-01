@@ -54,12 +54,51 @@ BREAKTHROUGH_BASE_CHANCE = {
 SPACE_NODE_BASE_CHANCE = 0.015  # ~1.5% per year baseline; modulated by fortune & comprehension
 
 
+# Anti-streak gender history (module-level, tracks recent gender picks)
+_gender_history: list[str] = []
+
+
+def _pick_gender() -> str:
+    """Pick gender with anti-streak bias.
+
+    Pure 50/50 when no streak; after 2+ consecutive same gender,
+    progressively favor the other to avoid frustrating runs.
+    """
+    streak = 0
+    if _gender_history:
+        last = _gender_history[-1]
+        for g in reversed(_gender_history):
+            if g == last:
+                streak += 1
+            else:
+                break
+    
+    if streak >= 3:
+        # Strong bias toward the other gender (80/20)
+        gender = _gender_history[-1]
+        opposite = "female" if gender == "male" else "male"
+        pick = random.choices([opposite, gender], weights=[80, 20])[0]
+    elif streak >= 2:
+        # Mild bias (65/35)
+        gender = _gender_history[-1]
+        opposite = "female" if gender == "male" else "male"
+        pick = random.choices([opposite, gender], weights=[65, 35])[0]
+    else:
+        pick = random.choice(["male", "female"])
+    
+    _gender_history.append(pick)
+    # Keep only last 10 entries
+    if len(_gender_history) > 10:
+        _gender_history.pop(0)
+    return pick
+
+
 def create_game() -> GameState:
     """Create a new game with random attributes (simplified - pure fun)."""
     game_id = str(uuid.uuid4())[:8]
     
-    # Random gender
-    gender = random.choice(["male", "female"])
+    # Anti-streak gender selection
+    gender = _pick_gender()
     
     # Random attributes for internal use (player doesn't see or choose these)
     attributes = Attributes(
