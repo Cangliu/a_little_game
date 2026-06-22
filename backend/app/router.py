@@ -1,16 +1,19 @@
 """API routes for the cultivation life simulator."""
 from fastapi import APIRouter, HTTPException
-from .game_engine import create_game, advance_year, get_life_summary, REALM_NAMES, REALM_THRESHOLDS
-from .models import Realm
+from .engine import GameDirector
+from .models import Realm, REALM_NAMES
 
 router = APIRouter(prefix="/api/game", tags=["game"])
+
+# Single GameDirector instance shared across requests
+_director = GameDirector()
 
 
 @router.post("/start")
 def start_game():
     """Start a new game with random attributes (simplified - pure fun)."""
-    state = create_game()
-    
+    state = _director.start_game()
+
     return {
         "game_id": state.game_id,
         "age": state.age,
@@ -26,9 +29,9 @@ def next_year(data: dict):
     game_id = data.get("game_id")
     if not game_id:
         raise HTTPException(status_code=400, detail="Missing game_id")
-    
+
     try:
-        result = advance_year(game_id)
+        result = _director.advance_year(game_id)
         return result.model_dump()
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
@@ -38,7 +41,7 @@ def next_year(data: dict):
 def get_summary(game_id: str):
     """Get life summary after game ends."""
     try:
-        summary = get_life_summary(game_id)
+        summary = _director.get_life_summary(game_id)
         return summary.model_dump()
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))

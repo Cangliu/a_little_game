@@ -123,6 +123,23 @@ class GameState(BaseModel):
     is_ascended: bool = False
     tribulation_attempted: bool = False  # 是否已尝试渡劫飞升
     space_node_found: bool = False  # 是否已寻得空间节点
+    life_phase: int = 0  # 当前人生阶段 (LifePhase enum value)
+    breakthrough_failures: dict = {}  # 每个境界的突破失败次数 {realm_int: count}
+    # NPC 系统
+    npc_registry: dict = {}           # {npc_id: NPC 实体 dict}
+    relationships: list = []          # [Relationship dict]
+    # 记忆系统
+    memory_working: list = []         # 最近5条完整事件
+    memory_short_term: list = []      # 近50年摘要
+    memory_long_term: list = []       # 远期压缩记忆
+    biography_summary: str = ""       # 压缩传记 (供AI使用)
+    # 因果链系统
+    plot_hooks: list = []              # 当前未解决的剧情钩子
+    resolved_hooks: list = []          # 已解决的钩子 (供LLM回顾)
+    # 剧情线系统
+    active_arcs: list = []             # 当前活跃的剧情线 (StoryArc dicts)
+    # 命运主线系统 (骨骼)
+    main_storyline: dict = {}          # MainStoryline dict (开局生成的命运骨架)
 
 
 class StartGameRequest(BaseModel):
@@ -147,6 +164,7 @@ class NextYearResponse(BaseModel):
     choice_event: Optional[dict] = None
     gender: str = "male"
     space_node_found: bool = False
+    years_passed: int = 1  # 本回合经过的总年数
 
 
 class ChoiceRequest(BaseModel):
