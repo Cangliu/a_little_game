@@ -1,5 +1,8 @@
 """API routes for the cultivation life simulator."""
+import json
+
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import StreamingResponse
 from .engine import GameDirector
 from .models import Realm, REALM_NAMES, ChoiceRequest
 from .engine.state import get_state
@@ -36,6 +39,29 @@ def next_year(data: dict):
         return result.model_dump()
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
+
+
+@router.post("/next-year-stream")
+def next_year_stream(data: dict):
+    """Streaming variant: SSE for real-time narrative."""
+    game_id = data.get("game_id")
+    if not game_id:
+        raise HTTPException(status_code=400, detail="Missing game_id")
+
+    def event_generator():
+        try:
+            for event in _director.advance_year_stream(game_id):
+                event_type = event["event"]
+                event_data = event["data"]
+                yield f"event: {event_type}\ndata: {json.dumps(event_data, ensure_ascii=False)}\n\n"
+        except ValueError as e:
+            yield f"event: error\ndata: {json.dumps({'detail': str(e)}, ensure_ascii=False)}\n\n"
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
 
 
 @router.get("/summary/{game_id}")

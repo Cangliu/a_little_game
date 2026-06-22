@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import os
 import logging
-from typing import Optional
+from typing import Optional, Generator
 
 try:
     from openai import OpenAI
@@ -95,6 +95,38 @@ class LLMClient:
         except Exception as e:
             logger.warning("LLM generation failed: %s", e)
             return None
+
+    def generate_stream(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        max_tokens: int = 512,
+        temperature: float = 0.8,
+    ) -> Generator[str, None, None]:
+        """Streaming generation. Yields text chunks.
+
+        Used by the streaming EventDirector for real-time narrative output.
+        Returns empty generator on any failure.
+        """
+        if not self._available:
+            return
+
+        try:
+            response = self._client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                max_tokens=max_tokens,
+                temperature=temperature,
+                stream=True,
+            )
+            for chunk in response:
+                if chunk.choices and chunk.choices[0].delta.content:
+                    yield chunk.choices[0].delta.content
+        except Exception as e:
+            logger.warning("LLM stream failed: %s", e)
 
     def generate_with_thinking(
         self,

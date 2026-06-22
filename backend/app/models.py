@@ -180,6 +180,7 @@ class NextYearResponse(BaseModel):
     tension: float = 0.0                    # 张力值
     sect_info: Optional[dict] = None        # 宗门简要 {name, rank, contribution, sect_type}
     npc_relationships: list[dict] = []      # NPC关系列表 [{name, relation_type, sentiment, is_alive}]
+    ai_enhanced: bool = False                # LLM是否参与本轮叙事（前端灵玉指示器）
 
 
 class ChoiceRequest(BaseModel):

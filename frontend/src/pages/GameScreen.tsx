@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import type { GameEvent, NextYearResponse, SectInfo, NPCRelationship } from '../utils/types';
 import { REALM_NAMES, REALM_COLORS, GENDER_NAMES, CATEGORY_NAMES, CATEGORY_COLORS } from '../utils/types';
-import { nextYear, makeChoice } from '../utils/api';
+import { nextYear, nextYearStream, makeChoice } from '../utils/api';
 
 /**
  * Extract the character age referenced in event narrative text.
@@ -137,6 +137,9 @@ export default function GameScreen({
   const [npcRelationships, setNpcRelationships] = useState<NPCRelationship[]>([]);
   const [showNpcPanel, setShowNpcPanel] = useState(false);
   const [showSectPanel, setShowSectPanel] = useState(false);
+  const [aiEnhanced, setAiEnhanced] = useState(false);
+  const [streamingNarrative, setStreamingNarrative] = useState<string>('');
+  const [isStreaming, setIsStreaming] = useState(false);
   // Typing
   const [typingIdx, setTypingIdx] = useState<number>(-1);
   const logEndRef = useRef<HTMLDivElement>(null);
@@ -153,43 +156,117 @@ export default function GameScreen({
   const advanceYear = async () => {
     if (loading || isGameOver) return;
     setLoading(true);
+    setStreamingNarrative('');
+    setIsStreaming(false);
     try {
-      const result: NextYearResponse = await nextYear(gameId);
-      setAge(result.age);
-      setRealm(result.realm);
-      setRealmName(result.realm_name);
-      setCultivation(result.cultivation);
-      setCultivationMax(result.cultivation_max);
-      // Update enhanced state
-      if (result.tension !== undefined) setTension(result.tension);
-      if (result.sect_info !== undefined) setSectInfo(result.sect_info ?? null);
-      if (result.npc_relationships) setNpcRelationships(result.npc_relationships);
-
-      setEventLog((prev) => {
-        const next = [...prev, ...result.events];
-        const firstNewIdx = prev.length;
-        const firstWithExpanded = result.events.findIndex((e) => e.expanded_text);
-        setTypingIdx(
-          firstWithExpanded >= 0 ? firstNewIdx + firstWithExpanded : -1
+      // Try streaming first
+      let streamSuccess = false;
+      let streamStarted = false; // Track if server already mutated state
+      try {
+        await nextYearStream(
+          gameId,
+          // onState: update UI immediately with game state
+          (stateData) => {
+            streamStarted = true; // Server has advanced game state
+            const s = stateData as Record<string, any>;
+            if (s.age !== undefined) setAge(s.age);
+            if (s.realm !== undefined) setRealm(s.realm);
+            if (s.realm_name) setRealmName(s.realm_name);
+            if (s.cultivation !== undefined) setCultivation(s.cultivation);
+            if (s.cultivation_max !== undefined) setCultivationMax(s.cultivation_max);
+            if (s.tension !== undefined) setTension(s.tension);
+            // Add events (without expanded_text) to log
+            if (s.events && Array.isArray(s.events)) {
+              setEventLog((prev) => [...prev, ...s.events]);
+            }
+            setIsStreaming(true);
+            setStreamingNarrative('');
+          },
+          // onNarrativeChunk: append text in real-time
+          (chunk) => {
+            setStreamingNarrative((prev) => prev + chunk);
+          },
+          // onDone: finalize
+          (doneData) => {
+            const d = doneData as Record<string, any>;
+            if (d.ai_enhanced !== undefined) setAiEnhanced(d.ai_enhanced);
+            if (d.is_dead || d.is_ascended) {
+              setIsGameOver(true);
+              setAutoPlay(false);
+              setTimeout(() => onGameEnd(gameId), 2500);
+            }
+            if (d.has_choice && d.choice_event) {
+              setChoiceEvent(d.choice_event as GameEvent);
+              setIsChoosing(true);
+              setAutoPlay(false);
+            }
+            // Commit streaming narrative into the last event's expanded_text
+            setStreamingNarrative((narrative) => {
+              if (narrative) {
+                setEventLog((prev) => {
+                  const updated = [...prev];
+                  const lastIdx = updated.length - 1;
+                  if (lastIdx >= 0) {
+                    updated[lastIdx] = { ...updated[lastIdx], expanded_text: narrative };
+                  }
+                  return updated;
+                });
+              }
+              return '';
+            });
+            setIsStreaming(false);
+            // Auto-play continuation
+            if (!d.is_dead && !d.is_ascended && !d.has_choice && autoPlayRef.current) {
+              setTimeout(() => advanceYear(), 400);
+            }
+          },
         );
-        return next;
-      });
-
-      if (result.has_choice && result.choice_event) {
-        setChoiceEvent(result.choice_event);
-        setIsChoosing(true);
-        setAutoPlay(false);
-        setLoading(false);
-        return;
+        streamSuccess = true;
+      } catch (streamErr) {
+        console.warn('Stream failed, falling back to sync:', streamErr);
+        setIsStreaming(false);
+        setStreamingNarrative('');
       }
 
-      if (result.is_dead || result.is_ascended) {
-        setIsGameOver(true);
-        setAutoPlay(false);
-        setTimeout(() => onGameEnd(gameId), 2500);
-      } else if (autoPlayRef.current) {
-        const hasNarrative = result.events.some((e) => e.expanded_text);
-        setTimeout(() => advanceYear(), hasNarrative ? 1800 : 400);
+      // Fallback to sync API ONLY if stream never started (server state unchanged)
+      if (!streamSuccess && !streamStarted) {
+        const result = await nextYear(gameId);
+        setAge(result.age);
+        setRealm(result.realm);
+        setRealmName(result.realm_name);
+        setCultivation(result.cultivation);
+        setCultivationMax(result.cultivation_max);
+        if (result.tension !== undefined) setTension(result.tension);
+        if (result.sect_info !== undefined) setSectInfo(result.sect_info ?? null);
+        if (result.npc_relationships) setNpcRelationships(result.npc_relationships);
+        if (result.ai_enhanced !== undefined) setAiEnhanced(result.ai_enhanced);
+
+        setEventLog((prev) => {
+          const next = [...prev, ...result.events];
+          const firstNewIdx = prev.length;
+          const firstWithExpanded = result.events.findIndex((e) => e.expanded_text);
+          setTypingIdx(
+            firstWithExpanded >= 0 ? firstNewIdx + firstWithExpanded : -1
+          );
+          return next;
+        });
+
+        if (result.has_choice && result.choice_event) {
+          setChoiceEvent(result.choice_event);
+          setIsChoosing(true);
+          setAutoPlay(false);
+          setLoading(false);
+          return;
+        }
+
+        if (result.is_dead || result.is_ascended) {
+          setIsGameOver(true);
+          setAutoPlay(false);
+          setTimeout(() => onGameEnd(gameId), 2500);
+        } else if (autoPlayRef.current) {
+          const hasNarrative = result.events.some((e) => e.expanded_text);
+          setTimeout(() => advanceYear(), hasNarrative ? 1800 : 400);
+        }
       }
     } catch (err) {
       console.error('Error advancing year:', err);
@@ -340,6 +417,22 @@ export default function GameScreen({
                 />
               </div>
             </div>
+            {/* 灵玉指示器: AI叙事状态 */}
+            <div
+              className="flex items-center gap-0.5"
+              title={aiEnhanced ? '灵玉开光 · AI叙事开启' : '灵玉暗淡 · 规则模式'}
+            >
+              <span
+                className={`text-sm transition-all duration-700 ${
+                  aiEnhanced
+                    ? 'text-emerald-400 drop-shadow-[0_0_6px_rgba(52,211,153,0.8)] animate-pulse'
+                    : 'text-stone-400/60 grayscale'
+                }`}
+                style={{ filter: aiEnhanced ? 'none' : 'saturate(0.2)' }}
+              >
+                💎
+              </span>
+            </div>
             {/* NPC / Sect toggle buttons */}
             <button
               onClick={() => setShowNpcPanel(!showNpcPanel)}
@@ -449,8 +542,11 @@ export default function GameScreen({
               const catName = CATEGORY_NAMES[event.category || 'common'] || '尘世';
               const catColor = CATEGORY_COLORS[event.category || 'common'] || 'text-stone-500';
               const isTyping = i === typingIdx;
+              const isLastEvent = i === eventLog.length - 1;
               const shouldRenderExpanded =
                 event.expanded_text && (typingIdx === -1 || i <= typingIdx);
+              // Show streaming narrative for last event
+              const showStreaming = isLastEvent && isStreaming && !event.expanded_text;
               return (
                 <div key={i}>
                   {showAge && (
@@ -480,6 +576,12 @@ export default function GameScreen({
                   >
                     {event.text}
                   </div>
+                  {showStreaming && streamingNarrative && (
+                    <div className="event-narrative">
+                      {streamingNarrative}
+                      <span className="tw-cursor">▊</span>
+                    </div>
+                  )}
                   {shouldRenderExpanded && (
                     isTyping ? (
                       <TypewriterEvent

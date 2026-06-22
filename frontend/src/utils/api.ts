@@ -96,3 +96,59 @@ export async function getSectWorld(gameId: string): Promise<{
   }
   return res.json();
 }
+
+/**
+ * Streaming variant of nextYear. Consumes SSE events from /next-year-stream.
+ * Falls through on any error (caller should fallback to nextYear).
+ */
+export async function nextYearStream(
+  gameId: string,
+  onState: (data: Record<string, unknown>) => void,
+  onNarrativeChunk: (chunk: string) => void,
+  onDone: (data: Record<string, unknown>) => void,
+): Promise<void> {
+  const res = await fetch(`${API_BASE}/next-year-stream`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ game_id: gameId }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Stream request failed: ${res.status}`);
+  }
+
+  const reader = res.body!.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+
+    // Parse SSE events from buffer (events separated by \n\n)
+    const parts = buffer.split('\n\n');
+    buffer = parts.pop() || '';
+
+    for (const part of parts) {
+      if (!part.trim()) continue;
+      const lines = part.split('\n');
+      let eventType = '';
+      let dataStr = '';
+      for (const line of lines) {
+        if (line.startsWith('event: ')) {
+          eventType = line.slice(7);
+        } else if (line.startsWith('data: ')) {
+          dataStr = line.slice(6);
+        }
+      }
+      if (!eventType || !dataStr) continue;
+
+      const data = JSON.parse(dataStr);
+      if (eventType === 'state') onState(data);
+      else if (eventType === 'narrative_chunk') onNarrativeChunk(data);
+      else if (eventType === 'done') onDone(data);
+      else if (eventType === 'error') throw new Error(data.detail || 'Stream error');
+    }
+  }
+}

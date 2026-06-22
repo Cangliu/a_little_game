@@ -199,7 +199,7 @@ class MemoryCompressor:
 
     def _llm_compress_batch(self, events: list, current_age: int) -> Optional[str]:
         """Use LLM to compress a batch of events into a summary."""
-        if not self._prompt_builder:
+        if not self._prompt_builder or not self._llm:
             return None
 
         system_prompt, user_prompt = self._prompt_builder.build_compression_prompt(

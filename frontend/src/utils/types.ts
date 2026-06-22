@@ -118,6 +118,7 @@ export interface NextYearResponse {
   tension?: number;
   sect_info?: SectInfo;
   npc_relationships?: NPCRelationship[];
+  ai_enhanced?: boolean; // LLM参与标识（灵玉指示器）
 }
 
 export interface LifeSummary {

@@ -5,6 +5,8 @@ pipeline that fixes execution-order issues and enables AI integration.
 Now includes NPC system, memory management, LLM narrative, plot hooks,
 event-NPC binding, and story arc planning.
 """
+from typing import Generator
+
 from ..models import GameState, NextYearResponse, LifeSummary, Realm, REALM_NAMES
 from ..endings import get_title, calculate_score
 from .config import REALM_THRESHOLDS, TIME_STEP_BY_REALM, TENSION_DECAY_PER_TURN, TENSION_BY_EVENT_TYPE
@@ -199,6 +201,8 @@ class GameDirector:
         director_result = self.event_director.direct_event(candidates, state)
         main_ev = candidates[director_result["chosen_index"]]["event"]
         main_ev["expanded_text"] = director_result["narrative"]
+        # Track whether LLM was actually used this turn (for frontend indicator)
+        ai_used_this_turn = director_result.get("ai_used", False)
 
         # Apply effects or set pending choice
         if director_result["has_choice"] and director_result.get("branches"):
@@ -277,7 +281,284 @@ class GameDirector:
         # Phase 10: Update context, memory, and NPC aging
         self._post_year_update(state, events)
 
-        return self._build_response(state, events, total_years)
+        return self._build_response(state, events, total_years, ai_used=ai_used_this_turn)
+
+    # ── Streaming variant ────────────────────────────────────────────
+
+    def advance_year_stream(self, game_id: str) -> Generator[dict, None, None]:
+        """Streaming variant of advance_year.
+
+        Yields SSE-ready events:
+          {"event": "state", "data": {partial game data without expanded_text}}
+          {"event": "narrative_chunk", "data": "text fragment"}
+          {"event": "done", "data": {final data with choice/branches/ai_enhanced}}
+        """
+        state = get_state(game_id)
+        if state is None:
+            raise ValueError(f"Game {game_id} not found")
+
+        if state.is_dead or state.is_ascended:
+            raise ValueError("Game is already over")
+
+        if state.pending_choice is not None:
+            raise ValueError("Pending choice must be resolved first")
+
+        # Variable time step based on realm
+        import random as _rand
+        min_step, max_step = TIME_STEP_BY_REALM.get(state.realm, (1, 1))
+        time_step = _rand.randint(min_step, max_step)
+        state.age += time_step
+        total_years = time_step
+        events: list[dict] = []
+
+        # Phase 1: Update life phase
+        self.phase_manager.update_phase(state)
+
+        # Phase 2: Natural death check
+        death_event = self.death_system.check_natural_death(state)
+        if death_event:
+            events.append(death_event)
+            self._post_year_update(state, events)
+            resp = self._build_response(state, events, total_years)
+            yield {"event": "state", "data": resp.model_dump()}
+            yield {"event": "done", "data": {"ai_enhanced": False}}
+            return
+
+        # Phase 3: Mortal awakening
+        awakening = self.realm_system.check_awakening(state)
+        if awakening:
+            events.append(awakening)
+            self.phase_manager.update_phase(state)
+            sect_join = self.sect_manager.random_sect_join_at_awakening(state)
+            if sect_join:
+                events.append(sect_join)
+
+        # Phase 4: Cultivation gain
+        self.realm_system.process_cultivation(state, years=time_step)
+
+        # Phase 5: Breakthrough foreshadow
+        foreshadow = self.realm_system.check_breakthrough_foreshadow(state)
+        if foreshadow:
+            events.append(foreshadow)
+
+        # Phase 6: Event selection
+        hook_adjustments = self.hook_manager.get_weight_adjustments(state)
+        arc_keywords = self._get_arc_keywords(state)
+        destiny_keywords = self.storyline_planner.get_destiny_keywords(state)
+        if destiny_keywords:
+            arc_keywords = (arc_keywords or []) + destiny_keywords
+
+        # Phase 6.1: Priority events
+        priority_events = []
+        npc_events = self.npc_manager.check_npc_events(state)
+        priority_events.extend(npc_events)
+        sect_events = self.sect_manager.check_sect_events(state)
+        priority_events.extend(sect_events)
+        world_events = self.sect_manager.advance_sect_world(state)
+        priority_events.extend(world_events)
+        promotion_event = self.sect_manager.check_rank_promotion(state)
+        if promotion_event:
+            priority_events.append(promotion_event)
+        crisis_event = self.sect_manager.check_sect_crisis(state)
+        if crisis_event:
+            priority_events.append(crisis_event)
+        destiny_events = self.npc_manager.advance_npc_destiny(state)
+        priority_events.extend(destiny_events)
+
+        for ev in priority_events:
+            self.event_system.apply_effects(ev, state)
+            events.append(ev)
+
+        # Phase 6.2: Chain events
+        if state.pending_chain_events:
+            chain_id = state.pending_chain_events.pop(0)
+            chain_ev = find_event_by_id(chain_id)
+            if chain_ev:
+                self.event_system.apply_effects(chain_ev, state)
+                self.npc_resolver.resolve_event(chain_ev, state)
+                self.hook_manager.process_event(state, chain_ev)
+                if chain_ev.get("id"):
+                    state.used_event_ids.append(chain_ev["id"])
+                events.append(chain_ev)
+
+        # Phase 6.3: LLM Director STREAMING
+        candidates = self.event_system.select_candidates(
+            state, count=10,
+            hook_adjustments=hook_adjustments if hook_adjustments else None,
+            arc_keywords=arc_keywords if arc_keywords else None,
+        )
+
+        # Collect streaming result
+        meta_data = None
+        narrative_chunks: list[str] = []
+        ai_used_this_turn = False
+
+        for chunk in self.event_director.direct_event_stream(candidates, state):
+            if chunk["type"] == "meta":
+                meta_data = chunk["data"]
+                ai_used_this_turn = meta_data.get("ai_used", False)
+                # Now we have chosen event, yield partial state
+                main_ev = candidates[meta_data["chosen_index"]]["event"]
+                partial_events = []
+                for ev in events:
+                    partial_events.append({
+                        "text": ev.get("text", ""),
+                        "expanded_text": "",
+                        "type": ev.get("event_type", "normal"),
+                        "category": ev.get("category", "common"),
+                        "age": state.age,
+                    })
+                # Add main event header (no narrative yet)
+                partial_events.append({
+                    "text": main_ev.get("text", ""),
+                    "expanded_text": "",
+                    "type": main_ev.get("event_type", "normal"),
+                    "category": main_ev.get("category", "common"),
+                    "age": state.age,
+                })
+                yield {"event": "state", "data": {
+                    "age": state.age,
+                    "realm": state.realm,
+                    "realm_name": REALM_NAMES.get(Realm(state.realm), "未知"),
+                    "cultivation": state.cultivation,
+                    "cultivation_max": REALM_THRESHOLDS.get(state.realm, 99999),
+                    "events": partial_events,
+                    "attributes": state.attributes.model_dump(),
+                    "tension": state.tension,
+                }}
+            elif chunk["type"] == "narrative_chunk":
+                narrative_chunks.append(chunk["data"])
+                yield {"event": "narrative_chunk", "data": chunk["data"]}
+            # "done" from event_director just means stream ended
+
+        # Assemble full narrative
+        full_narrative = "".join(narrative_chunks)
+
+        # Now apply game effects (same as advance_year Phase 6.3+)
+        if meta_data is None:
+            meta_data = {"chosen_index": 0, "has_choice": False, "branches": None}
+
+        main_ev = candidates[meta_data["chosen_index"]]["event"]
+        main_ev["expanded_text"] = full_narrative
+
+        if meta_data["has_choice"] and meta_data.get("branches"):
+            main_ev["branches"] = meta_data["branches"]
+            state.pending_choice = main_ev
+        else:
+            self.event_system.apply_effects(main_ev, state)
+
+        # Phase 6.4: Post-processing
+        if main_ev.get("id"):
+            state.used_event_ids.append(main_ev["id"])
+        event_duration = main_ev.get("duration", 0)
+        if event_duration > 0:
+            state.age += event_duration
+            total_years += event_duration
+            self.realm_system.process_cultivation(state, years=event_duration)
+        self.npc_resolver.resolve_event(main_ev, state)
+        self.hook_manager.process_event(state, main_ev)
+        trigger_id = main_ev.get("effects", {}).get("trigger_event_id", "")
+        if trigger_id:
+            state.pending_chain_events.append(trigger_id)
+        if main_ev.get("involved_npc_id"):
+            self.npc_manager.update_relationship(
+                state,
+                npc_id=main_ev["involved_npc_id"],
+                delta_sentiment=self._calc_sentiment_delta(main_ev),
+                interaction_type=main_ev.get("category", ""),
+                event_text=main_ev.get("text", "")[:60],
+            )
+        events.append(main_ev)
+
+        # Phase 6.5: Expired hooks
+        expiring = self.hook_manager.check_expiring_hooks(state)
+        for hook in expiring:
+            resolution = self.hook_manager.generate_forced_resolution(state, hook)
+            if resolution:
+                self.hook_manager.process_event(state, resolution)
+                events.append(resolution)
+
+        # Phase 7: Breakthrough
+        breakthrough = self.realm_system.check_breakthrough(state)
+        if breakthrough:
+            bt_expanded = self.narrative.get_breakthrough_narrative(breakthrough, state)
+            if bt_expanded:
+                breakthrough["expanded_text"] = bt_expanded
+            events.append(breakthrough)
+            self.phase_manager.update_phase(state)
+            self.arc_planner.plan_arcs_for_realm(state, state.realm)
+            if not state.main_storyline.get("storyline_id"):
+                self.storyline_planner.generate_storyline(state, state.realm)
+
+        # Phase 8: Accidental death (early termination like sync version)
+        accidental_death = self.death_system.check_accidental_death(state)
+        if accidental_death:
+            events.append(accidental_death)
+            self._record_events_log(state, events)
+            self._post_year_update(state, events)
+            done_data = {
+                "ai_enhanced": ai_used_this_turn,
+                "is_dead": state.is_dead,
+                "is_ascended": state.is_ascended,
+                "death_reason": state.death_reason,
+                "has_choice": False,
+                "years_passed": total_years,
+            }
+            yield {"event": "done", "data": done_data}
+            return
+
+        # Phase 9: Tribulation (may cause death/ascension)
+        tribulation = self.realm_system.check_tribulation(state)
+        if tribulation:
+            events.append(tribulation)
+            if state.is_ascended or state.is_dead:
+                self._record_events_log(state, events)
+                self._post_year_update(state, events)
+                done_data = {
+                    "ai_enhanced": ai_used_this_turn,
+                    "is_dead": state.is_dead,
+                    "is_ascended": state.is_ascended,
+                    "death_reason": state.death_reason,
+                    "has_choice": False,
+                    "years_passed": total_years,
+                }
+                yield {"event": "done", "data": done_data}
+                return
+
+        # Phase 10: Post-year update
+        self._record_events_log(state, events)
+        self._post_year_update(state, events)
+
+        # Build final done data
+        done_data = {
+            "ai_enhanced": ai_used_this_turn,
+            "is_dead": state.is_dead,
+            "is_ascended": state.is_ascended,
+            "death_reason": state.death_reason,
+            "has_choice": state.pending_choice is not None,
+            "years_passed": total_years,
+        }
+        if state.pending_choice is not None:
+            ce = state.pending_choice
+            done_data["choice_event"] = {
+                "id": ce.get("id", ""),
+                "text": ce.get("text", ""),
+                "expanded_text": ce.get("expanded_text", ""),
+                "type": ce.get("event_type", "normal"),
+                "category": ce.get("category", "common"),
+                "age": state.age,
+                "branches": ce.get("branches"),
+            }
+
+        yield {"event": "done", "data": done_data}
+
+    def _record_events_log(self, state: GameState, events: list) -> None:
+        """Record events into state.events_log (streaming path doesn't call _build_response)."""
+        for ev in events:
+            state.events_log.append({
+                "age": state.age,
+                "text": ev.get("text", ""),
+            })
 
     def _post_year_update(self, state: GameState, events: list) -> None:
         """End-of-year housekeeping: memory recording, NPC aging, arc advancement, destiny advancement, tension update, context update."""
@@ -487,7 +768,7 @@ class GameDirector:
 
     # ── Response builders ────────────────────────────────────────────
 
-    def _build_response(self, state: GameState, events: list[dict], years_passed: int = 1) -> NextYearResponse:
+    def _build_response(self, state: GameState, events: list[dict], years_passed: int = 1, ai_used: bool = False) -> NextYearResponse:
         """Build a NextYearResponse from state and collected events."""
         # Record events in the state log
         formatted_events = []
@@ -531,6 +812,20 @@ class GameDirector:
                     "is_alive": npc.get("is_alive", True),
                 })
 
+        # Format choice_event for frontend (map event_type->type, add age)
+        formatted_choice = None
+        if state.pending_choice is not None:
+            ce = state.pending_choice
+            formatted_choice = {
+                "id": ce.get("id", ""),
+                "text": ce.get("text", ""),
+                "expanded_text": ce.get("expanded_text", ""),
+                "type": ce.get("event_type", "normal"),
+                "category": ce.get("category", "common"),
+                "age": state.age,
+                "branches": ce.get("branches"),
+            }
+
         return NextYearResponse(
             age=state.age,
             realm=state.realm,
@@ -546,8 +841,9 @@ class GameDirector:
             gender=state.gender,
             years_passed=years_passed,
             has_choice=state.pending_choice is not None,
-            choice_event=state.pending_choice,
+            choice_event=formatted_choice,
             tension=state.tension,
             sect_info=sect_info,
             npc_relationships=npc_rels,
+            ai_enhanced=ai_used,
         )

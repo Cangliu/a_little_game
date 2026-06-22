@@ -217,39 +217,43 @@ class StoryArcPlanner:
 
     def _plan_with_llm(self, state: "GameState", realm: int) -> list:
         """Use LLM to generate story arcs."""
-        from .ai import prompt_templates as T
+        try:
+            from .ai import prompt_templates as T
 
-        npc_context = ""
-        if self._npc_manager:
-            npc_context = self._npc_manager.get_npc_context_string(state)
+            npc_context = ""
+            if self._npc_manager:
+                npc_context = self._npc_manager.get_npc_context_string(state)
 
-        hooks_desc = ""
-        for hook in state.plot_hooks:
-            if not hook.get("is_resolved"):
-                hooks_desc += f"- {hook.get('description', '')} ({hook.get('npc_name', '无关联NPC')})\n"
+            hooks_desc = ""
+            for hook in state.plot_hooks:
+                if not hook.get("is_resolved"):
+                    hooks_desc += f"- {hook.get('description', '')} ({hook.get('npc_name', '无关联NPC')})\n"
 
-        from ..models import REALM_NAMES, Realm
-        realm_name = REALM_NAMES.get(Realm(realm), "未知")
+            from ..models import REALM_NAMES, Realm
+            realm_name = REALM_NAMES.get(Realm(realm), "未知")
 
-        system_prompt = T.ARC_PLANNING_SYSTEM
-        user_prompt = T.ARC_PLANNING_USER.format(
-            realm_name=realm_name,
-            realm=realm,
-            age=state.age,
-            biography=state.biography_summary or "尚无传记",
-            npc_relationships=npc_context,
-            unresolved_hooks=hooks_desc or "无",
-        )
+            system_prompt = T.ARC_PLANNING_SYSTEM
+            user_prompt = T.ARC_PLANNING_USER.format(
+                realm_name=realm_name,
+                realm=realm,
+                age=state.age,
+                biography=state.biography_summary or "尚无传记",
+                npc_relationships=npc_context,
+                unresolved_hooks=hooks_desc or "无",
+            )
 
-        response = self._llm.generate_sync(
-            system_prompt, user_prompt,
-            max_tokens=500, temperature=0.9,
-        )
+            response = self._llm.generate_sync(
+                system_prompt, user_prompt,
+                max_tokens=500, temperature=0.9,
+            )
 
-        if not response:
+            if not response:
+                return []
+
+            return self._parse_llm_arcs(response, state, realm)
+        except Exception as e:
+            logger.warning("StoryArcPlanner LLM planning failed: %s", e)
             return []
-
-        return self._parse_llm_arcs(response, state, realm)
 
     def _parse_llm_arcs(self, response: str, state: "GameState", realm: int) -> list:
         """Parse LLM response into StoryArc list."""

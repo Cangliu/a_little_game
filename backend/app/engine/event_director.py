@@ -13,7 +13,7 @@ from __future__ import annotations
 import json
 import logging
 import random
-from typing import Optional, TYPE_CHECKING
+from typing import Optional, Generator, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from .ai.llm_client import LLMClient
@@ -23,7 +23,7 @@ if TYPE_CHECKING:
     from .main_storyline import MainStorylinePlanner
     from ..models import GameState
 
-from .ai.prompt_templates import EVENT_DIRECTOR_SYSTEM, EVENT_DIRECTOR_USER
+from .ai.prompt_templates import EVENT_DIRECTOR_SYSTEM, EVENT_DIRECTOR_USER, EVENT_DIRECTOR_STREAM_SYSTEM
 from .life_phase import LifePhase, LifePhaseManager
 
 logger = logging.getLogger(__name__)
@@ -75,10 +75,13 @@ class EventDirector:
         if self._llm and self._llm.available:
             result = self._generate_via_llm(candidates, state)
             if result:
+                result["ai_used"] = True
                 return result
 
         # Fallback: weighted random + raw text
-        return self._fallback(candidates, state)
+        fallback = self._fallback(candidates, state)
+        fallback["ai_used"] = False
+        return fallback
 
     def _generate_via_llm(self, candidates: list[dict], state: "GameState") -> Optional[dict]:
         """Generate unified response via LLM."""
@@ -363,3 +366,147 @@ class EventDirector:
             "has_choice": False,
             "branches": None,
         }
+
+    # ── Streaming variant ─────────────────────────────────────────
+
+    def direct_event_stream(
+        self, candidates: list[dict], state: "GameState"
+    ) -> Generator[dict, None, None]:
+        """Streaming variant of direct_event.
+
+        Yields:
+          {"type": "meta", "data": {chosen_index, has_choice, branches, ai_used}}
+          {"type": "narrative_chunk", "data": "text chunk"}
+          {"type": "done"}
+        """
+        if not candidates:
+            yield {"type": "meta", "data": {**self._empty_result(), "ai_used": False}}
+            yield {"type": "narrative_chunk", "data": "平静的一年，无事发生。"}
+            yield {"type": "done"}
+            return
+
+        if not (self._llm and self._llm.available):
+            fb = self._fallback(candidates, state)
+            fb["ai_used"] = False
+            yield {"type": "meta", "data": fb}
+            yield {"type": "narrative_chunk", "data": fb["narrative"]}
+            yield {"type": "done"}
+            return
+
+        # Build streaming prompt
+        system_prompt, user_prompt = self._build_director_prompt_stream(candidates, state)
+
+        buffer = ""
+        meta_parsed = False
+        had_output = False
+
+        try:
+            for chunk in self._llm.generate_stream(
+                system_prompt, user_prompt, max_tokens=800, temperature=0.85
+            ):
+                had_output = True
+                buffer += chunk
+
+                if not meta_parsed:
+                    # Look for === delimiter
+                    if "===" in buffer:
+                        parts = buffer.split("===", 1)
+                        meta_json = parts[0].strip()
+                        meta_data = self._parse_stream_meta(meta_json, candidates)
+                        meta_data["ai_used"] = True
+                        yield {"type": "meta", "data": meta_data}
+                        meta_parsed = True
+                        # Remaining text after delimiter is narrative start
+                        remaining = parts[1].lstrip("\n")
+                        if remaining:
+                            yield {"type": "narrative_chunk", "data": remaining}
+                        buffer = ""
+                else:
+                    # Stream narrative chunks directly
+                    yield {"type": "narrative_chunk", "data": chunk}
+        except Exception as e:
+            logger.warning("EventDirector stream failed: %s", e)
+
+        # Handle case where delimiter never arrived or LLM had no output
+        if not meta_parsed:
+            if had_output:
+                # Try to parse as original JSON format (LLM ignored stream format)
+                result = self._parse_response(buffer, candidates, state)
+                if result:
+                    result["ai_used"] = True
+                    yield {"type": "meta", "data": result}
+                    yield {"type": "narrative_chunk", "data": result["narrative"]}
+                else:
+                    fb = self._fallback(candidates, state)
+                    fb["ai_used"] = False
+                    yield {"type": "meta", "data": fb}
+                    yield {"type": "narrative_chunk", "data": fb["narrative"]}
+            else:
+                # No output at all - pure fallback
+                fb = self._fallback(candidates, state)
+                fb["ai_used"] = False
+                yield {"type": "meta", "data": fb}
+                yield {"type": "narrative_chunk", "data": fb["narrative"]}
+
+        yield {"type": "done"}
+
+    def _build_director_prompt_stream(
+        self, candidates: list[dict], state: "GameState"
+    ) -> tuple[str, str]:
+        """Build streaming-variant prompt (same user prompt, different system prompt)."""
+        from ..models import REALM_NAMES, Realm
+
+        realm_name = REALM_NAMES.get(Realm(state.realm), "未知")
+        gender = "男" if state.gender == "male" else "女"
+
+        system_prompt = EVENT_DIRECTOR_STREAM_SYSTEM.format(
+            realm_name=realm_name,
+            gender=gender,
+        )
+        # Reuse the same user prompt builder
+        _, user_prompt = self._build_director_prompt(candidates, state)
+        return system_prompt, user_prompt
+
+    def _parse_stream_meta(self, meta_json: str, candidates: list[dict]) -> dict:
+        """Parse the metadata JSON from streaming output."""
+        try:
+            # Strip markdown fences if present
+            text = meta_json.strip()
+            if text.startswith("```"):
+                lines = text.split("\n")
+                lines = [l for l in lines if not l.strip().startswith("```")]
+                text = "\n".join(lines)
+
+            data = json.loads(text)
+
+            # Validate chosen index (1-based to 0-based)
+            chosen = data.get("chosen", 1)
+            chosen_index = (chosen - 1) if isinstance(chosen, int) else 0
+            if chosen_index < 0 or chosen_index >= len(candidates):
+                chosen_index = 0
+
+            # Extract branches
+            has_choice = bool(data.get("has_choice", False))
+            branches = None
+            if has_choice:
+                raw_branches = data.get("branches", [])
+                if raw_branches and isinstance(raw_branches, list):
+                    branches = self._sanitize_branches(raw_branches)
+                    if not branches:
+                        has_choice = False
+
+            return {
+                "chosen_index": chosen_index,
+                "narrative": "",  # Will be streamed separately
+                "has_choice": has_choice,
+                "branches": branches,
+            }
+        except (json.JSONDecodeError, TypeError, KeyError) as e:
+            logger.warning("Failed to parse stream meta JSON: %s", e)
+            # Fallback: pick first candidate
+            return {
+                "chosen_index": 0,
+                "narrative": "",
+                "has_choice": False,
+                "branches": None,
+            }
