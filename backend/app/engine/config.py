@@ -71,6 +71,27 @@ TIME_STEP_BY_REALM: dict = {
 FORESHADOW_THRESHOLD: float = 0.80  # Show foreshadow at 80% of required cultivation
 
 # ---------------------------------------------------------------------------
+# Tension curve — narrative pacing system
+# ---------------------------------------------------------------------------
+TENSION_DECAY_PER_TURN: float = 10.0  # 每回合自然衰减
+
+TENSION_BY_EVENT_TYPE: dict[str, float] = {
+    "danger": 25.0,     # 危险事件大幅提升张力
+    "important": 15.0,  # 重要事件中等提升
+    "fortune": -10.0,   # 机缘事件降低张力
+    "normal": -5.0,     # 普通事件微降
+}
+
+# tension值 -> (danger_multiplier, fortune_multiplier)
+# 高张力时降低danger权重（给玩家喘息），提升fortune
+# 低张力时提升danger权重（制造冲突）
+TENSION_HIGH_THRESHOLD: float = 70.0
+TENSION_LOW_THRESHOLD: float = 30.0
+TENSION_WEIGHT_HIGH = (0.3, 2.0)    # (danger_mult, fortune_mult) when tension >= 70
+TENSION_WEIGHT_MID  = (1.0, 1.0)    # when 30 <= tension < 70
+TENSION_WEIGHT_LOW  = (2.0, 0.5)    # when tension < 30
+
+# ---------------------------------------------------------------------------
 # Realm max ages (from models, re-exported for convenience)
 # ---------------------------------------------------------------------------
 from ..models import REALM_MAX_AGE, REALM_NAMES  # noqa: E402

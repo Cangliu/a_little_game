@@ -16,12 +16,22 @@ export interface Talent {
   tags: string[];
 }
 
+export interface EventBranch {
+  text: string;
+  effects: Record<string, number>;
+  result_text: string;
+  consequence_tag?: string;
+  consequence_desc?: string;
+}
+
 export interface GameEvent {
   text: string;
   expanded_text?: string;
   type: 'normal' | 'important' | 'danger' | 'fortune' | 'special';
   category?: string;
   age: number;
+  id?: string;
+  branches?: EventBranch[];
 }
 
 export const CATEGORY_NAMES: Record<string, string> = {
@@ -34,6 +44,8 @@ export const CATEGORY_NAMES: Record<string, string> = {
   violence: '江湖',
   adult: '红尘',
   death: '命劫',
+  sect: '宗门',
+  sect_world: '宗门动态',
 };
 
 export const CATEGORY_COLORS: Record<string, string> = {
@@ -46,6 +58,8 @@ export const CATEGORY_COLORS: Record<string, string> = {
   violence: 'text-rose-700',
   adult: 'text-pink-500',
   death: 'text-gray-700',
+  sect: 'text-emerald-600',
+  sect_world: 'text-cyan-600',
 };
 
 export interface GameState {
@@ -63,6 +77,28 @@ export interface GameState {
   is_ascended: boolean;
 }
 
+export interface SectInfo {
+  name: string;
+  rank: string;
+  contribution: number;
+  sect_type: string;
+}
+
+export interface NPCRelationship {
+  name: string;
+  relation_type: string;
+  sentiment: number;
+  is_alive: boolean;
+}
+
+export interface ChoiceHistoryItem {
+  age: number;
+  event_text: string;
+  choice_text: string;
+  result_text: string;
+  consequence_tag: string;
+}
+
 export interface NextYearResponse {
   age: number;
   realm: number;
@@ -76,6 +112,12 @@ export interface NextYearResponse {
   is_ascended: boolean;
   space_node_found?: boolean;
   gender?: string;
+  has_choice?: boolean;
+  choice_event?: GameEvent;
+  // New fields
+  tension?: number;
+  sect_info?: SectInfo;
+  npc_relationships?: NPCRelationship[];
 }
 
 export interface LifeSummary {

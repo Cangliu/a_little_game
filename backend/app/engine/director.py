@@ -7,9 +7,9 @@ event-NPC binding, and story arc planning.
 """
 from ..models import GameState, NextYearResponse, LifeSummary, Realm, REALM_NAMES
 from ..endings import get_title, calculate_score
-from .config import REALM_THRESHOLDS, TIME_STEP_BY_REALM
+from .config import REALM_THRESHOLDS, TIME_STEP_BY_REALM, TENSION_DECAY_PER_TURN, TENSION_BY_EVENT_TYPE
 from .life_phase import LifePhaseManager
-from .event_system import EventSystem, _extract_narrative_age
+from .event_system import EventSystem, _extract_narrative_age, find_event_by_id
 from .realm_system import RealmSystem
 from .death_system import DeathSystem
 from .narrative import NarrativeProvider
@@ -22,6 +22,9 @@ from .plot_hooks import PlotHookManager
 from .event_npc_resolver import EventNPCResolver
 from .story_arc import StoryArcPlanner
 from .main_storyline import MainStorylinePlanner
+from .sect import SectManager
+from .choice_generator import ChoiceGenerator
+from .event_director import EventDirector
 
 
 class GameDirector:
@@ -66,12 +69,32 @@ class GameDirector:
             prompt_builder=self.prompt_builder,
             npc_manager=self.npc_manager,
         )
+        # Sect system (独立宗门策略系统)
+        self.sect_manager = SectManager()
+        # Choice generator (LLM动态选择 - 保留作为降级备用)
+        self.choice_generator = ChoiceGenerator(
+            llm_client=self.llm_client,
+            prompt_builder=self.prompt_builder,
+            npc_manager=self.npc_manager,
+            hook_manager=self.hook_manager,
+        )
+        # Event Director (统一LLM调用: 选事件+叙事+分支)
+        self.event_director = EventDirector(
+            llm_client=self.llm_client,
+            npc_manager=self.npc_manager,
+            hook_manager=self.hook_manager,
+            arc_planner=self.arc_planner,
+            storyline_planner=self.storyline_planner,
+        )
 
     # ── Public API ───────────────────────────────────────────────────
 
     def start_game(self) -> GameState:
         """Create a new game and return its initial state."""
-        return create_game()
+        state = create_game()
+        # Initialize sect world
+        self.sect_manager.initialize_world(state)
+        return state
 
     def advance_year(self, game_id: str) -> NextYearResponse:
         """Advance the game by one story beat (variable time step based on realm)."""
@@ -81,6 +104,10 @@ class GameDirector:
 
         if state.is_dead or state.is_ascended:
             raise ValueError("Game is already over")
+
+        # Block advancement if a player choice is pending
+        if state.pending_choice is not None:
+            raise ValueError("Pending choice must be resolved first")
 
         # Variable time step based on realm
         import random as _rand
@@ -105,6 +132,10 @@ class GameDirector:
         if awakening:
             events.append(awakening)
             self.phase_manager.update_phase(state)  # Immediately update phase
+            # Auto sect-join on awakening (70% chance)
+            sect_join = self.sect_manager.random_sect_join_at_awakening(state)
+            if sect_join:
+                events.append(sect_join)
 
         # Phase 4: Cultivation gain (scaled by time step)
         self.realm_system.process_cultivation(state, years=time_step)
@@ -114,7 +145,7 @@ class GameDirector:
         if foreshadow:
             events.append(foreshadow)
 
-        # Phase 6: Select and apply year events (phase-aware)
+        # Phase 6: Event selection via unified LLM Director
         # Get hook weight adjustments for event selection
         hook_adjustments = self.hook_manager.get_weight_adjustments(state)
         # Get story arc keywords for event selection
@@ -124,48 +155,87 @@ class GameDirector:
         if destiny_keywords:
             arc_keywords = (arc_keywords or []) + destiny_keywords
 
-        year_events = self.event_system.select_events(
-            state,
+        # Phase 6.1: Priority events (NPC/Sect) - pure rules, no LLM
+        priority_events = []
+        npc_events = self.npc_manager.check_npc_events(state)
+        priority_events.extend(npc_events)
+        sect_events = self.sect_manager.check_sect_events(state)
+        priority_events.extend(sect_events)
+        # Sect world evolution, promotion, crisis
+        world_events = self.sect_manager.advance_sect_world(state)
+        priority_events.extend(world_events)
+        promotion_event = self.sect_manager.check_rank_promotion(state)
+        if promotion_event:
+            priority_events.append(promotion_event)
+        crisis_event = self.sect_manager.check_sect_crisis(state)
+        if crisis_event:
+            priority_events.append(crisis_event)
+        # NPC destiny advancement
+        destiny_events = self.npc_manager.advance_npc_destiny(state)
+        priority_events.extend(destiny_events)
+
+        for ev in priority_events:
+            self.event_system.apply_effects(ev, state)
+            events.append(ev)
+
+        # Phase 6.2: Inject chain events from previous turn (priority)
+        if state.pending_chain_events:
+            chain_id = state.pending_chain_events.pop(0)
+            chain_ev = find_event_by_id(chain_id)
+            if chain_ev:
+                self.event_system.apply_effects(chain_ev, state)
+                self.npc_resolver.resolve_event(chain_ev, state)
+                self.hook_manager.process_event(state, chain_ev)
+                if chain_ev.get("id"):
+                    state.used_event_ids.append(chain_ev["id"])
+                events.append(chain_ev)
+
+        # Phase 6.3: LLM Director selects main event (1 unified call)
+        candidates = self.event_system.select_candidates(
+            state, count=10,
             hook_adjustments=hook_adjustments if hook_adjustments else None,
             arc_keywords=arc_keywords if arc_keywords else None,
         )
-        for ev in year_events:
-            self.event_system.apply_effects(ev, state)
-            # Record for dedup
-            if ev.get("id"):
-                state.used_event_ids.append(ev["id"])
-            # Accumulate event duration
-            event_duration = ev.get("duration", 0)
-            if event_duration > 0:
-                state.age += event_duration
-                total_years += event_duration
-                # Extra cultivation for duration-based events
-                self.realm_system.process_cultivation(state, years=event_duration)
-            # Resolve NPC slot (replace placeholders, bind NPC)
-            self.npc_resolver.resolve_event(ev, state)
-            # LLM narrative expansion (after NPC resolver so names are resolved)
-            existing_expanded = ev.get("expanded_text", "")
-            if not existing_expanded or len(existing_expanded) <= 50:
-                ev["expanded_text"] = self.narrative.get_event_narrative(ev, state)
-            # Process plot hooks (create/resolve)
-            self.hook_manager.process_event(state, ev)
-            # Update NPC relationship if event involves an NPC
-            if ev.get("involved_npc_id"):
-                self.npc_manager.update_relationship(
-                    state,
-                    npc_id=ev["involved_npc_id"],
-                    delta_sentiment=self._calc_sentiment_delta(ev),
-                    interaction_type=ev.get("category", ""),
-                    event_text=ev.get("text", "")[:60],
-                )
-            events.append(ev)
+        director_result = self.event_director.direct_event(candidates, state)
+        main_ev = candidates[director_result["chosen_index"]]["event"]
+        main_ev["expanded_text"] = director_result["narrative"]
 
-        # Phase 6.5: NPC-driven events (recurring interactions)
-        npc_events = self.npc_manager.check_npc_events(state)
-        for ev in npc_events:
-            events.append(ev)
+        # Apply effects or set pending choice
+        if director_result["has_choice"] and director_result.get("branches"):
+            main_ev["branches"] = director_result["branches"]
+            state.pending_choice = main_ev  # effects deferred to make_choice
+        else:
+            self.event_system.apply_effects(main_ev, state)
 
-        # Phase 6.6: Force-resolve expired hooks
+        # Phase 6.4: Post-processing for main event
+        if main_ev.get("id"):
+            state.used_event_ids.append(main_ev["id"])
+        # Accumulate event duration
+        event_duration = main_ev.get("duration", 0)
+        if event_duration > 0:
+            state.age += event_duration
+            total_years += event_duration
+            self.realm_system.process_cultivation(state, years=event_duration)
+        # Resolve NPC slot
+        self.npc_resolver.resolve_event(main_ev, state)
+        # Process plot hooks (create/resolve)
+        self.hook_manager.process_event(state, main_ev)
+        # Check for chain event trigger
+        trigger_id = main_ev.get("effects", {}).get("trigger_event_id", "")
+        if trigger_id:
+            state.pending_chain_events.append(trigger_id)
+        # Update NPC relationship
+        if main_ev.get("involved_npc_id"):
+            self.npc_manager.update_relationship(
+                state,
+                npc_id=main_ev["involved_npc_id"],
+                delta_sentiment=self._calc_sentiment_delta(main_ev),
+                interaction_type=main_ev.get("category", ""),
+                event_text=main_ev.get("text", "")[:60],
+            )
+        events.append(main_ev)
+
+        # Phase 6.5: Force-resolve expired hooks
         expiring = self.hook_manager.check_expiring_hooks(state)
         for hook in expiring:
             resolution = self.hook_manager.generate_forced_resolution(state, hook)
@@ -210,7 +280,7 @@ class GameDirector:
         return self._build_response(state, events, total_years)
 
     def _post_year_update(self, state: GameState, events: list) -> None:
-        """End-of-year housekeeping: memory recording, NPC aging, arc advancement, destiny advancement, context update."""
+        """End-of-year housekeeping: memory recording, NPC aging, arc advancement, destiny advancement, tension update, context update."""
         self.memory_manager.record_events(state, events)
         self.memory_manager.tick_year(state)
         self.npc_manager.age_npcs(state)
@@ -219,6 +289,12 @@ class GameDirector:
             self.arc_planner.advance_arc_beat(state, ev)
         # Advance main storyline + flesh-to-skeleton feedback (血肉反哺骨骼)
         self.storyline_planner.advance_destiny(state, events)
+        # ── Tension curve update ───────────────────────────────────────
+        delta = 0.0
+        for ev in events:
+            et = ev.get("event_type", "normal")
+            delta += TENSION_BY_EVENT_TYPE.get(et, 0.0)
+        state.tension = max(0.0, min(100.0, state.tension + delta - TENSION_DECAY_PER_TURN))
         self.context.update(state, events)
 
     @staticmethod
@@ -269,6 +345,97 @@ class GameDirector:
                         break
 
         return keywords[:10]  # Limit keywords
+
+    def make_choice(self, game_id: str, event_id: str, choice_index: int) -> dict:
+        """Resolve a pending player choice and apply chosen branch effects.
+
+        Enhanced with long-term consequences:
+        1. Immediate effects (attribute changes)
+        2. Consequence tags (affect future event triggers)
+        3. Cause-effect hooks (drive future plot)
+        4. NPC sentiment changes
+        5. Choice history recording
+        """
+        state = get_state(game_id)
+        if state is None:
+            raise ValueError(f"Game {game_id} not found")
+        if state.pending_choice is None:
+            raise ValueError("No pending choice")
+
+        ev = state.pending_choice
+        if ev.get("id") != event_id:
+            raise ValueError("Event ID mismatch")
+
+        branches = ev.get("branches", [])
+        if not (0 <= choice_index < len(branches)):
+            raise ValueError(f"Invalid choice index: {choice_index}")
+
+        branch = branches[choice_index]
+
+        # 1. Immediate effects
+        self.event_system.apply_effects({"effects": branch.get("effects", {})}, state)
+
+        # 2. Long-term consequence tag
+        consequence_tag = branch.get("consequence_tag", "")
+        if consequence_tag and consequence_tag not in state.tags:
+            state.tags.append(consequence_tag)
+
+        # 3. Cause-effect hook for future plot
+        consequence_desc = branch.get("consequence_desc", "")
+        if consequence_desc:
+            self.hook_manager._create_hook(
+                state,
+                hook_id=f"choice_{event_id}_{choice_index}",
+                description=consequence_desc,
+                max_wait=80,
+            )
+
+        # 4. NPC sentiment change
+        if ev.get("involved_npc_id"):
+            sentiment_delta = self._calc_choice_sentiment(branch)
+            self.npc_manager.update_relationship(
+                state,
+                npc_id=ev["involved_npc_id"],
+                delta_sentiment=sentiment_delta,
+                interaction_type="choice",
+                event_text=branch.get("text", "")[:60],
+            )
+
+        # 5. Record choice history
+        state.choice_history.append({
+            "age": state.age,
+            "event_text": ev.get("text", "")[:80],
+            "choice_text": branch.get("text", ""),
+            "result_text": branch.get("result_text", "")[:100],
+            "consequence_tag": consequence_tag,
+        })
+
+        state.pending_choice = None
+
+        return {
+            "result_text": branch.get("result_text", ""),
+            "event_id": event_id,
+            "choice_index": choice_index,
+            "choice_text": branch.get("text", ""),
+        }
+
+    @staticmethod
+    def _calc_choice_sentiment(branch: dict) -> int:
+        """Calculate NPC sentiment change from a choice."""
+        effects = branch.get("effects", {})
+        delta = 0
+        if effects.get("charisma", 0) > 0:
+            delta += 3
+        if effects.get("constitution", 0) < 0:
+            delta -= 2  # Getting hurt may concern NPCs
+        if effects.get("fortune", 0) > 0:
+            delta += 2
+        tag = branch.get("consequence_tag", "")
+        if "仁" in tag or "义" in tag or "善" in tag:
+            delta += 5
+        if "贪" in tag or "残" in tag or "恶" in tag:
+            delta -= 5
+        return max(-10, min(10, delta))
 
     def get_life_summary(self, game_id: str) -> LifeSummary:
         """Generate end-of-life summary."""
@@ -337,6 +504,33 @@ class GameDirector:
                 "text": ev.get("text", ""),
             })
 
+        # Build sect info for frontend
+        sect_info = None
+        if state.sect_membership:
+            mem = state.sect_membership
+            sects = state.sect_world.get("sects", {})
+            sect = sects.get(mem.get("sect_id", ""), {})
+            if sect:
+                sect_info = {
+                    "name": sect.get("name", ""),
+                    "rank": mem.get("rank", ""),
+                    "contribution": mem.get("contribution", 0),
+                    "sect_type": sect.get("sect_type", ""),
+                }
+
+        # Build NPC relationships for frontend
+        npc_rels = []
+        for rel in state.relationships[:8]:
+            npc_id = rel.get("npc_id", "")
+            npc = state.npc_registry.get(npc_id, {})
+            if npc:
+                npc_rels.append({
+                    "name": npc.get("name", "未知"),
+                    "relation_type": rel.get("relation_type", ""),
+                    "sentiment": rel.get("sentiment", 50),
+                    "is_alive": npc.get("is_alive", True),
+                })
+
         return NextYearResponse(
             age=state.age,
             realm=state.realm,
@@ -351,4 +545,9 @@ class GameDirector:
             space_node_found=state.space_node_found,
             gender=state.gender,
             years_passed=years_passed,
+            has_choice=state.pending_choice is not None,
+            choice_event=state.pending_choice,
+            tension=state.tension,
+            sect_info=sect_info,
+            npc_relationships=npc_rels,
         )

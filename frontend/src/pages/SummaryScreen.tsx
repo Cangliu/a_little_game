@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import type { LifeSummary } from '../utils/types';
+import type { LifeSummary, SectInfo, NPCRelationship, ChoiceHistoryItem } from '../utils/types';
 import { REALM_COLORS, GENDER_NAMES } from '../utils/types';
-import { getSummary } from '../utils/api';
+import { getSummary, getGameState } from '../utils/api';
 
 interface SummaryScreenProps {
   gameId: string;
@@ -11,12 +11,21 @@ interface SummaryScreenProps {
 export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps) {
   const [summary, setSummary] = useState<LifeSummary | null>(null);
   const [show, setShow] = useState(false);
+  const [sectInfo, setSectInfo] = useState<SectInfo | null>(null);
+  const [npcRelationships, setNpcRelationships] = useState<NPCRelationship[]>([]);
+  const [choiceHistory, setChoiceHistory] = useState<ChoiceHistoryItem[]>([]);
 
   useEffect(() => {
     getSummary(gameId).then((data) => {
       setSummary(data);
       setTimeout(() => setShow(true), 300);
     });
+    // Fetch extended state for sect/NPC/choices
+    getGameState(gameId).then((state) => {
+      if (state.sect_info) setSectInfo(state.sect_info);
+      if (state.npc_relationships) setNpcRelationships(state.npc_relationships);
+      if (state.choice_history) setChoiceHistory(state.choice_history);
+    }).catch(() => {});
   }, [gameId]);
 
   if (!summary) {
@@ -145,6 +154,87 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
               ))}
             </div>
           </div>
+
+          {/* Sect Achievement */}
+          {sectInfo && (
+            <>
+              <div className="ink-divider" />
+              <div className="mb-4">
+                <h3 className="text-scroll-text-dim text-xs font-kai tracking-widest mb-3 text-center">
+                  宗门成就
+                </h3>
+                <div className="grid grid-cols-2 gap-2 text-xs font-kai">
+                  <div className="text-center">
+                    <div className="text-stone-500">宗门</div>
+                    <div className="text-emerald-700">{sectInfo.name}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-stone-500">最高职位</div>
+                    <div className="text-emerald-700">{sectInfo.rank}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-stone-500">类型</div>
+                    <div className="text-scroll-text">{sectInfo.sect_type}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-stone-500">总贡献</div>
+                    <div className="text-amber-700">{sectInfo.contribution}</div>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* NPC Relationships */}
+          {npcRelationships.length > 0 && (
+            <>
+              <div className="ink-divider" />
+              <div className="mb-4">
+                <h3 className="text-scroll-text-dim text-xs font-kai tracking-widest mb-3 text-center">
+                  人际总结
+                </h3>
+                <div className="space-y-1.5">
+                  {npcRelationships.map((npc, i) => (
+                    <div key={i} className="flex items-center gap-2 text-xs font-kai">
+                      <span className={npc.is_alive ? 'text-scroll-text' : 'text-stone-400 line-through'}>
+                        {npc.name}
+                      </span>
+                      <span className="text-stone-400">·</span>
+                      <span className="text-stone-500">{npc.relation_type}</span>
+                      <div className="flex-1" />
+                      <span className={npc.sentiment >= 70 ? 'text-amber-600' : npc.sentiment >= 40 ? 'text-stone-500' : 'text-red-500'}>
+                        {npc.sentiment >= 70 ? '★亲密' : npc.sentiment >= 40 ? '·平淡' : '✖水火'}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* Key Choices */}
+          {choiceHistory.length > 0 && (
+            <>
+              <div className="ink-divider" />
+              <div className="mb-4">
+                <h3 className="text-scroll-text-dim text-xs font-kai tracking-widest mb-3 text-center">
+                  关键抐择
+                </h3>
+                <div className="space-y-2 max-h-36 overflow-y-auto">
+                  {choiceHistory.slice(-5).map((ch, i) => (
+                    <div key={i} className="text-xs font-kai pl-3 border-l-2 border-amber-400/40">
+                      <span className="text-stone-400">{ch.age}岁时</span>
+                      <span className="text-stone-500 mx-1">·</span>
+                      <span className="text-scroll-text">「{ch.choice_text}」</span>
+                      {ch.consequence_tag && (
+                        <span className="ml-1 text-amber-600">#{ch.consequence_tag}</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Score Rating */}

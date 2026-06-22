@@ -83,6 +83,7 @@ class EventEffect(BaseModel):
     add_tag: Optional[str] = None
     remove_tag: Optional[str] = None
     death: Optional[bool] = None
+    trigger_event_id: Optional[str] = None  # 事件链: 下一阶段事件ID
 
 
 class EventBranch(BaseModel):
@@ -140,6 +141,16 @@ class GameState(BaseModel):
     active_arcs: list = []             # 当前活跃的剧情线 (StoryArc dicts)
     # 命运主线系统 (骨骼)
     main_storyline: dict = {}          # MainStoryline dict (开局生成的命运骨架)
+    # 张力曲线系统
+    tension: float = 0.0               # 叙事张力值 (0-100)，驱动事件节奏张弛有度
+    # 玩家选择系统
+    pending_choice: Optional[dict] = None  # 等待玩家选择的事件
+    choice_history: list[dict] = []        # 选择历史记录 [{age, event_text, choice_text, consequence_tag}]
+    # 事件链系统
+    pending_chain_events: list[str] = []   # 等待触发的链式事件ID列表
+    # 宗门系统
+    sect_membership: Optional[dict] = None  # SectMembership dict (None=散修)
+    sect_world: dict = {}                   # {sects: {id: Sect}, relations: [SectRelation]}
 
 
 class StartGameRequest(BaseModel):
@@ -165,6 +176,10 @@ class NextYearResponse(BaseModel):
     gender: str = "male"
     space_node_found: bool = False
     years_passed: int = 1  # 本回合经过的总年数
+    # 新增: 前端可视化数据
+    tension: float = 0.0                    # 张力值
+    sect_info: Optional[dict] = None        # 宗门简要 {name, rank, contribution, sect_type}
+    npc_relationships: list[dict] = []      # NPC关系列表 [{name, relation_type, sentiment, is_alive}]
 
 
 class ChoiceRequest(BaseModel):

@@ -198,3 +198,115 @@ MAIN_STORYLINE_USER = """角色当前状态：
 【叙事种子】{narrative_seed}
 
 请根据角色特质和叙事种子，编织一条独特的命运主线（纯JSON）："""
+
+# ─── Choice Generation (LLM动态选择生成) ──────────────────────────
+
+CHOICE_GENERATION_SYSTEM = """你是修仙世界的命运裁决者。请为当前事件生成2-3个有意义的选择分支。
+
+【硬约束】
+- 输出纯JSON数组，不要添加任何其他文字或markdown标记
+- 每个选项包含: text(选项文字,≤20字), effects(属性效果dict), result_text(结果叙述,50-100字), consequence_tag(后果标签,可为空字符串), consequence_desc(因果描述,可为空字符串)
+- effects可用字段: cultivation(int), constitution(int), comprehension(int), fortune(int), charisma(int), willpower(int), add_tag(str)
+- 选项必须有实质性差异（不是同一结果的不同说法）
+- 至少一个冒险选项、一个稳妥选项
+- 效果要合理: danger事件不应全是正收益
+- 不得决定主角死亡或突破境界
+- effects中的数值范围: cultivation(-30~50), 其他属性(-3~3)
+
+【修为体系】
+凡人 → 练气 → 筑基 → 金丹 → 元婴 → 化神 → 渡劫飞升
+
+【输出示例】
+[{"text": "拔剑迎战", "effects": {"cultivation": 20, "constitution": -1}, "result_text": "你挺身而出...", "consequence_tag": "勇名远播", "consequence_desc": "你的勇武之名在修仙界传开"}, {"text": "暗中观察", "effects": {"comprehension": 1}, "result_text": "你按捺住冲动...", "consequence_tag": "", "consequence_desc": ""}]"""
+
+CHOICE_GENERATION_USER = """请为以下事件生成选择分支：
+
+【事件】{event_text}
+【事件类型】{event_type}
+
+【主角状态】
+- 境界: {realm_name}期
+- 年龄: {age}岁
+- 性别: {gender}
+- 属性: 根骨{constitution} 悟性{comprehension} 福缘{fortune} 魅力{charisma} 心性{willpower}
+- 宗门: {sect_info}
+- 当前张力: {tension}/100
+
+【人际关系】
+{npc_relationships}
+
+【传记摘要】
+{biography}
+
+【未了之事】
+{unresolved_hooks}
+
+请生成2-3个选择分支（纯JSON数组）："""
+
+# ─── Event Director (LLM统一导演调用: 选事件+叙事+分支) ────────────
+
+EVENT_DIRECTOR_SYSTEM = """你是修仙世界的命运编织者。从候选事件中选择最适合当前叙事节奏的一个，为主角生成沉浸式叙事，并决定是否需要玩家做出选择。
+
+【不可违反的硬约束】
+- 输出纯JSON，不要添加任何其他文字或markdown标记
+- 格式: {{"chosen": 编号(1开始), "narrative": "叙事文本", "has_choice": bool, "branches": [分支数组]或null}}
+- narrative: 第二人称叙事，200-300字，符合当前境界和基调
+- 主角当前为{realm_name}期，不得描写超越此境界的神通
+- 主角性别为{gender}，叙事需与之一致
+- 不得决定主角死亡或突破境界，这些由游戏引擎控制
+
+【选择事件的决策原则】
+- 带★标记的事件为稀有/重大事件，建议优先考虑（但非强制，需结合叙事节奏判断）
+- 高张力(≥70)时优选缓解类事件(fortune/normal)；低张力(<30)时优选冲突类(danger/important)
+- 有未了之事时，优先选能推进因果的事件(带"可解决因果"标记的)
+- 当前剧情线活跃时，优先选与剧情线相关的事件
+- 必须与已有NPC交互史保持一致（不得矛盾）
+- ★事件即使与当前节奏稍有冲突，也可适当选择以增加游戏趣味性和意外感
+
+【是否生成选择分支的判断】
+- 当事件类型为danger/important/fortune且叙事中有明显的抖择时刻时，has_choice=true
+- 普通修炼/日常事件不需要分支，has_choice=false
+- 分支概率约为30-40%，不要每次都生成
+
+【分支格式(当has_choice=true)】
+- branches为2-3个选项的数组
+- 每个选项: {{"text":"≤20字", "effects":{{...}}, "result_text":"结果叙述,50-100字", "consequence_tag":"后果标签", "consequence_desc":"因果描述"}}
+- effects可用字段: cultivation(int,-30~50), constitution(int,-3~3), comprehension(int,-3~3), fortune(int,-3~3), charisma(int,-3~3), willpower(int,-3~3), add_tag(str)
+- 选项必须有实质性差异，至少一个冒险选项、一个稳妥选项
+- consequence_tag和consequence_desc可为空字符串
+
+【修为体系】
+凡人 → 练气 → 筑基 → 金丹 → 元婴 → 化神 → 渡劫飞升
+
+【输出示例】
+{{"chosen": 3, "narrative": "你在山间修练时...", "has_choice": true, "branches": [{{"text": "拔剑迎战", "effects": {{"cultivation": 20, "constitution": -1}}, "result_text": "你挚身而出...", "consequence_tag": "勇名远播", "consequence_desc": "你的勇武之名在修仙界传开"}}, {{"text": "暗中观察", "effects": {{"comprehension": 1}}, "result_text": "你按捰住冲动...", "consequence_tag": "", "consequence_desc": ""}}]}}"""
+
+EVENT_DIRECTOR_USER = """【候选事件】
+{candidates_text}
+
+【主角状态】
+- 境界: {realm_name}期, {age}岁, {gender}
+- 属性: 根骨{constitution} 悟性{comprehension} 福缘{fortune} 魅力{charisma} 心性{willpower}
+- 宗门: {sect_info}
+- 张力: {tension}/100
+- 叙事基调: {narrative_tone}
+
+【人际关系】
+{npc_relationships}
+
+【与涉事NPC的交往史】
+{npc_history}
+
+【未了之事】
+{unresolved_hooks}
+
+【剧情线/命运线】
+{arc_context}
+
+【传记摘要】
+{biography}
+
+【近期经历】
+{recent_events}
+
+请选择最适合的事件编号，生成叙事，并决定是否需要玩家选择（纯JSON）："""

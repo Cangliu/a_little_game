@@ -353,17 +353,9 @@ class StoryArcPlanner:
         score = 0
 
         # --- Dimension 1: Keyword extraction and matching ---
-        # Extract meaningful 2-4 char keywords from beat text
-        beat_keywords = set()
-        # Remove punctuation for clean extraction
-        clean_beat = re.sub(r'[\s、。，！？，《》“”‘’（）]+', '', beat_text)
-        # Extract all 2-char, 3-char, 4-char segments
-        for length in (2, 3, 4):
-            for i in range(len(clean_beat) - length + 1):
-                segment = clean_beat[i:i + length]
-                # Only keep segments that are all Chinese characters
-                if all('\u4e00' <= c <= '\u9fff' for c in segment):
-                    beat_keywords.add(segment)
+        # Use jieba segmentation (same pipeline as event keyword extraction)
+        from .event_system import extract_keywords
+        beat_keywords = set(extract_keywords(beat_text, max_keywords=8))
 
         # Count keyword matches in event text
         for kw in beat_keywords:

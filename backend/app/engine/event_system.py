@@ -18,7 +18,11 @@ import jieba
 
 from ..models import GameState
 from .life_phase import LifePhase, LifePhaseManager
-from .config import FORESHADOW_THRESHOLD
+from .config import (
+    FORESHADOW_THRESHOLD,
+    TENSION_HIGH_THRESHOLD, TENSION_LOW_THRESHOLD,
+    TENSION_WEIGHT_HIGH, TENSION_WEIGHT_MID, TENSION_WEIGHT_LOW,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -240,26 +244,101 @@ def calc_realm_relevance(event: dict, state: GameState) -> float:
 
 
 def _compute_weight(event: dict, state: GameState) -> float:
-    """Compute final weight for a single event."""
+    """Compute final weight for a single event.
+
+    Weight modifiers stack multiplicatively:
+    1. event_type boost (fortune/danger/important/special)
+    2. Special-tag floor (adult/calamity/combat)
+    3. Realm-relevance decay
+    4. Adult realm multiplier (legacy)
+    5. Tension curve influence
+    """
     w = float(event.get("weight", 50))
 
-    # Event-type modifiers (fortune / danger)
+    # ── 1. Event-type modifiers ───────────────────────────────────
     et = event.get("event_type")
     fortune_mod = 1 + state.attributes.fortune * 0.05
     if et == "fortune":
         w *= fortune_mod
     elif et == "danger":
         w *= max(0.5, 1 - state.attributes.fortune * 0.02)
+    elif et == "important":
+        w *= 1.4  # 重要人生事件提权，确保进入候选池
+    elif et == "special":
+        w *= 2.0  # 稀有特殊事件大幅提权
 
-    # Realm-relevance decay
+    # ── 2. Special-tag weight floor / boost ───────────────────────
+    # 确保特殊事件不会因基础weight过低而完全消失在候选池中
+    tags = set(event.get("tags", []))
+    if "adult" in tags and et in ("funny", "special", "fortune"):
+        # 情色/浪漫事件：设置最低权重地板，不至于被weight=12埋没
+        w = max(w, 20.0)
+    if tags & {"calamity", "combat"} and et not in ("danger",):
+        # 生死大事：已有danger加成时不重复，否则轻微提权
+        w *= 1.15
+
+    # ── 3. Realm-relevance decay ──────────────────────────────────
     w *= calc_realm_relevance(event, state)
 
-    # Legacy 'adult' tag realm multiplier (kept for backward compat)
+    # ── 4. Legacy adult tag realm multiplier ──────────────────────
     ADULT_REALM_MULTIPLIER = {0: 0.4, 1: 7.0, 2: 3.2, 3: 1.6, 4: 0.9, 5: 0.5}
-    if "adult" in event.get("tags", []):
+    if "adult" in tags:
         w *= ADULT_REALM_MULTIPLIER.get(state.realm, 1.0)
 
+    # ── 5. Tension curve influence ────────────────────────────────
+    # 高张力时压低 danger/important、提升 fortune（给玩家喘息）
+    # 低张力时提升 danger/important、压低 fortune（制造冲突）
+    if et in ("danger", "fortune", "important"):
+        tension = state.tension
+        if tension >= TENSION_HIGH_THRESHOLD:
+            d_mult, f_mult = TENSION_WEIGHT_HIGH
+        elif tension < TENSION_LOW_THRESHOLD:
+            d_mult, f_mult = TENSION_WEIGHT_LOW
+        else:
+            d_mult, f_mult = TENSION_WEIGHT_MID
+        w *= d_mult if et in ("danger", "important") else f_mult
+
     return max(w, 0.01)  # never fully zero
+
+
+# ── Priority hint classification ─────────────────────────────────────────
+
+def _classify_priority_hint(event: dict) -> str:
+    """Classify an event into a priority hint category for LLM reference.
+
+    Returns a short Chinese hint string, or empty string if normal.
+    The LLM uses this to decide whether to prioritize dramatic/rare events.
+    """
+    et = event.get("event_type", "normal")
+    tags = set(event.get("tags", []))
+    category = event.get("category", "")
+
+    # 稀有特殊事件 (event_type=special)
+    if et == "special":
+        return "★稀有奇遇"
+
+    # 情色/浪漫事件
+    if "adult" in tags:
+        if "romance" in tags:
+            return "★缘分奇遇"
+        return "★红尘奇事"
+
+    # 生死危机
+    if et == "danger" and tags & {"calamity", "combat"}:
+        return "★生死大劫"
+
+    # 重大转折点
+    if et == "important":
+        if "cultivation_start" in tags:
+            return "★修仙契机"
+        return "★命运转折"
+
+    # 大机缘
+    if et == "fortune" and category == "fortune":
+        if any(t in tags for t in ("treasure", "secret_realm", "discovery")):
+            return "★天大机缘"
+
+    return ""
 
 
 # ── Event selection pipeline ─────────────────────────────────────────────
@@ -429,6 +508,130 @@ class EventSystem:
                 return ev
         return pool[-1][0]  # float rounding safety
 
+    # ── Candidate selection for LLM Director ─────────────────────────
+
+    def select_candidates(
+        self,
+        state: GameState,
+        count: int = 10,
+        hook_adjustments: Optional[dict] = None,
+        arc_keywords: Optional[list] = None,
+    ) -> list[dict]:
+        """Return top-N weighted candidates for LLM director to choose from.
+
+        Unlike select_events() which does final random pick, this returns
+        the highest-weight candidates sorted by weight descending, with
+        metadata for LLM consumption.
+
+        Returns: [{"event": dict, "weight": float, "summary": str, "index": int}]
+        """
+        phase = LifePhase(state.life_phase)
+        used_ids = set(state.used_event_ids)
+
+        # Layer 1-3: Phase + Condition + Dedup
+        eligible: list[dict] = []
+        for ev in ALL_EVENTS:
+            if ev.get("category") == "death":
+                continue
+            if ev.get("id") in used_ids:
+                continue
+            if not self.phase_manager.is_event_allowed(ev, phase):
+                continue
+            if not check_conditions(ev, state):
+                continue
+            eligible.append(ev)
+
+        if not eligible:
+            fb = _fallback_event()
+            return [{"event": fb, "weight": 1.0, "summary": fb["text"], "index": 0}]
+
+        # Layer 4: Weight scoring
+        weighted: list[tuple[dict, float]] = [
+            (ev, _compute_weight(ev, state)) for ev in eligible
+        ]
+
+        # Layer 5: Hook weight adjustments
+        if hook_adjustments:
+            weighted = [
+                (ev, w * hook_adjustments.get(ev.get("resolves_hook", ""), 1.0))
+                for ev, w in weighted
+            ]
+
+        # Layer 6: Story arc keyword boost
+        if arc_keywords:
+            arc_kw_set = set(arc_keywords)
+            boosted = []
+            for ev, w in weighted:
+                ev_keywords = set(ev.get("_keywords", []))
+                ev_tags = set(ev.get("tags", []))
+                ev_text = ev.get("text", "")
+
+                kw_overlap = len(arc_kw_set & ev_keywords)
+                text_hits = sum(1 for kw in arc_keywords if kw in ev_text and kw not in ev_keywords)
+                tag_score = 0
+                tag_map = {
+                    "修炼": {"practice", "meditation", "cultivation"},
+                    "突破": {"breakthrough"},
+                    "危机": {"danger", "calamity"},
+                    "机缘": {"fortune", "treasure"},
+                    "师父": {"master_event"},
+                    "道侣": {"lover_event"},
+                    "宿敌": {"rival_event"},
+                    "飞升": {"ascension", "tribulation"},
+                    "闭关": {"meditation", "insight"},
+                    "剑": {"sword", "weapon"},
+                }
+                for kw in arc_keywords:
+                    related_tags = tag_map.get(kw)
+                    if related_tags and (ev_tags & related_tags):
+                        tag_score += 1
+
+                total_score = kw_overlap + text_hits + tag_score
+                if total_score >= 3:
+                    boosted.append((ev, w * 5.0))
+                elif total_score == 2:
+                    boosted.append((ev, w * 3.5))
+                elif total_score == 1:
+                    boosted.append((ev, w * 2.5))
+                else:
+                    boosted.append((ev, w))
+            weighted = boosted
+
+        # Sort by weight descending and take top-N
+        weighted.sort(key=lambda x: x[1], reverse=True)
+        top = weighted[:count]
+
+        # Build candidate list with summaries
+        candidates = []
+        for i, (ev, w) in enumerate(top):
+            effects = ev.get("effects", {})
+            effects_brief = ""
+            if effects:
+                parts = []
+                for k, v in effects.items():
+                    if k in ("cultivation", "constitution", "comprehension",
+                             "fortune", "charisma", "willpower") and v:
+                        sign = "+" if v > 0 else ""
+                        parts.append(f"{k}{sign}{v}")
+                effects_brief = ", ".join(parts[:3])
+
+            summary = f"{ev.get('text', '')[:60]} [{ev.get('event_type', 'normal')}]"
+            if effects_brief:
+                summary += f" ({effects_brief})"
+
+            # ── Priority hint: 让LLM知道哪些是特殊事件，值得优先考虑
+            priority_hint = _classify_priority_hint(ev)
+
+            candidates.append({
+                "event": ev,
+                "weight": w,
+                "summary": summary,
+                "index": i,
+                "priority_hint": priority_hint,
+            })
+
+        return candidates
+
     # ── Effect application ───────────────────────────────────────────
 
     @staticmethod
@@ -487,3 +690,11 @@ def _fallback_event() -> dict:
         "event_type": "normal",
         "category": "common",
     }
+
+
+def find_event_by_id(event_id: str) -> Optional[dict]:
+    """Find an event by ID from the loaded event pool. Returns a copy."""
+    for ev in ALL_EVENTS:
+        if ev.get("id") == event_id:
+            return dict(ev)  # Shallow copy to avoid mutation
+    return None

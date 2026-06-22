@@ -59,6 +59,10 @@ class NPC(BaseModel):
     is_alive: bool = True
     backstory: str = ""  # One-line backstory for AI reference
     max_age: int = 80  # NPC lifespan (based on realm)
+    # Destiny system (独立命运线)
+    destiny_beats: list = []         # NPC命运节拍 (from npc_destiny templates)
+    current_destiny_index: int = 0   # 当前节拍索引
+    destiny_completed: bool = False  # 命运线是否已完成
 
 
 class NPCInteraction(BaseModel):

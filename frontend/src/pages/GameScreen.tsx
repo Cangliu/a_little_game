@@ -1,24 +1,19 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import type { GameEvent, NextYearResponse } from '../utils/types';
+import type { GameEvent, NextYearResponse, SectInfo, NPCRelationship } from '../utils/types';
 import { REALM_NAMES, REALM_COLORS, GENDER_NAMES, CATEGORY_NAMES, CATEGORY_COLORS } from '../utils/types';
-import { nextYear } from '../utils/api';
+import { nextYear, makeChoice } from '../utils/api';
 
 /**
  * Extract the character age referenced in event narrative text.
- * Events often hardcode phrasing like "你3岁时" / "三岁那年" which
- * doesn't always equal the engine's state.age. We use the in-text
- * age (when present) as the displayed Canglang Era year, so the
- * timeline label always matches the story.
  */
 function parseChineseNumber(s: string): number {
   const map: Record<string, number> = {
     零: 0, 一: 1, 二: 2, 两: 2, 三: 3, 四: 4,
     五: 5, 六: 6, 七: 7, 八: 8, 九: 9,
   };
-  // 十, 十二, 二十, 二十五, 一百零八...
   if (s === '十') return 10;
-  if (s.startsWith('十')) return 10 + (map[s[1]] ?? 0); // 十三 = 13
-  if (s.endsWith('十')) return (map[s[0]] ?? 0) * 10; // 二十 = 20
+  if (s.startsWith('十')) return 10 + (map[s[1]] ?? 0);
+  if (s.endsWith('十')) return (map[s[0]] ?? 0) * 10;
   if (s.includes('十')) {
     const [a, b] = s.split('十');
     return (map[a] ?? 0) * 10 + (map[b] ?? 0);
@@ -32,10 +27,8 @@ function parseChineseNumber(s: string): number {
 
 function extractEventAge(text: string): number | null {
   if (!text) return null;
-  // Arabic numerals: "3岁", "12岁时"
   const arab = text.match(/(\d+)\s*岁/);
   if (arab) return parseInt(arab[1], 10);
-  // Chinese numerals: "三岁", "十六岁那年"
   const cn = text.match(/([零一二两三四五六七八九十百]+)\s*岁/);
   if (cn) {
     const n = parseChineseNumber(cn[1]);
@@ -50,11 +43,6 @@ interface GameScreenProps {
   onGameEnd: (gameId: string) => void;
 }
 
-/**
- * Typewriter component: progressively reveals expanded narrative.
- * Renders the one-line summary fully, and types out the expanded narrative
- * character-by-character below it.
- */
 function TypewriterEvent({
   event,
   speedMs = 35,
@@ -118,6 +106,13 @@ function TypewriterEvent({
   );
 }
 
+/** Tension indicator color */
+function getTensionColor(t: number): string {
+  if (t >= 70) return 'bg-red-500';
+  if (t >= 40) return 'bg-amber-500';
+  return 'bg-emerald-500';
+}
+
 export default function GameScreen({
   gameId,
   gender = 'male',
@@ -132,8 +127,17 @@ export default function GameScreen({
   const [isGameOver, setIsGameOver] = useState(false);
   const [loading, setLoading] = useState(false);
   const [autoPlay, setAutoPlay] = useState(false);
-  // Index of the latest event still typing; only one types at a time so older
-  // events render fully and the newest one animates.
+  // Player choice system
+  const [isChoosing, setIsChoosing] = useState(false);
+  const [choiceEvent, setChoiceEvent] = useState<GameEvent | null>(null);
+  const [choiceResult, setChoiceResult] = useState<string | null>(null);
+  // New: tension, sect, NPC state
+  const [tension, setTension] = useState(0);
+  const [sectInfo, setSectInfo] = useState<SectInfo | null>(null);
+  const [npcRelationships, setNpcRelationships] = useState<NPCRelationship[]>([]);
+  const [showNpcPanel, setShowNpcPanel] = useState(false);
+  const [showSectPanel, setShowSectPanel] = useState(false);
+  // Typing
   const [typingIdx, setTypingIdx] = useState<number>(-1);
   const logEndRef = useRef<HTMLDivElement>(null);
   const autoPlayRef = useRef(false);
@@ -156,9 +160,13 @@ export default function GameScreen({
       setRealmName(result.realm_name);
       setCultivation(result.cultivation);
       setCultivationMax(result.cultivation_max);
+      // Update enhanced state
+      if (result.tension !== undefined) setTension(result.tension);
+      if (result.sect_info !== undefined) setSectInfo(result.sect_info ?? null);
+      if (result.npc_relationships) setNpcRelationships(result.npc_relationships);
+
       setEventLog((prev) => {
         const next = [...prev, ...result.events];
-        // First event with expanded text in this batch begins typing.
         const firstNewIdx = prev.length;
         const firstWithExpanded = result.events.findIndex((e) => e.expanded_text);
         setTypingIdx(
@@ -167,12 +175,19 @@ export default function GameScreen({
         return next;
       });
 
+      if (result.has_choice && result.choice_event) {
+        setChoiceEvent(result.choice_event);
+        setIsChoosing(true);
+        setAutoPlay(false);
+        setLoading(false);
+        return;
+      }
+
       if (result.is_dead || result.is_ascended) {
         setIsGameOver(true);
         setAutoPlay(false);
         setTimeout(() => onGameEnd(gameId), 2500);
       } else if (autoPlayRef.current) {
-        // Wait a bit longer when narrative is unfolding so it can be read.
         const hasNarrative = result.events.some((e) => e.expanded_text);
         setTimeout(() => advanceYear(), hasNarrative ? 1800 : 400);
       }
@@ -184,7 +199,6 @@ export default function GameScreen({
   };
 
   const handleTyped = (idx: number) => {
-    // When current narrative finishes, look for the next one with expanded text.
     setEventLog((cur) => {
       const next = cur.findIndex((e, i) => i > idx && e.expanded_text);
       setTypingIdx(next);
@@ -201,18 +215,37 @@ export default function GameScreen({
     }
   };
 
+  const handleChoice = async (index: number) => {
+    if (!choiceEvent || !choiceEvent.id) return;
+    try {
+      const result = await makeChoice(gameId, choiceEvent.id, index);
+      if (result.result_text) {
+        setEventLog((prev) => [
+          ...prev,
+          {
+            text: `── 你选择了「${result.choice_text}」`,
+            expanded_text: result.result_text,
+            type: 'important' as const,
+            category: 'common',
+            age: age,
+          },
+        ]);
+      }
+      setChoiceEvent(null);
+      setIsChoosing(false);
+      setChoiceResult(null);
+    } catch (err) {
+      console.error('Choice error:', err);
+    }
+  };
+
   const getEventLineClass = (type: string) => {
     switch (type) {
-      case 'important':
-        return 'event-line event-line-important';
-      case 'danger':
-        return 'event-line event-line-danger';
-      case 'fortune':
-        return 'event-line event-line-fortune';
-      case 'special':
-        return 'event-line event-line-fortune';
-      default:
-        return 'event-line';
+      case 'important': return 'event-line event-line-important';
+      case 'danger': return 'event-line event-line-danger';
+      case 'fortune': return 'event-line event-line-fortune';
+      case 'special': return 'event-line event-line-fortune';
+      default: return 'event-line';
     }
   };
 
@@ -220,10 +253,6 @@ export default function GameScreen({
   const genderLabel = GENDER_NAMES[gender] || '男';
   const genderColor = gender === 'female' ? 'text-pink-500' : 'text-blue-500';
 
-  // Compute the displayed Canglang Era year for each event so it tracks
-  // the in-narrative age rather than the engine's internal counter.
-  // Monotonic non-decreasing: if a later event's text age would go backward,
-  // we hold the previous high so the timeline never rewinds.
   const displayAges = useMemo(() => {
     let last = 0;
     return eventLog.map((e) => {
@@ -260,26 +289,145 @@ export default function GameScreen({
         ))}
       </div>
 
-      {/* Top Status Bar */}
-      <div className="border-b border-scroll-gold-dim/15 p-4 relative z-10"
+      {/* Top Status Bar — Enhanced */}
+      <div className="border-b border-scroll-gold-dim/15 p-3 relative z-10"
            style={{ background: 'rgba(255,253,245,0.92)', backdropFilter: 'blur(12px)' }}>
-        <div className="max-w-2xl mx-auto flex items-center justify-between gap-4">
-          {/* Realm & Age & Gender */}
-          <div className="flex items-center gap-3">
-            <span className={`text-2xl font-kai tracking-widest ${REALM_COLORS[realm] || 'text-scroll-gold'}`}>
-              {realmName}
-            </span>
-            <span className={`text-base font-kai ${genderColor}`} title="性别">
-              {genderLabel}
-            </span>
-            <span className="text-scroll-text-dim text-sm font-kai">
-              沧浪纪 {currentDisplayAge} 年
-            </span>
+        <div className="max-w-2xl mx-auto">
+          {/* Row 1: Realm, Gender, Age, Sect badge */}
+          <div className="flex items-center justify-between gap-3 mb-2">
+            <div className="flex items-center gap-3">
+              <span className={`text-2xl font-kai tracking-widest ${REALM_COLORS[realm] || 'text-scroll-gold'}`}>
+                {realmName}
+              </span>
+              <span className={`text-base font-kai ${genderColor}`}>{genderLabel}</span>
+              <span className="text-scroll-text-dim text-sm font-kai">
+                沧浪纪 {currentDisplayAge} 年
+              </span>
+            </div>
+            {/* Sect badge */}
+            <div className="flex items-center gap-2">
+              {sectInfo ? (
+                <span className="sect-badge font-kai text-xs px-2 py-0.5 rounded border border-emerald-400/40 text-emerald-700 bg-emerald-50/50">
+                  {sectInfo.name}·{sectInfo.rank}
+                </span>
+              ) : (
+                <span className="font-kai text-xs text-stone-400 px-2 py-0.5">散修</span>
+              )}
+            </div>
           </div>
-
-
+          {/* Row 2: Cultivation bar + Tension indicator + quick buttons */}
+          <div className="flex items-center gap-3">
+            {/* Cultivation progress */}
+            <div className="flex-1 cultivation-bar h-2 rounded-full bg-stone-200/60 overflow-hidden">
+              <div
+                className="h-full rounded-full transition-all duration-500"
+                style={{
+                  width: `${cultPercent}%`,
+                  background: 'linear-gradient(90deg, #6366f1, #a78bfa, #f59e0b)',
+                }}
+              />
+            </div>
+            <span className="text-xs text-scroll-text-dim font-kai whitespace-nowrap">
+              {cultivation}/{cultivationMax}
+            </span>
+            {/* Tension indicator */}
+            <div className="flex items-center gap-1" title={`张力 ${Math.round(tension)}/100`}>
+              <span className="text-xs">🔥</span>
+              <div className="w-12 h-1.5 rounded-full bg-stone-200/60 overflow-hidden">
+                <div
+                  className={`h-full rounded-full transition-all duration-500 ${getTensionColor(tension)}`}
+                  style={{ width: `${tension}%` }}
+                />
+              </div>
+            </div>
+            {/* NPC / Sect toggle buttons */}
+            <button
+              onClick={() => setShowNpcPanel(!showNpcPanel)}
+              className={`text-xs font-kai px-2 py-0.5 rounded border transition-all ${
+                showNpcPanel ? 'border-teal-500 text-teal-600 bg-teal-50' : 'border-stone-300/50 text-stone-500 hover:text-teal-600'
+              }`}
+            >
+              人脉
+            </button>
+            <button
+              onClick={() => setShowSectPanel(!showSectPanel)}
+              className={`text-xs font-kai px-2 py-0.5 rounded border transition-all ${
+                showSectPanel ? 'border-emerald-500 text-emerald-600 bg-emerald-50' : 'border-stone-300/50 text-stone-500 hover:text-emerald-600'
+              }`}
+            >
+              宗门
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Collapsible Info Panels */}
+      {(showNpcPanel || showSectPanel) && (
+        <div className="border-b border-scroll-gold-dim/10 px-4 py-3 relative z-10"
+             style={{ background: 'rgba(255,253,245,0.95)' }}>
+          <div className="max-w-2xl mx-auto flex gap-4 flex-wrap">
+            {/* NPC Panel */}
+            {showNpcPanel && (
+              <div className="info-panel flex-1 min-w-[200px]">
+                <h4 className="text-xs font-kai text-teal-600 mb-2 tracking-wider">人际关系</h4>
+                {npcRelationships.length > 0 ? (
+                  <div className="space-y-1.5">
+                    {npcRelationships.map((npc, i) => (
+                      <div key={i} className="npc-card flex items-center gap-2 text-xs">
+                        <span className={`font-kai ${npc.is_alive ? 'text-scroll-text' : 'text-stone-400 line-through'}`}>
+                          {npc.name}
+                        </span>
+                        <span className="text-stone-400">·</span>
+                        <span className="text-stone-500">{npc.relation_type}</span>
+                        <div className="flex-1" />
+                        <div className="w-12 h-1.5 rounded-full bg-stone-200 overflow-hidden">
+                          <div
+                            className="h-full rounded-full transition-all"
+                            style={{
+                              width: `${npc.sentiment}%`,
+                              background: npc.sentiment >= 70 ? '#f59e0b' : npc.sentiment >= 40 ? '#9ca3af' : '#ef4444',
+                            }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-xs text-stone-400 font-kai">尚无重要人际关系</p>
+                )}
+              </div>
+            )}
+            {/* Sect Panel */}
+            {showSectPanel && (
+              <div className="info-panel flex-1 min-w-[200px]">
+                <h4 className="text-xs font-kai text-emerald-600 mb-2 tracking-wider">宗门信息</h4>
+                {sectInfo ? (
+                  <div className="space-y-1 text-xs font-kai">
+                    <div className="flex justify-between">
+                      <span className="text-stone-500">宗门</span>
+                      <span className="text-scroll-text">{sectInfo.name}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-stone-500">类型</span>
+                      <span className="text-scroll-text">{sectInfo.sect_type}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-stone-500">职位</span>
+                      <span className="text-emerald-700">{sectInfo.rank}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-stone-500">贡献</span>
+                      <span className="text-amber-700">{sectInfo.contribution}</span>
+                    </div>
+                  </div>
+                ) : (
+                  <p className="text-xs text-stone-400 font-kai">散修 · 无宗门归属</p>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Main Content - Event Log */}
       <div className="flex-1 flex flex-col relative z-10">
@@ -290,19 +438,16 @@ export default function GameScreen({
                 <p className="text-lg mb-2 font-kai text-scroll-text">
                   你以{gender === 'female' ? '女身' : '男身'}降生于世间...
                 </p>
-                <p className="text-sm text-scroll-text-dim font-kai">点击「下一年」开始你的旅程</p>
+                <p className="text-sm text-scroll-text-dim font-kai">点击「流年」开始你的旅程</p>
               </div>
             )}
 
             {eventLog.map((event, i) => {
               const dispAge = displayAges[i];
               const showAge = i === 0 || displayAges[i - 1] !== dispAge;
-              // Show category tag when we don't show a new year label
               const showCategory = !showAge && event.category && event.category !== 'common';
               const catName = CATEGORY_NAMES[event.category || 'common'] || '尘世';
               const catColor = CATEGORY_COLORS[event.category || 'common'] || 'text-stone-500';
-              // Show expanded narrative for events that have been typed already
-              // (i.e. older than typingIdx, or no narrative left to type).
               const isTyping = i === typingIdx;
               const shouldRenderExpanded =
                 event.expanded_text && (typingIdx === -1 || i <= typingIdx);
@@ -354,6 +499,58 @@ export default function GameScreen({
             <div ref={logEndRef} />
           </div>
         </div>
+
+        {/* Choice Panel Overlay — Enhanced */}
+        {isChoosing && choiceEvent && choiceEvent.branches && (
+          <div className="absolute inset-0 z-20 flex items-center justify-center"
+               style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(4px)' }}>
+            <div className="max-w-lg w-full mx-4 p-6 rounded-lg border border-scroll-gold/30"
+                 style={{ background: 'rgba(255,253,245,0.97)' }}>
+              <p className="text-center text-scroll-text font-kai text-lg mb-1 tracking-wider">
+                命运交叉点
+              </p>
+              <p className="text-center text-scroll-text-dim font-kai text-sm mb-5">
+                {choiceEvent.text}
+              </p>
+              <div className="space-y-3">
+                {choiceEvent.branches.map((branch, i) => (
+                  <button
+                    key={i}
+                    onClick={() => handleChoice(i)}
+                    className="w-full text-left px-4 py-3 border border-scroll-gold-dim/30 rounded-sm
+                               hover:border-scroll-gold hover:bg-scroll-gold/5 transition-all
+                               font-kai text-scroll-text tracking-wide group"
+                  >
+                    <div className="flex items-start gap-2">
+                      <span className="text-scroll-gold">{['⚔', '🛡', '✧'][i] || '❖'}</span>
+                      <div className="flex-1">
+                        <span>{branch.text}</span>
+                        {/* Show effect hints */}
+                        {branch.effects && Object.keys(branch.effects).length > 0 && (
+                          <div className="mt-1 text-xs text-stone-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                            {Object.entries(branch.effects).map(([k, v]) => {
+                              if (k === 'add_tag') return null;
+                              const sign = (v as number) > 0 ? '+' : '';
+                              const label: Record<string, string> = {
+                                cultivation: '修为', constitution: '根骨', comprehension: '悟性',
+                                fortune: '福缘', charisma: '魅力', willpower: '心性',
+                              };
+                              return (
+                                <span key={k} className={`mr-2 ${(v as number) > 0 ? 'text-emerald-500' : 'text-red-400'}`}>
+                                  {label[k] || k}{sign}{v}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Bottom Control Bar */}
         <div className="border-t border-scroll-gold-dim/15 p-4 relative"

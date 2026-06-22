@@ -13,6 +13,7 @@ from typing import Optional
 from ...models import GameState, REALM_NAMES, REALM_MAX_AGE, Realm
 from .models import NPC, Relationship, RelationType, NPCPersonality, NPCInteraction
 from .npc_templates import generate_name, get_backstory
+from .npc_destiny import get_destiny_template
 
 logger = logging.getLogger(__name__)
 
@@ -102,6 +103,14 @@ class NPCManager:
             interaction_count=1,
         )
         state.relationships.append(rel.model_dump())
+
+        # Initialize destiny line for key NPCs (master/lover/rival)
+        if rel_type in ("\u5e08\u7236", "\u9053\u4fa3", "\u5bbf\u654c"):
+            destiny_beats = get_destiny_template(rel_type)
+            npc_dict = state.npc_registry[npc_id]
+            npc_dict["destiny_beats"] = destiny_beats
+            npc_dict["current_destiny_index"] = 0
+            npc_dict["destiny_completed"] = False
 
         logger.debug("Generated NPC: %s (%s) - %s", name, personality, rel_type)
         return npc
@@ -349,6 +358,112 @@ class NPCManager:
         for npc_id in dead_npcs:
             npc_name = state.npc_registry[npc_id].get("name", "unknown")
             logger.debug("NPC %s (%s) has died", npc_name, npc_id)
+
+    def advance_npc_destiny(self, state: GameState) -> list[dict]:
+        """Check and advance NPC destiny beats. Returns destiny-driven events."""
+        events = []
+
+        for rel_dict in state.relationships:
+            npc_id = rel_dict.get("npc_id", "")
+            npc_dict = state.npc_registry.get(npc_id)
+            if not npc_dict or not npc_dict.get("is_alive", True):
+                continue
+
+            destiny_beats = npc_dict.get("destiny_beats", [])
+            if not destiny_beats or npc_dict.get("destiny_completed", False):
+                continue
+
+            idx = npc_dict.get("current_destiny_index", 0)
+            if idx >= len(destiny_beats):
+                npc_dict["destiny_completed"] = True
+                continue
+
+            beat = destiny_beats[idx]
+            trigger = beat.get("trigger", {})
+
+            if not self._check_destiny_trigger(state, npc_dict, rel_dict, trigger):
+                continue
+
+            # Trigger the beat
+            name = npc_dict.get("name", "\u67d0\u4eba")
+            event = self._create_destiny_event(state, npc_dict, rel_dict, beat, name)
+            if event:
+                events.append(event)
+                npc_dict["current_destiny_index"] = idx + 1
+                if idx + 1 >= len(destiny_beats):
+                    npc_dict["destiny_completed"] = True
+                self._record_appearance(state, npc_id)
+                logger.info(
+                    "NPC destiny beat: %s - %s (%d/%d)",
+                    name, beat.get("description", ""), idx + 1, len(destiny_beats)
+                )
+
+        # Limit to 1 destiny event per turn
+        if len(events) > 1:
+            events = [random.choice(events)]
+
+        return events
+
+    @staticmethod
+    def _check_destiny_trigger(
+        state: GameState, npc_dict: dict, rel_dict: dict, trigger: dict
+    ) -> bool:
+        """Check if destiny beat trigger conditions are met."""
+        first_met = npc_dict.get("first_met_age", 0)
+        years_since_met = state.age - first_met
+
+        if trigger.get("min_years_since_met") and years_since_met < trigger["min_years_since_met"]:
+            return False
+        if trigger.get("min_sentiment") and rel_dict.get("sentiment", 50) < trigger["min_sentiment"]:
+            return False
+        if trigger.get("max_sentiment") and rel_dict.get("sentiment", 50) > trigger["max_sentiment"]:
+            return False
+        if trigger.get("min_tension") and state.tension < trigger["min_tension"]:
+            return False
+
+        # Probability check
+        prob = trigger.get("probability", 0.3)
+        if random.random() > prob:
+            return False
+
+        return True
+
+    def _create_destiny_event(
+        self, state: GameState, npc_dict: dict, rel_dict: dict, beat: dict, name: str
+    ) -> dict:
+        """Create a game event dict from a destiny beat."""
+        text = beat.get("text_template", "").replace("{name}", name)
+        expanded = beat.get("expanded_template", "").replace("{name}", name)
+
+        # Special: master beat 4 — random outcome (breakthrough or fall)
+        if "{outcome}" in text:
+            outcome = random.choice(["\u7a81\u7834\u6210\u529f\uff0c\u4fee\u4e3a\u5927\u8fdb", "\u529b\u7aed\u965e\u843d\uff0c\u5316\u9053\u800c\u53bb"])
+            text = text.replace("{outcome}", outcome)
+            if "\u965e\u843d" in outcome:
+                npc_dict["is_alive"] = False
+                expanded = (
+                    f"\u4e00\u80a1\u6d69\u7136\u6c14\u673a\u4ece{name}\u95ed\u5173\u7684\u6d1e\u5e9c\u4e2d\u51b2\u5929\u800c\u8d77\uff0c\u968f\u5373\u6d88\u6563\u6b86\u5c3d\u3002"
+                    f"\u4f60\u8dea\u5012\u5728\u5730\uff0c\u6cea\u6d41\u6ee1\u9762\u3002\u5e08\u7236{name}\uff0c\u7ec8\u7a76\u6ca1\u80fd\u8de8\u8fc7\u90a3\u9053\u5929\u5811\u3002"
+                    f"\u4f46\u4f60\u77e5\u9053\uff0c\u5e08\u7236\u7684\u9053\uff0c\u5c06\u7531\u4f60\u6765\u5ef6\u7eed\u3002"
+                )
+            else:
+                expanded = (
+                    f"\u5929\u5730\u9707\u8361\uff0c{name}\u95ed\u5173\u7684\u6d1e\u5e9c\u4e2d\u4f20\u6765\u9f99\u541f\u864e\u5578\u4e4b\u58f0\u3002"
+                    f"\u6570\u65e5\u540e\uff0c\u77f3\u95e8\u8f70\u7136\u6253\u5f00\uff0c{name}\u8e0f\u6b65\u800c\u51fa\uff0c\u5468\u8eab\u7075\u5149\u6d41\u8f6c\u3002"
+                    f"\u300c\u4e3a\u5e08\u7ec8\u4e8e\u7a81\u7834\u4e86\u3002\u300d\u4f60\u559c\u6781\u800c\u6ce3\uff0c\u8dea\u5730\u53e9\u9996\u3002"
+                )
+
+        return {
+            "id": f"npc_destiny_{state.age}_{uuid.uuid4().hex[:4]}",
+            "text": text,
+            "expanded_text": expanded or text,
+            "category": "social",
+            "event_type": beat.get("event_type", "important"),
+            "tags": ["npc_destiny", "npc_interaction"],
+            "effects": beat.get("effects", {}),
+            "involved_npc": name,
+            "involved_npc_id": npc_dict.get("npc_id", ""),
+        }
 
     def get_npc_context_string(self, state: GameState) -> str:
         """Build a string summarizing all NPC relationships for AI prompts."""
