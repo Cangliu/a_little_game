@@ -62,6 +62,12 @@ class GameDirector:
             prompt_builder=self.prompt_builder,
             npc_manager=self.npc_manager,
         )
+        # Main storyline planner (骨骼系统) — created before narrative for injection
+        self.storyline_planner = MainStorylinePlanner(
+            llm_client=self.llm_client,
+            prompt_builder=self.prompt_builder,
+            npc_manager=self.npc_manager,
+        )
         # Wire LLM into narrative provider (with full context access)
         self.narrative = NarrativeProvider(
             llm_client=self.llm_client,
@@ -70,12 +76,7 @@ class GameDirector:
             memory_manager=self.memory_manager,
             hook_manager=self.hook_manager,
             arc_planner=self.arc_planner,
-        )
-        # Main storyline planner (骨骼系统)
-        self.storyline_planner = MainStorylinePlanner(
-            llm_client=self.llm_client,
-            prompt_builder=self.prompt_builder,
-            npc_manager=self.npc_manager,
+            storyline_planner=self.storyline_planner,
         )
         # Sect system (独立宗门策略系统)
         self.sect_manager = SectManager()

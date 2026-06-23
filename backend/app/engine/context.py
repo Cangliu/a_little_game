@@ -46,12 +46,28 @@ class GameContext:
     def update(self, state: GameState, year_events: list[dict]) -> None:
         """Update context after a year has passed.
 
-        Currently a no-op beyond what build_summary already reads from
-        state.  Future: maintain a rolling summary of major life events
+        Maintains a rolling tension trend and last significant event
         for AI context window management.
         """
-        # Future: maintain condensed biography, relationship graph, etc.
-        pass
+        if not year_events:
+            return
+
+        # Track the most dramatic event this year for future AI context
+        best_event = None
+        best_priority = -1
+        priority_map = {"danger": 3, "important": 2, "fortune": 1}
+        for ev in year_events:
+            p = priority_map.get(ev.get("event_type", ""), 0)
+            if p > best_priority:
+                best_priority = p
+                best_event = ev
+
+        if best_event and best_priority > 0:
+            state.last_significant_event = {
+                "text": best_event.get("text", "")[:60],
+                "age": state.age,
+                "type": best_event.get("event_type", "normal"),
+            }
 
     # ── Private helpers ──────────────────────────────────────────────
 

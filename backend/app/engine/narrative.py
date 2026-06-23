@@ -46,6 +46,7 @@ class NarrativeProvider:
         memory_manager: Optional["MemoryManager"] = None,
         hook_manager: Optional["PlotHookManager"] = None,
         arc_planner: Optional["StoryArcPlanner"] = None,
+        storyline_planner: Optional["MainStorylinePlanner"] = None,
     ):
         self._llm = llm_client
         self._prompt_builder = prompt_builder
@@ -53,6 +54,7 @@ class NarrativeProvider:
         self._memory_manager = memory_manager
         self._hook_manager = hook_manager
         self._arc_planner = arc_planner
+        self._storyline_planner = storyline_planner
 
     def get_event_narrative(
         self, event: dict, state: Optional["GameState"] = None
@@ -138,12 +140,8 @@ class NarrativeProvider:
 
         # Main storyline context (骨骼上下文)
         storyline_context = ""
-        try:
-            from .main_storyline import MainStorylinePlanner
-            planner = MainStorylinePlanner()  # Lightweight, just for context method
-            storyline_context = planner.get_storyline_context_for_ai(state)
-        except Exception:
-            pass
+        if self._storyline_planner:
+            storyline_context = self._storyline_planner.get_storyline_context_for_ai(state)
 
         # Combine arc and storyline context
         if storyline_context:

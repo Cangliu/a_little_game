@@ -1,0 +1,72 @@
+{
+  "title": "凡人修仙传 · 全景架构图",
+  "type": "architecture",
+  "layout": "top-down",
+  "style": {"preset": "sketch", "roughness": 1, "fontFamily": "hand"},
+  "nodes": [
+    {"id": "player", "label": "👤 玩家", "semantic": "external", "layer": 0, "icon": "user"},
+
+    {"id": "create", "label": "🎲 开局\n天赋抽取 · 性别姓名", "semantic": "trigger", "layer": 1, "width": 220},
+    {"id": "story", "label": "📜 流年叙事\n每年一回合 · 修仙文风", "semantic": "core", "layer": 1, "width": 240},
+    {"id": "choices", "label": "⚔️ 抉择分支\n修炼 / 探索 / 社交", "semantic": "decision", "layer": 1, "width": 220},
+    {"id": "ending", "label": "🌟 终局\n凡人陨落 / 飞升成仙", "semantic": "success", "layer": 1, "width": 220},
+
+    {"id": "fe", "label": "React + Vite\nSSE 流式渲染", "semantic": "middleware", "layer": 2, "icon": "browser", "width": 200},
+    {"id": "api", "label": "FastAPI\n/next-turn SSE", "semantic": "middleware", "layer": 3, "icon": "server", "width": 200},
+
+    {"id": "director", "label": "🎬 GameDirector\n10阶段流年循环", "semantic": "core", "layer": 4, "width": 280},
+
+    {"id": "event_pool", "label": "📦 事件池\n~9500条 JSON", "semantic": "storage", "layer": 5, "shape": "cylinder", "width": 200},
+    {"id": "event_dir", "label": "🤖 EventDirector\n9层管线 → Top10 → LLM", "semantic": "ai", "layer": 5, "width": 280},
+
+    {"id": "npc", "label": "NPC系统\n好感 · 关系 · 命运线", "semantic": "trigger", "layer": 6, "width": 220},
+    {"id": "memory", "label": "记忆系统\n传记 · 近期 · 压缩", "semantic": "storage", "layer": 6, "width": 220},
+    {"id": "causality", "label": "因果系统\n伏笔 · 回收 · 因果链", "semantic": "ai", "layer": 6, "width": 220},
+    {"id": "saga", "label": "Saga弧线\n故事线 · 张力曲线", "semantic": "core", "layer": 6, "width": 220},
+    {"id": "world", "label": "天地纪元\n灵气潮汐 · 纪元更迭", "semantic": "external", "layer": 6, "width": 220},
+    {"id": "realm", "label": "境界系统\n炼气→渡劫 · 突破判定", "semantic": "trigger", "layer": 6, "width": 220},
+
+    {"id": "state", "label": "GameState\n主角全量状态快照", "semantic": "storage", "layer": 7, "shape": "cylinder", "width": 240}
+  ],
+  "edges": [
+    {"from": "player", "to": "create", "label": "创建角色"},
+    {"from": "create", "to": "story"},
+    {"from": "story", "to": "choices", "label": "触发分支"},
+    {"from": "choices", "to": "story", "label": "下一年"},
+    {"from": "story", "to": "ending", "label": "寿终 / 飞升"},
+
+    {"from": "player", "to": "fe", "label": "交互", "style": "dashed"},
+    {"from": "fe", "to": "api", "label": "SSE 流"},
+    {"from": "api", "to": "director"},
+
+    {"from": "director", "to": "event_pool", "label": "筛选"},
+    {"from": "event_pool", "to": "event_dir", "label": "候选事件"},
+    {"from": "event_dir", "to": "story", "label": "叙事文本", "style": "dashed"},
+
+    {"from": "director", "to": "npc"},
+    {"from": "director", "to": "memory"},
+    {"from": "director", "to": "causality"},
+    {"from": "director", "to": "saga"},
+    {"from": "director", "to": "world"},
+    {"from": "director", "to": "realm"},
+
+    {"from": "npc", "to": "state"},
+    {"from": "memory", "to": "state"},
+    {"from": "causality", "to": "state"},
+    {"from": "saga", "to": "state"},
+    {"from": "realm", "to": "state"},
+    {"from": "world", "to": "state"}
+  ],
+  "groups": [
+    {"id": "g_player", "label": "🎮 玩家视角 — 明面上的修仙体验", "members": ["create", "story", "choices", "ending"]},
+    {"id": "g_front", "label": "⚡ 前端 + API", "members": ["fe", "api"]},
+    {"id": "g_core", "label": "🧠 引擎内核 — 骨骼与血肉", "members": ["director", "event_pool", "event_dir"]},
+    {"id": "g_sub", "label": "📚 六大子系统", "members": ["npc", "memory", "causality", "saga", "world", "realm"]}
+  ],
+  "annotations": [
+    {"text": "骨骼: 事件JSON模板\n(9层管线筛选)", "near": "event_pool", "position": "left", "level": "caption"},
+    {"text": "血肉: DeepSeek LLM\n实时叙事扩写", "near": "event_dir", "position": "right", "level": "caption"},
+    {"text": "~80回合/局\n~200K tokens", "near": "story", "position": "bottom", "level": "caption"},
+    {"text": "年龄推进 → 事件筛选 → NPC结算\n→ 境界判定 → 记忆压缩 → …", "near": "director", "position": "right", "level": "body"}
+  ]
+}

@@ -160,6 +160,8 @@ class GameState(BaseModel):
     world_eras: list[dict] = []              # 历史纪元记录
     active_era: Optional[dict] = None        # 当前活跃纪元
     next_era_check_age: int = 0              # 下次检查纪元触发的年龄
+    # 上下文追踪
+    last_significant_event: Optional[dict] = None  # 最近一次重大事件摘要 (AI上下文用)
 
 
 class StartGameRequest(BaseModel):

@@ -801,18 +801,6 @@ class MainStorylinePlanner:
 
     @staticmethod
     def _extract_keywords_from_desc(description: str) -> list:
-        """Extract 2-3 char Chinese keywords from a beat description."""
-        import re
-        clean = re.sub(r'[^\u4e00-\u9fff]', '', description)
-        keywords = []
-        # Extract all 2-char segments
-        for i in range(len(clean) - 1):
-            kw = clean[i:i+2]
-            if kw not in keywords:
-                keywords.append(kw)
-        # Also extract 3-char segments
-        for i in range(len(clean) - 2):
-            kw = clean[i:i+3]
-            if kw not in keywords:
-                keywords.append(kw)
-        return keywords[:8]  # Limit
+        """Extract meaningful Chinese keywords from a beat description using jieba."""
+        from .event_system import extract_keywords
+        return extract_keywords(description, max_keywords=8)

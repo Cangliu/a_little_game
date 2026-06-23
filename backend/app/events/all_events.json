@@ -123453,5 +123453,665 @@
     "npc_roles": [
       "徒弟"
     ]
+  },
+  {
+    "id": "hook_resolve_technique_01",
+    "text": "你闭关数月，终于将残缺功法的最后一环推演完整，一股磅礴灵力涌入经脉。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": 30,
+      "comprehension": 2
+    },
+    "tags": [
+      "breakthrough",
+      "cultivation"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "incomplete_technique"
+  },
+  {
+    "id": "hook_resolve_technique_02",
+    "text": "你在与同门论道时灵光一闪，残篇中缺失的部分豁然贯通，多年执念终得释怀。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": 40,
+      "comprehension": 3
+    },
+    "tags": [
+      "insight",
+      "cultivation"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "incomplete_technique"
+  },
+  {
+    "id": "hook_resolve_technique_03",
+    "text": "多年苦修终有所得，那残缺的上古功法在你手中重现完整，修为因此大进。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": 60,
+      "comprehension": 4
+    },
+    "tags": [
+      "legacy",
+      "cultivation"
+    ],
+    "event_type": "important",
+    "resolves_hook": "incomplete_technique"
+  },
+  {
+    "id": "hook_resolve_map_01",
+    "text": "你终于找到古图所指之地，一座被遗忘的上古洞府在山壁间显现，内藏数件灵器。",
+    "category": "fortune",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "fortune": 3,
+      "cultivation": 20
+    },
+    "tags": [
+      "treasure",
+      "exploration"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "mysterious_map"
+  },
+  {
+    "id": "hook_resolve_map_02",
+    "text": "古图上的符文在你灵识扫过时突然亮起，秘境入口缓缓开启，一段尘封的传承等待着你。",
+    "category": "fortune",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "fortune": 4,
+      "cultivation": 35,
+      "comprehension": 2
+    },
+    "tags": [
+      "legacy",
+      "exploration"
+    ],
+    "event_type": "important",
+    "resolves_hook": "mysterious_map"
+  },
+  {
+    "id": "hook_resolve_curse_01",
+    "text": "你寻得一位精通解咒的散修，在其帮助下化解了法器上的诅咒，元婴恢复清明。",
+    "category": "fortune",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 3,
+      "constitution": 2
+    },
+    "tags": [
+      "curse_break",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "cursed_artifact"
+  },
+  {
+    "id": "hook_resolve_curse_02",
+    "text": "你修为精进，以强横灵力将法器中的诅咒之力强行炼化，反将其转化为己用。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 4,
+      "cultivation": 30
+    },
+    "tags": [
+      "refining",
+      "cultivation"
+    ],
+    "event_type": "important",
+    "resolves_hook": "cursed_artifact"
+  },
+  {
+    "id": "hook_create_master_secret_01",
+    "text": "师父临终前留下一枚玉简，叮嘱你修为足够后再打开，其中似乎藏着惊天秘密。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "master_event",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ],
+    "creates_hook": {
+      "id": "master_secret",
+      "description": "打开师父遗留玉简",
+      "max_wait": 80
+    }
+  },
+  {
+    "id": "hook_create_blood_feud_01",
+    "text": "你亲眼目睹至亲被强敌所害，鲜血染红了你的衣襟，仇恨的种子深深扎入道心。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 3,
+      "fortune": -2
+    },
+    "tags": [
+      "revenge",
+      "tragedy"
+    ],
+    "event_type": "danger",
+    "creates_hook": {
+      "id": "blood_feud",
+      "description": "为至亲复仇",
+      "max_wait": 120
+    }
+  },
+  {
+    "id": "hook_create_blood_feud_02",
+    "text": "一名修士当众羞辱并重伤了你的恩师，你咬碎牙关却无力阻止，只能将此仇铭记于心。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 4,
+      "charisma": -1
+    },
+    "tags": [
+      "revenge",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "师父"
+    ],
+    "creates_hook": {
+      "id": "blood_feud",
+      "description": "为恩师报仇",
+      "max_wait": 120
+    }
+  },
+  {
+    "id": "hook_resolve_blood_feud_01",
+    "text": "多年后你终于再遇仇人，一番苦战后将其斩于剑下，多年血仇终得了结。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 5,
+      "cultivation": 20
+    },
+    "tags": [
+      "revenge",
+      "combat"
+    ],
+    "event_type": "important",
+    "resolves_hook": "blood_feud"
+  },
+  {
+    "id": "hook_resolve_blood_feud_02",
+    "text": "你在论道大会上堂堂正正击败了当年的仇人，昔日之辱一朝洗雪，心中大石终于落地。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 4,
+      "charisma": 3
+    },
+    "tags": [
+      "revenge",
+      "tournament"
+    ],
+    "event_type": "important",
+    "resolves_hook": "blood_feud"
+  },
+  {
+    "id": "hook_create_sealed_memory_01",
+    "text": "你在突破时灵识深处闪过一段陌生的画面，似乎有人封印了你的一段记忆。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 18,
+    "effects": {
+      "comprehension": 1
+    },
+    "tags": [
+      "mystery",
+      "memory"
+    ],
+    "event_type": "important",
+    "creates_hook": {
+      "id": "sealed_memory",
+      "description": "解开封印的记忆",
+      "max_wait": 100
+    }
+  },
+  {
+    "id": "hook_create_sealed_memory_02",
+    "text": "一位陌生老者看了你一眼，低语道：「你忘了太多东西了。」说完便消失无踪。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "mystery",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "creates_hook": {
+      "id": "sealed_memory",
+      "description": "找回被封印的记忆",
+      "max_wait": 100
+    }
+  },
+  {
+    "id": "hook_resolve_sealed_memory_01",
+    "text": "你在一次闭死关中灵识突破桎梏，尘封的记忆如潮水般涌来——原来你前世竟是一位大能转世。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "comprehension": 5,
+      "cultivation": 30
+    },
+    "tags": [
+      "memory",
+      "insight"
+    ],
+    "event_type": "important",
+    "resolves_hook": "sealed_memory"
+  },
+  {
+    "id": "hook_resolve_sealed_memory_02",
+    "text": "一枚古老的灵符自行碎裂，被封印的记忆重见天日，你终于明白了自己身世的真相。",
+    "category": "fortune",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "comprehension": 4,
+      "willpower": 3
+    },
+    "tags": [
+      "memory",
+      "revelation"
+    ],
+    "event_type": "important",
+    "resolves_hook": "sealed_memory"
+  },
+  {
+    "id": "hook_create_soul_debt_01",
+    "text": "你身受重伤、命悬一线之际，一位路过的前辈以珍贵丹药救了你的性命，分文不取便飘然而去。",
+    "category": "fortune",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 18,
+    "effects": {
+      "constitution": 3,
+      "fortune": 2
+    },
+    "tags": [
+      "gratitude",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "creates_hook": {
+      "id": "soul_debt",
+      "description": "报答救命之恩",
+      "max_wait": 80
+    }
+  },
+  {
+    "id": "hook_create_soul_debt_02",
+    "text": "一位散修将毕生收集的修炼资源赠予你，只说了一句「替我走完这条路」，便含笑坐化。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 15
+    },
+    "tags": [
+      "gratitude",
+      "legacy"
+    ],
+    "event_type": "important",
+    "creates_hook": {
+      "id": "soul_debt",
+      "description": "替恩人完成遗愿",
+      "max_wait": 100
+    }
+  },
+  {
+    "id": "hook_resolve_soul_debt_01",
+    "text": "你终于找到了当年恩人的后人，将其收入门下悉心教导，因果之债就此了结。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 3,
+      "charisma": 3
+    },
+    "tags": [
+      "gratitude",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "soul_debt"
+  },
+  {
+    "id": "hook_resolve_soul_debt_02",
+    "text": "你在恩人的坟前种下一株灵药，默默立誓已践行完毕，天地间似有一丝因果消散。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 4,
+      "fortune": 2
+    },
+    "tags": [
+      "gratitude",
+      "closure"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "soul_debt"
+  },
+  {
+    "id": "hook_create_forbidden_zone_01",
+    "text": "你误入一处被禁制笼罩的山谷，在其中窥见了一座远古祭坛，但禁制之力将你弹了出来。",
+    "category": "fortune",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 18,
+    "effects": {
+      "comprehension": 2
+    },
+    "tags": [
+      "exploration",
+      "mystery"
+    ],
+    "event_type": "important",
+    "creates_hook": {
+      "id": "forbidden_zone",
+      "description": "探索远古禁地",
+      "max_wait": 120
+    }
+  },
+  {
+    "id": "hook_create_forbidden_zone_02",
+    "text": "宗门典籍中记载着一处上古禁地，据传内有化神期大能的洞府遗迹，但至今无人能入。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 18,
+    "effects": {
+      "comprehension": 1
+    },
+    "tags": [
+      "exploration",
+      "legacy"
+    ],
+    "event_type": "normal",
+    "creates_hook": {
+      "id": "forbidden_zone",
+      "description": "探明上古禁地",
+      "max_wait": 120
+    }
+  },
+  {
+    "id": "hook_resolve_forbidden_zone_01",
+    "text": "你修为大进后重返禁地，以强横灵力破开禁制，远古祭坛中的传承终于为你所得。",
+    "category": "fortune",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "comprehension": 5,
+      "cultivation": 50
+    },
+    "tags": [
+      "exploration",
+      "legacy"
+    ],
+    "event_type": "important",
+    "resolves_hook": "forbidden_zone"
+  },
+  {
+    "id": "hook_resolve_forbidden_zone_02",
+    "text": "禁地的封印随岁月流逝已然松动，你趁机闯入，在洞府深处找到了一枚远古储物戒。",
+    "category": "fortune",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "fortune": 5,
+      "cultivation": 40
+    },
+    "tags": [
+      "treasure",
+      "exploration"
+    ],
+    "event_type": "important",
+    "resolves_hook": "forbidden_zone"
+  },
+  {
+    "id": "hook_create_broken_oath_01",
+    "text": "你在金丹大成之际立下道誓：此生必踏入化神之境，否则甘受天道反噬。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 4
+    },
+    "tags": [
+      "oath",
+      "cultivation"
+    ],
+    "event_type": "important",
+    "creates_hook": {
+      "id": "broken_oath",
+      "description": "践行道誓",
+      "max_wait": 150
+    }
+  },
+  {
+    "id": "hook_create_broken_oath_02",
+    "text": "你对天立誓要守护宗门百年不衰，道誓之力化为一道烙印刻入你的元神。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 3,
+      "charisma": 2
+    },
+    "tags": [
+      "oath",
+      "sect"
+    ],
+    "event_type": "important",
+    "creates_hook": {
+      "id": "broken_oath",
+      "description": "践行守护誓言",
+      "max_wait": 150
+    }
+  },
+  {
+    "id": "hook_resolve_broken_oath_01",
+    "text": "你终于突破化神，当年的道誓化为天地共鸣，誓言已践，道心更坚。",
+    "category": "cultivation",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 6,
+      "cultivation": 50
+    },
+    "tags": [
+      "oath",
+      "breakthrough"
+    ],
+    "event_type": "important",
+    "resolves_hook": "broken_oath"
+  },
+  {
+    "id": "hook_resolve_broken_oath_02",
+    "text": "宗门在你的守护下安然度过百年风雨，道誓之力自行消散，你心中一片澄明。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 5,
+      "charisma": 4
+    },
+    "tags": [
+      "oath",
+      "sect"
+    ],
+    "event_type": "important",
+    "resolves_hook": "broken_oath"
+  },
+  {
+    "id": "hook_create_lost_companion_01",
+    "text": "一场秘境崩塌将你与同行之人冲散，你拼命呼喊却再无回应，只能独自离去。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 2,
+      "fortune": -1
+    },
+    "tags": [
+      "separation",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "creates_hook": {
+      "id": "lost_companion",
+      "description": "寻找失散故人",
+      "max_wait": 80
+    }
+  },
+  {
+    "id": "hook_create_lost_companion_02",
+    "text": "你的挚友为掩护你撤退而被传送阵卷走，从此杳无音讯。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "separation",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "creates_hook": {
+      "id": "lost_companion",
+      "description": "寻回失散挚友",
+      "max_wait": 80
+    }
+  },
+  {
+    "id": "hook_resolve_lost_companion_01",
+    "text": "你在一处偏远坊市中意外重逢了当年失散之人，两人相视一笑，多年牵挂化为无言。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "charisma": 3,
+      "willpower": 3
+    },
+    "tags": [
+      "reunion",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "lost_companion"
+  },
+  {
+    "id": "hook_resolve_lost_companion_02",
+    "text": "一封灵鸽传书带来故人的消息，你循着线索找到了对方，久别重逢恍如隔世。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "charisma": 2,
+      "willpower": 4
+    },
+    "tags": [
+      "reunion",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "lost_companion"
   }
 ]

@@ -352,10 +352,13 @@ logger = logging.getLogger(__name__)
 
 # Dramatic keywords that may trigger a destiny pivot
 DRAMATIC_KEYWORDS = {
-    "陞落", "能落", "死亡", "走火入魔", "背叛", "决裂", "化道",
-    "大机缘", "反目", "归隶", "永别", "父子反目", "师徒反目",
-    "衰败", "灭门", "塞穷末路", "兵解", "和解",
+    "陨落", "堕落", "死亡", "走火入魔", "背叛", "决裂", "化道",
+    "大机缘", "反目", "归隐", "永别", "父子反目", "师徒反目",
+    "衰败", "灭门", "穷途末路", "兵解", "和解",
 }
+
+# Cooldown: minimum years between two pivots for the same NPC
+_PIVOT_COOLDOWN_YEARS = 30
 
 
 class NpcDestinyGenerator:
@@ -542,20 +545,26 @@ class NpcDestinyGenerator:
         rel_dict: dict,
         event: dict,
         prev_sentiment: Optional[int] = None,
+        current_age: int = 0,
     ) -> bool:
         """Determine if a dramatic event should trigger a destiny pivot.
 
-        Trigger conditions:
+        Trigger conditions (ALL must pass cooldown first):
         - Sentiment change >= 30 in a single turn
         - Event text contains dramatic keywords and involves this NPC
-        - Relationship type has changed (tracked externally)
         """
         # Already completed destiny
         if npc_dict.get("destiny_completed", False):
             return False
 
+        # Cooldown: prevent frequent pivots for same NPC
+        last_pivot_age = npc_dict.get("_last_pivot_age", -999)
+        if current_age - last_pivot_age < _PIVOT_COOLDOWN_YEARS:
+            return False
+
         npc_name = npc_dict.get("name", "")
-        event_text = event.get("text", "") + event.get("expanded_text", "")
+        # Only check primary text for keywords (not expanded_text to avoid false positives)
+        event_text = event.get("text", "")
 
         # Check if event involves this NPC
         involved_npc = event.get("involved_npc", "")
@@ -568,8 +577,9 @@ class NpcDestinyGenerator:
             if abs(current - prev_sentiment) >= 30:
                 return True
 
-        # Condition 2: Dramatic keywords in event
-        if any(kw in event_text for kw in DRAMATIC_KEYWORDS):
+        # Condition 2: Dramatic keywords in event (require >= 2 keyword hits)
+        hits = sum(1 for kw in DRAMATIC_KEYWORDS if kw in event_text)
+        if hits >= 2:
             return True
 
         return False

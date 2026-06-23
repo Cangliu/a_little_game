@@ -841,12 +841,14 @@ class NPCManager:
                 prev_sentiment = self._get_prev_sentiment(rel_dict)
 
                 if self._destiny_generator.should_pivot(
-                    npc_dict, rel_dict, event, prev_sentiment
+                    npc_dict, rel_dict, event, prev_sentiment,
+                    current_age=state.age,
                 ):
                     success = self._destiny_generator.pivot_destiny(
                         npc_dict, rel_dict, event, state
                     )
                     if success:
+                        npc_dict["_last_pivot_age"] = state.age
                         logger.info(
                             "Destiny pivoted for NPC %s due to event: %s",
                             npc_dict.get("name", "?"),
