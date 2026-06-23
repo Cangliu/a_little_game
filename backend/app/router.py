@@ -5,7 +5,7 @@ from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from .engine import GameDirector
 from .models import Realm, REALM_NAMES, ChoiceRequest
-from .engine.state import get_state
+from .engine.state import get_state, GAME_STATE_STORE
 
 router = APIRouter(prefix="/api/game", tags=["game"])
 
@@ -28,34 +28,52 @@ def start_game():
 
 
 @router.post("/next-year")
-def next_year(data: dict):
+async def next_year(data: dict):
     """Advance the game by one year."""
     game_id = data.get("game_id")
     if not game_id:
         raise HTTPException(status_code=400, detail="Missing game_id")
 
-    try:
-        result = _director.advance_year(game_id)
-        return result.model_dump()
-    except ValueError as e:
-        raise HTTPException(status_code=404, detail=str(e))
+    async with GAME_STATE_STORE.lock(game_id):
+        try:
+            result = _director.advance_year(game_id)
+            # Mark finished if game ended
+            if result.is_dead or result.is_ascended:
+                GAME_STATE_STORE.mark_finished(game_id)
+            return result.model_dump()
+        except ValueError as e:
+            raise HTTPException(status_code=404, detail=str(e))
 
 
 @router.post("/next-year-stream")
-def next_year_stream(data: dict):
+async def next_year_stream(data: dict):
     """Streaming variant: SSE for real-time narrative."""
     game_id = data.get("game_id")
     if not game_id:
         raise HTTPException(status_code=400, detail="Missing game_id")
 
+    # Acquire lock before starting the stream generator
+    # Note: We acquire/release here because streaming generators can't hold async locks.
+    # The game state mutation happens synchronously inside advance_year_stream.
+    lock = GAME_STATE_STORE.lock(game_id)
+    await lock.acquire()
+
     def event_generator():
         try:
+            is_finished = False
             for event in _director.advance_year_stream(game_id):
                 event_type = event["event"]
                 event_data = event["data"]
+                if event_type == "done" and isinstance(event_data, dict):
+                    if event_data.get("is_dead") or event_data.get("is_ascended"):
+                        is_finished = True
                 yield f"event: {event_type}\ndata: {json.dumps(event_data, ensure_ascii=False)}\n\n"
+            if is_finished:
+                GAME_STATE_STORE.mark_finished(game_id)
         except ValueError as e:
             yield f"event: error\ndata: {json.dumps({'detail': str(e)}, ensure_ascii=False)}\n\n"
+        finally:
+            lock.release()
 
     return StreamingResponse(
         event_generator(),
@@ -75,13 +93,14 @@ def get_summary(game_id: str):
 
 
 @router.post("/choose")
-def choose(req: ChoiceRequest):
+async def choose(req: ChoiceRequest):
     """Make a choice for a pending branch event."""
-    try:
-        result = _director.make_choice(req.game_id, req.event_id, req.choice_index)
-        return result
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    async with GAME_STATE_STORE.lock(req.game_id):
+        try:
+            result = _director.make_choice(req.game_id, req.event_id, req.choice_index)
+            return result
+        except ValueError as e:
+            raise HTTPException(status_code=400, detail=str(e))
 
 
 @router.get("/state/{game_id}")

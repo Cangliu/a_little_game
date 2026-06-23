@@ -151,6 +151,15 @@ class GameState(BaseModel):
     # 宗门系统
     sect_membership: Optional[dict] = None  # SectMembership dict (None=散修)
     sect_world: dict = {}                   # {sects: {id: Sect}, relations: [SectRelation]}
+    # 动态因果链系统
+    causal_chains: list[dict] = []           # 活跃的因果链 (CausalChain dicts)
+    # Saga 涌现系统
+    sagas: list[dict] = []                   # 活跃的 Saga
+    completed_arcs_history: list[dict] = []  # 已完成 Arc 的摘要 (用于 Saga 检测)
+    # 世界纪元系统
+    world_eras: list[dict] = []              # 历史纪元记录
+    active_era: Optional[dict] = None        # 当前活跃纪元
+    next_era_check_age: int = 0              # 下次检查纪元触发的年龄
 
 
 class StartGameRequest(BaseModel):

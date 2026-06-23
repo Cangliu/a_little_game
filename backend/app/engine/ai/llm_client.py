@@ -3,12 +3,17 @@
 Uses the OpenAI SDK with custom base_url pointing to DeepSeek.
 When API key is missing or call times out, returns None to trigger
 JSON fallback narratives.
+
+Integrates LLMCache: low-temperature calls (< 0.8) are automatically cached.
 """
 from __future__ import annotations
 
 import os
+import time
 import logging
 from typing import Optional, Generator
+
+from .llm_cache import get_llm_cache
 
 try:
     from openai import OpenAI
@@ -75,11 +80,22 @@ class LLMClient:
         This is the primary method for the game engine (not async).
         On timeout or API error, returns None so the caller can
         fall back to JSON text.
+
+        Low-temperature calls (< 0.8) are automatically cached.
         """
         if not self._available:
             return None
 
+        # Check cache for low-temperature (deterministic) calls
+        use_cache = temperature < 0.8
+        if use_cache:
+            cache = get_llm_cache()
+            cached = cache.get(system_prompt, user_prompt)
+            if cached is not None:
+                return cached
+
         try:
+            t0 = time.time()
             response = self._client.chat.completions.create(
                 model=self.model,
                 messages=[
@@ -91,7 +107,15 @@ class LLMClient:
                 stream=False,
             )
             content = response.choices[0].message.content
-            return content.strip() if content else None
+            result = content.strip() if content else None
+            elapsed = time.time() - t0
+            logger.debug("LLM sync call: %.2fs, %d tokens", elapsed, max_tokens)
+
+            # Store in cache if applicable
+            if result and use_cache:
+                cache.put(system_prompt, user_prompt, result)
+
+            return result
         except Exception as e:
             logger.warning("LLM generation failed: %s", e)
             return None

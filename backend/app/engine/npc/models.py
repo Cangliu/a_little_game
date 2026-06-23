@@ -63,6 +63,11 @@ class NPC(BaseModel):
     destiny_beats: list = []         # NPC命运节拍 (from npc_destiny templates)
     current_destiny_index: int = 0   # 当前节拍索引
     destiny_completed: bool = False  # 命运线是否已完成
+    # 人格深度字段 (Task 8)
+    motivation: str = ""             # 核心动机 ("追求剑道极致" / "守护宗门安宁")
+    secret: str = ""                 # 隐藏秘密 ("实为魔修后裔" / "暗恋主角多年")
+    growth_arc: str = ""             # 成长方向 ("从冷漠到温情" / "从正直到堕落")
+    betrayal_threshold: int = -1     # 背叛触发条件 (好感度降至此值以下可能背叛, -1=不会背叛)
 
 
 class NPCInteraction(BaseModel):

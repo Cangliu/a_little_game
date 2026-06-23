@@ -20,7 +20,9 @@ from .state import GAME_STATES, create_game, get_state
 from .ai import LLMClient, PromptBuilder
 from .npc import NPCManager
 from .memory import MemoryManager
-from .plot_hooks import PlotHookManager
+from .causality import CausalityManager
+from .world_era import WorldEraManager
+from .saga import SagaManager
 from .event_npc_resolver import EventNPCResolver
 from .story_arc import StoryArcPlanner
 from .main_storyline import MainStorylinePlanner
@@ -47,7 +49,11 @@ class GameDirector:
             prompt_builder=self.prompt_builder,
         )
         # Plot hooks (cause-effect chains)
-        self.hook_manager = PlotHookManager()
+        self.hook_manager = CausalityManager()
+        # World era system
+        self.era_manager = WorldEraManager()
+        # Saga emergence system
+        self.saga_manager = SagaManager()
         # Event-NPC resolver (placeholder replacement)
         self.npc_resolver = EventNPCResolver(self.npc_manager)
         # Story arc planner
@@ -87,6 +93,8 @@ class GameDirector:
             hook_manager=self.hook_manager,
             arc_planner=self.arc_planner,
             storyline_planner=self.storyline_planner,
+            saga_manager=self.saga_manager,
+            era_manager=self.era_manager,
         )
 
     # ── Public API ───────────────────────────────────────────────────
@@ -96,6 +104,8 @@ class GameDirector:
         state = create_game()
         # Initialize sect world
         self.sect_manager.initialize_world(state)
+        # Initialize world era system
+        self.era_manager.initialize(state)
         return state
 
     def advance_year(self, game_id: str) -> NextYearResponse:
@@ -159,6 +169,10 @@ class GameDirector:
 
         # Phase 6.1: Priority events (NPC/Sect) - pure rules, no LLM
         priority_events = []
+        # World era transition check
+        era_event = self.era_manager.check_era_transition(state)
+        if era_event:
+            priority_events.append(era_event)
         npc_events = self.npc_manager.check_npc_events(state)
         priority_events.extend(npc_events)
         sect_events = self.sect_manager.check_sect_events(state)
@@ -198,6 +212,8 @@ class GameDirector:
             hook_adjustments=hook_adjustments if hook_adjustments else None,
             arc_keywords=arc_keywords if arc_keywords else None,
         )
+        # Apply causal chain weight boosts to candidates
+        self.hook_manager.match_candidates_with_chains(state, candidates)
         director_result = self.event_director.direct_event(candidates, state)
         main_ev = candidates[director_result["chosen_index"]]["event"]
         main_ev["expanded_text"] = director_result["narrative"]
@@ -224,6 +240,10 @@ class GameDirector:
         self.npc_resolver.resolve_event(main_ev, state)
         # Process plot hooks (create/resolve)
         self.hook_manager.process_event(state, main_ev)
+        # Handle dynamic causal chain from LLM output
+        causal_chain_data = director_result.get("causal_chain")
+        if causal_chain_data and isinstance(causal_chain_data, dict):
+            self.hook_manager.create_causal_chain(state, causal_chain_data, main_ev)
         # Check for chain event trigger
         trigger_id = main_ev.get("effects", {}).get("trigger_event_id", "")
         if trigger_id:
@@ -350,6 +370,10 @@ class GameDirector:
 
         # Phase 6.1: Priority events
         priority_events = []
+        # World era transition check
+        era_event = self.era_manager.check_era_transition(state)
+        if era_event:
+            priority_events.append(era_event)
         npc_events = self.npc_manager.check_npc_events(state)
         priority_events.extend(npc_events)
         sect_events = self.sect_manager.check_sect_events(state)
@@ -387,6 +411,8 @@ class GameDirector:
             hook_adjustments=hook_adjustments if hook_adjustments else None,
             arc_keywords=arc_keywords if arc_keywords else None,
         )
+        # Apply causal chain weight boosts to candidates
+        self.hook_manager.match_candidates_with_chains(state, candidates)
 
         # Collect streaming result
         meta_data = None
@@ -457,6 +483,10 @@ class GameDirector:
             self.realm_system.process_cultivation(state, years=event_duration)
         self.npc_resolver.resolve_event(main_ev, state)
         self.hook_manager.process_event(state, main_ev)
+        # Handle dynamic causal chain from streaming LLM output
+        causal_chain_data = meta_data.get("causal_chain")
+        if causal_chain_data and isinstance(causal_chain_data, dict):
+            self.hook_manager.create_causal_chain(state, causal_chain_data, main_ev)
         trigger_id = main_ev.get("effects", {}).get("trigger_event_id", "")
         if trigger_id:
             state.pending_chain_events.append(trigger_id)
@@ -565,17 +595,29 @@ class GameDirector:
         self.memory_manager.record_events(state, events)
         self.memory_manager.tick_year(state)
         self.npc_manager.age_npcs(state)
-        # Advance story arcs based on events
+        # Advance story arcs based on events + check for saga emergence
         for ev in events:
-            self.arc_planner.advance_arc_beat(state, ev)
+            completed_arc = self.arc_planner.advance_arc_beat(state, ev)
+            if completed_arc:
+                self.saga_manager.on_arc_completed(state, completed_arc)
+        # Check saga completion conditions
+        self.saga_manager.check_saga_completion(state)
         # Advance main storyline + flesh-to-skeleton feedback (血肉反哺骨骼)
         self.storyline_planner.advance_destiny(state, events)
+        # Check expiring causal chains
+        expiring_chains = self.hook_manager.check_expiring_chains(state)
+        for chain in expiring_chains:
+            resolution = self.hook_manager.generate_forced_resolution(state, chain)
+            if resolution:
+                events.append(resolution)
         # ── Tension curve update ───────────────────────────────────────
         delta = 0.0
         for ev in events:
             et = ev.get("event_type", "normal")
             delta += TENSION_BY_EVENT_TYPE.get(et, 0.0)
-        state.tension = max(0.0, min(100.0, state.tension + delta - TENSION_DECAY_PER_TURN))
+        # Apply world era tension modifier
+        era_tension_mod = self.era_manager.get_tension_modifier(state)
+        state.tension = max(0.0, min(100.0, state.tension + delta - TENSION_DECAY_PER_TURN + era_tension_mod))
         self.context.update(state, events)
 
     @staticmethod

@@ -27,6 +27,56 @@ RIVAL_EVENT_INTERVAL = (10, 20)
 REUNION_MIN_ABSENCE = 30
 REUNION_SENTIMENT_THRESHOLD = 70
 
+# ── NPC Personality Depth Pools (Task 8) ─────────────────────────────────
+
+MOTIVATION_POOL = [
+    "追求剑道极致", "守护宗门安宁", "寻找失散的亲人",
+    "突破自身血脉诅咒", "实现师父遗愿", "追求永生不死",
+    "报灭门之仇", "集齐古方炼制神丹", "探索天地大道真谛",
+    "护佑一方百姓平安", "证明自己的修炼之道", "寻回前世记忆",
+    "成为天下第一的炼丹师", "解开古修士留下的谜团",
+]
+
+SECRET_POOL = [
+    "实为魔修后裔", "暗恋主角多年", "曾背叛过前一任师父",
+    "身上封印着古魔", "真实身份是皇族血脉", "曾经误杀无辜之人",
+    "拥有预见未来的能力", "寿元已所剩无几", "被一个强大的存在监视着",
+    "其实是被放逐的上界仙人", "体内藏有远古传承", "心中其实早已不信任任何人",
+    "", "", "",  # 30% chance of no secret
+]
+
+GROWTH_ARC_POOL = [
+    "从冷漠到温情", "从正直到堕落", "从懦弱到坚强",
+    "从狂傲到谦逊", "从天真到深沉", "从孤僻到开放",
+    "从执着到释然", "从自私到无私", "从怖懦到无畏",
+    "", "",  # 20% chance of no defined growth arc
+]
+
+# ── NPC Personality Depth Pools (Task 8) ─────────────────────────────────
+
+MOTIVATION_POOL = [
+    "追求剑道极致", "守护宗门安宁", "寻找失散的亲人",
+    "突破自身血脉诅咒", "实现师父遗愿", "追求永生不死",
+    "报灭门之仇", "集齐古方炼制神丹", "探索天地大道真谛",
+    "护佑一方百姓平安", "证明自己的修炼之道", "寻回前世记忆",
+    "成为天下第一的炼丹师", "解开古修士留下的谜团",
+]
+
+SECRET_POOL = [
+    "实为魔修后裔", "暗恋主角多年", "曾背叛过前一任师父",
+    "身上封印着古魔", "真实身份是皇族血脉", "曾经误杀无辜之人",
+    "拥有预见未来的能力", "寿元已所剩无几", "被一个强大的存在监视着",
+    "其实是被放逐的上界仙人", "体内藏有远古传承", "心中其实早已不信任任何人",
+    "", "", "",  # 30% chance of no secret
+]
+
+GROWTH_ARC_POOL = [
+    "从冷漠到温情", "从正直到堕落", "从懦弱到坚强",
+    "从狂傲到谦逊", "从天真到深沉", "从孤僻到开放",
+    "从执着到释然", "从自私到无私", "从怖懦到无畏",
+    "", "",  # 20% chance of no defined growth arc
+]
+
 
 class NPCManager:
     """Manages NPC entities and their relationships with the player."""
@@ -74,6 +124,15 @@ class NPCManager:
         # NPC lifespan based on realm
         npc_max_age = REALM_MAX_AGE.get(Realm(npc_realm), 80)
 
+        # Personality depth (random combination from pools)
+        motivation = random.choice(MOTIVATION_POOL)
+        secret = random.choice(SECRET_POOL)
+        growth_arc = random.choice(GROWTH_ARC_POOL)
+        # Betrayal threshold: only for rival/enemy types or cunning/fierce
+        betrayal_threshold = -1
+        if personality in ("狡诈", "暴烈") and random.random() < 0.4:
+            betrayal_threshold = random.randint(15, 30)
+
         npc = NPC(
             npc_id=npc_id,
             name=name,
@@ -86,6 +145,10 @@ class NPCManager:
             appearance_count=1,
             backstory=backstory,
             max_age=npc_max_age,
+            motivation=motivation,
+            secret=secret,
+            growth_arc=growth_arc,
+            betrayal_threshold=betrayal_threshold,
         )
 
         # Register in state
@@ -466,7 +529,10 @@ class NPCManager:
         }
 
     def get_npc_context_string(self, state: GameState) -> str:
-        """Build a string summarizing all NPC relationships for AI prompts."""
+        """Build a string summarizing all NPC relationships for AI prompts.
+
+        Includes personality depth fields (motivation/secret hint) for richer context.
+        """
         lines = []
         for rel_dict in state.relationships:
             npc_dict = state.npc_registry.get(rel_dict.get("npc_id", ""))
@@ -477,7 +543,17 @@ class NPCManager:
             rel_type = rel_dict.get("relation_type", "泛泛之交")
             sentiment = rel_dict.get("sentiment", 50)
             realm_name = REALM_NAMES.get(Realm(npc_dict.get("realm", 0)), "凡人")
-            lines.append(f"{rel_type}: {name}({realm_name}, {alive}, 好感{sentiment})")
+            motivation = npc_dict.get("motivation", "")
+            # Only reveal secret hint if sentiment >= 80 (close relationship)
+            secret_hint = ""
+            if sentiment >= 80 and npc_dict.get("secret"):
+                secret_hint = f", 似乎有隱情"
+
+            line = f"{rel_type}: {name}({realm_name}, {alive}, 好感{sentiment}"
+            if motivation:
+                line += f", 志向:{motivation}"
+            line += f"{secret_hint})"
+            lines.append(line)
 
         return " / ".join(lines) if lines else "暂无已知人际关系"
 

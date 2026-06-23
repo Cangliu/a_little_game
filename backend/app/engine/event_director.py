@@ -18,9 +18,11 @@ from typing import Optional, Generator, TYPE_CHECKING
 if TYPE_CHECKING:
     from .ai.llm_client import LLMClient
     from .npc.npc_manager import NPCManager
-    from .plot_hooks import PlotHookManager
+    from .causality import CausalityManager
     from .story_arc import StoryArcPlanner
     from .main_storyline import MainStorylinePlanner
+    from .saga import SagaManager
+    from .world_era import WorldEraManager
     from ..models import GameState
 
 from .ai.prompt_templates import EVENT_DIRECTOR_SYSTEM, EVENT_DIRECTOR_USER, EVENT_DIRECTOR_STREAM_SYSTEM
@@ -42,15 +44,19 @@ class EventDirector:
         self,
         llm_client: "LLMClient",
         npc_manager: "NPCManager",
-        hook_manager: "PlotHookManager",
+        hook_manager: "CausalityManager",
         arc_planner: "StoryArcPlanner",
         storyline_planner: "MainStorylinePlanner",
+        saga_manager: "SagaManager" = None,
+        era_manager: "WorldEraManager" = None,
     ):
         self._llm = llm_client
         self._npc_manager = npc_manager
         self._hook_manager = hook_manager
         self._arc_planner = arc_planner
         self._storyline_planner = storyline_planner
+        self._saga_manager = saga_manager
+        self._era_manager = era_manager
 
     def direct_event(self, candidates: list[dict], state: "GameState") -> dict:
         """Single LLM call to choose event, generate narrative, and optionally branch.
@@ -179,12 +185,26 @@ class EventDirector:
                     )
                     break
 
-        # Unresolved hooks
+        # Unresolved hooks + causal chains context
         hooks_str = "无"
         if self._hook_manager:
             h = self._hook_manager.get_hooks_context_for_ai(state)
             if h:
                 hooks_str = h
+            # Add causal chains context
+            chains_ctx = self._hook_manager.get_chains_context_for_ai(state)
+        else:
+            chains_ctx = ""
+
+        # Saga context
+        saga_context = ""
+        if self._saga_manager:
+            saga_context = self._saga_manager.get_saga_context_for_ai(state) or ""
+
+        # World era context
+        era_context = ""
+        if self._era_manager:
+            era_context = self._era_manager.get_era_context_for_ai(state) or ""
 
         # Arc + storyline context
         arc_context = ""
@@ -231,6 +251,9 @@ class EventDirector:
             arc_context=arc_context or "无活跃剧情线",
             biography=bio,
             recent_events=recent or "暂无近期经历",
+            world_era_context=era_context or "天下太平，无特殊大势",
+            saga_context=saga_context or "无活跃长线Saga",
+            causal_chains_context=chains_ctx or "无活跃因果链",
         )
 
         return system_prompt, user_prompt
@@ -292,6 +315,7 @@ class EventDirector:
             "narrative": narrative,
             "has_choice": has_choice,
             "branches": branches,
+            "causal_chain": data.get("causal_chain"),  # Optional: LLM-generated chain
         }
 
     def _sanitize_branches(self, branches: list) -> Optional[list[dict]]:

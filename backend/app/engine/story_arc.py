@@ -142,16 +142,19 @@ class StoryArcPlanner:
         state.active_arcs.extend(arcs)
         return state.active_arcs
 
-    def advance_arc_beat(self, state: "GameState", event: dict) -> None:
+    def advance_arc_beat(self, state: "GameState", event: dict) -> Optional[dict]:
         """Check if an event advances any active story arc.
 
         Matches event text/tags against current arc beats to
         progress the narrative.
+
+        Returns: The arc dict if it just completed, else None.
         """
         event_text = event.get("text", "")
         event_tags = set(event.get("tags", []))
         event_category = event.get("category", "")
         event_npc = event.get("involved_npc", "")
+        completed_arc = None
 
         for arc in state.active_arcs:
             if arc.get("is_completed"):
@@ -163,6 +166,7 @@ class StoryArcPlanner:
             if idx >= len(beats):
                 arc["is_completed"] = True
                 arc["phase"] = "resolution"
+                completed_arc = arc
                 continue
 
             current_beat = beats[idx] if idx < len(beats) else ""
@@ -183,11 +187,14 @@ class StoryArcPlanner:
                 else:
                     arc["phase"] = "resolution"
                     arc["is_completed"] = True
+                    completed_arc = arc
 
                 logger.debug(
                     "Arc '%s' advanced to beat %d/%d (phase: %s)",
                     arc.get("theme", "?"), idx + 1, len(beats), arc["phase"]
                 )
+
+        return completed_arc
 
     def get_arcs_context_for_ai(self, state: "GameState") -> str:
         """Build context string about active arcs for AI prompts."""

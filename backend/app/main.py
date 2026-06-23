@@ -1,4 +1,9 @@
 """FastAPI main entry point for the cultivation life simulator."""
+from .logging_config import setup_logging
+
+# Initialize logging before anything else
+setup_logging(log_dir="logs", level="INFO")
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .router import router
