@@ -263,8 +263,18 @@ _BEAT_REALM = {
 
 # Significant event keywords that can trigger storyline pivots
 PIVOT_TRIGGER_KEYWORDS = [
-    "陨落", "走火入魔", "大机缘", "生死", "背叛", "传承",
-    "结仇", "拜师", "道侣", "突破", "灵根", "重伤",
+    # 生死类
+    "陨落", "生死", "重伤", "濒死", "牺牲", "死别",
+    # 重大转折类
+    "走火入魔", "大机缘", "背叛", "决裂", "反目", "绝交",
+    # 命运节点类
+    "传承", "拜师", "道侣", "结仇", "结义",
+    # 境界突破类
+    "突破", "灵根", "飞升", "渡劫",
+    # 宗门变故类
+    "灭门", "叛出", "逆伐", "放逐",
+    # 其他戴剧性事件
+    "失踪", "囚禁", "解封", "复仇", "和解", "归隐",
 ]
 
 
@@ -408,7 +418,7 @@ class MainStorylinePlanner:
         - Major status change (走火入魔, 大机缘)
         - Hook creation (creates_hook field)
         """
-        event_text = ev_text = event.get("text", "")
+        event_text = event.get("text", "")
         event_tags = set(event.get("tags", []))
         involved_npc = event.get("involved_npc", "")
         creates_hook = event.get("creates_hook")
@@ -417,9 +427,8 @@ class MainStorylinePlanner:
         is_pivot = False
         pivot_reason = ""
 
-        # Only trigger pivots on truly dramatic events (not generic ones like "突破")
-        dramatic_keywords = ["陨落", "走火入魔", "大机缘", "背叛", "永别", "决裂"]
-        for kw in dramatic_keywords:
+        # Only trigger pivots on truly dramatic events — reuse module-level PIVOT_TRIGGER_KEYWORDS
+        for kw in PIVOT_TRIGGER_KEYWORDS:
             if kw in event_text:
                 is_pivot = True
                 pivot_reason = f"关键事件: {kw}"

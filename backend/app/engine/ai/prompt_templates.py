@@ -416,6 +416,9 @@ EVENT_DIRECTOR_USER = """【传记摘要】
 【近期经历】
 {recent_events}
 
+【相关记忆】
+{relevant_memories}
+
 【候选事件】
 {candidates_text}
 

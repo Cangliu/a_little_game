@@ -118,6 +118,9 @@ class SagaManager:
         if state.age - last_omen_age < 20:
             return None
 
+        # Track previously used omen themes to avoid repetition
+        used_omen_keys: set = getattr(state, '_used_omen_keys', set())
+
         # Check near-threshold patterns between recent arcs
         recent_arcs = state.completed_arcs_history[-6:]
         for i, arc_a in enumerate(recent_arcs):
@@ -134,8 +137,17 @@ class SagaManager:
                 if kw_overlap >= _OMEN_KEYWORD_THRESHOLD and not self._would_form_saga(npc_overlap, kw_overlap):
                     npc = npc_a or npc_b or "某人"
                     theme = "、".join(list(kw_a & kw_b)[:2]) or "命运"
+
+                    # Skip if this npc+theme combination was already used
+                    omen_key = f"{npc}_{theme}"
+                    if omen_key in used_omen_keys:
+                        continue
+
                     template = random.choice(_OMEN_TEMPLATES)
                     state._last_omen_age = state.age
+                    # Record this omen to avoid future repetition
+                    used_omen_keys.add(omen_key)
+                    state._used_omen_keys = used_omen_keys
                     return template.format(npc=npc, theme=theme)
 
         return None
@@ -322,22 +334,20 @@ class SagaManager:
         - Related causal chains are all resolved
         - Momentum decays to 0
         """
+        # Pre-build name→alive lookup for O(1) checks
+        alive_names: set[str] = {
+            npc_dict.get("name", "")
+            for npc_dict in state.npc_registry.values()
+            if npc_dict.get("is_alive", True)
+        }
+
         for saga in state.sagas:
             if not saga.get("is_active"):
                 continue
 
             # Check NPC death
             npcs = saga.get("involved_npcs", [])
-            all_npcs_dead = True
-            for npc_name in npcs:
-                for npc_dict in state.npc_registry.values():
-                    if npc_dict.get("name") == npc_name and npc_dict.get("is_alive", True):
-                        all_npcs_dead = False
-                        break
-                if not all_npcs_dead:
-                    break
-
-            if all_npcs_dead and npcs:
+            if npcs and not any(n in alive_names for n in npcs):
                 saga["is_active"] = False
                 logger.info("Saga completed (NPCs dead): '%s'", saga.get("theme", ""))
                 continue

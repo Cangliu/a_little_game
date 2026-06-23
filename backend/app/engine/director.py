@@ -5,6 +5,7 @@ pipeline that fixes execution-order issues and enables AI integration.
 Now includes NPC system, memory management, LLM narrative, plot hooks,
 event-NPC binding, and story arc planning.
 """
+import random as _rand
 from typing import Generator
 
 from ..models import GameState, NextYearResponse, LifeSummary, Realm, REALM_NAMES
@@ -16,7 +17,7 @@ from .realm_system import RealmSystem
 from .death_system import DeathSystem
 from .narrative import NarrativeProvider
 from .context import GameContext
-from .state import GAME_STATES, create_game, get_state
+from .state import create_game, get_state
 from .ai import LLMClient, PromptBuilder
 from .npc import NPCManager
 from .memory import MemoryManager
@@ -27,7 +28,6 @@ from .event_npc_resolver import EventNPCResolver
 from .story_arc import StoryArcPlanner
 from .main_storyline import MainStorylinePlanner
 from .sect import SectManager
-from .choice_generator import ChoiceGenerator
 from .event_director import EventDirector
 
 
@@ -80,13 +80,6 @@ class GameDirector:
         )
         # Sect system (独立宗门策略系统)
         self.sect_manager = SectManager()
-        # Choice generator (LLM动态选择 - 保留作为降级备用)
-        self.choice_generator = ChoiceGenerator(
-            llm_client=self.llm_client,
-            prompt_builder=self.prompt_builder,
-            npc_manager=self.npc_manager,
-            hook_manager=self.hook_manager,
-        )
         # Event Director (统一LLM调用: 选事件+叙事+分支)
         self.event_director = EventDirector(
             llm_client=self.llm_client,
@@ -124,7 +117,6 @@ class GameDirector:
             raise ValueError("Pending choice must be resolved first")
 
         # Variable time step based on realm
-        import random as _rand
         min_step, max_step = TIME_STEP_BY_REALM.get(state.realm, (1, 1))
         time_step = _rand.randint(min_step, max_step)
         state.age += time_step
@@ -172,6 +164,8 @@ class GameDirector:
         # Phase 6: Event selection via unified LLM Director
         # Get hook weight adjustments for event selection
         hook_adjustments = self.hook_manager.get_weight_adjustments(state)
+        # Get world era category weight adjustments
+        era_adjustments = self.era_manager.get_era_weight_adjustments(state)
         # Get story arc keywords for event selection
         arc_keywords = self._get_arc_keywords(state)
         # Get destiny keywords from main storyline (骨骼引导血肉, ×3 boost)
@@ -198,6 +192,23 @@ class GameDirector:
         crisis_event = self.sect_manager.check_sect_crisis(state)
         if crisis_event:
             priority_events.append(crisis_event)
+        # Sect political intrigue (faction struggles, espionage, etc.)
+        politics_event = self.sect_manager.check_sect_politics(state)
+        if politics_event:
+            priority_events.append(politics_event)
+        # Check expulsion / demotion (reputation-based)
+        expulsion = self.sect_manager.check_expulsion(state)
+        if expulsion:
+            priority_events.append(expulsion)
+        else:
+            demotion = self.sect_manager.check_demotion(state)
+            if demotion:
+                priority_events.append(demotion)
+        # Wandering cultivator may get recruited by a new sect
+        if not state.sect_membership:
+            opportunity = self.sect_manager.check_new_sect_opportunity(state)
+            if opportunity:
+                priority_events.append(opportunity)
         # NPC destiny advancement
         destiny_events = self.npc_manager.advance_npc_destiny(state)
         priority_events.extend(destiny_events)
@@ -223,6 +234,7 @@ class GameDirector:
             state, count=10,
             hook_adjustments=hook_adjustments if hook_adjustments else None,
             arc_keywords=arc_keywords if arc_keywords else None,
+            era_adjustments=era_adjustments if era_adjustments else None,
         )
         # Apply causal chain weight boosts to candidates
         self.hook_manager.match_candidates_with_chains(state, candidates)
@@ -340,7 +352,6 @@ class GameDirector:
             raise ValueError("Pending choice must be resolved first")
 
         # Variable time step based on realm
-        import random as _rand
         min_step, max_step = TIME_STEP_BY_REALM.get(state.realm, (1, 1))
         time_step = _rand.randint(min_step, max_step)
         state.age += time_step
@@ -389,6 +400,7 @@ class GameDirector:
 
         # Phase 6: Event selection
         hook_adjustments = self.hook_manager.get_weight_adjustments(state)
+        era_adjustments = self.era_manager.get_era_weight_adjustments(state)
         arc_keywords = self._get_arc_keywords(state)
         destiny_keywords = self.storyline_planner.get_destiny_keywords(state)
         if destiny_keywords:
@@ -412,6 +424,23 @@ class GameDirector:
         crisis_event = self.sect_manager.check_sect_crisis(state)
         if crisis_event:
             priority_events.append(crisis_event)
+        # Sect political intrigue (streaming path)
+        politics_event = self.sect_manager.check_sect_politics(state)
+        if politics_event:
+            priority_events.append(politics_event)
+        # Check expulsion / demotion (streaming path)
+        expulsion = self.sect_manager.check_expulsion(state)
+        if expulsion:
+            priority_events.append(expulsion)
+        else:
+            demotion = self.sect_manager.check_demotion(state)
+            if demotion:
+                priority_events.append(demotion)
+        # Wandering cultivator may get recruited (streaming path)
+        if not state.sect_membership:
+            opportunity = self.sect_manager.check_new_sect_opportunity(state)
+            if opportunity:
+                priority_events.append(opportunity)
         destiny_events = self.npc_manager.advance_npc_destiny(state)
         priority_events.extend(destiny_events)
 
@@ -436,6 +465,7 @@ class GameDirector:
             state, count=10,
             hook_adjustments=hook_adjustments if hook_adjustments else None,
             arc_keywords=arc_keywords if arc_keywords else None,
+            era_adjustments=era_adjustments if era_adjustments else None,
         )
         # Apply causal chain weight boosts to candidates
         self.hook_manager.match_candidates_with_chains(state, candidates)
@@ -825,7 +855,7 @@ class GameDirector:
             attr_bonus = (attr_value - 5) * 2
 
         final_rate = max(10, min(95, base_rate + attr_bonus))  # Clamp 10%-95%
-        is_success = random.random() * 100 < final_rate
+        is_success = _rand.random() * 100 < final_rate
         return is_success, final_rate
 
     def get_life_summary(self, game_id: str) -> LifeSummary:

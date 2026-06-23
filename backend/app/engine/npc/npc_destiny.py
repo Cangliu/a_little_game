@@ -350,11 +350,21 @@ if TYPE_CHECKING:
 
 logger = logging.getLogger(__name__)
 
-# Dramatic keywords that may trigger a destiny pivot
+# Dramatic keywords that may trigger a destiny pivot (30 keywords, 6 categories)
+# Note: "道侣" excluded — it appears in too many normal events, causing false pivots
 DRAMATIC_KEYWORDS = {
-    "陨落", "堕落", "死亡", "走火入魔", "背叛", "决裂", "化道",
-    "大机缘", "反目", "归隐", "永别", "父子反目", "师徒反目",
-    "衰败", "灭门", "穷途末路", "兵解", "和解",
+    # 生死类
+    "陨落", "生死", "重伤", "濒死", "牺牲", "死别",
+    # 重大转折
+    "走火入魔", "大机缘", "背叛", "决裂", "反目", "绝交",
+    # 命运节点
+    "传承", "拜师", "诀别", "结仇", "结义", "定情", "立誓",
+    # 境界突破
+    "突破", "灵根", "飞升", "渡劫",
+    # 宗门变故
+    "灭门", "叛出", "逆伐", "放逐",
+    # 其他戏剧性
+    "失踪", "囚禁", "解封", "复仇", "和解", "归隐",
 }
 
 # Cooldown: minimum years between two pivots for the same NPC

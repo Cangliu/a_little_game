@@ -93,7 +93,8 @@ class DeathSystem:
         if state.realm == 0:
             death_chance = self._mortal_death_chance(state)
         else:
-            death_chance = 0.0005 * (age_ratio ** 3) * 5
+            # Cultivator accidental death: very low baseline, cubic age scaling
+            death_chance = 0.0005 * (age_ratio ** 3)
 
         # Fortune reduces death chance
         death_chance *= max(0.1, 1 - state.attributes.fortune * 0.03)

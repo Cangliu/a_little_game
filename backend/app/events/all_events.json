@@ -124113,5 +124113,769 @@
     ],
     "event_type": "fortune",
     "resolves_hook": "lost_companion"
+  },
+  {
+    "text": "你参悟虚空法则，肉身化为元婴遨游太虚。",
+    "category": "cultivation",
+    "event_type": "important",
+    "effects": {
+      "cultivation": 80,
+      "comprehension": 2
+    },
+    "tags": [
+      "breakthrough_insight",
+      "nascent_soul"
+    ],
+    "id": "hrealm_ns_000",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你以元婴之力凝炼本命法宝，灵力如江河汇入其中。",
+    "category": "cultivation",
+    "event_type": "normal",
+    "effects": {
+      "cultivation": 50
+    },
+    "tags": [
+      "artifact_forging"
+    ],
+    "id": "hrealm_ns_001",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你闭关三十年，于枯坐中领悟了一丝天地法则。",
+    "category": "cultivation",
+    "event_type": "fortune",
+    "effects": {
+      "cultivation": 60,
+      "comprehension": 1
+    },
+    "tags": [
+      "meditation",
+      "insight"
+    ],
+    "id": "hrealm_ns_002",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你炼化一株万年灵药，元婴增长了一圈。",
+    "category": "cultivation",
+    "event_type": "fortune",
+    "effects": {
+      "cultivation": 45,
+      "constitution": 1
+    },
+    "tags": [
+      "elixir",
+      "growth"
+    ],
+    "id": "hrealm_ns_003",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你开辟了一方小千世界，作为自己的道场。",
+    "category": "cultivation",
+    "event_type": "important",
+    "effects": {
+      "cultivation": 70,
+      "willpower": 1
+    },
+    "tags": [
+      "realm_creation"
+    ],
+    "id": "hrealm_ns_004",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "数位元婴老怪设宴，你被邀请列席，觥筹交错间暗藏杀机。",
+    "category": "social",
+    "event_type": "important",
+    "effects": {
+      "charisma": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "high_society"
+    ],
+    "id": "hrealm_ns_005",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "一位即将突破化神的前辈请你护法，你从旁观悟出诸多感触。",
+    "category": "social",
+    "event_type": "fortune",
+    "effects": {
+      "cultivation": 40,
+      "comprehension": 2
+    },
+    "tags": [
+      "guardian",
+      "learning"
+    ],
+    "id": "hrealm_ns_006",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你收到远古传承者的玉简，邀你加入一个隐秘的修士联盟。",
+    "category": "social",
+    "event_type": "important",
+    "effects": {
+      "fortune": 1,
+      "charisma": 1
+    },
+    "tags": [
+      "secret_alliance"
+    ],
+    "id": "hrealm_ns_007",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "一头万年老妖苏醒，视你领地为猎场。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "cultivation": 30,
+      "constitution": -1
+    },
+    "tags": [
+      "ancient_beast",
+      "territory"
+    ],
+    "id": "hrealm_ns_008",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "空间裂缝突然出现在你洞府附近，异界煞气汹涌而出。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "cultivation": 20,
+      "willpower": 1
+    },
+    "tags": [
+      "void_rift",
+      "danger"
+    ],
+    "id": "hrealm_ns_009",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你遭到不明强者的神识扫描，对方似乎在寻找什么。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious_threat"
+    ],
+    "id": "hrealm_ns_010",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你在虚空夹缝中发现了一处远古仙人遗府。",
+    "category": "fortune",
+    "event_type": "fortune",
+    "effects": {
+      "cultivation": 100,
+      "fortune": 1
+    },
+    "tags": [
+      "ancient_ruin",
+      "treasure"
+    ],
+    "id": "hrealm_ns_011",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "一柄上古仙剑认你为主，剑灵苏醒后与你缔结契约。",
+    "category": "fortune",
+    "event_type": "fortune",
+    "effects": {
+      "cultivation": 60,
+      "constitution": 1
+    },
+    "tags": [
+      "artifact",
+      "sword"
+    ],
+    "id": "hrealm_ns_012",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你无意间悟通了时间法则的皮毛，能微幅感知未来一瞬。",
+    "category": "fortune",
+    "event_type": "fortune",
+    "effects": {
+      "comprehension": 3,
+      "fortune": 1
+    },
+    "tags": [
+      "time_law",
+      "insight"
+    ],
+    "id": "hrealm_ns_013",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "天地灵气异变，万里之内的元婴修士皆有感应——有大劫将至。",
+    "category": "world",
+    "event_type": "important",
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "omen",
+      "catastrophe"
+    ],
+    "id": "hrealm_ns_014",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你坐忘三百年，于混沌中参悟到了空间法则的真谛。",
+    "category": "cultivation",
+    "event_type": "important",
+    "effects": {
+      "cultivation": 150,
+      "comprehension": 2
+    },
+    "tags": [
+      "space_law",
+      "meditation"
+    ],
+    "id": "hrealm_dt_000",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你以化神之力炼化一方灵脉，百年修为一日得之。",
+    "category": "cultivation",
+    "event_type": "fortune",
+    "effects": {
+      "cultivation": 200
+    },
+    "tags": [
+      "spirit_vein",
+      "absorption"
+    ],
+    "id": "hrealm_dt_001",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你推演大道运转的痕迹，似乎触摸到了飞升的门槛。",
+    "category": "cultivation",
+    "event_type": "important",
+    "effects": {
+      "cultivation": 120,
+      "comprehension": 1
+    },
+    "tags": [
+      "ascension_hint",
+      "dao"
+    ],
+    "id": "hrealm_dt_002",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你凝聚毕生所悟于一枚道果之中，境界更加圆融。",
+    "category": "cultivation",
+    "event_type": "normal",
+    "effects": {
+      "cultivation": 100,
+      "willpower": 1
+    },
+    "tags": [
+      "dao_fruit"
+    ],
+    "id": "hrealm_dt_003",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你以神念探入虚空裂隙，隐约窥见了上界的一丝光芒。",
+    "category": "cultivation",
+    "event_type": "important",
+    "effects": {
+      "cultivation": 80,
+      "fortune": 1
+    },
+    "tags": [
+      "void_peek",
+      "ascension_hint"
+    ],
+    "id": "hrealm_dt_004",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你渡过一次小天劫，雷火淬炼之下肉身更加凝实。",
+    "category": "cultivation",
+    "event_type": "danger",
+    "effects": {
+      "cultivation": 90,
+      "constitution": 2
+    },
+    "tags": [
+      "minor_tribulation"
+    ],
+    "id": "hrealm_dt_005",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你将元婴炼散重聚，以此磨砺道心，修为反而大进。",
+    "category": "cultivation",
+    "event_type": "important",
+    "effects": {
+      "cultivation": 130,
+      "willpower": 2
+    },
+    "tags": [
+      "rebirth",
+      "dao_heart"
+    ],
+    "id": "hrealm_dt_006",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你与另一位化神修士论道七日，各有所得。",
+    "category": "cultivation",
+    "event_type": "normal",
+    "effects": {
+      "cultivation": 70,
+      "comprehension": 1
+    },
+    "tags": [
+      "dao_discussion"
+    ],
+    "id": "hrealm_dt_007",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "一位隐世老祖出关，点名与你论道，天地为之变色。",
+    "category": "social",
+    "event_type": "important",
+    "effects": {
+      "comprehension": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "ancient_patriarch",
+      "dao_discussion"
+    ],
+    "id": "hrealm_dt_008",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "诸多化神修士齐聚，共商应对天劫周期之策。",
+    "category": "social",
+    "event_type": "important",
+    "effects": {
+      "charisma": 2,
+      "willpower": 1
+    },
+    "tags": [
+      "council",
+      "tribulation"
+    ],
+    "id": "hrealm_dt_009",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你被推举为此方天地修士的领袖之一，众望所归。",
+    "category": "social",
+    "event_type": "fortune",
+    "effects": {
+      "charisma": 3
+    },
+    "tags": [
+      "leader",
+      "reputation"
+    ],
+    "id": "hrealm_dt_010",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "一位老友即将飞升，设宴与你诀别。",
+    "category": "social",
+    "event_type": "important",
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "farewell",
+      "ascension"
+    ],
+    "id": "hrealm_dt_011",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "上界降下天罚，疑你触犯了某条天规。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "constitution": -2,
+      "willpower": 2
+    },
+    "tags": [
+      "heavenly_punishment"
+    ],
+    "id": "hrealm_dt_012",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你察觉到此方天地的屏障正在衰弱，外界之物蠢蠢欲动。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "world_barrier",
+      "omen"
+    ],
+    "id": "hrealm_dt_013",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "一场席卷千里的天地浩劫降临，你不得不出面镇压。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "cultivation": 50,
+      "constitution": -1,
+      "willpower": 2
+    },
+    "tags": [
+      "great_calamity",
+      "guardian"
+    ],
+    "id": "hrealm_dt_014",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你的道心出现裂痕，须以大毅力重塑方不至走火入魔。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "willpower": -1,
+      "comprehension": 1
+    },
+    "tags": [
+      "dao_heart_crack",
+      "inner_demon"
+    ],
+    "id": "hrealm_dt_015",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "远古魔神残念从地底苏醒，化神以下难以抵挡。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "cultivation": 40,
+      "constitution": -1
+    },
+    "tags": [
+      "demon_god",
+      "ancient"
+    ],
+    "id": "hrealm_dt_016",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你发现了传说中飞升仙人遗留的参悟石碑。",
+    "category": "fortune",
+    "event_type": "fortune",
+    "effects": {
+      "cultivation": 200,
+      "comprehension": 2
+    },
+    "tags": [
+      "ascension_stele",
+      "ancient"
+    ],
+    "id": "hrealm_dt_017",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "天降祥瑞，灵气长河汇聚于你洞府上空。",
+    "category": "fortune",
+    "event_type": "fortune",
+    "effects": {
+      "cultivation": 150,
+      "fortune": 2
+    },
+    "tags": [
+      "auspicious",
+      "spirit_convergence"
+    ],
+    "id": "hrealm_dt_018",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "一只上古神兽的血脉传承者向你俯首称臣。",
+    "category": "fortune",
+    "event_type": "fortune",
+    "effects": {
+      "constitution": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "divine_beast",
+      "subordinate"
+    ],
+    "id": "hrealm_dt_019",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "你于悟道中偶然触碰到了万法归一的境界，虽然只有一瞬。",
+    "category": "fortune",
+    "event_type": "fortune",
+    "effects": {
+      "comprehension": 3,
+      "cultivation": 100
+    },
+    "tags": [
+      "dao_unity",
+      "epiphany"
+    ],
+    "id": "hrealm_dt_020",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "天地法则似乎在引导你走向某处——那里可能是空间节点所在。",
+    "category": "world",
+    "event_type": "important",
+    "effects": {
+      "cultivation": 60,
+      "fortune": 1
+    },
+    "tags": [
+      "space_node_hint",
+      "guidance"
+    ],
+    "id": "hrealm_dt_021",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "有化神修士渡劫失败陨落，天地间留下一道长叹。",
+    "category": "world",
+    "event_type": "normal",
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "tribulation_failure",
+      "warning"
+    ],
+    "id": "hrealm_dt_022",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
+  },
+  {
+    "text": "此方天地灵气浓度骤增，疑似有上界灵气泄入。",
+    "category": "world",
+    "event_type": "fortune",
+    "effects": {
+      "cultivation": 80
+    },
+    "tags": [
+      "spirit_surge",
+      "upper_realm"
+    ],
+    "id": "hrealm_dt_023",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "",
+    "keywords": []
   }
 ]

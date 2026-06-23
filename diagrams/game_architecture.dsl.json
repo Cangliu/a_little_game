@@ -1,72 +1,167 @@
 {
-  "title": "凡人修仙传 · 全景架构图",
+  "title": "凡人修仙传 · 系统架构详图",
   "type": "architecture",
   "layout": "top-down",
   "style": {"preset": "sketch", "roughness": 1, "fontFamily": "hand"},
   "nodes": [
     {"id": "player", "label": "👤 玩家", "semantic": "external", "layer": 0, "icon": "user"},
 
-    {"id": "create", "label": "🎲 开局\n天赋抽取 · 性别姓名", "semantic": "trigger", "layer": 1, "width": 220},
-    {"id": "story", "label": "📜 流年叙事\n每年一回合 · 修仙文风", "semantic": "core", "layer": 1, "width": 240},
-    {"id": "choices", "label": "⚔️ 抉择分支\n修炼 / 探索 / 社交", "semantic": "decision", "layer": 1, "width": 220},
-    {"id": "ending", "label": "🌟 终局\n凡人陨落 / 飞升成仙", "semantic": "success", "layer": 1, "width": 220},
+    {"id": "create", "label": "🎲 开局\n天赋抽取 · 性别姓名", "semantic": "trigger", "layer": 1, "width": 200},
+    {"id": "story", "label": "📜 流年叙事\n每年一回合", "semantic": "core", "layer": 1, "width": 180},
+    {"id": "choices", "label": "⚔️ 抉择分支", "semantic": "decision", "layer": 1, "width": 140},
+    {"id": "ending", "label": "🌟 终局\n陨落 / 飞升", "semantic": "success", "layer": 1, "width": 160},
 
-    {"id": "fe", "label": "React + Vite\nSSE 流式渲染", "semantic": "middleware", "layer": 2, "icon": "browser", "width": 200},
-    {"id": "api", "label": "FastAPI\n/next-turn SSE", "semantic": "middleware", "layer": 3, "icon": "server", "width": 200},
+    {"id": "fe", "label": "React + Vite\nSSE流式渲染", "semantic": "middleware", "layer": 2, "icon": "browser", "width": 180},
+    {"id": "api", "label": "FastAPI\n/next-turn SSE", "semantic": "middleware", "layer": 2, "icon": "server", "width": 180},
 
-    {"id": "director", "label": "🎬 GameDirector\n10阶段流年循环", "semantic": "core", "layer": 4, "width": 280},
+    {"id": "dir_phase", "label": "① 年龄推进\n(TIME_STEP_BY_REALM)", "semantic": "trigger", "layer": 3, "width": 180},
+    {"id": "dir_death", "label": "② 死亡检查\n寿元耗尽/事故", "semantic": "trigger", "layer": 3, "width": 180},
+    {"id": "dir_priority", "label": "③ 优先事件\nNPC/宗门/纪元", "semantic": "trigger", "layer": 3, "width": 180},
+    {"id": "dir_event", "label": "④ 事件选取\nLLM Director", "semantic": "ai", "layer": 3, "width": 180},
+    {"id": "dir_bt", "label": "⑤ 突破判定", "semantic": "trigger", "layer": 3, "width": 140},
+    {"id": "dir_post", "label": "⑥ 后处理\n记忆/Hook/NPC", "semantic": "trigger", "layer": 3, "width": 180},
 
-    {"id": "event_pool", "label": "📦 事件池\n~9500条 JSON", "semantic": "storage", "layer": 5, "shape": "cylinder", "width": 200},
-    {"id": "event_dir", "label": "🤖 EventDirector\n9层管线 → Top10 → LLM", "semantic": "ai", "layer": 5, "width": 280},
+    {"id": "pool_json", "label": "📦 事件池\n~9500条 JSON", "semantic": "storage", "layer": 4, "shape": "cylinder", "width": 160},
+    {"id": "pipe_phase", "label": "Phase Filter\n生命阶段白/黑名单", "semantic": "middleware", "layer": 4, "width": 180},
+    {"id": "pipe_cond", "label": "Condition Filter\n年龄/境界/性别", "semantic": "middleware", "layer": 4, "width": 180},
+    {"id": "pipe_weight", "label": "Weight Scoring\n动态权重+Hook加成", "semantic": "middleware", "layer": 4, "width": 200},
+    {"id": "pipe_dedup", "label": "Dedup + Diversity\n去重+类别配额", "semantic": "middleware", "layer": 4, "width": 200},
+    {"id": "pipe_top10", "label": "Top-10 候选\n加权随机抽取", "semantic": "decision", "layer": 4, "width": 180},
 
-    {"id": "npc", "label": "NPC系统\n好感 · 关系 · 命运线", "semantic": "trigger", "layer": 6, "width": 220},
-    {"id": "memory", "label": "记忆系统\n传记 · 近期 · 压缩", "semantic": "storage", "layer": 6, "width": 220},
-    {"id": "causality", "label": "因果系统\n伏笔 · 回收 · 因果链", "semantic": "ai", "layer": 6, "width": 220},
-    {"id": "saga", "label": "Saga弧线\n故事线 · 张力曲线", "semantic": "core", "layer": 6, "width": 220},
-    {"id": "world", "label": "天地纪元\n灵气潮汐 · 纪元更迭", "semantic": "external", "layer": 6, "width": 220},
-    {"id": "realm", "label": "境界系统\n炼气→渡劫 · 突破判定", "semantic": "trigger", "layer": 6, "width": 220},
+    {"id": "ed_route", "label": "🤖 模型路由\nFlash(默认) / Pro(关键转折)", "semantic": "ai", "layer": 5, "width": 260},
+    {"id": "ed_prompt", "label": "Prompt组装\n近期+记忆+候选+Saga", "semantic": "ai", "layer": 5, "width": 260},
+    {"id": "ed_output", "label": "LLM输出\n选事件+叙事+分支+因果链", "semantic": "ai", "layer": 5, "width": 280},
 
-    {"id": "state", "label": "GameState\n主角全量状态快照", "semantic": "storage", "layer": 7, "shape": "cylinder", "width": 240}
+    {"id": "npc_gen", "label": "生成\n名字/背景/性格", "semantic": "trigger", "layer": 6, "width": 160},
+    {"id": "npc_rel", "label": "关系图谱\n好感度±∆", "semantic": "trigger", "layer": 6, "width": 160},
+    {"id": "npc_destiny", "label": "命运线\n多阶段推进", "semantic": "trigger", "layer": 6, "width": 160},
+    {"id": "npc_event", "label": "专属事件\n重逢/背叛/陨落", "semantic": "trigger", "layer": 6, "width": 180},
+
+    {"id": "mem_working", "label": "Working Memory\n5条全文全量放入", "semantic": "storage", "layer": 6, "width": 180},
+    {"id": "mem_short", "label": "Short-term\noverflow溢出存储", "semantic": "storage", "layer": 6, "width": 180},
+    {"id": "mem_long", "label": "Long-term\nLLM压缩传记", "semantic": "storage", "layer": 6, "width": 180},
+    {"id": "mem_retriever", "label": "Hybrid Retriever\nBM25(0.4)+Emb(0.6)", "semantic": "ai", "layer": 6, "width": 200},
+
+    {"id": "hook_plant", "label": "伏笔种植\ncreates_hook", "semantic": "ai", "layer": 6, "width": 160},
+    {"id": "hook_resolve", "label": "回收解决\nresolves_hook", "semantic": "ai", "layer": 6, "width": 160},
+    {"id": "hook_boost", "label": "权重加成\n到期强制解决", "semantic": "ai", "layer": 6, "width": 180},
+    {"id": "hook_chain", "label": "因果链\nLLM动态生成", "semantic": "ai", "layer": 6, "width": 180},
+
+    {"id": "saga_detect", "label": "弧线检测\nNPC/关键词交集", "semantic": "core", "layer": 6, "width": 180},
+    {"id": "saga_momentum", "label": "张力曲线\nmomentum 0-100", "semantic": "core", "layer": 6, "width": 180},
+    {"id": "saga_hint", "label": "方向暗示\n注入Arc规划", "semantic": "core", "layer": 6, "width": 180},
+
+    {"id": "arc_plan", "label": "LLM弧线规划\n突破时触发", "semantic": "ai", "layer": 6, "width": 180},
+    {"id": "arc_4phase", "label": "4阶段推进\nsetup→rising→climax→end", "semantic": "core", "layer": 6, "width": 240},
+    {"id": "arc_keyword", "label": "弧线关键词\n×3 boost事件权重", "semantic": "decision", "layer": 6, "width": 200},
+
+    {"id": "era_pool", "label": "纪元池\n~20预定义纪元", "semantic": "external", "layer": 6, "width": 160},
+    {"id": "era_trigger", "label": "触发检查\n每80-180年", "semantic": "external", "layer": 6, "width": 160},
+    {"id": "era_effect", "label": "效果\ncategory_boost+tension_mod", "semantic": "external", "layer": 6, "width": 200},
+
+    {"id": "realm_cult", "label": "修为增长\nbase×realm_mod×years", "semantic": "trigger", "layer": 6, "width": 200},
+    {"id": "realm_awake", "label": "觉醒检查\n凡人→练气", "semantic": "trigger", "layer": 6, "width": 160},
+    {"id": "realm_bt", "label": "突破判定\n概率+修为门槛", "semantic": "trigger", "layer": 6, "width": 180},
+    {"id": "realm_foreshadow", "label": "突破预兆\n修为达80%触发", "semantic": "trigger", "layer": 6, "width": 180},
+
+    {"id": "llm_flash", "label": "DeepSeek Flash\n默认 · T=0.75 · 前缀缓存", "semantic": "ai", "layer": 7, "width": 240},
+    {"id": "llm_pro", "label": "DeepSeek Pro\n张力≥70 / Saga momentum≥60", "semantic": "ai", "layer": 7, "width": 280},
+    {"id": "llm_emb", "label": "m3e-base\n本地Embedding·零成本", "semantic": "storage", "layer": 7, "width": 220},
+
+    {"id": "state", "label": "GameState\n主角全量状态快照", "semantic": "storage", "layer": 8, "shape": "cylinder", "width": 240}
   ],
   "edges": [
     {"from": "player", "to": "create", "label": "创建角色"},
     {"from": "create", "to": "story"},
     {"from": "story", "to": "choices", "label": "触发分支"},
     {"from": "choices", "to": "story", "label": "下一年"},
-    {"from": "story", "to": "ending", "label": "寿终 / 飞升"},
+    {"from": "story", "to": "ending", "label": "寿终/飞升"},
 
     {"from": "player", "to": "fe", "label": "交互", "style": "dashed"},
-    {"from": "fe", "to": "api", "label": "SSE 流"},
-    {"from": "api", "to": "director"},
+    {"from": "fe", "to": "api", "label": "SSE流"},
+    {"from": "api", "to": "dir_phase"},
 
-    {"from": "director", "to": "event_pool", "label": "筛选"},
-    {"from": "event_pool", "to": "event_dir", "label": "候选事件"},
-    {"from": "event_dir", "to": "story", "label": "叙事文本", "style": "dashed"},
+    {"from": "dir_phase", "to": "dir_death"},
+    {"from": "dir_death", "to": "dir_priority"},
+    {"from": "dir_priority", "to": "dir_event"},
+    {"from": "dir_event", "to": "dir_bt"},
+    {"from": "dir_bt", "to": "dir_post"},
+    {"from": "dir_post", "to": "story", "label": "叙事文本", "style": "dashed"},
 
-    {"from": "director", "to": "npc"},
-    {"from": "director", "to": "memory"},
-    {"from": "director", "to": "causality"},
-    {"from": "director", "to": "saga"},
-    {"from": "director", "to": "world"},
-    {"from": "director", "to": "realm"},
+    {"from": "dir_event", "to": "pool_json", "label": "读取"},
+    {"from": "pool_json", "to": "pipe_phase"},
+    {"from": "pipe_phase", "to": "pipe_cond"},
+    {"from": "pipe_cond", "to": "pipe_weight"},
+    {"from": "pipe_weight", "to": "pipe_dedup"},
+    {"from": "pipe_dedup", "to": "pipe_top10"},
+    {"from": "pipe_top10", "to": "ed_prompt", "label": "Top-10"},
 
-    {"from": "npc", "to": "state"},
-    {"from": "memory", "to": "state"},
-    {"from": "causality", "to": "state"},
-    {"from": "saga", "to": "state"},
-    {"from": "realm", "to": "state"},
-    {"from": "world", "to": "state"}
+    {"from": "ed_route", "to": "ed_prompt"},
+    {"from": "ed_prompt", "to": "ed_output", "label": "LLM调用"},
+    {"from": "mem_retriever", "to": "ed_prompt", "label": "相关记忆", "style": "dashed"},
+    {"from": "ed_output", "to": "story", "label": "SSE流式输出", "style": "dashed"},
+
+    {"from": "npc_gen", "to": "npc_rel"},
+    {"from": "npc_rel", "to": "npc_destiny"},
+    {"from": "npc_destiny", "to": "npc_event"},
+    {"from": "npc_event", "to": "dir_priority", "style": "dashed"},
+
+    {"from": "mem_working", "to": "mem_short", "label": "overflow"},
+    {"from": "mem_short", "to": "mem_long", "label": "50年压缩"},
+    {"from": "mem_short", "to": "mem_retriever"},
+    {"from": "mem_long", "to": "mem_retriever"},
+
+    {"from": "hook_plant", "to": "hook_resolve", "label": "因果线索"},
+    {"from": "hook_resolve", "to": "hook_boost"},
+    {"from": "hook_boost", "to": "pipe_weight", "label": "权重×2", "style": "dashed"},
+    {"from": "hook_chain", "to": "hook_plant"},
+
+    {"from": "saga_detect", "to": "saga_momentum"},
+    {"from": "saga_momentum", "to": "saga_hint"},
+    {"from": "saga_hint", "to": "arc_plan", "style": "dashed"},
+
+    {"from": "arc_plan", "to": "arc_4phase"},
+    {"from": "arc_4phase", "to": "arc_keyword"},
+    {"from": "arc_keyword", "to": "pipe_weight", "label": "×3 boost", "style": "dashed"},
+
+    {"from": "era_pool", "to": "era_trigger"},
+    {"from": "era_trigger", "to": "era_effect"},
+    {"from": "era_effect", "to": "pipe_weight", "label": "category_boost", "style": "dashed"},
+
+    {"from": "realm_cult", "to": "realm_bt"},
+    {"from": "realm_awake", "to": "realm_cult"},
+    {"from": "realm_bt", "to": "realm_foreshadow"},
+    {"from": "realm_bt", "to": "arc_plan", "label": "触发规划", "style": "dashed"},
+
+    {"from": "ed_route", "to": "llm_flash"},
+    {"from": "ed_route", "to": "llm_pro", "label": "关键转折", "style": "dashed"},
+    {"from": "mem_retriever", "to": "llm_emb"},
+    {"from": "mem_long", "to": "llm_flash", "label": "压缩调用", "style": "dashed"},
+
+    {"from": "state", "to": "mem_working", "label": "读写", "style": "dashed"},
+    {"from": "state", "to": "npc_rel", "style": "dashed"},
+    {"from": "state", "to": "realm_cult", "style": "dashed"}
   ],
   "groups": [
-    {"id": "g_player", "label": "🎮 玩家视角 — 明面上的修仙体验", "members": ["create", "story", "choices", "ending"]},
+    {"id": "g_player", "label": "🎮 玩家视角", "members": ["create", "story", "choices", "ending"]},
     {"id": "g_front", "label": "⚡ 前端 + API", "members": ["fe", "api"]},
-    {"id": "g_core", "label": "🧠 引擎内核 — 骨骼与血肉", "members": ["director", "event_pool", "event_dir"]},
-    {"id": "g_sub", "label": "📚 六大子系统", "members": ["npc", "memory", "causality", "saga", "world", "realm"]}
+    {"id": "g_pipeline", "label": "🎬 GameDirector — 10阶段流年循环", "members": ["dir_phase", "dir_death", "dir_priority", "dir_event", "dir_bt", "dir_post"]},
+    {"id": "g_event_pipe", "label": "📦 事件筛选管线 (EventSystem)", "members": ["pool_json", "pipe_phase", "pipe_cond", "pipe_weight", "pipe_dedup", "pipe_top10"]},
+    {"id": "g_ed", "label": "🤖 EventDirector (LLM叙事引擎)", "members": ["ed_route", "ed_prompt", "ed_output"]},
+    {"id": "g_npc", "label": "👥 NPC系统", "members": ["npc_gen", "npc_rel", "npc_destiny", "npc_event"]},
+    {"id": "g_memory", "label": "🧠 记忆系统 (三层+检索)", "members": ["mem_working", "mem_short", "mem_long", "mem_retriever"]},
+    {"id": "g_hook", "label": "🔗 因果系统 (PlotHooks)", "members": ["hook_plant", "hook_resolve", "hook_boost", "hook_chain"]},
+    {"id": "g_saga", "label": "📖 Saga弧线", "members": ["saga_detect", "saga_momentum", "saga_hint"]},
+    {"id": "g_arc", "label": "🎯 StoryArc规划", "members": ["arc_plan", "arc_4phase", "arc_keyword"]},
+    {"id": "g_era", "label": "🌍 天地纪元", "members": ["era_pool", "era_trigger", "era_effect"]},
+    {"id": "g_realm", "label": "⭐ 境界系统", "members": ["realm_cult", "realm_awake", "realm_bt", "realm_foreshadow"]},
+    {"id": "g_llm", "label": "🚀 LLM层 (DeepSeek)", "members": ["llm_flash", "llm_pro", "llm_emb"]}
   ],
   "annotations": [
-    {"text": "骨骼: 事件JSON模板\n(9层管线筛选)", "near": "event_pool", "position": "left", "level": "caption"},
-    {"text": "血肉: DeepSeek LLM\n实时叙事扩写", "near": "event_dir", "position": "right", "level": "caption"},
-    {"text": "~80回合/局\n~200K tokens", "near": "story", "position": "bottom", "level": "caption"},
-    {"text": "年龄推进 → 事件筛选 → NPC结算\n→ 境界判定 → 记忆压缩 → …", "near": "director", "position": "right", "level": "body"}
+    {"text": "骨骼: 9500条JSON事件模板\n9层规则管线筛选", "near": "pool_json", "position": "left", "level": "caption"},
+    {"text": "血肉: 单次LLM调用\n选事件+叙事+分支", "near": "ed_output", "position": "right", "level": "caption"},
+    {"text": "~80回合/局 · ~265K tokens\nFlash \u00a50.15 / Pro \u00a50.22", "near": "story", "position": "bottom", "level": "caption"},
+    {"text": "Pro升级条件:\n张力≥70 | Saga≥ 60 | 弧线高潮", "near": "llm_pro", "position": "right", "level": "caption"},
+    {"text": "MAX_NPCS=20\n命运线多阶段推进", "near": "npc_destiny", "position": "bottom", "level": "caption"}
   ]
 }

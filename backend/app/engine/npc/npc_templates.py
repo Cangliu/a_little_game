@@ -64,7 +64,7 @@ FEMALE_GIVEN_NAMES = [
 
 PERSONALITY_DESCRIPTIONS = {
     "温和": {
-        "speech_style": "语气平和，措辞温柔，常以微笑示人",
+        "speech_style": "语气平和，措词温柔，常以微笑示人",
         "behavior": "乐于助人，遇事多为他人考虑",
         "conflict_style": "倾向于调和矛盾，避免正面冲突",
     },
@@ -79,7 +79,7 @@ PERSONALITY_DESCRIPTIONS = {
         "conflict_style": "避免正面交锋，擅长借刀杀人",
     },
     "正直": {
-        "speech_style": "直言不讳，嫉恶如仇，言出必行",
+        "speech_style": "直言不误，羉恶如仇，言出必行",
         "behavior": "路见不平拔刀相助，重诺守信",
         "conflict_style": "堂堂正正，即便实力不济也不屑暗算",
     },
@@ -92,6 +92,66 @@ PERSONALITY_DESCRIPTIONS = {
         "speech_style": "大嗓门，喜怒形于色，不耐繁文缛节",
         "behavior": "行事雷厉风行，遇到看不惯的直接动手",
         "conflict_style": "先打后问，拳头就是道理",
+    },
+    "洒脱": {
+        "speech_style": "谈吐随意，喜欢打趣，不拘小节",
+        "behavior": "随性而为，不受约束，视规矩如无物",
+        "conflict_style": "轻描淡写化解矛盾，或干脆不理",
+    },
+    "阴沉": {
+        "speech_style": "少言寬语，声音低沉，话里常带刺",
+        "behavior": "喜爱独处暗处，记仇必报，心思难测",
+        "conflict_style": "隐忍不发，伺机而动，一击致命",
+    },
+    "傲慢": {
+        "speech_style": "居高临下，目中无人，以“尔”称人",
+        "behavior": "自视甚高，不屑与庸人为伍",
+        "conflict_style": "正面碾压，以绝对实力让对手臣服",
+    },
+    "忠厚": {
+        "speech_style": "说话老实，不会拐弯抹角，偶尔木讷",
+        "behavior": "认定一人便生死相随，一根筋认死理",
+        "conflict_style": "死硅硬撕，绝不背叛同伴即便代价巨大",
+    },
+    "多疑": {
+        "speech_style": "说话处处试探，不轻易透露真实想法",
+        "behavior": "信谁也不如信自己，凡事留三分后手",
+        "conflict_style": "先观察再行动，绝不冒进，擅设局试探",
+    },
+    "慈悲": {
+        "speech_style": "语气平和却带悲悄，常感叹苍生多难",
+        "behavior": "心怀万物，不忍杀生，常救助弱小",
+        "conflict_style": "先勝后饶，能不杀则不杀，除非对方十恶不赦",
+    },
+    "执着": {
+        "speech_style": "谈论其所执之事时双目放光，其余兴趣缺缺",
+        "behavior": "认定一事便不回头，百折不挠，旁人劳也不动摇",
+        "conflict_style": "为目标不择手段，拒绝一切妥协",
+    },
+    "风雅": {
+        "speech_style": "谈吐文雅，引经据典，常以诗文代言",
+        "behavior": "爱茶爱酒爱琎琴，举止从容不失风度",
+        "conflict_style": "以巧取胜，不屑与粗人正面动武",
+    },
+    "狠辣": {
+        "speech_style": "语气冰冷，常带威胁，不给人留余地",
+        "behavior": "杀伐果断，为达目的不惜一切代价",
+        "conflict_style": "先发制人，不留活口，斩草除根",
+    },
+    "天真": {
+        "speech_style": "说话直白天真，常问出令人哭笑不得的问题",
+        "behavior": "不谙世事，心思单纯，容易被骗也容易原谅人",
+        "conflict_style": "能躲就躲，被迫无奈才反击，不留仇恨",
+    },
+    "桀骜": {
+        "speech_style": "言语张狂，不服任何人，常挑衅权威",
+        "behavior": "宁折不弯，越是打压越是反抗，不屈不挠",
+        "conflict_style": "正面硬刚，绝不低头，即便败了也站着死",
+    },
+    "深沉": {
+        "speech_style": "说话不多不少，每句皆经过深思熟虑",
+        "behavior": "城府极深，喜怒不形于色，万事成竹在胸",
+        "conflict_style": "以静制动，后发制人，一击必中",
     },
 }
 

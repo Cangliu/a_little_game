@@ -423,165 +423,6 @@ class EventSystem:
     def __init__(self) -> None:
         self.phase_manager = LifePhaseManager()
 
-    def select_events(
-        self,
-        state: GameState,
-        count: Optional[int] = None,
-        hook_adjustments: Optional[dict] = None,
-        arc_keywords: Optional[list] = None,
-    ) -> list[dict]:
-        """Select *count* events for this year, respecting phase + conditions.
-
-        Args:
-            state: Current game state
-            count: Number of events to select (auto if None)
-            hook_adjustments: dict of {resolves_hook_id: weight_multiplier}
-                              from PlotHookManager
-            arc_keywords: list of keywords from active story arcs to boost
-                          matching events
-
-        If *count* is None, it is determined by character age.
-        """
-        if count is None:
-            if state.age <= 3:
-                count = 1
-            elif state.age <= 12:
-                count = 2
-            else:
-                count = random.randint(1, 3)
-
-        phase = LifePhase(state.life_phase)
-        used_ids = state.used_event_ids  # already a set
-
-        # ── Layer 1-3: Phase + Condition + Dedup ─────────────────────
-        eligible: list[dict] = []
-        for ev in ALL_EVENTS:
-            if ev.get("category") == "death":
-                continue
-            if ev.get("id") in used_ids:
-                continue
-            if not self.phase_manager.is_event_allowed(ev, phase):
-                continue
-            if not check_conditions(ev, state):
-                continue
-            eligible.append(ev)
-
-        if not eligible:
-            return [_fallback_event()]
-
-        # ── Layer 4: Weight scoring ──────────────────────────────────
-        weighted: list[tuple[dict, float]] = [
-            (ev, _compute_weight(ev, state)) for ev in eligible
-        ]
-
-        # ── Layer 5: Hook weight adjustments ──────────────────────────
-        if hook_adjustments:
-            weighted = [
-                (ev, w * hook_adjustments.get(ev.get("resolves_hook", ""), 1.0))
-                for ev, w in weighted
-            ]
-
-        # ── Layer 6: Story arc + destiny keyword boost ──────────────────
-        #   Uses pre-extracted event keywords (_keywords) for precise matching,
-        #   plus fallback text scan for broader coverage.
-        if arc_keywords:
-            arc_kw_set = set(arc_keywords)
-            boosted = []
-            for ev, w in weighted:
-                ev_keywords = set(ev.get("_keywords", []))
-                ev_tags = set(ev.get("tags", []))
-
-                # Dimension 1: keyword-to-keyword intersection (precise)
-                kw_overlap = len(arc_kw_set & ev_keywords)
-
-                # Dimension 2: arc keywords as substring in event text (broader)
-                ev_text = ev.get("text", "")
-                text_hits = sum(1 for kw in arc_keywords if kw in ev_text and kw not in ev_keywords)
-
-                # Dimension 3: tag-based relevance
-                tag_score = 0
-                tag_map = {
-                    "修炼": {"practice", "meditation", "cultivation"},
-                    "突破": {"breakthrough"},
-                    "危机": {"danger", "calamity"},
-                    "机缘": {"fortune", "treasure"},
-                    "师父": {"master_event"},
-                    "道侣": {"lover_event"},
-                    "宿敌": {"rival_event"},
-                    "飞升": {"ascension", "tribulation"},
-                    "闭关": {"meditation", "insight"},
-                    "剑": {"sword", "weapon"},
-                }
-                for kw in arc_keywords:
-                    related_tags = tag_map.get(kw)
-                    if related_tags and (ev_tags & related_tags):
-                        tag_score += 1
-
-                total_score = kw_overlap + text_hits + tag_score
-
-                if total_score >= 3:
-                    boosted.append((ev, w * 5.0))  # Strong match: ×5
-                elif total_score == 2:
-                    boosted.append((ev, w * 3.5))  # Good match: ×3.5
-                elif total_score == 1:
-                    boosted.append((ev, w * 2.5))  # Partial match: ×2.5
-                else:
-                    boosted.append((ev, w))
-            weighted = boosted
-
-        # ── Category quota: guarantee ≥1 cultivation event per year ──
-        selected = self._quota_pick(weighted, state, count)
-
-        # Sort by narrative age for chronological display
-        selected.sort(key=lambda e: _extract_narrative_age(e.get("text", "")) or 9999)
-
-        return selected
-
-    # ─────────────────────────────────────────────────────────────────
-    def _quota_pick(
-        self,
-        weighted: list[tuple[dict, float]],
-        state: GameState,
-        count: int,
-    ) -> list[dict]:
-        """Weighted random pick with optional cultivation-event quota."""
-        selected: list[dict] = []
-
-        # If cultivator, try to guarantee at least 1 cultivation event
-        if state.realm >= 1 and count >= 2:
-            cult_pool = [(ev, w) for ev, w in weighted if ev.get("category") == "cultivation"]
-            if cult_pool:
-                pick = self._weighted_pick_one(cult_pool)
-                if pick:
-                    selected.append(pick)
-                    weighted = [(ev, w) for ev, w in weighted if ev.get("id") != pick.get("id")]
-                    count -= 1
-
-        # Fill remaining slots
-        for _ in range(count):
-            if not weighted:
-                break
-            pick = self._weighted_pick_one(weighted)
-            if pick is None:
-                break
-            selected.append(pick)
-            weighted = [(ev, w) for ev, w in weighted if ev.get("id") != pick.get("id")]
-
-        return selected if selected else [_fallback_event()]
-
-    @staticmethod
-    def _weighted_pick_one(pool: list[tuple[dict, float]]) -> Optional[dict]:
-        total = sum(w for _, w in pool)
-        if total <= 0:
-            return None
-        r = random.uniform(0, total)
-        cum = 0.0
-        for ev, w in pool:
-            cum += w
-            if r <= cum:
-                return ev
-        return pool[-1][0]  # float rounding safety
-
     # ── Candidate selection for LLM Director ─────────────────────────
 
     def select_candidates(
@@ -590,6 +431,7 @@ class EventSystem:
         count: int = 10,
         hook_adjustments: Optional[dict] = None,
         arc_keywords: Optional[list] = None,
+        era_adjustments: Optional[dict] = None,
     ) -> list[dict]:
         """Return top-N weighted candidates for LLM director to choose from.
 
@@ -623,6 +465,13 @@ class EventSystem:
         weighted: list[tuple[dict, float]] = [
             (ev, _compute_weight(ev, state)) for ev in eligible
         ]
+
+        # Layer 4.5: World Era category boost (纪元类别提权)
+        if era_adjustments:
+            weighted = [
+                (ev, w * era_adjustments.get(ev.get("category", ""), 1.0))
+                for ev, w in weighted
+            ]
 
         # Layer 5: Hook weight adjustments
         if hook_adjustments:

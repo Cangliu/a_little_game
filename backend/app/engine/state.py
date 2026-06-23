@@ -1,16 +1,20 @@
-"""Game state management — LRU+TTL store with per-game locking.
+"""Game state management — LRU+TTL store with per-game locking + JSON persistence.
 
 Replaces the old plain dict with a managed store that:
 - Automatically evicts states not accessed within TTL (2 hours)
 - Enforces a maximum capacity (LRU eviction)
 - Provides per-game asyncio.Lock for concurrency safety
 - Delays cleanup of finished games (60s grace for summary fetch)
+- Persists game states to JSON files for crash recovery
 """
 import asyncio
+import json
+import os
 import random
 import time
 import uuid
 import logging
+from pathlib import Path
 from typing import Optional
 from collections import OrderedDict
 
@@ -18,15 +22,21 @@ from ..models import GameState, Attributes
 
 logger = logging.getLogger(__name__)
 
+# Persistence directory (relative to backend/)
+_PERSIST_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "saves"
+
 
 # ── GameStateStore — LRU + TTL + Locking ─────────────────────────────────
 
 class GameStateStore:
-    """Thread-safe game state store with LRU eviction, TTL expiry, and per-game locks."""
+    """Thread-safe game state store with LRU eviction, TTL expiry, per-game locks, and JSON persistence."""
 
-    def __init__(self, max_size: int = 100, ttl_seconds: float = 7200):
+    def __init__(self, max_size: int = 100, ttl_seconds: float = 7200, persist_dir: Path = _PERSIST_DIR):
         self._max_size = max_size
         self._ttl = ttl_seconds
+        self._persist_dir = persist_dir
+        # Ensure persistence directory exists
+        self._persist_dir.mkdir(parents=True, exist_ok=True)
         # OrderedDict for LRU: most recently accessed at the end
         self._store: OrderedDict[str, tuple[GameState, float]] = OrderedDict()
         # Per-game locks (also LRU-managed)
@@ -34,6 +44,8 @@ class GameStateStore:
         self._max_locks = 200
         # Finished games pending cleanup: {game_id: cleanup_time}
         self._pending_cleanup: dict[str, float] = {}
+        # Load persisted games on init
+        self._load_persisted()
 
     def get(self, game_id: str) -> Optional[GameState]:
         """Retrieve a game state. Returns None if not found or expired."""
@@ -59,7 +71,7 @@ class GameStateStore:
         return state
 
     def set(self, game_id: str, state: GameState) -> None:
-        """Store a game state. Triggers LRU eviction if at capacity."""
+        """Store a game state. Triggers LRU eviction if at capacity. Persists to disk."""
         now = time.time()
 
         if game_id in self._store:
@@ -70,8 +82,12 @@ class GameStateStore:
             # Evict if at capacity
             while len(self._store) >= self._max_size:
                 evicted_id, _ = self._store.popitem(last=False)
+                self._delete_persist(evicted_id)
                 logger.info("LRU eviction: game %s removed (capacity %d)", evicted_id, self._max_size)
             self._store[game_id] = (state, now)
+
+        # Persist to disk
+        self._save_persist(game_id, state, now)
 
     def mark_finished(self, game_id: str) -> None:
         """Mark a game as finished. It will be cleaned up after 60s grace period."""
@@ -103,7 +119,73 @@ class GameStateStore:
             del self._pending_cleanup[gid]
             if gid in self._store:
                 del self._store[gid]
+                self._delete_persist(gid)
                 logger.debug("Cleaned up finished game %s", gid)
+
+    # ── Persistence helpers ──────────────────────────────────────────────
+
+    def _save_persist(self, game_id: str, state: GameState, last_access: float) -> None:
+        """Save a game state to a JSON file."""
+        try:
+            filepath = self._persist_dir / f"{game_id}.json"
+            data = {
+                "last_access": last_access,
+                "state": state.model_dump(mode="json"),
+            }
+            # Write atomically: write to tmp then rename
+            tmp_path = filepath.with_suffix(".tmp")
+            tmp_path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+            tmp_path.rename(filepath)
+        except Exception as e:
+            logger.warning("Failed to persist game %s: %s", game_id, e)
+
+    def _delete_persist(self, game_id: str) -> None:
+        """Delete a persisted game file."""
+        try:
+            filepath = self._persist_dir / f"{game_id}.json"
+            if filepath.exists():
+                filepath.unlink()
+        except Exception as e:
+            logger.warning("Failed to delete persist file for %s: %s", game_id, e)
+
+    def _load_persisted(self) -> None:
+        """Load all persisted game states from disk on startup."""
+        if not self._persist_dir.exists():
+            return
+
+        now = time.time()
+        loaded = 0
+        expired = 0
+
+        for filepath in sorted(self._persist_dir.glob("*.json")):
+            try:
+                raw = filepath.read_text(encoding="utf-8")
+                data = json.loads(raw)
+                last_access = data.get("last_access", 0)
+
+                # Skip expired games
+                if (now - last_access) > self._ttl:
+                    filepath.unlink(missing_ok=True)
+                    expired += 1
+                    continue
+
+                # Skip if at capacity
+                if len(self._store) >= self._max_size:
+                    break
+
+                state = GameState.model_validate(data["state"])
+                self._store[state.game_id] = (state, last_access)
+                loaded += 1
+            except Exception as e:
+                logger.warning("Failed to load persisted game from %s: %s", filepath.name, e)
+                # Remove corrupted files
+                try:
+                    filepath.unlink(missing_ok=True)
+                except Exception:
+                    pass
+
+        if loaded or expired:
+            logger.info("Persistence: loaded %d games, cleaned %d expired", loaded, expired)
 
     @property
     def size(self) -> int:
@@ -114,8 +196,7 @@ class GameStateStore:
 
 GAME_STATE_STORE = GameStateStore(max_size=100, ttl_seconds=7200)
 
-# Legacy alias for backward compatibility (used by game_engine.py)
-# New code should use GAME_STATE_STORE directly
+# Alias kept for any remaining references
 GAME_STATES = GAME_STATE_STORE
 
 

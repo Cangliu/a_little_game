@@ -177,10 +177,11 @@ class HybridRetriever:
     falls back to pure BM25 automatically.
     """
 
-    def __init__(self, alpha: float = 0.4):
+    def __init__(self, alpha: float = 0.4, recency_half_life: float = 80.0):
         self._bm25 = BM25Retriever()
         self._embedding = None  # Lazy init
         self._alpha = alpha
+        self._recency_half_life = recency_half_life  # years for recency weight to halve
 
     def _ensure_embedding(self):
         """Lazy-init embedding retriever."""
@@ -193,11 +194,15 @@ class HybridRetriever:
         """Build BM25 index (embedding is query-time, no index needed)."""
         self._bm25.index(documents)
 
-    def search(self, query: str, top_k: int = 5) -> list:
-        """Hybrid search combining BM25 and embedding scores.
+    def search(self, query: str, top_k: int = 5, current_age: int = 0) -> list:
+        """Hybrid search combining BM25 and embedding scores with recency decay.
 
         Returns top_k documents sorted by combined score.
         If embedding is unavailable, falls back to pure BM25.
+
+        Recency boost: recent memories score higher than old ones at equal
+        relevance, simulating human memory's "近事清晰、远事模糊" characteristic.
+        Formula: recency_weight = 0.7 + 0.3 * exp(-age_gap / half_life)
         """
         if not self._bm25._indexed or not self._bm25._documents:
             return []
@@ -241,13 +246,16 @@ class HybridRetriever:
                     if 0 <= idx < len(emb_scores):
                         emb_scores[idx] = score
 
-        # Step 3: Combine scores
+        # Step 3: Combine scores with recency decay
         alpha = self._alpha if use_embedding else 1.0
         combined_scores = []
         for i in range(len(documents)):
-            combined = alpha * bm25_normalized[i] + (1 - alpha) * emb_scores[i]
-            if combined > 0:
-                combined_scores.append((combined, i))
+            relevance = alpha * bm25_normalized[i] + (1 - alpha) * emb_scores[i]
+            if relevance > 0:
+                # Apply recency boost: recent memories get up to 1.0x, old ones decay to 0.7x
+                age_gap = max(0, current_age - documents[i].get("age", 0))
+                recency_w = 0.7 + 0.3 * math.exp(-age_gap / self._recency_half_life)
+                combined_scores.append((relevance * recency_w, i))
 
         # Sort by combined score descending
         combined_scores.sort(key=lambda x: -x[0])

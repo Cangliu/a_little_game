@@ -364,6 +364,18 @@ class EventDirector:
             recent_items = state.memory_working[-5:]
             recent = "\n".join(f"- {m.get('text', '')[:50]}" for m in recent_items)
 
+        # Relevant memories (BM25+Embedding retrieval based on candidates)
+        relevant_memories = ""
+        if self._memory_manager:
+            # Extract candidate event texts for query
+            cand_texts = [
+                c["event"].get("text", "") for c in candidates[:5]
+                if c["event"].get("text")
+            ]
+            relevant_memories = self._memory_manager.retrieve_for_event(
+                state, cand_texts, top_k=3
+            )
+
         attrs = state.attributes
         system_prompt = EVENT_DIRECTOR_SYSTEM.format(
             realm_name=realm_name,
@@ -388,6 +400,7 @@ class EventDirector:
             arc_context=arc_context or "无活跃剧情线",
             biography=bio,
             recent_events=recent or "暂无近期经历",
+            relevant_memories=relevant_memories or "无相关往事可追溯",
             world_era_context=era_context or "天下太平，无特殊大势",
             saga_context=saga_context or "无活跃长线Saga",
             causal_chains_context=chains_ctx or "无活跃因果链",
@@ -450,7 +463,7 @@ class EventDirector:
             content_start = idx + len(marker)
             section_content = result[content_start:next_section]
             if len(section_content) > limit:
-                trimmed = section_content[:limit] + "...(\u5df2截\u65ad)"
+                trimmed = section_content[:limit] + "...(已截断)"
                 result = result[:content_start] + trimmed + result[next_section:]
 
         if len(result) < len(user_prompt):
@@ -737,6 +750,8 @@ class EventDirector:
                     yield {"type": "narrative_chunk", "data": chunk}
         except Exception as e:
             logger.warning("EventDirector stream failed: %s", e)
+            # Reset skip streak so next turn will attempt LLM again
+            state._llm_skip_streak = 0
 
         # Handle case where delimiter never arrived or LLM had no output
         if not meta_parsed:

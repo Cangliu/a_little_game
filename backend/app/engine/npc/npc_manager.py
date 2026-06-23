@@ -18,7 +18,7 @@ from .npc_destiny import get_destiny_template, NpcDestinyGenerator
 logger = logging.getLogger(__name__)
 
 # Maximum persistent NPCs per game (avoid memory bloat)
-MAX_NPCS = 20
+MAX_NPCS = 30
 
 # NPC event cooldowns (in years)
 MASTER_EVENT_INTERVAL = (5, 10)
@@ -27,7 +27,7 @@ RIVAL_EVENT_INTERVAL = (10, 20)
 REUNION_MIN_ABSENCE = 30
 REUNION_SENTIMENT_THRESHOLD = 50
 
-# ── NPC Personality Depth Pools (Task 8) ─────────────────────────────────
+# ── NPC Personality Depth Pools ─────────────────────────────────────────
 
 MOTIVATION_POOL = [
     "追求剑道极致", "守护宗门安宁", "寻找失散的亲人",
@@ -48,32 +48,7 @@ SECRET_POOL = [
 GROWTH_ARC_POOL = [
     "从冷漠到温情", "从正直到堕落", "从懦弱到坚强",
     "从狂傲到谦逊", "从天真到深沉", "从孤僻到开放",
-    "从执着到释然", "从自私到无私", "从怖懦到无畏",
-    "", "",  # 20% chance of no defined growth arc
-]
-
-# ── NPC Personality Depth Pools (Task 8) ─────────────────────────────────
-
-MOTIVATION_POOL = [
-    "追求剑道极致", "守护宗门安宁", "寻找失散的亲人",
-    "突破自身血脉诅咒", "实现师父遗愿", "追求永生不死",
-    "报灭门之仇", "集齐古方炼制神丹", "探索天地大道真谛",
-    "护佑一方百姓平安", "证明自己的修炼之道", "寻回前世记忆",
-    "成为天下第一的炼丹师", "解开古修士留下的谜团",
-]
-
-SECRET_POOL = [
-    "实为魔修后裔", "暗恋主角多年", "曾背叛过前一任师父",
-    "身上封印着古魔", "真实身份是皇族血脉", "曾经误杀无辜之人",
-    "拥有预见未来的能力", "寿元已所剩无几", "被一个强大的存在监视着",
-    "其实是被放逐的上界仙人", "体内藏有远古传承", "心中其实早已不信任任何人",
-    "", "", "",  # 30% chance of no secret
-]
-
-GROWTH_ARC_POOL = [
-    "从冷漠到温情", "从正直到堕落", "从懦弱到坚强",
-    "从狂傲到谦逊", "从天真到深沉", "从孤僻到开放",
-    "从执着到释然", "从自私到无私", "从怖懦到无畏",
+    "从执着到释然", "从自私到无私", "从怯懦到无畏",
     "", "",  # 20% chance of no defined growth arc
 ]
 
@@ -134,9 +109,9 @@ class NPCManager:
         motivation = random.choice(MOTIVATION_POOL)
         secret = random.choice(SECRET_POOL)
         growth_arc = random.choice(GROWTH_ARC_POOL)
-        # Betrayal threshold: only for rival/enemy types or cunning/fierce
+        # Betrayal threshold: personalities prone to betrayal
         betrayal_threshold = -1
-        if personality in ("狡诈", "暴烈") and random.random() < 0.4:
+        if personality in ("狡诈", "暴烈", "阴沉", "狠辣", "多疑") and random.random() < 0.35:
             betrayal_threshold = random.randint(15, 30)
 
         npc = NPC(
@@ -174,7 +149,7 @@ class NPCManager:
         state.relationships.append(rel.model_dump())
 
         # Initialize destiny line for key NPCs (master/lover/rival)
-        if rel_type in ("\u5e08\u7236", "\u9053\u4fa3", "\u5bbf\u654c"):
+        if rel_type in ("师父", "道侣", "宿敌"):
             npc_dict = state.npc_registry[npc_id]
             # Use LLM dynamic generation if available, else fall back to template
             if self._destiny_generator:
@@ -473,7 +448,7 @@ class NPCManager:
                 continue
 
             # Trigger the beat
-            name = npc_dict.get("name", "\u67d0\u4eba")
+            name = npc_dict.get("name", "某人")
             event = self._create_destiny_event(state, npc_dict, rel_dict, beat, name)
             if event:
                 events.append(event)
@@ -525,20 +500,20 @@ class NPCManager:
 
         # Special: master beat 4 — random outcome (breakthrough or fall)
         if "{outcome}" in text:
-            outcome = random.choice(["\u7a81\u7834\u6210\u529f\uff0c\u4fee\u4e3a\u5927\u8fdb", "\u529b\u7aed\u965e\u843d\uff0c\u5316\u9053\u800c\u53bb"])
+            outcome = random.choice(["突破成功，修为大进", "力竭陨落，化道而去"])
             text = text.replace("{outcome}", outcome)
-            if "\u965e\u843d" in outcome:
+            if "陨落" in outcome:
                 npc_dict["is_alive"] = False
                 expanded = (
-                    f"\u4e00\u80a1\u6d69\u7136\u6c14\u673a\u4ece{name}\u95ed\u5173\u7684\u6d1e\u5e9c\u4e2d\u51b2\u5929\u800c\u8d77\uff0c\u968f\u5373\u6d88\u6563\u6b86\u5c3d\u3002"
-                    f"\u4f60\u8dea\u5012\u5728\u5730\uff0c\u6cea\u6d41\u6ee1\u9762\u3002\u5e08\u7236{name}\uff0c\u7ec8\u7a76\u6ca1\u80fd\u8de8\u8fc7\u90a3\u9053\u5929\u5811\u3002"
-                    f"\u4f46\u4f60\u77e5\u9053\uff0c\u5e08\u7236\u7684\u9053\uff0c\u5c06\u7531\u4f60\u6765\u5ef6\u7eed\u3002"
+                    f"一股浩然气机从{name}闭关的洞府中冲天而起，随即消散殆尽。"
+                    f"你跪倒在地，泪流满面。师父{name}，终究没能跨过那道天堑。"
+                    f"但你知道，师父的道，将由你来延续。"
                 )
             else:
                 expanded = (
-                    f"\u5929\u5730\u9707\u8361\uff0c{name}\u95ed\u5173\u7684\u6d1e\u5e9c\u4e2d\u4f20\u6765\u9f99\u541f\u864e\u5578\u4e4b\u58f0\u3002"
-                    f"\u6570\u65e5\u540e\uff0c\u77f3\u95e8\u8f70\u7136\u6253\u5f00\uff0c{name}\u8e0f\u6b65\u800c\u51fa\uff0c\u5468\u8eab\u7075\u5149\u6d41\u8f6c\u3002"
-                    f"\u300c\u4e3a\u5e08\u7ec8\u4e8e\u7a81\u7834\u4e86\u3002\u300d\u4f60\u559c\u6781\u800c\u6ce3\uff0c\u8dea\u5730\u53e9\u9996\u3002"
+                    f"天地震荡，{name}闭关的洞府中传来龙吟虎啸之声。"
+                    f"数日后，石门轰然打开，{name}踏步而出，周身灵光流转。"
+                    f"「为师终于突破了。」你喜极而泣，跪地叩首。"
                 )
 
         return {
@@ -747,17 +722,53 @@ class NPCManager:
         realm_name = REALM_NAMES.get(Realm(npc_dict.get("realm", 0)), "")
 
         templates = [
-            f"{name}将你唤至静室，传授了一门新的功法心得",
-            f"{name}指点你修炼中的瓶颈，令你茅塞顿开",
-            f"{name}带你进入秘境历练，亲身指导战斗技巧",
-            f"{name}赐你一枚丹药，助你巩固修为根基",
-            f"{name}讲述自身突破时的经验，对你启发良多",
+            {
+                "text": f"{name}将你唤至静室，传授了一门新的功法心得",
+                "expanded": (
+                    f"{name}的表情难得柔和了几分。「这门功法，为师当年悠了三十年才惟透。」"
+                    f"你接过玉简，只觉入手温热，其中灵力流转如河。"
+                    f"师父的毛笔字迹苍劲有力，每一笔都蔚含着多年修行的感悟。"
+                ),
+            },
+            {
+                "text": f"{name}指点你修炼中的瓶颈，令你茅塞顿开",
+                "expanded": (
+                    f"你困于经脉运转的难题已有数月。{name}只轻轻抬手，"
+                    f"一股灵力注入你丹田，如春风过境，那堵塞的关隗瞬间豁然开朗。"
+                    f"「不过是一层窗户纸而已。」师父淡然一笑，你却感激不已。"
+                ),
+            },
+            {
+                "text": f"{name}带你进入秘境历练，亲身指导战斗技巧",
+                "expanded": (
+                    f"秘境之中灵气浓郁得化为了雾。{name}走在前头，偶尔回头指点一二。"
+                    f"「记住，实战中不要总想着用大招。灵气运转自如时，一招一式皆是杀招。」"
+                    f"你一边应战秘境中的异兽，一边哀叹师父标准太高。"
+                ),
+            },
+            {
+                "text": f"{name}赐你一枚丹药，助你巩固修为根基",
+                "expanded": (
+                    f"一枚散发着淡金色光芒的丹药被{name}随手抛来。"
+                    f"「吃了吧，最近修炼赶得太紧，根基有些浮。」师父语气淡然，"
+                    f"但你知道这枚丹药的珍贵。入口化为温热灵流，经脉中每一处暗伤都被温柔修复。"
+                ),
+            },
+            {
+                "text": f"{name}讲述自身突破时的经验，对你启发良多",
+                "expanded": (
+                    f"夜色渐深，{name}难得打开话匣讲述当年的往事。"
+                    f"「那时候为师也跟你一样，觉得这辈子突破无望了。」师父目光清澈，"
+                    f"「但道心不灭，终有转机。」你默默记下每一个字。"
+                ),
+            },
         ]
 
+        chosen = random.choice(templates)
         return {
             "id": f"npc_master_{state.age}_{uuid.uuid4().hex[:4]}",
-            "text": random.choice(templates),
-            "expanded_text": random.choice(templates),
+            "text": chosen["text"],
+            "expanded_text": chosen["expanded"],
             "category": "social",
             "event_type": "normal",
             "tags": ["master_event", "npc_interaction"],
@@ -770,17 +781,52 @@ class NPCManager:
         name = npc_dict.get("name", "道侣")
 
         templates = [
-            f"你与{name}并肩修炼，双修之下灵气运转更为顺畅",
-            f"{name}为你炼制了一炉辅助修炼的丹药",
-            f"你与{name}携手探索了一处新发现的灵脉",
-            f"{name}在你闭关时默默守护，使你心无旁骛",
-            f"月下与{name}论道，彼此心境皆有所提升",
+            {
+                "text": f"你与{name}并肩修炼，双修之下灵气运转更为顺畅",
+                "expanded": (
+                    f"灵气在你与{name}之间形成了奇妙的循环，一阴一阳，相互补益。"
+                    f"当灵光散去，你们相视一笑——从此修行不再是一个人的事。"
+                ),
+            },
+            {
+                "text": f"{name}为你炼制了一炉辅助修炼的丹药",
+                "expanded": (
+                    f"丹房中药香弥漫，{name}终于从丹炉前站起，额头渗出细汗。"
+                    f"「给你的，别浪费了。」语气尽管淡然，你却看见对方眼中的关切。"
+                    f"三天三夜的细心的炼制，全在这一炉丹药之中。"
+                ),
+            },
+            {
+                "text": f"你与{name}携手探索了一处新发现的灵脉",
+                "expanded": (
+                    f"灵脉深处寒气逼人，{name}情不自禁地靠近了几分。"
+                    f"你们并肩深入，在尽头发现了一汪灵泉。月光从石缝中洒落，"
+                    f"映在{name}脸上，你觉得这一刻比任何机缘都珍贵。"
+                ),
+            },
+            {
+                "text": f"{name}在你闭关时默默守护，使你心无旁骛",
+                "expanded": (
+                    f"闭关出定时，你看见洞府外{name}静静坐在石上，周身落叶堆积。"
+                    f"「醒了？」对方笑得云淡风轻，仿佛等待不过是寻常事。"
+                    f"你心中一暖，知道这世间有人在等你的感觉，真好。"
+                ),
+            },
+            {
+                "text": f"月下与{name}论道，彼此心境皆有所提升",
+                "expanded": (
+                    f"月色如水，你与{name}在山崖边对坐。话题从功法运转聊到大道感悟，"
+                    f"最后却只剩下沉默和风声。你们不需要太多言语，"
+                    f"彼此心意相通就是最好的修行。"
+                ),
+            },
         ]
 
+        chosen = random.choice(templates)
         return {
             "id": f"npc_lover_{state.age}_{uuid.uuid4().hex[:4]}",
-            "text": random.choice(templates),
-            "expanded_text": random.choice(templates),
+            "text": chosen["text"],
+            "expanded_text": chosen["expanded"],
             "category": "social",
             "event_type": "normal",
             "tags": ["lover_event", "npc_interaction"],
@@ -793,12 +839,48 @@ class NPCManager:
         name = npc_dict.get("name", "宿敌")
 
         templates = [
-            f"{name}再次找上门来挑衅，一场激斗不可避免",
-            f"你在秘境中与{name}狭路相逢，剑拔弩张",
-            f"{name}暗中使绊子，企图破坏你的修炼",
-            f"听闻{name}实力大进，你暗自警醒加紧修炼",
-            f"与{name}在坊市偶遇，对方冷笑着留下挑战之约",
+            {
+                "text": f"{name}再次找上门来挑衅，一场激斗不可避免",
+                "expanded": (
+                    f"{name}的声音从云端传来：「上次的账，今天算清。」"
+                    f"你拔剑而起，灵力在剑身上燃烧。既然躺不开，那便堂堂正正地一战。"
+                ),
+            },
+            {
+                "text": f"你在秘境中与{name}狭路相逢，剑拔弩张",
+                "expanded": (
+                    f"秘境深处，{name}的身影出现在转角。两人同时停下脚步，"
+                    f"气息瞄间碰撞。「又是你。」{name}咕角上扬，「这处机缘，"
+                    f"我不会让的。」"
+                ),
+            },
+            {
+                "text": f"{name}暗中使绊子，企图破坏你的修炼",
+                "expanded": (
+                    f"你的丹田忽然传来一阵刺痛——有人在你的修炼之地动了手脚。"
+                    f"灵气中残留的气息你再熟悉不过——{name}。"
+                    f"你咆哮一声站起，拳头捧紧。这笔账，早晚要算。"
+                ),
+            },
+            {
+                "text": f"听闻{name}实力大进，你暗自警醒加紧修炼",
+                "expanded": (
+                    f"来自各处的消息都指向同一个事实——{name}正在以惊人的速度变强。"
+                    f"你心中涨起一股紧迫感。对方不会停下脚步，你也不能。"
+                    f"寒夜中你将修炼时间又延长了一个时辰。"
+                ),
+            },
+            {
+                "text": f"与{name}在坊市偶遇，对方冷笑着留下挑战之约",
+                "expanded": (
+                    f"坊市人流如织，你却一眼认出了{name}的背影。"
+                    f"对方似也感应到了你，转过身来，咕角勾起一抹冷笑。"
+                    f"「三个月后，断魂崖。敢来吗？」你没有回答，但你们都知道答案。"
+                ),
+            },
         ]
+
+        chosen = random.choice(templates)
 
         # Rival events can be dangerous or motivating
         effects = {"willpower": random.choice([0, 1, 1])}
@@ -809,8 +891,8 @@ class NPCManager:
 
         return {
             "id": f"npc_rival_{state.age}_{uuid.uuid4().hex[:4]}",
-            "text": random.choice(templates),
-            "expanded_text": random.choice(templates),
+            "text": chosen["text"],
+            "expanded_text": chosen["expanded"],
             "category": "social",
             "event_type": "danger",
             "tags": ["rival_event", "npc_interaction"],
@@ -871,19 +953,46 @@ class NPCManager:
     def _create_reunion_event(self, state: GameState, npc_dict: dict, rel_dict: dict) -> Optional[dict]:
         """Create a reunion event for a long-absent friend."""
         name = npc_dict.get("name", "故人")
-        rel_type = rel_dict.get("relation_type", "故人")
 
         templates = [
-            f"多年未见的{rel_type}{name}突然造访，你们彻夜长谈",
-            f"在坊市意外重逢{name}，对方变化颇大但情谊依旧",
-            f"{name}寄来飞剑传书，邀你前往一叙旧情",
-            f"听闻{name}在附近历练，你主动前去相会",
+            {
+                "text": f"多年未见的故人{name}突然造访，你们彻夜长谈",
+                "expanded": (
+                    f"山门外传来一阵熟悉的灵力波动。你推开门，{name}站在月光下，"
+                    f"笑容与记忆中别无二致。「好久不见。」你们相对而坐，"
+                    f"从当年往事聊到各自近况，不觉天已大亮。"
+                ),
+            },
+            {
+                "text": f"在坊市意外重逢{name}，对方变化颇大但情谊依旧",
+                "expanded": (
+                    f"坊市人潮中，一个熟悉的身影让你停下了脚步。{name}比当年成熟了不少，"
+                    f"但看到你时眼中仍亮起了当年的光。「老朋友，喝一杯？」"
+                ),
+            },
+            {
+                "text": f"{name}寄来飞剑传书，邀你前往一叙旧情",
+                "expanded": (
+                    f"一柄灵剑突破禁制飞入洞府，剑身上绑着一片玉简。"
+                    f"是{name}的笔迹：「多年未见，思念得紧。山南灵峰处，望一聚。」"
+                    f"你咕角微微上扬，收好玉简，开始收拾行囊。"
+                ),
+            },
+            {
+                "text": f"听闻{name}在附近历练，你主动前去相会",
+                "expanded": (
+                    f"过路修士无意间提到了{name}的名字，你心中一动。"
+                    f"新斋沐浴后，你往那个方向御剑而去。多年未见，"
+                    f"不知对方还认不认得你这个老朋友。"
+                ),
+            },
         ]
 
+        chosen = random.choice(templates)
         return {
             "id": f"npc_reunion_{state.age}_{uuid.uuid4().hex[:4]}",
-            "text": random.choice(templates),
-            "expanded_text": random.choice(templates),
+            "text": chosen["text"],
+            "expanded_text": chosen["expanded"],
             "category": "social",
             "event_type": "fortune",
             "tags": ["reunion_event", "npc_interaction"],

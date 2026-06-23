@@ -217,8 +217,8 @@ class MemoryCompressor:
                 })
             return result
 
-        # Keep every 3rd event (simulating fading memory)
-        kept = events[::3]
+        # Keep every 2nd event (simulating gradual memory fading)
+        kept = events[::2]
         result = []
         for e in kept:
             text = e.get("text", "")
@@ -235,7 +235,7 @@ class MemoryCompressor:
                 "text": text,
                 "age": e.get("age", 0),
                 "type": "compressed",
-                "source_count": 3,
+                "source_count": 2,
                 "compressed": True,
             })
         return result

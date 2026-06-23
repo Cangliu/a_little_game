@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from .ai.prompt_builder import PromptBuilder
     from .npc.npc_manager import NPCManager
     from .memory.memory_manager import MemoryManager
-    from .plot_hooks import PlotHookManager
+    from .causality import CausalityManager
     from .story_arc import StoryArcPlanner
     from .main_storyline import MainStorylinePlanner
     from ..models import GameState
@@ -44,7 +44,7 @@ class NarrativeProvider:
         prompt_builder: Optional["PromptBuilder"] = None,
         npc_manager: Optional["NPCManager"] = None,
         memory_manager: Optional["MemoryManager"] = None,
-        hook_manager: Optional["PlotHookManager"] = None,
+        hook_manager: Optional["CausalityManager"] = None,
         arc_planner: Optional["StoryArcPlanner"] = None,
         storyline_planner: Optional["MainStorylinePlanner"] = None,
     ):
@@ -169,5 +169,30 @@ class NarrativeProvider:
     def polish_narrative(
         self, raw_text: str, state: Optional["GameState"] = None
     ) -> str:
-        """Polish existing text with AI (passthrough if unavailable)."""
+        """Polish existing text with AI (passthrough if unavailable).
+
+        Adds atmospheric detail and emotional resonance to short texts.
+        Only polishes texts shorter than 80 chars; longer texts are
+        already considered rich enough.
+        """
+        if not raw_text or len(raw_text) >= 80:
+            return raw_text
+
+        if not (self._llm and self._llm.available and self._prompt_builder):
+            return raw_text
+
+        try:
+            system_prompt = (
+                "你是一位修仙小说作家，请将下面的简短叙述扩写为50-100字的生动描写。"
+                "保持原意不变，增加氛围和感染力。直接输出结果，不要加引号或前缀。"
+            )
+            result = self._llm.generate_sync(
+                system_prompt, raw_text,
+                max_tokens=150, temperature=0.85,
+            )
+            if result and len(result.strip()) > len(raw_text):
+                return result.strip()
+        except Exception as e:
+            logger.debug("polish_narrative failed: %s", e)
+
         return raw_text

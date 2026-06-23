@@ -11,13 +11,25 @@ from pydantic import BaseModel
 
 
 class NPCPersonality(str, Enum):
-    """NPC personality archetypes affecting dialogue and behavior."""
+    """NPC personality archetypes affecting dialogue and behavior (18 types)."""
     WARM = "温和"
     COLD = "冷漠"
     CUNNING = "狡诈"
     RIGHTEOUS = "正直"
     MYSTERIOUS = "神秘"
     FIERCE = "暴烈"
+    CAREFREE = "洒脱"
+    GLOOMY = "阴沉"
+    ARROGANT = "傲慢"
+    LOYAL = "忠厚"
+    PARANOID = "多疑"
+    COMPASSIONATE = "慈悲"
+    OBSESSIVE = "执着"
+    ELEGANT = "风雅"
+    RUTHLESS = "狠辣"
+    NAIVE = "天真"
+    DEFIANT = "桀骜"
+    DEEP = "深沉"
 
 
 class RelationType(str, Enum):
