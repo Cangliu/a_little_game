@@ -244,6 +244,19 @@ class CausalityManager:
         if not active_chains:
             return candidates
 
+        # Update urgency for all active chains before matching
+        for chain in active_chains:
+            created = chain.get("created_age", 0)
+            max_wait = chain.get("max_wait_years", DEFAULT_MAX_WAIT_YEARS)
+            years_elapsed = state.age - created
+            years_remaining = max_wait - years_elapsed
+            if years_remaining <= 0:
+                chain["urgency"] = 10.0
+            elif years_remaining < URGENCY_ESCALATION_THRESHOLD:
+                chain["urgency"] = 3.0 + (URGENCY_ESCALATION_THRESHOLD - years_remaining) * 0.14
+            else:
+                chain["urgency"] = 1.5
+
         for cand in candidates:
             ev = cand["event"]
             ev_keywords = set(ev.get("_keywords", []))

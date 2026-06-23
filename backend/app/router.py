@@ -133,7 +133,7 @@ def get_game_state(game_id: str):
             npc_rels.append({
                 "name": npc.get("name", "\u672a\u77e5"),
                 "relation_type": rel.get("relation_type", ""),
-                "sentiment": rel.get("sentiment", 50),
+                "sentiment": rel.get("sentiment", 0),
                 "is_alive": npc.get("is_alive", True),
             })
 

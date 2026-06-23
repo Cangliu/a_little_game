@@ -83,7 +83,7 @@ class Relationship(BaseModel):
     """Tracks the relationship between an NPC and the player."""
     npc_id: str
     relation_type: str = RelationType.ACQUAINTANCE.value
-    sentiment: int = 50  # 0-100, 50 = neutral
+    sentiment: int = 0  # -100~100, 0 = neutral, positive=友好, negative=敌对
     last_interaction_age: int = 0
     interaction_count: int = 0
     key_memory: str = ""  # Most important interaction summary

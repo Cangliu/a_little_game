@@ -341,6 +341,77 @@ def _classify_priority_hint(event: dict) -> str:
     return ""
 
 
+# ── Diversity decay constants ────────────────────────────────────────────
+_DIVERSITY_DECAY_FACTOR = 0.6    # 同类别每出现一次，权重衰减40%
+_DIVERSITY_LOOKBACK = 5          # 回看最近N条事件
+
+# ── NPC role keyword → relation_type mapping ──────────────────────────────
+# 事件文本中的角色关键词，映射到NPC关系类型
+# 用于 Layer 8: text-based NPC sentiment boost
+_ROLE_KEYWORD_TO_RELATION: dict[str, str] = {
+    # ── 师门关系 (师父/徒弟/同门)
+    "师父": "师父",
+    "师尊": "师父",
+    "掌门": "师父",
+    "长老": "师父",
+    "宗主": "师父",
+    "弟子": "同门",
+    "师兄": "同门",
+    "师姐": "同门",
+    "师弟": "同门",
+    "师妹": "同门",
+    "同门": "同门",
+    # ── 情感关系 (道侣)
+    "道侣": "道侣",
+    "情人": "道侣",
+    "夫人": "道侣",
+    "妻子": "道侣",
+    "丈夫": "道侣",
+    # ── 友谊关系 (挚友)
+    "挚友": "挚友",
+    "好友": "挚友",
+    "朋友": "挚友",
+    "道友": "挚友",
+    "伙伴": "挚友",
+    # ── 敌对关系 (宿敌/仇人)
+    "宿敌": "宿敌",
+    "仇人": "仇人",
+    "仇家": "仇人",
+    "敌人": "宿敌",
+    "对手": "宿敌",
+    "魔头": "宿敌",
+    "魔修": "宿敌",
+    # ── 泛社交 (恩人/泛泛之交)
+    "散修": "泛泛之交",
+    "仙人": "恩人",
+    "前辈": "恩人",
+    "真人": "恩人",
+}
+
+# ── Tag vocabulary (built at load time) ───────────────────────────────────
+# 事件池中所有出现过的tags，供 Layer 9 做前缀匹配，也供 prompt 注入
+EVENT_TAG_VOCABULARY: set[str] = set()
+
+# 按频率排序的top tags，供 EventDirector prompt 参考
+EVENT_TAG_TOP50: list[str] = []
+
+
+def _build_tag_vocabulary() -> None:
+    """Build tag vocabulary from loaded events."""
+    global EVENT_TAG_VOCABULARY, EVENT_TAG_TOP50
+    from collections import Counter
+    tag_counter: Counter = Counter()
+    for ev in ALL_EVENTS:
+        for t in ev.get("tags", []):
+            tag_counter[t] += 1
+    EVENT_TAG_VOCABULARY = set(tag_counter.keys())
+    EVENT_TAG_TOP50 = [tag for tag, _ in tag_counter.most_common(50)]
+
+
+# Build after events are loaded
+_build_tag_vocabulary()
+
+
 # ── Event selection pipeline ─────────────────────────────────────────────
 
 class EventSystem:
@@ -597,6 +668,15 @@ class EventSystem:
                     boosted.append((ev, w))
             weighted = boosted
 
+        # ── Layer 7: Diversity decay (近期重复类别衰减) ──────────────
+        weighted = self._apply_diversity_decay(weighted, state)
+
+        # ── Layer 8: NPC sentiment boost (好感度驱动) ────────────────
+        weighted = self._apply_npc_sentiment_boost(weighted, state)
+
+        # ── Layer 9: Consequence tag boost (选择后果提权) ─────────────
+        weighted = self._apply_consequence_boost(weighted, state)
+
         # Sort by weight descending and take top-N
         weighted.sort(key=lambda x: x[1], reverse=True)
         top = weighted[:count]
@@ -631,6 +711,178 @@ class EventSystem:
             })
 
         return candidates
+
+    # ── Layer 7: Diversity decay ─────────────────────────────────────
+
+    def _apply_diversity_decay(
+        self, weighted: list[tuple[dict, float]], state: GameState
+    ) -> list[tuple[dict, float]]:
+        """Penalize events whose category appeared frequently in recent history.
+
+        近期重复出现同类别事件时，对同类别的候选降权。
+        Decay factor: 0.6^n where n = count of same category in recent events.
+        """
+        # Count recent categories from memory_working
+        recent_categories: dict[str, int] = {}
+        for mem in (state.memory_working or [])[-_DIVERSITY_LOOKBACK:]:
+            cat = mem.get("category", "")
+            if cat:
+                recent_categories[cat] = recent_categories.get(cat, 0) + 1
+
+        if not recent_categories:
+            return weighted
+
+        result = []
+        for ev, w in weighted:
+            cat = ev.get("category", "")
+            repeat_count = recent_categories.get(cat, 0)
+            if repeat_count > 0:
+                decay = _DIVERSITY_DECAY_FACTOR ** repeat_count
+                result.append((ev, w * decay))
+            else:
+                result.append((ev, w))
+        return result
+
+    # ── Layer 8: NPC sentiment boost ─────────────────────────────────
+
+    def _apply_npc_sentiment_boost(
+        self, weighted: list[tuple[dict, float]], state: GameState
+    ) -> list[tuple[dict, float]]:
+        """Boost events involving NPCs with high player affinity.
+
+        两种匹配方式（OR关系）：
+        1. 事件有明确的 involved_npc_id 字段
+        2. 事件文本中含有角色关键词（师父/道侣/师兄/长老等），
+           通过 _ROLE_KEYWORD_TO_RELATION 映射到玩家的实际NPC关系
+
+        Sentiment: 0~100 (50=中性), multiplier: 0.7 ~ 2.5
+        """
+        # Build relation_type → best sentiment
+        relation_sentiment: dict[str, float] = {}
+        npc_sentiment_by_id: dict[str, float] = {}
+        for rel in (state.relationships or []):
+            if isinstance(rel, dict):
+                npc_id = rel.get("npc_id", "")
+                sentiment = rel.get("sentiment", 0)
+                rel_type = rel.get("relation_type", "")
+            else:
+                npc_id = getattr(rel, "npc_id", "")
+                sentiment = getattr(rel, "sentiment", 0)
+                rel_type = getattr(rel, "relation_type", "")
+            if npc_id:
+                npc_sentiment_by_id[npc_id] = sentiment
+            if rel_type:
+                # Keep highest sentiment per relation type
+                old = relation_sentiment.get(rel_type, -1)
+                if sentiment > old:
+                    relation_sentiment[rel_type] = sentiment
+
+        if not relation_sentiment and not npc_sentiment_by_id:
+            return weighted
+
+        result = []
+        for ev, w in weighted:
+            # Method 1: explicit involved_npc_id
+            npc_id = ev.get("involved_npc_id", "")
+            if npc_id and npc_id in npc_sentiment_by_id:
+                mult = self._sentiment_to_multiplier(npc_sentiment_by_id[npc_id])
+                result.append((ev, w * mult))
+                continue
+
+            # Method 2: pre-annotated npc_roles field (fast, covers text+expanded_text)
+            best_sentiment = None
+            npc_roles = ev.get("npc_roles")
+            if npc_roles:
+                for role in npc_roles:
+                    if role in relation_sentiment:
+                        s = relation_sentiment[role]
+                        if best_sentiment is None or s > best_sentiment:
+                            best_sentiment = s
+
+            # Method 3: fallback text-based keyword inference (runtime scan)
+            if best_sentiment is None:
+                ev_text = ev.get("text", "")
+                for keyword, rel_type in _ROLE_KEYWORD_TO_RELATION.items():
+                    if keyword in ev_text and rel_type in relation_sentiment:
+                        s = relation_sentiment[rel_type]
+                        if best_sentiment is None or s > best_sentiment:
+                            best_sentiment = s
+
+            if best_sentiment is not None:
+                mult = self._sentiment_to_multiplier(best_sentiment)
+                result.append((ev, w * mult))
+            else:
+                result.append((ev, w))
+        return result
+
+    @staticmethod
+    def _sentiment_to_multiplier(sentiment: float) -> float:
+        """Convert sentiment (-100 ~ 100) to weight multiplier.
+
+        0 = neutral (×1.0), 100 = max boost (×2.5), -100 = penalty (×0.7)
+        """
+        normalized = sentiment / 100.0  # [-1.0, 1.0]
+        if normalized >= 0:
+            return 1.0 + normalized * 1.5  # [1.0, 2.5]
+        else:
+            return max(0.7, 1.0 + normalized * 0.3)  # [0.7, 1.0]
+
+    # ── Layer 9: Consequence tag boost ───────────────────────────────
+
+    def _apply_consequence_boost(
+        self, weighted: list[tuple[dict, float]], state: GameState
+    ) -> list[tuple[dict, float]]:
+        """Boost events whose tags match recent player choice consequences.
+    
+        玩家之前的选择产生了consequence_tag，如果候选事件的tags中包含该tag，
+        则提权（体现“选择有后果”的因果感）。
+    
+        匹配策略（按优先级）：
+        1. 精确匹配: consequence_tag 完全等于事件tag (×2.0)
+        2. 前缀匹配: consequence_tag 以事件tag开头 (×1.6)
+           例如 consequence_tag='combat_injury' 匹配事件tag='combat'
+        3. 含有匹配: 事件tag是 consequence_tag 的子串 (×1.3)
+           例如 consequence_tag='betrayal' 匹配事件tag='npc_betrayal'
+        """
+        # Collect active consequence tags from recent choices (last 10)
+        consequence_tags: set[str] = set()
+        for choice in (state.choice_history or [])[-10:]:
+            tag = choice.get("consequence_tag", "")
+            if tag:
+                consequence_tags.add(tag)
+    
+        if not consequence_tags:
+            return weighted
+    
+        result = []
+        for ev, w in weighted:
+            ev_tags = set(ev.get("tags", []))
+            if not ev_tags:
+                result.append((ev, w))
+                continue
+    
+            boost_score = 0.0
+            for ctag in consequence_tags:
+                # Priority 1: Exact match
+                if ctag in ev_tags:
+                    boost_score += 2.0
+                    continue
+                # Priority 2: Prefix match (ctag starts with an event tag)
+                prefix_hit = any(ctag.startswith(et + "_") or ctag.startswith(et) for et in ev_tags if len(et) >= 3)
+                if prefix_hit:
+                    boost_score += 1.6
+                    continue
+                # Priority 3: Substring match (event tag contains ctag or vice versa)
+                substr_hit = any(ctag in et or et in ctag for et in ev_tags if len(et) >= 4)
+                if substr_hit:
+                    boost_score += 1.3
+    
+            if boost_score > 0:
+                mult = min(1.0 + boost_score, 6.0)  # Cap at ×6
+                result.append((ev, w * mult))
+            else:
+                result.append((ev, w))
+        return result
 
     # ── Effect application ───────────────────────────────────────────
 
@@ -674,6 +926,30 @@ class EventSystem:
             state.cultivation = 0
 
 
+# ── Fallback event ───────────────────────────────────────────────────────
+
+def _fallback_event() -> dict:
+    return {
+        "id": "nothing",
+        "text": "平静的一年，无事发生。",
+        "expanded_text": (
+            "这一年风调雨顺，门前的桃树几乎是一夜之间就开满了。"
+            "你起居如常，读书、修炼，都没出什么意外。"
+            "偶尔抬头看一眼远处的山，那云彩变幻万千，"
+            "仿佛有许多话要说，却又一句也说不出口。"
+            "平静也是一种造化，你心中隐隐如是想。"
+        ),
+        "event_type": "normal",
+        "category": "common",
+    }
+
+
+def find_event_by_id(event_id: str) -> Optional[dict]:
+    """Find an event by ID from the loaded event pool. Returns a copy."""
+    for ev in ALL_EVENTS:
+        if ev.get("id") == event_id:
+            return dict(ev)  # Shallow copy to avoid mutation
+    return None
 # ── Fallback event ───────────────────────────────────────────────────────
 
 def _fallback_event() -> dict:

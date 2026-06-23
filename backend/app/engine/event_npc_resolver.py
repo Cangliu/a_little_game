@@ -176,7 +176,7 @@ class EventNPCResolver:
                 continue
 
             years_since = state.age - rel_dict.get("last_interaction_age", 0)
-            sentiment = rel_dict.get("sentiment", 50)
+            sentiment = rel_dict.get("sentiment", 0)
 
             # Score: prefer long-absent + positive sentiment
             score = years_since * 0.5 + sentiment * 0.3

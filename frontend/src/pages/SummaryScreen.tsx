@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { LifeSummary, SectInfo, NPCRelationship, ChoiceHistoryItem } from '../utils/types';
+import type { LifeSummary, SectInfo, ChoiceHistoryItem } from '../utils/types';
 import { REALM_COLORS, GENDER_NAMES } from '../utils/types';
 import { getSummary, getGameState } from '../utils/api';
 
@@ -12,7 +12,6 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
   const [summary, setSummary] = useState<LifeSummary | null>(null);
   const [show, setShow] = useState(false);
   const [sectInfo, setSectInfo] = useState<SectInfo | null>(null);
-  const [npcRelationships, setNpcRelationships] = useState<NPCRelationship[]>([]);
   const [choiceHistory, setChoiceHistory] = useState<ChoiceHistoryItem[]>([]);
 
   useEffect(() => {
@@ -20,10 +19,9 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
       setSummary(data);
       setTimeout(() => setShow(true), 300);
     });
-    // Fetch extended state for sect/NPC/choices
+    // Fetch extended state for sect/choices
     getGameState(gameId).then((state) => {
       if (state.sect_info) setSectInfo(state.sect_info);
-      if (state.npc_relationships) setNpcRelationships(state.npc_relationships);
       if (state.choice_history) setChoiceHistory(state.choice_history);
     }).catch(() => {});
   }, [gameId]);
@@ -180,33 +178,6 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
                     <div className="text-stone-500">总贡献</div>
                     <div className="text-amber-700">{sectInfo.contribution}</div>
                   </div>
-                </div>
-              </div>
-            </>
-          )}
-
-          {/* NPC Relationships */}
-          {npcRelationships.length > 0 && (
-            <>
-              <div className="ink-divider" />
-              <div className="mb-4">
-                <h3 className="text-scroll-text-dim text-xs font-kai tracking-widest mb-3 text-center">
-                  人际总结
-                </h3>
-                <div className="space-y-1.5">
-                  {npcRelationships.map((npc, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs font-kai">
-                      <span className={npc.is_alive ? 'text-scroll-text' : 'text-stone-400 line-through'}>
-                        {npc.name}
-                      </span>
-                      <span className="text-stone-400">·</span>
-                      <span className="text-stone-500">{npc.relation_type}</span>
-                      <div className="flex-1" />
-                      <span className={npc.sentiment >= 70 ? 'text-amber-600' : npc.sentiment >= 40 ? 'text-stone-500' : 'text-red-500'}>
-                        {npc.sentiment >= 70 ? '★亲密' : npc.sentiment >= 40 ? '·平淡' : '✖水火'}
-                      </span>
-                    </div>
-                  ))}
                 </div>
               </div>
             </>

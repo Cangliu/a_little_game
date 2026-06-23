@@ -26,9 +26,14 @@ if TYPE_CHECKING:
     from ..models import GameState
 
 from .ai.prompt_templates import EVENT_DIRECTOR_SYSTEM, EVENT_DIRECTOR_USER, EVENT_DIRECTOR_STREAM_SYSTEM
+from .ai.llm_client import MODEL_PRO
 from .life_phase import LifePhase, LifePhaseManager
 
 logger = logging.getLogger(__name__)
+
+# ── Pro model upgrade thresholds ─────────────────────────────────────────
+_PRO_TENSION_THRESHOLD = 70
+_PRO_SAGA_MOMENTUM_THRESHOLD = 60
 
 
 class EventDirector:
@@ -57,6 +62,32 @@ class EventDirector:
         self._storyline_planner = storyline_planner
         self._saga_manager = saga_manager
         self._era_manager = era_manager
+
+    # ── Model routing ─────────────────────────────────────────────────────
+
+    def _should_use_pro(self, state: "GameState") -> bool:
+        """Decide whether this turn warrants the Pro model.
+
+        Conditions (any one triggers upgrade):
+        - tension >= 70
+        - active saga with momentum >= 60
+        - just broke through (realm_just_advanced flag)
+        - world era just changed (era_just_changed flag)
+        """
+        if state.tension >= _PRO_TENSION_THRESHOLD:
+            return True
+        # Check active sagas momentum
+        for saga in getattr(state, "sagas", None) or []:
+            if saga.get("status") == "active" and saga.get("momentum", 0) >= _PRO_SAGA_MOMENTUM_THRESHOLD:
+                return True
+        # Breakthrough / era change (flags set by director._post_year_update)
+        if getattr(state, "_realm_just_advanced", False):
+            return True
+        if getattr(state, "_era_just_changed", False):
+            return True
+        return False
+
+    # ── Core methods ──────────────────────────────────────────────────────
 
     def direct_event(self, candidates: list[dict], state: "GameState") -> dict:
         """Single LLM call to choose event, generate narrative, and optionally branch.
@@ -93,11 +124,13 @@ class EventDirector:
         """Generate unified response via LLM."""
         try:
             system_prompt, user_prompt = self._build_director_prompt(candidates, state)
+            use_model = MODEL_PRO if self._should_use_pro(state) else None
             raw = self._llm.generate_sync(
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
                 max_tokens=800,
                 temperature=0.85,
+                model=use_model,
             )
             if not raw:
                 return None
@@ -423,10 +456,12 @@ class EventDirector:
         buffer = ""
         meta_parsed = False
         had_output = False
+        use_model = MODEL_PRO if self._should_use_pro(state) else None
 
         try:
             for chunk in self._llm.generate_stream(
-                system_prompt, user_prompt, max_tokens=800, temperature=0.85
+                system_prompt, user_prompt, max_tokens=800, temperature=0.85,
+                model=use_model,
             ):
                 had_output = True
                 buffer += chunk

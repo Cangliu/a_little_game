@@ -850,7 +850,7 @@ class GameDirector:
                 npc_rels.append({
                     "name": npc.get("name", "未知"),
                     "relation_type": rel.get("relation_type", ""),
-                    "sentiment": rel.get("sentiment", 50),
+                    "sentiment": rel.get("sentiment", 0),
                     "is_alive": npc.get("is_alive", True),
                 })
 

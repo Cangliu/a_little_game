@@ -25,7 +25,7 @@ MASTER_EVENT_INTERVAL = (5, 10)
 LOVER_EVENT_INTERVAL = (3, 5)
 RIVAL_EVENT_INTERVAL = (10, 20)
 REUNION_MIN_ABSENCE = 30
-REUNION_SENTIMENT_THRESHOLD = 70
+REUNION_SENTIMENT_THRESHOLD = 50
 
 # ── NPC Personality Depth Pools (Task 8) ─────────────────────────────────
 
@@ -235,8 +235,8 @@ class NPCManager:
         """
         for i, rel_dict in enumerate(state.relationships):
             if rel_dict.get("npc_id") == npc_id:
-                rel_dict["sentiment"] = max(0, min(100,
-                    rel_dict.get("sentiment", 50) + delta_sentiment
+                rel_dict["sentiment"] = max(-100, min(100,
+                    rel_dict.get("sentiment", 0) + delta_sentiment
                 ))
                 rel_dict["last_interaction_age"] = state.age
                 rel_dict["interaction_count"] = rel_dict.get("interaction_count", 0) + 1
@@ -269,14 +269,14 @@ class NPCManager:
     def _check_relationship_evolution(self, state: GameState, rel_dict: dict, rel_index: int) -> None:
         """Check if a relationship should be upgraded or downgraded.
 
-        Evolution rules:
-        - 泛泛之交 → 挚友: sentiment≥80 and interaction_count≥5
-        - 挚友/泛泛之交 → 道侣: sentiment≥90 and interaction_count≥8
+        Evolution rules (sentiment range: -100 ~ 100, 0=neutral):
+        - 泛泛之交 → 挚友: sentiment≥60 and interaction_count≥5
+        - 挚友/泛泛之交 → 道侣: sentiment≥80 and interaction_count≥8
           (only if no existing 道侣 and opposite/any gender)
-        - Any non-宿敌 → 宿敌: sentiment≤20 and interaction_count≥3
+        - Any non-宿敌 → 宿敌: sentiment≤-40 and interaction_count≥3
         """
         current_type = rel_dict.get("relation_type", "")
-        sentiment = rel_dict.get("sentiment", 50)
+        sentiment = rel_dict.get("sentiment", 0)
         interactions = rel_dict.get("interaction_count", 0)
         npc_id = rel_dict.get("npc_id", "")
         npc_dict = state.npc_registry.get(npc_id, {})
@@ -286,12 +286,12 @@ class NPCManager:
 
         # Upgrade: 泛泛之交 → 挚友
         if current_type == RelationType.ACQUAINTANCE.value:
-            if sentiment >= 80 and interactions >= 5:
+            if sentiment >= 60 and interactions >= 5:
                 new_type = RelationType.FRIEND.value
 
         # Upgrade: 挚友/泛泛之交 → 道侣 (only if no existing 道侣)
         if current_type in (RelationType.ACQUAINTANCE.value, RelationType.FRIEND.value):
-            if sentiment >= 90 and interactions >= 8:
+            if sentiment >= 80 and interactions >= 8:
                 has_lover = any(
                     r.get("relation_type") == RelationType.LOVER.value
                     for r in state.relationships
@@ -301,7 +301,7 @@ class NPCManager:
 
         # Downgrade: 任何非宿敌 → 宿敌 (on extreme negative sentiment)
         if current_type not in (RelationType.RIVAL.value, RelationType.MASTER.value):
-            if sentiment <= 20 and interactions >= 3:
+            if sentiment <= -40 and interactions >= 3:
                 new_type = RelationType.RIVAL.value
 
         if new_type and new_type != current_type:
@@ -375,7 +375,7 @@ class NPCManager:
                         self.update_relationship(state, npc_id, -5, "confrontation")
 
             # Old friend reunion
-            elif rel_dict.get("sentiment", 50) >= REUNION_SENTIMENT_THRESHOLD:
+            elif rel_dict.get("sentiment", 0) >= REUNION_SENTIMENT_THRESHOLD:
                 if years_since >= REUNION_MIN_ABSENCE and random.random() < 0.15:
                     event = self._create_reunion_event(state, npc_dict, rel_dict)
                     if event:
@@ -477,9 +477,9 @@ class NPCManager:
 
         if trigger.get("min_years_since_met") and years_since_met < trigger["min_years_since_met"]:
             return False
-        if trigger.get("min_sentiment") and rel_dict.get("sentiment", 50) < trigger["min_sentiment"]:
+        if trigger.get("min_sentiment") and rel_dict.get("sentiment", 0) < trigger["min_sentiment"]:
             return False
-        if trigger.get("max_sentiment") and rel_dict.get("sentiment", 50) > trigger["max_sentiment"]:
+        if trigger.get("max_sentiment") and rel_dict.get("sentiment", 0) > trigger["max_sentiment"]:
             return False
         if trigger.get("min_tension") and state.tension < trigger["min_tension"]:
             return False
@@ -541,7 +541,7 @@ class NPCManager:
             name = npc_dict.get("name", "???")
             alive = "在世" if npc_dict.get("is_alive", True) else "已故"
             rel_type = rel_dict.get("relation_type", "泛泛之交")
-            sentiment = rel_dict.get("sentiment", 50)
+            sentiment = rel_dict.get("sentiment", 0)
             realm_name = REALM_NAMES.get(Realm(npc_dict.get("realm", 0)), "凡人")
             motivation = npc_dict.get("motivation", "")
             # Only reveal secret hint if sentiment >= 80 (close relationship)
@@ -621,7 +621,7 @@ class NPCManager:
                 "npc_dict": npc_dict,
                 "rel_dict": rel_dict,
                 "years_absent": years_since,
-                "sentiment": rel_dict.get("sentiment", 50),
+                "sentiment": rel_dict.get("sentiment", 0),
             })
 
         # Sort by absence duration (longest first)
@@ -632,14 +632,18 @@ class NPCManager:
 
     @staticmethod
     def _initial_sentiment(relation_type: str) -> int:
-        """Determine initial sentiment based on relationship type."""
+        """Determine initial sentiment based on relationship type.
+
+        Range: -100 ~ 100 (0 = neutral)
+        Positive: +40 ~ +70, Negative: -70 ~ -40, Neutral: 0
+        """
         positive = {"师父", "徒弟", "同门", "挚友", "道侣", "恩人"}
         negative = {"宿敌", "仇人"}
         if relation_type in positive:
-            return random.randint(60, 80)
+            return random.randint(40, 70)
         elif relation_type in negative:
-            return random.randint(10, 30)
-        return 50
+            return random.randint(-70, -40)
+        return 0
 
     @staticmethod
     def _text_implies_role(text: str, rel_type: str) -> bool:
@@ -666,7 +670,7 @@ class NPCManager:
         """Find an NPC that qualifies for a reunion event."""
         candidates = []
         for rel_dict in state.relationships:
-            if rel_dict.get("sentiment", 50) < REUNION_SENTIMENT_THRESHOLD:
+            if rel_dict.get("sentiment", 0) < REUNION_SENTIMENT_THRESHOLD:
                 continue
             years_since = state.age - rel_dict.get("last_interaction_age", 0)
             if years_since < REUNION_MIN_ABSENCE:

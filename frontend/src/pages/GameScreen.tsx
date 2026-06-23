@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import type { GameEvent, NextYearResponse, SectInfo, NPCRelationship } from '../utils/types';
+import type { GameEvent, NextYearResponse, SectInfo } from '../utils/types';
 import { REALM_NAMES, REALM_COLORS, GENDER_NAMES, CATEGORY_NAMES, CATEGORY_COLORS } from '../utils/types';
 import { nextYear, nextYearStream, makeChoice } from '../utils/api';
 
@@ -106,12 +106,6 @@ function TypewriterEvent({
   );
 }
 
-/** Tension indicator color */
-function getTensionColor(t: number): string {
-  if (t >= 70) return 'bg-red-500';
-  if (t >= 40) return 'bg-amber-500';
-  return 'bg-emerald-500';
-}
 
 export default function GameScreen({
   gameId,
@@ -131,11 +125,8 @@ export default function GameScreen({
   const [isChoosing, setIsChoosing] = useState(false);
   const [choiceEvent, setChoiceEvent] = useState<GameEvent | null>(null);
   const [choiceResult, setChoiceResult] = useState<string | null>(null);
-  // New: tension, sect, NPC state
-  const [tension, setTension] = useState(0);
+  // Sect info state
   const [sectInfo, setSectInfo] = useState<SectInfo | null>(null);
-  const [npcRelationships, setNpcRelationships] = useState<NPCRelationship[]>([]);
-  const [showNpcPanel, setShowNpcPanel] = useState(false);
   const [showSectPanel, setShowSectPanel] = useState(false);
   const [aiEnhanced, setAiEnhanced] = useState(false);
   const [streamingNarrative, setStreamingNarrative] = useState<string>('');
@@ -174,7 +165,6 @@ export default function GameScreen({
             if (s.realm_name) setRealmName(s.realm_name);
             if (s.cultivation !== undefined) setCultivation(s.cultivation);
             if (s.cultivation_max !== undefined) setCultivationMax(s.cultivation_max);
-            if (s.tension !== undefined) setTension(s.tension);
             // Add events (without expanded_text) to log
             if (s.events && Array.isArray(s.events)) {
               setEventLog((prev) => [...prev, ...s.events]);
@@ -236,9 +226,7 @@ export default function GameScreen({
         setRealmName(result.realm_name);
         setCultivation(result.cultivation);
         setCultivationMax(result.cultivation_max);
-        if (result.tension !== undefined) setTension(result.tension);
         if (result.sect_info !== undefined) setSectInfo(result.sect_info ?? null);
-        if (result.npc_relationships) setNpcRelationships(result.npc_relationships);
         if (result.ai_enhanced !== undefined) setAiEnhanced(result.ai_enhanced);
 
         setEventLog((prev) => {
@@ -392,7 +380,7 @@ export default function GameScreen({
               )}
             </div>
           </div>
-          {/* Row 2: Cultivation bar + Tension indicator + quick buttons */}
+          {/* Row 2: Cultivation bar + quick buttons */}
           <div className="flex items-center gap-3">
             {/* Cultivation progress */}
             <div className="flex-1 cultivation-bar h-2 rounded-full bg-stone-200/60 overflow-hidden">
@@ -407,16 +395,6 @@ export default function GameScreen({
             <span className="text-xs text-scroll-text-dim font-kai whitespace-nowrap">
               {cultivation}/{cultivationMax}
             </span>
-            {/* Tension indicator */}
-            <div className="flex items-center gap-1" title={`张力 ${Math.round(tension)}/100`}>
-              <span className="text-xs">🔥</span>
-              <div className="w-12 h-1.5 rounded-full bg-stone-200/60 overflow-hidden">
-                <div
-                  className={`h-full rounded-full transition-all duration-500 ${getTensionColor(tension)}`}
-                  style={{ width: `${tension}%` }}
-                />
-              </div>
-            </div>
             {/* 灵玉指示器: AI叙事状态 */}
             <div
               className="flex items-center gap-0.5"
@@ -433,15 +411,7 @@ export default function GameScreen({
                 💎
               </span>
             </div>
-            {/* NPC / Sect toggle buttons */}
-            <button
-              onClick={() => setShowNpcPanel(!showNpcPanel)}
-              className={`text-xs font-kai px-2 py-0.5 rounded border transition-all ${
-                showNpcPanel ? 'border-teal-500 text-teal-600 bg-teal-50' : 'border-stone-300/50 text-stone-500 hover:text-teal-600'
-              }`}
-            >
-              人脉
-            </button>
+            {/* Sect toggle button */}
             <button
               onClick={() => setShowSectPanel(!showSectPanel)}
               className={`text-xs font-kai px-2 py-0.5 rounded border transition-all ${
@@ -454,70 +424,36 @@ export default function GameScreen({
         </div>
       </div>
 
-      {/* Collapsible Info Panels */}
-      {(showNpcPanel || showSectPanel) && (
+      {/* Collapsible Sect Panel */}
+      {showSectPanel && (
         <div className="border-b border-scroll-gold-dim/10 px-4 py-3 relative z-10"
              style={{ background: 'rgba(255,253,245,0.95)' }}>
-          <div className="max-w-2xl mx-auto flex gap-4 flex-wrap">
-            {/* NPC Panel */}
-            {showNpcPanel && (
-              <div className="info-panel flex-1 min-w-[200px]">
-                <h4 className="text-xs font-kai text-teal-600 mb-2 tracking-wider">人际关系</h4>
-                {npcRelationships.length > 0 ? (
-                  <div className="space-y-1.5">
-                    {npcRelationships.map((npc, i) => (
-                      <div key={i} className="npc-card flex items-center gap-2 text-xs">
-                        <span className={`font-kai ${npc.is_alive ? 'text-scroll-text' : 'text-stone-400 line-through'}`}>
-                          {npc.name}
-                        </span>
-                        <span className="text-stone-400">·</span>
-                        <span className="text-stone-500">{npc.relation_type}</span>
-                        <div className="flex-1" />
-                        <div className="w-12 h-1.5 rounded-full bg-stone-200 overflow-hidden">
-                          <div
-                            className="h-full rounded-full transition-all"
-                            style={{
-                              width: `${npc.sentiment}%`,
-                              background: npc.sentiment >= 70 ? '#f59e0b' : npc.sentiment >= 40 ? '#9ca3af' : '#ef4444',
-                            }}
-                          />
-                        </div>
-                      </div>
-                    ))}
+          <div className="max-w-2xl mx-auto">
+            <div className="info-panel">
+              <h4 className="text-xs font-kai text-emerald-600 mb-2 tracking-wider">宗门信息</h4>
+              {sectInfo ? (
+                <div className="space-y-1 text-xs font-kai">
+                  <div className="flex justify-between">
+                    <span className="text-stone-500">宗门</span>
+                    <span className="text-scroll-text">{sectInfo.name}</span>
                   </div>
-                ) : (
-                  <p className="text-xs text-stone-400 font-kai">尚无重要人际关系</p>
-                )}
-              </div>
-            )}
-            {/* Sect Panel */}
-            {showSectPanel && (
-              <div className="info-panel flex-1 min-w-[200px]">
-                <h4 className="text-xs font-kai text-emerald-600 mb-2 tracking-wider">宗门信息</h4>
-                {sectInfo ? (
-                  <div className="space-y-1 text-xs font-kai">
-                    <div className="flex justify-between">
-                      <span className="text-stone-500">宗门</span>
-                      <span className="text-scroll-text">{sectInfo.name}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-stone-500">类型</span>
-                      <span className="text-scroll-text">{sectInfo.sect_type}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-stone-500">职位</span>
-                      <span className="text-emerald-700">{sectInfo.rank}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-stone-500">贡献</span>
-                      <span className="text-amber-700">{sectInfo.contribution}</span>
-                    </div>
+                  <div className="flex justify-between">
+                    <span className="text-stone-500">类型</span>
+                    <span className="text-scroll-text">{sectInfo.sect_type}</span>
                   </div>
-                ) : (
-                  <p className="text-xs text-stone-400 font-kai">散修 · 无宗门归属</p>
-                )}
-              </div>
-            )}
+                  <div className="flex justify-between">
+                    <span className="text-stone-500">职位</span>
+                    <span className="text-emerald-700">{sectInfo.rank}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-stone-500">贡献</span>
+                    <span className="text-amber-700">{sectInfo.contribution}</span>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-xs text-stone-400 font-kai">散修 · 无宗门归属</p>
+              )}
+            </div>
           </div>
         </div>
       )}

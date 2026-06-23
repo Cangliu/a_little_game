@@ -273,7 +273,7 @@ class ChoiceGenerator:
             if npc:
                 name = npc.get("name", "未知")
                 rel_type = rel.get("relation_type", "路人")
-                sentiment = rel.get("sentiment", 50)
+                sentiment = rel.get("sentiment", 0)
                 npc_lines.append(f"- {name}({rel_type}, 好感{sentiment})")
         npc_str = "\n".join(npc_lines) if npc_lines else "暂无重要人际关系"
 

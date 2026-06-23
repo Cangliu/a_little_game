@@ -4,6 +4,10 @@ Uses the OpenAI SDK with custom base_url pointing to DeepSeek.
 When API key is missing or call times out, returns None to trigger
 JSON fallback narratives.
 
+Dual-model strategy:
+- deepseek-v4-flash (default): high-frequency narrative tasks
+- deepseek-v4-pro (on-demand): critical planning & high-tension moments
+
 Integrates LLMCache: low-temperature calls (< 0.8) are automatically cached.
 """
 from __future__ import annotations
@@ -14,6 +18,10 @@ import logging
 from typing import Optional, Generator
 
 from .llm_cache import get_llm_cache
+
+# ── Model constants ──────────────────────────────────────────────────────
+MODEL_FLASH = "deepseek-v4-flash"
+MODEL_PRO = "deepseek-v4-pro"
 
 try:
     from openai import OpenAI
@@ -36,10 +44,10 @@ class LLMClient:
     Features:
     - Graceful degradation: returns None when unavailable
     - Timeout: 8s hard limit per call (DeepSeek Flash is fast)
-    - Model: deepseek-v4-0324 (Flash, low cost)
+    - Dual-model: default Flash, override with model param per call
     """
 
-    def __init__(self, model: str = "deepseek-v4-0324", timeout: float = 8.0):
+    def __init__(self, model: str = MODEL_FLASH, timeout: float = 8.0):
         self.model = model
         self.timeout = timeout
         self._client: Optional[OpenAI] = None
@@ -74,6 +82,7 @@ class LLMClient:
         user_prompt: str,
         max_tokens: int = 512,
         temperature: float = 0.8,
+        model: Optional[str] = None,
     ) -> Optional[str]:
         """Synchronous generation. Returns None on any failure.
 
@@ -81,10 +90,16 @@ class LLMClient:
         On timeout or API error, returns None so the caller can
         fall back to JSON text.
 
+        Args:
+            model: Override model for this call. None = use default (Flash).
+                   Pass MODEL_PRO for critical planning tasks.
+
         Low-temperature calls (< 0.8) are automatically cached.
         """
         if not self._available:
             return None
+
+        use_model = model or self.model
 
         # Check cache for low-temperature (deterministic) calls
         use_cache = temperature < 0.8
@@ -97,7 +112,7 @@ class LLMClient:
         try:
             t0 = time.time()
             response = self._client.chat.completions.create(
-                model=self.model,
+                model=use_model,
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
@@ -109,7 +124,7 @@ class LLMClient:
             content = response.choices[0].message.content
             result = content.strip() if content else None
             elapsed = time.time() - t0
-            logger.debug("LLM sync call: %.2fs, %d tokens", elapsed, max_tokens)
+            logger.debug("LLM %s sync: %.2fs, %d tokens", use_model, elapsed, max_tokens)
 
             # Store in cache if applicable
             if result and use_cache:
@@ -117,7 +132,7 @@ class LLMClient:
 
             return result
         except Exception as e:
-            logger.warning("LLM generation failed: %s", e)
+            logger.warning("LLM generation failed (%s): %s", use_model, e)
             return None
 
     def generate_stream(
@@ -126,18 +141,24 @@ class LLMClient:
         user_prompt: str,
         max_tokens: int = 512,
         temperature: float = 0.8,
+        model: Optional[str] = None,
     ) -> Generator[str, None, None]:
         """Streaming generation. Yields text chunks.
 
         Used by the streaming EventDirector for real-time narrative output.
         Returns empty generator on any failure.
+
+        Args:
+            model: Override model for this call. None = use default (Flash).
         """
         if not self._available:
             return
 
+        use_model = model or self.model
+
         try:
             response = self._client.chat.completions.create(
-                model=self.model,
+                model=use_model,
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
@@ -150,7 +171,7 @@ class LLMClient:
                 if chunk.choices and chunk.choices[0].delta.content:
                     yield chunk.choices[0].delta.content
         except Exception as e:
-            logger.warning("LLM stream failed: %s", e)
+            logger.warning("LLM stream failed (%s): %s", use_model, e)
 
     def generate_with_thinking(
         self,
@@ -158,18 +179,24 @@ class LLMClient:
         user_prompt: str,
         max_tokens: int = 1024,
         reasoning_effort: str = "low",
+        model: Optional[str] = None,
     ) -> Optional[str]:
         """Generation with reasoning/thinking enabled (for complex tasks).
 
         Uses DeepSeek's thinking mode for memory compression etc.
         Returns None on failure.
+
+        Args:
+            model: Override model for this call. None = use default.
         """
         if not self._available:
             return None
 
+        use_model = model or self.model
+
         try:
             response = self._client.chat.completions.create(
-                model=self.model,
+                model=use_model,
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
@@ -181,5 +208,5 @@ class LLMClient:
             content = response.choices[0].message.content
             return content.strip() if content else None
         except Exception as e:
-            logger.warning("LLM thinking generation failed: %s", e)
+            logger.warning("LLM thinking generation failed (%s): %s", use_model, e)
             return None
