@@ -342,8 +342,11 @@ def _classify_priority_hint(event: dict) -> str:
 
 
 # ── Diversity decay constants ────────────────────────────────────────────
-_DIVERSITY_DECAY_FACTOR = 0.6    # 同类别每出现一次，权重衰减40%
-_DIVERSITY_LOOKBACK = 5          # 回看最近N条事件
+_DIVERSITY_DECAY_FACTOR = 0.6        # 同类别每出现一次，权重衰减40%
+_DIVERSITY_LOOKBACK_BASE = 5         # 基础回看窗口（低境界）
+_DIVERSITY_LOOKBACK_HIGH = 10        # 高境界(>=2)回看窗口
+_CATEGORY_COOLDOWN_THRESHOLD = 2     # 连续出现>=N次触发冷却
+_CATEGORY_COOLDOWN_PENALTY = 0.15    # 冷却期权重乘数
 
 # ── NPC role keyword → relation_type mapping ──────────────────────────────
 # 事件文本中的角色关键词，映射到NPC关系类型
@@ -448,7 +451,7 @@ class EventSystem:
                 count = random.randint(1, 3)
 
         phase = LifePhase(state.life_phase)
-        used_ids = set(state.used_event_ids)
+        used_ids = state.used_event_ids  # already a set
 
         # ── Layer 1-3: Phase + Condition + Dedup ─────────────────────
         eligible: list[dict] = []
@@ -597,7 +600,7 @@ class EventSystem:
         Returns: [{"event": dict, "weight": float, "summary": str, "index": int}]
         """
         phase = LifePhase(state.life_phase)
-        used_ids = set(state.used_event_ids)
+        used_ids = state.used_event_ids  # already a set
 
         # Layer 1-3: Phase + Condition + Dedup
         eligible: list[dict] = []
@@ -677,6 +680,12 @@ class EventSystem:
         # ── Layer 9: Consequence tag boost (选择后果提权) ─────────────
         weighted = self._apply_consequence_boost(weighted, state)
 
+        # ── Global weight clamp ──────────────────────────────────────
+        # 9 层叠乘可能产生极端权重 (理论最大 >100万)。
+        # 使用硬上限 clamp，避免某个事件独占候选池。
+        _WEIGHT_CAP = 5000.0
+        weighted = [(ev, min(w, _WEIGHT_CAP)) for ev, w in weighted]
+
         # Sort by weight descending and take top-N
         weighted.sort(key=lambda x: x[1], reverse=True)
         top = weighted[:count]
@@ -721,13 +730,27 @@ class EventSystem:
 
         近期重复出现同类别事件时，对同类别的候选降权。
         Decay factor: 0.6^n where n = count of same category in recent events.
+        Realm-adaptive lookback: base=5 for realm<2, 10 for realm>=2.
+        Category cooldown: if same category appeared >= 2 times consecutively,
+        apply a harsh 0.15x penalty.
         """
+        # Realm-adaptive lookback window
+        lookback = _DIVERSITY_LOOKBACK_HIGH if state.realm >= 2 else _DIVERSITY_LOOKBACK_BASE
+
         # Count recent categories from memory_working
+        recent_memories = (state.memory_working or [])[-lookback:]
         recent_categories: dict[str, int] = {}
-        for mem in (state.memory_working or [])[-_DIVERSITY_LOOKBACK:]:
+        for mem in recent_memories:
             cat = mem.get("category", "")
             if cat:
                 recent_categories[cat] = recent_categories.get(cat, 0) + 1
+
+        # Detect consecutive category streaks for cooldown
+        cooldown_cats: set[str] = set()
+        if len(recent_memories) >= _CATEGORY_COOLDOWN_THRESHOLD:
+            tail = [m.get("category", "") for m in recent_memories[-_CATEGORY_COOLDOWN_THRESHOLD:]]
+            if tail[0] and len(set(tail)) == 1:
+                cooldown_cats.add(tail[0])
 
         if not recent_categories:
             return weighted
@@ -735,8 +758,11 @@ class EventSystem:
         result = []
         for ev, w in weighted:
             cat = ev.get("category", "")
-            repeat_count = recent_categories.get(cat, 0)
-            if repeat_count > 0:
+            if cat in cooldown_cats:
+                # Harsh cooldown penalty for consecutive same-category
+                result.append((ev, w * _CATEGORY_COOLDOWN_PENALTY))
+            elif cat in recent_categories:
+                repeat_count = recent_categories[cat]
                 decay = _DIVERSITY_DECAY_FACTOR ** repeat_count
                 result.append((ev, w * decay))
             else:
@@ -755,7 +781,10 @@ class EventSystem:
         2. 事件文本中含有角色关键词（师父/道侣/师兄/长老等），
            通过 _ROLE_KEYWORD_TO_RELATION 映射到玩家的实际NPC关系
 
-        Sentiment: 0~100 (50=中性), multiplier: 0.7 ~ 2.5
+        附加机制：道侣存在时，所有 adult 标签事件获得额外提权
+        (好感度联动: mult = 1.0 + (sentiment/100) × 0.8 → [1.0, 1.8])
+
+        Sentiment: -100~100 (0=中性), multiplier: 0.7 ~ 2.5
         """
         # Build relation_type → best sentiment
         relation_sentiment: dict[str, float] = {}
@@ -780,8 +809,22 @@ class EventSystem:
         if not relation_sentiment and not npc_sentiment_by_id:
             return weighted
 
+        # ── 道侣存在时，计算 adult 事件提权倍率 ──────────────────────
+        # 仅对「道侣兼容」的情色事件提权，避免无关 adult 事件被误提
+        lover_adult_mult = 1.0
+        lover_sentiment = relation_sentiment.get("道侣")
+        if lover_sentiment is not None:
+            # mult = 1.0 + (sentiment/100) × 0.8 → [1.0, 1.8]
+            lover_adult_mult = 1.0 + max(0.0, lover_sentiment / 100.0) * 0.8
+
         result = []
         for ev, w in weighted:
+            # ── 道侣 adult 关联提权：仅道侣兼容的 adult 事件获得加成
+            ev_tags = set(ev.get("tags", []))
+            if lover_adult_mult > 1.0 and "adult" in ev_tags:
+                if self._is_lover_compatible_adult(ev, ev_tags):
+                    w = w * lover_adult_mult
+
             # Method 1: explicit involved_npc_id
             npc_id = ev.get("involved_npc_id", "")
             if npc_id and npc_id in npc_sentiment_by_id:
@@ -826,6 +869,35 @@ class EventSystem:
             return 1.0 + normalized * 1.5  # [1.0, 2.5]
         else:
             return max(0.7, 1.0 + normalized * 0.3)  # [0.7, 1.0]
+
+    # ── 道侣兼容性判断 ─────────────────────────────────────
+
+    # 少量兆底关键词：仅用于未预打 romance 标签但明确指向玩家道侣的事件
+    _LOVER_FALLBACK_KEYWORDS = (
+        "你的道侣", "与道侣", "你与道侣", "道侣双修",
+    )
+
+    @staticmethod
+    def _is_lover_compatible_adult(ev: dict, ev_tags: set) -> bool:
+        """Determine if an adult event is contextually compatible with 道侣.
+
+        主要依据预打的 romance 标签，关键词仅作为少量兆底。
+
+        Compatible conditions (OR):
+        1. Event has 'romance' tag (primary, pre-annotated)
+        2. Event text contains unambiguous 道侣 patterns (fallback)
+        """
+        # Condition 1: romance tag (主要判据)
+        if "romance" in ev_tags:
+            return True
+
+        # Condition 2: 兆底关键词（仅匹配明确指向玩家道侣的模式）
+        ev_text = ev.get("text", "")
+        for kw in EventSystem._LOVER_FALLBACK_KEYWORDS:
+            if kw in ev_text:
+                return True
+
+        return False
 
     # ── Layer 9: Consequence tag boost ───────────────────────────────
 
@@ -886,22 +958,31 @@ class EventSystem:
 
     # ── Effect application ───────────────────────────────────────────
 
+    # Attribute value bounds (inclusive)
+    _ATTR_MIN = 0
+    _ATTR_MAX = 20
+    # Cultivation has no upper-bound (threshold-driven), but must not go negative
+    _CULTIVATION_MIN = 0
+
     @staticmethod
     def apply_effects(event: dict, state: GameState) -> None:
         """Apply an event's effects to game state."""
         effects = event.get("effects", {})
 
         if effects.get("cultivation"):
-            state.cultivation += effects["cultivation"]
-            if state.cultivation < 0:
-                state.cultivation = 0
+            state.cultivation = max(
+                EventSystem._CULTIVATION_MIN,
+                state.cultivation + effects["cultivation"],
+            )
 
-        # Attribute modifications
+        # Attribute modifications (clamped to [0, 20])
         for attr in ("lifespan", "constitution", "comprehension",
                      "fortune", "charisma", "willpower"):
             if effects.get(attr):
                 old = getattr(state.attributes, attr)
-                setattr(state.attributes, attr, old + effects[attr])
+                clamped = max(EventSystem._ATTR_MIN,
+                              min(EventSystem._ATTR_MAX, old + effects[attr]))
+                setattr(state.attributes, attr, clamped)
 
         # Tag management
         if effects.get("add_tag"):
@@ -926,30 +1007,6 @@ class EventSystem:
             state.cultivation = 0
 
 
-# ── Fallback event ───────────────────────────────────────────────────────
-
-def _fallback_event() -> dict:
-    return {
-        "id": "nothing",
-        "text": "平静的一年，无事发生。",
-        "expanded_text": (
-            "这一年风调雨顺，门前的桃树几乎是一夜之间就开满了。"
-            "你起居如常，读书、修炼，都没出什么意外。"
-            "偶尔抬头看一眼远处的山，那云彩变幻万千，"
-            "仿佛有许多话要说，却又一句也说不出口。"
-            "平静也是一种造化，你心中隐隐如是想。"
-        ),
-        "event_type": "normal",
-        "category": "common",
-    }
-
-
-def find_event_by_id(event_id: str) -> Optional[dict]:
-    """Find an event by ID from the loaded event pool. Returns a copy."""
-    for ev in ALL_EVENTS:
-        if ev.get("id") == event_id:
-            return dict(ev)  # Shallow copy to avoid mutation
-    return None
 # ── Fallback event ───────────────────────────────────────────────────────
 
 def _fallback_event() -> dict:

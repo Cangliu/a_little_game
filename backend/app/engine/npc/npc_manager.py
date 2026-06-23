@@ -13,7 +13,7 @@ from typing import Optional
 from ...models import GameState, REALM_NAMES, REALM_MAX_AGE, Realm
 from .models import NPC, Relationship, RelationType, NPCPersonality, NPCInteraction
 from .npc_templates import generate_name, get_backstory
-from .npc_destiny import get_destiny_template
+from .npc_destiny import get_destiny_template, NpcDestinyGenerator
 
 logger = logging.getLogger(__name__)
 
@@ -80,6 +80,12 @@ GROWTH_ARC_POOL = [
 
 class NPCManager:
     """Manages NPC entities and their relationships with the player."""
+
+    def __init__(self, llm_client=None):
+        """Initialize NPCManager with optional LLM client for dynamic destiny generation."""
+        self._destiny_generator = None
+        if llm_client is not None:
+            self._destiny_generator = NpcDestinyGenerator(llm_client)
 
     def generate_npc(
         self,
@@ -169,8 +175,14 @@ class NPCManager:
 
         # Initialize destiny line for key NPCs (master/lover/rival)
         if rel_type in ("\u5e08\u7236", "\u9053\u4fa3", "\u5bbf\u654c"):
-            destiny_beats = get_destiny_template(rel_type)
             npc_dict = state.npc_registry[npc_id]
+            # Use LLM dynamic generation if available, else fall back to template
+            if self._destiny_generator:
+                destiny_beats = self._destiny_generator.generate_destiny(
+                    npc_dict, rel_type, state
+                )
+            else:
+                destiny_beats = get_destiny_template(rel_type)
             npc_dict["destiny_beats"] = destiny_beats
             npc_dict["current_destiny_index"] = 0
             npc_dict["destiny_completed"] = False
@@ -417,10 +429,23 @@ class NPCManager:
                     Realm(npc_dict["realm"]), max_age
                 )
 
-        # Log deaths
+        # Log deaths and archive dead NPC relationships
         for npc_id in dead_npcs:
             npc_name = state.npc_registry[npc_id].get("name", "unknown")
             logger.debug("NPC %s (%s) has died", npc_name, npc_id)
+
+        # Move dead NPC relationships out of the active list to prevent
+        # unbounded growth of state.relationships over long games.
+        if dead_npcs:
+            dead_set = set(dead_npcs)
+            surviving = []
+            for rel in state.relationships:
+                if rel.get("npc_id", "") in dead_set:
+                    # Keep a lightweight tombstone so LLM can still reference
+                    # the deceased NPC in narrative context ("故人已逝")
+                    rel["is_dead"] = True
+                surviving.append(rel)
+            state.relationships = surviving
 
     def advance_npc_destiny(self, state: GameState) -> list[dict]:
         """Check and advance NPC destiny beats. Returns destiny-driven events."""
@@ -792,6 +817,54 @@ class NPCManager:
             "effects": effects,
             "involved_npc": name,
         }
+
+    def check_destiny_pivots(self, state: GameState, events: list) -> None:
+        """Check if any dramatic event should trigger NPC destiny rewrites.
+
+        Called at end-of-year after main destiny advancement.
+        """
+        if not self._destiny_generator:
+            return
+
+        for event in events:
+            for rel_dict in state.relationships:
+                npc_id = rel_dict.get("npc_id", "")
+                npc_dict = state.npc_registry.get(npc_id)
+                if not npc_dict or not npc_dict.get("is_alive", True):
+                    continue
+                if npc_dict.get("destiny_completed", False):
+                    continue
+                if not npc_dict.get("destiny_beats"):
+                    continue
+
+                # Use prev_sentiment from interactions history to detect swings
+                prev_sentiment = self._get_prev_sentiment(rel_dict)
+
+                if self._destiny_generator.should_pivot(
+                    npc_dict, rel_dict, event, prev_sentiment
+                ):
+                    success = self._destiny_generator.pivot_destiny(
+                        npc_dict, rel_dict, event, state
+                    )
+                    if success:
+                        logger.info(
+                            "Destiny pivoted for NPC %s due to event: %s",
+                            npc_dict.get("name", "?"),
+                            event.get("text", "")[:40],
+                        )
+                    # Only pivot once per NPC per turn
+                    break
+
+    @staticmethod
+    def _get_prev_sentiment(rel_dict: dict) -> Optional[int]:
+        """Get the previous sentiment value from interaction history."""
+        interactions = rel_dict.get("interactions", [])
+        if len(interactions) >= 2:
+            # The second-to-last entry reflects the state before this turn
+            prev_delta = interactions[-1].get("sentiment_delta", 0)
+            current = rel_dict.get("sentiment", 0)
+            return current - prev_delta
+        return None
 
     def _create_reunion_event(self, state: GameState, npc_dict: dict, rel_dict: dict) -> Optional[dict]:
         """Create a reunion event for a long-absent friend."""

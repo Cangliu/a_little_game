@@ -1,0 +1,43 @@
+{
+  "title": "9层事件选择管线",
+  "type": "flow",
+  "layout": "top-down",
+  "style": {"preset": "sketch", "roughness": 1, "fontFamily": "hand"},
+  "nodes": [
+    {"id": "pool", "label": "📦 事件池  9185条", "semantic": "storage", "layer": 0, "width": 220, "height": 70, "shape": "cylinder"},
+
+    {"id": "l1", "label": "L1 人生阶段过滤\n类别白名单 + 标签黑名单", "semantic": "error", "layer": 1, "width": 280, "height": 70},
+    {"id": "l2", "label": "L2 条件过滤\n年龄/境界/天赋/标签/性别/属性", "semantic": "error", "layer": 2, "width": 280, "height": 70},
+    {"id": "l3", "label": "L3 去重过滤\n排除已触发事件ID", "semantic": "error", "layer": 3, "width": 260, "height": 60},
+
+    {"id": "sep", "label": "eligible 候选事件", "semantic": "middleware", "layer": 4, "width": 200, "height": 50, "shape": "ellipse"},
+
+    {"id": "l4", "label": "L4 权重计算\n事件类型 × 境界相关性 × 张力曲线", "semantic": "core", "layer": 5, "width": 320, "height": 70},
+    {"id": "l5", "label": "L5 伏笔权重\n因果链 resolves_hook 匹配", "semantic": "ai", "layer": 6, "width": 280, "height": 60},
+    {"id": "l6", "label": "L6 关键词加成\n三维匹配: 词集交集+文本扫描+标签映射\n×2.5 / ×3.5 / ×5.0", "semantic": "ai", "layer": 7, "width": 340, "height": 80},
+    {"id": "l7", "label": "L7 多样性衰减\n同类别出现n次 → ×0.6ⁿ", "semantic": "core", "layer": 8, "width": 280, "height": 60},
+    {"id": "l8", "label": "L8 NPC好感度驱动\n好感度 -100~100 → ×0.7~×2.5", "semantic": "trigger", "layer": 9, "width": 310, "height": 60},
+    {"id": "l9", "label": "L9 选择后果提权\nconsequence_tag 匹配 → ≤×6.0", "semantic": "trigger", "layer": 10, "width": 310, "height": 60},
+
+    {"id": "top10", "label": "🏆 Top-10 候选", "semantic": "success", "layer": 11, "width": 200, "height": 50, "shape": "ellipse"},
+    {"id": "llm", "label": "🤖 LLM Director\n选1个事件 + 叙事扩写 + 可选分支", "semantic": "ai", "layer": 12, "width": 320, "height": 80}
+  ],
+  "edges": [
+    {"from": "pool", "to": "l1"},
+    {"from": "l1", "to": "l2"},
+    {"from": "l2", "to": "l3"},
+    {"from": "l3", "to": "sep"},
+    {"from": "sep", "to": "l4"},
+    {"from": "l4", "to": "l5"},
+    {"from": "l5", "to": "l6"},
+    {"from": "l6", "to": "l7"},
+    {"from": "l7", "to": "l8"},
+    {"from": "l8", "to": "l9"},
+    {"from": "l9", "to": "top10"},
+    {"from": "top10", "to": "llm"}
+  ],
+  "groups": [
+    {"id": "g_hard", "label": "硬过滤 — 不满足直接丢弃", "members": ["l1", "l2", "l3"]},
+    {"id": "g_weight", "label": "权重调整 — 乘性叠加", "members": ["l4", "l5", "l6", "l7", "l8", "l9"]}
+  ]
+}

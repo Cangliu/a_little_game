@@ -19,6 +19,10 @@ UNFORGETTABLE_KEYWORDS = [
     "突破", "飞升", "觉醒", "灵根", "渡劫", "拜师", "传承",
     "道侣", "结仇", "走火入魔", "陨落", "大机缘", "生死",
     "空间节点", "化神", "金丹", "元婴", "筑基", "npc_interaction",
+    # 情感类关键词 — 确保情感记忆不被压缩丢失
+    "悲伤", "愤怒", "感动", "愚爱", "死别", "离别", "“经此”",
+    "永远", "背叛", "牺牲", "仇恨", "感激", "误解", "和解",
+    "遗言", "师恩", "报恩",
 ]
 
 # Event types that are always kept
@@ -158,9 +162,24 @@ class MemoryCompressor:
 
     @staticmethod
     def _rule_compress_single(event: dict) -> dict:
-        """Rule-based compression for a single event."""
+        """Rule-based compression for a single event.
+
+        Preserves emotional keywords and NPC names in compressed text.
+        """
         text = event.get("text", "")
-        compressed_text = text[:40] if len(text) > 40 else text
+        # Smart truncation: find a sentence boundary near the limit
+        limit = 60 if any(kw in text for kw in ("悲伤", "愤怒", "感动", "死别", "离别", "背叛", "牺牲", "仇恨", "遗言")) else 40
+        if len(text) > limit:
+            # Try to break at punctuation for natural reading
+            for sep in ("。", "，", "！", "…"):
+                pos = text.rfind(sep, 0, limit)
+                if pos > limit // 2:
+                    compressed_text = text[:pos + 1]
+                    break
+            else:
+                compressed_text = text[:limit]
+        else:
+            compressed_text = text
 
         return {
             "text": compressed_text,
@@ -172,30 +191,54 @@ class MemoryCompressor:
 
     @staticmethod
     def _rule_compress_batch(events: list) -> list:
-        """Rule-based batch compression: keep only 1 in 3 normal events."""
+        """Rule-based batch compression: keep only 1 in 3 normal events.
+
+        Uses smart truncation that preserves sentence boundaries.
+        """
         if len(events) <= 3:
-            return [
-                {
-                    "text": e.get("text", "")[:30],
+            result = []
+            for e in events:
+                text = e.get("text", "")
+                # Try sentence boundary truncation
+                limit = 40
+                if len(text) > limit:
+                    for sep in ("。", "，", "！"):
+                        pos = text.rfind(sep, 0, limit)
+                        if pos > limit // 2:
+                            text = text[:pos + 1]
+                            break
+                    else:
+                        text = text[:limit]
+                result.append({
+                    "text": text,
                     "age": e.get("age", 0),
                     "type": "compressed",
                     "compressed": True,
-                }
-                for e in events
-            ]
+                })
+            return result
 
         # Keep every 3rd event (simulating fading memory)
         kept = events[::3]
-        return [
-            {
-                "text": e.get("text", "")[:30],
+        result = []
+        for e in kept:
+            text = e.get("text", "")
+            limit = 40
+            if len(text) > limit:
+                for sep in ("。", "，", "！"):
+                    pos = text.rfind(sep, 0, limit)
+                    if pos > limit // 2:
+                        text = text[:pos + 1]
+                        break
+                else:
+                    text = text[:limit]
+            result.append({
+                "text": text,
                 "age": e.get("age", 0),
                 "type": "compressed",
                 "source_count": 3,
                 "compressed": True,
-            }
-            for e in kept
-        ]
+            })
+        return result
 
     def _llm_compress_batch(self, events: list, current_age: int) -> Optional[str]:
         """Use LLM to compress a batch of events into a summary."""

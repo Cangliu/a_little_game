@@ -197,24 +197,20 @@ def check_event_conditions(event: dict, state: GameState) -> bool:
 def apply_event_effects(event: dict, state: GameState) -> None:
     """Apply event effects to game state."""
     effects = event.get("effects", {})
-    
+
+    # Attribute bounds
+    _ATTR_MIN, _ATTR_MAX = 0, 20
+
     if effects.get("cultivation"):
-        state.cultivation += effects["cultivation"]
-        if state.cultivation < 0:
-            state.cultivation = 0
+        state.cultivation = max(0, state.cultivation + effects["cultivation"])
     
-    if effects.get("lifespan"):
-        state.attributes.lifespan += effects["lifespan"]
-    if effects.get("constitution"):
-        state.attributes.constitution += effects["constitution"]
-    if effects.get("comprehension"):
-        state.attributes.comprehension += effects["comprehension"]
-    if effects.get("fortune"):
-        state.attributes.fortune += effects["fortune"]
-    if effects.get("charisma"):
-        state.attributes.charisma += effects["charisma"]
-    if effects.get("willpower"):
-        state.attributes.willpower += effects["willpower"]
+    # Attribute modifications (clamped to [0, 20])
+    for attr in ("lifespan", "constitution", "comprehension",
+                 "fortune", "charisma", "willpower"):
+        if effects.get(attr):
+            old = getattr(state.attributes, attr)
+            clamped = max(_ATTR_MIN, min(_ATTR_MAX, old + effects[attr]))
+            setattr(state.attributes, attr, clamped)
     
     if effects.get("add_tag"):
         if effects["add_tag"] not in state.tags:
@@ -544,7 +540,7 @@ def select_events(state: GameState, count: int = 2) -> list[dict]:
     每个事件都带有 expanded_text，不再需要拆池。只按 weight + fortune 修正抽取。
     Dedup: events already triggered in this life are excluded.
     """
-    used_ids = set(state.used_event_ids)
+    used_ids = state.used_event_ids  # already a set
     eligible = [e for e in ALL_EVENTS
                 if e.get("category") != "death"
                 and e.get("id") not in used_ids
@@ -682,7 +678,7 @@ def advance_year(game_id: str) -> NextYearResponse:
         apply_event_effects(event, state)
         # Record used event ID for dedup
         if event.get("id"):
-            state.used_event_ids.append(event["id"])
+            state.used_event_ids.add(event["id"])
         # Sync state.age with narrative age so the timeline stays consistent.
         # If the event text says "你5岁时", state.age becomes max(state.age, 5).
         narrative_age = _extract_narrative_age(event["text"])

@@ -1,0 +1,6479 @@
+[
+  {
+    "id": "npc_lover_001",
+    "text": "你与道侣于月下论道，彼此心境有所提升。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 5,
+      "comprehension": 1
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_002",
+    "text": "道侣为你备好灵茶，你们共赏落日余晖。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_003",
+    "text": "你与道侣携手于灵山间漫步采药。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 3,
+      "fortune": 1
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_004",
+    "text": "道侣在你闭关前偷偷留下一封书信。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 1,
+      "cultivation": 5
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_005",
+    "text": "你为道侣炼制一枚辟寒丹，她感动不已。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 35,
+    "effects": {
+      "charisma": 1,
+      "cultivation": 3
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_006",
+    "text": "清晨醒来发现道侣正倚在你肩头酣睡。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_007",
+    "text": "道侣突然学你说话的语气，你们笑了很久。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "charisma": 1
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "funny",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_008",
+    "text": "你与道侣比剑助兴，不分胜负，相视一笑。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 5,
+      "constitution": 1
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_009",
+    "text": "道侣为你梳发结髻，指尖温热一如往昔。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_010",
+    "text": "你们一同放灯于湖面，许下来世再续的愿。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "fortune": 1
+    },
+    "tags": [
+      "adult",
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_011",
+    "text": "你与道侣因修行理念不同产生了激烈争执。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 1,
+      "cultivation": -5
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_012",
+    "text": "道侣被仇家掳走，你须在三日内救出。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "constitution": -1,
+      "willpower": 2,
+      "cultivation": 20
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_013",
+    "text": "有人散布谣言说你道侣红杏出墙。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 1,
+      "charisma": -1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_014",
+    "text": "道侣为救你服下禁药，修为大损。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 10
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_015",
+    "text": "你发现道侣一直隐瞒着一个重大秘密。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_016",
+    "text": "道侣修炼走火入魔，你须以灵力稳住她心脉。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "cultivation": -10,
+      "willpower": 2
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_017",
+    "text": "你的宿敌以道侣为要挟，逼你交出法宝。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2,
+      "fortune": -1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_018",
+    "text": "天劫将至，你与道侣只能救一人。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_019",
+    "text": "道侣说要独自远行历练，不知归期。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 5
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_020",
+    "text": "你与道侣因门派利益被迫站在对立面。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2,
+      "charisma": -1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_021",
+    "text": "你与道侣以神识共鸣之法窥见了彼此的道。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 45,
+    "effects": {
+      "comprehension": 2,
+      "cultivation": 30
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_022",
+    "text": "道侣以半生修为为你挡下致命一击。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 45,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 50
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_023",
+    "text": "你们约定百年后在天池相见，各自闭关。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 45,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 40
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_024",
+    "text": "道侣于渡劫时陨落，你枯坐三年不起。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 45,
+    "effects": {
+      "willpower": 3,
+      "cultivation": -30,
+      "comprehension": 2
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_025",
+    "text": "你以化神之力为道侣续命百年。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 45,
+    "effects": {
+      "cultivation": -100,
+      "willpower": 3
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_026",
+    "text": "你与道侣并肩抵御域外天魔入侵。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 45,
+    "effects": {
+      "cultivation": 60,
+      "constitution": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_027",
+    "text": "你们以命魂相连之术永不分离。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 45,
+    "effects": {
+      "willpower": 3,
+      "fortune": 2
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_028",
+    "text": "道侣留下一缕残魂守护你的本命法器。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 45,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 30
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_029",
+    "text": "飞升之日将至，你选择放弃独自飞升等道侣。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 45,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 50
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_030",
+    "text": "你与道侣双双飞升，天地为你们鸣钟。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 45,
+    "effects": {
+      "cultivation": 100,
+      "willpower": 3,
+      "fortune": 3
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_friend_001",
+    "text": "你的挚友突然来访，带了一壶好酒。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 1,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_002",
+    "text": "挚友在你危难时挺身而出替你挡下一剑。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_003",
+    "text": "你与挚友并肩闯入秘境，满载而归。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 20,
+      "fortune": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_004",
+    "text": "挚友修为精进，与你切磋时令你获益良多。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 10,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_005",
+    "text": "挚友在宗门大比中为你喝彩助威。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_006",
+    "text": "你收到挚友从远方寄来的灵药。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 8,
+      "constitution": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_007",
+    "text": "挚友陷入心魔，你陪他彻夜长谈。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_008",
+    "text": "你与挚友赌酒论道三日三夜。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "comprehension": 1,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "funny",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_009",
+    "text": "挚友突破失败重伤，你倾尽家底为他寻药。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 35,
+    "effects": {
+      "fortune": -1,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_010",
+    "text": "你的挚友不幸陨落，你为他立碑守墓三月。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 3,
+      "cultivation": -10
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_011",
+    "text": "多年不见的挚友突然归来，容颜未改。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 35,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_012",
+    "text": "你与挚友联手击退来犯强敌。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 15,
+      "constitution": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_013",
+    "text": "挚友将毕生领悟的剑意传授于你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 40,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_014",
+    "text": "你与挚友结拜为异姓兄弟，歃血为盟。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_015",
+    "text": "挚友为护你周全主动引开追兵。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 35,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_rival_001",
+    "text": "你的宿敌在宗门大比上向你下战书。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1,
+      "cultivation": 5
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_002",
+    "text": "宿敌暗中散布你的谣言，令你名声受损。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 38,
+    "effects": {
+      "charisma": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_003",
+    "text": "你与宿敌狭路相逢，一场恶战不可避免。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 15,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_004",
+    "text": "宿敌突破了新境界，实力已在你之上。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 10
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_005",
+    "text": "你发现宿敌在暗中窥伺你的修炼之地。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_006",
+    "text": "宿敌以阴谋令你被宗门误解。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 38,
+    "effects": {
+      "charisma": -2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_007",
+    "text": "你终于找到宿敌的破绽，一剑重伤他。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 20,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_008",
+    "text": "宿敌对你的至亲下了毒手。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 3,
+      "constitution": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_009",
+    "text": "你与宿敌被困于绝地，须暂时联手求生。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 15,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_010",
+    "text": "宿敌向你发起生死决斗的邀约。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_011",
+    "text": "你得知宿敌与你有前世因果。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_012",
+    "text": "宿敌以命换命拖你同归于尽。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "constitution": -2,
+      "willpower": 3,
+      "cultivation": 30
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_013",
+    "text": "宿敌临死前对你说出一句话，令你愣在原地。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_014",
+    "text": "你饶了宿敌一命，他从此销声匿迹。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "charisma": 1,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_015",
+    "text": "宿敌的徒弟找上门来为师复仇。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 20,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_001",
+    "text": "亦敌亦友之人向你伸出援手，代价未明。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 1,
+      "cultivation": 10
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友",
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_002",
+    "text": "曾经的恩人如今站在你的对立面。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "恩人",
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_003",
+    "text": "你的挚友背叛了你，投入宿敌阵营。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 2,
+      "charisma": -1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_complex_004",
+    "text": "宿敌垂死之际向你托孤。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_005",
+    "text": "你的同门师兄对你有恩却也有怨。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_complex_006",
+    "text": "一位故人以全新身份出现在你面前。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友",
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_complex_007",
+    "text": "你不得不在挚友与道侣之间做出选择。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友",
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_complex_008",
+    "text": "宿敌死后你才发现他一直暗中保护你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 42,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_009",
+    "text": "你从前的道侣如今已是别人的人。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 2,
+      "cultivation": -5
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_complex_010",
+    "text": "挚友为大义灭亲选择与你为敌。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_016",
+    "text": "挚友渡劫失败，元神消散前将道果传于你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 40,
+    "effects": {
+      "comprehension": 3,
+      "willpower": 3,
+      "cultivation": 60
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_017",
+    "text": "你与挚友联手破解上古阵法，各获机缘。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 40,
+    "effects": {
+      "cultivation": 50,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_018",
+    "text": "挚友已成化神，千里之外以神念为你护法。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 40,
+    "effects": {
+      "cultivation": 40,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_019",
+    "text": "你与挚友论道三月，各悟大道一隅。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 40,
+    "effects": {
+      "comprehension": 2,
+      "cultivation": 30
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_020",
+    "text": "挚友以命魂封印为你挡下天劫余威。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 50
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_021",
+    "text": "百年不见，再相逢时挚友已近坐化。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_022",
+    "text": "你的挚友飞升在即，你们最后一次痛饮。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_023",
+    "text": "挚友留下本命法器作为纪念后独自飞升。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3,
+      "fortune": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_rival_016",
+    "text": "你的宿敌竟也突破元婴，与你宿命对决在所难免。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 30
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_017",
+    "text": "宿敌以禁术封锁你的灵脉，逼你就范。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 42,
+    "effects": {
+      "constitution": -2,
+      "willpower": 3,
+      "cultivation": -20
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_018",
+    "text": "你终于斩杀宿敌，却感到无尽空虚。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 2,
+      "comprehension": 2,
+      "cultivation": 50
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_019",
+    "text": "宿敌夺舍重生，以新身份再度出现。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_020",
+    "text": "宿敌在渡劫时向你发动偷袭。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 42,
+    "effects": {
+      "constitution": -2,
+      "willpower": 2,
+      "cultivation": 40
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_021",
+    "text": "你与宿敌的恩怨惊动了化神期大能出面调停。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 42,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_022",
+    "text": "宿敌以己之血祭出天魔来阻你飞升。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 42,
+    "effects": {
+      "constitution": -2,
+      "willpower": 3,
+      "cultivation": 60
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_023",
+    "text": "宿敌于临终留下一枚玉简：来世再战。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 42,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_011",
+    "text": "亦敌亦友之人渡劫时向你求援。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 44,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 30
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友",
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_012",
+    "text": "你当年饶过的宿敌如今反过来救了你一命。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 44,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_013",
+    "text": "挚友为求长生走入魔道，你须亲手了断。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 44,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2,
+      "cultivation": -20
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_complex_014",
+    "text": "故人转世归来，对前尘往事全无记忆。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 44,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友",
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_complex_015",
+    "text": "曾经的同门如今各执一方，飞升前须了此因果。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 44,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2,
+      "cultivation": 50
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_complex_016",
+    "text": "你与宿敌在天劫中携手抵御，劫后相视一笑。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 44,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2,
+      "cultivation": 40
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_lover_031",
+    "text": "道侣以灵力为你暖床，寒夜格外温馨。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_032",
+    "text": "你偷偷为道侣刻了一枚玉佩护身符。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 38,
+    "effects": {
+      "fortune": 1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_033",
+    "text": "道侣受伤后你日夜守护，直到她痊愈。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 2,
+      "cultivation": -5
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_034",
+    "text": "你与道侣因争抢一件法器差点翻脸。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1,
+      "fortune": -1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_035",
+    "text": "道侣在你突破瓶颈时以身为炉助你渡关。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 20,
+      "willpower": 2
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_036",
+    "text": "你与道侣合力布下双人阵法守护洞府。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 10,
+      "fortune": 1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_037",
+    "text": "外出归来发现道侣已独自突破一重境界。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1,
+      "cultivation": 5
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_038",
+    "text": "道侣将珍藏多年的天材地宝送予你修炼。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 15,
+      "fortune": 1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_039",
+    "text": "一场误会令你与道侣冷战数月。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1,
+      "cultivation": -3
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_040",
+    "text": "道侣的旧友归来，你隐隐感到不安。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_041",
+    "text": "你与道侣以心血为引共炼一件双生法器。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 25,
+      "fortune": 1,
+      "constitution": -1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_042",
+    "text": "道侣在秘境中失踪，你遍寻三年终于找到。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 20
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_043",
+    "text": "你与道侣参悟阴阳之道，修为精进。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 30,
+      "comprehension": 1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_044",
+    "text": "道侣以神魂分身陪你渡过百年孤寂。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 20
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_045",
+    "text": "你感应到道侣千里之外的心意波动。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_046",
+    "text": "道侣拼死为你取来续命灵药。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "constitution": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_047",
+    "text": "你们在星空下立誓三生三世不离不弃。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 2,
+      "fortune": 1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_048",
+    "text": "道侣为你挡下心魔侵蚀，自身陷入沉睡。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 30
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_049",
+    "text": "你与道侣同渡天劫，雷光中相视而笑。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 60,
+      "willpower": 3,
+      "constitution": -1
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_lover_050",
+    "text": "道侣以毕生所悟化作一道剑意赠予你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "comprehension": 3,
+      "cultivation": 40
+    },
+    "tags": [
+      "romance",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_friend_024",
+    "text": "挚友偷偷替你完成了宗门苦差。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_025",
+    "text": "你与挚友被困雪山三日，靠彼此取暖存活。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "constitution": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_026",
+    "text": "挚友向你坦白了隐藏多年的身世秘密。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_027",
+    "text": "你替挚友背了一个大黑锅。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": -1,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_028",
+    "text": "挚友学会一道新术法后迫不及待找你试招。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 8,
+      "constitution": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_029",
+    "text": "你与挚友联手开辟了一处秘密修炼之地。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 15,
+      "fortune": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_030",
+    "text": "挚友中了邪术需你以灵力日夜祛毒。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": -5,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_031",
+    "text": "你们互换修行心得，各有所获。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "comprehension": 1,
+      "cultivation": 10
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_032",
+    "text": "挚友被仇家追杀投奔于你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 1,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_033",
+    "text": "你与挚友联手击杀一头妖兽瓜分材料。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 12,
+      "fortune": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_034",
+    "text": "挚友的突破令你心生敬佩也暗暗较劲。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 1,
+      "cultivation": 10
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_035",
+    "text": "你在挚友最落魄时拉了他一把。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_036",
+    "text": "挚友以命脉灵石相赠助你突破。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 30,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_037",
+    "text": "你与挚友约定谁先飞升就在上界等对方。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_038",
+    "text": "挚友为保全你的名声主动离开宗门。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_039",
+    "text": "你收到挚友从万里之外传来的求救讯号。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_040",
+    "text": "挚友以残缺之身为你守阵七日七夜。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 20
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_041",
+    "text": "你与挚友以道为媒结下因果之盟。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "comprehension": 1,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_042",
+    "text": "挚友临终前将一件至宝托付于你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "fortune": 2,
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_043",
+    "text": "你梦中见到已故挚友的身影指引你前路。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_044",
+    "text": "挚友化神后不忘初心回来看你一眼。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_045",
+    "text": "你以大法力将挚友从死门关拉回。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": -30,
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_046",
+    "text": "你与挚友跨越万里神念相通论道。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "comprehension": 2,
+      "cultivation": 25
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_047",
+    "text": "挚友为你布下一座百年守护大阵。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "fortune": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_048",
+    "text": "你的挚友以转世之法延续与你的缘分。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_049",
+    "text": "挚友以道果为引为你铺出飞升之路。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 80,
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_friend_050",
+    "text": "你与挚友在飞升前最后对饮百坛灵酒。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_rival_024",
+    "text": "宿敌趁你闭关时在洞府外布下毒阵。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 38,
+    "effects": {
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_025",
+    "text": "你在坊市偶遇宿敌，剑拔弩张。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_026",
+    "text": "宿敌收买你的同门来刺探你的虚实。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1,
+      "charisma": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_027",
+    "text": "你截获宿敌密谋对付你的传讯符。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1,
+      "fortune": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_028",
+    "text": "宿敌在你受伤时趁虚而入。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "constitution": -2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_029",
+    "text": "你设下陷阱反将宿敌一军。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 15,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_030",
+    "text": "宿敌拜入比你更强的门派壮大实力。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_031",
+    "text": "你与宿敌同时看上一件拍卖灵宝。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1,
+      "fortune": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_032",
+    "text": "宿敌公开向你道歉，你心存疑虑。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_033",
+    "text": "你发现宿敌修炼了邪功，实力暴涨。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_034",
+    "text": "宿敌以你在乎之人为筹码逼你就范。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 3,
+      "charisma": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_035",
+    "text": "你追踪宿敌至上古遗迹，一场恶斗。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 20,
+      "constitution": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_036",
+    "text": "宿敌以阵法困住你十年之久。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": -15,
+      "willpower": 3,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_037",
+    "text": "你查出宿敌害你之原因竟是一场误会。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_038",
+    "text": "宿敌派出替身引你入歧途。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 1,
+      "cultivation": -10
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_039",
+    "text": "你与宿敌各执半块令牌开启秘境大门。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 25,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_040",
+    "text": "宿敌炼化天魔之血实力逆天。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_041",
+    "text": "你终于领悟了克制宿敌邪功的法门。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "comprehension": 2,
+      "cultivation": 30
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_042",
+    "text": "宿敌在渡劫关头向你认输求饶。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_043",
+    "text": "你将宿敌封印于万年玄冰之中。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 40,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_044",
+    "text": "宿敌以魂灯诅咒你三世轮回不得安宁。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "fortune": -2,
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_045",
+    "text": "你与宿敌的千年恩怨终于了结。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_046",
+    "text": "宿敌的后人寻你报仇未果反被你感化。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "charisma": 2,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_047",
+    "text": "宿敌在临终时将毕生功力渡给你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "cultivation": 60,
+      "willpower": 3,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_048",
+    "text": "你在宿敌坟前焚香，恩怨尽消。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_049",
+    "text": "宿敌的执念化为心魔阻你飞升。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 38,
+    "effects": {
+      "willpower": 3,
+      "cultivation": -20
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_rival_050",
+    "text": "你于飞升前斩断与宿敌的最后因果。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 38,
+    "effects": {
+      "comprehension": 3,
+      "willpower": 3,
+      "cultivation": 50
+    },
+    "tags": [
+      "npc_interaction",
+      "violence"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_017",
+    "text": "师兄既是你的恩人也是你最大的对手。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 1,
+      "cultivation": 5
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_complex_018",
+    "text": "你欠了一个人情，对方却提出过分要求。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "恩人"
+    ]
+  },
+  {
+    "id": "npc_complex_019",
+    "text": "曾并肩作战之人如今对你避而不见。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_complex_020",
+    "text": "你发现宿敌与挚友竟是同门师兄弟。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌",
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_complex_021",
+    "text": "道侣的仇人竟是你的恩人。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣",
+      "恩人"
+    ]
+  },
+  {
+    "id": "npc_complex_022",
+    "text": "救过你的前辈如今堕入魔道。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "恩人"
+    ]
+  },
+  {
+    "id": "npc_complex_023",
+    "text": "你不得不与曾经的挚友刀剑相向。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3,
+      "constitution": -1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_complex_024",
+    "text": "宿敌在关键时刻没有对你落井下石。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_025",
+    "text": "你的同门因嫉妒暗中给你下了绊子。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 40,
+    "effects": {
+      "charisma": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_complex_026",
+    "text": "一位亦师亦友之人对你提出了苛刻要求。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 10
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父",
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_complex_027",
+    "text": "你帮宿敌渡过劫难后他选择归隐。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_028",
+    "text": "道侣与挚友意见相左，你左右为难。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "道侣",
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_complex_029",
+    "text": "你发现挚友一直在暗中监视你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2,
+      "charisma": -1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_complex_030",
+    "text": "那个你以为死去的人以陌生面孔出现。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友",
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_031",
+    "text": "宿敌转世后与你成为了至交好友。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 40,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "宿敌",
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_complex_032",
+    "text": "你须在报恩和守义之间做出选择。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "恩人",
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_complex_033",
+    "text": "曾经的同门如今与你为夺宝反目。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 2,
+      "fortune": -1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_complex_034",
+    "text": "背叛你的人临终前来请求原谅。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "npc_complex_035",
+    "text": "你渡劫时宿敌竟暗中为你护法。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_036",
+    "text": "那个害你家破人亡的人原来也有苦衷。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 40,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_037",
+    "text": "你的徒弟竟是宿敌安插的棋子。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3,
+      "charisma": -1
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "徒弟",
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_038",
+    "text": "道侣为你牺牲后你在仇人身上看到她的影子。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "道侣",
+      "宿敌"
+    ]
+  },
+  {
+    "id": "npc_complex_039",
+    "text": "你与所有恩怨之人一一了结因果方可飞升。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 40,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 3,
+      "cultivation": 50
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "宿敌",
+      "挚友",
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_complex_040",
+    "text": "飞升雷劫中你看到了与每个人的因果线。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 40,
+    "effects": {
+      "comprehension": 3,
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "宿敌",
+      "挚友",
+      "道侣"
+    ]
+  },
+  {
+    "id": "npc_master_001",
+    "text": "师父罚你在瀑布下站桩三日三夜。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 37,
+    "effects": {
+      "constitution": 1,
+      "cultivation": 5,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_002",
+    "text": "师父传你入门功法，你勤加苦练。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 37,
+    "effects": {
+      "cultivation": 10,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_003",
+    "text": "师父赐你一柄低阶灵剑作为入门礼。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 37,
+    "effects": {
+      "fortune": 1,
+      "cultivation": 5
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_004",
+    "text": "你惹怒了师父被禁足三月。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 1,
+      "cultivation": -3
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_005",
+    "text": "师父带你外出历练见识人间险恶。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_006",
+    "text": "师父在你面前展示了一次惊天剑术。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 1,
+      "cultivation": 8
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_007",
+    "text": "你偷看师父的功法手札被发现后挨了一顿骂。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 37,
+    "effects": {
+      "cultivation": 5,
+      "charisma": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "funny",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_008",
+    "text": "师父夸你天资不错，日后可期。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 1,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_009",
+    "text": "师父出关后第一件事便是考校你的功课。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 37,
+    "effects": {
+      "cultivation": 8
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_010",
+    "text": "师父教你识别灵药毒草的基础知识。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_011",
+    "text": "师父将自己压箱底的丹方传授于你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 37,
+    "effects": {
+      "cultivation": 15,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_012",
+    "text": "师父以身犯险为你夺得一株千年灵药。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 37,
+    "effects": {
+      "cultivation": 20,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_013",
+    "text": "你终于领悟了师父教了你十年的那招剑式。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 2,
+      "cultivation": 15
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_014",
+    "text": "师父替你挡下了暗算，自己身受重伤。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 10
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_015",
+    "text": "师父告诉你他年轻时犯下的错误。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_016",
+    "text": "师父闭关前将门中事务交托于你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 37,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_017",
+    "text": "你与师父因修行路线分歧争论不休。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_018",
+    "text": "师父以自身修为为代价替你化解体内余毒。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 37,
+    "effects": {
+      "constitution": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_019",
+    "text": "你的实力终于得到师父认可。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 10,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_020",
+    "text": "师父带你参加修仙界论道大会。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 1,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_021",
+    "text": "师父的仇人找上门来，你挡在前面。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 2,
+      "constitution": -1,
+      "cultivation": 20
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_022",
+    "text": "师父临终前将毕生道果传于你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 3,
+      "cultivation": 40,
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_023",
+    "text": "你超越了师父的境界，他既欣慰又感慨。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_024",
+    "text": "师父以大道传承之法将道韵刻入你的识海。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 2,
+      "cultivation": 30
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_025",
+    "text": "你在师父坐化处悟道七日。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 2,
+      "cultivation": 25,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_026",
+    "text": "师父的遗物中藏着一封写给你的信。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_027",
+    "text": "你发现师父一直在暗中为你铺路。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_028",
+    "text": "师父突破瓶颈时你日夜守护。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 15
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_029",
+    "text": "师父的故友来访提起师父年轻时的往事。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_030",
+    "text": "你继承了师父的衣钵成为新掌门。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 37,
+    "effects": {
+      "charisma": 2,
+      "willpower": 2,
+      "cultivation": 20
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_031",
+    "text": "师父的魂灵在你渡劫时显现助你一臂之力。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 37,
+    "effects": {
+      "cultivation": 50,
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_032",
+    "text": "你在上古秘境中看到师父年轻时留下的刻痕。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_033",
+    "text": "师父转世之身与你重逢却不识你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_034",
+    "text": "你终于走完了师父走不完的那条路。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 3,
+      "willpower": 3,
+      "cultivation": 40
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_035",
+    "text": "你以师父之名立下一方道统传承后世。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 37,
+    "effects": {
+      "charisma": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_036",
+    "text": "师父的本命法器在你手中重新焕发生机。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 37,
+    "effects": {
+      "fortune": 2,
+      "cultivation": 30
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_037",
+    "text": "你于梦中与师父再次论道如昔。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 37,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_038",
+    "text": "师父当年封印的大敌破封而出你须独自面对。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 3,
+      "constitution": -1,
+      "cultivation": 40
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_039",
+    "text": "你飞升时感到师父的道韵在推你一把。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 37,
+    "effects": {
+      "cultivation": 80,
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_master_040",
+    "text": "飞升后你做的第一件事是去找师父的转世。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 37,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "npc_tongmen_001",
+    "text": "师兄传你一招实用的入门剑法。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 8,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_002",
+    "text": "你与师妹一起打扫藏经阁偷看禁书。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 5,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "funny",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_003",
+    "text": "师兄在门派大比中对你手下留情。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_004",
+    "text": "你被师兄坑去做了一个月苦力。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "constitution": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_005",
+    "text": "师妹有心事找你倾诉到深夜。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_006",
+    "text": "你与同门师兄弟联手完成宗门任务。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 10,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_007",
+    "text": "师兄私下偷偷教你一门禁术。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 12,
+      "fortune": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_008",
+    "text": "你在同门面前丢了面子暗自发誓苦修。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 5
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_009",
+    "text": "同门聚会时你们回忆起初入门时的趣事。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 1,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_010",
+    "text": "师妹修炼出了岔子你帮她稳住灵力。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 5,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_011",
+    "text": "师兄出山历练前把洞府钥匙交给你保管。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "fortune": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_012",
+    "text": "你与同门合力研究一部残缺功法。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "comprehension": 1,
+      "cultivation": 12
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_013",
+    "text": "师妹被外门弟子欺负你替她出头。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_014",
+    "text": "师兄突破金丹引来天象你守护在旁。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 1,
+      "cultivation": 10
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_015",
+    "text": "同门因争夺丹方与你产生嫌隙。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_016",
+    "text": "你的同门在秘境中为你断后。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 15
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_017",
+    "text": "师兄远赴险地为你采回一味关键药引。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 15,
+      "fortune": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_018",
+    "text": "宗门内斗中你与同门被迫选边站。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "charisma": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_019",
+    "text": "你的同门叛出宗门投了魔修。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "charisma": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_020",
+    "text": "师兄以元神之力为你挡下致命偷袭。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 20
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_021",
+    "text": "你与同门联手护卫宗门抵御兽潮。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 25,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_022",
+    "text": "师妹成为宗门长老与你并肩议事。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_023",
+    "text": "多年未见的同门归来已面目全非。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_024",
+    "text": "你与同门以命相搏争夺掌门之位。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 20,
+      "charisma": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_025",
+    "text": "师兄坐化前将道统传承的重任交给你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_026",
+    "text": "你与同门各自成为一方祖师遥相呼应。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_027",
+    "text": "同门渡劫失败你以大法力助他保全元神。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": -20,
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_028",
+    "text": "你收到千年前同门留下的一封传讯玉简。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_029",
+    "text": "同门留下的阵法在千年后为你挡下一劫。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "fortune": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_030",
+    "text": "你与同门在天池论道三月各悟天机。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "comprehension": 2,
+      "cultivation": 30
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_031",
+    "text": "你是宗门最后一个还在世的同门。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_032",
+    "text": "同门的后辈找到你请你指点迷津。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_033",
+    "text": "你与同门约定在上界再续同门之谊。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_034",
+    "text": "同门以残魂入你梦中传递最后一道讯息。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "comprehension": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_tongmen_035",
+    "text": "你将同门遗留的道统发扬光大桃李满天下。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 2,
+      "willpower": 2,
+      "cultivation": 30
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "npc_disciple_001",
+    "text": "你收了第一个弟子，他资质平平但勤恳。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_002",
+    "text": "徒弟修炼走火你连夜为他疏通经脉。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": -5,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_003",
+    "text": "徒弟偷学了你的禁术差点出事。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 1,
+      "charisma": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_004",
+    "text": "徒弟在门派大比中一鸣惊人为你争光。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 2,
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_005",
+    "text": "你为徒弟寻得一门适合他体质的功法。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "comprehension": 1,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_006",
+    "text": "徒弟不听劝告执意下山历练。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_007",
+    "text": "徒弟重伤归来你心疼又气恼。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_008",
+    "text": "你的徒弟天赋异禀进步神速令你欣慰。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 1,
+      "willpower": 1,
+      "cultivation": 5
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_009",
+    "text": "徒弟为你炼制了一枚丹药虽然品相一般。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 1,
+      "cultivation": 5
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "funny",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_010",
+    "text": "你罚徒弟面壁思过一月。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_011",
+    "text": "徒弟突破金丹你比他还高兴。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_012",
+    "text": "徒弟被人暗害你怒而出手。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "cultivation": 15
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_013",
+    "text": "你将毕生心血浓缩为一册传承玉简留给徒弟。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_014",
+    "text": "徒弟青出于蓝在论道中胜过了你。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "comprehension": 1,
+      "willpower": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_015",
+    "text": "徒弟叛出师门投了邪道你心如刀割。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "charisma": -2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_016",
+    "text": "你不得不亲手清理门户斩杀逆徒。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "constitution": -1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_017",
+    "text": "徒弟在危难中挺身为你挡下一击。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 20
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_018",
+    "text": "你看着徒弟成家立业感慨时光流逝。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_019",
+    "text": "徒弟继承你的衣钵独当一面。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_020",
+    "text": "多个弟子中唯一悟性最差的那个最终成就最高。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 36,
+    "effects": {
+      "comprehension": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_021",
+    "text": "徒弟以元婴修为重走你当年的路。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_022",
+    "text": "你的徒弟开宗立派了。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 2,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_023",
+    "text": "徒弟在你渡劫时以阵法为你护法。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "cultivation": 40,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_024",
+    "text": "你将掌门之位传给徒弟从此云游四海。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "fortune": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_025",
+    "text": "徒弟以己身为祭为你续命百年。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 30
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_026",
+    "text": "你看着徒弟的徒弟也收了徒弟道统绵延。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "charisma": 2,
+      "comprehension": 1,
+      "willpower": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_027",
+    "text": "徒弟临终前来看你最后一面。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_028",
+    "text": "你飞升时徒弟率众弟子跪送。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "charisma": 2
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_029",
+    "text": "飞升后你常在天外遥望徒弟修行。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 2,
+      "comprehension": 1
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "normal",
+    "npc_roles": [
+      "徒弟"
+    ]
+  },
+  {
+    "id": "npc_disciple_030",
+    "text": "徒弟凭自己的实力追随你飞升而去。",
+    "expanded_text": "",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 36,
+    "effects": {
+      "willpower": 3,
+      "charisma": 2,
+      "cultivation": 50
+    },
+    "tags": [
+      "npc_interaction",
+      "social"
+    ],
+    "event_type": "fortune",
+    "npc_roles": [
+      "徒弟"
+    ]
+  }
+]

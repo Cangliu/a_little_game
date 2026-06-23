@@ -21,6 +21,7 @@ from pydantic import BaseModel
 
 if TYPE_CHECKING:
     from ..models import GameState
+    from .ai.llm_client import LLMClient
 
 logger = logging.getLogger(__name__)
 
@@ -51,10 +52,20 @@ class Saga(BaseModel):
 DIRECTION_HINT_TEMPLATES = [
     "与{npc}的纠葛尚未了结，命运的齿轮仍在转动",
     "{npc}相关的因果暗线正在汇聚，一场宿命般的重逢即将到来",
-    "围绕「{theme}」的故事还在延续，更大的波澜正在酝酿",
+    "围绕「{theme}」的故事还在延续，更大的波澜正在蕴酿",
     "多年前种下的种子正在生根发芽，{npc}的命运将再次与你交织",
     "「{theme}」的篇章远未结束，新的转折正在逼近",
     "曾经的际遇正在编织成一条更宏大的命运线索",
+]
+
+# ── Saga Omen (Pre-formation Foreshadowing) ─────────────────────────────
+_OMEN_KEYWORD_THRESHOLD = 1       # keyword overlap >= N triggers omen
+_OMEN_TEMPLATES = [
+    "近日你总感觉心神不宁，仿佛有什么即将发生……",
+    "一缕模糊的气息在识海中浮现，似与{npc}有关……",
+    "你偶尔梦见「{theme}」的片段，醒来后却记不清细节。",
+    "天地灵气隐有异动，与「{theme}」相关的因果正在悄然汇聚。",
+    "一股熟悉的气息从远方传来，{npc}似乎正在某处……",
 ]
 
 
@@ -62,6 +73,9 @@ DIRECTION_HINT_TEMPLATES = [
 
 class SagaManager:
     """Detects and manages emergent long-term narrative sagas."""
+
+    def __init__(self, llm_client: Optional["LLMClient"] = None):
+        self._llm = llm_client
 
     def on_arc_completed(self, state: "GameState", completed_arc: dict) -> None:
         """Called when a StoryArc completes. Checks for saga emergence.
@@ -87,6 +101,49 @@ class SagaManager:
 
         # Check for saga emergence
         self._check_emergence(state, arc_summary)
+
+    def check_omen(self, state: "GameState") -> Optional[str]:
+        """Check if conditions are ripe for a saga omen (pre-formation foreshadowing).
+
+        Scans completed arcs history for near-threshold patterns and returns
+        an atmospheric hint text if a saga is about to form.
+        Returns None if no omen is appropriate this turn.
+        """
+        # Only trigger omen if no saga formed recently and enough arcs exist
+        if len(state.completed_arcs_history) < 2:
+            return None
+
+        # Avoid omen spam: at most once every 20 years
+        last_omen_age = getattr(state, '_last_omen_age', 0)
+        if state.age - last_omen_age < 20:
+            return None
+
+        # Check near-threshold patterns between recent arcs
+        recent_arcs = state.completed_arcs_history[-6:]
+        for i, arc_a in enumerate(recent_arcs):
+            for arc_b in recent_arcs[i + 1:]:
+                npc_a = arc_a.get("npc_name", "")
+                npc_b = arc_b.get("npc_name", "")
+                kw_a = set(arc_a.get("keywords", []))
+                kw_b = set(arc_b.get("keywords", []))
+
+                npc_overlap = bool(npc_a and npc_b and npc_a == npc_b)
+                kw_overlap = len(kw_a & kw_b)
+
+                # Near threshold but not yet saga-worthy
+                if kw_overlap >= _OMEN_KEYWORD_THRESHOLD and not self._would_form_saga(npc_overlap, kw_overlap):
+                    npc = npc_a or npc_b or "某人"
+                    theme = "、".join(list(kw_a & kw_b)[:2]) or "命运"
+                    template = random.choice(_OMEN_TEMPLATES)
+                    state._last_omen_age = state.age
+                    return template.format(npc=npc, theme=theme)
+
+        return None
+
+    @staticmethod
+    def _would_form_saga(npc_overlap: bool, kw_overlap: int) -> bool:
+        """Check if overlaps are strong enough to actually form a saga."""
+        return (npc_overlap and kw_overlap >= MIN_SHARED_KEYWORDS) or kw_overlap >= MIN_SHARED_KEYWORDS + 1
 
     def _check_emergence(self, state: "GameState", new_arc: dict) -> None:
         """Check if the new completed arc can form or extend a saga."""
@@ -171,13 +228,48 @@ class SagaManager:
         )
 
     def _update_direction_hint(self, saga: dict) -> None:
-        """Update the saga's direction hint using templates."""
+        """Update the saga's direction hint. LLM first, template fallback."""
         npcs = saga.get("involved_npcs", [])
         theme = saga.get("theme", "命运")
         npc = npcs[0] if npcs else "某人"
 
+        # Try LLM generation (cost: ~100 tokens, negligible)
+        if self._llm and self._llm.available:
+            hint = self._generate_hint_via_llm(saga)
+            if hint:
+                saga["direction_hint"] = hint
+                return
+
+        # Fallback: template-based
         template = random.choice(DIRECTION_HINT_TEMPLATES)
         saga["direction_hint"] = template.format(npc=npc, theme=theme)
+
+    def _generate_hint_via_llm(self, saga: dict) -> Optional[str]:
+        """Generate a rich saga direction hint via LLM (~100 tokens, negligible cost)."""
+        try:
+            from .ai.prompt_templates import SAGA_DIRECTION_SYSTEM, SAGA_DIRECTION_USER
+
+            npcs = ", ".join(saga.get("involved_npcs", [])) or "某人"
+            user_prompt = SAGA_DIRECTION_USER.format(
+                theme=saga.get("theme", "命运"),
+                npcs=npcs,
+                arc_count=len(saga.get("linked_arc_ids", [])),
+                momentum=int(saga.get("momentum", 0)),
+            )
+
+            result = self._llm.generate_sync(
+                system_prompt=SAGA_DIRECTION_SYSTEM,
+                user_prompt=user_prompt,
+                max_tokens=60,
+                temperature=0.9,
+            )
+
+            if result and len(result.strip()) >= 5:
+                return result.strip()[:50]  # Cap at 50 chars
+            return None
+        except Exception as e:
+            logger.debug("Saga LLM hint generation failed: %s", e)
+            return None
 
     @staticmethod
     def _extract_arc_keywords(arc: dict) -> list[str]:

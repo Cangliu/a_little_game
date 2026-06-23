@@ -1,0 +1,36 @@
+{
+  "title": "事件数据结构 — GameEvent",
+  "type": "architecture",
+  "layout": "top-down",
+  "style": {"preset": "sketch", "roughness": 1, "fontFamily": "hand"},
+  "nodes": [
+    {"id": "event", "label": "GameEvent\n事件实体", "semantic": "core", "layer": 0, "width": 220, "height": 80},
+
+    {"id": "basic", "label": "基础信息\nid · text · expanded_text\ncategory · event_type\nweight · tags · keywords\nnpc_roles", "semantic": "core", "layer": 1, "width": 280, "height": 120},
+    {"id": "cond", "label": "EventCondition\n触发条件", "semantic": "decision", "layer": 1, "shape": "diamond", "width": 180, "height": 100},
+    {"id": "effect", "label": "EventEffect\n事件效果", "semantic": "success", "layer": 1, "width": 180, "height": 80},
+    {"id": "branch", "label": "EventBranch\n玩家选择", "semantic": "trigger", "layer": 1, "width": 180, "height": 80},
+
+    {"id": "cond_detail", "label": "min/max_age\nmin/max_realm\nmin_cultivation\nrequired_talents\nrequired/excluded_tags\ngender · min_attribute", "semantic": "middleware", "layer": 2, "width": 240, "height": 140},
+
+    {"id": "effect_detail", "label": "cultivation ±\n六维属性 ±\nadd_tag / remove_tag\nrealm_up · death\ntrigger_event_id", "semantic": "storage", "layer": 2, "width": 220, "height": 120},
+
+    {"id": "branch_detail", "label": "text (≤20字)\neffects → EventEffect\nresult_text\nconsequence_tag\nconsequence_desc", "semantic": "error", "layer": 2, "width": 220, "height": 120},
+
+    {"id": "hook", "label": "因果伏笔\ncreates_hook\nresolves_hook", "semantic": "ai", "layer": 2, "width": 180, "height": 80}
+  ],
+  "edges": [
+    {"from": "event", "to": "basic", "label": "核心字段"},
+    {"from": "event", "to": "cond", "label": "conditions"},
+    {"from": "event", "to": "effect", "label": "effects"},
+    {"from": "event", "to": "branch", "label": "branches[]"},
+    {"from": "cond", "to": "cond_detail"},
+    {"from": "effect", "to": "effect_detail"},
+    {"from": "branch", "to": "branch_detail"},
+    {"from": "event", "to": "hook", "label": "伏笔", "style": "dashed"}
+  ],
+  "groups": [
+    {"id": "g_filter", "label": "Layer 1-2 硬过滤依据", "members": ["cond", "cond_detail"]},
+    {"id": "g_outcome", "label": "事件产出", "members": ["effect", "effect_detail", "branch", "branch_detail"]}
+  ]
+}

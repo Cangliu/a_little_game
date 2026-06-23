@@ -101,46 +101,97 @@ _NARRATIVE_SEEDS = [
 # ── Archetype Templates (with beat variants for randomization) ───────────
 
 _BEAT_VARIANTS = {
-    # realm 1 openers (觉醒)
+    # ── realm 1 (练气) ────────────────────────────────────────
+    # 觉醒
     "awakening": [
         {"d": "灵根觉醒，踏入仙途", "kw": ["觉醒", "灵根", "修炼", "灵气"]},
         {"d": "偶感天地灵气，修行之路初启", "kw": ["灵气", "天地", "觉醒", "修炼"]},
         {"d": "一朝顿悟，从此踏上逆天之路", "kw": ["顿悟", "觉醒", "灵根", "修炼"]},
     ],
-    # realm 1 early (初修)
+    # 初修
     "early_path": [
         {"d": "拜入宗门，习得根基功法", "kw": ["宗门", "功法", "传承", "弟子"]},
         {"d": "偶得前辈传承，修为初成", "kw": ["传承", "修为", "功法", "秘境"]},
         {"d": "闭关苦修，练气有成", "kw": ["闭关", "修炼", "入定", "灵力"]},
     ],
-    # realm 2 (筑基)
+    # 练气历练
+    "qi_trial": [
+        {"d": "初次外出历练，见识修仙百态", "kw": ["遭遇", "探索", "修炼", "切磋"]},
+        {"d": "独闯险地，在生死间磨砺修为", "kw": ["生死", "修为", "遭遇", "灵力"]},
+        {"d": "执行宗门任务，崭露头角", "kw": ["宗门", "弟子", "修为", "比试"]},
+    ],
+
+    # ── realm 2 (筑基) ────────────────────────────────────────
+    # 宗门/江湖
+    "sect_life": [
+        {"d": "宗门中修行日久，渐有所成", "kw": ["宗门", "修炼", "同门", "功法"]},
+        {"d": "游历四方，结识各路修士", "kw": ["散修", "遭遇", "探索", "传承"]},
+        {"d": "与同门切磋论道，互有胜负", "kw": ["同门", "切磋", "比试", "修为"]},
+    ],
+    # 筑基之路
     "foundation": [
         {"d": "筑基途中遭遇大劫，道心经受考验", "kw": ["筑基", "遭遇", "道心", "生死"]},
         {"d": "闭关感悟天地法则，筑基圆满", "kw": ["闭关", "感悟", "法则", "筑基"]},
         {"d": "探索秘境获得机缘，根基更加稳固", "kw": ["探索", "秘境", "机缘", "筑基"]},
         {"d": "历经磨难后领悟真谛，修为突飞猛进", "kw": ["领悟", "真谛", "突破", "修为"]},
     ],
-    # realm 3 (金丹)
+    # 筑基试炼
+    "foundation_test": [
+        {"d": "入秘境试炼，险象环生", "kw": ["秘境", "遭遇", "生死", "突破"]},
+        {"d": "宗门大比中脱颖而出", "kw": ["宗门", "比试", "击败", "修为"]},
+        {"d": "遭遇瓶颈，闭关苦思终突破", "kw": ["闭关", "突破", "领悟", "修炼"]},
+    ],
+
+    # ── realm 3 (金丹) ────────────────────────────────────────
+    # 机缘/秘境
+    "treasure_hunt": [
+        {"d": "深入遗迹，寻觅上古机缘", "kw": ["遗迹", "机缘", "探索", "宝物"]},
+        {"d": "偶入秘境，获得天材地宝", "kw": ["秘境", "机缘", "宝物", "法宝"]},
+        {"d": "炼制丹药以助突破", "kw": ["丹药", "炼化", "突破", "灵石"]},
+    ],
+    # 金丹凝结
     "golden_core": [
         {"d": "炼化天材地宝，金丹初成", "kw": ["炼化", "金丹", "丹药", "突破"]},
         {"d": "遗迹中发现上古传承，修为大进", "kw": ["遗迹", "传承", "金丹", "修为"]},
         {"d": "与强敌激战后顿悟，金丹圆满", "kw": ["遭遇", "顿悟", "金丹", "击败"]},
         {"d": "参悟大道之理，金丹之力凝实", "kw": ["参悟", "大道", "金丹", "修炼"]},
     ],
-    # realm 3-4 crisis
+    # 劫难危机 (可插入任意境界)
     "crisis": [
         {"d": "走火入魔，在心魔中挣扎求生", "kw": ["走火", "心魔", "生死", "道心"]},
         {"d": "遭遇追杀，在绝境中寻找生机", "kw": ["追杀", "遭遇", "逃脱", "生死"]},
         {"d": "重伤之下入定参悟，化险为夷", "kw": ["重伤", "入定", "参悟", "蜕变"]},
         {"d": "至亲陨落，化悲愤为修行之力", "kw": ["陨落", "修炼", "蜕变", "道心"]},
     ],
-    # realm 4 (元婴)
+
+    # ── realm 4 (元婴) ────────────────────────────────────────
+    # 实力飞跃
+    "power_surge": [
+        {"d": "功法大成，实力今非昔比", "kw": ["功法", "修为", "突破", "神通"]},
+        {"d": "击败强敌，名震一方", "kw": ["击败", "遭遇", "修为", "比试"]},
+        {"d": "闭关悟道，修为精进", "kw": ["闭关", "悟道", "修炼", "境界"]},
+    ],
+    # 元婴显化
     "nascent_soul": [
         {"d": "元婴显化，窥得天地本源之力", "kw": ["元婴", "天地", "本源", "神通"]},
         {"d": "领悟天道法则，元婴之力浩瀚无边", "kw": ["领悟", "天道", "法则", "元婴"]},
         {"d": "悟道于天地之间，元婴大成", "kw": ["悟道", "天地", "元婴", "感悟"]},
     ],
-    # realm 5 (化神/飞升)
+    # 恩怨清算
+    "reckoning": [
+        {"d": "与宿敌终极一战，了结恩怨", "kw": ["遭遇", "击败", "生死", "修为"]},
+        {"d": "旧日因果浮现，逐一清算", "kw": ["遭遇", "追杀", "道心", "蜕变"]},
+        {"d": "守护至亲，不惜以命相搏", "kw": ["守护", "生死", "遭遇", "修炼"]},
+    ],
+
+    # ── realm 5 (化神/飞升) ───────────────────────────────────
+    # 天劫临近
+    "tribulation": [
+        {"d": "天劫将至，闭关做最后准备", "kw": ["天劫", "闭关", "修炼", "渡劫"]},
+        {"d": "化神之路，天地法则层层阻碍", "kw": ["化神", "法则", "天地", "突破"]},
+        {"d": "感应天劫之力，心中无惧", "kw": ["天劫", "渡劫", "道心", "化神"]},
+    ],
+    # 飞升终局
     "ascension": [
         {"d": "渡天劫，一步登天问道飞升", "kw": ["天劫", "飞升", "渡劫", "化神"]},
         {"d": "化神圆满，万劫归一终得超脱", "kw": ["化神", "天劫", "飞升", "大道"]},
@@ -151,30 +202,63 @@ _BEAT_VARIANTS = {
 ARCHETYPE_STORYLINES = {
     "天命修仙": {
         "description": "你生来便注定了一条非凡的修仙之路，每一步都仿佛冥冥中自有天意",
-        "beat_sequence": ["awakening", "early_path", "foundation", "golden_core", "nascent_soul", "ascension"],
+        "beat_sequence": [
+            "awakening", "early_path", "qi_trial",        # 练气 ×3
+            "sect_life", "foundation", "foundation_test",  # 筑基 ×3
+            "treasure_hunt", "golden_core",                # 金丹 ×2 (稳步上升，无危机)
+            "power_surge", "nascent_soul", "reckoning",    # 元婴 ×3
+            "tribulation", "ascension",                    # 化神 ×2
+        ],
     },
     "红尘历劫": {
         "description": "你的修仙之路注定充满红尘纠葛，唯有历尽情劫方能证道",
-        "beat_sequence": ["awakening", "early_path", "foundation", "crisis", "nascent_soul", "ascension"],
+        "beat_sequence": [
+            "awakening", "early_path",                     # 练气 ×2
+            "sect_life", "foundation", "foundation_test",  # 筑基 ×3
+            "crisis", "golden_core", "treasure_hunt",      # 金丹 ×3 (危机打头)
+            "nascent_soul", "reckoning", "power_surge",    # 元婴 ×3
+            "tribulation", "ascension",                    # 化神 ×2
+        ],
     },
     "逆天改命": {
         "description": "你本是一介废材，却偏要逆天改命走出一条前人未走之路",
-        "beat_sequence": ["awakening", "early_path", "crisis", "golden_core", "nascent_soul", "ascension"],
+        "beat_sequence": [
+            "awakening", "early_path", "qi_trial",         # 练气 ×3
+            "foundation", "foundation_test",               # 筑基 ×2 (仓促筑基)
+            "crisis", "treasure_hunt", "golden_core",      # 金丹 ×3 (危机打头)
+            "power_surge", "nascent_soul", "reckoning",    # 元婴 ×3
+            "tribulation", "ascension",                    # 化神 ×2
+        ],
     },
     "剑道孤峰": {
         "description": "你以剑入道，一生只求剑道极致，孤高而纯粹",
-        "beat_sequence": ["awakening", "early_path", "foundation", "golden_core", "nascent_soul", "ascension"],
+        "beat_sequence": [
+            "awakening", "early_path", "qi_trial",         # 练气 ×3
+            "foundation", "foundation_test",               # 筑基 ×2
+            "golden_core", "treasure_hunt", "crisis",      # 金丹 ×3 (磨难收尾)
+            "power_surge", "nascent_soul", "reckoning",    # 元婴 ×3
+            "tribulation", "ascension",                    # 化神 ×2
+        ],
     },
     "问道长生": {
         "description": "你追求的不是力量而是长生之道的真谛，修行即是求知",
-        "beat_sequence": ["awakening", "early_path", "foundation", "golden_core", "nascent_soul", "ascension"],
+        "beat_sequence": [
+            "awakening", "early_path",                     # 练气 ×2
+            "sect_life", "foundation", "foundation_test",  # 筑基 ×3
+            "treasure_hunt", "golden_core", "crisis",      # 金丹 ×3 (晚期危机)
+            "power_surge", "nascent_soul", "reckoning",    # 元婴 ×3
+            "tribulation", "ascension",                    # 化神 ×2
+        ],
     },
 }
 
 # Realm mapping for beat sequences
 _BEAT_REALM = {
-    "awakening": 1, "early_path": 1, "foundation": 2,
-    "golden_core": 3, "crisis": 3, "nascent_soul": 4, "ascension": 5,
+    "awakening": 1, "early_path": 1, "qi_trial": 1,
+    "sect_life": 2, "foundation": 2, "foundation_test": 2,
+    "treasure_hunt": 3, "golden_core": 3, "crisis": 3,
+    "power_surge": 4, "nascent_soul": 4, "reckoning": 4,
+    "tribulation": 5, "ascension": 5,
 }
 
 # Significant event keywords that can trigger storyline pivots
@@ -489,7 +573,7 @@ class MainStorylinePlanner:
 
         response = self._llm.generate_sync(
             system_prompt, user_prompt,
-            max_tokens=800, temperature=0.85,
+            max_tokens=1200, temperature=0.85,
         )
 
         if not response:
@@ -517,14 +601,14 @@ class MainStorylinePlanner:
             description = data.get("description", "")[:80]
             raw_beats = data.get("beats", [])
 
-            if not raw_beats or len(raw_beats) < 3:
+            if not raw_beats or len(raw_beats) < 8:
                 return None
 
             all_keywords: list[str] = []
             total_desc_len = len(description)
             destiny_beats = []
 
-            for i, rb in enumerate(raw_beats[:7]):
+            for i, rb in enumerate(raw_beats[:16]):
                 desc = rb.get("description", rb) if isinstance(rb, dict) else str(rb)
                 desc = desc[:50]
                 total_desc_len += len(desc)
@@ -554,17 +638,17 @@ class MainStorylinePlanner:
                 ).model_dump()
                 destiny_beats.append(beat)
 
-            # Truncate if total description >1000 chars
-            if total_desc_len > 1000:
+            # Truncate if total description >1800 chars
+            if total_desc_len > 1800:
                 logger.warning("LLM storyline too long (%d chars), truncating", total_desc_len)
-                destiny_beats = destiny_beats[:6]
+                destiny_beats = destiny_beats[:13]
 
-            # Ensure ≥10 unique keywords total
+            # Ensure ≥25 unique keywords total
             unique_keywords = list(dict.fromkeys(all_keywords))
-            if len(unique_keywords) < 10 and palette:
+            if len(unique_keywords) < 25 and palette:
                 supplement = [k for k in palette if k not in unique_keywords]
                 random.shuffle(supplement)
-                for k in supplement[:10 - len(unique_keywords)]:
+                for k in supplement[:25 - len(unique_keywords)]:
                     min_beat = min(destiny_beats, key=lambda b: len(b.get("keywords", [])))
                     min_beat.setdefault("keywords", []).append(k)
 

@@ -1,0 +1,66 @@
+{
+  "title": "影响事件选择的因素",
+  "type": "mindmap",
+  "layout": "radial",
+  "style": {"preset": "sketch", "roughness": 1, "fontFamily": "hand"},
+  "nodes": [
+    {"id": "center", "label": "🎯 事件选择", "semantic": "center", "width": 160, "height": 70},
+
+    {"id": "player", "label": "👤 玩家角色", "semantic": "core", "width": 150, "height": 60},
+    {"id": "npc", "label": "🤝 NPC系统", "semantic": "trigger", "width": 140, "height": 60},
+    {"id": "narr", "label": "📖 叙事系统", "semantic": "ai", "width": 140, "height": 60},
+    {"id": "event_self", "label": "📋 事件自身", "semantic": "success", "width": 140, "height": 60},
+
+    {"id": "age", "label": "年龄\nL1 L2", "semantic": "core", "width": 110, "height": 50},
+    {"id": "realm", "label": "境界\nL1 L2 L4", "semantic": "core", "width": 110, "height": 50},
+    {"id": "attrs", "label": "六维属性\nL2 L4", "semantic": "core", "width": 110, "height": 50},
+    {"id": "talents", "label": "天赋\nL2", "semantic": "core", "width": 100, "height": 50},
+    {"id": "tags", "label": "状态标签\nL1 L2", "semantic": "core", "width": 110, "height": 50},
+    {"id": "tension", "label": "张力值\nL4", "semantic": "core", "width": 110, "height": 50},
+    {"id": "choice", "label": "选择历史\nL9", "semantic": "core", "width": 110, "height": 50},
+    {"id": "recent", "label": "近期事件\nL7", "semantic": "core", "width": 110, "height": 50},
+
+    {"id": "sentiment", "label": "好感度\nL8\n×0.7~×2.5", "semantic": "trigger", "width": 130, "height": 60},
+    {"id": "npc_drive", "label": "NPC驱动\n阶段6.1", "semantic": "trigger", "width": 120, "height": 50},
+
+    {"id": "hooks", "label": "因果伏笔\nL5", "semantic": "ai", "width": 120, "height": 50},
+    {"id": "arc_kw", "label": "剧情线关键词\nL6\n×2.5~×5.0", "semantic": "ai", "width": 150, "height": 60},
+    {"id": "destiny", "label": "命运主线\nL6", "semantic": "ai", "width": 130, "height": 50},
+    {"id": "era", "label": "世界纪元\n阶段6.1", "semantic": "ai", "width": 120, "height": 50},
+
+    {"id": "weight", "label": "基础权重\nL4", "semantic": "success", "width": 110, "height": 50},
+    {"id": "etype", "label": "事件类型\nL4", "semantic": "success", "width": 110, "height": 50},
+    {"id": "ecat", "label": "事件类别\nL1+配额", "semantic": "success", "width": 120, "height": 50},
+    {"id": "etags", "label": "标签\nL1 L4 L8 L9", "semantic": "success", "width": 130, "height": 50},
+    {"id": "npc_roles", "label": "npc_roles\nL8", "semantic": "success", "width": 120, "height": 50}
+  ],
+  "edges": [
+    {"from": "center", "to": "player"},
+    {"from": "center", "to": "npc"},
+    {"from": "center", "to": "narr"},
+    {"from": "center", "to": "event_self"},
+
+    {"from": "player", "to": "age"},
+    {"from": "player", "to": "realm"},
+    {"from": "player", "to": "attrs"},
+    {"from": "player", "to": "talents"},
+    {"from": "player", "to": "tags"},
+    {"from": "player", "to": "tension"},
+    {"from": "player", "to": "choice"},
+    {"from": "player", "to": "recent"},
+
+    {"from": "npc", "to": "sentiment"},
+    {"from": "npc", "to": "npc_drive"},
+
+    {"from": "narr", "to": "hooks"},
+    {"from": "narr", "to": "arc_kw"},
+    {"from": "narr", "to": "destiny"},
+    {"from": "narr", "to": "era"},
+
+    {"from": "event_self", "to": "weight"},
+    {"from": "event_self", "to": "etype"},
+    {"from": "event_self", "to": "ecat"},
+    {"from": "event_self", "to": "etags"},
+    {"from": "event_self", "to": "npc_roles"}
+  ]
+}

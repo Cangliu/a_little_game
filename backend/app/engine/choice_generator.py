@@ -34,22 +34,34 @@ _FALLBACK_TEMPLATES = {
     "danger": [
         {
             "text": "奋起迎战",
-            "effects": {"cultivation": 15, "constitution": -1},
-            "result_text": "你鼓起勇气迎战而上，虽然身负重伤，却也在生死之间有所悟。",
+            "success_rate": 55,
+            "check_attribute": "constitution",
+            "effects": {"cultivation": 30, "willpower": 1},
+            "result_text": "你鼓起勇气迎战而上，以命搏命之间竟悟得一线生机，修为暴涨！",
+            "failure_effects": {"cultivation": 5, "constitution": -2},
+            "failure_text": "你奋力迎战，却不敌对手，身负重伤勉强保命。虽败犹有所得，但代价不小。",
             "consequence_tag": "历经险难",
             "consequence_desc": "这次生死搏杀磨砺了你的心志",
         },
         {
             "text": "避其锋芒",
-            "effects": {"comprehension": 1},
-            "result_text": "你选择以退为进，远遁而去。虽然错失了锻炼机会，但也保全了性命。",
+            "success_rate": 80,
+            "check_attribute": "comprehension",
+            "effects": {"comprehension": 1, "cultivation": 5},
+            "result_text": "你选择以退为进，远遁而去。脱身之际观敌手法，竟也有所领悟。",
+            "failure_effects": {"cultivation": -5},
+            "failure_text": "你想要避退，却被对手看穿意图，虽最终逃脱，却颇为狼狈。",
             "consequence_tag": "",
             "consequence_desc": "",
         },
         {
             "text": "以智取胜",
-            "effects": {"cultivation": 10, "willpower": 1},
+            "success_rate": 45,
+            "check_attribute": "comprehension",
+            "effects": {"cultivation": 20, "willpower": 1, "charisma": 1},
             "result_text": "你运用巧计化解了危机，以弱胜强，令旁观者啧啧称奇。",
+            "failure_effects": {"cultivation": 3, "willpower": -1},
+            "failure_text": "你的计策被对手识破，反而陷入更被动的局面。好在你急中生智，勉强脱困。",
             "consequence_tag": "智者之名",
             "consequence_desc": "你的智谋之名开始在修仙界流传",
         },
@@ -57,22 +69,34 @@ _FALLBACK_TEMPLATES = {
     "fortune": [
         {
             "text": "独享机缘",
-            "effects": {"cultivation": 30},
-            "result_text": "你将机缘尽数收入囊中，修为大涨。但你隐约觉得，独占之举或许会引来非议。",
+            "success_rate": 50,
+            "check_attribute": "fortune",
+            "effects": {"cultivation": 40},
+            "result_text": "你将机缘尽数收入囊中，修为大涨！天地灵气如百川归海，尽入体内。",
+            "failure_effects": {"cultivation": 10, "fortune": -1},
+            "failure_text": "你贪心太过，灵气反噬之下只吸收了一小部分。隐约觉得福缘有所折损。",
             "consequence_tag": "贪念之种",
             "consequence_desc": "独占机缘的行为可能在日后引来嫉妒",
         },
         {
             "text": "分享机缘",
-            "effects": {"cultivation": 10, "charisma": 2},
-            "result_text": "你将机缘与同行之人分享，众人感激不已。虽然所得不多，但收获了信义与人心。",
+            "success_rate": 85,
+            "check_attribute": "charisma",
+            "effects": {"cultivation": 15, "charisma": 2},
+            "result_text": "你将机缘与同行之人分享，众人感激不已。你的慷慨赢得了信义与人心。",
+            "failure_effects": {"cultivation": 8, "charisma": 1},
+            "failure_text": "你本欲分享机缘，但对方似乎并不领情。虽有些尴尬，好歹自己也有所收获。",
             "consequence_tag": "仁义之名",
             "consequence_desc": "你的慷慨之名开始传播",
         },
         {
             "text": "谨慎观望",
-            "effects": {"comprehension": 1, "fortune": 1},
-            "result_text": "你没有急于行动，而是仔细观察。这份谨慎让你发现了隐藏的更大机缘。",
+            "success_rate": 70,
+            "check_attribute": "comprehension",
+            "effects": {"comprehension": 2, "fortune": 1},
+            "result_text": "你没有急于行动，仔细观察后发现了隐藏的更大机缘！悟性大增。",
+            "failure_effects": {"comprehension": 1},
+            "failure_text": "你观望太久，机缘在犹豫中流逝了大半。虽略有所悟，但总觉错失良机。",
             "consequence_tag": "",
             "consequence_desc": "",
         },
@@ -80,15 +104,23 @@ _FALLBACK_TEMPLATES = {
     "important": [
         {
             "text": "积极参与",
-            "effects": {"cultivation": 15, "charisma": 1},
-            "result_text": "你主动投身其中，在事件中展现了自己的能力，赢得了认可。",
+            "success_rate": 60,
+            "check_attribute": "charisma",
+            "effects": {"cultivation": 20, "charisma": 1},
+            "result_text": "你主动投身其中，展现出不凡的风采，赢得了众人的认可与赞叹。",
+            "failure_effects": {"cultivation": 5, "charisma": -1},
+            "failure_text": "你积极参与，却因经验不足而出了纰漏。虽未酿成大错，但颜面有损。",
             "consequence_tag": "",
             "consequence_desc": "",
         },
         {
             "text": "冷眼旁观",
+            "success_rate": 75,
+            "check_attribute": "willpower",
             "effects": {"willpower": 1, "comprehension": 1},
-            "result_text": "你选择置身事外，在远处静静观察。事后细细回味，倒也有所领悟。",
+            "result_text": "你选择置身事外，在远处静静观察。以旁观者视角审视全局，心有所悟。",
+            "failure_effects": {"willpower": 1},
+            "failure_text": "你想要旁观，却被卷入其中不得脱身。虽未受损，但也错失了从容观察的机会。",
             "consequence_tag": "",
             "consequence_desc": "",
         },
@@ -199,10 +231,19 @@ class ChoiceGenerator:
                 if "text" not in b:
                     continue
 
+                # Sanitize check_attribute
+                check_attr = str(b.get("check_attribute", ""))
+                if check_attr not in ("constitution", "comprehension", "fortune", "charisma", "willpower"):
+                    check_attr = ""
+
                 branch = {
                     "text": str(b.get("text", ""))[:20],
+                    "success_rate": max(10, min(95, int(b.get("success_rate", 60)))),
+                    "check_attribute": check_attr,
                     "effects": self._sanitize_effects(b.get("effects", {})),
                     "result_text": str(b.get("result_text", ""))[:200],
+                    "failure_effects": self._sanitize_effects(b.get("failure_effects", {})),
+                    "failure_text": str(b.get("failure_text", ""))[:200],
                     "consequence_tag": str(b.get("consequence_tag", "")),
                     "consequence_desc": str(b.get("consequence_desc", "")),
                 }

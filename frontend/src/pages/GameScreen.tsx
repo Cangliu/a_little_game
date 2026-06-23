@@ -1,7 +1,19 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import type { GameEvent, NextYearResponse, SectInfo } from '../utils/types';
 import { REALM_NAMES, REALM_COLORS, GENDER_NAMES, CATEGORY_NAMES, CATEGORY_COLORS } from '../utils/types';
 import { nextYear, nextYearStream, makeChoice } from '../utils/api';
+import { SceneBg } from '../components/SceneBg';
+import { SceneCG } from '../components/SceneCG';
+import { BREAKTHROUGH_CG, EVENT_CG, pickRandom, getPortrait } from '../config/sceneConfig';
+
+// Attribute display names for check_attribute
+const ATTR_DISPLAY: Record<string, string> = {
+  constitution: '根骨',
+  comprehension: '悟性',
+  fortune: '福缘',
+  charisma: '魅力',
+  willpower: '心性',
+};
 
 /**
  * Extract the character age referenced in event narrative text.
@@ -124,17 +136,31 @@ export default function GameScreen({
   // Player choice system
   const [isChoosing, setIsChoosing] = useState(false);
   const [choiceEvent, setChoiceEvent] = useState<GameEvent | null>(null);
-  const [choiceResult, setChoiceResult] = useState<string | null>(null);
+  const [choiceResult, setChoiceResult] = useState<{
+    is_success: boolean;
+    result_text: string;
+    choice_text: string;
+    final_success_rate: number;
+    effects: Record<string, number>;
+  } | null>(null);
   // Sect info state
   const [sectInfo, setSectInfo] = useState<SectInfo | null>(null);
   const [showSectPanel, setShowSectPanel] = useState(false);
   const [aiEnhanced, setAiEnhanced] = useState(false);
   const [streamingNarrative, setStreamingNarrative] = useState<string>('');
   const [isStreaming, setIsStreaming] = useState(false);
+  // CG system (Layer 2)
+  const [cgImage, setCgImage] = useState<string | null>(null);
+  const [showCG, setShowCG] = useState(false);
+  const [cgLabel, setCgLabel] = useState<string>('');
+  const [cgDuration, setCgDuration] = useState(3000);
+  const prevRealmRef = useRef(0);
   // Typing
   const [typingIdx, setTypingIdx] = useState<number>(-1);
   const logEndRef = useRef<HTMLDivElement>(null);
   const autoPlayRef = useRef(false);
+
+  const dismissCG = useCallback(() => setShowCG(false), []);
 
   useEffect(() => {
     autoPlayRef.current = autoPlay;
@@ -143,6 +169,28 @@ export default function GameScreen({
   useEffect(() => {
     logEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [eventLog, typingIdx]);
+
+  // Auto-save game state to localStorage every time key state changes
+  useEffect(() => {
+    if (!gameId || isGameOver) return;
+    try {
+      const saveData = {
+        gameId,
+        age,
+        realm,
+        realmName,
+        cultivation,
+        cultivationMax,
+        eventLogLength: eventLog.length,
+        timestamp: Date.now(),
+      };
+      localStorage.setItem(`autosave_${gameId}`, JSON.stringify(saveData));
+      // Also keep a "last active game" pointer
+      localStorage.setItem('last_active_game', gameId);
+    } catch {
+      // localStorage full or unavailable, silently ignore
+    }
+  }, [gameId, age, realm, isGameOver]);
 
   const advanceYear = async () => {
     if (loading || isGameOver) return;
@@ -284,21 +332,33 @@ export default function GameScreen({
     if (!choiceEvent || !choiceEvent.id) return;
     try {
       const result = await makeChoice(gameId, choiceEvent.id, index);
-      if (result.result_text) {
+      const branch = choiceEvent.branches?.[index];
+      // Show result feedback overlay
+      setIsChoosing(false);
+      setChoiceResult({
+        is_success: result.is_success,
+        result_text: result.result_text,
+        choice_text: result.choice_text,
+        final_success_rate: result.final_success_rate,
+        effects: result.is_success
+          ? (branch?.effects || {})
+          : (branch?.failure_effects || {}),
+      });
+      // After 2.5s, dismiss result and add to event log
+      setTimeout(() => {
         setEventLog((prev) => [
           ...prev,
           {
-            text: `── 你选择了「${result.choice_text}」`,
+            text: `── 你选择了「${result.choice_text}」——${result.is_success ? '成功' : '失败'}`,
             expanded_text: result.result_text,
             type: 'important' as const,
             category: 'common',
             age: age,
           },
         ]);
-      }
-      setChoiceEvent(null);
-      setIsChoosing(false);
-      setChoiceResult(null);
+        setChoiceResult(null);
+        setChoiceEvent(null);
+      }, 2500);
     } catch (err) {
       console.error('Choice error:', err);
     }
@@ -538,7 +598,7 @@ export default function GameScreen({
           </div>
         </div>
 
-        {/* Choice Panel Overlay — Enhanced */}
+        {/* Choice Panel Overlay — Enhanced with success rates */}
         {isChoosing && choiceEvent && choiceEvent.branches && (
           <div className="absolute inset-0 z-20 flex items-center justify-center"
                style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(4px)' }}>
@@ -562,30 +622,129 @@ export default function GameScreen({
                     <div className="flex items-start gap-2">
                       <span className="text-scroll-gold">{['⚔', '🛡', '✧'][i] || '❖'}</span>
                       <div className="flex-1">
-                        <span>{branch.text}</span>
-                        {/* Show effect hints */}
-                        {branch.effects && Object.keys(branch.effects).length > 0 && (
-                          <div className="mt-1 text-xs text-stone-400 opacity-0 group-hover:opacity-100 transition-opacity">
-                            {Object.entries(branch.effects).map(([k, v]) => {
-                              if (k === 'add_tag') return null;
-                              const sign = (v as number) > 0 ? '+' : '';
-                              const label: Record<string, string> = {
-                                cultivation: '修为', constitution: '根骨', comprehension: '悟性',
-                                fortune: '福缘', charisma: '魅力', willpower: '心性',
-                              };
-                              return (
-                                <span key={k} className={`mr-2 ${(v as number) > 0 ? 'text-emerald-500' : 'text-red-400'}`}>
-                                  {label[k] || k}{sign}{v}
+                        <div className="flex items-center justify-between">
+                          <span>{branch.text}</span>
+                          {branch.success_rate != null && branch.success_rate < 100 && (
+                            <span className={`text-xs px-1.5 py-0.5 rounded ${
+                              branch.success_rate >= 70 ? 'bg-emerald-50 text-emerald-600' :
+                              branch.success_rate >= 50 ? 'bg-amber-50 text-amber-600' :
+                              'bg-red-50 text-red-500'
+                            }`}>
+                              {branch.success_rate}%
+                            </span>
+                          )}
+                        </div>
+                        {/* Success rate bar + check attribute hint */}
+                        {branch.success_rate != null && branch.success_rate < 100 && (
+                          <div className="mt-1.5 space-y-1">
+                            <div className="flex items-center gap-2">
+                              <div className="flex-1 h-1.5 rounded-full bg-stone-200/80 overflow-hidden">
+                                <div
+                                  className="h-full rounded-full transition-all"
+                                  style={{
+                                    width: `${branch.success_rate}%`,
+                                    background: branch.success_rate >= 70 ? '#10b981' :
+                                               branch.success_rate >= 50 ? '#f59e0b' : '#ef4444',
+                                  }}
+                                />
+                              </div>
+                              {branch.check_attribute && (
+                                <span className="text-xs text-stone-400 whitespace-nowrap">
+                                  {ATTR_DISPLAY[branch.check_attribute] || branch.check_attribute}越高越好
                                 </span>
-                              );
-                            })}
+                              )}
+                            </div>
                           </div>
                         )}
+                        {/* Show effects on hover */}
+                        <div className="mt-1 text-xs text-stone-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <span className="text-emerald-500 mr-2">成功:</span>
+                          {branch.effects && Object.entries(branch.effects).map(([k, v]) => {
+                            if (k === 'add_tag') return null;
+                            const sign = (v as number) > 0 ? '+' : '';
+                            const label: Record<string, string> = {
+                              cultivation: '修为', constitution: '根骨', comprehension: '悟性',
+                              fortune: '福缘', charisma: '魅力', willpower: '心性',
+                            };
+                            return (
+                              <span key={k} className={`mr-1.5 ${(v as number) > 0 ? 'text-emerald-500' : 'text-red-400'}`}>
+                                {label[k] || k}{sign}{v}
+                              </span>
+                            );
+                          })}
+                          {branch.failure_effects && Object.keys(branch.failure_effects).length > 0 && (
+                            <>
+                              <span className="text-red-400 ml-2 mr-1">失败:</span>
+                              {Object.entries(branch.failure_effects).map(([k, v]) => {
+                                if (k === 'add_tag') return null;
+                                const sign = (v as number) > 0 ? '+' : '';
+                                const label: Record<string, string> = {
+                                  cultivation: '修为', constitution: '根骨', comprehension: '悟性',
+                                  fortune: '福缘', charisma: '魅力', willpower: '心性',
+                                };
+                                return (
+                                  <span key={k} className={`mr-1.5 ${(v as number) > 0 ? 'text-emerald-500' : 'text-red-400'}`}>
+                                    {label[k] || k}{sign}{v}
+                                  </span>
+                                );
+                              })}
+                            </>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </button>
                 ))}
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* Choice Result Feedback Overlay */}
+        {choiceResult && (
+          <div className="absolute inset-0 z-30 flex items-center justify-center"
+               style={{ background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(4px)' }}>
+            <div className="max-w-md w-full mx-4 p-6 rounded-lg border text-center"
+                 style={{
+                   background: 'rgba(255,253,245,0.97)',
+                   borderColor: choiceResult.is_success ? 'rgba(16,185,129,0.4)' : 'rgba(239,68,68,0.4)',
+                 }}>
+              {/* Success/Failure badge */}
+              <div className={`text-4xl mb-3 ${
+                choiceResult.is_success ? 'animate-bounce' : 'animate-pulse'
+              }`}>
+                {choiceResult.is_success ? '✨' : '⚡'}
+              </div>
+              <p className={`text-2xl font-kai tracking-widest mb-2 ${
+                choiceResult.is_success ? 'text-emerald-600' : 'text-red-500'
+              }`}>
+                {choiceResult.is_success ? '成功' : '失败'}
+              </p>
+              <p className="text-xs text-stone-400 font-kai mb-3">
+                「{choiceResult.choice_text}」· 成功率 {choiceResult.final_success_rate}%
+              </p>
+              {/* Effect changes */}
+              <div className="flex items-center justify-center gap-3 mb-4">
+                {Object.entries(choiceResult.effects).map(([k, v]) => {
+                  if (k === 'add_tag') return null;
+                  const sign = (v as number) > 0 ? '+' : '';
+                  const label: Record<string, string> = {
+                    cultivation: '修为', constitution: '根骨', comprehension: '悟性',
+                    fortune: '福缘', charisma: '魅力', willpower: '心性',
+                  };
+                  return (
+                    <span key={k} className={`text-lg font-kai font-bold ${
+                      (v as number) > 0 ? 'text-emerald-500' : 'text-red-400'
+                    }`}>
+                      {label[k] || k} {sign}{v}
+                    </span>
+                  );
+                })}
+              </div>
+              {/* Result narrative preview */}
+              <p className="text-sm text-scroll-text font-kai leading-relaxed">
+                {choiceResult.result_text.slice(0, 80)}{choiceResult.result_text.length > 80 ? '...' : ''}
+              </p>
             </div>
           </div>
         )}

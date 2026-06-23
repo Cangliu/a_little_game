@@ -823,7 +823,8 @@
       "charisma": 1
     },
     "tags": [
-      "adult"
+      "adult",
+      "romance"
     ],
     "event_type": "funny"
   },
@@ -846,7 +847,8 @@
       "comprehension": 1
     },
     "tags": [
-      "adult"
+      "adult",
+      "romance"
     ],
     "event_type": "funny"
   },
@@ -1082,7 +1084,8 @@
       "constitution": -1
     },
     "tags": [
-      "adult"
+      "adult",
+      "romance"
     ],
     "event_type": "danger"
   },
@@ -1623,7 +1626,8 @@
       "charisma": 1
     },
     "tags": [
-      "adult"
+      "adult",
+      "romance"
     ],
     "event_type": "fortune"
   },
@@ -1646,7 +1650,8 @@
       "charisma": 2
     },
     "tags": [
-      "adult"
+      "adult",
+      "romance"
     ],
     "event_type": "fortune"
   },
@@ -2072,7 +2077,8 @@
       "fortune": 2
     },
     "tags": [
-      "adult"
+      "adult",
+      "romance"
     ],
     "event_type": "fortune"
   },
@@ -3426,7 +3432,8 @@
     "tags": [
       "adult",
       "cultivation",
-      "breakthrough"
+      "breakthrough",
+      "romance"
     ],
     "event_type": "important"
   },
@@ -3652,7 +3659,8 @@
     },
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "fortune"
   },
@@ -3681,7 +3689,8 @@
     "tags": [
       "adult",
       "cultivation",
-      "breakthrough"
+      "breakthrough",
+      "romance"
     ],
     "event_type": "important"
   },
@@ -3861,7 +3870,8 @@
     },
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "important"
   },
@@ -3989,7 +3999,8 @@
     "tags": [
       "adult",
       "cultivation",
-      "breakthrough"
+      "breakthrough",
+      "romance"
     ],
     "event_type": "important"
   },
@@ -4212,7 +4223,8 @@
     },
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "important"
   },
@@ -4315,7 +4327,8 @@
     "tags": [
       "adult",
       "cultivation",
-      "breakthrough"
+      "breakthrough",
+      "romance"
     ],
     "event_type": "important"
   },
@@ -4467,7 +4480,8 @@
     },
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "fortune"
   },
@@ -4494,7 +4508,8 @@
     },
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "important"
   },
@@ -4812,7 +4827,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -4881,7 +4897,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -4903,7 +4920,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -4947,7 +4965,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -4993,7 +5012,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5016,7 +5036,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5084,7 +5105,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5107,7 +5129,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5130,7 +5153,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5153,7 +5177,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5175,7 +5200,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5197,7 +5223,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5242,7 +5269,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5265,7 +5293,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5310,7 +5339,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5333,7 +5363,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5356,7 +5387,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5379,7 +5411,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5402,7 +5435,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5424,7 +5458,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5447,7 +5482,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5470,7 +5506,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5493,7 +5530,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5516,7 +5554,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5539,7 +5578,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5561,7 +5601,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5584,7 +5625,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5607,7 +5649,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5630,7 +5673,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5653,7 +5697,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5676,7 +5721,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5699,7 +5745,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   },
@@ -5722,7 +5769,8 @@
     "category": "adult",
     "tags": [
       "adult",
-      "cultivation"
+      "cultivation",
+      "romance"
     ],
     "event_type": "normal"
   }

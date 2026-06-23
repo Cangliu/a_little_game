@@ -117,7 +117,7 @@ class GameState(BaseModel):
     talents: list[str] = []
     tags: list[str] = []
     events_log: list[dict] = []
-    used_event_ids: list[str] = []  # Dedup: prevent same event firing twice
+    used_event_ids: set[str] = set()  # Dedup: prevent same event firing twice (set for O(1) lookup)
     mortal_max_age: int = 0  # Random mortal lifespan (50-80), set at game start
     is_dead: bool = False
     death_reason: str = ""

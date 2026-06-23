@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { LifeSummary, SectInfo, ChoiceHistoryItem } from '../utils/types';
+import type { LifeSummary, SectInfo, ChoiceHistoryItem, NPCRelationship } from '../utils/types';
 import { REALM_COLORS, GENDER_NAMES } from '../utils/types';
 import { getSummary, getGameState } from '../utils/api';
 
@@ -13,6 +13,7 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
   const [show, setShow] = useState(false);
   const [sectInfo, setSectInfo] = useState<SectInfo | null>(null);
   const [choiceHistory, setChoiceHistory] = useState<ChoiceHistoryItem[]>([]);
+  const [npcRelationships, setNpcRelationships] = useState<NPCRelationship[]>([]);
 
   useEffect(() => {
     getSummary(gameId).then((data) => {
@@ -23,6 +24,7 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
     getGameState(gameId).then((state) => {
       if (state.sect_info) setSectInfo(state.sect_info);
       if (state.choice_history) setChoiceHistory(state.choice_history);
+      if (state.npc_relationships) setNpcRelationships(state.npc_relationships);
     }).catch(() => {});
   }, [gameId]);
 
@@ -189,7 +191,7 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
               <div className="ink-divider" />
               <div className="mb-4">
                 <h3 className="text-scroll-text-dim text-xs font-kai tracking-widest mb-3 text-center">
-                  关键抐择
+                  关键抉择
                 </h3>
                 <div className="space-y-2 max-h-36 overflow-y-auto">
                   {choiceHistory.slice(-5).map((ch, i) => (
@@ -202,6 +204,36 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
                       )}
                     </div>
                   ))}
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* NPC Relationships Retrospective */}
+          {npcRelationships.length > 0 && (
+            <>
+              <div className="ink-divider" />
+              <div className="mb-4">
+                <h3 className="text-scroll-text-dim text-xs font-kai tracking-widest mb-3 text-center">
+                  红尘缘分
+                </h3>
+                <div className="space-y-2 max-h-36 overflow-y-auto">
+                  {npcRelationships.map((npc, i) => {
+                    const sentimentLabel = npc.sentiment >= 50 ? '情深义重' : npc.sentiment >= 20 ? '有所交情' : npc.sentiment >= 0 ? '波澜不惊' : npc.sentiment >= -30 ? '心有嫌隙' : '仇深似海';
+                    const sentimentColor = npc.sentiment >= 50 ? 'text-pink-500' : npc.sentiment >= 20 ? 'text-amber-500' : npc.sentiment >= 0 ? 'text-stone-400' : npc.sentiment >= -30 ? 'text-orange-500' : 'text-red-500';
+                    return (
+                      <div key={i} className="flex items-center justify-between text-xs font-kai px-2">
+                        <span className="text-scroll-text">
+                          {npc.name}
+                          <span className="text-stone-500 ml-1">·{npc.relation_type}</span>
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <span className={sentimentColor}>{sentimentLabel}</span>
+                          {!npc.is_alive && <span className="text-stone-600">（已陨落）</span>}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </>

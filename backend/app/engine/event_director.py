@@ -23,6 +23,7 @@ if TYPE_CHECKING:
     from .main_storyline import MainStorylinePlanner
     from .saga import SagaManager
     from .world_era import WorldEraManager
+    from .memory.memory_manager import MemoryManager
     from ..models import GameState
 
 from .ai.prompt_templates import EVENT_DIRECTOR_SYSTEM, EVENT_DIRECTOR_USER, EVENT_DIRECTOR_STREAM_SYSTEM
@@ -34,6 +35,11 @@ logger = logging.getLogger(__name__)
 # ── Pro model upgrade thresholds ─────────────────────────────────────────
 _PRO_TENSION_THRESHOLD = 70
 _PRO_SAGA_MOMENTUM_THRESHOLD = 60
+_PROMPT_CHAR_LIMIT = 7000  # ~3500 tokens, generous upper bound
+
+# ── Cost optimization: skip LLM for low-value turns ──────────────────────
+_LOW_VALUE_TENSION_THRESHOLD = 40  # 张力低于此值视为低价值
+_LOW_VALUE_MAX_CONSECUTIVE = 2     # 最多连续跳过2次, 第3次强制走LLM
 
 
 class EventDirector:
@@ -54,6 +60,7 @@ class EventDirector:
         storyline_planner: "MainStorylinePlanner",
         saga_manager: "SagaManager" = None,
         era_manager: "WorldEraManager" = None,
+        memory_manager: "MemoryManager" = None,
     ):
         self._llm = llm_client
         self._npc_manager = npc_manager
@@ -62,6 +69,7 @@ class EventDirector:
         self._storyline_planner = storyline_planner
         self._saga_manager = saga_manager
         self._era_manager = era_manager
+        self._memory_manager = memory_manager
 
     # ── Model routing ─────────────────────────────────────────────────────
 
@@ -108,6 +116,33 @@ class EventDirector:
         if not candidates:
             return self._empty_result()
 
+        # ── Adult 保护: 有详细 expanded_text 的 adult 事件跳过 LLM 改写 ──
+        top_candidate = max(candidates, key=lambda c: c["weight"])
+        top_ev = top_candidate["event"]
+        if self._is_adult_protected(top_ev):
+            idx = candidates.index(top_candidate)
+            return {
+                "chosen_index": idx,
+                "narrative": top_ev.get("expanded_text", ""),
+                "has_choice": False,
+                "branches": None,
+                "ai_used": False,
+            }
+
+        # ── 低价值回合跳过 LLM (省成本, 连续≤2次) ──────────────────
+        if self._should_skip_llm(top_ev, state):
+            idx = candidates.index(top_candidate)
+            state._llm_skip_streak = getattr(state, "_llm_skip_streak", 0) + 1
+            return {
+                "chosen_index": idx,
+                "narrative": top_ev.get("expanded_text", "") or top_ev.get("text", ""),
+                "has_choice": False,
+                "branches": None,
+                "ai_used": False,
+            }
+        # 走LLM时重置连续跳过计数
+        state._llm_skip_streak = 0
+
         # Try LLM generation
         if self._llm and self._llm.available:
             result = self._generate_via_llm(candidates, state)
@@ -120,6 +155,53 @@ class EventDirector:
         fallback["ai_used"] = False
         return fallback
 
+    def _should_skip_llm(self, ev: dict, state: "GameState") -> bool:
+        """Determine if this turn can skip LLM to save cost.
+
+        Conditions (ALL must be met):
+        1. 张力 < 40 (低张力回合)
+        2. 事件无 npc_roles (非NPC专属事件)
+        3. 事件类型为 normal/funny (非 important/danger/fortune)
+        4. expanded_text > 80 chars (已有高质量预写文本)
+        5. 连续跳过次数 < 2 (防止重复感)
+        """
+        # 条件5: 连续跳过不超过2次
+        streak = getattr(state, "_llm_skip_streak", 0)
+        if streak >= _LOW_VALUE_MAX_CONSECUTIVE:
+            return False
+
+        # 条件1: 低张力
+        if getattr(state, "tension", 50) >= _LOW_VALUE_TENSION_THRESHOLD:
+            return False
+
+        # 条件2: 无NPC关联
+        if ev.get("npc_roles"):
+            return False
+
+        # 条件3: 非高价值事件类型
+        if ev.get("event_type", "normal") in ("important", "danger", "fortune"):
+            return False
+
+        # 条件4: 已有足够好的预写文本
+        expanded = ev.get("expanded_text", "")
+        if len(expanded) <= 80:
+            return False
+
+        return True
+
+    @staticmethod
+    def _is_adult_protected(ev: dict) -> bool:
+        """Check if an adult event should skip LLM rewriting.
+
+        Protection condition: has 'adult' tag AND expanded_text > 50 chars.
+        Events with empty expanded_text (new NPC events) will NOT be protected.
+        """
+        tags = set(ev.get("tags", []))
+        if "adult" not in tags:
+            return False
+        expanded = ev.get("expanded_text", "")
+        return len(expanded) > 50
+
     def _generate_via_llm(self, candidates: list[dict], state: "GameState") -> Optional[dict]:
         """Generate unified response via LLM."""
         try:
@@ -129,7 +211,7 @@ class EventDirector:
                 system_prompt=system_prompt,
                 user_prompt=user_prompt,
                 max_tokens=800,
-                temperature=0.85,
+                temperature=0.80,
                 model=use_model,
             )
             if not raw:
@@ -206,17 +288,36 @@ class EventDirector:
         if self._npc_manager:
             npc_str = self._npc_manager.get_npc_context_string(state) or npc_str
 
-        # NPC interaction history (for any NPC involved in top candidates)
+        # Dead NPC list — prevent narrative contradictions
+        dead_npc_names = []
+        for npc_dict in state.npc_registry.values():
+            if not npc_dict.get("is_alive", True):
+                dead_npc_names.append(npc_dict.get("name", ""))
+        dead_npc_warning = ""
+        if dead_npc_names:
+            dead_npc_warning = f"\n【已死亡NPC】{'、'.join(dead_npc_names)}（请勿在叙事中让他们再次出现、对话或行动）"
+
+        # NPC interaction history (for all NPCs involved in candidates, up to 3)
         npc_history = ""
         if self._npc_manager:
-            # Check if any top candidates involve an NPC
-            for cand in candidates[:3]:
+            npc_histories = []
+            seen_npc_ids = set()
+            for cand in candidates:
                 npc_id = cand["event"].get("involved_npc_id", "")
-                if npc_id:
-                    npc_history = self._npc_manager.get_npc_interaction_history(
-                        state, npc_id, max_entries=5
+                if npc_id and npc_id not in seen_npc_ids:
+                    seen_npc_ids.add(npc_id)
+                    history = self._npc_manager.get_npc_interaction_history(
+                        state, npc_id, max_entries=3
                     )
-                    break
+                    # Append destiny beat summary for narrative continuity
+                    destiny_summary = self._get_npc_destiny_summary(state, npc_id)
+                    if destiny_summary:
+                        history = (history + "\n" + destiny_summary) if history else destiny_summary
+                    if history:
+                        npc_histories.append(history)
+                    if len(npc_histories) >= 3:
+                        break
+            npc_history = "\n".join(npc_histories) if npc_histories else ""
 
         # Unresolved hooks + causal chains context
         hooks_str = "无"
@@ -254,9 +355,12 @@ class EventDirector:
         # Biography
         bio = state.biography_summary or "尚无传记"
 
-        # Recent experiences
+        # Recent experiences (realm-adaptive)
         recent = ""
-        if state.memory_working:
+        if self._memory_manager:
+            recent = self._memory_manager.get_recent_context(state)
+        if not recent and state.memory_working:
+            # Fallback: simple last 5 if memory_manager unavailable
             recent_items = state.memory_working[-5:]
             recent = "\n".join(f"- {m.get('text', '')[:50]}" for m in recent_items)
 
@@ -289,7 +393,102 @@ class EventDirector:
             causal_chains_context=chains_ctx or "无活跃因果链",
         )
 
+        # Append dead NPC warning after user prompt to prevent contradictions
+        if dead_npc_warning:
+            user_prompt += dead_npc_warning
+
+        user_prompt = self._trim_prompt_if_needed(user_prompt)
+
         return system_prompt, user_prompt
+
+    def _trim_prompt_if_needed(self, user_prompt: str) -> str:
+        """Trim user prompt if it exceeds the character limit.
+
+        Truncation priority (lowest priority trimmed first):
+        1. saga_context -> 100 chars
+        2. npc_history -> 300 chars
+        3. recent_events -> 200 chars
+        4. arc_context -> 200 chars
+        """
+        if len(user_prompt) <= _PROMPT_CHAR_LIMIT:
+            return user_prompt
+
+        import re
+
+        # Section markers and their trim limits (ordered by trim priority)
+        trim_rules = [
+            ("【活跃 Saga】", 100),
+            ("【与涉事NPC的交往史】", 300),
+            ("【近期经历】", 200),
+            ("【剧情线/命运线】", 200),
+        ]
+
+        result = user_prompt
+        for marker, limit in trim_rules:
+            if len(result) <= _PROMPT_CHAR_LIMIT:
+                break
+            # Find section and truncate its content
+            idx = result.find(marker)
+            if idx < 0:
+                continue
+            # Find the next section marker
+            next_section = len(result)
+            for other_marker, _ in trim_rules:
+                if other_marker == marker:
+                    continue
+                other_idx = result.find(other_marker, idx + len(marker))
+                if other_idx > 0:
+                    next_section = min(next_section, other_idx)
+            # Also check other known markers
+            for known in ["【候选事件】", "【主角状态】", "【天地大势】",
+                          "【因果暗线】", "【人际关系】", "【未了之事】",
+                          "【传记摘要】", "请选择"]:
+                ki = result.find(known, idx + len(marker))
+                if ki > 0:
+                    next_section = min(next_section, ki)
+            # Trim section content
+            content_start = idx + len(marker)
+            section_content = result[content_start:next_section]
+            if len(section_content) > limit:
+                trimmed = section_content[:limit] + "...(\u5df2截\u65ad)"
+                result = result[:content_start] + trimmed + result[next_section:]
+
+        if len(result) < len(user_prompt):
+            logger.debug(
+                "Prompt trimmed: %d -> %d chars",
+                len(user_prompt), len(result)
+            )
+        return result
+
+    @staticmethod
+    def _get_npc_destiny_summary(state, npc_id: str) -> str:
+        """Build a summary of completed destiny beats for an NPC.
+
+        Provides narrative continuity context so LLM can reference
+        previous destiny milestones in its expansion.
+        """
+        npc_dict = state.npc_registry.get(npc_id)
+        if not npc_dict:
+            return ""
+
+        destiny_beats = npc_dict.get("destiny_beats", [])
+        idx = npc_dict.get("current_destiny_index", 0)
+        if idx == 0:
+            return ""
+
+        name = npc_dict.get("name", "某人")
+        completed = destiny_beats[:idx]
+        lines = [f"与{name}的命运节点:"]
+        for i, beat in enumerate(completed):
+            desc = beat.get("description", "")
+            lines.append(f"  {i+1}. {desc}（已发生）")
+
+        # Show next pending beat hint (without spoiling details)
+        if idx < len(destiny_beats):
+            next_type = destiny_beats[idx].get("event_type", "")
+            lines.append(f"  [下一节点: {next_type}类型，尚未触发]")
+
+        return "\n".join(lines)
 
     def _parse_response(self, raw: str, candidates: list[dict], state: "GameState") -> Optional[dict]:
         """Parse LLM JSON response, validate, and sanitize."""
@@ -356,6 +555,8 @@ class EventDirector:
         if not branches or len(branches) < 2:
             return None
 
+        valid_attrs = ("constitution", "comprehension", "fortune", "charisma", "willpower")
+
         sanitized = []
         for b in branches[:3]:  # Max 3 branches
             if not isinstance(b, dict):
@@ -365,27 +566,51 @@ class EventDirector:
                 continue
 
             # Sanitize effects
-            effects = b.get("effects", {})
-            clean_effects = {}
-            for k, v in effects.items():
-                if k == "cultivation" and isinstance(v, (int, float)):
-                    clean_effects[k] = max(-30, min(50, int(v)))
-                elif k in ("constitution", "comprehension", "fortune",
-                           "charisma", "willpower") and isinstance(v, (int, float)):
-                    clean_effects[k] = max(-3, min(3, int(v)))
-                elif k == "add_tag" and isinstance(v, str):
-                    clean_effects[k] = v[:20]
+            effects = self._sanitize_effects(b.get("effects", {}))
+            # Sanitize failure_effects
+            failure_effects = self._sanitize_effects(b.get("failure_effects", {}))
+
+            # Sanitize success_rate
+            try:
+                success_rate = max(10, min(95, int(b.get("success_rate", 60))))
+            except (ValueError, TypeError):
+                success_rate = 60
+
+            # Sanitize check_attribute
+            check_attr = str(b.get("check_attribute", ""))
+            if check_attr not in valid_attrs:
+                check_attr = ""
 
             branch = {
                 "text": text[:20],
-                "effects": clean_effects,
+                "success_rate": success_rate,
+                "check_attribute": check_attr,
+                "effects": effects,
                 "result_text": b.get("result_text", "")[:150],
+                "failure_effects": failure_effects,
+                "failure_text": b.get("failure_text", "")[:150],
                 "consequence_tag": b.get("consequence_tag", "") or "",
                 "consequence_desc": b.get("consequence_desc", "") or "",
             }
             sanitized.append(branch)
 
         return sanitized if len(sanitized) >= 2 else None
+
+    @staticmethod
+    def _sanitize_effects(effects) -> dict:
+        """Sanitize and clamp effect values."""
+        if not isinstance(effects, dict):
+            return {}
+        clean_effects = {}
+        for k, v in effects.items():
+            if k == "cultivation" and isinstance(v, (int, float)):
+                clean_effects[k] = max(-30, min(50, int(v)))
+            elif k in ("constitution", "comprehension", "fortune",
+                       "charisma", "willpower") and isinstance(v, (int, float)):
+                clean_effects[k] = max(-3, min(3, int(v)))
+            elif k == "add_tag" and isinstance(v, str):
+                clean_effects[k] = v[:20]
+        return clean_effects
 
     def _fallback(self, candidates: list[dict], state: "GameState") -> dict:
         """Fallback when LLM is unavailable: weighted random pick + raw text."""
@@ -460,7 +685,7 @@ class EventDirector:
 
         try:
             for chunk in self._llm.generate_stream(
-                system_prompt, user_prompt, max_tokens=800, temperature=0.85,
+                system_prompt, user_prompt, max_tokens=800, temperature=0.80,
                 model=use_model,
             ):
                 had_output = True

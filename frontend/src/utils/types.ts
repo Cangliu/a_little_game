@@ -20,6 +20,10 @@ export interface EventBranch {
   text: string;
   effects: Record<string, number>;
   result_text: string;
+  success_rate?: number;
+  failure_effects?: Record<string, number>;
+  failure_text?: string;
+  check_attribute?: string;
   consequence_tag?: string;
   consequence_desc?: string;
 }

@@ -13,7 +13,7 @@ from __future__ import annotations
 import logging
 from typing import Optional, TYPE_CHECKING
 
-from .retriever import BM25Retriever
+from .retriever import HybridRetriever
 from .compressor import MemoryCompressor
 
 if TYPE_CHECKING:
@@ -52,7 +52,7 @@ class MemoryManager:
         llm_client: Optional["LLMClient"] = None,
         prompt_builder: Optional["PromptBuilder"] = None,
     ):
-        self._retriever = BM25Retriever()
+        self._retriever = HybridRetriever()
         self._compressor = MemoryCompressor(
             llm_client=llm_client,
             prompt_builder=prompt_builder,
@@ -178,6 +178,73 @@ class MemoryManager:
         return self._retriever.search(query, top_k=top_k)
 
     # ── Private methods ───────────────────────────────────────────────
+
+    def get_recent_context(self, state: "GameState") -> str:
+        """Build realm-adaptive recent experience context.
+
+        Low realms (0-1): last 5 working memory items (every year matters).
+        High realms (2+): last 3 working memory + 2-3 milestone samples
+            from short-term memory for temporal depth.
+        """
+        lines = []
+
+        if state.realm < 2:
+            # Low realm: simple recent events
+            for m in state.memory_working[-5:]:
+                lines.append(f"  {m.get('age', '?')}岁: {m.get('text', '')}")
+        else:
+            # High realm: immediate + retrospective milestones
+            for m in state.memory_working[-3:]:
+                lines.append(f"  {m.get('age', '?')}岁: {m.get('text', '')}")
+
+            if state.memory_short_term:
+                milestones = self._sample_milestones(
+                    state.memory_short_term, count=3
+                )
+                if milestones:
+                    lines.append("  ---回顾---")
+                    for m in milestones:
+                        lines.append(
+                            f"  {m.get('age', '?')}岁: {m.get('text', '')[:40]}"
+                        )
+
+        return "\n".join(lines)
+
+    @staticmethod
+    def _sample_milestones(memories: list, count: int = 3) -> list:
+        """Sample milestones from short-term memory with time spread.
+
+        Prioritizes important/danger events, then falls back to
+        evenly-spaced sampling across the time range.
+        """
+        if len(memories) <= count:
+            return memories
+
+        # Prefer important events
+        important = [
+            m for m in memories
+            if m.get("type") in ("important", "danger")
+        ]
+        if len(important) >= count:
+            step = len(important) // count
+            return [important[i * step] for i in range(count)]
+
+        # Not enough important ones: use important + evenly sampled normals
+        result = list(important)
+        remaining_count = count - len(result)
+        if remaining_count > 0:
+            # Evenly sample from all memories (skip already-selected)
+            important_set = {id(m) for m in important}
+            normals = [m for m in memories if id(m) not in important_set]
+            if normals:
+                step = max(1, len(normals) // remaining_count)
+                for i in range(remaining_count):
+                    idx = min(i * step, len(normals) - 1)
+                    result.append(normals[idx])
+
+        # Sort by age for chronological order
+        result.sort(key=lambda m: m.get("age", 0))
+        return result
 
     def _run_compression(self, state: "GameState") -> None:
         """Compress old short-term memories to long-term.

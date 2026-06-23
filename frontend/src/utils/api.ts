@@ -46,7 +46,7 @@ export async function makeChoice(
   gameId: string,
   eventId: string,
   choiceIndex: number,
-): Promise<{ result_text: string; event_id: string; choice_index: number; choice_text: string }> {
+): Promise<{ result_text: string; event_id: string; choice_index: number; choice_text: string; is_success: boolean; final_success_rate: number }> {
   const res = await fetch(`${API_BASE}/choose`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

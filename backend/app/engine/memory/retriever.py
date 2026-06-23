@@ -163,3 +163,100 @@ class BM25Retriever:
                 tokens.append(seg)
 
         return tokens
+
+
+class HybridRetriever:
+    """BM25 + Embedding hybrid retriever.
+
+    Combines keyword matching (BM25) with semantic similarity (embedding)
+    for better recall on Chinese narrative text.
+
+    score = alpha * bm25_normalized + (1 - alpha) * cosine_similarity
+
+    Graceful degradation: if embedding model is unavailable,
+    falls back to pure BM25 automatically.
+    """
+
+    def __init__(self, alpha: float = 0.4):
+        self._bm25 = BM25Retriever()
+        self._embedding = None  # Lazy init
+        self._alpha = alpha
+
+    def _ensure_embedding(self):
+        """Lazy-init embedding retriever."""
+        if self._embedding is None:
+            from .embedding_retriever import EmbeddingRetriever
+            self._embedding = EmbeddingRetriever()
+        return self._embedding
+
+    def index(self, documents: list) -> None:
+        """Build BM25 index (embedding is query-time, no index needed)."""
+        self._bm25.index(documents)
+
+    def search(self, query: str, top_k: int = 5) -> list:
+        """Hybrid search combining BM25 and embedding scores.
+
+        Returns top_k documents sorted by combined score.
+        If embedding is unavailable, falls back to pure BM25.
+        """
+        if not self._bm25._indexed or not self._bm25._documents:
+            return []
+
+        documents = self._bm25._documents
+
+        # Step 1: BM25 scores for all documents
+        query_tokens = self._bm25._tokenize(query)
+        if not query_tokens:
+            return []
+
+        bm25_scores = []
+        for i, doc in enumerate(documents):
+            score = self._bm25._score_document(query_tokens, doc, i)
+            bm25_scores.append(score)
+
+        # Normalize BM25 scores to [0, 1]
+        max_bm25 = max(bm25_scores) if bm25_scores else 1.0
+        if max_bm25 > 0:
+            bm25_normalized = [s / max_bm25 for s in bm25_scores]
+        else:
+            bm25_normalized = [0.0] * len(bm25_scores)
+
+        # Step 2: Embedding scores (if available)
+        embedding_retriever = self._ensure_embedding()
+        emb_scores = [0.0] * len(documents)
+        use_embedding = False
+
+        if embedding_retriever.available:
+            # Get raw document dicts (without internal fields)
+            raw_docs = [
+                {k: v for k, v in d.items() if not k.startswith("_")}
+                for d in documents
+            ]
+            emb_results = embedding_retriever.search(
+                query, raw_docs, top_k=len(documents)
+            )
+            if emb_results:
+                use_embedding = True
+                for idx, score in emb_results:
+                    if 0 <= idx < len(emb_scores):
+                        emb_scores[idx] = score
+
+        # Step 3: Combine scores
+        alpha = self._alpha if use_embedding else 1.0
+        combined_scores = []
+        for i in range(len(documents)):
+            combined = alpha * bm25_normalized[i] + (1 - alpha) * emb_scores[i]
+            if combined > 0:
+                combined_scores.append((combined, i))
+
+        # Sort by combined score descending
+        combined_scores.sort(key=lambda x: -x[0])
+
+        results = []
+        for score, idx in combined_scores[:top_k]:
+            doc = documents[idx]
+            result = {k: v for k, v in doc.items() if not k.startswith("_")}
+            result["_score"] = round(score, 4)
+            results.append(result)
+
+        return results
