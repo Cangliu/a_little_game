@@ -1,13 +1,13 @@
 """Sect templates — pre-defined sect archetypes for world generation.
 
-Provides 30 sect templates covering 6 SectTypes (剑/丹/阵/体/灵/魔), each with:
+Provides 36 sect templates covering 6 SectTypes (剑/丹/阵/体/灵/魔), each with:
 - name, sect_type, tier, specialization
 - founding_story (one-line lore)
 - territory description
 - starting resources
 
 The world generator selects 7 templates randomly to populate each game.
-With 30 templates, expected overlap across 3 games is ~1-2/7 (≤30%).
+With 36 templates, expected overlap across 3 games is ~1.4/7 (<20%).
 """
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ from .models import Sect, SectType, SectResources
 # ── Sect templates ────────────────────────────────────────────────────────
 # Each template: (name, type, tier, territory, specialization, founding_story)
 SECT_TEMPLATES: List[dict] = [
-    # 剑宗 (Sword) × 4
+    # 剑宗 (Sword) × 6
     {
         "name": "青云剑宗",
         "sect_type": SectType.SWORD.value,
@@ -61,8 +61,16 @@ SECT_TEMPLATES: List[dict] = [
         "specialization": "流星剑法与爆发一击",
         "founding_story": "阁主观流星坠落而悟剑道，一剑只出一次，却如流星绝影不可抵挡。",
     },
+    {
+        "name": "寒霜剑庐",
+        "sect_type": SectType.SWORD.value,
+        "tier": 4,
+        "territory": "极北寒霜原",
+        "specialization": "冰属性剑法与寒意杀伐",
+        "founding_story": "开派祖师于万年寒冰中悟得寒霜剑意，一剑出则万里冰封，寸草不生。",
+    },
 
-    # 丹宗 (Alchemy) × 5
+    # 丹宗 (Alchemy) × 6
     {
         "name": "太乙丹宗",
         "sect_type": SectType.ALCHEMY.value,
@@ -103,8 +111,16 @@ SECT_TEMPLATES: List[dict] = [
         "specialization": "天火炼丹与绝品丹方",
         "founding_story": "宗主以天地异火炼丹，所炼丹药品质占尽天下第一，求丹者踏破门槛。",
     },
+    {
+        "name": "回春谷",
+        "sect_type": SectType.ALCHEMY.value,
+        "tier": 2,
+        "territory": "南方回春山",
+        "specialization": "疗伤丹药与延年益寿",
+        "founding_story": "谷主以一粒回春丹救活半死修士千人，因德高望重开谷传授丹术医道。",
+    },
 
-    # 阵宗 (Formation) × 5
+    # 阵宗 (Formation) × 6
     {
         "name": "天机阵宗",
         "sect_type": SectType.FORMATION.value,
@@ -145,8 +161,16 @@ SECT_TEMPLATES: List[dict] = [
         "specialization": "太极阴阳阵与五行相生相克",
         "founding_story": "门主悟阴阳五行之变，以太极图为阵基，所布之阵生克无穷，尾尾相连。",
     },
+    {
+        "name": "隐机谷",
+        "sect_type": SectType.FORMATION.value,
+        "tier": 3,
+        "territory": "西南隐雾山",
+        "specialization": "隐匿阵法与空间折叠",
+        "founding_story": "谷主精通空间之道，以阵法折叠天地，谷中别有洞天，外人永远找不到入口。",
+    },
 
-    # 体修宗 (Body) × 5
+    # 体修宗 (Body) × 6
     {
         "name": "金刚体修门",
         "sect_type": SectType.BODY.value,
@@ -187,8 +211,16 @@ SECT_TEMPLATES: List[dict] = [
         "specialization": "战体变化与狂化之血",
         "founding_story": "开派祖师得上古妖兽精血，融入身躯后能化为战体，战力爆发十倍。",
     },
+    {
+        "name": "玄武宗",
+        "sect_type": SectType.BODY.value,
+        "tier": 4,
+        "territory": "北海玄武岛",
+        "specialization": "龟息功与不死之身",
+        "founding_story": "宗主得上古玄武真血，修成不死之身，千劫不灭，立宗传龟息长生之法。",
+    },
 
-    # 灵宗 (Spirit) × 5
+    # 灵宗 (Spirit) × 6
     {
         "name": "灵虚宫",
         "sect_type": SectType.SPIRIT.value,
@@ -229,8 +261,16 @@ SECT_TEMPLATES: List[dict] = [
         "specialization": "元神出窍与天眼通",
         "founding_story": "宫主能以元神出窍遍览天下，又具天眼通，能见未来之事，开宫传授神魂之道。",
     },
+    {
+        "name": "通灵道观",
+        "sect_type": SectType.SPIRIT.value,
+        "tier": 3,
+        "territory": "东南通灵峰",
+        "specialization": "通灵术与万物共鸣",
+        "founding_story": "观主能与天地万物灵性沟通，草木虫鱼皆为其耳目，开观传灵觉之道。",
+    },
 
-    # 魔宗 (Demon) × 5
+    # 魔宗 (Demon) × 6
     {
         "name": "幽冥魔宗",
         "sect_type": SectType.DEMON.value,
@@ -270,6 +310,14 @@ SECT_TEMPLATES: List[dict] = [
         "territory": "西荒苍天裂谷",
         "specialization": "天魔体与魔化秘术",
         "founding_story": "教主修炼天魔体，半人半魔，能化形为天魔战体，开教传授魔化之道。",
+    },
+    {
+        "name": "九幽冥殿",
+        "sect_type": SectType.DEMON.value,
+        "tier": 4,
+        "territory": "地底九幽深渊",
+        "specialization": "冥界法则与亡灵大军",
+        "founding_story": "殿主打通九幽冥界通道，以冥界之力养魔，麾下亡灵军团令正道闻风丧胆。",
     },
 ]
 

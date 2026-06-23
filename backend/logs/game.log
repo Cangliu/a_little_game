@@ -620,3 +620,5 @@
 [2026-06-23 21:38:56] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
 [2026-06-23 21:40:49] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
 [2026-06-23 21:40:50] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-23 21:44:28] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-23 21:44:29] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
