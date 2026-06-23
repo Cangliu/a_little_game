@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import type { LifeSummary, SectInfo, ChoiceHistoryItem, NPCRelationship } from '../utils/types';
 import { REALM_COLORS, GENDER_NAMES } from '../utils/types';
 import { getSummary, getGameState } from '../utils/api';
+import { SUMMARY_BACKGROUNDS, getPortrait } from '../config/sceneConfig';
 
 interface SummaryScreenProps {
   gameId: string;
@@ -56,8 +57,31 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
         show ? 'opacity-100' : 'opacity-0'
       }`}
     >
-      {/* Mountain background */}
-      <div className="mountain-bg" />
+      {/* Scene background based on ending */}
+      <div className="scene-bg">
+        <img
+          src={
+            isAscended ? SUMMARY_BACKGROUNDS.ascended
+            : isTribulationFailed ? SUMMARY_BACKGROUNDS.tribulation_failed
+            : SUMMARY_BACKGROUNDS.default
+          }
+          alt=""
+          className="scene-bg-img"
+          style={{ opacity: 1 }}
+          loading="lazy"
+          draggable={false}
+        />
+        <div className="scene-bg-overlay" />
+      </div>
+
+      {/* Character portrait */}
+      <img
+        src={getPortrait(summary.gender || 'male', summary.max_realm)}
+        alt=""
+        className="character-portrait summary-portrait"
+        loading="lazy"
+        draggable={false}
+      />
 
       {/* Floating petals */}
       {isAscended && (

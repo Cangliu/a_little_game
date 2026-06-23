@@ -549,8 +549,8 @@ class GameDirector:
         accidental_death = self.death_system.check_accidental_death(state)
         if accidental_death:
             events.append(accidental_death)
-            self._record_events_log(state, events)
             self._post_year_update(state, events)
+            self._record_events_log(state, events)
             done_data = {
                 "ai_enhanced": ai_used_this_turn,
                 "is_dead": state.is_dead,
@@ -567,8 +567,8 @@ class GameDirector:
         if tribulation:
             events.append(tribulation)
             if state.is_ascended or state.is_dead:
-                self._record_events_log(state, events)
                 self._post_year_update(state, events)
+                self._record_events_log(state, events)
                 done_data = {
                     "ai_enhanced": ai_used_this_turn,
                     "is_dead": state.is_dead,
@@ -581,8 +581,8 @@ class GameDirector:
                 return
 
         # Phase 10: Post-year update
-        self._record_events_log(state, events)
         self._post_year_update(state, events)
+        self._record_events_log(state, events)
 
         # Build final done data
         done_data = {
@@ -617,7 +617,6 @@ class GameDirector:
 
     def _post_year_update(self, state: GameState, events: list) -> None:
         """End-of-year housekeeping: memory recording, NPC aging, arc advancement, destiny advancement, tension update, context update."""
-        self.memory_manager.record_events(state, events)
         self.memory_manager.tick_year(state)
         self.npc_manager.age_npcs(state)
         # Advance story arcs based on events + check for saga emergence
@@ -631,12 +630,14 @@ class GameDirector:
         self.storyline_planner.advance_destiny(state, events)
         # Check NPC destiny pivots (after dramatic events)
         self.npc_manager.check_destiny_pivots(state, events)
-        # Check expiring causal chains
+        # Check expiring causal chains (forced resolutions added to events)
         expiring_chains = self.hook_manager.check_expiring_chains(state)
         for chain in expiring_chains:
             resolution = self.hook_manager.generate_forced_resolution(state, chain)
             if resolution:
                 events.append(resolution)
+        # ── Record ALL events into memory (after forced resolutions) ───
+        self.memory_manager.record_events(state, events)
         # ── Tension curve update ───────────────────────────────────────
         delta = 0.0
         for ev in events:

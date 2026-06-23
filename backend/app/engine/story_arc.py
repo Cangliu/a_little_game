@@ -414,5 +414,5 @@ class StoryArcPlanner:
                 score += 1
                 break
 
-        # Threshold: score >= 1 is enough (was 2, too strict)
-        return score >= 1
+        # Threshold: score >= 2 required (keyword + at least one other signal)
+        return score >= 2

@@ -217,9 +217,9 @@ class SagaManager:
             is_active=True,
         )
 
-        # Generate direction hint
+        # Generate direction hint (force=True for new saga)
         saga_dict = saga.model_dump()
-        self._update_direction_hint(saga_dict)
+        self._update_direction_hint(saga_dict, force=True)
         state.sagas.append(saga_dict)
 
         logger.info(
@@ -227,18 +227,33 @@ class SagaManager:
             theme, saga_dict["linked_arc_ids"], involved_npcs
         )
 
-    def _update_direction_hint(self, saga: dict) -> None:
-        """Update the saga's direction hint. LLM first, template fallback."""
+    def _update_direction_hint(self, saga: dict, force: bool = False) -> None:
+        """Update the saga's direction hint. LLM first, template fallback.
+
+        Throttle: only call LLM if forced (creation) OR momentum has shifted
+        by >= 20 since the last LLM-generated hint.
+        """
         npcs = saga.get("involved_npcs", [])
-        theme = saga.get("theme", "命运")
+        theme = saga.get("theme", "")
+        if not theme or theme == "命运":
+            theme = "命运"
         npc = npcs[0] if npcs else "某人"
 
-        # Try LLM generation (cost: ~100 tokens, negligible)
-        if self._llm and self._llm.available:
+        current_momentum = saga.get("momentum", 0)
+        last_llm_momentum = saga.get("_last_hint_momentum", -100)
+        momentum_shift = abs(current_momentum - last_llm_momentum)
+
+        # Try LLM generation when forced or momentum shifted significantly
+        if (force or momentum_shift >= 20) and self._llm and self._llm.available:
             hint = self._generate_hint_via_llm(saga)
             if hint:
                 saga["direction_hint"] = hint
+                saga["_last_hint_momentum"] = current_momentum
                 return
+
+        # Skip update if hint already exists and momentum hasn't shifted enough
+        if not force and saga.get("direction_hint") and momentum_shift < 20:
+            return
 
         # Fallback: template-based
         template = random.choice(DIRECTION_HINT_TEMPLATES)
@@ -273,17 +288,23 @@ class SagaManager:
 
     @staticmethod
     def _extract_arc_keywords(arc: dict) -> list[str]:
-        """Extract keywords from a completed arc for saga matching."""
-        keywords = []
+        """Extract keywords from a completed arc for saga matching.
+
+        Uses jieba segmentation to extract meaningful 2+ char Chinese words
+        instead of single-character splitting.
+        """
+        from .event_system import extract_keywords
+
+        keywords: list[str] = []
         theme = arc.get("theme", "")
         if theme:
-            keywords.extend(list(theme))  # Character-level for Chinese
+            keywords.extend(extract_keywords(theme, max_keywords=5))
 
         # Extract from planned beats
         beats = arc.get("planned_beats", [])
         for beat in beats:
             if isinstance(beat, str):
-                keywords.extend(list(beat[:10]))
+                keywords.extend(extract_keywords(beat, max_keywords=4))
 
         # NPC name as keyword
         npc_name = arc.get("npc_name", "")

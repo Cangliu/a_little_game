@@ -209,7 +209,20 @@ export default function GameScreen({
             streamStarted = true; // Server has advanced game state
             const s = stateData as Record<string, any>;
             if (s.age !== undefined) setAge(s.age);
-            if (s.realm !== undefined) setRealm(s.realm);
+            if (s.realm !== undefined) {
+              const newRealm = s.realm as number;
+              if (newRealm > prevRealmRef.current && prevRealmRef.current > 0) {
+                const pool = BREAKTHROUGH_CG[newRealm] || [];
+                if (pool.length > 0) {
+                  setCgImage(pickRandom(pool));
+                  setCgLabel(`突破 · ${REALM_NAMES[newRealm] || ''}`);
+                  setCgDuration(3500);
+                  setShowCG(true);
+                }
+              }
+              prevRealmRef.current = newRealm;
+              setRealm(newRealm);
+            }
             if (s.realm_name) setRealmName(s.realm_name);
             if (s.cultivation !== undefined) setCultivation(s.cultivation);
             if (s.cultivation_max !== undefined) setCultivationMax(s.cultivation_max);
@@ -237,6 +250,13 @@ export default function GameScreen({
               setChoiceEvent(d.choice_event as GameEvent);
               setIsChoosing(true);
               setAutoPlay(false);
+              // CG for choice event
+              const cat = (d.choice_event as GameEvent).category || 'fortune';
+              const pool = EVENT_CG[cat] || EVENT_CG['fortune'];
+              setCgImage(pickRandom(pool));
+              setCgLabel('命运交叉点');
+              setCgDuration(0); // Manual dismiss (stays until choice made)
+              setShowCG(true);
             }
             // Commit streaming narrative into the last event's expanded_text
             setStreamingNarrative((narrative) => {
@@ -271,6 +291,17 @@ export default function GameScreen({
         const result = await nextYear(gameId);
         setAge(result.age);
         setRealm(result.realm);
+        // Breakthrough CG detection (fallback path)
+        if (result.realm > prevRealmRef.current && prevRealmRef.current > 0) {
+          const pool = BREAKTHROUGH_CG[result.realm] || [];
+          if (pool.length > 0) {
+            setCgImage(pickRandom(pool));
+            setCgLabel(`突破 · ${REALM_NAMES[result.realm] || ''}`);
+            setCgDuration(3500);
+            setShowCG(true);
+          }
+        }
+        prevRealmRef.current = result.realm;
         setRealmName(result.realm_name);
         setCultivation(result.cultivation);
         setCultivationMax(result.cultivation_max);
@@ -291,6 +322,13 @@ export default function GameScreen({
           setChoiceEvent(result.choice_event);
           setIsChoosing(true);
           setAutoPlay(false);
+          // CG for choice event (fallback path)
+          const cat = result.choice_event.category || 'fortune';
+          const pool = EVENT_CG[cat] || EVENT_CG['fortune'];
+          setCgImage(pickRandom(pool));
+          setCgLabel('命运交叉点');
+          setCgDuration(0);
+          setShowCG(true);
           setLoading(false);
           return;
         }
@@ -335,6 +373,7 @@ export default function GameScreen({
       const branch = choiceEvent.branches?.[index];
       // Show result feedback overlay
       setIsChoosing(false);
+      setShowCG(false); // Dismiss choice CG
       setChoiceResult({
         is_success: result.is_success,
         result_text: result.result_text,
@@ -393,8 +432,26 @@ export default function GameScreen({
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      {/* Aurora animated background */}
-      <div className="aurora-bg" />
+      {/* Layer 1: Dynamic realm-based background */}
+      <SceneBg realm={realm} />
+
+      {/* Layer 2: CG illustration overlay */}
+      <SceneCG
+        show={showCG}
+        imageSrc={cgImage}
+        onDismiss={dismissCG}
+        duration={cgDuration}
+        label={cgLabel}
+      />
+
+      {/* Layer 3: Character portrait (subtle, right side) */}
+      <img
+        src={getPortrait(gender, realm)}
+        alt=""
+        className="character-portrait"
+        loading="lazy"
+        draggable={false}
+      />
 
       {/* Floating golden particles */}
       <div className="aurora-particles">
@@ -760,7 +817,7 @@ export default function GameScreen({
                   disabled={loading || autoPlay}
                   className={`ancient-button font-kai tracking-[0.3em] ${loading || autoPlay ? 'opacity-40 cursor-not-allowed' : ''}`}
                 >
-                  {loading ? '推演中...' : '流年'}
+                  {loading ? '光阴飞逝...' : '流年'}
                 </button>
                 <button
                   onClick={toggleAutoPlay}
@@ -776,7 +833,7 @@ export default function GameScreen({
             ) : (
               <div className="text-center">
                 <p className="text-scroll-gold font-kai text-lg animate-pulse tracking-widest">
-                  命运终局 · 正在推演结果...
+                  命运终局 · 往事如烟，尘埃落定...
                 </p>
               </div>
             )}

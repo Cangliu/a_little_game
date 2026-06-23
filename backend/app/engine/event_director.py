@@ -667,6 +667,33 @@ class EventDirector:
             yield {"type": "done"}
             return
 
+        top_candidate = max(candidates, key=lambda c: c["weight"])
+        top_ev = top_candidate["event"]
+
+        # ── Adult 保护: 有详细 expanded_text 的 adult 事件跳过 LLM 改写 ──
+        if self._is_adult_protected(top_ev):
+            idx = candidates.index(top_candidate)
+            meta = {"chosen_index": idx, "narrative": top_ev.get("expanded_text", ""),
+                    "has_choice": False, "branches": None, "ai_used": False}
+            yield {"type": "meta", "data": meta}
+            yield {"type": "narrative_chunk", "data": meta["narrative"]}
+            yield {"type": "done"}
+            return
+
+        # ── 低价值回合跳过 LLM (省成本, 连续≤2次) ──
+        if self._should_skip_llm(top_ev, state):
+            idx = candidates.index(top_candidate)
+            state._llm_skip_streak = getattr(state, "_llm_skip_streak", 0) + 1
+            narrative = top_ev.get("expanded_text", "") or top_ev.get("text", "")
+            meta = {"chosen_index": idx, "narrative": narrative,
+                    "has_choice": False, "branches": None, "ai_used": False}
+            yield {"type": "meta", "data": meta}
+            yield {"type": "narrative_chunk", "data": narrative}
+            yield {"type": "done"}
+            return
+        # 走LLM时重置连续跳过计数
+        state._llm_skip_streak = 0
+
         if not (self._llm and self._llm.available):
             fb = self._fallback(candidates, state)
             fb["ai_used"] = False

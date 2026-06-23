@@ -251,6 +251,7 @@ class MemoryManager:
 
         Moves events older than SHORT_TERM_MAX_AGE from short-term
         to long-term after compression.
+        Important/danger events are preserved in short-term regardless of age.
         """
         if not state.memory_short_term:
             return
@@ -258,14 +259,17 @@ class MemoryManager:
         cutoff_age = state.age - SHORT_TERM_MAX_AGE
 
         # Partition short-term into "old" and "recent"
-        old_memories = [
-            m for m in state.memory_short_term
-            if m.get("age", 0) < cutoff_age
-        ]
-        recent_memories = [
-            m for m in state.memory_short_term
-            if m.get("age", 0) >= cutoff_age
-        ]
+        # Important/danger events are never aged out (kept in recent)
+        old_memories = []
+        recent_memories = []
+        for m in state.memory_short_term:
+            mem_age = m.get("age", 0)
+            mem_type = m.get("type", "")
+            is_protected = mem_type in ("important", "danger")
+            if mem_age < cutoff_age and not is_protected:
+                old_memories.append(m)
+            else:
+                recent_memories.append(m)
 
         if not old_memories:
             return

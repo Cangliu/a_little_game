@@ -737,8 +737,13 @@ class EventSystem:
         # Realm-adaptive lookback window
         lookback = _DIVERSITY_LOOKBACK_HIGH if state.realm >= 2 else _DIVERSITY_LOOKBACK_BASE
 
-        # Count recent categories from memory_working
-        recent_memories = (state.memory_working or [])[-lookback:]
+        # Count recent categories from memory_working + memory_short_term (supplement)
+        # memory_working is capped at 5, so for high-realm we pull from short_term too
+        recent_memories = list(state.memory_working or [])
+        if lookback > len(recent_memories) and state.memory_short_term:
+            supplement_count = lookback - len(recent_memories)
+            recent_memories = state.memory_short_term[-supplement_count:] + recent_memories
+        recent_memories = recent_memories[-lookback:]
         recent_categories: dict[str, int] = {}
         for mem in recent_memories:
             cat = mem.get("category", "")
@@ -939,8 +944,8 @@ class EventSystem:
                 if ctag in ev_tags:
                     boost_score += 2.0
                     continue
-                # Priority 2: Prefix match (ctag starts with an event tag)
-                prefix_hit = any(ctag.startswith(et + "_") or ctag.startswith(et) for et in ev_tags if len(et) >= 3)
+                # Priority 2: Prefix match (ctag starts with an event tag + separator)
+                prefix_hit = any(ctag.startswith(et + "_") for et in ev_tags if len(et) >= 3)
                 if prefix_hit:
                     boost_score += 1.6
                     continue
