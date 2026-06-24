@@ -1,7 +1,7 @@
 """Memory Manager — three-layer human-like memory system.
 
 Implements a forgetting curve that mimics human memory:
-- Working Memory: last 5 events (full text)
+- Working Memory: realm-adaptive capacity (5/7/9 events, full text)
 - Short-term Memory: last 50 years (summaries)
 - Long-term Memory: older events (heavily compressed, only important ones)
 
@@ -24,7 +24,7 @@ if TYPE_CHECKING:
 logger = logging.getLogger(__name__)
 
 # Configuration
-WORKING_MEMORY_SIZE = 5
+WORKING_MEMORY_BASE_SIZE = 5  # Base capacity (realm 0-1)
 SHORT_TERM_MAX_AGE = 50  # Events older than 50 years get compressed
 COMPRESSION_INTERVAL = 30  # Compress every 30 years
 LONG_TERM_MAX_SIZE = 100  # Max long-term memory entries (evict oldest normal when exceeded)
@@ -35,7 +35,7 @@ class MemoryManager:
     """Three-layer memory system with decay and retrieval.
 
     Layer 1 - Working Memory:
-        Last 5 events, full text preserved.
+        Realm-adaptive capacity (5/7/9 events), full text preserved.
         Used for: immediate AI narrative context.
 
     Layer 2 - Short-term Memory:
@@ -62,6 +62,21 @@ class MemoryManager:
         )
         self._last_compression_age: int = 0
 
+    @staticmethod
+    def _get_working_memory_size(state: "GameState") -> int:
+        """Realm-adaptive working memory capacity.
+
+        - realm 0-1 (凡人/练气): 5 entries (dense yearly events)
+        - realm 2-3 (筑基/金丹): 7 entries (larger time steps need more context)
+        - realm 4-5 (元婴/化神): 9 entries (decades per step, max depth)
+        """
+        realm = getattr(state, "realm", 0)
+        if realm >= 4:
+            return 9
+        elif realm >= 2:
+            return 7
+        return 5
+
     def record_event(self, state: "GameState", event: dict) -> None:
         """Record a single event into working memory.
 
@@ -79,8 +94,9 @@ class MemoryManager:
 
         state.memory_working.append(memory_entry)
 
-        # Overflow: move oldest to short-term
-        while len(state.memory_working) > WORKING_MEMORY_SIZE:
+        # Overflow: move oldest to short-term (realm-adaptive capacity)
+        capacity = self._get_working_memory_size(state)
+        while len(state.memory_working) > capacity:
             overflow = state.memory_working.pop(0)
             # Convert to summary form for short-term
             # 保留更丰富的文本供检索: 优先用expanded_text摘要, 其次用完整text
@@ -253,8 +269,8 @@ class MemoryManager:
         """Build realm-adaptive recent experience context.
 
         Low realms (0-1): last 5 working memory items (every year matters).
-        High realms (2+): last 3 working memory + 2-3 milestone samples
-            from short-term memory for temporal depth.
+        High realms (2-3): last 5 working memory + 4 milestone samples.
+        Very high realms (4+): last 5 working memory + 4 milestone samples.
         """
         lines = []
 
@@ -263,13 +279,13 @@ class MemoryManager:
             for m in state.memory_working[-5:]:
                 lines.append(f"  {m.get('age', '?')}岁: {m.get('text', '')}")
         else:
-            # High realm: immediate + retrospective milestones
-            for m in state.memory_working[-3:]:
+            # High realm: immediate context (5 items) + retrospective milestones
+            for m in state.memory_working[-5:]:
                 lines.append(f"  {m.get('age', '?')}岁: {m.get('text', '')}")
 
             if state.memory_short_term:
                 milestones = self._sample_milestones(
-                    state.memory_short_term, count=3
+                    state.memory_short_term, count=4
                 )
                 if milestones:
                     lines.append("  ---回顾---")

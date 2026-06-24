@@ -173,7 +173,9 @@ class StoryArcPlanner:
             arc_npc = arc.get("npc_name", "")
 
             # Check if event matches current beat
-            if self._event_matches_beat(event_text, event_tags, event_category, current_beat, event_npc, arc_npc):
+            phase = arc.get("phase", "setup")
+            threshold = 4 if phase == "climax" else 3
+            if self._event_matches_beat(event_text, event_tags, event_category, current_beat, event_npc, arc_npc, threshold=threshold):
                 arc["current_beat_index"] = idx + 1
 
                 # Update phase based on progress
@@ -349,6 +351,7 @@ class StoryArcPlanner:
         beat_text: str,
         event_npc: str = "",
         arc_npc: str = "",
+        threshold: int = 3,
     ) -> bool:
         """Check if an event roughly matches a story beat.
 
@@ -357,6 +360,8 @@ class StoryArcPlanner:
         2. Tag-based matching (beat keywords found in event tags)
         3. NPC binding bonus (arc NPC matches event NPC)
         4. Category-based matching
+
+        threshold: minimum score to count as match (default 3, climax uses 4)
         """
         if not beat_text:
             return False
@@ -414,5 +419,5 @@ class StoryArcPlanner:
                 score += 1
                 break
 
-        # Threshold: score >= 2 required (keyword + at least one other signal)
-        return score >= 2
+        # Threshold: score >= threshold required (need multiple signals to advance arc)
+        return score >= threshold

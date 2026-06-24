@@ -31,6 +31,19 @@ MAX_CAUSAL_CHAINS = 10
 DEFAULT_MAX_WAIT_YEARS = 150
 URGENCY_ESCALATION_THRESHOLD = 50  # Years before TTL when urgency starts climbing
 
+# Minimum realm required to resolve specific hook types
+# If player realm < min_realm, forced resolution is deferred (延期) instead of triggered
+_HOOK_MIN_REALM = {
+    "tribulation_preparation": 4,  # 至少元婴才能解决渡劫准备
+    "inner_demon": 2,              # 筑基以上才能解决心魔
+    "blood_feud": 2,               # 筑基以上才能了结血仇
+    "master_secret": 3,            # 金丹以上揭开师父秘密
+    "forbidden_zone": 3,           # 金丹以上探索禁地
+    "soul_debt": 4,                # 元婴以上偿还魂债
+    "sect_crisis": 2,              # 筑基以上应对宗门危机
+    "ancient_inheritance": 3,      # 金丹以上接受上古传承
+}
+
 
 # ── Data Models ───────────────────────────────────────────────────────────
 
@@ -372,23 +385,54 @@ class CausalityManager:
         return expiring
 
     def generate_forced_resolution(self, state: "GameState", hook: dict) -> Optional[dict]:
-        """Generate a resolution event for an expired hook or chain."""
+        """Generate a resolution event for an expired hook or chain.
+
+        If player realm is below the hook's minimum requirement, the hook is
+        deferred (max_wait extended by 50 years) rather than force-resolved.
+        """
         hook_id = hook.get("hook_id", hook.get("chain_id", "unknown"))
         description = hook.get("description", hook.get("expected_resolution", "一段往事"))
         npc_name = hook.get("npc_name", "")
 
-        if npc_name:
-            templates = [
-                f"多年来的执念终于有了结果——{description}的因果，在与{npc_name}的一次重逢中化解",
-                f"时过境迁，当年{description}之事终于尘埃落定",
-                f"你与{npc_name}的这段缘分，在岁月流转中渐渐淡去",
-            ]
+        # Realm gate: defer if player not strong enough
+        min_realm = _HOOK_MIN_REALM.get(hook_id, 0)
+        current_realm = getattr(state, "realm", 0)
+        if current_realm < min_realm:
+            # Extend TTL instead of forcing resolution
+            hook["max_wait_years"] = hook.get("max_wait_years", 100) + 50
+            logger.debug(
+                "Deferred hook '%s' resolution: realm %d < required %d, extended wait to %d",
+                hook_id, current_realm, min_realm, hook["max_wait_years"]
+            )
+            return None
+
+        # Realm-aware narrative templates
+        if current_realm >= 4:
+            # 高境界：气势磅礴的了结
+            if npc_name:
+                templates = [
+                    f"历经百年修行，你已有足够实力了结{description}的因果——与{npc_name}的这段缘分终于尘埃落定",
+                    f"以元婴之境的修为，你终于有能力解决{description}之事，{npc_name}也对此释然",
+                ]
+            else:
+                templates = [
+                    f"历经百年修行，当年{description}的执念，在元婴大能之下终于彻底化解",
+                    f"以你如今的境界，{description}一事不过是修道路上的一段插曲，轻松了结",
+                ]
         else:
-            templates = [
-                f"多年前{description}的执念，在一次静修中悠然释怀",
-                f"时过境迁，{description}一事终于有了交代",
-                f"你在惟恋之时回忆起{description}，心中释然",
-            ]
+            # 中低境界：传统叙事
+            if npc_name:
+                templates = [
+                    f"多年来的执念终于有了结果——{description}的因果，在与{npc_name}的一次重逢中化解",
+                    f"时过境迁，当年{description}之事终于尘埃落定",
+                    f"你与{npc_name}的这段缘分，在岁月流转中渐渐淡去",
+                ]
+            else:
+                templates = [
+                    f"多年前{description}的执念，在一次静修中悠然释怀",
+                    f"时过境迁，{description}一事终于有了交代",
+                    f"你在惟恋之时回忆起{description}，心中释然",
+                ]
 
         resolution_text = random.choice(templates)
 

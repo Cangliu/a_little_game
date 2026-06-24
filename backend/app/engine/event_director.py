@@ -39,7 +39,7 @@ _PROMPT_CHAR_LIMIT = 7000  # ~3500 tokens, generous upper bound
 
 # ── Cost optimization: skip LLM for low-value turns ──────────────────────
 _LOW_VALUE_TENSION_THRESHOLD = 40  # 张力低于此值视为低价值
-_LOW_VALUE_MAX_CONSECUTIVE = 2     # 最多连续跳过2次, 第3次强制走LLM
+_LOW_VALUE_MAX_CONSECUTIVE = 1     # 最多连续跳过1次, 第2次强制走LLM
 
 
 class EventDirector:
@@ -131,11 +131,15 @@ class EventDirector:
 
         # ── 低价值回合跳过 LLM (省成本, 连续≤2次) ──────────────────
         if self._should_skip_llm(top_ev, state):
-            idx = candidates.index(top_candidate)
+            # 从top-3候选中随机选一个（引入变异，避免总选top-1）
+            pool = candidates[:min(3, len(candidates))]
+            chosen_candidate = random.choice(pool)
+            idx = candidates.index(chosen_candidate)
+            chosen_ev = chosen_candidate["event"]
             state._llm_skip_streak = getattr(state, "_llm_skip_streak", 0) + 1
             return {
                 "chosen_index": idx,
-                "narrative": top_ev.get("expanded_text", "") or top_ev.get("text", ""),
+                "narrative": chosen_ev.get("expanded_text", "") or chosen_ev.get("text", ""),
                 "has_choice": False,
                 "branches": None,
                 "ai_used": False,
@@ -163,9 +167,11 @@ class EventDirector:
         2. 事件无 npc_roles (非NPC专属事件)
         3. 事件类型为 normal/funny (非 important/danger/fortune)
         4. expanded_text > 80 chars (已有高质量预写文本)
-        5. 连续跳过次数 < 2 (防止重复感)
+        5. 连续跳过次数 < 1 (防止重复感)
+        6. 无紧迫因果链 (urgency >= 3)
+        7. 无高动量Saga (momentum >= 40)
         """
-        # 条件5: 连续跳过不超过2次
+        # 条件5: 连续跳过不超过1次
         streak = getattr(state, "_llm_skip_streak", 0)
         if streak >= _LOW_VALUE_MAX_CONSECUTIVE:
             return False
@@ -186,6 +192,16 @@ class EventDirector:
         expanded = ev.get("expanded_text", "")
         if len(expanded) <= 80:
             return False
+
+        # 条件6: 如果有紧迫因果链则不跳过
+        for chain in (getattr(state, "causal_chains", None) or []):
+            if not chain.get("is_resolved") and chain.get("urgency", 1) >= 3.0:
+                return False
+
+        # 条件7: 如果有活跃Saga高动量则不跳过
+        for saga in (getattr(state, "sagas", None) or []):
+            if saga.get("is_active") and saga.get("momentum", 0) >= 40:
+                return False
 
         return True
 
@@ -307,7 +323,7 @@ class EventDirector:
                 if npc_id and npc_id not in seen_npc_ids:
                     seen_npc_ids.add(npc_id)
                     history = self._npc_manager.get_npc_interaction_history(
-                        state, npc_id, max_entries=3
+                        state, npc_id, max_entries=5
                     )
                     # Append destiny beat summary for narrative continuity
                     destiny_summary = self._get_npc_destiny_summary(state, npc_id)
@@ -315,7 +331,7 @@ class EventDirector:
                         history = (history + "\n" + destiny_summary) if history else destiny_summary
                     if history:
                         npc_histories.append(history)
-                    if len(npc_histories) >= 3:
+                    if len(npc_histories) >= 4:
                         break
             npc_history = "\n".join(npc_histories) if npc_histories else ""
 
@@ -431,7 +447,7 @@ class EventDirector:
         # Section markers and their trim limits (ordered by trim priority)
         trim_rules = [
             ("【活跃 Saga】", 100),
-            ("【与涉事NPC的交往史】", 300),
+            ("【与涉事NPC的交往史】", 500),
             ("【近期经历】", 200),
             ("【剧情线/命运线】", 200),
         ]
@@ -693,11 +709,15 @@ class EventDirector:
             yield {"type": "done"}
             return
 
-        # ── 低价值回合跳过 LLM (省成本, 连续≤2次) ──
+        # ── 低价值回合跳过 LLM (省成本, 连续≤1次) ──
         if self._should_skip_llm(top_ev, state):
-            idx = candidates.index(top_candidate)
+            # 从top-3候选中随机选一个（引入变异）
+            pool = candidates[:min(3, len(candidates))]
+            chosen_candidate = random.choice(pool)
+            idx = candidates.index(chosen_candidate)
+            chosen_ev = chosen_candidate["event"]
             state._llm_skip_streak = getattr(state, "_llm_skip_streak", 0) + 1
-            narrative = top_ev.get("expanded_text", "") or top_ev.get("text", "")
+            narrative = chosen_ev.get("expanded_text", "") or chosen_ev.get("text", "")
             meta = {"chosen_index": idx, "narrative": narrative,
                     "has_choice": False, "branches": None, "ai_used": False}
             yield {"type": "meta", "data": meta}
