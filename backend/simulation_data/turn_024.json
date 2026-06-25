@@ -1,0 +1,339 @@
+{
+  "turn": 24,
+  "pre_state": {
+    "age": 32,
+    "realm": 2,
+    "realm_name": "筑基",
+    "gender": "female",
+    "life_phase": 5,
+    "cultivation": 112,
+    "tension": 5.0,
+    "attributes": {
+      "constitution": 5,
+      "comprehension": 8,
+      "fortune": 8,
+      "charisma": 7,
+      "willpower": 10
+    },
+    "sect": {
+      "name": "天医谷",
+      "rank": "外门弟子",
+      "contribution": 35,
+      "sect_type": "丹宗",
+      "reputation_in_sect": 56
+    },
+    "npcs": [],
+    "npc_count": 0,
+    "npc_alive_count": 0,
+    "active_arcs": [],
+    "main_storyline": null,
+    "used_event_count": 23,
+    "events_log_count": 32,
+    "is_dead": false,
+    "is_ascended": false,
+    "biography_summary": "",
+    "pending_choice": null
+  },
+  "post_state": {
+    "age": 39,
+    "realm": 2,
+    "realm_name": "筑基",
+    "gender": "female",
+    "life_phase": 5,
+    "cultivation": 276,
+    "tension": 0.0,
+    "attributes": {
+      "constitution": 6,
+      "comprehension": 9,
+      "fortune": 8,
+      "charisma": 8,
+      "willpower": 10
+    },
+    "sect": {
+      "name": "天医谷",
+      "rank": "内门弟子",
+      "contribution": 55,
+      "sect_type": "丹宗",
+      "reputation_in_sect": 61
+    },
+    "npcs": [],
+    "npc_count": 0,
+    "npc_alive_count": 0,
+    "active_arcs": [],
+    "main_storyline": null,
+    "used_event_count": 24,
+    "events_log_count": 37,
+    "is_dead": false,
+    "is_ascended": false,
+    "biography_summary": "",
+    "pending_choice": null
+  },
+  "events": [
+    {
+      "text": "天医谷派遣你巡视山门，你圆满完成了任务。",
+      "expanded_text": "作为外门弟子，你领命巡视山门。一番波折后任务完成，贡献值增加了20点。",
+      "type": "normal",
+      "category": "sect",
+      "age": 39
+    },
+    {
+      "text": "天医谷按例发放修炼资源，你得到了灵石与丹药。",
+      "expanded_text": "",
+      "type": "normal",
+      "category": "sect",
+      "age": 39
+    },
+    {
+      "text": "你在天医谷中晋升为内门弟子！",
+      "expanded_text": "多年来的付出终于得到认可。天医谷掌门亲自宣布，你自今日起晋升为内门弟子，门中弟子纷纷道贺。",
+      "type": "fortune",
+      "category": "sect",
+      "age": 39
+    },
+    {
+      "text": "天医谷内丹道一脉与剑修一脉关系紧张，你受到了波及。",
+      "expanded_text": "师兄悄悄告诉你，最近丹道一脉和剑修一脉斗得厉害。有人向你示好，也有人给你使绊子。你虽不想卷入纷争，但身在其中已由不得你。",
+      "type": "normal",
+      "category": "sect",
+      "age": 39
+    },
+    {
+      "text": "你感到丹田中灵气凝聚，筑基之相初现。",
+      "expanded_text": "你的灵田里那株种了半年的灵药终于到了收获的时候——你蹲在旁边看了又看。泥土的芬芳混着灵草的清香——你深吸一口，觉得整个人都精神了。那片灵田在你半年的悉心照料下终于有了像样的产出——虽然数量不多，但品质让你满意。你拍了拍膝盖上的泥土站起来——嗯，今日不虚此行。",
+      "type": "important",
+      "category": "cultivation",
+      "age": 39
+    }
+  ],
+  "event_selection": {
+    "candidates": [
+      {
+        "index": 0,
+        "id": "social_013",
+        "text": "师父坐化前将衣钵传于你。",
+        "expanded_text": "师父已躺在床上喘息许久，今日忽然挣扎着坐起，把你叫到榻前。他从枕下取出那本翻得起毛的玉简：「徒儿，这是我一生的修行心得，从今往后你便是本门继承之人。」你跪下接过，手抖得厉害。师父看了看你，闭上了眼——再没睁开。",
+        "weight": 84.0,
+        "event_type": "important",
+        "category": "social",
+        "tags": [
+          "social",
+          "master"
+        ],
+        "effects": {
+          "cultivation": 50,
+          "willpower": 2
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 1,
+        "id": "found_000",
+        "text": "你感到丹田中灵气凝聚，筑基之相初现。",
+        "expanded_text": "你的灵田里那株种了半年的灵药终于到了收获的时候——你蹲在旁边看了又看。泥土的芬芳混着灵草的清香——你深吸一口，觉得整个人都精神了。那片灵田在你半年的悉心照料下终于有了像样的产出——虽然数量不多，但品质让你满意。你拍了拍膝盖上的泥土站起来——嗯，今日不虚此行。",
+        "weight": 75.6,
+        "event_type": "important",
+        "category": "cultivation",
+        "tags": [
+          "foundation"
+        ],
+        "effects": {
+          "cultivation": 30
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 2,
+        "id": "dream_0000",
+        "text": "你梦到了前世的记忆，醒来后泪流满面。",
+        "expanded_text": "你在灵台深处看见了不属于这一世的画面——你看见了一幕场景——那是很久以后的事。你不确定那是预言还是警告——但你记住了其中一个细节。这个细节日后将救你一命。你将所得小心收好，面上不动声色——修道之人最忌形于色。",
+        "weight": 52.5,
+        "event_type": "important",
+        "category": "fortune",
+        "tags": [
+          "dream",
+          "vision"
+        ],
+        "effects": {
+          "willpower": 1,
+          "comprehension": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 3,
+        "id": "dream_0001",
+        "text": "你做了一个预言梦，梦中的场景栩栩如生。",
+        "expanded_text": "入定时你的神识忽然飘出了身体——眼前的世界变了。灵台深处有一扇门——你推开它，看见了前世的自己坐在一棵古树下。那个你比现在苍老太多——可眼神中却有一种你如今还没有的安宁。你将所得小心收好，面上不动声色——修道之人最忌形于色。",
+        "weight": 52.5,
+        "event_type": "important",
+        "category": "fortune",
+        "tags": [
+          "dream",
+          "vision"
+        ],
+        "effects": {
+          "fortune": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 4,
+        "id": "mega_div_0175",
+        "text": "你观星测命，发现命中有一大劫。",
+        "expanded_text": "你已经犹豫了很久要不要占这一卦——因为你怕结果不是你想听的。但最终你还是伸出了手——不知道总比被蒙在鼓里好。你燃了三炷清香问道于天——香灰落下的方向、形状、速度，你都一一记录。最后得到的结论让你沉默了很久。你攥紧手中之物——它带着一丝余温，仿佛在回应你的心跳。",
+        "weight": 52.5,
+        "event_type": "important",
+        "category": "fortune",
+        "tags": [
+          "divination"
+        ],
+        "effects": {
+          "willpower": 2
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 5,
+        "id": "fortune_007",
+        "text": "你的血脉突然觉醒，体内涌出洪荒之力。",
+        "expanded_text": "你正在练拳，体内忽然涌出一股从未有过的暴烈之力。血脉中似乎有什么沉睡的东西被惊醒，你浑身骨骼齐鸣，眉间浮现一枚奇异的纹路。等那股力量平息，你已脱胎换骨。家中长辈跪在你面前低声说：「孩子，你的祖上不是凡人。」",
+        "weight": 50.75,
+        "event_type": "important",
+        "category": "fortune",
+        "tags": [
+          "fortune",
+          "encounter"
+        ],
+        "effects": {
+          "constitution": 4,
+          "cultivation": 35
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 6,
+        "id": "social_002",
+        "text": "门派遭遇敌人袭击，你奋起抵抗。",
+        "expanded_text": "袭击发生在午时。一伙黑衣人从天而降，剑光铺满了山门。你是最先反应过来的——你抽出剑挡下了射向师妹的一道法术。然后你冲了出去。那一战你身中三剑，但你斩下了三个敌人的头颅。等援军赶到时你已经站不稳了，可你笑了。",
+        "weight": 50.4,
+        "event_type": "danger",
+        "category": "social",
+        "tags": [
+          "social",
+          "sect"
+        ],
+        "effects": {
+          "willpower": 2,
+          "cultivation": 15,
+          "add_tag": "in_sect"
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      },
+      {
+        "index": 7,
+        "id": "social_004",
+        "text": "门派内斗，你不幸被牵连。",
+        "expanded_text": "门派内部的明争暗斗你本不想掺和——可你还是被卷了进去。你被指控说了不该说的话，做了不该做的事。你想辩解，可那些证据看起来天衣无缝。最后你被罚去了偏远的支脉戒律室。你不知道是谁在算计你。但你记住了这个教训。",
+        "weight": 50.4,
+        "event_type": "danger",
+        "category": "social",
+        "tags": [
+          "social",
+          "sect"
+        ],
+        "effects": {
+          "fortune": -1,
+          "add_tag": "in_sect"
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      },
+      {
+        "index": 8,
+        "id": "social_007",
+        "text": "门派中有人嫉妒你的天赋，暗中使绊。",
+        "expanded_text": "你的丹药被人下了毒。你的剑诀手稿被人偷换。你修炼时阵法被人偷偷动了手脚。你不知道是谁干的——但你知道是同门所为。修真界从来不缺嫉贤妒能之辈，连自己人都防不住。你开始低调，开始藏拙。修真路上，明枪易躲，暗箭难防。",
+        "weight": 50.4,
+        "event_type": "danger",
+        "category": "social",
+        "tags": [
+          "social",
+          "sect"
+        ],
+        "effects": {
+          "fortune": -1,
+          "willpower": 1,
+          "add_tag": "in_sect"
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      },
+      {
+        "index": 9,
+        "id": "social_019",
+        "text": "你的宿敌再次出现，向你挑战。",
+        "expanded_text": "你们已经不知道是第几次交手了。他出现的时候你正在饮茶——茶都来不及咽下。他还是那副阴鸷的表情，剑还是那把寒光闪闪的剑。「这次我必杀你。」他说。你放下茶杯站起身。每次他都这么说。每次你们都打个平手。但今天，你感觉他不一样了。",
+        "weight": 50.4,
+        "event_type": "danger",
+        "category": "social",
+        "tags": [
+          "social",
+          "rival"
+        ],
+        "effects": {
+          "willpower": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      }
+    ],
+    "system_prompt": "你是修仙世界的命运编织者。从候选事件中选择最适合当前叙事节奏的一个，为主角生成沉浸式叙事，并决定是否需要玩家做出选择。\n\n【不可违反的硬约束】\n- 输出纯JSON，不要添加任何其他文字或markdown标记\n- 格式: {\"chosen\": 编号(1开始), \"narrative\": \"叙事文本\", \"has_choice\": bool, \"branches\": [分支数组]或null, \"causal_chain\": null或{\"cause\": \"...\", \"expected_resolution\": \"...\", \"keywords\": [...]}}\n- narrative: 第二人称叙事，200-300字，符合当前境界和基调\n- 主角当前为筑基期，不得描写超越此境界的神通\n- 主角性别为女，叙事需与之一致\n- 不得决定主角死亡或突破境界，这些由游戏引擎控制\n\n【选择事件的决策原则】\n- 带★标记的事件为稀有/重大事件，建议优先考虑（但非强制，需结合叙事节奏判断）\n- 高张力(≥70)时优选缓解类事件(fortune/normal)；低张力(<30)时优选冲突类(danger/important)\n- 有未了之事时，优先选能推进因果的事件(带\"可解决因果\"标记的)\n- 当前剧情线活跃时，优先选与剧情线相关的事件\n- 必须与已有NPC交互史保持一致（不得矛盾）\n- ★事件即使与当前节奏稍有冲突，也可适当选择以增加游戏趣味性和意外感\n\n【叙事风格指导】\n- danger事件：节奏紧凑，善用短句，营造紧迫感和生死悬念\n- fortune事件：先抑后扬，让人感受到惊喜和机缘的分量\n- important事件：注重仪式感和命运转折的重量，可稍长\n- normal事件：淡写日常，重在生活气息和细节感\n- funny/adult事件：活泼的笔调，可幽默，善用感官描写\n\n【文体与用词约束】\n- 整体风格偏《凡人修仙传》式半文半白，善用四字短句、对仗、以景写情\n- 禁用现代词汇：能量→灵气，朋友→道友，老师→师尊，世界→天地/世间，感觉→感应，爆发→迈发，故事→因果/经历\n- 凡人期(境界0)：纯口语白话，朴实无华，有烟火气；不用任何修仙术语\n- 练气/筑基期：口语为主，开始穿插修仙术语，初入仙途的新鲜感与敬畏\n- 金丹/元婴期：四字短句增多，半文言比例升高，历练后的沉稳淡然，岁月沉淀感\n- 化神期：偏文言，简洁凝练，超脱视角，有哲学意味，「百年弹指一挥间」的时间观\n- 情感表达以景写情为主（\"老松落了一地针叶\"而非\"你很伤心\"）\n- 每句话都应推进叙事或揭示信息，禁止空洞词藻和重复描写\n\n【各境界叙事范文（仅供风格参考，不要照抄）】\n- 凡人期范文：「入秋后村头的老槐树落了满地黄叶。你蹲在溪边洗衣裳，忽然瞧见水里有条红尾鲤鱼，足有小臂长。你伸手去抓，扑了个空，倒溅了一身水。隔壁王大娘笑骂你不学好，你嘿嘿一笑，心想明天再来。」\n- 练气期范文：「清晨的雾气沿山涧漫上来时，你正盘膝于崖畔石台之上。丹田中那缕灵气虽细若游丝，却已能循经脉缓缓运转。师尊说过，练气之道贵在水磨工夫。你吐纳三十六周天，收功时指尖微微发麻——这是灵气初成的征兆。」\n- 金丹期范文：「洞府外大雪封山，你已不觉寒暑。金丹初成那日种下的青松，如今已亭亭如盖。数十年光阴弹指而过，当年同门的面容在记忆中渐渐模糊，唯有道心愈发澄明。远处传来鹤唳，你睁目望去，云海翻涌间似有虹光一闪。」\n- 化神期范文：「千峰如聚，万壑争流。你立于九霄之上，衣袂猎猎。天地灵气于周身汇聚如潮，吞吐之间，山河尽收眸底。百年修行至此，生死荣辱俱成云烟。你抬手，指尖凝出一缕清光——万法归一，不过如此。」\n\n【上下文引用硬规则】\n- 如果事件涉及已知NPC，叙事中必须引用至少1条交往史细节或关系变化\n- 如果有活跃因果链与事件相关，叙事中必须暗示伏笔（如“当年之事...”）\n- 如果有活跃Saga，叙事调性需呼应Saga方向\n- 叙事必须体现当前人生阶段的时间感（金丹期不写“今天”而写“数年之间”）\n\n【causal_chain 可选输出 — 因果链创建】\n- 当你生成的叙事中出现重大未解之事（师父失踪、仇敌逃脱、宝物被夺、誓言许下等），输出causal_chain字段\n- 普通日常事件不需要输出此字段（设为null）\n- cause: 一句话描述起因\n- expected_resolution: 一句话描述预期的解决方向\n- keywords: 3-5个与解决方向相关的关键词（用于未来事件匹配）\n- 约30-40%的事件适合创建因果链，不要每次都创建\n\n【是否生成选择分支的判断】\n- 当事件类型为danger/important/fortune且叙事中有明显的抉择时刻时，has_choice=true\n- 普通修炼/日常事件不需要分支，has_choice=false\n- 分支概率约为30-40%，不要每次都生成\n\n【分支格式(当has_choice=true)】\n- branches为2-3个选项的数组\n- 每个选项: {\"text\":\"≤20字\", \"success_rate\": 基础成功率(30-80), \"check_attribute\": \"主属性名\", \"effects\":{...}, \"result_text\":\"成功叙述50-100字\", \"failure_effects\":{...}, \"failure_text\":\"失败叙述50-100字\", \"consequence_tag\":\"后果标签\", \"consequence_desc\":\"因果描述\"}\n- success_rate: 冒险选项 30-50, 稳妥选项 70-90\n- check_attribute: constitution(战斗/体力), comprehension(悟道/机关), fortune(机缘/运气), charisma(社交/说服), willpower(心魔/坚持)\n- effects可用字段: cultivation(int,-30~50), constitution/comprehension/fortune/charisma/willpower(int,-3~3), add_tag(str)\n- failure_effects通常为小幅负收益(cultivation -10~5, 属性 -2~0)，失败不等于死亡\n- 选项必须有实质性差异，至少一个冒险选项、一个稳妥选项\n- consequence_tag必须使用事件池中已有的标签或其下划线拓展形式，可用值包括: combat, fortune, calamity, social, practice, exploration, npc, meditation, treasure, secret_realm, discovery, resource, technique, insight, philosophy, market, pill, sword, betrayal, romance 等，也可用复合形式如 combat_injury, fortune_windfall, social_debt, npc_betrayal 等\n- consequence_tag和consequence_desc可为空字符串\n\n【修为体系】\n凡人 → 练气 → 筑基 → 金丹 → 元婴 → 化神 → 渡劫飞升\n\n【输出示例】\n{\"chosen\": 3, \"narrative\": \"你在山间修炼时...\", \"has_choice\": true, \"branches\": [{\"text\": \"拔剑迎战\", \"effects\": {\"cultivation\": 20, \"constitution\": -1}, \"result_text\": \"你挺身而出...\", \"consequence_tag\": \"勇名远播\", \"consequence_desc\": \"你的勇武之名在修仙界传开\"}], \"causal_chain\": {\"cause\": \"师父身受重伤飘然而去\", \"expected_resolution\": \"寻找救治师父的方法\", \"keywords\": [\"师父\", \"重伤\", \"救治\", \"寻找\"]}}",
+    "user_prompt": "【传记摘要】\n尚无传记\n\n【天地大势】\n天下太平，无特殊大势\n\n【人际关系】\n暂无已知人际关系\n\n【剧情线/命运线】\n无活跃剧情线\n\n【活跃 Saga】\n无活跃长线Saga\n\n【未了之事】\n无\n\n【因果暗线】\n无活跃因果链\n\n【主角状态】\n- 境界: 筑基期, 39岁, 女\n- 属性: 根骨6 悟性9 福缘8 魅力8 心性10\n- 宗门: 天医谷·内门弟子\n- 张力: 5/100\n- 叙事基调: 道途渐深，历劫成长\n\n【与涉事NPC的交往史】\n无相关交往史\n\n【近期经历】\n  25岁: 你尝试突破练气期，成功了！你感到体内灵力翻涌。\n  29岁: 你在河边钓鱼，享受难得的清闲。\n  32岁: 天医谷派遣你上山采集灵药，你圆满完成了任务。\n  32岁: 你与天医谷同门切磋，颇有所得。\n  32岁: 你遭遇心魔侵袭，险些丧命\n  ---回顾---\n  1岁: 那年的雨从开春就没下过一滴。你爹每天蹲在田埂上看天——从满怀希望看到面无表情。秋\n  6岁: 那道士灰袍褴褛、胡子拉碴——可眼睛亮得像两盏灯。他在村口摆摊算命，所有人都绕着走\n  12岁: 水来得太快了。一开始只是溪水暴涨，你还没反应过来整个山谷就灌满了。你被洪水裹挟着\n  17岁: 那人穿得体体面面，说是从城里来收山货的。你把晒了一夏天的药材全卖给他了，他打了欠\n\n【相关记忆】\n  18岁: 你选了一块被阳光烤得温热的大石坐下——闭目之前深深看了一眼天边的流云。你回想起师父的教诲——「修道如煮水，急火煮不出好茶\n  18岁: 你已经在这里坐了三天三夜——不吃不喝，只有灵气维持着身体的运转。一只不知名的鸟在远处鸣叫——你没有分神，反而借着那声响更\n  19岁: 他发现你之后并没有避开。他朝你游过来时水面波光粼粼，你看清了他小腹上的人鱼线一路延伸到水面以下。他在你面前站定，水只到他\n\n【候选事件】\n1. ★命运转折 师父坐化前将衣钵传于你。 [important] 标签:social, master 效果:cultivation+50,willpower+2\n2. ★命运转折 你感到丹田中灵气凝聚，筑基之相初现。 [important] 标签:foundation 效果:cultivation+30\n3. ★命运转折 你梦到了前世的记忆，醒来后泪流满面。 [important] 标签:dream, vision 效果:willpower+1,comprehension+1\n4. ★命运转折 你做了一个预言梦，梦中的场景栩栩如生。 [important] 标签:dream, vision 效果:fortune+1\n5. ★命运转折 你观星测命，发现命中有一大劫。 [important] 标签:divination 效果:willpower+2\n6. ★命运转折 你的血脉突然觉醒，体内涌出洪荒之力。 [important] 标签:fortune, encounter 效果:constitution+4,cultivation+35\n7. 门派遭遇敌人袭击，你奋起抵抗。 [danger] 标签:social, sect 效果:willpower+2,cultivation+15\n8. 门派内斗，你不幸被牵连。 [danger] 标签:social, sect 效果:fortune-1\n9. 门派中有人嫉妒你的天赋，暗中使绊。 [danger] 标签:social, sect 效果:fortune-1,willpower+1\n10. 你的宿敌再次出现，向你挑战。 [danger] 标签:social, rival 效果:willpower+1\n\n请选择最适合的事件编号，生成叙事，并决定是否需要玩家选择（纯JSON）：",
+    "llm_would_be_needed": true,
+    "llm_skip_reason": null,
+    "model_grade": "Flash",
+    "fallback_chosen_index": 1,
+    "fallback_narrative_preview": "你的灵田里那株种了半年的灵药终于到了收获的时候——你蹲在旁边看了又看。泥土的芬芳混着灵草的清香——你深吸一口，觉得整个人都精神了。那片灵田在你半年的悉心照料下终于有了像样的产出——虽然数量不多，但品质让你满意。你拍了拍膝盖上的泥土站起来——嗯，今日不虚此行。"
+  },
+  "breakthrough": null,
+  "auto_choice": null,
+  "result_summary": {
+    "age": 39,
+    "realm": 2,
+    "realm_name": "筑基",
+    "years_passed": 7,
+    "is_dead": false,
+    "death_reason": "",
+    "is_ascended": false,
+    "has_choice": false,
+    "tension": 0.0,
+    "ai_enhanced": false
+  }
+}

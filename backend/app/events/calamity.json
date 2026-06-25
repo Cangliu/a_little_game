@@ -6548,5 +6548,3726 @@
     ],
     "event_type": "danger",
     "expanded_text": "他临死前笑了——然后元婴炸了。那股气浪将你掀飞出百丈，你撞在山壁上肋骨断了四根。你还没来得及感受疼痛——碎片已经到了。他的骨头、血肉、法器碎片裹着灵力冲击波扫过来——你的防御被瞬间撕碎，左臂上被一块碎骨贯穿，一直钉到肉里。你低头看着那块骨头——那是他的——还带着温度。你忍着痛把它拔出来时，鲜血喷射而出。你活着。可你身上永远留着他的一块骨头留下的疤——像一个诅咒。"
+  },
+  {
+    "id": "mortal_cala_05045",
+    "text": "你遭遇山贼",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你遭遇山贼你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1
+    },
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "山贼"
+    ]
+  },
+  {
+    "id": "mortal_cala_05046",
+    "text": "你生了一场重病",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你生了一场重病你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1
+    },
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "你生",
+      "重病"
+    ]
+  },
+  {
+    "id": "mortal_cala_05047",
+    "text": "洪水冲毁了家园",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。洪水冲毁了家园你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1
+    },
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "洪水",
+      "冲毁",
+      "家园"
+    ]
+  },
+  {
+    "id": "mortal_cala_05048",
+    "text": "你被野兽追赶",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你被野兽追赶你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1
+    },
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "野兽",
+      "追赶"
+    ]
+  },
+  {
+    "id": "mortal_cala_05049",
+    "text": "一场大火烧了村子",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。一场大火烧了村子你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1
+    },
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "火烧",
+      "村子"
+    ]
+  },
+  {
+    "id": "found_cala_07824",
+    "text": "你遭遇心魔侵袭，险些丧命",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。你遭遇心魔侵袭，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -3
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "心魔",
+      "侵袭",
+      "险些",
+      "丧命"
+    ]
+  },
+  {
+    "id": "found_cala_07825",
+    "text": "你遭遇灵气暴动，险些丧命",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你遭遇灵气暴动，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "灵气",
+      "暴动",
+      "险些",
+      "丧命"
+    ]
+  },
+  {
+    "id": "found_cala_07826",
+    "text": "你遭遇禁制反噬，险些丧命",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你遭遇禁制反噬，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -4
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "禁制",
+      "反噬",
+      "险些",
+      "丧命"
+    ]
+  },
+  {
+    "id": "found_cala_07827",
+    "text": "你遭遇时空乱流，险些丧命",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你遭遇时空乱流，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -3
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "时空",
+      "乱流",
+      "险些",
+      "丧命"
+    ]
+  },
+  {
+    "id": "found_cala_07829",
+    "text": "你遭遇毒瘴侵体，险些丧命",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——你遭遇毒瘴侵体，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 4
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "毒瘴",
+      "侵体",
+      "险些",
+      "丧命"
+    ]
+  },
+  {
+    "id": "found_cala_07831",
+    "text": "你遭遇妖兽围攻，险些丧命",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。你遭遇妖兽围攻，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 5
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "妖兽",
+      "围攻",
+      "险些",
+      "丧命"
+    ]
+  },
+  {
+    "id": "found_cala_07837",
+    "text": "你遭遇经脉逆转，险些丧命",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你遭遇经脉逆转，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 4
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "经脉",
+      "逆转",
+      "险些",
+      "丧命"
+    ]
+  },
+  {
+    "id": "found_cala_07840",
+    "text": "你遭遇走火入魔，险些丧命",
+    "expanded_text": "你紧绷的神经告诉你——情况不妙。你遭遇走火入魔，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 0
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "险些",
+      "丧命",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "found_cala_07850",
+    "text": "你遭遇天劫余波，险些丧命",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你遭遇天劫余波，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -5
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "天劫",
+      "余波",
+      "险些",
+      "丧命"
+    ]
+  },
+  {
+    "id": "found_cala_07852",
+    "text": "修炼炼体时失误，心魔侵袭",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼炼体时失误，心魔侵袭你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 4
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "炼体",
+      "失误",
+      "心魔",
+      "侵袭"
+    ]
+  },
+  {
+    "id": "found_cala_07853",
+    "text": "修炼禁术时失误，毒瘴侵体",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——修炼禁术时失误，毒瘴侵体你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "禁术",
+      "失误",
+      "毒瘴",
+      "侵体"
+    ]
+  },
+  {
+    "id": "found_cala_07854",
+    "text": "修炼符箓时失误，心魔侵袭",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。修炼符箓时失误，心魔侵袭你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 0
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "符箓",
+      "失误",
+      "心魔",
+      "侵袭"
+    ]
+  },
+  {
+    "id": "found_cala_07855",
+    "text": "修炼剑意时失误，天劫余波",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。修炼剑意时失误，天劫余波你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "剑意",
+      "失误",
+      "天劫",
+      "余波"
+    ]
+  },
+  {
+    "id": "found_cala_07856",
+    "text": "修炼炼体时失误，魔修偷袭",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——修炼炼体时失误，魔修偷袭你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 0
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "炼体",
+      "失误",
+      "魔修",
+      "偷袭"
+    ],
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "found_cala_07857",
+    "text": "修炼炼体时失误，毒瘴侵体",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。修炼炼体时失误，毒瘴侵体你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "炼体",
+      "失误",
+      "毒瘴",
+      "侵体"
+    ]
+  },
+  {
+    "id": "found_cala_07858",
+    "text": "修炼音攻时失误，妖兽围攻",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——修炼音攻时失误，妖兽围攻你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "音攻",
+      "失误",
+      "妖兽",
+      "围攻"
+    ]
+  },
+  {
+    "id": "found_cala_07860",
+    "text": "修炼神通时失误，天劫余波",
+    "expanded_text": "你紧绷的神经告诉你——情况不妙。修炼神通时失误，天劫余波你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "神通",
+      "失误",
+      "天劫",
+      "余波"
+    ]
+  },
+  {
+    "id": "found_cala_07862",
+    "text": "修炼御器时失误，走火入魔",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。修炼御器时失误，走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -1
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "御器",
+      "失误",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "found_cala_07863",
+    "text": "修炼音攻时失误，灵气暴动",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼音攻时失误，灵气暴动你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "音攻",
+      "失误",
+      "灵气",
+      "暴动"
+    ]
+  },
+  {
+    "id": "found_cala_07865",
+    "text": "修炼丹道时失误，妖兽围攻",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。修炼丹道时失误，妖兽围攻你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "丹道",
+      "失误",
+      "妖兽",
+      "围攻"
+    ]
+  },
+  {
+    "id": "found_cala_07866",
+    "text": "修炼音攻时失误，心魔侵袭",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼音攻时失误，心魔侵袭你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -3
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "音攻",
+      "失误",
+      "心魔",
+      "侵袭"
+    ]
+  },
+  {
+    "id": "found_cala_07868",
+    "text": "修炼丹道时失误，灵气暴动",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。修炼丹道时失误，灵气暴动你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 5
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "丹道",
+      "失误",
+      "灵气",
+      "暴动"
+    ]
+  },
+  {
+    "id": "found_cala_07869",
+    "text": "修炼禁术时失误，走火入魔",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。修炼禁术时失误，走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -3
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "禁术",
+      "失误",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "found_cala_07870",
+    "text": "修炼丹道时失误，心魔侵袭",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼丹道时失误，心魔侵袭你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -5
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "丹道",
+      "失误",
+      "心魔",
+      "侵袭"
+    ]
+  },
+  {
+    "id": "found_cala_07871",
+    "text": "修炼符箓时失误，灵气暴动",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼符箓时失误，灵气暴动你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 3
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "符箓",
+      "失误",
+      "灵气",
+      "暴动"
+    ]
+  },
+  {
+    "id": "found_cala_07872",
+    "text": "修炼符箓时失误，走火入魔",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼符箓时失误，走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "符箓",
+      "失误",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "found_cala_07873",
+    "text": "修炼符箓时失误，禁制反噬",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。修炼符箓时失误，禁制反噬你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 3
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "符箓",
+      "失误",
+      "禁制",
+      "反噬"
+    ]
+  },
+  {
+    "id": "found_cala_07875",
+    "text": "修炼阵法时失误，妖兽围攻",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。修炼阵法时失误，妖兽围攻你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "阵法",
+      "失误",
+      "妖兽",
+      "围攻"
+    ]
+  },
+  {
+    "id": "found_cala_07876",
+    "text": "修炼神通时失误，心魔侵袭",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。修炼神通时失误，心魔侵袭你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 1
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "神通",
+      "失误",
+      "心魔",
+      "侵袭"
+    ]
+  },
+  {
+    "id": "found_cala_07877",
+    "text": "修炼禁术时失误，灵气暴动",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼禁术时失误，灵气暴动你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "禁术",
+      "失误",
+      "灵气",
+      "暴动"
+    ]
+  },
+  {
+    "id": "found_cala_07879",
+    "text": "修炼隐匿时失误，妖兽围攻",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——修炼隐匿时失误，妖兽围攻你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 1
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "隐匿",
+      "失误",
+      "妖兽",
+      "围攻"
+    ]
+  },
+  {
+    "id": "found_cala_07880",
+    "text": "你在万年冰原探索时遇险",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。你在万年冰原探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "万年",
+      "冰原",
+      "探索",
+      "遇险"
+    ]
+  },
+  {
+    "id": "found_cala_07881",
+    "text": "你在灵脉探索时遇险",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。你在灵脉探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -3
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "灵脉",
+      "探索",
+      "遇险"
+    ]
+  },
+  {
+    "id": "found_cala_07882",
+    "text": "你在深渊探索时遇险",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你在深渊探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "深渊",
+      "探索",
+      "遇险"
+    ]
+  },
+  {
+    "id": "found_cala_07883",
+    "text": "你在九天之上探索时遇险",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——你在九天之上探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -5
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "九天",
+      "探索",
+      "遇险"
+    ]
+  },
+  {
+    "id": "found_cala_07888",
+    "text": "你在混沌空间探索时遇险",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你在混沌空间探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 1
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "混沌",
+      "空间",
+      "探索",
+      "遇险"
+    ]
+  },
+  {
+    "id": "found_cala_07890",
+    "text": "你在海底宫殿探索时遇险",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。你在海底宫殿探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -5
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "海底",
+      "宫殿",
+      "探索",
+      "遇险"
+    ]
+  },
+  {
+    "id": "found_cala_07892",
+    "text": "你在时间裂缝探索时遇险",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。你在时间裂缝探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 4
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "时间",
+      "裂缝",
+      "探索",
+      "遇险"
+    ]
+  },
+  {
+    "id": "found_cala_07893",
+    "text": "你在古战场探索时遇险",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你在古战场探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -5
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "探索",
+      "遇险",
+      "古战场"
+    ]
+  },
+  {
+    "id": "found_cala_07895",
+    "text": "你在仙府遗迹探索时遇险",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你在仙府遗迹探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -1
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "仙府",
+      "遗迹",
+      "探索",
+      "遇险"
+    ]
+  },
+  {
+    "id": "found_cala_07896",
+    "text": "你在火山深处探索时遇险",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你在火山深处探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -1
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "火山",
+      "深处",
+      "探索",
+      "遇险"
+    ]
+  },
+  {
+    "id": "found_cala_07903",
+    "text": "你在洞府探索时遇险",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。你在洞府探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -5
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "洞府",
+      "探索",
+      "遇险"
+    ]
+  },
+  {
+    "id": "found_cala_07906",
+    "text": "你在秘境探索时遇险",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你在秘境探索时遇险你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 1
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "秘境",
+      "探索",
+      "遇险"
+    ]
+  },
+  {
+    "id": "found_cala_07908",
+    "text": "一位{fellow}暗中陷害你",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。一位{fellow}暗中陷害你你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -4
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "npc_slot": "fellow",
+    "keywords": [
+      "暗中",
+      "陷害"
+    ]
+  },
+  {
+    "id": "found_cala_07936",
+    "text": "你在渡小劫时受了重伤",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你在渡小劫时受了重伤你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -3
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "时受",
+      "重伤",
+      "渡小劫"
+    ]
+  },
+  {
+    "id": "found_cala_07964",
+    "text": "你被卷入修士间的争斗",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。你被卷入修士间的争斗你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -3
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "卷入",
+      "修士",
+      "争斗"
+    ]
+  },
+  {
+    "id": "found_cala_07992",
+    "text": "你体内灵力失控，走火入魔的边缘",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你体内灵力失控，走火入魔的边缘你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -1
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "体内",
+      "灵力",
+      "失控",
+      "边缘",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "found_cala_08020",
+    "text": "一头变异妖兽向你发起攻击",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。一头变异妖兽向你发起攻击你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 30,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 1
+    },
+    "tags": [
+      "calamity",
+      "foundation"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "一头",
+      "变异",
+      "妖兽",
+      "发起",
+      "攻击"
+    ]
+  },
+  {
+    "id": "gc_cala_10992",
+    "text": "你遭遇金丹期天劫余波",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你遭遇金丹期天劫余波你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -4
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "天劫",
+      "余波",
+      "金丹期"
+    ]
+  },
+  {
+    "id": "gc_cala_10993",
+    "text": "你遭遇金丹期毒瘴侵体",
+    "expanded_text": "你紧绷的神经告诉你——情况不妙。你遭遇金丹期毒瘴侵体你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -7
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "毒瘴",
+      "侵体",
+      "金丹期"
+    ]
+  },
+  {
+    "id": "gc_cala_10994",
+    "text": "你遭遇金丹期经脉逆转",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你遭遇金丹期经脉逆转你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 4
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "经脉",
+      "逆转",
+      "金丹期"
+    ]
+  },
+  {
+    "id": "gc_cala_10995",
+    "text": "你遭遇金丹期魔修偷袭",
+    "expanded_text": "你紧绷的神经告诉你——情况不妙。你遭遇金丹期魔修偷袭你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 1
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "魔修",
+      "偷袭",
+      "金丹期"
+    ],
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "gc_cala_10997",
+    "text": "你遭遇金丹期心魔侵袭",
+    "expanded_text": "你紧绷的神经告诉你——情况不妙。你遭遇金丹期心魔侵袭你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 4
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "心魔",
+      "侵袭",
+      "金丹期"
+    ]
+  },
+  {
+    "id": "gc_cala_11001",
+    "text": "你遭遇金丹期走火入魔",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。你遭遇金丹期走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -7
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "金丹期",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "gc_cala_11007",
+    "text": "你遭遇金丹期时空乱流",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你遭遇金丹期时空乱流你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -5
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "时空",
+      "乱流",
+      "金丹期"
+    ]
+  },
+  {
+    "id": "gc_cala_11008",
+    "text": "你遭遇金丹期禁制反噬",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你遭遇金丹期禁制反噬你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -3
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "禁制",
+      "反噬",
+      "金丹期"
+    ]
+  },
+  {
+    "id": "gc_cala_11009",
+    "text": "你遭遇金丹期妖兽围攻",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你遭遇金丹期妖兽围攻你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 3
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "妖兽",
+      "围攻",
+      "金丹期"
+    ]
+  },
+  {
+    "id": "gc_cala_11013",
+    "text": "你遭遇金丹期灵气暴动",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你遭遇金丹期灵气暴动你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "灵气",
+      "暴动",
+      "金丹期"
+    ]
+  },
+  {
+    "id": "gc_cala_11026",
+    "text": "一位金丹同辈向你发起生死挑战",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。一位金丹同辈向你发起生死挑战你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 3
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "金丹",
+      "同辈",
+      "发起",
+      "生死",
+      "挑战"
+    ]
+  },
+  {
+    "id": "gc_cala_11060",
+    "text": "你在闭关时遭遇心魔侵扰",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你在闭关时遭遇心魔侵扰你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 0
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "闭关",
+      "遭遇",
+      "心魔",
+      "侵扰"
+    ]
+  },
+  {
+    "id": "gc_cala_11094",
+    "text": "修炼炼体时反噬严重",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。修炼炼体时反噬严重你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -8
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "炼体",
+      "反噬",
+      "严重"
+    ]
+  },
+  {
+    "id": "gc_cala_11095",
+    "text": "修炼符箓时反噬严重",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼符箓时反噬严重你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 1
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "符箓",
+      "反噬",
+      "严重"
+    ]
+  },
+  {
+    "id": "gc_cala_11096",
+    "text": "修炼御器时反噬严重",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——修炼御器时反噬严重你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -5
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "御器",
+      "反噬",
+      "严重"
+    ]
+  },
+  {
+    "id": "gc_cala_11097",
+    "text": "修炼阵法时反噬严重",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。修炼阵法时反噬严重你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 5
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "阵法",
+      "反噬",
+      "严重"
+    ]
+  },
+  {
+    "id": "gc_cala_11098",
+    "text": "修炼禁术时反噬严重",
+    "expanded_text": "你紧绷的神经告诉你——情况不妙。修炼禁术时反噬严重你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -4
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "禁术",
+      "反噬",
+      "严重"
+    ]
+  },
+  {
+    "id": "gc_cala_11099",
+    "text": "修炼丹道时反噬严重",
+    "expanded_text": "你紧绷的神经告诉你——情况不妙。修炼丹道时反噬严重你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 1
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "丹道",
+      "反噬",
+      "严重"
+    ]
+  },
+  {
+    "id": "gc_cala_11105",
+    "text": "修炼剑意时反噬严重",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。修炼剑意时反噬严重你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -8
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "剑意",
+      "反噬",
+      "严重"
+    ]
+  },
+  {
+    "id": "gc_cala_11109",
+    "text": "修炼隐匿时反噬严重",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。修炼隐匿时反噬严重你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -7
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "隐匿",
+      "反噬",
+      "严重"
+    ]
+  },
+  {
+    "id": "gc_cala_11111",
+    "text": "修炼音攻时反噬严重",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。修炼音攻时反噬严重你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "音攻",
+      "反噬",
+      "严重"
+    ]
+  },
+  {
+    "id": "gc_cala_11113",
+    "text": "修炼神通时反噬严重",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。修炼神通时反噬严重你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -5
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "神通",
+      "反噬",
+      "严重"
+    ]
+  },
+  {
+    "id": "gc_cala_11128",
+    "text": "你在火山深处被困于上古禁制中",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你在火山深处被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -10
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "火山",
+      "深处",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11129",
+    "text": "你在星辰大阵被困于上古禁制中",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你在星辰大阵被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -3
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "星辰",
+      "大阵",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11130",
+    "text": "你在深渊被困于上古禁制中",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。你在深渊被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -5
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "深渊",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11132",
+    "text": "你在海底宫殿被困于上古禁制中",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你在海底宫殿被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 0
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "海底",
+      "宫殿",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11133",
+    "text": "你在时间裂缝被困于上古禁制中",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你在时间裂缝被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "时间",
+      "裂缝",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11136",
+    "text": "你在灵脉被困于上古禁制中",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你在灵脉被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -9
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "灵脉",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11140",
+    "text": "你在洞府被困于上古禁制中",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你在洞府被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -3
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "洞府",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11141",
+    "text": "你在九天之上被困于上古禁制中",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。你在九天之上被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -6
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "九天",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11142",
+    "text": "你在混沌空间被困于上古禁制中",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你在混沌空间被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -5
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "混沌",
+      "空间",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11143",
+    "text": "你在仙府遗迹被困于上古禁制中",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你在仙府遗迹被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 1
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "仙府",
+      "遗迹",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11148",
+    "text": "你在古战场被困于上古禁制中",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你在古战场被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -1
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "困于",
+      "上古",
+      "禁制",
+      "古战场"
+    ]
+  },
+  {
+    "id": "gc_cala_11149",
+    "text": "你在秘境被困于上古禁制中",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你在秘境被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 1
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "秘境",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11152",
+    "text": "你在万年冰原被困于上古禁制中",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你在万年冰原被困于上古禁制中你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": 5
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "万年",
+      "冰原",
+      "困于",
+      "上古",
+      "禁制"
+    ]
+  },
+  {
+    "id": "gc_cala_11162",
+    "text": "你的金丹出现裂纹，需要紧急修复",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——你的金丹出现裂纹，需要紧急修复你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": -1,
+      "cultivation": -2
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "金丹",
+      "出现",
+      "裂纹",
+      "需要",
+      "紧急",
+      "修复"
+    ]
+  },
+  {
+    "id": "gc_cala_11196",
+    "text": "魔修趁你闭关之际偷袭",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。魔修趁你闭关之际偷袭你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": 2
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "魔修",
+      "闭关",
+      "偷袭"
+    ],
+    "npc_roles": [
+      "宿敌"
+    ]
+  },
+  {
+    "id": "gc_cala_11230",
+    "text": "你中了一种罕见灵毒",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你中了一种罕见灵毒你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "constitution": 0,
+      "cultivation": -8
+    },
+    "tags": [
+      "calamity",
+      "golden_core"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "罕见",
+      "灵毒"
+    ]
+  },
+  {
+    "id": "ns_cala_14824",
+    "text": "你渡小天劫时受了重伤",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你渡小天劫时受了重伤你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -2,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "天劫",
+      "时受",
+      "重伤"
+    ]
+  },
+  {
+    "id": "ns_cala_14852",
+    "text": "你遭遇元婴期大敌的追杀",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——你遭遇元婴期大敌的追杀你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "元婴",
+      "大敌",
+      "追杀"
+    ]
+  },
+  {
+    "id": "ns_cala_14880",
+    "text": "你的元婴被一股神秘力量侵蚀",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你的元婴被一股神秘力量侵蚀你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "creates_hook": {
+      "id": "cursed_artifact",
+      "description": "解除诅咒",
+      "max_wait": 60
+    },
+    "keywords": [
+      "元婴",
+      "神秘",
+      "力量",
+      "侵蚀"
+    ]
+  },
+  {
+    "id": "ns_cala_14908",
+    "text": "修炼符箓大神通时走火入魔",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼符箓大神通时走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "符箓",
+      "神通",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "ns_cala_14909",
+    "text": "修炼御器大神通时走火入魔",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。修炼御器大神通时走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "御器",
+      "神通",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "ns_cala_14910",
+    "text": "修炼阵法大神通时走火入魔",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。修炼阵法大神通时走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "阵法",
+      "神通",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "ns_cala_14911",
+    "text": "修炼隐匿大神通时走火入魔",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。修炼隐匿大神通时走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -1,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "隐匿",
+      "神通",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "ns_cala_14912",
+    "text": "修炼丹道大神通时走火入魔",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼丹道大神通时走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "丹道",
+      "神通",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "ns_cala_14913",
+    "text": "修炼音攻大神通时走火入魔",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。修炼音攻大神通时走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -1,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "音攻",
+      "神通",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "ns_cala_14914",
+    "text": "修炼神通大神通时走火入魔",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。修炼神通大神通时走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -2,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "神通",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "ns_cala_14917",
+    "text": "修炼禁术大神通时走火入魔",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼禁术大神通时走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -2,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "禁术",
+      "神通",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "ns_cala_14927",
+    "text": "修炼剑意大神通时走火入魔",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。修炼剑意大神通时走火入魔你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -2,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "剑意",
+      "神通",
+      "走火入魔"
+    ]
+  },
+  {
+    "id": "ns_cala_14936",
+    "text": "你在海底宫殿陷入时空乱流",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你在海底宫殿陷入时空乱流你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "海底",
+      "宫殿",
+      "陷入",
+      "时空",
+      "乱流"
+    ]
+  },
+  {
+    "id": "ns_cala_14937",
+    "text": "你在古战场陷入时空乱流",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你在古战场陷入时空乱流你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -1,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "陷入",
+      "时空",
+      "乱流",
+      "古战场"
+    ]
+  },
+  {
+    "id": "ns_cala_14938",
+    "text": "你在火山深处陷入时空乱流",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。你在火山深处陷入时空乱流你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "火山",
+      "深处",
+      "陷入",
+      "时空",
+      "乱流"
+    ]
+  },
+  {
+    "id": "ns_cala_14941",
+    "text": "你在万年冰原陷入时空乱流",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你在万年冰原陷入时空乱流你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "万年",
+      "冰原",
+      "陷入",
+      "时空",
+      "乱流"
+    ]
+  },
+  {
+    "id": "ns_cala_14944",
+    "text": "你在星辰大阵陷入时空乱流",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。你在星辰大阵陷入时空乱流你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -1,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "星辰",
+      "大阵",
+      "陷入",
+      "时空",
+      "乱流"
+    ]
+  },
+  {
+    "id": "ns_cala_14946",
+    "text": "你在虚空通道陷入时空乱流",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你在虚空通道陷入时空乱流你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "虚空",
+      "通道",
+      "陷入",
+      "时空",
+      "乱流"
+    ]
+  },
+  {
+    "id": "ns_cala_14947",
+    "text": "你在时间裂缝陷入时空乱流",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——你在时间裂缝陷入时空乱流你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -2,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "时间",
+      "裂缝",
+      "陷入",
+      "时空",
+      "乱流"
+    ]
+  },
+  {
+    "id": "ns_cala_14953",
+    "text": "你在仙府遗迹陷入时空乱流",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你在仙府遗迹陷入时空乱流你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "仙府",
+      "遗迹",
+      "陷入",
+      "时空",
+      "乱流"
+    ]
+  },
+  {
+    "id": "ns_cala_14957",
+    "text": "你在混沌空间陷入时空乱流",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你在混沌空间陷入时空乱流你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "混沌",
+      "空间",
+      "陷入",
+      "时空",
+      "乱流"
+    ]
+  },
+  {
+    "id": "ns_cala_14964",
+    "text": "心魔化形与你在识海中大战",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。心魔化形与你在识海中大战你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "心魔",
+      "化形",
+      "大战",
+      "识海中"
+    ]
+  },
+  {
+    "id": "ns_cala_14992",
+    "text": "你被一位化神修士盯上",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。你被一位化神修士盯上你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "化神",
+      "修士",
+      "盯上"
+    ]
+  },
+  {
+    "id": "ns_cala_15020",
+    "text": "你触犯了某处远古禁忌",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你触犯了某处远古禁忌你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -2,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "nascent_soul"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "触犯",
+      "某处",
+      "远古",
+      "禁忌"
+    ]
+  },
+  {
+    "id": "deity_cala_18662",
+    "text": "天劫提前降临的预兆让你心惊",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。天劫提前降临的预兆让你心惊你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -2,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "creates_hook": {
+      "id": "tribulation_preparation",
+      "description": "渡过天劫",
+      "max_wait": 60
+    },
+    "keywords": [
+      "天劫",
+      "提前",
+      "降临",
+      "预兆",
+      "心惊"
+    ]
+  },
+  {
+    "id": "deity_cala_18684",
+    "text": "你遭遇化神级大敌的偷袭",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。你遭遇化神级大敌的偷袭你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -2,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "遭遇",
+      "化神",
+      "大敌",
+      "偷袭"
+    ]
+  },
+  {
+    "id": "deity_cala_18706",
+    "text": "修炼逆天功法引来天罚",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——修炼逆天功法引来天罚你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "修炼",
+      "逆天",
+      "功法",
+      "引来",
+      "天罚"
+    ]
+  },
+  {
+    "id": "deity_cala_18728",
+    "text": "你的化神之体出现了裂痕",
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你的化神之体出现了裂痕你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -1,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "化神",
+      "之体",
+      "出现",
+      "裂痕"
+    ]
+  },
+  {
+    "id": "deity_cala_18750",
+    "text": "一位老对头趁你闭关时设下杀阵",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。一位老对头趁你闭关时设下杀阵你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "闭关",
+      "时设",
+      "杀阵",
+      "老对头"
+    ]
+  },
+  {
+    "id": "deity_cala_18772",
+    "text": "你在参悟法则时触动了天道禁忌",
+    "expanded_text": "你被一股突如其来的力量卷入了困境——你在参悟法则时触动了天道禁忌你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -1,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "参悟",
+      "法则",
+      "触动",
+      "天道",
+      "禁忌"
+    ]
+  },
+  {
+    "id": "deity_cala_18794",
+    "text": "魔道化神修士向你发起挑战",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。魔道化神修士向你发起挑战你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "化神",
+      "修士",
+      "发起",
+      "挑战"
+    ]
+  },
+  {
+    "id": "deity_cala_18816",
+    "text": "你在火山深处遭遇空间坍塌",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你在火山深处遭遇空间坍塌你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "火山",
+      "深处",
+      "遭遇",
+      "空间",
+      "坍塌"
+    ]
+  },
+  {
+    "id": "deity_cala_18817",
+    "text": "你在时间裂缝遭遇空间坍塌",
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。你在时间裂缝遭遇空间坍塌你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "时间",
+      "裂缝",
+      "遭遇",
+      "空间",
+      "坍塌"
+    ]
+  },
+  {
+    "id": "deity_cala_18818",
+    "text": "你在万年冰原遭遇空间坍塌",
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你在万年冰原遭遇空间坍塌你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -2,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "万年",
+      "冰原",
+      "遭遇",
+      "空间",
+      "坍塌"
+    ]
+  },
+  {
+    "id": "deity_cala_18819",
+    "text": "你在九天之上遭遇空间坍塌",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你在九天之上遭遇空间坍塌你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "九天",
+      "遭遇",
+      "空间",
+      "坍塌"
+    ]
+  },
+  {
+    "id": "deity_cala_18821",
+    "text": "你在混沌空间遭遇空间坍塌",
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你在混沌空间遭遇空间坍塌你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "混沌",
+      "空间",
+      "遭遇",
+      "坍塌"
+    ]
+  },
+  {
+    "id": "deity_cala_18824",
+    "text": "你在海底宫殿遭遇空间坍塌",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你在海底宫殿遭遇空间坍塌你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -1,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "海底",
+      "宫殿",
+      "遭遇",
+      "空间",
+      "坍塌"
+    ]
+  },
+  {
+    "id": "deity_cala_18825",
+    "text": "你在星辰大阵遭遇空间坍塌",
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。你在星辰大阵遭遇空间坍塌你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": -2,
+      "willpower": 1
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "星辰",
+      "大阵",
+      "遭遇",
+      "空间",
+      "坍塌"
+    ]
+  },
+  {
+    "id": "deity_cala_18835",
+    "text": "你在虚空通道遭遇空间坍塌",
+    "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你在虚空通道遭遇空间坍塌你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "constitution": 0,
+      "willpower": 0
+    },
+    "tags": [
+      "calamity",
+      "high_realm"
+    ],
+    "event_type": "danger",
+    "keywords": [
+      "虚空",
+      "通道",
+      "遭遇",
+      "空间",
+      "坍塌"
+    ]
+  },
+  {
+    "id": "chain_crisis_2",
+    "text": "灾变爆发！方圆百里灵气暴动，妖兽狂化，你被卷入其中。",
+    "expanded_text": "天空裂开一道口子，浑浊的灵气如洪水般涌出。山中妖兽受到影响纷纷狂化，嘶吼着冲向人类聚居地。你来不及逃避，只能硬着头皮迎战。这一战打了整整三天三夜。",
+    "event_type": "danger",
+    "category": "calamity",
+    "weight": 0,
+    "conditions": {
+      "min_realm": 2
+    },
+    "effects": {
+      "constitution": -2,
+      "cultivation": 30,
+      "willpower": 1,
+      "trigger_event_id": "chain_crisis_3"
+    },
+    "tags": [
+      "crisis",
+      "combat"
+    ]
+  },
+  {
+    "id": "chain_chase_1",
+    "text": "你被一伙来路不明的修士盯上，对方人多势众，你只能暂避锋芒。",
+    "expanded_text": "那伙人穿着统一的黑色法袍，为首者修为在你之上。你在他们的眼中看到了贪婪——不知你身上有什么东西引起了他们的觊觎。你且战且退，向深山遁去。",
+    "event_type": "danger",
+    "category": "calamity",
+    "weight": 18,
+    "conditions": {
+      "min_realm": 1
+    },
+    "effects": {
+      "constitution": -1,
+      "trigger_event_id": "chain_chase_2"
+    },
+    "tags": [
+      "combat",
+      "chase"
+    ]
+  },
+  {
+    "id": "chain_beast_2",
+    "text": "灵兽渐渐长大，展现出不凡的天赋，引来了觊觎之人。",
+    "expanded_text": "小灵兽的成长速度惊人，数月间便从幼崽长成了一头威风凛凛的灵兽。它的血脉似乎极为尊贵，引来了一些修士的注意。有人出高价购买，也有人暗中打起了主意。",
+    "event_type": "danger",
+    "category": "calamity",
+    "weight": 0,
+    "conditions": {
+      "min_realm": 1
+    },
+    "effects": {
+      "willpower": 1,
+      "constitution": -1,
+      "trigger_event_id": "chain_beast_3"
+    },
+    "tags": [
+      "beast",
+      "conflict"
+    ]
+  },
+  {
+    "id": "hook_create_blood_feud_01",
+    "text": "你亲眼目睹至亲被强敌所害，鲜血染红了你的衣襟，仇恨的种子深深扎入道心。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 3,
+      "fortune": -2
+    },
+    "tags": [
+      "revenge",
+      "tragedy"
+    ],
+    "event_type": "danger",
+    "creates_hook": {
+      "id": "blood_feud",
+      "description": "为至亲复仇",
+      "max_wait": 120
+    },
+    "expanded_text": "你被一股突如其来的力量卷入了困境——你亲眼目睹至亲被强敌所害，鲜血染红了你的衣襟，仇恨的种子深深扎入道心。你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。"
+  },
+  {
+    "id": "hook_create_blood_feud_02",
+    "text": "一名修士当众羞辱并重伤了你的恩师，你咬碎牙关却无力阻止，只能将此仇铭记于心。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 4,
+      "charisma": -1
+    },
+    "tags": [
+      "revenge",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "npc_roles": [
+      "师父"
+    ],
+    "creates_hook": {
+      "id": "blood_feud",
+      "description": "为恩师报仇",
+      "max_wait": 120
+    },
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。一名修士当众羞辱并重伤了你的恩师，你咬碎牙关却无力阻止，只能将此仇铭记于心。你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。"
+  },
+  {
+    "id": "hook_create_lost_companion_01",
+    "text": "一场秘境崩塌将你与同行之人冲散，你拼命呼喊却再无回应，只能独自离去。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 2,
+      "fortune": -1
+    },
+    "tags": [
+      "separation",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "creates_hook": {
+      "id": "lost_companion",
+      "description": "寻找失散故人",
+      "max_wait": 80
+    },
+    "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。一场秘境崩塌将你与同行之人冲散，你拼命呼喊却再无回应，只能独自离去。你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。"
+  },
+  {
+    "id": "hook_create_lost_companion_02",
+    "text": "你的挚友为掩护你撤退而被传送阵卷走，从此杳无音讯。",
+    "category": "calamity",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 3
+    },
+    "tags": [
+      "separation",
+      "npc_interaction"
+    ],
+    "event_type": "danger",
+    "creates_hook": {
+      "id": "lost_companion",
+      "description": "寻回失散挚友",
+      "max_wait": 80
+    },
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你的挚友为掩护你撤退而被传送阵卷走，从此杳无音讯。你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。"
+  },
+  {
+    "text": "一头万年老妖苏醒，视你领地为猎场。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "cultivation": 30,
+      "constitution": -1
+    },
+    "tags": [
+      "ancient_beast",
+      "territory"
+    ],
+    "id": "hrealm_ns_008",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "你被一股突如其来的力量卷入了困境——一头万年老妖苏醒，视你领地为猎场。你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "keywords": []
+  },
+  {
+    "text": "空间裂缝突然出现在你洞府附近，异界煞气汹涌而出。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "cultivation": 20,
+      "willpower": 1
+    },
+    "tags": [
+      "void_rift",
+      "danger"
+    ],
+    "id": "hrealm_ns_009",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。空间裂缝突然出现在你洞府附近，异界煞气汹涌而出。你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "keywords": []
+  },
+  {
+    "text": "你遭到不明强者的神识扫描，对方似乎在寻找什么。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "mysterious_threat"
+    ],
+    "id": "hrealm_ns_010",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你遭到不明强者的神识扫描，对方似乎在寻找什么。你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "keywords": []
+  },
+  {
+    "text": "上界降下天罚，疑你触犯了某条天规。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "constitution": -2,
+      "willpower": 2
+    },
+    "tags": [
+      "heavenly_punishment"
+    ],
+    "id": "hrealm_dt_012",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "你被一股突如其来的力量卷入了困境——上界降下天罚，疑你触犯了某条天规。你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+    "keywords": []
+  },
+  {
+    "text": "你察觉到此方天地的屏障正在衰弱，外界之物蠢蠢欲动。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "willpower": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "world_barrier",
+      "omen"
+    ],
+    "id": "hrealm_dt_013",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "天灾人祸从不提前打招呼——你只能仓促应对。你察觉到此方天地的屏障正在衰弱，外界之物蠢蠢欲动。你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "keywords": []
+  },
+  {
+    "text": "一场席卷千里的天地浩劫降临，你不得不出面镇压。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "cultivation": 50,
+      "constitution": -1,
+      "willpower": 2
+    },
+    "tags": [
+      "great_calamity",
+      "guardian"
+    ],
+    "id": "hrealm_dt_014",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。一场席卷千里的天地浩劫降临，你不得不出面镇压。你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+    "keywords": []
+  },
+  {
+    "text": "你的道心出现裂痕，须以大毅力重塑方不至走火入魔。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "willpower": -1,
+      "comprehension": 1
+    },
+    "tags": [
+      "dao_heart_crack",
+      "inner_demon"
+    ],
+    "id": "hrealm_dt_015",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "天有不测风云——你今日便遇到了一劫。你的道心出现裂痕，须以大毅力重塑方不至走火入魔。你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+    "keywords": []
+  },
+  {
+    "text": "远古魔神残念从地底苏醒，化神以下难以抵挡。",
+    "category": "calamity",
+    "event_type": "danger",
+    "effects": {
+      "cultivation": 40,
+      "constitution": -1
+    },
+    "tags": [
+      "demon_god",
+      "ancient"
+    ],
+    "id": "hrealm_dt_016",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。远古魔神残念从地底苏醒，化神以下难以抵挡。你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+    "keywords": []
   }
 ]

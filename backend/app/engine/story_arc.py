@@ -119,6 +119,7 @@ class StoryArcPlanner:
 
         Tries LLM first, falls back to archetype arcs.
         Returns list of StoryArc dicts.
+        Max 5 active arcs to prevent unbounded growth.
         """
         # Remove completed arcs
         state.active_arcs = [
@@ -126,8 +127,8 @@ class StoryArcPlanner:
             if not arc.get("is_completed", False)
         ]
 
-        # Don't stack too many arcs
-        if len(state.active_arcs) >= 3:
+        # Don't stack too many arcs (hard cap: 5)
+        if len(state.active_arcs) >= 5:
             return state.active_arcs
 
         # Try LLM planning
@@ -135,11 +136,13 @@ class StoryArcPlanner:
             arcs = self._plan_with_llm(state, new_realm)
             if arcs:
                 state.active_arcs.extend(arcs)
+                state.active_arcs = state.active_arcs[:5]  # Enforce cap
                 return state.active_arcs
 
         # Fallback: archetype arcs
         arcs = self._plan_with_archetypes(state, new_realm)
         state.active_arcs.extend(arcs)
+        state.active_arcs = state.active_arcs[:5]  # Enforce cap
         return state.active_arcs
 
     def advance_arc_beat(self, state: "GameState", event: dict) -> Optional[dict]:
@@ -150,6 +153,9 @@ class StoryArcPlanner:
 
         Returns: The arc dict if it just completed, else None.
         """
+        if not state.active_arcs:
+            return None
+
         event_text = event.get("text", "")
         event_tags = set(event.get("tags", []))
         event_category = event.get("category", "")
@@ -200,6 +206,8 @@ class StoryArcPlanner:
 
     def get_arcs_context_for_ai(self, state: "GameState") -> str:
         """Build context string about active arcs for AI prompts."""
+        if not state.active_arcs:
+            return ""
         active = [a for a in state.active_arcs if not a.get("is_completed")]
         if not active:
             return ""

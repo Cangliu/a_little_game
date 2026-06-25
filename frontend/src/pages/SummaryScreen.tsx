@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import type { LifeSummary, SectInfo, ChoiceHistoryItem, NPCRelationship } from '../utils/types';
-import { REALM_COLORS, GENDER_NAMES } from '../utils/types';
-import { getSummary, getGameState } from '../utils/api';
+import type { LifeSummary, SectInfo, ChoiceHistoryItem, NPCRelationship, LifeEvent } from '../utils/types';
+import { REALM_COLORS, GENDER_NAMES, CATEGORY_NAMES, CATEGORY_COLORS } from '../utils/types';
+import { getSummary, getGameState, getLifeEvents } from '../utils/api';
 import { SUMMARY_BACKGROUNDS, getPortrait } from '../config/sceneConfig';
 
 interface SummaryScreenProps {
@@ -15,6 +15,8 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
   const [sectInfo, setSectInfo] = useState<SectInfo | null>(null);
   const [choiceHistory, setChoiceHistory] = useState<ChoiceHistoryItem[]>([]);
   const [npcRelationships, setNpcRelationships] = useState<NPCRelationship[]>([]);
+  const [lifeEvents, setLifeEvents] = useState<LifeEvent[]>([]);
+  const [showTimeline, setShowTimeline] = useState(false);
 
   useEffect(() => {
     getSummary(gameId).then((data) => {
@@ -271,7 +273,7 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
           </div>
           <p className="text-scroll-gold font-kai text-lg italic">
             {summary.score >= 500
-              ? '「此子逆天改命，已破碎虚空，飞升仙界！」'
+              ? '「此子逆天改命，已破碎虚空，飞升灵界！」'
               : summary.score >= 200
               ? '「道心坚定，修为不凡，已入大道之门。」'
               : summary.score >= 100
@@ -283,6 +285,61 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
               : '「如露亦如电，应作如是观。」'}
           </p>
         </div>
+
+        {/* Life Timeline Toggle */}
+        <div className="text-center mb-6">
+          <button
+            onClick={() => {
+              if (!showTimeline && lifeEvents.length === 0) {
+                getLifeEvents(gameId).then(setLifeEvents).catch(() => {});
+              }
+              setShowTimeline(!showTimeline);
+            }}
+            className="text-scroll-text-dim text-sm font-kai tracking-widest border border-scroll-gold/30 rounded px-4 py-2 hover:bg-scroll-gold/10 transition-colors"
+          >
+            {showTimeline ? '收起生平' : '翻看完整一生'}
+          </button>
+        </div>
+
+        {/* Life Timeline */}
+        {showTimeline && (
+          <div className="scroll-panel p-4 mb-6">
+            <h3 className="text-scroll-text-dim text-xs font-kai tracking-widest mb-4 text-center">
+              — 一生回顾 —
+            </h3>
+            <div className="max-h-[60vh] overflow-y-auto space-y-1 pr-1">
+              {lifeEvents.length === 0 ? (
+                <p className="text-scroll-text-dim text-center text-sm font-kai animate-pulse">
+                  天书展开中...
+                </p>
+              ) : (
+                lifeEvents.map((ev, i) => {
+                  const catName = CATEGORY_NAMES[ev.category || 'common'] || '尘世';
+                  const catColor = CATEGORY_COLORS[ev.category || 'common'] || 'text-stone-500';
+                  const isImportant = ev.event_type === 'important' || ev.event_type === 'danger';
+                  return (
+                    <div
+                      key={i}
+                      className={`flex items-start gap-2 text-xs font-kai py-1 ${
+                        isImportant ? 'bg-scroll-gold/5 rounded px-1' : ''
+                      }`}
+                    >
+                      <span className="text-scroll-text-dim shrink-0 w-12 text-right">
+                        {ev.age}岁
+                      </span>
+                      <span className={`shrink-0 w-8 text-center ${catColor}`}>
+                        {catName}
+                      </span>
+                      <span className={`flex-1 ${isImportant ? 'text-scroll-gold' : 'text-scroll-text'}`}>
+                        {ev.text}
+                      </span>
+                    </div>
+                  );
+                })
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Restart Button */}
         <div className="text-center">

@@ -6266,5 +6266,1920 @@
       "mortal_life"
     ],
     "event_type": "normal"
+  },
+  {
+    "id": "mortal_new_05000",
+    "text": "你在田间劳作，收成颇丰",
+    "expanded_text": "你调整了几次呼吸后终于找到了节奏——修道路漫漫。今日的修炼进展平平——可你并不气馁。修道之路从不缺少起伏。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "田间",
+      "劳作",
+      "收成",
+      "颇丰"
+    ]
+  },
+  {
+    "id": "mortal_new_05001",
+    "text": "你与邻里发生口角，心情郁闷",
+    "expanded_text": "你按照师门传下来的法子一步步做——不急不缓。你在修炼中隐约触碰到了某种感悟——虽然还不清晰，但它就在那里。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "邻里",
+      "发生",
+      "口角",
+      "心情",
+      "郁闷"
+    ]
+  },
+  {
+    "id": "mortal_new_05002",
+    "text": "你在集市上遇到一位算命先生，对方说你命中有贵人",
+    "expanded_text": "你全神贯注——将所有心力都放在了修炼之上。灵力在经脉中平稳运行——你感到了一丝进步。虽然微小，但确实在前进。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "集市",
+      "遇到",
+      "对方",
+      "命中",
+      "贵人",
+      "算命先生"
+    ]
+  },
+  {
+    "id": "mortal_new_05003",
+    "text": "你帮助了一位落难老者",
+    "expanded_text": "晨曦微露之时你便开始了今日的修炼——一日之计在于晨。灵气在体内走了数个周天——你的基础又扎实了一些。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "npc_slot": "elder",
+    "keywords": [
+      "帮助",
+      "落难",
+      "老者"
+    ]
+  },
+  {
+    "id": "mortal_new_05004",
+    "text": "你在河边钓鱼时看到异象",
+    "expanded_text": "你反复揣摩着功法中的关键步骤——越练越有感觉了。今日的修炼进展平平——可你并不气馁。修道之路从不缺少起伏。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "河边",
+      "钓鱼",
+      "异象"
+    ]
+  },
+  {
+    "id": "mortal_new_05005",
+    "text": "一位路过的道士在你家借宿",
+    "expanded_text": "你循着功法口诀引导灵力运行——一丝不苟。今日的修炼进展平平——可你并不气馁。修道之路从不缺少起伏。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "路过",
+      "道士",
+      "你家",
+      "借宿"
+    ]
+  },
+  {
+    "id": "mortal_new_05006",
+    "text": "你做了一个奇怪的梦",
+    "expanded_text": "你独自一人在洞府中运功——时间不知不觉地流逝。你的修为在不知不觉中又精进了一分——量变终将引发质变。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "奇怪"
+    ]
+  },
+  {
+    "id": "mortal_new_05007",
+    "text": "村里来了一群江湖人",
+    "expanded_text": "你全神贯注——将所有心力都放在了修炼之上。你的修为在不知不觉中又精进了一分——量变终将引发质变。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "村里",
+      "一群",
+      "江湖"
+    ]
+  },
+  {
+    "id": "mortal_new_05008",
+    "text": "你在山上采药时迷了路",
+    "expanded_text": "你花了些时间回顾了近来修炼的得失——然后开始了新一轮的练习。灵气在体内走了数个周天——你的基础又扎实了一些。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "山上",
+      "采药",
+      "迷了路"
+    ]
+  },
+  {
+    "id": "mortal_new_05009",
+    "text": "你救了一只受伤的灵禽",
+    "expanded_text": "你反复揣摩着功法中的关键步骤——越练越有感觉了。灵气在体内走了数个周天——你的基础又扎实了一些。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "受伤",
+      "灵禽"
+    ]
+  },
+  {
+    "id": "mortal_new_05010",
+    "text": "天降流星，你许了个愿",
+    "expanded_text": "你按照师门传下来的法子一步步做——不急不缓。你觉得今天的收获不算大——可修道本就是日积月累的事情。不必在意一时得失。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "流星",
+      "你许"
+    ]
+  },
+  {
+    "id": "mortal_new_05011",
+    "text": "你听老人讲述修仙者的传说",
+    "expanded_text": "你独自一人在洞府中运功——时间不知不觉地流逝。你在修炼中隐约触碰到了某种感悟——虽然还不清晰，但它就在那里。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "老人",
+      "讲述",
+      "修仙",
+      "传说"
+    ]
+  },
+  {
+    "id": "mortal_new_05012",
+    "text": "你在古井中发现一块奇石",
+    "expanded_text": "今日的修炼格外顺畅——你心中暗喜。今日的修炼进展平平——可你并不气馁。修道之路从不缺少起伏。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "古井",
+      "一块",
+      "奇石"
+    ]
+  },
+  {
+    "id": "mortal_new_05013",
+    "text": "你无意间看到天空中有人御剑飞行",
+    "expanded_text": "你反复揣摩着功法中的关键步骤——越练越有感觉了。灵力在经脉中平稳运行——你感到了一丝进步。虽然微小，但确实在前进。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "天空",
+      "有人",
+      "御剑",
+      "飞行",
+      "无意间"
+    ]
+  },
+  {
+    "id": "mortal_new_05014",
+    "text": "村中瘟疫蔓延，你安然无恙",
+    "expanded_text": "你独自一人在洞府中运功——时间不知不觉地流逝。灵气在体内走了数个周天——你的基础又扎实了一些。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "村中",
+      "瘟疫",
+      "蔓延",
+      "安然无恙"
+    ]
+  },
+  {
+    "id": "mortal_new_05015",
+    "text": "你在雷雨天感到体内有异样的悸动",
+    "expanded_text": "你调整了几次呼吸后终于找到了节奏——修道路漫漫。你的丹田中灵力微微波动——又凝实了几分。好的方向。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "雷雨",
+      "体内",
+      "异样",
+      "悸动"
+    ]
+  },
+  {
+    "id": "mortal_new_05016",
+    "text": "你被一位神秘人盯上了",
+    "expanded_text": "你在安静的角落里开始了今日的功课——修行从不嫌多。你尝试了一种新的运功方式——效果还不错。值得继续探索。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "神秘",
+      "盯上"
+    ]
+  },
+  {
+    "id": "mortal_new_05017",
+    "text": "你偶得一本残破古书",
+    "expanded_text": "你调整了几次呼吸后终于找到了节奏——修道路漫漫。灵气在体内走了数个周天——你的基础又扎实了一些。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "偶得",
+      "一本",
+      "残破",
+      "古书"
+    ]
+  },
+  {
+    "id": "mortal_new_05018",
+    "text": "你在梦中看到了一座仙山",
+    "expanded_text": "你在灵气充沛之处坐下——感受着天地灵力的脉动。今日的修炼进展平平——可你并不气馁。修道之路从不缺少起伏。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "仙山"
+    ]
+  },
+  {
+    "id": "mortal_new_05019",
+    "text": "一道流光坠入你家后院",
+    "expanded_text": "你独自一人在洞府中运功——时间不知不觉地流逝。你尝试了一种新的运功方式——效果还不错。值得继续探索。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 50,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "流光",
+      "坠入",
+      "你家",
+      "后院"
+    ]
+  },
+  {
+    "id": "mortal_season_05020",
+    "text": "春日里你感受到自然的力量",
+    "expanded_text": "你循着功法口诀引导灵力运行——一丝不苟。你的修为在不知不觉中又精进了一分——量变终将引发质变。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "春日",
+      "感受",
+      "自然",
+      "力量"
+    ]
+  },
+  {
+    "id": "mortal_season_05021",
+    "text": "春天的第一场雨让你心生感悟",
+    "expanded_text": "你盘膝而坐——灵力随着呼吸缓缓流转。修炼的过程枯燥而重复——可你知道每一次重复都在为未来的突破积累力量。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "春天",
+      "感悟",
+      "第一场"
+    ]
+  },
+  {
+    "id": "mortal_season_05022",
+    "text": "春末你在山间游历",
+    "expanded_text": "你在安静的角落里开始了今日的功课——修行从不嫌多。你在修炼中隐约触碰到了某种感悟——虽然还不清晰，但它就在那里。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "春末",
+      "山间",
+      "游历"
+    ]
+  },
+  {
+    "id": "mortal_season_05023",
+    "text": "一个寻常的春日，你的生活发生了变化",
+    "expanded_text": "今日的修炼格外顺畅——你心中暗喜。你在修炼中隐约触碰到了某种感悟——虽然还不清晰，但它就在那里。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "寻常",
+      "春日",
+      "生活",
+      "发生",
+      "变化"
+    ]
+  },
+  {
+    "id": "mortal_season_05024",
+    "text": "春风吹过，你感到一丝与往日不同的气息",
+    "expanded_text": "今日的修炼格外顺畅——你心中暗喜。修炼的过程枯燥而重复——可你知道每一次重复都在为未来的突破积累力量。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "春风",
+      "吹过",
+      "往日",
+      "不同",
+      "气息"
+    ]
+  },
+  {
+    "id": "mortal_season_05025",
+    "text": "夏日里你感受到自然的力量",
+    "expanded_text": "你在灵气充沛之处坐下——感受着天地灵力的脉动。你感受着灵力在体内流转——比昨日更加顺畅了。这是好兆头。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "夏日",
+      "感受",
+      "自然",
+      "力量"
+    ]
+  },
+  {
+    "id": "mortal_season_05026",
+    "text": "夏天的第一场雨让你心生感悟",
+    "expanded_text": "你心无旁骛地投入了修炼——外界的一切都被隔绝在意识之外。你感受着灵力在体内流转——比昨日更加顺畅了。这是好兆头。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "夏天",
+      "感悟",
+      "第一场"
+    ]
+  },
+  {
+    "id": "mortal_season_05027",
+    "text": "夏末你在山间游历",
+    "expanded_text": "晨曦微露之时你便开始了今日的修炼——一日之计在于晨。灵气在体内走了数个周天——你的基础又扎实了一些。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "夏末",
+      "山间",
+      "游历"
+    ]
+  },
+  {
+    "id": "mortal_season_05028",
+    "text": "一个寻常的夏日，你的生活发生了变化",
+    "expanded_text": "你反复揣摩着功法中的关键步骤——越练越有感觉了。你觉得今天的收获不算大——可修道本就是日积月累的事情。不必在意一时得失。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "寻常",
+      "夏日",
+      "生活",
+      "发生",
+      "变化"
+    ]
+  },
+  {
+    "id": "mortal_season_05029",
+    "text": "夏风吹过，你感到一丝与往日不同的气息",
+    "expanded_text": "今日的修炼格外顺畅——你心中暗喜。你的修为在不知不觉中又精进了一分——量变终将引发质变。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "风吹",
+      "往日",
+      "不同",
+      "气息"
+    ]
+  },
+  {
+    "id": "mortal_season_05030",
+    "text": "秋日里你感受到自然的力量",
+    "expanded_text": "你在灵气充沛之处坐下——感受着天地灵力的脉动。修炼的过程枯燥而重复——可你知道每一次重复都在为未来的突破积累力量。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "秋日",
+      "感受",
+      "自然",
+      "力量"
+    ]
+  },
+  {
+    "id": "mortal_season_05031",
+    "text": "秋天的第一场雨让你心生感悟",
+    "expanded_text": "你盘膝而坐——灵力随着呼吸缓缓流转。你感受着灵力在体内流转——比昨日更加顺畅了。这是好兆头。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "秋天",
+      "感悟",
+      "第一场"
+    ]
+  },
+  {
+    "id": "mortal_season_05032",
+    "text": "秋末你在山间游历",
+    "expanded_text": "你在灵气充沛之处坐下——感受着天地灵力的脉动。你尝试了一种新的运功方式——效果还不错。值得继续探索。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "秋末",
+      "山间",
+      "游历"
+    ]
+  },
+  {
+    "id": "mortal_season_05033",
+    "text": "一个寻常的秋日，你的生活发生了变化",
+    "expanded_text": "你循着功法口诀引导灵力运行——一丝不苟。你觉得今天的收获不算大——可修道本就是日积月累的事情。不必在意一时得失。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "寻常",
+      "秋日",
+      "生活",
+      "发生",
+      "变化"
+    ]
+  },
+  {
+    "id": "mortal_season_05034",
+    "text": "秋风吹过，你感到一丝与往日不同的气息",
+    "expanded_text": "你独自一人在洞府中运功——时间不知不觉地流逝。你尝试了一种新的运功方式——效果还不错。值得继续探索。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "秋风",
+      "吹过",
+      "往日",
+      "不同",
+      "气息"
+    ]
+  },
+  {
+    "id": "mortal_season_05035",
+    "text": "冬日里你感受到自然的力量",
+    "expanded_text": "你花了些时间回顾了近来修炼的得失——然后开始了新一轮的练习。你的丹田中灵力微微波动——又凝实了几分。好的方向。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "冬日",
+      "感受",
+      "自然",
+      "力量"
+    ]
+  },
+  {
+    "id": "mortal_season_05036",
+    "text": "冬天的第一场雨让你心生感悟",
+    "expanded_text": "你循着功法口诀引导灵力运行——一丝不苟。你尝试了一种新的运功方式——效果还不错。值得继续探索。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "冬天",
+      "感悟",
+      "第一场"
+    ]
+  },
+  {
+    "id": "mortal_season_05037",
+    "text": "冬末你在山间游历",
+    "expanded_text": "今日的修炼格外顺畅——你心中暗喜。灵力在经脉中平稳运行——你感到了一丝进步。虽然微小，但确实在前进。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "冬末",
+      "山间",
+      "游历"
+    ]
+  },
+  {
+    "id": "mortal_season_05038",
+    "text": "一个寻常的冬日，你的生活发生了变化",
+    "expanded_text": "你心无旁骛地投入了修炼——外界的一切都被隔绝在意识之外。修炼的过程枯燥而重复——可你知道每一次重复都在为未来的突破积累力量。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "寻常",
+      "冬日",
+      "生活",
+      "发生",
+      "变化"
+    ]
+  },
+  {
+    "id": "mortal_season_05039",
+    "text": "冬风吹过，你感到一丝与往日不同的气息",
+    "expanded_text": "晨曦微露之时你便开始了今日的修炼——一日之计在于晨。你的丹田中灵力微微波动——又凝实了几分。好的方向。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 40,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "冬风",
+      "吹过",
+      "往日",
+      "不同",
+      "气息"
+    ]
+  },
+  {
+    "id": "mortal_extra_25000",
+    "text": "你在山间砍柴时听到仙音",
+    "expanded_text": "你按照师门传下来的法子一步步做——不急不缓。你的修为在不知不觉中又精进了一分——量变终将引发质变。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "山间",
+      "砍柴",
+      "仙音"
+    ]
+  },
+  {
+    "id": "mortal_extra_25001",
+    "text": "你救了一个神秘孩童",
+    "expanded_text": "今日的修炼格外顺畅——你心中暗喜。你的修为在不知不觉中又精进了一分——量变终将引发质变。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "神秘",
+      "孩童"
+    ]
+  },
+  {
+    "id": "mortal_extra_25002",
+    "text": "你在河里摸到一块暖玉",
+    "expanded_text": "你反复揣摩着功法中的关键步骤——越练越有感觉了。你的修为在不知不觉中又精进了一分——量变终将引发质变。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "河里",
+      "一块",
+      "暖玉"
+    ]
+  },
+  {
+    "id": "mortal_extra_25003",
+    "text": "你夜里看到天上有人打斗",
+    "expanded_text": "你在溪旁打坐——水声有助于你入定。你觉得今天的收获不算大——可修道本就是日积月累的事情。不必在意一时得失。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "夜里",
+      "天上",
+      "有人",
+      "打斗"
+    ]
+  },
+  {
+    "id": "mortal_extra_25004",
+    "text": "你帮一位道士修补道观",
+    "expanded_text": "你在灵气充沛之处坐下——感受着天地灵力的脉动。你的丹田中灵力微微波动——又凝实了几分。好的方向。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "道士",
+      "修补",
+      "道观"
+    ]
+  },
+  {
+    "id": "mortal_extra_25005",
+    "text": "你在地里挖出一枚铜镜",
+    "expanded_text": "你调整了几次呼吸后终于找到了节奏——修道路漫漫。今日的修炼进展平平——可你并不气馁。修道之路从不缺少起伏。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "地里",
+      "挖出",
+      "一枚",
+      "铜镜"
+    ]
+  },
+  {
+    "id": "mortal_extra_25006",
+    "text": "一场怪梦让你整日心神不宁",
+    "expanded_text": "你循着功法口诀引导灵力运行——一丝不苟。你在修炼中隐约触碰到了某种感悟——虽然还不清晰，但它就在那里。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "整日",
+      "心神不宁"
+    ]
+  },
+  {
+    "id": "mortal_extra_25007",
+    "text": "你在市集上见到了修士斗法",
+    "expanded_text": "你全神贯注——将所有心力都放在了修炼之上。你的丹田中灵力微微波动——又凝实了几分。好的方向。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "市集",
+      "见到",
+      "修士",
+      "斗法"
+    ]
+  },
+  {
+    "id": "mortal_extra_25008",
+    "text": "一位老药师教了你认草药",
+    "expanded_text": "你独自一人在洞府中运功——时间不知不觉地流逝。你尝试了一种新的运功方式——效果还不错。值得继续探索。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "药师",
+      "草药"
+    ]
+  },
+  {
+    "id": "mortal_extra_25009",
+    "text": "你无意中走入了一片迷雾",
+    "expanded_text": "你全神贯注——将所有心力都放在了修炼之上。你的修为在不知不觉中又精进了一分——量变终将引发质变。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "无意",
+      "走入",
+      "迷雾"
+    ]
+  },
+  {
+    "id": "mortal_extra_25010",
+    "text": "你家老树突然开了花",
+    "expanded_text": "今日的修炼格外顺畅——你心中暗喜。你的丹田中灵力微微波动——又凝实了几分。好的方向。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "你家",
+      "开了花"
+    ]
+  },
+  {
+    "id": "mortal_extra_25011",
+    "text": "村里的老井水变甜了",
+    "expanded_text": "晨曦微露之时你便开始了今日的修炼——一日之计在于晨。你觉得今天的收获不算大——可修道本就是日积月累的事情。不必在意一时得失。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "村里",
+      "井水",
+      "变甜"
+    ]
+  },
+  {
+    "id": "mortal_extra_25012",
+    "text": "一只仙鹤停在你家屋顶",
+    "expanded_text": "你在灵气充沛之处坐下——感受着天地灵力的脉动。修炼的过程枯燥而重复——可你知道每一次重复都在为未来的突破积累力量。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "仙鹤",
+      "你家",
+      "屋顶"
+    ]
+  },
+  {
+    "id": "mortal_extra_25013",
+    "text": "你感到身体比以前轻盈了",
+    "expanded_text": "你调整了几次呼吸后终于找到了节奏——修道路漫漫。灵气在体内走了数个周天——你的基础又扎实了一些。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "身体",
+      "以前",
+      "轻盈"
+    ]
+  },
+  {
+    "id": "mortal_extra_25014",
+    "text": "你做梦梦到了未来的自己",
+    "expanded_text": "你循着功法口诀引导灵力运行——一丝不苟。灵力在经脉中平稳运行——你感到了一丝进步。虽然微小，但确实在前进。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "做梦",
+      "梦到",
+      "未来"
+    ]
+  },
+  {
+    "id": "mortal_extra_25015",
+    "text": "山上的石头突然碎了",
+    "expanded_text": "你在灵气充沛之处坐下——感受着天地灵力的脉动。你尝试了一种新的运功方式——效果还不错。值得继续探索。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "山上",
+      "石头"
+    ]
+  },
+  {
+    "id": "mortal_extra_25016",
+    "text": "你在暴风雨中看到紫色闪电",
+    "expanded_text": "你调整了几次呼吸后终于找到了节奏——修道路漫漫。你的丹田中灵力微微波动——又凝实了几分。好的方向。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "紫色",
+      "闪电",
+      "暴风雨"
+    ]
+  },
+  {
+    "id": "mortal_extra_25017",
+    "text": "你被蜜蜂蛰了，伤口却很快好了",
+    "expanded_text": "你在安静的角落里开始了今日的功课——修行从不嫌多。灵力在经脉中平稳运行——你感到了一丝进步。虽然微小，但确实在前进。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "蜜蜂",
+      "伤口",
+      "很快"
+    ]
+  },
+  {
+    "id": "mortal_extra_25018",
+    "text": "你的手掌心突然发热",
+    "expanded_text": "你闭目凝神——将意识沉入了灵台深处。今日的修炼进展平平——可你并不气馁。修道之路从不缺少起伏。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "发热",
+      "手掌心"
+    ]
+  },
+  {
+    "id": "mortal_extra_25019",
+    "text": "你无缘无故感到很开心",
+    "expanded_text": "今日的修炼格外顺畅——你心中暗喜。今日的修炼进展平平——可你并不气馁。修道之路从不缺少起伏。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "开心",
+      "无缘无故"
+    ]
+  },
+  {
+    "id": "mortal_extra_25020",
+    "text": "你养的鸡今天下了两个蛋",
+    "expanded_text": "你按照师门传下来的法子一步步做——不急不缓。你感受着灵力在体内流转——比昨日更加顺畅了。这是好兆头。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "你养",
+      "今天",
+      "两个"
+    ]
+  },
+  {
+    "id": "mortal_extra_25021",
+    "text": "邻居送你一壶老酒",
+    "expanded_text": "你在灵气充沛之处坐下——感受着天地灵力的脉动。你觉得今天的收获不算大——可修道本就是日积月累的事情。不必在意一时得失。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "邻居",
+      "一壶",
+      "老酒"
+    ]
+  },
+  {
+    "id": "mortal_extra_25022",
+    "text": "你在山洞里发现了壁画",
+    "expanded_text": "你循着功法口诀引导灵力运行——一丝不苟。你感受着灵力在体内流转——比昨日更加顺畅了。这是好兆头。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "山洞",
+      "壁画"
+    ]
+  },
+  {
+    "id": "mortal_extra_25023",
+    "text": "夜里你看到了漫天流星",
+    "expanded_text": "你按照师门传下来的法子一步步做——不急不缓。今日的修炼进展平平——可你并不气馁。修道之路从不缺少起伏。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "夜里",
+      "漫天",
+      "流星"
+    ]
+  },
+  {
+    "id": "mortal_extra_25024",
+    "text": "你在溪边洗衣时水突然变温了",
+    "expanded_text": "你盘膝而坐——灵力随着呼吸缓缓流转。你感受着灵力在体内流转——比昨日更加顺畅了。这是好兆头。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "溪边",
+      "洗衣",
+      "变温"
+    ]
+  },
+  {
+    "id": "mortal_extra_25025",
+    "text": "你在梦里学会了一套拳法",
+    "expanded_text": "今日的修炼格外顺畅——你心中暗喜。灵气在体内走了数个周天——你的基础又扎实了一些。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "梦里",
+      "学会",
+      "一套",
+      "拳法"
+    ]
+  },
+  {
+    "id": "mortal_extra_25026",
+    "text": "一位老人临终前送你一个锦囊",
+    "expanded_text": "你盘膝而坐——灵力随着呼吸缓缓流转。你尝试了一种新的运功方式——效果还不错。值得继续探索。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "老人",
+      "锦囊",
+      "临终前"
+    ]
+  },
+  {
+    "id": "mortal_extra_25027",
+    "text": "你在废墟中找到了一枚戒指",
+    "expanded_text": "你在安静的角落里开始了今日的功课——修行从不嫌多。你尝试了一种新的运功方式——效果还不错。值得继续探索。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "废墟",
+      "找到",
+      "一枚",
+      "戒指"
+    ]
+  },
+  {
+    "id": "mortal_extra_25028",
+    "text": "你第一次看到了彩虹的尽头",
+    "expanded_text": "你闭目凝神——将意识沉入了灵台深处。灵气在体内走了数个周天——你的基础又扎实了一些。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "彩虹",
+      "尽头",
+      "第一次"
+    ]
+  },
+  {
+    "id": "mortal_extra_25029",
+    "text": "你的伤口愈合得比别人快",
+    "expanded_text": "你盘膝而坐——灵力随着呼吸缓缓流转。你觉得今天的收获不算大——可修道本就是日积月累的事情。不必在意一时得失。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "伤口",
+      "愈合"
+    ]
+  },
+  {
+    "id": "mortal_extra_25030",
+    "text": "你走路比别人快了很多",
+    "expanded_text": "你在溪旁打坐——水声有助于你入定。你尝试了一种新的运功方式——效果还不错。值得继续探索。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "走路",
+      "很多"
+    ]
+  },
+  {
+    "id": "mortal_extra_25031",
+    "text": "你搬起了别人搬不动的石头",
+    "expanded_text": "你全神贯注——将所有心力都放在了修炼之上。你感受着灵力在体内流转——比昨日更加顺畅了。这是好兆头。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "搬起",
+      "石头",
+      "搬不动"
+    ]
+  },
+  {
+    "id": "mortal_extra_25032",
+    "text": "你在河边捡到了一把锈剑",
+    "expanded_text": "你花了些时间回顾了近来修炼的得失——然后开始了新一轮的练习。修炼的过程枯燥而重复——可你知道每一次重复都在为未来的突破积累力量。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "河边",
+      "锈剑"
+    ]
+  },
+  {
+    "id": "mortal_extra_25033",
+    "text": "你感觉自己的五感变敏锐了",
+    "expanded_text": "今日的修炼格外顺畅——你心中暗喜。你的丹田中灵力微微波动——又凝实了几分。好的方向。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "五感",
+      "敏锐"
+    ]
+  },
+  {
+    "id": "mortal_extra_25034",
+    "text": "你的力气突然变大了",
+    "expanded_text": "晨曦微露之时你便开始了今日的修炼——一日之计在于晨。灵气在体内走了数个周天——你的基础又扎实了一些。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "力气",
+      "变大"
+    ]
+  },
+  {
+    "id": "mortal_extra_25035",
+    "text": "一只蝴蝶一直跟着你飞",
+    "expanded_text": "你闭目凝神——将意识沉入了灵台深处。修炼的过程枯燥而重复——可你知道每一次重复都在为未来的突破积累力量。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "蝴蝶",
+      "一直",
+      "跟着"
+    ]
+  },
+  {
+    "id": "mortal_extra_25036",
+    "text": "你在睡梦中口吐白气",
+    "expanded_text": "晨曦微露之时你便开始了今日的修炼——一日之计在于晨。你的修为在不知不觉中又精进了一分——量变终将引发质变。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "口吐",
+      "睡梦中"
+    ]
+  },
+  {
+    "id": "mortal_extra_25037",
+    "text": "你在日出时感到温暖灵气入体",
+    "expanded_text": "你在安静的角落里开始了今日的功课——修行从不嫌多。你的修为在不知不觉中又精进了一分——量变终将引发质变。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "日出",
+      "温暖",
+      "灵气",
+      "入体"
+    ]
+  },
+  {
+    "id": "mortal_extra_25038",
+    "text": "你被雷劈了却毫发无损",
+    "expanded_text": "你在溪旁打坐——水声有助于你入定。你在修炼中隐约触碰到了某种感悟——虽然还不清晰，但它就在那里。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "雷劈",
+      "毫发无损"
+    ]
+  },
+  {
+    "id": "mortal_extra_25039",
+    "text": "你在雪中打坐竟不觉得冷",
+    "expanded_text": "你独自一人在洞府中运功——时间不知不觉地流逝。你感受着灵力在体内流转——比昨日更加顺畅了。这是好兆头。你睁开眼——天色已变。不虚此坐。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "打坐"
+    ]
+  },
+  {
+    "id": "mortal_extra_25040",
+    "text": "你单手劈开了一块大石",
+    "expanded_text": "你全神贯注——将所有心力都放在了修炼之上。你感受着灵力在体内流转——比昨日更加顺畅了。这是好兆头。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "单手",
+      "劈开",
+      "一块",
+      "大石"
+    ]
+  },
+  {
+    "id": "mortal_extra_25041",
+    "text": "一位仙人从你头上飞过",
+    "expanded_text": "你调整了几次呼吸后终于找到了节奏——修道路漫漫。你在修炼中隐约触碰到了某种感悟——虽然还不清晰，但它就在那里。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "仙人",
+      "头上",
+      "飞过"
+    ],
+    "npc_roles": [
+      "恩人"
+    ]
+  },
+  {
+    "id": "mortal_extra_25042",
+    "text": "你开始能看到夜里的细微光芒",
+    "expanded_text": "晨曦微露之时你便开始了今日的修炼——一日之计在于晨。你的丹田中灵力微微波动——又凝实了几分。好的方向。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "夜里",
+      "细微",
+      "光芒"
+    ]
+  },
+  {
+    "id": "mortal_extra_25043",
+    "text": "你感觉自己与天地有了联系",
+    "expanded_text": "今日的修炼格外顺畅——你心中暗喜。灵力在经脉中平稳运行——你感到了一丝进步。虽然微小，但确实在前进。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "天地",
+      "联系"
+    ]
+  },
+  {
+    "id": "mortal_extra_25044",
+    "text": "一阵清风拂过你竟悬浮了一瞬",
+    "expanded_text": "晨曦微露之时你便开始了今日的修炼——一日之计在于晨。灵气在体内走了数个周天——你的基础又扎实了一些。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "清风",
+      "拂过",
+      "悬浮",
+      "一瞬"
+    ]
+  },
+  {
+    "id": "mortal_extra_25045",
+    "text": "你在瀑布下打坐时入了定",
+    "expanded_text": "你盘膝而坐——灵力随着呼吸缓缓流转。修炼的过程枯燥而重复——可你知道每一次重复都在为未来的突破积累力量。你起身活动了一下——今日到此为止。明天继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "瀑布",
+      "打坐",
+      "时入"
+    ]
+  },
+  {
+    "id": "mortal_extra_25046",
+    "text": "你无意识地走了一套奇怪的步伐",
+    "expanded_text": "你心无旁骛地投入了修炼——外界的一切都被隔绝在意识之外。你感受着灵力在体内流转——比昨日更加顺畅了。这是好兆头。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "一套",
+      "奇怪",
+      "步伐",
+      "无意识",
+      "地走了"
+    ]
+  },
+  {
+    "id": "mortal_extra_25047",
+    "text": "你感到丹田位置有微微发热",
+    "expanded_text": "你全神贯注——将所有心力都放在了修炼之上。你的修为在不知不觉中又精进了一分——量变终将引发质变。收功之际你自审了一番——嗯，比昨日好了一点。继续。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "丹田",
+      "位置",
+      "微微",
+      "发热"
+    ]
+  },
+  {
+    "id": "mortal_extra_25048",
+    "text": "你在静坐中听到了天地间的声音",
+    "expanded_text": "你花了些时间回顾了近来修炼的得失——然后开始了新一轮的练习。你感受着灵力在体内流转——比昨日更加顺畅了。这是好兆头。你默默记下了今日的心得——这些碎片总有一天会拼成完整的图画。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "静坐",
+      "天地",
+      "声音"
+    ]
+  },
+  {
+    "id": "mortal_extra_25049",
+    "text": "你的双眼在夜里微微发光",
+    "expanded_text": "你在灵气充沛之处坐下——感受着天地灵力的脉动。你在修炼中隐约触碰到了某种感悟——虽然还不清晰，但它就在那里。你长舒一口气——修炼虽苦，可那份进步的感觉令人欣慰。",
+    "category": "common",
+    "conditions": {
+      "min_realm": 0,
+      "max_realm": 0
+    },
+    "weight": 45,
+    "effects": {},
+    "tags": [
+      "mortal_life"
+    ],
+    "event_type": "normal",
+    "keywords": [
+      "双眼",
+      "夜里",
+      "微微",
+      "发光"
+    ]
   }
 ]

@@ -5,12 +5,15 @@ At runtime, when an event with npc_slot is selected:
 2. Replace {master}/{rival}/{lover}/etc. placeholders with actual NPC name
 3. Track which NPC is involved for memory and narrative systems
 
-Design principle: Same slot maps to the same NPC throughout a game session.
-e.g., all "master" events always reference the same master NPC until that NPC dies.
+Design principles:
+- master/lover: Single-binding — same slot maps to the same NPC until death.
+- fellow/friend/rival: Multi-instance — multiple NPCs can coexist,
+  events rotate among them based on absence duration + randomness.
 """
 from __future__ import annotations
 
 import re
+import random
 import logging
 from typing import Optional, TYPE_CHECKING
 
@@ -134,24 +137,90 @@ class EventNPCResolver:
         else:
             return self._resolve_specific_role(state, slot, event)
 
+    # Slots that support multiple NPC instances with rotation
+    MULTI_NPC_SLOTS = {"fellow", "friend", "rival"}
+
+    # Per-type alive NPC caps for multi-instance slots
+    MULTI_NPC_CAPS = {
+        "fellow": 20,   # 同门上限20个
+        "friend": 20,   # 挚友上限20个
+        "rival": 10,    # 宿敌上限10个
+    }
+
     def _resolve_specific_role(self, state: "GameState", slot: str, event: dict) -> Optional["NPC"]:
-        """Resolve a specific role slot (master/lover/rival/fellow/friend)."""
+        """Resolve a specific role slot.
+
+        - master/lover: single-binding (first alive NPC of that type)
+        - fellow/friend/rival: multi-instance rotation (pick among all alive NPCs
+          of that type, preferring the one absent longest + some randomness)
+        """
         from .npc.models import NPC
 
         rel_type = SLOT_TO_RELATION.get(slot)
         if not rel_type:
             return None
 
-        # Try to find existing alive NPC with this relation
+        if slot in self.MULTI_NPC_SLOTS:
+            return self._resolve_multi_role(state, slot, rel_type, event)
+
+        # ── Single-binding logic (master / lover) ─────────────────────
         for rel_dict in state.relationships:
             if rel_dict.get("relation_type") == rel_type:
                 npc_dict = state.npc_registry.get(rel_dict.get("npc_id", ""))
                 if npc_dict and npc_dict.get("is_alive", True):
-                    # Record appearance
                     self._npc_manager._record_appearance(state, npc_dict.get("npc_id", rel_dict["npc_id"]))
                     return NPC(**npc_dict)
 
         # No existing NPC for this role — create one
+        role = self._slot_to_role_tag(slot)
+        npc = self._npc_manager.generate_npc(
+            state, role=role, relation_type=rel_type
+        )
+        return npc
+
+    def _resolve_multi_role(
+        self, state: "GameState", slot: str, rel_type: str, event: dict
+    ) -> Optional["NPC"]:
+        """Resolve a multi-instance role slot (fellow/friend/rival).
+
+        Selection strategy:
+        - Collect all alive NPCs with this relation type
+        - Score each: years_since_last_appearance * 1.0 + random(0, 10)
+        - Pick the highest scorer (naturally rotates among NPCs)
+        - If none exist, create a new one
+        """
+        from .npc.models import NPC
+
+        candidates = []
+        for rel_dict in state.relationships:
+            if rel_dict.get("relation_type") != rel_type:
+                continue
+            npc_dict = state.npc_registry.get(rel_dict.get("npc_id", ""))
+            if not npc_dict or not npc_dict.get("is_alive", True):
+                continue
+
+            last_seen = npc_dict.get("last_seen_age", 0)
+            years_absent = state.age - last_seen
+            score = years_absent * 1.0 + random.uniform(0, 10)
+            candidates.append((score, npc_dict, rel_dict))
+
+        if candidates:
+            # Pick highest-scored candidate
+            candidates.sort(key=lambda x: -x[0])
+            chosen_npc = candidates[0][1]
+            self._npc_manager._record_appearance(state, chosen_npc.get("npc_id", ""))
+            return NPC(**chosen_npc)
+
+        # No alive NPC of this type — create one (if under cap)
+        cap = self.MULTI_NPC_CAPS.get(slot, 5)
+        # Count ALL NPCs of this type (including dead) to avoid unbounded growth
+        total_count = sum(
+            1 for r in state.relationships if r.get("relation_type") == rel_type
+        )
+        if total_count >= cap:
+            # Cap reached — pick from dead NPCs as "故人" fallback, or return None
+            return None
+
         role = self._slot_to_role_tag(slot)
         npc = self._npc_manager.generate_npc(
             state, role=role, relation_type=rel_type

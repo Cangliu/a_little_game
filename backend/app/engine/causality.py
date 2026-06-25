@@ -338,12 +338,17 @@ class CausalityManager:
         # Remove resolved chains first
         chains[:] = [c for c in chains if not c.get("is_resolved")]
 
-        # Remove TTL-expired chains
+        # Remove TTL-expired chains (mark them resolved first for bookkeeping)
         if len(chains) >= MAX_CAUSAL_CHAINS:
-            chains[:] = [
-                c for c in chains
-                if (state.age - c.get("created_age", 0)) < c.get("max_wait_years", DEFAULT_MAX_WAIT_YEARS)
-            ]
+            surviving = []
+            for c in chains:
+                elapsed = state.age - c.get("created_age", 0)
+                if elapsed >= c.get("max_wait_years", DEFAULT_MAX_WAIT_YEARS):
+                    c["is_resolved"] = True
+                    c["resolved_age"] = state.age
+                else:
+                    surviving.append(c)
+            chains[:] = surviving
 
         # LRU eviction if still over limit
         while len(chains) >= MAX_CAUSAL_CHAINS:
@@ -456,6 +461,15 @@ class CausalityManager:
             hook["is_resolved"] = True
             hook["resolved_age"] = state.age
 
+        # Mark static hook as resolved directly (don't rely on re-processing)
+        if hook.get("hook_id"):
+            hook["is_resolved"] = True
+            hook["resolved_age"] = state.age
+            # Move from active to resolved list
+            if hook in state.plot_hooks:
+                state.plot_hooks.remove(hook)
+                state.resolved_hooks.append(hook)
+
         return event
 
     # ── Weight adjustments for static hooks (backward compat) ─────────
@@ -468,6 +482,8 @@ class CausalityManager:
                 continue
 
             hook_id = hook.get("hook_id", "")
+            if not hook_id:  # Skip hooks without valid id
+                continue
             created_age = hook.get("created_age", 0)
             max_wait = hook.get("max_wait_years", 100)
             years_elapsed = state.age - created_age

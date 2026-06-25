@@ -161,6 +161,7 @@ class SectManager:
         """Check if player qualifies for rank promotion.
 
         Returns event dict if promoted, None otherwise.
+        Cooldown: at least 30 years between promotions.
         """
         if not state.sect_membership:
             return None
@@ -169,6 +170,11 @@ class SectManager:
         current_rank = mem.get("rank", SectRank.OUTER_DISCIPLE.value)
         contribution = mem.get("contribution", 0)
         reputation = mem.get("reputation_in_sect", 50)
+
+        # Cooldown: prevent rapid consecutive promotions (min 30 years apart)
+        last_promotion_age = mem.get("last_promotion_age", 0)
+        if state.age - last_promotion_age < 30:
+            return None
 
         # Find current rank index
         current_idx = 0
@@ -192,6 +198,7 @@ class SectManager:
                 and state.realm >= min_realm):
             # Promote!
             mem["rank"] = next_rank.value
+            mem["last_promotion_age"] = state.age  # Record promotion time for cooldown
 
             sect = self.get_player_sect(state)
             sect_name = sect["name"] if sect else "宗门"
@@ -204,7 +211,7 @@ class SectManager:
                 "event_type": "fortune",
                 "category": "sect",
                 "effects": {"charisma": 1, "cultivation": 20},
-                "tags": [f"rank_{next_rank.name.lower()}"],
+                "tags": ["sect_promotion", f"rank_{next_rank.name.lower()}"],
             }
 
         return None
@@ -236,9 +243,12 @@ class SectManager:
                 events.append(mission_event)
 
         # Sect resource distribution (passive cultivation bonus)
-        if random.random() < 0.25:
+        # Cooldown: at least 5 years between distributions
+        last_resource_age = mem.get("last_resource_age", 0)
+        if state.age - last_resource_age >= 5 and random.random() < 0.25:
             bonus = self._get_resource_bonus(sect, rank)
             if bonus > 0:
+                mem["last_resource_age"] = state.age
                 events.append({
                     "id": f"sect_resource_{uuid.uuid4().hex[:6]}",
                     "text": f"{sect_name}按例发放修炼资源，你得到了灵石与丹药。",
@@ -343,8 +353,12 @@ class SectManager:
             old_type = rel.get("relation_type", SectRelationType.NEUTRAL.value)
             tension = rel.get("tension", 50)
 
-            # Tension drift
-            drift = random.randint(-10, 10)
+            # Tension drift with regression-to-mean bias
+            # Extremes (hostile/ally) pull back toward neutral (50) slowly
+            base_drift = random.randint(-10, 10)
+            # Add a small nudge toward 50 (regression force)
+            regression = (50 - tension) * 0.1  # e.g. tension=90 → -4, tension=10 → +4
+            drift = int(base_drift + regression)
             tension = max(0, min(100, tension + drift))
             rel["tension"] = tension
 
@@ -359,6 +373,9 @@ class SectManager:
 
             if new_type != old_type:
                 rel["relation_type"] = new_type
+                # Mark the turn this became hostile so invasion won't fire same turn
+                if new_type == SectRelationType.HOSTILE.value:
+                    rel["hostile_since_age"] = state.age
                 sa = sects.get(rel["sect_a_id"], {})
                 sb = sects.get(rel["sect_b_id"], {})
                 if sa and sb:
@@ -447,12 +464,18 @@ class SectManager:
         }
 
     def _find_hostile_sect(self, state: "GameState", player_sect_id: str) -> Optional[dict]:
-        """Find a hostile sect targeting the player's sect."""
+        """Find a hostile sect targeting the player's sect.
+        
+        Excludes relations that became hostile this same turn (prevents immediate invasion).
+        """
         relations = state.sect_world.get("relations", [])
         sects = state.sect_world.get("sects", {})
 
         for rel in relations:
             if rel.get("relation_type") != SectRelationType.HOSTILE.value:
+                continue
+            # Skip if just became hostile this turn
+            if rel.get("hostile_since_age", 0) == state.age:
                 continue
             if rel["sect_a_id"] == player_sect_id:
                 enemy = sects.get(rel["sect_b_id"])
@@ -509,6 +532,22 @@ class SectManager:
         """Handle sect destruction — marks sect as destroyed and ejects player."""
         sect_name = sect["name"]
         sect["is_destroyed"] = True
+
+        # Mark fellow disciples as dispersed/dead (宗门覆灭，同门流散)
+        for rel_dict in state.relationships:
+            if rel_dict.get("relation_type") != "同门":
+                continue
+            npc_id = rel_dict.get("npc_id", "")
+            npc_dict = state.npc_registry.get(npc_id)
+            if not npc_dict or not npc_dict.get("is_alive", True):
+                continue
+            # 50% chance dead in the destruction, 50% dispersed (alive but lost contact)
+            if random.random() < 0.5:
+                npc_dict["is_alive"] = False
+                rel_dict["is_dead"] = True
+            else:
+                npc_dict["status"] = "dispersed"
+                rel_dict["is_dispersed"] = True
 
         # Force player to leave
         leave_event = self.leave_sect(state, reason="宗门覆灭")

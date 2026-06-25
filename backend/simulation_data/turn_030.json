@@ -1,0 +1,549 @@
+{
+  "turn": 30,
+  "pre_state": {
+    "age": 69,
+    "realm": 2,
+    "realm_name": "筑基",
+    "gender": "female",
+    "life_phase": 5,
+    "cultivation": 907,
+    "tension": 10.0,
+    "attributes": {
+      "constitution": 6,
+      "comprehension": 10,
+      "fortune": 8,
+      "charisma": 10,
+      "willpower": 14
+    },
+    "sect": {
+      "name": "天医谷",
+      "rank": "内门弟子",
+      "contribution": 95,
+      "sect_type": "丹宗",
+      "reputation_in_sect": 67
+    },
+    "npcs": [],
+    "npc_count": 0,
+    "npc_alive_count": 0,
+    "active_arcs": [],
+    "main_storyline": null,
+    "used_event_count": 29,
+    "events_log_count": 47,
+    "is_dead": false,
+    "is_ascended": false,
+    "biography_summary": "18岁你选了一块被阳光烤得温热的大石坐下——闭目之前深深看了一眼天；18岁你已经在这里坐了三天三夜——不吃不喝，只有灵气维持着身体的运；22岁你亲眼目睹了天边的异象——那不是幻觉，是真真切切发生了。你在；25岁师父的话还在耳边回响——「去吧，什么时候想明白了，什么时候下；32岁天灾人祸从不提前打招呼——你只能仓促应对。你遭遇心魔侵袭，险",
+    "pending_choice": null
+  },
+  "post_state": {
+    "age": 75,
+    "realm": 2,
+    "realm_name": "筑基",
+    "gender": "female",
+    "life_phase": 5,
+    "cultivation": 600,
+    "tension": 50.0,
+    "attributes": {
+      "constitution": 5,
+      "comprehension": 10,
+      "fortune": 8,
+      "charisma": 10,
+      "willpower": 14
+    },
+    "sect": {
+      "name": "天医谷",
+      "rank": "内门弟子",
+      "contribution": 95,
+      "sect_type": "丹宗",
+      "reputation_in_sect": 67
+    },
+    "npcs": [],
+    "npc_count": 0,
+    "npc_alive_count": 0,
+    "active_arcs": [
+      {
+        "theme": "同门情谊",
+        "phase": "setup",
+        "npc_name": "",
+        "current_beat_index": 0,
+        "total_beats": 4,
+        "is_completed": false
+      },
+      {
+        "theme": "根基之路",
+        "phase": "setup",
+        "npc_name": "",
+        "current_beat_index": 0,
+        "total_beats": 4,
+        "is_completed": false
+      }
+    ],
+    "main_storyline": {
+      "storyline_id": "destiny_d16d85",
+      "archetype": "红尘历劫",
+      "archetype_description": "你的修仙之路注定充满红尘纠葛，唯有历尽情劫方能证道",
+      "destiny_beats": [
+        {
+          "description": "一朝顿悟，从此踏上逆天之路",
+          "target_realm": 1,
+          "keywords": [
+            "顿悟",
+            "觉醒",
+            "灵根",
+            "修炼"
+          ],
+          "is_completed": true,
+          "completion_age": 75,
+          "completion_summary": "灵根觉醒，踏入修仙之路",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "闭关苦修，练气有成",
+          "target_realm": 1,
+          "keywords": [
+            "闭关",
+            "修炼",
+            "入定",
+            "灵力"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "宗门中修行日久，渐有所成",
+          "target_realm": 2,
+          "keywords": [
+            "宗门",
+            "修炼",
+            "同门",
+            "功法"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "筑基途中遭遇大劫，道心经受考验",
+          "target_realm": 2,
+          "keywords": [
+            "筑基",
+            "遭遇",
+            "道心",
+            "生死"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "遭遇瓶颈，闭关苦思终突破",
+          "target_realm": 2,
+          "keywords": [
+            "闭关",
+            "突破",
+            "领悟",
+            "修炼"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "至亲陨落，化悲愤为修行之力",
+          "target_realm": 3,
+          "keywords": [
+            "陨落",
+            "修炼",
+            "蜕变",
+            "道心"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "参悟大道之理，金丹之力凝实",
+          "target_realm": 3,
+          "keywords": [
+            "参悟",
+            "大道",
+            "金丹",
+            "修炼"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "深入遗迹，寻觅上古机缘",
+          "target_realm": 3,
+          "keywords": [
+            "遗迹",
+            "机缘",
+            "探索",
+            "宝物"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "领悟天道法则，元婴之力浩瀚无边",
+          "target_realm": 4,
+          "keywords": [
+            "领悟",
+            "天道",
+            "法则",
+            "元婴"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "旧日因果浮现，逐一清算",
+          "target_realm": 4,
+          "keywords": [
+            "遭遇",
+            "追杀",
+            "道心",
+            "蜕变"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "功法大成，实力今非昔比",
+          "target_realm": 4,
+          "keywords": [
+            "功法",
+            "修为",
+            "突破",
+            "神通"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "感应天劫之力，心中无惧",
+          "target_realm": 5,
+          "keywords": [
+            "天劫",
+            "渡劫",
+            "道心",
+            "化神"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        },
+        {
+          "description": "渡天劫，一步登天问道飞升",
+          "target_realm": 5,
+          "keywords": [
+            "天劫",
+            "飞升",
+            "渡劫",
+            "化神"
+          ],
+          "is_completed": false,
+          "completion_age": 0,
+          "completion_summary": "",
+          "is_modified": false,
+          "original_description": ""
+        }
+      ],
+      "current_beat_index": 1,
+      "momentum": 10,
+      "pivots": [],
+      "created_at_age": 75,
+      "is_completed": false
+    },
+    "used_event_count": 30,
+    "events_log_count": 49,
+    "is_dead": false,
+    "is_ascended": false,
+    "biography_summary": "18岁你选了一块被阳光烤得温热的大石坐下——闭目之前深深看了一眼天；18岁你已经在这里坐了三天三夜——不吃不喝，只有灵气维持着身体的运；22岁你亲眼目睹了天边的异象——那不是幻觉，是真真切切发生了。你在；25岁师父的话还在耳边回响——「去吧，什么时候想明白了，什么时候下；32岁天灾人祸从不提前打招呼——你只能仓促应对。你遭遇心魔侵袭，险",
+    "pending_choice": null
+  },
+  "events": [
+    {
+      "text": "修炼炼体时失误，心魔侵袭",
+      "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼炼体时失误，心魔侵袭你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+      "type": "danger",
+      "category": "calamity",
+      "age": 75
+    },
+    {
+      "text": "金丹未成，真元崩散！你强忍内伤，艰难收功。",
+      "expanded_text": "真元在丹田中旋转、压缩，眼看就要凝结成丹，却在最后一刻崩散开来。那股反噬的力量冲击着你的经脉，几条细脉当场碎裂。你双目赤红，血从嘴角溢出，却不敢有丝毫松懈——若此刻放弃收功，只怕走火入魔。你咬牙苦撑了三天三夜，才将失控的真元勉强按下。",
+      "type": "danger",
+      "category": "cultivation",
+      "age": 75
+    }
+  ],
+  "event_selection": {
+    "candidates": [
+      {
+        "index": 0,
+        "id": "social_013",
+        "text": "师父坐化前将衣钵传于你。",
+        "expanded_text": "师父已躺在床上喘息许久，今日忽然挣扎着坐起，把你叫到榻前。他从枕下取出那本翻得起毛的玉简：「徒儿，这是我一生的修行心得，从今往后你便是本门继承之人。」你跪下接过，手抖得厉害。师父看了看你，闭上了眼——再没睁开。",
+        "weight": 50.4,
+        "event_type": "important",
+        "category": "social",
+        "tags": [
+          "social",
+          "master"
+        ],
+        "effects": {
+          "cultivation": 50,
+          "willpower": 2
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 1,
+        "id": "found_cala_07825",
+        "text": "你遭遇灵气暴动，险些丧命",
+        "expanded_text": "天有不测风云——你今日便遇到了一劫。你遭遇灵气暴动，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了。下次未必有这么幸运。",
+        "weight": 44.1,
+        "event_type": "danger",
+        "category": "calamity",
+        "tags": [
+          "calamity",
+          "foundation"
+        ],
+        "effects": {
+          "constitution": -1,
+          "cultivation": 2
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★生死大劫"
+      },
+      {
+        "index": 2,
+        "id": "found_cala_07826",
+        "text": "你遭遇禁制反噬，险些丧命",
+        "expanded_text": "天有不测风云——你今日便遇到了一劫。你遭遇禁制反噬，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+        "weight": 44.1,
+        "event_type": "danger",
+        "category": "calamity",
+        "tags": [
+          "calamity",
+          "foundation"
+        ],
+        "effects": {
+          "constitution": -1,
+          "cultivation": -4
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★生死大劫"
+      },
+      {
+        "index": 3,
+        "id": "found_cala_07827",
+        "text": "你遭遇时空乱流，险些丧命",
+        "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。你遭遇时空乱流，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你咬着牙挺了过来——修道之人，死都不怕，还怕这个？",
+        "weight": 44.1,
+        "event_type": "danger",
+        "category": "calamity",
+        "tags": [
+          "calamity",
+          "foundation"
+        ],
+        "effects": {
+          "constitution": -1,
+          "cultivation": -3
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★生死大劫"
+      },
+      {
+        "index": 4,
+        "id": "found_cala_07829",
+        "text": "你遭遇毒瘴侵体，险些丧命",
+        "expanded_text": "你被一股突如其来的力量卷入了困境——你遭遇毒瘴侵体，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+        "weight": 44.1,
+        "event_type": "danger",
+        "category": "calamity",
+        "tags": [
+          "calamity",
+          "foundation"
+        ],
+        "effects": {
+          "constitution": -1,
+          "cultivation": 4
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★生死大劫"
+      },
+      {
+        "index": 5,
+        "id": "found_cala_07831",
+        "text": "你遭遇妖兽围攻，险些丧命",
+        "expanded_text": "修道路上哪有一帆风顺的——该来的劫难终究躲不过。你遭遇妖兽围攻，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+        "weight": 44.1,
+        "event_type": "danger",
+        "category": "calamity",
+        "tags": [
+          "calamity",
+          "foundation"
+        ],
+        "effects": {
+          "constitution": -1,
+          "cultivation": 5
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★生死大劫"
+      },
+      {
+        "index": 6,
+        "id": "found_cala_07837",
+        "text": "你遭遇经脉逆转，险些丧命",
+        "expanded_text": "你感到了一股危险的气息逼近——你迅速进入了戒备状态。你遭遇经脉逆转，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+        "weight": 44.1,
+        "event_type": "danger",
+        "category": "calamity",
+        "tags": [
+          "calamity",
+          "foundation"
+        ],
+        "effects": {
+          "constitution": -1,
+          "cultivation": 4
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★生死大劫"
+      },
+      {
+        "index": 7,
+        "id": "found_cala_07840",
+        "text": "你遭遇走火入魔，险些丧命",
+        "expanded_text": "你紧绷的神经告诉你——情况不妙。你遭遇走火入魔，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空发了会儿呆——然后默默收拾残局。",
+        "weight": 44.1,
+        "event_type": "danger",
+        "category": "calamity",
+        "tags": [
+          "calamity",
+          "foundation"
+        ],
+        "effects": {
+          "constitution": 0,
+          "cultivation": 0
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★生死大劫"
+      },
+      {
+        "index": 8,
+        "id": "found_cala_07850",
+        "text": "你遭遇天劫余波，险些丧命",
+        "expanded_text": "今日之事来得猝不及防——你甚至没有做好准备。你遭遇天劫余波，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你拖着疲惫的身体回到了安全的地方——活着就好。",
+        "weight": 44.1,
+        "event_type": "danger",
+        "category": "calamity",
+        "tags": [
+          "calamity",
+          "foundation"
+        ],
+        "effects": {
+          "constitution": 0,
+          "cultivation": -5
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★生死大劫"
+      },
+      {
+        "index": 9,
+        "id": "found_cala_07852",
+        "text": "修炼炼体时失误，心魔侵袭",
+        "expanded_text": "你的心猛地一沉——有什么不好的事情正在发生。修炼炼体时失误，心魔侵袭你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。",
+        "weight": 44.1,
+        "event_type": "danger",
+        "category": "calamity",
+        "tags": [
+          "calamity",
+          "foundation"
+        ],
+        "effects": {
+          "constitution": -1,
+          "cultivation": 4
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★生死大劫"
+      }
+    ],
+    "system_prompt": "你是修仙世界的命运编织者。从候选事件中选择最适合当前叙事节奏的一个，为主角生成沉浸式叙事，并决定是否需要玩家做出选择。\n\n【不可违反的硬约束】\n- 输出纯JSON，不要添加任何其他文字或markdown标记\n- 格式: {\"chosen\": 编号(1开始), \"narrative\": \"叙事文本\", \"has_choice\": bool, \"branches\": [分支数组]或null, \"causal_chain\": null或{\"cause\": \"...\", \"expected_resolution\": \"...\", \"keywords\": [...]}}\n- narrative: 第二人称叙事，200-300字，符合当前境界和基调\n- 主角当前为筑基期，不得描写超越此境界的神通\n- 主角性别为女，叙事需与之一致\n- 不得决定主角死亡或突破境界，这些由游戏引擎控制\n\n【选择事件的决策原则】\n- 带★标记的事件为稀有/重大事件，建议优先考虑（但非强制，需结合叙事节奏判断）\n- 高张力(≥70)时优选缓解类事件(fortune/normal)；低张力(<30)时优选冲突类(danger/important)\n- 有未了之事时，优先选能推进因果的事件(带\"可解决因果\"标记的)\n- 当前剧情线活跃时，优先选与剧情线相关的事件\n- 必须与已有NPC交互史保持一致（不得矛盾）\n- ★事件即使与当前节奏稍有冲突，也可适当选择以增加游戏趣味性和意外感\n\n【叙事风格指导】\n- danger事件：节奏紧凑，善用短句，营造紧迫感和生死悬念\n- fortune事件：先抑后扬，让人感受到惊喜和机缘的分量\n- important事件：注重仪式感和命运转折的重量，可稍长\n- normal事件：淡写日常，重在生活气息和细节感\n- funny/adult事件：活泼的笔调，可幽默，善用感官描写\n\n【文体与用词约束】\n- 整体风格偏《凡人修仙传》式半文半白，善用四字短句、对仗、以景写情\n- 禁用现代词汇：能量→灵气，朋友→道友，老师→师尊，世界→天地/世间，感觉→感应，爆发→迈发，故事→因果/经历\n- 凡人期(境界0)：纯口语白话，朴实无华，有烟火气；不用任何修仙术语\n- 练气/筑基期：口语为主，开始穿插修仙术语，初入仙途的新鲜感与敬畏\n- 金丹/元婴期：四字短句增多，半文言比例升高，历练后的沉稳淡然，岁月沉淀感\n- 化神期：偏文言，简洁凝练，超脱视角，有哲学意味，「百年弹指一挥间」的时间观\n- 情感表达以景写情为主（\"老松落了一地针叶\"而非\"你很伤心\"）\n- 每句话都应推进叙事或揭示信息，禁止空洞词藻和重复描写\n\n【各境界叙事范文（仅供风格参考，不要照抄）】\n- 凡人期范文：「入秋后村头的老槐树落了满地黄叶。你蹲在溪边洗衣裳，忽然瞧见水里有条红尾鲤鱼，足有小臂长。你伸手去抓，扑了个空，倒溅了一身水。隔壁王大娘笑骂你不学好，你嘿嘿一笑，心想明天再来。」\n- 练气期范文：「清晨的雾气沿山涧漫上来时，你正盘膝于崖畔石台之上。丹田中那缕灵气虽细若游丝，却已能循经脉缓缓运转。师尊说过，练气之道贵在水磨工夫。你吐纳三十六周天，收功时指尖微微发麻——这是灵气初成的征兆。」\n- 金丹期范文：「洞府外大雪封山，你已不觉寒暑。金丹初成那日种下的青松，如今已亭亭如盖。数十年光阴弹指而过，当年同门的面容在记忆中渐渐模糊，唯有道心愈发澄明。远处传来鹤唳，你睁目望去，云海翻涌间似有虹光一闪。」\n- 化神期范文：「千峰如聚，万壑争流。你立于九霄之上，衣袂猎猎。天地灵气于周身汇聚如潮，吞吐之间，山河尽收眸底。百年修行至此，生死荣辱俱成云烟。你抬手，指尖凝出一缕清光——万法归一，不过如此。」\n\n【上下文引用硬规则】\n- 如果事件涉及已知NPC，叙事中必须引用至少1条交往史细节或关系变化\n- 如果有活跃因果链与事件相关，叙事中必须暗示伏笔（如“当年之事...”）\n- 如果有活跃Saga，叙事调性需呼应Saga方向\n- 叙事必须体现当前人生阶段的时间感（金丹期不写“今天”而写“数年之间”）\n\n【causal_chain 可选输出 — 因果链创建】\n- 当你生成的叙事中出现重大未解之事（师父失踪、仇敌逃脱、宝物被夺、誓言许下等），输出causal_chain字段\n- 普通日常事件不需要输出此字段（设为null）\n- cause: 一句话描述起因\n- expected_resolution: 一句话描述预期的解决方向\n- keywords: 3-5个与解决方向相关的关键词（用于未来事件匹配）\n- 约30-40%的事件适合创建因果链，不要每次都创建\n\n【是否生成选择分支的判断】\n- 当事件类型为danger/important/fortune且叙事中有明显的抉择时刻时，has_choice=true\n- 普通修炼/日常事件不需要分支，has_choice=false\n- 分支概率约为30-40%，不要每次都生成\n\n【分支格式(当has_choice=true)】\n- branches为2-3个选项的数组\n- 每个选项: {\"text\":\"≤20字\", \"success_rate\": 基础成功率(30-80), \"check_attribute\": \"主属性名\", \"effects\":{...}, \"result_text\":\"成功叙述50-100字\", \"failure_effects\":{...}, \"failure_text\":\"失败叙述50-100字\", \"consequence_tag\":\"后果标签\", \"consequence_desc\":\"因果描述\"}\n- success_rate: 冒险选项 30-50, 稳妥选项 70-90\n- check_attribute: constitution(战斗/体力), comprehension(悟道/机关), fortune(机缘/运气), charisma(社交/说服), willpower(心魔/坚持)\n- effects可用字段: cultivation(int,-30~50), constitution/comprehension/fortune/charisma/willpower(int,-3~3), add_tag(str)\n- failure_effects通常为小幅负收益(cultivation -10~5, 属性 -2~0)，失败不等于死亡\n- 选项必须有实质性差异，至少一个冒险选项、一个稳妥选项\n- consequence_tag必须使用事件池中已有的标签或其下划线拓展形式，可用值包括: combat, fortune, calamity, social, practice, exploration, npc, meditation, treasure, secret_realm, discovery, resource, technique, insight, philosophy, market, pill, sword, betrayal, romance 等，也可用复合形式如 combat_injury, fortune_windfall, social_debt, npc_betrayal 等\n- consequence_tag和consequence_desc可为空字符串\n\n【修为体系】\n凡人 → 练气 → 筑基 → 金丹 → 元婴 → 化神 → 渡劫飞升\n\n【输出示例】\n{\"chosen\": 3, \"narrative\": \"你在山间修炼时...\", \"has_choice\": true, \"branches\": [{\"text\": \"拔剑迎战\", \"effects\": {\"cultivation\": 20, \"constitution\": -1}, \"result_text\": \"你挺身而出...\", \"consequence_tag\": \"勇名远播\", \"consequence_desc\": \"你的勇武之名在修仙界传开\"}], \"causal_chain\": {\"cause\": \"师父身受重伤飘然而去\", \"expected_resolution\": \"寻找救治师父的方法\", \"keywords\": [\"师父\", \"重伤\", \"救治\", \"寻找\"]}}",
+    "user_prompt": "【传记摘要】\n18岁你选了一块被阳光烤得温热的大石坐下——闭目之前深深看了一眼天；18岁你已经在这里坐了三天三夜——不吃不喝，只有灵气维持着身体的运；22岁你亲眼目睹了天边的异象——那不是幻觉，是真真切切发生了。你在；25岁师父的话还在耳边回响——「去吧，什么时候想明白了，什么时候下；32岁天灾人祸从不提前打招呼——你只能仓促应对。你遭遇心魔侵袭，险\n\n【天地大势】\n天下太平，无特殊大势\n\n【人际关系】\n暂无已知人际关系\n\n【剧情线/命运线】\n无活跃剧情线\n\n【活跃 Saga】\n无活跃长线Saga\n\n【未了之事】\n无\n\n【因果暗线】\n无活跃因果链\n\n【主角状态】\n- 境界: 筑基期, 75岁, 女\n- 属性: 根骨6 悟性10 福缘8 魅力10 心性14\n- 宗门: 天医谷·内门弟子\n- 张力: 10/100\n- 叙事基调: 道途渐深，历劫成长\n\n【与涉事NPC的交往史】\n无相关交往史\n\n【近期经历】\n  62岁: 你在古寺废墟入定修炼，你顿悟了生死轮回之理。\n  69岁: 修炼时你隐约触摸到一层无形的壁障——金丹的门槛近在咫尺。\n  69岁: 天医谷派遣你代为传书，你圆满完成了任务。\n  69岁: 天医谷按例发放修炼资源，你得到了灵石与丹药。\n  69岁: 你望着天空出神，不知不觉过了一天。\n  ---回顾---\n  1岁: 那年的雨从开春就没下过一滴。你爹每天蹲在田埂上看天——从满怀希望看到面无表情。秋\n  8岁: 村里一半的人都病倒了——烧得说胡话、起不来床。王婶家的小儿子没挺过去——你看着她\n  15岁: 天有不测风云——你今日便遇到了一劫。你遭遇山贼你咬着牙硬撑了过来——修道之路不是\n  22岁: 你亲眼目睹了天边的异象——那不是幻觉，是真真切切发生了。你在脑中推演了几种可能的\n\n【相关记忆】\n  32岁: 天灾人祸从不提前打招呼——你只能仓促应对。你遭遇心魔侵袭，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空\n  15岁: 天有不测风云——你今日便遇到了一劫。你遭遇山贼你咬着牙硬撑了过来——修道之路不是请客吃饭。你喘了口气——这次算是扛过来了\n  44岁: 你在灵台深处看见了不属于这一世的画面——你看见了一幕场景——那是很久以后的事。你不确定那是预言还是警告——但你记住了其中\n\n【候选事件】\n1. ★命运转折 师父坐化前将衣钵传于你。 [important] 标签:social, master 效果:cultivation+50,willpower+2\n2. ★生死大劫 你遭遇灵气暴动，险些丧命 [danger] 标签:calamity, foundation 效果:constitution-1,cultivation+2\n3. ★生死大劫 你遭遇禁制反噬，险些丧命 [danger] 标签:calamity, foundation 效果:constitution-1,cultivation-4\n4. ★生死大劫 你遭遇时空乱流，险些丧命 [danger] 标签:calamity, foundation 效果:constitution-1,cultivation-3\n5. ★生死大劫 你遭遇毒瘴侵体，险些丧命 [danger] 标签:calamity, foundation 效果:constitution-1,cultivation+4\n6. ★生死大劫 你遭遇妖兽围攻，险些丧命 [danger] 标签:calamity, foundation 效果:constitution-1,cultivation+5\n7. ★生死大劫 你遭遇经脉逆转，险些丧命 [danger] 标签:calamity, foundation 效果:constitution-1,cultivation+4\n8. ★生死大劫 你遭遇走火入魔，险些丧命 [danger] 标签:calamity, foundation\n9. ★生死大劫 你遭遇天劫余波，险些丧命 [danger] 标签:calamity, foundation 效果:cultivation-5\n10. ★生死大劫 修炼炼体时失误，心魔侵袭 [danger] 标签:calamity, foundation 效果:constitution-1,cultivation+4\n\n请选择最适合的事件编号，生成叙事，并决定是否需要玩家选择（纯JSON）：",
+    "llm_would_be_needed": true,
+    "llm_skip_reason": null,
+    "model_grade": "Flash",
+    "fallback_chosen_index": 9,
+    "fallback_narrative_preview": "你的心猛地一沉——有什么不好的事情正在发生。修炼炼体时失误，心魔侵袭你咬着牙硬撑了过来——修道之路不是请客吃饭。劫难过后你默默疗伤——每一次受伤都是一种历练。"
+  },
+  "breakthrough": {
+    "event_text": "金丹未成，真元崩散！你强忍内伤，艰难收功。",
+    "realm": 2,
+    "note": "突破叙事需要LLM扩写(当前返回原始文本)"
+  },
+  "auto_choice": null,
+  "result_summary": {
+    "age": 75,
+    "realm": 2,
+    "realm_name": "筑基",
+    "years_passed": 6,
+    "is_dead": false,
+    "death_reason": "",
+    "is_ascended": false,
+    "has_choice": false,
+    "tension": 50.0,
+    "ai_enhanced": false
+  }
+}

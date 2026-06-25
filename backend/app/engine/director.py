@@ -142,6 +142,8 @@ class GameDirector:
             sect_join = self.sect_manager.random_sect_join_at_awakening(state)
             if sect_join:
                 events.append(sect_join)
+                # Batch generate 2-3 fellow disciples for multi-NPC rotation
+                self.npc_manager.generate_fellow_disciples(state, count=_rand.randint(2, 3))
 
         # Phase 4: Cultivation gain (scaled by time step)
         self.realm_system.process_cultivation(state, years=time_step)
@@ -179,8 +181,19 @@ class GameDirector:
         era_event = self.era_manager.check_era_transition(state)
         if era_event:
             priority_events.append(era_event)
+
+        # NPC destiny advancement FIRST (may kill NPCs, affecting subsequent checks)
+        destiny_events = self.npc_manager.advance_npc_destiny(state)
+        priority_events.extend(destiny_events)
+
+        # Immediately sync tombstones for NPCs killed by destiny beats
+        self._sync_dead_npc_tombstones(state)
+
+        # NPC regular events AFTER destiny (dead NPCs naturally skipped by is_alive check)
         npc_events = self.npc_manager.check_npc_events(state)
         priority_events.extend(npc_events)
+
+        # Sect events
         sect_events = self.sect_manager.check_sect_events(state)
         priority_events.extend(sect_events)
         # Sect world evolution, promotion, crisis
@@ -209,9 +222,9 @@ class GameDirector:
             opportunity = self.sect_manager.check_new_sect_opportunity(state)
             if opportunity:
                 priority_events.append(opportunity)
-        # NPC destiny advancement
-        destiny_events = self.npc_manager.advance_npc_destiny(state)
-        priority_events.extend(destiny_events)
+
+        # ── Mutual exclusion filter: remove conflicting events ──────────
+        priority_events = self._filter_conflicting_priority_events(priority_events)
 
         for ev in priority_events:
             self.event_system.apply_effects(ev, state)
@@ -379,6 +392,8 @@ class GameDirector:
             sect_join = self.sect_manager.random_sect_join_at_awakening(state)
             if sect_join:
                 events.append(sect_join)
+                # Batch generate 2-3 fellow disciples for multi-NPC rotation
+                self.npc_manager.generate_fellow_disciples(state, count=_rand.randint(2, 3))
 
         # Phase 4: Cultivation gain
         self.realm_system.process_cultivation(state, years=time_step)
@@ -412,8 +427,19 @@ class GameDirector:
         era_event = self.era_manager.check_era_transition(state)
         if era_event:
             priority_events.append(era_event)
+
+        # NPC destiny advancement FIRST (may kill NPCs, affecting subsequent checks)
+        destiny_events = self.npc_manager.advance_npc_destiny(state)
+        priority_events.extend(destiny_events)
+
+        # Immediately sync tombstones for NPCs killed by destiny beats
+        self._sync_dead_npc_tombstones(state)
+
+        # NPC regular events AFTER destiny (dead NPCs naturally skipped)
         npc_events = self.npc_manager.check_npc_events(state)
         priority_events.extend(npc_events)
+
+        # Sect events
         sect_events = self.sect_manager.check_sect_events(state)
         priority_events.extend(sect_events)
         world_events = self.sect_manager.advance_sect_world(state)
@@ -441,8 +467,9 @@ class GameDirector:
             opportunity = self.sect_manager.check_new_sect_opportunity(state)
             if opportunity:
                 priority_events.append(opportunity)
-        destiny_events = self.npc_manager.advance_npc_destiny(state)
-        priority_events.extend(destiny_events)
+
+        # ── Mutual exclusion filter: remove conflicting events ──────────
+        priority_events = self._filter_conflicting_priority_events(priority_events)
 
         for ev in priority_events:
             self.event_system.apply_effects(ev, state)
@@ -644,6 +671,8 @@ class GameDirector:
             state.events_log.append({
                 "age": state.age,
                 "text": ev.get("text", ""),
+                "category": ev.get("category", "common"),
+                "event_type": ev.get("event_type", "normal"),
             })
 
     def _post_year_update(self, state: GameState, events: list) -> None:
@@ -703,6 +732,85 @@ class GameDirector:
             delta -= 3  # Injury implies negative interaction
 
         return max(-10, min(10, delta))
+
+    # ── Priority event mutual exclusion ───────────────────────────────
+
+    @staticmethod
+    def _filter_conflicting_priority_events(events: list[dict]) -> list[dict]:
+        """Remove mutually exclusive events from the priority event list.
+
+        Rules:
+        1. Expulsion/demotion → cancel sect promotion, politics, crisis events
+        2. NPC death (destiny beat) → cancel regular events for the same NPC
+        3. Sect joined → cancel "new sect opportunity" events
+        """
+        if not events:
+            return events
+
+        # Detect conflict signals
+        has_expulsion = any("expulsion" in str(ev.get("tags", [])) or
+                           "逐出" in ev.get("text", "") or
+                           "开除" in ev.get("text", "")
+                           for ev in events)
+        has_demotion = any("demotion" in str(ev.get("tags", [])) or
+                          "降职" in ev.get("text", "") or
+                          "贬为" in ev.get("text", "")
+                          for ev in events)
+
+        # Collect NPC IDs that died in destiny beats this turn
+        dead_npc_ids: set[str] = set()
+        for ev in events:
+            if "npc_destiny" in str(ev.get("tags", [])):
+                ev_text = ev.get("text", "") + ev.get("expanded_text", "")
+                if "陨落" in ev_text or "身亡" in ev_text or "殒命" in ev_text:
+                    npc_id = ev.get("involved_npc_id", "")
+                    if npc_id:
+                        dead_npc_ids.add(npc_id)
+
+        # Apply exclusion rules
+        filtered = []
+        for ev in events:
+            ev_tags = set(ev.get("tags", []))
+            ev_text = ev.get("text", "")
+
+            # Rule 1: Expulsion cancels positive sect events
+            if has_expulsion:
+                if any(t in ev_tags for t in ("sect_promotion", "sect_politics", "sect_crisis")):
+                    continue
+                if "晋升" in ev_text or "擢升" in ev_text:
+                    continue
+
+            # Rule 1b: Demotion cancels promotion
+            if has_demotion:
+                if "sect_promotion" in ev_tags or "晋升" in ev_text:
+                    continue
+
+            # Rule 2: Dead NPC cancels their regular events
+            if dead_npc_ids:
+                ev_npc_id = ev.get("involved_npc_id", "")
+                if ev_npc_id and ev_npc_id in dead_npc_ids:
+                    # Keep the destiny death event itself, skip others
+                    if "npc_destiny" not in str(ev_tags):
+                        continue
+
+            filtered.append(ev)
+
+        return filtered
+
+    @staticmethod
+    def _sync_dead_npc_tombstones(state: GameState) -> None:
+        """Immediately mark relationships as dead for NPCs whose is_alive was set to False.
+
+        This ensures tombstones are in place before subsequent systems
+        (check_npc_events, event_system.check_conditions) query relationships.
+        """
+        for rel in state.relationships:
+            if rel.get("is_dead"):
+                continue
+            npc_id = rel.get("npc_id", "")
+            npc_dict = state.npc_registry.get(npc_id)
+            if npc_dict and not npc_dict.get("is_alive", True):
+                rel["is_dead"] = True
 
     @staticmethod
     def _get_arc_keywords(state: GameState) -> list:
@@ -974,6 +1082,8 @@ class GameDirector:
             state.events_log.append({
                 "age": state.age,
                 "text": ev_text,
+                "category": ev.get("category", "common"),
+                "event_type": ev.get("event_type", "normal"),
             })
 
         # Build sect info for frontend

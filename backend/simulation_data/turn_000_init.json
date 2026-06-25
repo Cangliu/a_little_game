@@ -1,0 +1,32 @@
+{
+  "action": "start",
+  "game_id": "79a81c04",
+  "initial_state": {
+    "age": 0,
+    "realm": 0,
+    "realm_name": "凡人",
+    "gender": "female",
+    "life_phase": 0,
+    "cultivation": 0,
+    "tension": 0.0,
+    "attributes": {
+      "constitution": 3,
+      "comprehension": 5,
+      "fortune": 2,
+      "charisma": 3,
+      "willpower": 6
+    },
+    "sect": null,
+    "npcs": [],
+    "npc_count": 0,
+    "npc_alive_count": 0,
+    "active_arcs": [],
+    "main_storyline": null,
+    "used_event_count": 0,
+    "events_log_count": 0,
+    "is_dead": false,
+    "is_ascended": false,
+    "biography_summary": "",
+    "pending_choice": null
+  }
+}

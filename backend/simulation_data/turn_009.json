@@ -1,0 +1,284 @@
+{
+  "turn": 9,
+  "pre_state": {
+    "age": 8,
+    "realm": 0,
+    "realm_name": "凡人",
+    "gender": "female",
+    "life_phase": 1,
+    "cultivation": 0,
+    "tension": 40.0,
+    "attributes": {
+      "constitution": 4,
+      "comprehension": 8,
+      "fortune": 4,
+      "charisma": 4,
+      "willpower": 6
+    },
+    "sect": null,
+    "npcs": [],
+    "npc_count": 0,
+    "npc_alive_count": 0,
+    "active_arcs": [],
+    "main_storyline": null,
+    "used_event_count": 8,
+    "events_log_count": 8,
+    "is_dead": false,
+    "is_ascended": false,
+    "biography_summary": "",
+    "pending_choice": null
+  },
+  "post_state": {
+    "age": 9,
+    "realm": 0,
+    "realm_name": "凡人",
+    "gender": "female",
+    "life_phase": 1,
+    "cultivation": 0,
+    "tension": 45.0,
+    "attributes": {
+      "constitution": 4,
+      "comprehension": 9,
+      "fortune": 4,
+      "charisma": 4,
+      "willpower": 6
+    },
+    "sect": null,
+    "npcs": [],
+    "npc_count": 0,
+    "npc_alive_count": 0,
+    "active_arcs": [],
+    "main_storyline": null,
+    "used_event_count": 9,
+    "events_log_count": 9,
+    "is_dead": false,
+    "is_ascended": false,
+    "biography_summary": "",
+    "pending_choice": null
+  },
+  "events": [
+    {
+      "text": "你9岁时，路边捡到一本残破的古书，上面的字你竟认得几个。",
+      "expanded_text": "路边泥里露出一角黄纸——你捡起来是本破书，大半页都烂了。可剩下的字你竟然认识几个。你把它夹在席子下面藏着——虽然读不全，但觉得很珍贵。",
+      "type": "important",
+      "category": "common",
+      "age": 9
+    }
+  ],
+  "event_selection": {
+    "candidates": [
+      {
+        "index": 0,
+        "id": "child_029_age9",
+        "text": "你9岁时，搬起了连大人都费劲的石磨。",
+        "expanded_text": "那块石磨连你爹搬都要憋口气。你抱住它试了试——居然端起来了。你爹看见了愣了半天，叫你娘出来看。你娘捂着嘴半天说不出话。村里人都说你是天生神力。",
+        "weight": 70.0,
+        "event_type": "important",
+        "category": "",
+        "tags": [
+          "childhood"
+        ],
+        "effects": {
+          "constitution": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 1,
+        "id": "child_032_age9",
+        "text": "你9岁时，和比你大三岁的孩子摔跤，竟没输。",
+        "expanded_text": "王大牛比你大三岁——个头高你一个头。可摔跤的时候你矮身一沉把他扛翻了。他懵了。围观的孩子全愣了。从那以后再没人敢欺负你。",
+        "weight": 70.0,
+        "event_type": "important",
+        "category": "",
+        "tags": [
+          "childhood"
+        ],
+        "effects": {
+          "charisma": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 2,
+        "id": "child_036_age9",
+        "text": "你9岁时，用树枝在地上画的图案居然发了一瞬光。",
+        "expanded_text": "你蹲在地上用树枝画圈玩——画着画着突然——那些线亮了一下。就一瞬间。你愣住了，又画了一遍，没亮了。你不确定是不是眼花。但那个图案你记住了。",
+        "weight": 70.0,
+        "event_type": "important",
+        "category": "",
+        "tags": [
+          "childhood"
+        ],
+        "effects": {
+          "fortune": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 3,
+        "id": "child_039_age9",
+        "text": "你9岁时，路边捡到一本残破的古书，上面的字你竟认得几个。",
+        "expanded_text": "路边泥里露出一角黄纸——你捡起来是本破书，大半页都烂了。可剩下的字你竟然认识几个。你把它夹在席子下面藏着——虽然读不全，但觉得很珍贵。",
+        "weight": 70.0,
+        "event_type": "important",
+        "category": "",
+        "tags": [
+          "childhood"
+        ],
+        "effects": {
+          "comprehension": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 4,
+        "id": "child_045_age9",
+        "text": "你9岁时，镇上算命的瞎眼老人摸了你的脸说贵人之相。",
+        "expanded_text": "赶集时被你娘拉去算命——那瞎眼老人伸手摸了摸你的额头和脸，突然坐直了身子：「好相……好相！」你不太懂——但你娘一路上心情都很好。",
+        "weight": 70.0,
+        "event_type": "important",
+        "category": "",
+        "tags": [
+          "childhood"
+        ],
+        "effects": {
+          "fortune": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 5,
+        "id": "child_051_age9",
+        "text": "你9岁时，在后山发现了一个隐蔽的山洞。",
+        "expanded_text": "藤蔓遮着洞口——你拨开钻进去。里面出奇地干燥，地上有一圈石头像是有人摆过。角落里有个破陶罐，里面什么也没有。但你觉得这地方不一般——你决定不告诉别人。",
+        "weight": 70.0,
+        "event_type": "important",
+        "category": "",
+        "tags": [
+          "childhood"
+        ],
+        "effects": {
+          "fortune": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 6,
+        "id": "child_057_age9",
+        "text": "你9岁时，一场大雨冲出了山坡上一扇古老的石门。",
+        "expanded_text": "泥沙冲走后露出一扇青石门——上面刻着看不懂的花纹。你凑近去摸——石头冰凉的，但指尖碰到花纹时你觉得有一丝麻。第二天再去看——门不见了。只剩平整的山坡。",
+        "weight": 70.0,
+        "event_type": "important",
+        "category": "",
+        "tags": [
+          "childhood"
+        ],
+        "effects": {
+          "fortune": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 7,
+        "id": "child_062_age9",
+        "text": "你9岁时，在河里摸鱼时感觉到一股暖流从掌心流过。",
+        "expanded_text": "手伸进水里摸鱼——突然感觉掌心暖了一下。不是水温的问题——像是有一道看不见的东西从手心流过。你收回手看了看——什么也没有。但那种感觉你记住了。",
+        "weight": 70.0,
+        "event_type": "important",
+        "category": "",
+        "tags": [
+          "childhood"
+        ],
+        "effects": {
+          "comprehension": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 8,
+        "id": "child_070_age9",
+        "text": "你9岁时，一拳锤碎了院墙上的一块青砖。",
+        "expanded_text": "不知道哪来的火气——你一拳锤在墙上。「咔嚓」——青砖裂了。你自己也吓了一跳——看看拳头，一点没破皮。你把碎砖踢到草丛里——没跟任何人说。",
+        "weight": 70.0,
+        "event_type": "important",
+        "category": "",
+        "tags": [
+          "childhood"
+        ],
+        "effects": {
+          "constitution": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 9,
+        "id": "child_072_age9",
+        "text": "你9岁时，听到远处笛声，闭眼居然能看到一丝丝光在跳。",
+        "expanded_text": "远处有人在吹笛——你闭上眼。然后你看到了——像一条条细线在空中飘。金色的、绿色的。你睁开眼它们就不见了。闭上又有。你没告诉别人——因为说了也没人懂。",
+        "weight": 70.0,
+        "event_type": "important",
+        "category": "",
+        "tags": [
+          "childhood"
+        ],
+        "effects": {
+          "comprehension": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      }
+    ],
+    "system_prompt": "你是修仙世界的命运编织者。从候选事件中选择最适合当前叙事节奏的一个，为主角生成沉浸式叙事，并决定是否需要玩家做出选择。\n\n【不可违反的硬约束】\n- 输出纯JSON，不要添加任何其他文字或markdown标记\n- 格式: {\"chosen\": 编号(1开始), \"narrative\": \"叙事文本\", \"has_choice\": bool, \"branches\": [分支数组]或null, \"causal_chain\": null或{\"cause\": \"...\", \"expected_resolution\": \"...\", \"keywords\": [...]}}\n- narrative: 第二人称叙事，200-300字，符合当前境界和基调\n- 主角当前为凡人期，不得描写超越此境界的神通\n- 主角性别为女，叙事需与之一致\n- 不得决定主角死亡或突破境界，这些由游戏引擎控制\n\n【选择事件的决策原则】\n- 带★标记的事件为稀有/重大事件，建议优先考虑（但非强制，需结合叙事节奏判断）\n- 高张力(≥70)时优选缓解类事件(fortune/normal)；低张力(<30)时优选冲突类(danger/important)\n- 有未了之事时，优先选能推进因果的事件(带\"可解决因果\"标记的)\n- 当前剧情线活跃时，优先选与剧情线相关的事件\n- 必须与已有NPC交互史保持一致（不得矛盾）\n- ★事件即使与当前节奏稍有冲突，也可适当选择以增加游戏趣味性和意外感\n\n【叙事风格指导】\n- danger事件：节奏紧凑，善用短句，营造紧迫感和生死悬念\n- fortune事件：先抑后扬，让人感受到惊喜和机缘的分量\n- important事件：注重仪式感和命运转折的重量，可稍长\n- normal事件：淡写日常，重在生活气息和细节感\n- funny/adult事件：活泼的笔调，可幽默，善用感官描写\n\n【文体与用词约束】\n- 整体风格偏《凡人修仙传》式半文半白，善用四字短句、对仗、以景写情\n- 禁用现代词汇：能量→灵气，朋友→道友，老师→师尊，世界→天地/世间，感觉→感应，爆发→迈发，故事→因果/经历\n- 凡人期(境界0)：纯口语白话，朴实无华，有烟火气；不用任何修仙术语\n- 练气/筑基期：口语为主，开始穿插修仙术语，初入仙途的新鲜感与敬畏\n- 金丹/元婴期：四字短句增多，半文言比例升高，历练后的沉稳淡然，岁月沉淀感\n- 化神期：偏文言，简洁凝练，超脱视角，有哲学意味，「百年弹指一挥间」的时间观\n- 情感表达以景写情为主（\"老松落了一地针叶\"而非\"你很伤心\"）\n- 每句话都应推进叙事或揭示信息，禁止空洞词藻和重复描写\n\n【各境界叙事范文（仅供风格参考，不要照抄）】\n- 凡人期范文：「入秋后村头的老槐树落了满地黄叶。你蹲在溪边洗衣裳，忽然瞧见水里有条红尾鲤鱼，足有小臂长。你伸手去抓，扑了个空，倒溅了一身水。隔壁王大娘笑骂你不学好，你嘿嘿一笑，心想明天再来。」\n- 练气期范文：「清晨的雾气沿山涧漫上来时，你正盘膝于崖畔石台之上。丹田中那缕灵气虽细若游丝，却已能循经脉缓缓运转。师尊说过，练气之道贵在水磨工夫。你吐纳三十六周天，收功时指尖微微发麻——这是灵气初成的征兆。」\n- 金丹期范文：「洞府外大雪封山，你已不觉寒暑。金丹初成那日种下的青松，如今已亭亭如盖。数十年光阴弹指而过，当年同门的面容在记忆中渐渐模糊，唯有道心愈发澄明。远处传来鹤唳，你睁目望去，云海翻涌间似有虹光一闪。」\n- 化神期范文：「千峰如聚，万壑争流。你立于九霄之上，衣袂猎猎。天地灵气于周身汇聚如潮，吞吐之间，山河尽收眸底。百年修行至此，生死荣辱俱成云烟。你抬手，指尖凝出一缕清光——万法归一，不过如此。」\n\n【上下文引用硬规则】\n- 如果事件涉及已知NPC，叙事中必须引用至少1条交往史细节或关系变化\n- 如果有活跃因果链与事件相关，叙事中必须暗示伏笔（如“当年之事...”）\n- 如果有活跃Saga，叙事调性需呼应Saga方向\n- 叙事必须体现当前人生阶段的时间感（金丹期不写“今天”而写“数年之间”）\n\n【causal_chain 可选输出 — 因果链创建】\n- 当你生成的叙事中出现重大未解之事（师父失踪、仇敌逃脱、宝物被夺、誓言许下等），输出causal_chain字段\n- 普通日常事件不需要输出此字段（设为null）\n- cause: 一句话描述起因\n- expected_resolution: 一句话描述预期的解决方向\n- keywords: 3-5个与解决方向相关的关键词（用于未来事件匹配）\n- 约30-40%的事件适合创建因果链，不要每次都创建\n\n【是否生成选择分支的判断】\n- 当事件类型为danger/important/fortune且叙事中有明显的抉择时刻时，has_choice=true\n- 普通修炼/日常事件不需要分支，has_choice=false\n- 分支概率约为30-40%，不要每次都生成\n\n【分支格式(当has_choice=true)】\n- branches为2-3个选项的数组\n- 每个选项: {\"text\":\"≤20字\", \"success_rate\": 基础成功率(30-80), \"check_attribute\": \"主属性名\", \"effects\":{...}, \"result_text\":\"成功叙述50-100字\", \"failure_effects\":{...}, \"failure_text\":\"失败叙述50-100字\", \"consequence_tag\":\"后果标签\", \"consequence_desc\":\"因果描述\"}\n- success_rate: 冒险选项 30-50, 稳妥选项 70-90\n- check_attribute: constitution(战斗/体力), comprehension(悟道/机关), fortune(机缘/运气), charisma(社交/说服), willpower(心魔/坚持)\n- effects可用字段: cultivation(int,-30~50), constitution/comprehension/fortune/charisma/willpower(int,-3~3), add_tag(str)\n- failure_effects通常为小幅负收益(cultivation -10~5, 属性 -2~0)，失败不等于死亡\n- 选项必须有实质性差异，至少一个冒险选项、一个稳妥选项\n- consequence_tag必须使用事件池中已有的标签或其下划线拓展形式，可用值包括: combat, fortune, calamity, social, practice, exploration, npc, meditation, treasure, secret_realm, discovery, resource, technique, insight, philosophy, market, pill, sword, betrayal, romance 等，也可用复合形式如 combat_injury, fortune_windfall, social_debt, npc_betrayal 等\n- consequence_tag和consequence_desc可为空字符串\n\n【修为体系】\n凡人 → 练气 → 筑基 → 金丹 → 元婴 → 化神 → 渡劫飞升\n\n【输出示例】\n{\"chosen\": 3, \"narrative\": \"你在山间修炼时...\", \"has_choice\": true, \"branches\": [{\"text\": \"拔剑迎战\", \"effects\": {\"cultivation\": 20, \"constitution\": -1}, \"result_text\": \"你挺身而出...\", \"consequence_tag\": \"勇名远播\", \"consequence_desc\": \"你的勇武之名在修仙界传开\"}], \"causal_chain\": {\"cause\": \"师父身受重伤飘然而去\", \"expected_resolution\": \"寻找救治师父的方法\", \"keywords\": [\"师父\", \"重伤\", \"救治\", \"寻找\"]}}",
+    "user_prompt": "【传记摘要】\n尚无传记\n\n【天地大势】\n天下太平，无特殊大势\n\n【人际关系】\n暂无已知人际关系\n\n【剧情线/命运线】\n无活跃剧情线\n\n【活跃 Saga】\n无活跃长线Saga\n\n【未了之事】\n无\n\n【因果暗线】\n无活跃因果链\n\n【主角状态】\n- 境界: 凡人期, 9岁, 女\n- 属性: 根骨4 悟性8 福缘4 魅力4 心性6\n- 宗门: 散修\n- 张力: 40/100\n- 叙事基调: 童年记忆，朦胧初现\n\n【与涉事NPC的交往史】\n无相关交往史\n\n【近期经历】\n  4岁: 你5岁时，半夜起来看到院子里有个发光的影子一闪而逝。\n  5岁: 你5岁时，抬头看到两个人影在云层里打架。\n  6岁: 你7岁时，总觉得山里某个方向在呼唤你。\n  7岁: 你7岁时，一只白鹤从天上落下来，停在你肩上不肯走。\n  8岁: 你9岁时，静坐时感觉身体里有一股热气在流。\n\n【相关记忆】\n  1岁: 「……听说那山上就是仙门……」「哪有什么仙人，骗人的。」「可张家小子真被带走了……」你趴在门缝后头大气不敢出，心跳得又快\n  2岁: 山坡上开满了野花——你蹲下来摘。手指碰到花茎的时候——你觉得花在抖。不是风吹的那种——像是在跟你打招呼。你把花凑到耳边听\n  3岁: 你总觉得树叶之间有什么在流——像水又像光，一丝一丝的。你问你娘她说没有。你问私塾先生他也说没有。你以为自己眼花——可不管\n\n【候选事件】\n1. ★命运转折 你9岁时，搬起了连大人都费劲的石磨。 [important] 标签:childhood 效果:constitution+1\n2. ★命运转折 你9岁时，和比你大三岁的孩子摔跤，竟没输。 [important] 标签:childhood 效果:charisma+1\n3. ★命运转折 你9岁时，用树枝在地上画的图案居然发了一瞬光。 [important] 标签:childhood 效果:fortune+1\n4. ★命运转折 你9岁时，路边捡到一本残破的古书，上面的字你竟认得几个。 [important] 标签:childhood 效果:comprehension+1\n5. ★命运转折 你9岁时，镇上算命的瞎眼老人摸了你的脸说贵人之相。 [important] 标签:childhood 效果:fortune+1\n6. ★命运转折 你9岁时，在后山发现了一个隐蔽的山洞。 [important] 标签:childhood 效果:fortune+1\n7. ★命运转折 你9岁时，一场大雨冲出了山坡上一扇古老的石门。 [important] 标签:childhood 效果:fortune+1\n8. ★命运转折 你9岁时，在河里摸鱼时感觉到一股暖流从掌心流过。 [important] 标签:childhood 效果:comprehension+1\n9. ★命运转折 你9岁时，一拳锤碎了院墙上的一块青砖。 [important] 标签:childhood 效果:constitution+1\n10. ★命运转折 你9岁时，听到远处笛声，闭眼居然能看到一丝丝光在跳。 [important] 标签:childhood 效果:comprehension+1\n\n请选择最适合的事件编号，生成叙事，并决定是否需要玩家选择（纯JSON）：",
+    "llm_would_be_needed": true,
+    "llm_skip_reason": null,
+    "model_grade": "Flash",
+    "fallback_chosen_index": 3,
+    "fallback_narrative_preview": "路边泥里露出一角黄纸——你捡起来是本破书，大半页都烂了。可剩下的字你竟然认识几个。你把它夹在席子下面藏着——虽然读不全，但觉得很珍贵。",
+    "ai_used": false
+  },
+  "breakthrough": null,
+  "auto_choice": null,
+  "result_summary": {
+    "age": 9,
+    "realm": 0,
+    "realm_name": "凡人",
+    "years_passed": 1,
+    "is_dead": false,
+    "death_reason": "",
+    "is_ascended": false,
+    "has_choice": false,
+    "tension": 45.0,
+    "ai_enhanced": false
+  }
+}

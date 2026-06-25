@@ -1,0 +1,326 @@
+{
+  "turn": 29,
+  "pre_state": {
+    "age": 62,
+    "realm": 2,
+    "realm_name": "筑基",
+    "gender": "female",
+    "life_phase": 5,
+    "cultivation": 756,
+    "tension": 20.0,
+    "attributes": {
+      "constitution": 6,
+      "comprehension": 10,
+      "fortune": 8,
+      "charisma": 9,
+      "willpower": 14
+    },
+    "sect": {
+      "name": "天医谷",
+      "rank": "内门弟子",
+      "contribution": 75,
+      "sect_type": "丹宗",
+      "reputation_in_sect": 64
+    },
+    "npcs": [],
+    "npc_count": 0,
+    "npc_alive_count": 0,
+    "active_arcs": [],
+    "main_storyline": null,
+    "used_event_count": 28,
+    "events_log_count": 43,
+    "is_dead": false,
+    "is_ascended": false,
+    "biography_summary": "18岁你选了一块被阳光烤得温热的大石坐下——闭目之前深深看了一眼天；18岁你已经在这里坐了三天三夜——不吃不喝，只有灵气维持着身体的运；22岁你亲眼目睹了天边的异象——那不是幻觉，是真真切切发生了。你在；25岁师父的话还在耳边回响——「去吧，什么时候想明白了，什么时候下；32岁天灾人祸从不提前打招呼——你只能仓促应对。你遭遇心魔侵袭，险",
+    "pending_choice": null
+  },
+  "post_state": {
+    "age": 69,
+    "realm": 2,
+    "realm_name": "筑基",
+    "gender": "female",
+    "life_phase": 5,
+    "cultivation": 907,
+    "tension": 10.0,
+    "attributes": {
+      "constitution": 6,
+      "comprehension": 10,
+      "fortune": 8,
+      "charisma": 10,
+      "willpower": 14
+    },
+    "sect": {
+      "name": "天医谷",
+      "rank": "内门弟子",
+      "contribution": 95,
+      "sect_type": "丹宗",
+      "reputation_in_sect": 67
+    },
+    "npcs": [],
+    "npc_count": 0,
+    "npc_alive_count": 0,
+    "active_arcs": [],
+    "main_storyline": null,
+    "used_event_count": 29,
+    "events_log_count": 47,
+    "is_dead": false,
+    "is_ascended": false,
+    "biography_summary": "18岁你选了一块被阳光烤得温热的大石坐下——闭目之前深深看了一眼天；18岁你已经在这里坐了三天三夜——不吃不喝，只有灵气维持着身体的运；22岁你亲眼目睹了天边的异象——那不是幻觉，是真真切切发生了。你在；25岁师父的话还在耳边回响——「去吧，什么时候想明白了，什么时候下；32岁天灾人祸从不提前打招呼——你只能仓促应对。你遭遇心魔侵袭，险",
+    "pending_choice": null
+  },
+  "events": [
+    {
+      "text": "修炼时你隐约触摸到一层无形的壁障——金丹的门槛近在咫尺。",
+      "expanded_text": "",
+      "type": "important",
+      "category": "cultivation",
+      "age": 69
+    },
+    {
+      "text": "天医谷派遣你代为传书，你圆满完成了任务。",
+      "expanded_text": "作为内门弟子，你领命代为传书。一番波折后任务完成，贡献值增加了20点。",
+      "type": "normal",
+      "category": "sect",
+      "age": 69
+    },
+    {
+      "text": "天医谷按例发放修炼资源，你得到了灵石与丹药。",
+      "expanded_text": "",
+      "type": "normal",
+      "category": "sect",
+      "age": 69
+    },
+    {
+      "text": "你望着天空出神，不知不觉过了一天。",
+      "expanded_text": "你坐在洞府门口的石头上，抬头望天。云很白，天很蓝。你就那么看着，脑子里什么都没想。等你回过神来时太阳已经快落山了——整整一天就这么过去了。你站起来伸了个懒腰，觉得心情莫名地好了一些。有时候发呆也是一种修行。",
+      "type": "normal",
+      "category": "common",
+      "age": 69
+    }
+  ],
+  "event_selection": {
+    "candidates": [
+      {
+        "index": 0,
+        "id": "social_013",
+        "text": "师父坐化前将衣钵传于你。",
+        "expanded_text": "师父已躺在床上喘息许久，今日忽然挣扎着坐起，把你叫到榻前。他从枕下取出那本翻得起毛的玉简：「徒儿，这是我一生的修行心得，从今往后你便是本门继承之人。」你跪下接过，手抖得厉害。师父看了看你，闭上了眼——再没睁开。",
+        "weight": 50.4,
+        "event_type": "important",
+        "category": "social",
+        "tags": [
+          "social",
+          "master"
+        ],
+        "effects": {
+          "cultivation": 50,
+          "willpower": 2
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": "★命运转折"
+      },
+      {
+        "index": 1,
+        "id": "ext_flavor_0025",
+        "text": "又是平静的一年，你安心修炼。",
+        "expanded_text": "今年什么都没发生。没有天灾，没有奇遇，没有打打杀杀。你安安静静地打坐、修炼、吃饭、睡觉。有时候你觉得修仙最难的不是与人争斗，而是忍受这种日复一日的枯燥。可你也知道——所有突破都建立在无数个这样平静的日子上。",
+        "weight": 45.0,
+        "event_type": "normal",
+        "category": "common",
+        "tags": [
+          "flavor",
+          "daily_life"
+        ],
+        "effects": {
+          "cultivation": 8
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      },
+      {
+        "index": 2,
+        "id": "ext_flavor_0026",
+        "text": "你望着天空出神，不知不觉过了一天。",
+        "expanded_text": "你坐在洞府门口的石头上，抬头望天。云很白，天很蓝。你就那么看着，脑子里什么都没想。等你回过神来时太阳已经快落山了——整整一天就这么过去了。你站起来伸了个懒腰，觉得心情莫名地好了一些。有时候发呆也是一种修行。",
+        "weight": 45.0,
+        "event_type": "normal",
+        "category": "common",
+        "tags": [
+          "flavor",
+          "daily_life"
+        ],
+        "effects": {},
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      },
+      {
+        "index": 3,
+        "id": "ext_flavor_0028",
+        "text": "你整理洞府，打扫得一尘不染。",
+        "expanded_text": "洞府已经很久没打扫了——法器摆得东倒西歪，丹炉上积了一层灰，石桌上还有上个月吃剩的果核。你花了整整半天把每个角落都收拾干净，又用法术除去了墙上的霉斑。等你坐下来环顾四周时，心情也跟着亮堂了起来。果然，修心先修居。",
+        "weight": 45.0,
+        "event_type": "normal",
+        "category": "common",
+        "tags": [
+          "flavor",
+          "daily_life"
+        ],
+        "effects": {
+          "add_tag": "explorer"
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      },
+      {
+        "index": 4,
+        "id": "ext_flavor_0029",
+        "text": "你酿了一壶灵酒，独自品尝。",
+        "expanded_text": "你用去年秋天采的灵果酿了一壶酒，今天终于可以开封了。琥珀色的酒液倒进杯中，果香四溢。你独自坐在月下，一杯接一杯地慢慢品。没有什么可庆祝的事，也没有什么可忧愁的事。只是觉得——活着就该偶尔喝一杯。",
+        "weight": 45.0,
+        "event_type": "normal",
+        "category": "common",
+        "tags": [
+          "flavor",
+          "daily_life"
+        ],
+        "effects": {
+          "fortune": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      },
+      {
+        "index": 5,
+        "id": "ext_flavor_0030",
+        "text": "你在山间漫步，欣赏风景。",
+        "expanded_text": "你没有目的地在山间走着。溪水清澈见底，两岸的树木郁郁葱葱。一只灵蝶落在你肩头又飞走了。你深吸一口气，满是草木的清香。这些年来忙着修炼，忙着争斗，已经很久没有静下心来好好看看周围的风景了。你决定今天不修炼。",
+        "weight": 45.0,
+        "event_type": "normal",
+        "category": "common",
+        "tags": [
+          "flavor",
+          "daily_life"
+        ],
+        "effects": {
+          "willpower": 1,
+          "add_tag": "in_mountains"
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      },
+      {
+        "index": 6,
+        "id": "ext_flavor_0031",
+        "text": "你下山采购日常所需。",
+        "expanded_text": "下山的路你闭着眼都能走。到了镇上你按着清单一样一样买：灵墨、符纸、几种常用的灵草、一壶酒。坊市里人来人往，有人在讨价还价，有人在谈论最近的大事。你提着东西往回走，觉得这种烟火气其实挺好。修士又不是石头，总得沾点人味。",
+        "weight": 45.0,
+        "event_type": "normal",
+        "category": "common",
+        "tags": [
+          "flavor",
+          "daily_life"
+        ],
+        "effects": {
+          "add_tag": "in_mountains"
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      },
+      {
+        "index": 7,
+        "id": "ext_flavor_0032",
+        "text": "你给自己的法器做了保养。",
+        "expanded_text": "你把你的法器取出来，仔细擦拭了一遍。刃口有几处细微的缺损，你用灵石粉仔细研磨修复。这把法器跟了你不少年头了，每一道划痕都有故事。你轻轻弹了弹它，它发出一声清脆的鸣响——像是在回应你。保养好了再用一百年没问题。",
+        "weight": 45.0,
+        "event_type": "normal",
+        "category": "common",
+        "tags": [
+          "flavor",
+          "daily_life"
+        ],
+        "effects": {
+          "cultivation": 5
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      },
+      {
+        "index": 8,
+        "id": "ext_flavor_0033",
+        "text": "你翻出了以前的笔记，重新温习。",
+        "expanded_text": "那些笔记是你练气初期写的，字迹潦草得连你自己都快认不出来了。可翻着翻着你笑了——那时候你连最基础的引气入体都做得磕磕绊绊，现在看来简直不可思议。你把笔记重新整理了一遍，在一些地方添了注释。也许以后用得上。",
+        "weight": 45.0,
+        "event_type": "normal",
+        "category": "common",
+        "tags": [
+          "flavor",
+          "daily_life"
+        ],
+        "effects": {
+          "comprehension": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      },
+      {
+        "index": 9,
+        "id": "ext_flavor_0034",
+        "text": "你种下了一株灵草，静待开花。",
+        "expanded_text": "你在洞府门口找了块好土，小心翼翼地种下了一株灵草的种子。浇了水，施了灵肥，又布了一个小型聚灵阵。你不指望它能长成什么珍贵的灵药——只是觉得修行之余应该有点别的事做。看着一颗种子慢慢发芽长大，那种感觉不比突破差。",
+        "weight": 45.0,
+        "event_type": "normal",
+        "category": "common",
+        "tags": [
+          "flavor",
+          "daily_life"
+        ],
+        "effects": {
+          "fortune": 1
+        },
+        "npc_roles": [],
+        "resolves_hook": "",
+        "min_realm": 0,
+        "priority_hint": ""
+      }
+    ],
+    "system_prompt": "你是修仙世界的命运编织者。从候选事件中选择最适合当前叙事节奏的一个，为主角生成沉浸式叙事，并决定是否需要玩家做出选择。\n\n【不可违反的硬约束】\n- 输出纯JSON，不要添加任何其他文字或markdown标记\n- 格式: {\"chosen\": 编号(1开始), \"narrative\": \"叙事文本\", \"has_choice\": bool, \"branches\": [分支数组]或null, \"causal_chain\": null或{\"cause\": \"...\", \"expected_resolution\": \"...\", \"keywords\": [...]}}\n- narrative: 第二人称叙事，200-300字，符合当前境界和基调\n- 主角当前为筑基期，不得描写超越此境界的神通\n- 主角性别为女，叙事需与之一致\n- 不得决定主角死亡或突破境界，这些由游戏引擎控制\n\n【选择事件的决策原则】\n- 带★标记的事件为稀有/重大事件，建议优先考虑（但非强制，需结合叙事节奏判断）\n- 高张力(≥70)时优选缓解类事件(fortune/normal)；低张力(<30)时优选冲突类(danger/important)\n- 有未了之事时，优先选能推进因果的事件(带\"可解决因果\"标记的)\n- 当前剧情线活跃时，优先选与剧情线相关的事件\n- 必须与已有NPC交互史保持一致（不得矛盾）\n- ★事件即使与当前节奏稍有冲突，也可适当选择以增加游戏趣味性和意外感\n\n【叙事风格指导】\n- danger事件：节奏紧凑，善用短句，营造紧迫感和生死悬念\n- fortune事件：先抑后扬，让人感受到惊喜和机缘的分量\n- important事件：注重仪式感和命运转折的重量，可稍长\n- normal事件：淡写日常，重在生活气息和细节感\n- funny/adult事件：活泼的笔调，可幽默，善用感官描写\n\n【文体与用词约束】\n- 整体风格偏《凡人修仙传》式半文半白，善用四字短句、对仗、以景写情\n- 禁用现代词汇：能量→灵气，朋友→道友，老师→师尊，世界→天地/世间，感觉→感应，爆发→迈发，故事→因果/经历\n- 凡人期(境界0)：纯口语白话，朴实无华，有烟火气；不用任何修仙术语\n- 练气/筑基期：口语为主，开始穿插修仙术语，初入仙途的新鲜感与敬畏\n- 金丹/元婴期：四字短句增多，半文言比例升高，历练后的沉稳淡然，岁月沉淀感\n- 化神期：偏文言，简洁凝练，超脱视角，有哲学意味，「百年弹指一挥间」的时间观\n- 情感表达以景写情为主（\"老松落了一地针叶\"而非\"你很伤心\"）\n- 每句话都应推进叙事或揭示信息，禁止空洞词藻和重复描写\n\n【各境界叙事范文（仅供风格参考，不要照抄）】\n- 凡人期范文：「入秋后村头的老槐树落了满地黄叶。你蹲在溪边洗衣裳，忽然瞧见水里有条红尾鲤鱼，足有小臂长。你伸手去抓，扑了个空，倒溅了一身水。隔壁王大娘笑骂你不学好，你嘿嘿一笑，心想明天再来。」\n- 练气期范文：「清晨的雾气沿山涧漫上来时，你正盘膝于崖畔石台之上。丹田中那缕灵气虽细若游丝，却已能循经脉缓缓运转。师尊说过，练气之道贵在水磨工夫。你吐纳三十六周天，收功时指尖微微发麻——这是灵气初成的征兆。」\n- 金丹期范文：「洞府外大雪封山，你已不觉寒暑。金丹初成那日种下的青松，如今已亭亭如盖。数十年光阴弹指而过，当年同门的面容在记忆中渐渐模糊，唯有道心愈发澄明。远处传来鹤唳，你睁目望去，云海翻涌间似有虹光一闪。」\n- 化神期范文：「千峰如聚，万壑争流。你立于九霄之上，衣袂猎猎。天地灵气于周身汇聚如潮，吞吐之间，山河尽收眸底。百年修行至此，生死荣辱俱成云烟。你抬手，指尖凝出一缕清光——万法归一，不过如此。」\n\n【上下文引用硬规则】\n- 如果事件涉及已知NPC，叙事中必须引用至少1条交往史细节或关系变化\n- 如果有活跃因果链与事件相关，叙事中必须暗示伏笔（如“当年之事...”）\n- 如果有活跃Saga，叙事调性需呼应Saga方向\n- 叙事必须体现当前人生阶段的时间感（金丹期不写“今天”而写“数年之间”）\n\n【causal_chain 可选输出 — 因果链创建】\n- 当你生成的叙事中出现重大未解之事（师父失踪、仇敌逃脱、宝物被夺、誓言许下等），输出causal_chain字段\n- 普通日常事件不需要输出此字段（设为null）\n- cause: 一句话描述起因\n- expected_resolution: 一句话描述预期的解决方向\n- keywords: 3-5个与解决方向相关的关键词（用于未来事件匹配）\n- 约30-40%的事件适合创建因果链，不要每次都创建\n\n【是否生成选择分支的判断】\n- 当事件类型为danger/important/fortune且叙事中有明显的抉择时刻时，has_choice=true\n- 普通修炼/日常事件不需要分支，has_choice=false\n- 分支概率约为30-40%，不要每次都生成\n\n【分支格式(当has_choice=true)】\n- branches为2-3个选项的数组\n- 每个选项: {\"text\":\"≤20字\", \"success_rate\": 基础成功率(30-80), \"check_attribute\": \"主属性名\", \"effects\":{...}, \"result_text\":\"成功叙述50-100字\", \"failure_effects\":{...}, \"failure_text\":\"失败叙述50-100字\", \"consequence_tag\":\"后果标签\", \"consequence_desc\":\"因果描述\"}\n- success_rate: 冒险选项 30-50, 稳妥选项 70-90\n- check_attribute: constitution(战斗/体力), comprehension(悟道/机关), fortune(机缘/运气), charisma(社交/说服), willpower(心魔/坚持)\n- effects可用字段: cultivation(int,-30~50), constitution/comprehension/fortune/charisma/willpower(int,-3~3), add_tag(str)\n- failure_effects通常为小幅负收益(cultivation -10~5, 属性 -2~0)，失败不等于死亡\n- 选项必须有实质性差异，至少一个冒险选项、一个稳妥选项\n- consequence_tag必须使用事件池中已有的标签或其下划线拓展形式，可用值包括: combat, fortune, calamity, social, practice, exploration, npc, meditation, treasure, secret_realm, discovery, resource, technique, insight, philosophy, market, pill, sword, betrayal, romance 等，也可用复合形式如 combat_injury, fortune_windfall, social_debt, npc_betrayal 等\n- consequence_tag和consequence_desc可为空字符串\n\n【修为体系】\n凡人 → 练气 → 筑基 → 金丹 → 元婴 → 化神 → 渡劫飞升\n\n【输出示例】\n{\"chosen\": 3, \"narrative\": \"你在山间修炼时...\", \"has_choice\": true, \"branches\": [{\"text\": \"拔剑迎战\", \"effects\": {\"cultivation\": 20, \"constitution\": -1}, \"result_text\": \"你挺身而出...\", \"consequence_tag\": \"勇名远播\", \"consequence_desc\": \"你的勇武之名在修仙界传开\"}], \"causal_chain\": {\"cause\": \"师父身受重伤飘然而去\", \"expected_resolution\": \"寻找救治师父的方法\", \"keywords\": [\"师父\", \"重伤\", \"救治\", \"寻找\"]}}",
+    "user_prompt": "【传记摘要】\n18岁你选了一块被阳光烤得温热的大石坐下——闭目之前深深看了一眼天；18岁你已经在这里坐了三天三夜——不吃不喝，只有灵气维持着身体的运；22岁你亲眼目睹了天边的异象——那不是幻觉，是真真切切发生了。你在；25岁师父的话还在耳边回响——「去吧，什么时候想明白了，什么时候下；32岁天灾人祸从不提前打招呼——你只能仓促应对。你遭遇心魔侵袭，险\n\n【天地大势】\n天下太平，无特殊大势\n\n【人际关系】\n暂无已知人际关系\n\n【剧情线/命运线】\n无活跃剧情线\n\n【活跃 Saga】\n无活跃长线Saga\n\n【未了之事】\n无\n\n【因果暗线】\n无活跃因果链\n\n【主角状态】\n- 境界: 筑基期, 69岁, 女\n- 属性: 根骨6 悟性10 福缘8 魅力10 心性14\n- 宗门: 天医谷·内门弟子\n- 张力: 20/100\n- 叙事基调: 道途渐深，历劫成长\n\n【与涉事NPC的交往史】\n无相关交往史\n\n【近期经历】\n  44岁: 你梦到了前世的记忆，醒来后泪流满面。\n  47岁: 天医谷按例发放修炼资源，你得到了灵石与丹药。\n  47岁: 一座飞升台重现人间。\n  54岁: 你的宿敌再次出现，向你挑战。\n  62岁: 你在古寺废墟入定修炼，你顿悟了生死轮回之理。\n  ---回顾---\n  1岁: 那年的雨从开春就没下过一滴。你爹每天蹲在田埂上看天——从满怀希望看到面无表情。秋\n  6岁: 那道士灰袍褴褛、胡子拉碴——可眼睛亮得像两盏灯。他在村口摆摊算命，所有人都绕着走\n  12岁: 水来得太快了。一开始只是溪水暴涨，你还没反应过来整个山谷就灌满了。你被洪水裹挟着\n  17岁: 那人穿得体体面面，说是从城里来收山货的。你把晒了一夏天的药材全卖给他了，他打了欠\n\n【相关记忆】\n  32岁: 天灾人祸从不提前打招呼——你只能仓促应对。你遭遇心魔侵袭，险些丧命你咬着牙硬撑了过来——修道之路不是请客吃饭。你望着天空\n  18岁: 你已经在这里坐了三天三夜——不吃不喝，只有灵气维持着身体的运转。一只不知名的鸟在远处鸣叫——你没有分神，反而借着那声响更\n  18岁: 你选了一块被阳光烤得温热的大石坐下——闭目之前深深看了一眼天边的流云。你回想起师父的教诲——「修道如煮水，急火煮不出好茶\n\n【候选事件】\n1. ★命运转折 师父坐化前将衣钵传于你。 [important] 标签:social, master 效果:cultivation+50,willpower+2\n2. 又是平静的一年，你安心修炼。 [normal] 标签:flavor, daily_life 效果:cultivation+8\n3. 你望着天空出神，不知不觉过了一天。 [normal] 标签:flavor, daily_life\n4. 你整理洞府，打扫得一尘不染。 [normal] 标签:flavor, daily_life\n5. 你酿了一壶灵酒，独自品尝。 [normal] 标签:flavor, daily_life 效果:fortune+1\n6. 你在山间漫步，欣赏风景。 [normal] 标签:flavor, daily_life 效果:willpower+1\n7. 你下山采购日常所需。 [normal] 标签:flavor, daily_life\n8. 你给自己的法器做了保养。 [normal] 标签:flavor, daily_life 效果:cultivation+5\n9. 你翻出了以前的笔记，重新温习。 [normal] 标签:flavor, daily_life 效果:comprehension+1\n10. 你种下了一株灵草，静待开花。 [normal] 标签:flavor, daily_life 效果:fortune+1\n\n请选择最适合的事件编号，生成叙事，并决定是否需要玩家选择（纯JSON）：",
+    "llm_would_be_needed": true,
+    "llm_skip_reason": null,
+    "model_grade": "Flash",
+    "fallback_chosen_index": 2,
+    "fallback_narrative_preview": "你坐在洞府门口的石头上，抬头望天。云很白，天很蓝。你就那么看着，脑子里什么都没想。等你回过神来时太阳已经快落山了——整整一天就这么过去了。你站起来伸了个懒腰，觉得心情莫名地好了一些。有时候发呆也是一种修行。"
+  },
+  "breakthrough": null,
+  "auto_choice": null,
+  "result_summary": {
+    "age": 69,
+    "realm": 2,
+    "realm_name": "筑基",
+    "years_passed": 7,
+    "is_dead": false,
+    "death_reason": "",
+    "is_ascended": false,
+    "has_choice": false,
+    "tension": 10.0,
+    "ai_enhanced": false
+  }
+}

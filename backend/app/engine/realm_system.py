@@ -62,7 +62,7 @@ class RealmSystem:
 
         Returns an awakening event dict, or None.
         """
-        if state.realm != 0 or state.age < 1:
+        if state.realm != 0 or state.age < 12:
             return None
 
         # Tiered probability by age

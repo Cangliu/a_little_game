@@ -138,6 +138,13 @@ export interface LifeSummary {
   gender?: string;
 }
 
+export interface LifeEvent {
+  age: number;
+  text: string;
+  category?: string;
+  event_type?: string;
+}
+
 export const GENDER_NAMES: Record<string, string> = {
   male: '男',
   female: '女',

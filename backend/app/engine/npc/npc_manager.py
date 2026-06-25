@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import random
 import uuid
+import math
 import logging
 from typing import Optional
 
@@ -18,7 +19,7 @@ from .npc_destiny import get_destiny_template, NpcDestinyGenerator
 logger = logging.getLogger(__name__)
 
 # Maximum persistent NPCs per game (avoid memory bloat)
-MAX_NPCS = 30
+MAX_NPCS = 80
 
 # NPC event cooldowns (in years)
 MASTER_EVENT_INTERVAL = (5, 10)
@@ -130,6 +131,7 @@ class NPCManager:
             secret=secret,
             growth_arc=growth_arc,
             betrayal_threshold=betrayal_threshold,
+            age_offset=random.randint(20, 50),  # Fixed age estimation offset (set once)
         )
 
         # Register in state
@@ -164,6 +166,26 @@ class NPCManager:
 
         logger.debug("Generated NPC: %s (%s) - %s", name, personality, rel_type)
         return npc
+
+    def generate_fellow_disciples(
+        self, state: GameState, count: int = 2
+    ) -> list[NPC]:
+        """Batch generate fellow disciples when player joins a sect.
+
+        Creates 2-3 同门 NPCs at the player's realm level to provide
+        multi-instance rotation for fellow-related events.
+        """
+        generated = []
+        for _ in range(count):
+            npc = self.generate_npc(
+                state, role="fellow_disciple", relation_type="同门"
+            )
+            if npc:
+                generated.append(npc)
+        if generated:
+            names = ", ".join(n.name for n in generated)
+            logger.info("Generated %d fellow disciples: %s", len(generated), names)
+        return generated
 
     def get_or_create_for_event(
         self, state: GameState, event: dict
@@ -325,6 +347,9 @@ class NPCManager:
             npc_dict = state.npc_registry.get(rel_dict.get("npc_id", ""))
             if not npc_dict or not npc_dict.get("is_alive", True):
                 continue
+            # Skip dispersed NPCs (e.g. sect destroyed, lost contact)
+            if npc_dict.get("status") == "dispersed":
+                continue
 
             npc_id = rel_dict["npc_id"]
             rel_type = rel_dict.get("relation_type", "")
@@ -377,22 +402,31 @@ class NPCManager:
         return events
 
     def age_npcs(self, state: GameState) -> None:
-        """Age all NPCs by one year. Handle death for mortals/low-realm NPCs."""
+        """Age all NPCs by one year. Handle death for mortals/low-realm NPCs.
+
+        Death probability uses a sigmoid curve that ramps up gradually
+        after exceeding max_age, rather than a flat 30% chance.
+        """
         dead_npcs = []
 
         for npc_id, npc_dict in state.npc_registry.items():
             if not npc_dict.get("is_alive", True):
                 continue
 
-            # Simplified NPC aging: estimate their current age
+            # Use fixed age_offset (set at generation time) for stable estimation
             first_met = npc_dict.get("first_met_age", 0)
-            # Assume NPC was a similar age when first met (rough estimation)
-            estimated_npc_age = state.age - first_met + random.randint(20, 50)
+            age_offset = npc_dict.get("age_offset", 30)
+            estimated_npc_age = state.age - first_met + age_offset
 
             max_age = npc_dict.get("max_age", 80)
             if estimated_npc_age > max_age:
-                # NPC dies of old age
-                if random.random() < 0.3:  # 30% chance per year past max age
+                # Sigmoid death curve: probability ramps from ~5% at max_age
+                # to ~50% at max_age+20, to ~90% at max_age+40
+                years_over = estimated_npc_age - max_age
+                # sigmoid: 1 / (1 + exp(-(x-20)/8)) → midpoint at 20 years over
+                death_chance = 1.0 / (1.0 + math.exp(-(years_over - 20) / 8.0))
+                death_chance = max(0.05, min(0.95, death_chance))
+                if random.random() < death_chance:
                     npc_dict["is_alive"] = False
                     dead_npcs.append(npc_id)
 
@@ -430,6 +464,9 @@ class NPCManager:
             npc_id = rel_dict.get("npc_id", "")
             npc_dict = state.npc_registry.get(npc_id)
             if not npc_dict or not npc_dict.get("is_alive", True):
+                continue
+            # Skip dispersed NPCs (lost contact after sect destruction etc.)
+            if npc_dict.get("status") == "dispersed":
                 continue
 
             destiny_beats = npc_dict.get("destiny_beats", [])
@@ -515,6 +552,18 @@ class NPCManager:
                     f"数日后，石门轰然打开，{name}踏步而出，周身灵光流转。"
                     f"「为师终于突破了。」你喜极而泣，跪地叩首。"
                 )
+
+        # Auto-detect NPC death from beat effects or text keywords
+        # This ensures narrative death always syncs with state
+        _DEATH_KEYWORDS = ("陨落", "身亡", "殒命", "战死", "身死", "化道", "坐化", "魂飞魄散")
+        if beat.get("effects", {}).get("npc_death"):
+            npc_dict["is_alive"] = False
+        elif not npc_dict.get("is_alive", True):
+            pass  # Already marked dead above (e.g. {outcome} path)
+        else:
+            combined_text = text + expanded
+            if any(kw in combined_text for kw in _DEATH_KEYWORDS):
+                npc_dict["is_alive"] = False
 
         return {
             "id": f"npc_destiny_{state.age}_{uuid.uuid4().hex[:4]}",
@@ -635,12 +684,23 @@ class NPCManager:
         """Determine initial sentiment based on relationship type.
 
         Range: -100 ~ 100 (0 = neutral)
-        Positive: +40 ~ +70, Negative: -70 ~ -40, Neutral: 0
+        Differentiated by intimacy level:
+        - 师父/道侣: high bond (50-70)
+        - 徒弟/挚友: medium bond (35-55)
+        - 同门/恩人: just met, mild positive (15-35)
+        - 宿敌/仇人: hostile (-70 to -40)
+        - Others: neutral (0)
         """
-        positive = {"师父", "徒弟", "同门", "挚友", "道侣", "恩人"}
+        high_bond = {"师父", "道侣"}
+        medium_bond = {"徒弟", "挚友"}
+        low_bond = {"同门", "恩人"}
         negative = {"宿敌", "仇人"}
-        if relation_type in positive:
-            return random.randint(40, 70)
+        if relation_type in high_bond:
+            return random.randint(50, 70)
+        elif relation_type in medium_bond:
+            return random.randint(35, 55)
+        elif relation_type in low_bond:
+            return random.randint(15, 35)
         elif relation_type in negative:
             return random.randint(-70, -40)
         return 0
@@ -774,6 +834,7 @@ class NPCManager:
             "tags": ["master_event", "npc_interaction"],
             "effects": {"cultivation": random.randint(5, 15), "comprehension": random.choice([0, 0, 1])},
             "involved_npc": name,
+            "involved_npc_id": npc_dict.get("npc_id", ""),
         }
 
     def _create_lover_event(self, state: GameState, npc_dict: dict, rel_dict: dict) -> Optional[dict]:
@@ -832,6 +893,7 @@ class NPCManager:
             "tags": ["lover_event", "npc_interaction"],
             "effects": {"cultivation": random.randint(3, 8), "willpower": random.choice([0, 1])},
             "involved_npc": name,
+            "involved_npc_id": npc_dict.get("npc_id", ""),
         }
 
     def _create_rival_event(self, state: GameState, npc_dict: dict, rel_dict: dict) -> Optional[dict]:
@@ -898,6 +960,7 @@ class NPCManager:
             "tags": ["rival_event", "npc_interaction"],
             "effects": effects,
             "involved_npc": name,
+            "involved_npc_id": npc_dict.get("npc_id", ""),
         }
 
     def check_destiny_pivots(self, state: GameState, events: list) -> None:
@@ -998,4 +1061,5 @@ class NPCManager:
             "tags": ["reunion_event", "npc_interaction"],
             "effects": {"fortune": random.choice([0, 1]), "willpower": random.choice([0, 1])},
             "involved_npc": name,
+            "involved_npc_id": npc_dict.get("npc_id", ""),
         }

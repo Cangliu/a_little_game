@@ -223,6 +223,26 @@ def check_conditions(event: dict, state: GameState) -> bool:
             if hasattr(state.attributes, attr) and getattr(state.attributes, attr) < min_val:
                 return False
 
+    # NPC alive check: reject events whose npc_slot references a dead NPC
+    npc_slot = event.get("npc_slot")
+    if npc_slot and npc_slot not in ("elder", "any_known"):
+        # For specific role slots, check if the bound NPC is still alive
+        from .event_npc_resolver import SLOT_TO_RELATION
+        rel_type = SLOT_TO_RELATION.get(npc_slot)
+        if rel_type:
+            has_alive_npc = any(
+                state.npc_registry.get(r.get("npc_id", ""), {}).get("is_alive", True)
+                for r in (state.relationships or [])
+                if r.get("relation_type") == rel_type
+            )
+            # Only reject if player HAD this type of NPC but they're all dead
+            has_any = any(
+                r.get("relation_type") == rel_type
+                for r in (state.relationships or [])
+            )
+            if has_any and not has_alive_npc:
+                return False
+
     return True
 
 
@@ -444,12 +464,26 @@ class EventSystem:
         phase = LifePhase(state.life_phase)
         used_ids = state.used_event_ids  # already a set
 
+        # Expand used_ids to cover all age variants of the same base template
+        # e.g. if child_005_age5 was used, also block child_005_age3/7/9/11
+        _AGE_RE = re.compile(r'^(.+)_age\d+$')
+        used_bases: set[str] = set()
+        for uid in used_ids:
+            m = _AGE_RE.match(uid)
+            if m:
+                used_bases.add(m.group(1))
+
         # Layer 1-3: Phase + Condition + Dedup
         eligible: list[dict] = []
         for ev in ALL_EVENTS:
             if ev.get("category") == "death":
                 continue
-            if ev.get("id") in used_ids:
+            eid = ev.get("id", "")
+            if eid in used_ids:
+                continue
+            # Block sibling age variants of already-used templates
+            m = _AGE_RE.match(eid)
+            if m and m.group(1) in used_bases:
                 continue
             if not self.phase_manager.is_event_allowed(ev, phase):
                 continue
@@ -460,6 +494,48 @@ class EventSystem:
         if not eligible:
             fb = _fallback_event()
             return [{"event": fb, "weight": 1.0, "summary": fb["text"], "index": 0}]
+
+        # Layer 3.5: NPC role availability filter
+        # Two checks (OR): 1) explicit npc_roles field; 2) text-based fallback
+        # for the 83+ events that mention "道侣" in text without npc_roles.
+        # 道侣 is the only role created via organic relationship evolution
+        # (sentiment≥80 + interactions≥8), so ALL events referencing it must
+        # be gated on having an actual 道侣 NPC.
+        player_rel_types = {rel.get("relation_type", "") for rel in (state.relationships or [])}
+        player_rel_types.discard("")  # remove empty strings
+        has_lover = "道侣" in player_rel_types
+        filtered = []
+        for ev in eligible:
+            # Check 1: explicit npc_roles field
+            npc_roles = ev.get("npc_roles")
+            if npc_roles and not any(r in player_rel_types for r in npc_roles):
+                continue
+            # Check 2: text mentions 道侣 but player has no 道侣
+            if not has_lover and not npc_roles:
+                if "道侣" in ev.get("text", ""):
+                    continue
+            filtered.append(ev)
+        eligible = filtered or eligible  # fallback to full list if over-filtered
+
+        # Layer 3.6: Age-variant template dedup
+        # Childhood events are stored as child_005_age3, child_005_age5, …
+        # Keep only the variant whose embedded age is closest to state.age,
+        # so the candidate pool has at most 1 entry per template.
+        _AGE_VARIANT_RE = re.compile(r'^(.+)_age(\d+)$')
+        template_groups: dict[str, list[tuple[dict, int]]] = {}
+        non_variants: list[dict] = []
+        for ev in eligible:
+            m = _AGE_VARIANT_RE.match(ev.get("id", ""))
+            if m:
+                base = m.group(1)
+                embedded_age = int(m.group(2))
+                template_groups.setdefault(base, []).append((ev, embedded_age))
+            else:
+                non_variants.append(ev)
+        for _base, variants in template_groups.items():
+            best = min(variants, key=lambda x: abs(x[1] - state.age))
+            non_variants.append(best[0])
+        eligible = non_variants
 
         # Layer 4: Weight scoring
         weighted: list[tuple[dict, float]] = [
@@ -646,11 +722,11 @@ class EventSystem:
         for rel in (state.relationships or []):
             if isinstance(rel, dict):
                 npc_id = rel.get("npc_id", "")
-                sentiment = rel.get("sentiment", 0)
+                sentiment = rel.get("sentiment", 0) or 0  # Guard against None
                 rel_type = rel.get("relation_type", "")
             else:
                 npc_id = getattr(rel, "npc_id", "")
-                sentiment = getattr(rel, "sentiment", 0)
+                sentiment = getattr(rel, "sentiment", 0) or 0
                 rel_type = getattr(rel, "relation_type", "")
             if npc_id:
                 npc_sentiment_by_id[npc_id] = sentiment
@@ -859,6 +935,18 @@ class EventSystem:
         if effects.get("realm_up") and state.realm < MAX_REALM:
             state.realm += 1
             state.cultivation = 0
+
+        # NPC kill: mark the involved NPC as dead
+        # Can be triggered by event effects: {"npc_kill": true} with involved_npc_id
+        if effects.get("npc_kill"):
+            npc_id = event.get("involved_npc_id", "")
+            if npc_id and npc_id in state.npc_registry:
+                state.npc_registry[npc_id]["is_alive"] = False
+                # Also mark relationship tombstone
+                for rel in state.relationships:
+                    if rel.get("npc_id") == npc_id:
+                        rel["is_dead"] = True
+                        break
 
 
 # ── Fallback event ───────────────────────────────────────────────────────

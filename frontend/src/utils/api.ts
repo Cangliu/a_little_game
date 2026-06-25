@@ -1,4 +1,4 @@
-import type { NextYearResponse, LifeSummary, SectInfo, NPCRelationship, ChoiceHistoryItem } from './types';
+import type { NextYearResponse, LifeSummary, SectInfo, NPCRelationship, ChoiceHistoryItem, LifeEvent } from './types';
 
 const API_BASE = '/api/game';
 
@@ -95,6 +95,16 @@ export async function getSectWorld(gameId: string): Promise<{
     throw new Error(err.detail || 'Failed to get sect world');
   }
   return res.json();
+}
+
+export async function getLifeEvents(gameId: string): Promise<LifeEvent[]> {
+  const res = await fetch(`${API_BASE}/life-events/${gameId}`);
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || 'Failed to get life events');
+  }
+  const data = await res.json();
+  return data.events;
 }
 
 /**

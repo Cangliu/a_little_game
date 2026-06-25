@@ -9548,5 +9548,3392 @@
     ],
     "event_type": "funny",
     "expanded_text": "灵气涌动的清晨，时间仿佛在那一刻凝固。——便是这一回，你被传出有龙阳之好的谣言，从此女弟子见你都绕着走。时光如水，这一段往事便也悄然沉入心底。"
+  },
+  {
+    "id": "qi_social_06060",
+    "text": "你在坊市中与一位同期弟子切磋",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你在坊市中与一位同期弟子切磋你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "cultivation": 3
+    },
+    "tags": [
+      "social",
+      "qi_refining"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "坊市",
+      "同期",
+      "弟子",
+      "切磋"
+    ],
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "qi_social_06061",
+    "text": "你参加了宗门的月末考核",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你参加了宗门的月末考核你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "cultivation": 1
+    },
+    "tags": [
+      "social",
+      "qi_refining"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "宗门",
+      "月末",
+      "考核"
+    ]
+  },
+  {
+    "id": "qi_social_06062",
+    "text": "你与{fellow}结伴外出历练",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你与{fellow}结伴外出历练你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "cultivation": 1
+    },
+    "tags": [
+      "social",
+      "qi_refining"
+    ],
+    "event_type": "normal",
+    "npc_slot": "friend",
+    "keywords": [
+      "结伴",
+      "外出",
+      "历练"
+    ]
+  },
+  {
+    "id": "qi_social_06063",
+    "text": "一位师姐赠你一瓶聚气丹",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——一位师姐赠你一瓶聚气丹你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "cultivation": 2
+    },
+    "tags": [
+      "social",
+      "qi_refining"
+    ],
+    "event_type": "normal",
+    "npc_slot": "fellow",
+    "keywords": [
+      "师姐",
+      "一瓶",
+      "聚气丹"
+    ],
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "qi_social_06064",
+    "text": "你在宗门任务中结识了新朋友",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你在宗门任务中结识了新朋友你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "cultivation": 2
+    },
+    "tags": [
+      "social",
+      "qi_refining"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "宗门",
+      "任务",
+      "结识",
+      "朋友"
+    ],
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "qi_social_06065",
+    "text": "你帮助一位低阶弟子解答疑惑",
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——你帮助一位低阶弟子解答疑惑你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 2
+    },
+    "weight": 40,
+    "effects": {
+      "cultivation": 3
+    },
+    "tags": [
+      "social",
+      "qi_refining"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "帮助",
+      "低阶",
+      "弟子",
+      "解答",
+      "疑惑"
+    ],
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "found_soc_08048",
+    "text": "你参加修士聚会，与同辈交流剑意心得",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——你参加修士聚会，与同辈交流剑意心得你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 4,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "修士",
+      "聚会",
+      "同辈",
+      "交流",
+      "剑意",
+      "心得"
+    ]
+  },
+  {
+    "id": "found_soc_08049",
+    "text": "你参加修士聚会，与同辈交流禁术心得",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——你参加修士聚会，与同辈交流禁术心得你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 4,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "修士",
+      "聚会",
+      "同辈",
+      "交流",
+      "禁术",
+      "心得"
+    ]
+  },
+  {
+    "id": "found_soc_08050",
+    "text": "你参加修士聚会，与同辈交流神通心得",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你参加修士聚会，与同辈交流神通心得你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 6,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "修士",
+      "聚会",
+      "同辈",
+      "交流",
+      "神通",
+      "心得"
+    ]
+  },
+  {
+    "id": "found_soc_08052",
+    "text": "你参加修士聚会，与同辈交流炼体心得",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你参加修士聚会，与同辈交流炼体心得你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 8,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "修士",
+      "聚会",
+      "同辈",
+      "交流",
+      "炼体",
+      "心得"
+    ]
+  },
+  {
+    "id": "found_soc_08053",
+    "text": "你参加修士聚会，与同辈交流阵法心得",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——你参加修士聚会，与同辈交流阵法心得你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 8,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "修士",
+      "聚会",
+      "同辈",
+      "交流",
+      "阵法",
+      "心得"
+    ]
+  },
+  {
+    "id": "found_soc_08054",
+    "text": "你参加修士聚会，与同辈交流符箓心得",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——你参加修士聚会，与同辈交流符箓心得你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 7,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "修士",
+      "聚会",
+      "同辈",
+      "交流",
+      "符箓",
+      "心得"
+    ]
+  },
+  {
+    "id": "found_soc_08059",
+    "text": "你参加修士聚会，与同辈交流音攻心得",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你参加修士聚会，与同辈交流音攻心得你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 3,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "修士",
+      "聚会",
+      "同辈",
+      "交流",
+      "攻心"
+    ]
+  },
+  {
+    "id": "found_soc_08061",
+    "text": "你参加修士聚会，与同辈交流隐匿心得",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——你参加修士聚会，与同辈交流隐匿心得你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "修士",
+      "聚会",
+      "同辈",
+      "交流",
+      "隐匿",
+      "心得"
+    ]
+  },
+  {
+    "id": "found_soc_08063",
+    "text": "你参加修士聚会，与同辈交流丹道心得",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你参加修士聚会，与同辈交流丹道心得你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 2,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "修士",
+      "聚会",
+      "同辈",
+      "交流",
+      "道心"
+    ]
+  },
+  {
+    "id": "found_soc_08064",
+    "text": "你参加修士聚会，与同辈交流御器心得",
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——你参加修士聚会，与同辈交流御器心得你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 4,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "修士",
+      "聚会",
+      "同辈",
+      "交流",
+      "御器",
+      "心得"
+    ]
+  },
+  {
+    "id": "found_soc_08076",
+    "text": "你接受宗门任务前往外地",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你接受宗门任务前往外地你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 2,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "接受",
+      "宗门",
+      "任务",
+      "前往",
+      "外地"
+    ]
+  },
+  {
+    "id": "found_soc_08104",
+    "text": "你与一位筑基同修切磋法术",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——你与一位筑基同修切磋法术你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 5,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "筑基",
+      "同修",
+      "切磋",
+      "法术"
+    ]
+  },
+  {
+    "id": "found_soc_08132",
+    "text": "你在坊市出售自己炼制的丹药",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你在坊市出售自己炼制的丹药你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 3,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "坊市",
+      "出售",
+      "炼制",
+      "丹药"
+    ]
+  },
+  {
+    "id": "found_soc_08160",
+    "text": "你加入一支探险队伍前往洞府",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你加入一支探险队伍前往洞府你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 3,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "洞府"
+    ]
+  },
+  {
+    "id": "found_soc_08161",
+    "text": "你加入一支探险队伍前往古战场",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——你加入一支探险队伍前往古战场你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 3,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "古战场"
+    ]
+  },
+  {
+    "id": "found_soc_08162",
+    "text": "你加入一支探险队伍前往深渊",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你加入一支探险队伍前往深渊你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 7,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "深渊"
+    ]
+  },
+  {
+    "id": "found_soc_08163",
+    "text": "你加入一支探险队伍前往秘境",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你加入一支探险队伍前往秘境你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 7,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "秘境"
+    ]
+  },
+  {
+    "id": "found_soc_08164",
+    "text": "你加入一支探险队伍前往星辰大阵",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——你加入一支探险队伍前往星辰大阵你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 3,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "星辰",
+      "大阵"
+    ]
+  },
+  {
+    "id": "found_soc_08165",
+    "text": "你加入一支探险队伍前往海底宫殿",
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——你加入一支探险队伍前往海底宫殿你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 2,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "海底",
+      "宫殿"
+    ]
+  },
+  {
+    "id": "found_soc_08166",
+    "text": "你加入一支探险队伍前往仙府遗迹",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你加入一支探险队伍前往仙府遗迹你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 3,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "仙府",
+      "遗迹"
+    ]
+  },
+  {
+    "id": "found_soc_08167",
+    "text": "你加入一支探险队伍前往万年冰原",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你加入一支探险队伍前往万年冰原你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "万年",
+      "冰原"
+    ]
+  },
+  {
+    "id": "found_soc_08168",
+    "text": "你加入一支探险队伍前往火山深处",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你加入一支探险队伍前往火山深处你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 4,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "火山",
+      "深处"
+    ]
+  },
+  {
+    "id": "found_soc_08170",
+    "text": "你加入一支探险队伍前往九天之上",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你加入一支探险队伍前往九天之上你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 6,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "九天"
+    ]
+  },
+  {
+    "id": "found_soc_08171",
+    "text": "你加入一支探险队伍前往时间裂缝",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你加入一支探险队伍前往时间裂缝你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 7,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "时间",
+      "裂缝"
+    ]
+  },
+  {
+    "id": "found_soc_08176",
+    "text": "你加入一支探险队伍前往虚空通道",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——你加入一支探险队伍前往虚空通道你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 6,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "虚空",
+      "通道"
+    ]
+  },
+  {
+    "id": "found_soc_08180",
+    "text": "你加入一支探险队伍前往灵脉",
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——你加入一支探险队伍前往灵脉你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 3,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "加入",
+      "一支",
+      "探险",
+      "队伍",
+      "前往",
+      "灵脉"
+    ]
+  },
+  {
+    "id": "found_soc_08188",
+    "text": "你收了一个练气期弟子",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你收了一个练气期弟子你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 8,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "练气",
+      "弟子"
+    ],
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "found_soc_08216",
+    "text": "你代表宗门参加宗门联盟",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——你代表宗门参加宗门联盟你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 8,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "参加",
+      "联盟"
+    ]
+  },
+  {
+    "id": "found_soc_08217",
+    "text": "你代表宗门参加传承争夺",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你代表宗门参加传承争夺你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 2,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "参加",
+      "传承",
+      "争夺"
+    ]
+  },
+  {
+    "id": "found_soc_08218",
+    "text": "你代表宗门参加资源分配",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——你代表宗门参加资源分配你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 2,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "参加",
+      "资源分配"
+    ]
+  },
+  {
+    "id": "found_soc_08220",
+    "text": "你代表宗门参加宗门迁址",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你代表宗门参加宗门迁址你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 7,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "参加",
+      "迁址"
+    ]
+  },
+  {
+    "id": "found_soc_08221",
+    "text": "你代表宗门参加宗门大比",
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——你代表宗门参加宗门大比你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 3,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "参加"
+    ]
+  },
+  {
+    "id": "found_soc_08224",
+    "text": "你代表宗门参加门规修改",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你代表宗门参加门规修改你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 6,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "参加",
+      "门规",
+      "修改"
+    ]
+  },
+  {
+    "id": "found_soc_08227",
+    "text": "你代表宗门参加长老议事",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——你代表宗门参加长老议事你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 8,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "elder",
+    "keywords": [
+      "代表",
+      "宗门",
+      "参加",
+      "长老",
+      "议事"
+    ],
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "found_soc_08232",
+    "text": "你代表宗门参加外敌来犯",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你代表宗门参加外敌来犯你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 2,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "参加",
+      "外敌",
+      "来犯"
+    ]
+  },
+  {
+    "id": "found_soc_08235",
+    "text": "你代表宗门参加弟子选拔",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你代表宗门参加弟子选拔你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 4,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "参加",
+      "弟子",
+      "选拔"
+    ],
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "found_soc_08238",
+    "text": "你代表宗门参加宗门庆典",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你代表宗门参加宗门庆典你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 5,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "参加",
+      "庆典"
+    ]
+  },
+  {
+    "id": "found_soc_08244",
+    "text": "你与{fellow}一起执行危险任务",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你与{fellow}一起执行危险任务你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 3
+    },
+    "weight": 35,
+    "effects": {
+      "cultivation": 7,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "foundation"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "一起",
+      "执行",
+      "危险",
+      "任务"
+    ]
+  },
+  {
+    "id": "gc_soc_11264",
+    "text": "你受邀参加金丹修士的论道会",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你受邀参加金丹修士的论道会你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "受邀",
+      "参加",
+      "金丹",
+      "修士",
+      "论道"
+    ]
+  },
+  {
+    "id": "gc_soc_11298",
+    "text": "你代表宗门出席外敌来犯",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你代表宗门出席外敌来犯你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 6,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "出席",
+      "外敌",
+      "来犯"
+    ]
+  },
+  {
+    "id": "gc_soc_11299",
+    "text": "你代表宗门出席资源分配",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你代表宗门出席资源分配你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "出席",
+      "资源分配"
+    ]
+  },
+  {
+    "id": "gc_soc_11301",
+    "text": "你代表宗门出席传承争夺",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——你代表宗门出席传承争夺你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "出席",
+      "传承",
+      "争夺"
+    ]
+  },
+  {
+    "id": "gc_soc_11302",
+    "text": "你代表宗门出席宗门联盟",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你代表宗门出席宗门联盟你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 6,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "出席",
+      "联盟"
+    ]
+  },
+  {
+    "id": "gc_soc_11303",
+    "text": "你代表宗门出席宗门大比",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你代表宗门出席宗门大比你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "出席"
+    ]
+  },
+  {
+    "id": "gc_soc_11307",
+    "text": "你代表宗门出席长老议事",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——你代表宗门出席长老议事你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 13,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "elder",
+    "keywords": [
+      "代表",
+      "宗门",
+      "出席",
+      "长老",
+      "议事"
+    ],
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "gc_soc_11316",
+    "text": "你代表宗门出席弟子选拔",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——你代表宗门出席弟子选拔你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "出席",
+      "弟子",
+      "选拔"
+    ],
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "gc_soc_11318",
+    "text": "你代表宗门出席宗门迁址",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你代表宗门出席宗门迁址你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "出席",
+      "迁址"
+    ]
+  },
+  {
+    "id": "gc_soc_11320",
+    "text": "你代表宗门出席门规修改",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——你代表宗门出席门规修改你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "代表",
+      "宗门",
+      "出席",
+      "门规",
+      "修改"
+    ]
+  },
+  {
+    "id": "gc_soc_11332",
+    "text": "你与一位金丹道友结为{friend}",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你与一位金丹道友结为{friend}你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "道友",
+      "结为"
+    ],
+    "npc_roles": [
+      "挚友"
+    ]
+  },
+  {
+    "id": "gc_soc_11366",
+    "text": "你在修士聚会上展示音攻造诣",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你在修士聚会上展示音攻造诣你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 14,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "修士",
+      "聚会",
+      "展示",
+      "音攻",
+      "造诣"
+    ]
+  },
+  {
+    "id": "gc_soc_11367",
+    "text": "你在修士聚会上展示符箓造诣",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你在修士聚会上展示符箓造诣你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 7,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "修士",
+      "聚会",
+      "展示",
+      "符箓",
+      "造诣"
+    ]
+  },
+  {
+    "id": "gc_soc_11368",
+    "text": "你在修士聚会上展示丹道造诣",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你在修士聚会上展示丹道造诣你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 6,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "修士",
+      "聚会",
+      "展示",
+      "丹道",
+      "造诣"
+    ]
+  },
+  {
+    "id": "gc_soc_11369",
+    "text": "你在修士聚会上展示阵法造诣",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你在修士聚会上展示阵法造诣你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 14,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "修士",
+      "聚会",
+      "展示",
+      "阵法",
+      "造诣"
+    ]
+  },
+  {
+    "id": "gc_soc_11370",
+    "text": "你在修士聚会上展示炼体造诣",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——你在修士聚会上展示炼体造诣你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 7,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "修士",
+      "聚会",
+      "展示",
+      "炼体",
+      "造诣"
+    ]
+  },
+  {
+    "id": "gc_soc_11371",
+    "text": "你在修士聚会上展示御器造诣",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你在修士聚会上展示御器造诣你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 14,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "修士",
+      "聚会",
+      "展示",
+      "御器",
+      "造诣"
+    ]
+  },
+  {
+    "id": "gc_soc_11373",
+    "text": "你在修士聚会上展示隐匿造诣",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你在修士聚会上展示隐匿造诣你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 11,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "修士",
+      "聚会",
+      "展示",
+      "隐匿",
+      "造诣"
+    ]
+  },
+  {
+    "id": "gc_soc_11374",
+    "text": "你在修士聚会上展示剑意造诣",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你在修士聚会上展示剑意造诣你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "修士",
+      "聚会",
+      "展示",
+      "剑意",
+      "造诣"
+    ]
+  },
+  {
+    "id": "gc_soc_11375",
+    "text": "你在修士聚会上展示神通造诣",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你在修士聚会上展示神通造诣你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "修士",
+      "聚会",
+      "展示",
+      "神通",
+      "造诣"
+    ]
+  },
+  {
+    "id": "gc_soc_11381",
+    "text": "你在修士聚会上展示禁术造诣",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——你在修士聚会上展示禁术造诣你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 11,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "修士",
+      "聚会",
+      "展示",
+      "禁术",
+      "造诣"
+    ]
+  },
+  {
+    "id": "gc_soc_11400",
+    "text": "你被推举为宗门长老候选",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——你被推举为宗门长老候选你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 13,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "elder",
+    "keywords": [
+      "推举",
+      "宗门",
+      "长老",
+      "候选"
+    ],
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "gc_soc_11434",
+    "text": "一位后辈向你求教禁术",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——一位后辈向你求教禁术你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "后辈",
+      "求教",
+      "禁术"
+    ]
+  },
+  {
+    "id": "gc_soc_11435",
+    "text": "一位后辈向你求教剑意",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——一位后辈向你求教剑意你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 11,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "后辈",
+      "求教",
+      "剑意"
+    ]
+  },
+  {
+    "id": "gc_soc_11436",
+    "text": "一位后辈向你求教丹道",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——一位后辈向你求教丹道你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 13,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "后辈",
+      "求教",
+      "丹道"
+    ]
+  },
+  {
+    "id": "gc_soc_11437",
+    "text": "一位后辈向你求教音攻",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——一位后辈向你求教音攻你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "后辈",
+      "求教",
+      "音攻"
+    ]
+  },
+  {
+    "id": "gc_soc_11438",
+    "text": "一位后辈向你求教炼体",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——一位后辈向你求教炼体你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 14,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "后辈",
+      "求教",
+      "炼体"
+    ]
+  },
+  {
+    "id": "gc_soc_11439",
+    "text": "一位后辈向你求教隐匿",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——一位后辈向你求教隐匿你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "后辈",
+      "求教",
+      "隐匿"
+    ]
+  },
+  {
+    "id": "gc_soc_11446",
+    "text": "一位后辈向你求教阵法",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——一位后辈向你求教阵法你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "后辈",
+      "求教",
+      "阵法"
+    ]
+  },
+  {
+    "id": "gc_soc_11449",
+    "text": "一位后辈向你求教神通",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——一位后辈向你求教神通你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "后辈",
+      "求教",
+      "神通"
+    ]
+  },
+  {
+    "id": "gc_soc_11453",
+    "text": "一位后辈向你求教符箓",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——一位后辈向你求教符箓你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "后辈",
+      "求教",
+      "符箓"
+    ]
+  },
+  {
+    "id": "gc_soc_11467",
+    "text": "一位后辈向你求教御器",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——一位后辈向你求教御器你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 11,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "后辈",
+      "求教",
+      "御器"
+    ]
+  },
+  {
+    "id": "gc_soc_11468",
+    "text": "你与其他金丹修士组队探索火山深处",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你与其他金丹修士组队探索火山深处你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 7,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "火山",
+      "深处"
+    ]
+  },
+  {
+    "id": "gc_soc_11469",
+    "text": "你与其他金丹修士组队探索万年冰原",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你与其他金丹修士组队探索万年冰原你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "万年",
+      "冰原"
+    ]
+  },
+  {
+    "id": "gc_soc_11470",
+    "text": "你与其他金丹修士组队探索时间裂缝",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你与其他金丹修士组队探索时间裂缝你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 13,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "时间",
+      "裂缝"
+    ]
+  },
+  {
+    "id": "gc_soc_11472",
+    "text": "你与其他金丹修士组队探索古战场",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你与其他金丹修士组队探索古战场你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "古战场"
+    ]
+  },
+  {
+    "id": "gc_soc_11473",
+    "text": "你与其他金丹修士组队探索九天之上",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你与其他金丹修士组队探索九天之上你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "九天"
+    ]
+  },
+  {
+    "id": "gc_soc_11475",
+    "text": "你与其他金丹修士组队探索灵脉",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你与其他金丹修士组队探索灵脉你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 12,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "灵脉"
+    ]
+  },
+  {
+    "id": "gc_soc_11476",
+    "text": "你与其他金丹修士组队探索虚空通道",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——你与其他金丹修士组队探索虚空通道你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "虚空",
+      "通道"
+    ]
+  },
+  {
+    "id": "gc_soc_11477",
+    "text": "你与其他金丹修士组队探索仙府遗迹",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你与其他金丹修士组队探索仙府遗迹你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 15,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "仙府",
+      "遗迹"
+    ]
+  },
+  {
+    "id": "gc_soc_11478",
+    "text": "你与其他金丹修士组队探索混沌空间",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你与其他金丹修士组队探索混沌空间你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 5,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "混沌",
+      "空间"
+    ]
+  },
+  {
+    "id": "gc_soc_11479",
+    "text": "你与其他金丹修士组队探索洞府",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你与其他金丹修士组队探索洞府你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 14,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "洞府"
+    ]
+  },
+  {
+    "id": "gc_soc_11481",
+    "text": "你与其他金丹修士组队探索星辰大阵",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你与其他金丹修士组队探索星辰大阵你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 9,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "星辰",
+      "大阵"
+    ]
+  },
+  {
+    "id": "gc_soc_11483",
+    "text": "你与其他金丹修士组队探索海底宫殿",
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——你与其他金丹修士组队探索海底宫殿你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 10,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "海底",
+      "宫殿"
+    ]
+  },
+  {
+    "id": "gc_soc_11493",
+    "text": "你与其他金丹修士组队探索秘境",
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——你与其他金丹修士组队探索秘境你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 9,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "秘境"
+    ]
+  },
+  {
+    "id": "gc_soc_11499",
+    "text": "你与其他金丹修士组队探索深渊",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你与其他金丹修士组队探索深渊你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 9,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "金丹",
+      "修士",
+      "组队",
+      "探索",
+      "深渊"
+    ]
+  },
+  {
+    "id": "gc_soc_11502",
+    "text": "你在宗门中的地位提升了",
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你在宗门中的地位提升了你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 4
+    },
+    "weight": 30,
+    "effects": {
+      "cultivation": 8,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "golden_core"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "宗门",
+      "地位",
+      "提升"
+    ]
+  },
+  {
+    "id": "ns_soc_15048",
+    "text": "你参加元婴级别的修士大会",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你参加元婴级别的修士大会你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": 27,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "nascent_soul"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "元婴",
+      "级别",
+      "修士",
+      "大会"
+    ]
+  },
+  {
+    "id": "ns_soc_15076",
+    "text": "你被多个宗门争相邀请为客卿",
+    "expanded_text": "你与人交谈了半晌——有些话说出来了反而轻松了。事情就这么发生了——你被多个宗门争相邀请为客卿你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": 16,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "nascent_soul"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "多个",
+      "宗门",
+      "争相",
+      "邀请",
+      "客卿"
+    ]
+  },
+  {
+    "id": "ns_soc_15104",
+    "text": "你与一位元婴老怪论道三日",
+    "expanded_text": "你出门办事时碰到了一些人——有些事情避不开就去面对。事情就这么发生了——你与一位元婴老怪论道三日你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": 30,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "nascent_soul"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "元婴",
+      "怪论",
+      "三日"
+    ]
+  },
+  {
+    "id": "ns_soc_15132",
+    "text": "你以元婴修为主持宗门大事",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——你以元婴修为主持宗门大事你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": 27,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "nascent_soul"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "元婴",
+      "修为",
+      "主持",
+      "宗门",
+      "大事"
+    ]
+  },
+  {
+    "id": "ns_soc_15160",
+    "text": "你收了一位金丹弟子传授衣钵",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你收了一位金丹弟子传授衣钵你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": 27,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "nascent_soul"
+    ],
+    "event_type": "normal",
+    "npc_slot": "master",
+    "keywords": [
+      "金丹",
+      "弟子",
+      "传授",
+      "衣钵"
+    ],
+    "npc_roles": [
+      "同门"
+    ]
+  },
+  {
+    "id": "ns_soc_15188",
+    "text": "你被推举为宗门护法长老",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你被推举为宗门护法长老你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": 29,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "nascent_soul"
+    ],
+    "event_type": "normal",
+    "npc_slot": "elder",
+    "keywords": [
+      "推举",
+      "宗门",
+      "护法",
+      "长老"
+    ],
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "ns_soc_15216",
+    "text": "你与同辈修士探讨化神之路",
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——你与同辈修士探讨化神之路你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": 25,
+      "charisma": 0
+    },
+    "tags": [
+      "social",
+      "nascent_soul"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "同辈",
+      "修士",
+      "探讨",
+      "化神"
+    ]
+  },
+  {
+    "id": "ns_soc_15244",
+    "text": "修真界各方势力拉拢于你",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——修真界各方势力拉拢于你你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5
+    },
+    "weight": 25,
+    "effects": {
+      "cultivation": 10,
+      "charisma": 1
+    },
+    "tags": [
+      "social",
+      "nascent_soul"
+    ],
+    "event_type": "normal",
+    "npc_slot": "any_known",
+    "keywords": [
+      "各方",
+      "势力",
+      "拉拢",
+      "修真界"
+    ]
+  },
+  {
+    "id": "deity_soc_18838",
+    "text": "你参加化神级别的绝顶强者会议",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你参加化神级别的绝顶强者会议你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "cultivation": 80
+    },
+    "tags": [
+      "social",
+      "high_realm"
+    ],
+    "event_type": "normal",
+    "duration": 5,
+    "npc_slot": "any_known",
+    "keywords": [
+      "参加",
+      "化神",
+      "级别",
+      "绝顶",
+      "强者",
+      "会议"
+    ]
+  },
+  {
+    "id": "deity_soc_18860",
+    "text": "多个宗门恳请你出任太上长老",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——多个宗门恳请你出任太上长老你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "cultivation": 61
+    },
+    "tags": [
+      "social",
+      "high_realm"
+    ],
+    "event_type": "normal",
+    "duration": 5,
+    "npc_slot": "elder",
+    "keywords": [
+      "多个",
+      "宗门",
+      "恳请",
+      "出任",
+      "长老"
+    ],
+    "npc_roles": [
+      "师父"
+    ]
+  },
+  {
+    "id": "deity_soc_18882",
+    "text": "你与另一位化神大能论道百年",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你与另一位化神大能论道百年你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "cultivation": 74
+    },
+    "tags": [
+      "social",
+      "high_realm"
+    ],
+    "event_type": "normal",
+    "duration": 10,
+    "npc_slot": "any_known",
+    "keywords": [
+      "化神",
+      "大能",
+      "论道",
+      "百年"
+    ]
+  },
+  {
+    "id": "deity_soc_18904",
+    "text": "你被整个修真界视为传奇",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你被整个修真界视为传奇你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "cultivation": 42
+    },
+    "tags": [
+      "social",
+      "high_realm"
+    ],
+    "event_type": "normal",
+    "duration": 0,
+    "npc_slot": "any_known",
+    "keywords": [
+      "整个",
+      "视为",
+      "传奇",
+      "修真界"
+    ]
+  },
+  {
+    "id": "deity_soc_18926",
+    "text": "你指点后辈修炼，留下一段佳话",
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——你指点后辈修炼，留下一段佳话你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "cultivation": 55
+    },
+    "tags": [
+      "social",
+      "high_realm"
+    ],
+    "event_type": "normal",
+    "duration": 10,
+    "npc_slot": "master",
+    "keywords": [
+      "指点",
+      "后辈",
+      "修炼",
+      "留下",
+      "一段",
+      "佳话"
+    ]
+  },
+  {
+    "id": "deity_soc_18948",
+    "text": "你以化神之威平息了一场宗门大战",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你以化神之威平息了一场宗门大战你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "cultivation": 60
+    },
+    "tags": [
+      "social",
+      "high_realm"
+    ],
+    "event_type": "normal",
+    "duration": 10,
+    "npc_slot": "any_known",
+    "keywords": [
+      "化神",
+      "之威",
+      "平息",
+      "宗门",
+      "大战"
+    ]
+  },
+  {
+    "id": "deity_soc_18970",
+    "text": "一位远古化神苏醒，邀你共探飞升之路",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——一位远古化神苏醒，邀你共探飞升之路你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "cultivation": 31
+    },
+    "tags": [
+      "social",
+      "high_realm"
+    ],
+    "event_type": "normal",
+    "duration": 5,
+    "npc_slot": "any_known",
+    "keywords": [
+      "远古",
+      "化神",
+      "苏醒",
+      "飞升"
+    ]
+  },
+  {
+    "id": "deity_soc_18992",
+    "text": "你主持修真界百年一度的大会",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你主持修真界百年一度的大会你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 20,
+    "effects": {
+      "cultivation": 59
+    },
+    "tags": [
+      "social",
+      "high_realm"
+    ],
+    "event_type": "normal",
+    "duration": 5,
+    "npc_slot": "any_known",
+    "keywords": [
+      "主持",
+      "百年",
+      "一度",
+      "大会",
+      "修真界"
+    ]
+  },
+  {
+    "id": "hook_create_master_secret_01",
+    "text": "师父临终前留下一枚玉简，叮嘱你修为足够后再打开，其中似乎藏着惊天秘密。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 20,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "master_event",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "npc_roles": [
+      "师父"
+    ],
+    "creates_hook": {
+      "id": "master_secret",
+      "description": "打开师父遗留玉简",
+      "max_wait": 80
+    },
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——师父临终前留下一枚玉简，叮嘱你修为足够后再打开，其中似乎藏着惊天秘密。你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。"
+  },
+  {
+    "id": "hook_resolve_blood_feud_01",
+    "text": "多年后你终于再遇仇人，一番苦战后将其斩于剑下，多年血仇终得了结。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 5,
+      "cultivation": 20
+    },
+    "tags": [
+      "revenge",
+      "combat"
+    ],
+    "event_type": "important",
+    "resolves_hook": "blood_feud",
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——多年后你终于再遇仇人，一番苦战后将其斩于剑下，多年血仇终得了结。你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。"
+  },
+  {
+    "id": "hook_resolve_blood_feud_02",
+    "text": "你在论道大会上堂堂正正击败了当年的仇人，昔日之辱一朝洗雪，心中大石终于落地。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 4,
+      "charisma": 3
+    },
+    "tags": [
+      "revenge",
+      "tournament"
+    ],
+    "event_type": "important",
+    "resolves_hook": "blood_feud",
+    "expanded_text": "修真界的人情世故你虽不太擅长——可该走动的时候还是得走动。事情就这么发生了——你在论道大会上堂堂正正击败了当年的仇人，昔日之辱一朝洗雪，心中大石终于落地。你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。"
+  },
+  {
+    "id": "hook_create_sealed_memory_02",
+    "text": "一位陌生老者看了你一眼，低语道：「你忘了太多东西了。」说完便消失无踪。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 2
+    },
+    "tags": [
+      "mystery",
+      "npc_interaction"
+    ],
+    "event_type": "important",
+    "creates_hook": {
+      "id": "sealed_memory",
+      "description": "找回被封印的记忆",
+      "max_wait": 100
+    },
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——一位陌生老者看了你一眼，低语道：「你忘了太多东西了。」说完便消失无踪。你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。"
+  },
+  {
+    "id": "hook_create_soul_debt_02",
+    "text": "一位散修将毕生收集的修炼资源赠予你，只说了一句「替我走完这条路」，便含笑坐化。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 3,
+      "cultivation": 15
+    },
+    "tags": [
+      "gratitude",
+      "legacy"
+    ],
+    "event_type": "important",
+    "creates_hook": {
+      "id": "soul_debt",
+      "description": "替恩人完成遗愿",
+      "max_wait": 100
+    },
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——一位散修将毕生收集的修炼资源赠予你，只说了一句「替我走完这条路」，便含笑坐化。你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。"
+  },
+  {
+    "id": "hook_resolve_soul_debt_01",
+    "text": "你终于找到了当年恩人的后人，将其收入门下悉心教导，因果之债就此了结。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 3,
+      "charisma": 3
+    },
+    "tags": [
+      "gratitude",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "soul_debt",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你终于找到了当年恩人的后人，将其收入门下悉心教导，因果之债就此了结。你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。"
+  },
+  {
+    "id": "hook_resolve_soul_debt_02",
+    "text": "你在恩人的坟前种下一株灵药，默默立誓已践行完毕，天地间似有一丝因果消散。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 4,
+      "fortune": 2
+    },
+    "tags": [
+      "gratitude",
+      "closure"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "soul_debt",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——你在恩人的坟前种下一株灵药，默默立誓已践行完毕，天地间似有一丝因果消散。你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。"
+  },
+  {
+    "id": "hook_create_broken_oath_02",
+    "text": "你对天立誓要守护宗门百年不衰，道誓之力化为一道烙印刻入你的元神。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3
+    },
+    "weight": 18,
+    "effects": {
+      "willpower": 3,
+      "charisma": 2
+    },
+    "tags": [
+      "oath",
+      "sect"
+    ],
+    "event_type": "important",
+    "creates_hook": {
+      "id": "broken_oath",
+      "description": "践行守护誓言",
+      "max_wait": 150
+    },
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——你对天立誓要守护宗门百年不衰，道誓之力化为一道烙印刻入你的元神。你心中五味杂陈。你微微一笑——天大地大，能遇到的人都是缘分。"
+  },
+  {
+    "id": "hook_resolve_broken_oath_02",
+    "text": "宗门在你的守护下安然度过百年风雨，道誓之力自行消散，你心中一片澄明。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 25,
+    "effects": {
+      "willpower": 5,
+      "charisma": 4
+    },
+    "tags": [
+      "oath",
+      "sect"
+    ],
+    "event_type": "important",
+    "resolves_hook": "broken_oath",
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——宗门在你的守护下安然度过百年风雨，道誓之力自行消散，你心中一片澄明。你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。"
+  },
+  {
+    "id": "hook_resolve_lost_companion_01",
+    "text": "你在一处偏远坊市中意外重逢了当年失散之人，两人相视一笑，多年牵挂化为无言。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "charisma": 3,
+      "willpower": 3
+    },
+    "tags": [
+      "reunion",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "lost_companion",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你在一处偏远坊市中意外重逢了当年失散之人，两人相视一笑，多年牵挂化为无言。你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。"
+  },
+  {
+    "id": "hook_resolve_lost_companion_02",
+    "text": "一封灵鸽传书带来故人的消息，你循着线索找到了对方，久别重逢恍如隔世。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2
+    },
+    "weight": 25,
+    "effects": {
+      "charisma": 2,
+      "willpower": 4
+    },
+    "tags": [
+      "reunion",
+      "npc_interaction"
+    ],
+    "event_type": "fortune",
+    "resolves_hook": "lost_companion",
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——一封灵鸽传书带来故人的消息，你循着线索找到了对方，久别重逢恍如隔世。你心中五味杂陈。你心中平静——不管世事如何变化，你只做自己该做的事。"
+  },
+  {
+    "text": "数位元婴老怪设宴，你被邀请列席，觥筹交错间暗藏杀机。",
+    "category": "social",
+    "event_type": "important",
+    "effects": {
+      "charisma": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "high_society"
+    ],
+    "id": "hrealm_ns_005",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——数位元婴老怪设宴，你被邀请列席，觥筹交错间暗藏杀机。你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "keywords": []
+  },
+  {
+    "text": "一位即将突破化神的前辈请你护法，你从旁观悟出诸多感触。",
+    "category": "social",
+    "event_type": "fortune",
+    "effects": {
+      "cultivation": 40,
+      "comprehension": 2
+    },
+    "tags": [
+      "guardian",
+      "learning"
+    ],
+    "id": "hrealm_ns_006",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "你难得地与人多说了几句话——修道久了，人总会变得话少。事情就这么发生了——一位即将突破化神的前辈请你护法，你从旁观悟出诸多感触。你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "keywords": []
+  },
+  {
+    "text": "你收到远古传承者的玉简，邀你加入一个隐秘的修士联盟。",
+    "category": "social",
+    "event_type": "important",
+    "effects": {
+      "fortune": 1,
+      "charisma": 1
+    },
+    "tags": [
+      "secret_alliance"
+    ],
+    "id": "hrealm_ns_007",
+    "conditions": {
+      "min_realm": 4
+    },
+    "weight": 50,
+    "expanded_text": "修道虽然清苦——可总有些人让你觉得这条路不那么孤单。事情就这么发生了——你收到远古传承者的玉简，邀你加入一个隐秘的修士联盟。你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "keywords": []
+  },
+  {
+    "text": "一位隐世老祖出关，点名与你论道，天地为之变色。",
+    "category": "social",
+    "event_type": "important",
+    "effects": {
+      "comprehension": 2,
+      "charisma": 1
+    },
+    "tags": [
+      "ancient_patriarch",
+      "dao_discussion"
+    ],
+    "id": "hrealm_dt_008",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "你在坊市中遇到了一位熟人——聊了几句近况。事情就这么发生了——一位隐世老祖出关，点名与你论道，天地为之变色。你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "keywords": []
+  },
+  {
+    "text": "诸多化神修士齐聚，共商应对天劫周期之策。",
+    "category": "social",
+    "event_type": "important",
+    "effects": {
+      "charisma": 2,
+      "willpower": 1
+    },
+    "tags": [
+      "council",
+      "tribulation"
+    ],
+    "id": "hrealm_dt_009",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "你与人打了个照面——寒暄了几句，气氛还算融洽。事情就这么发生了——诸多化神修士齐聚，共商应对天劫周期之策。你心中五味杂陈。你道了别——转身继续走自己的路。人来人往，聚散有时。",
+    "keywords": []
+  },
+  {
+    "text": "你被推举为此方天地修士的领袖之一，众望所归。",
+    "category": "social",
+    "event_type": "fortune",
+    "effects": {
+      "charisma": 3
+    },
+    "tags": [
+      "leader",
+      "reputation"
+    ],
+    "id": "hrealm_dt_010",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——你被推举为此方天地修士的领袖之一，众望所归。你心中五味杂陈。你拍了拍衣袍——好了，该回去修炼了。",
+    "keywords": []
+  },
+  {
+    "text": "一位老友即将飞升，设宴与你诀别。",
+    "category": "social",
+    "event_type": "important",
+    "effects": {
+      "willpower": 1
+    },
+    "tags": [
+      "farewell",
+      "ascension"
+    ],
+    "id": "hrealm_dt_011",
+    "conditions": {
+      "min_realm": 5
+    },
+    "weight": 50,
+    "expanded_text": "你收到了一封来信——展开看了看，嘴角微动。事情就这么发生了——一位老友即将飞升，设宴与你诀别。你心中五味杂陈。你回到洞府后想了想今日之事——嗯，修道之人也不能完全与世隔绝。",
+    "keywords": []
   }
 ]

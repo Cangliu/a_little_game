@@ -163,6 +163,7 @@ class EventDirector:
         """Determine if this turn can skip LLM to save cost.
 
         Conditions (ALL must be met):
+        0. 已觉醒 (凡人阶段每个事件都很重要，不跳过)
         1. 张力 < 40 (低张力回合)
         2. 事件无 npc_roles (非NPC专属事件)
         3. 事件类型为 normal/funny (非 important/danger/fortune)
@@ -171,6 +172,10 @@ class EventDirector:
         6. 无紧迫因果链 (urgency >= 3)
         7. 无高动量Saga (momentum >= 40)
         """
+        # 条件0: 凡人阶段不跳过（童年事件皆为叙事根基）
+        if getattr(state, "realm", 0) < 1:
+            return False
+
         # 条件5: 连续跳过不超过1次
         streak = getattr(state, "_llm_skip_streak", 0)
         if streak >= _LOW_VALUE_MAX_CONSECUTIVE:
@@ -576,7 +581,7 @@ class EventDirector:
             "narrative": narrative,
             "has_choice": has_choice,
             "branches": branches,
-            "causal_chain": data.get("causal_chain"),  # Optional: LLM-generated chain
+            "causal_chain": self._sanitize_causal_chain(data.get("causal_chain")),
         }
 
     def _sanitize_branches(self, branches: list) -> Optional[list[dict]]:
@@ -640,6 +645,34 @@ class EventDirector:
             elif k == "add_tag" and isinstance(v, str):
                 clean_effects[k] = v[:20]
         return clean_effects
+
+    @staticmethod
+    def _sanitize_causal_chain(raw) -> Optional[dict]:
+        """Validate and sanitize LLM-generated causal chain data.
+
+        Expected schema: {cause: str, expected_resolution: str, keywords: list[str]}
+        Returns None if invalid.
+        """
+        if not isinstance(raw, dict):
+            return None
+        cause = raw.get("cause", "")
+        expected = raw.get("expected_resolution", "")
+        keywords = raw.get("keywords", [])
+
+        if not expected or not isinstance(expected, str):
+            return None
+        if not isinstance(cause, str):
+            cause = ""
+        if not isinstance(keywords, list):
+            keywords = []
+        # Sanitize keywords: only keep short strings
+        keywords = [str(k)[:10] for k in keywords if isinstance(k, str) and len(k) <= 10][:8]
+
+        return {
+            "cause": cause[:80],
+            "expected_resolution": expected[:60],
+            "keywords": keywords,
+        }
 
     def _fallback(self, candidates: list[dict], state: "GameState") -> dict:
         """Fallback when LLM is unavailable: weighted random pick + raw text."""

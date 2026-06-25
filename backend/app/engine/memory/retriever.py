@@ -121,9 +121,10 @@ class BM25Retriever:
                 continue
 
             idf = self._idf[qt]
-            # BM25 TF normalization
+            # BM25 TF normalization (guard against _avg_dl == 0)
+            avg_dl = self._avg_dl if self._avg_dl > 0 else 1.0
             numerator = tf * (self.k1 + 1)
-            denominator = tf + self.k1 * (1 - self.b + self.b * dl / self._avg_dl)
+            denominator = tf + self.k1 * (1 - self.b + self.b * dl / avg_dl)
             score += idf * (numerator / denominator)
 
         return score

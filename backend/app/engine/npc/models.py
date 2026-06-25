@@ -80,6 +80,7 @@ class NPC(BaseModel):
     secret: str = ""                 # 隐藏秘密 ("实为魔修后裔" / "暗恋主角多年")
     growth_arc: str = ""             # 成长方向 ("从冷漠到温情" / "从正直到堕落")
     betrayal_threshold: int = -1     # 背叛触发条件 (好感度降至此值以下可能背叛, -1=不会背叛)
+    age_offset: int = 30             # 初次相遇时NPC比玩家大的估算年数 (生成时固定)
 
 
 class NPCInteraction(BaseModel):

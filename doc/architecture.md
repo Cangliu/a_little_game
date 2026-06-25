@@ -14,8 +14,8 @@
 
 - **顶层（玩家视角）**：玩家所见的修仙体验 — 开局天赋抽取 → 流年叙事循环(~80回合) → 抉择分支 → 终局飞升/陨落
 - **中层（前端+API）**：React+Vite SPA 通过 SSE 流式连接 FastAPI 后端
-- **核心层（引擎内核）**：GameDirector 10阶段流年循环 → 事件池(~9500条JSON骨骼) → EventDirector(9层管线筛选 + DeepSeek LLM叙事血肉)
-- **底层（六大子系统）**：NPC系统、记忆系统、因果系统、Saga弧线、天地纪元、境界系统 — 共同驱动 GameState
+- **核心层（引擎内核）**：GameDirector 10阶段流年循环 → 事件池(~9500条JSON骨骼) → EventDirector(10层管线筛选含L4.5纪元提权 + DeepSeek LLM叙事血肉)
+- **底层（七大子系统）**：NPC系统、记忆系统、因果系统、Saga弧线、天地纪元、境界系统、宗门系统 — 共同驱动 GameState
 
 > 可编辑源文件：[game_architecture.excalidraw](../diagrams/game_architecture.excalidraw)，可在 [excalidraw.com](https://excalidraw.com) 中打开编辑
 
@@ -28,7 +28,7 @@
 ```
 事件池 (~9500条)
   ↓ [规则系统 — 零成本]
-  9层过滤 + 权重计算 → top-10 候选事件
+  9层过滤 + L4.5纪元提权 + 权重计算 → top-10 候选事件
   ↓ [LLM Director — 单次调用]
   选1个事件 + 生成叙事(200-300字) + 可选分支
   ↓
@@ -118,7 +118,7 @@ EventBranch
 
 ---
 
-## 三、9层事件选择管线
+## 三、10层事件选择管线
 
 ### 管线总览
 
@@ -128,12 +128,13 @@ EventBranch
   ↓ Layer 2: 条件过滤        [硬过滤]   年龄/境界/天赋/标签/性别/属性
   ↓ Layer 3: 去重过滤        [硬过滤]   排除 used_event_ids
   ────────── 以下为权重调整（乘性叠加）──────────
-  ↓ Layer 4: 权重计算        事件类型 × 境界相关性 × 张力曲线
-  ↓ Layer 5: 伏笔权重        因果链匹配事件提权
-  ↓ Layer 6: 关键词加成      三维匹配（剧情线 + 命运主线关键词）
-  ↓ Layer 7: 多样性衰减      近期重复类别降权
-  ↓ Layer 8: NPC好感度驱动   关联NPC好感度提权
-  ↓ Layer 9: 选择后果提权    玩家历史选择的 consequence_tag 匹配
+  ↓ Layer 4:   权重计算      事件类型 × 境界相关性 × 张力曲线
+  ↓ Layer 4.5: 纪元提权      活跃World Era的category_boost乘性叠加
+  ↓ Layer 5:   伏笔权重      因果链匹配事件提权
+  ↓ Layer 6:   关键词加成    三维匹配（剧情线 + 命运主线关键词）
+  ↓ Layer 7:   多样性衰减    近期重复类别降权
+  ↓ Layer 8:   NPC好感度驱动 关联NPC好感度提权
+  ↓ Layer 9:   选择后果提权  玩家历史选择的 consequence_tag 匹配
   ↓
   排序取 top-10 → LLM Director 精选1个
 ```
@@ -212,6 +213,18 @@ relevance = max(0.1, 1.0 - |当前境界 - target| × 0.25)
 | ≥70 (高) | ×0.3 | ×2.0 | 给玩家喘息 |
 | 30-70 (中) | ×1.0 | ×1.0 | 正常节奏 |
 | <30 (低) | ×2.0 | ×0.5 | 制造冲突 |
+
+### Layer 4.5: 纪元提权（World Era category boost）
+
+当存在活跃纪元时，根据纪元的 `category_boost` 配置对匹配类别的事件乘性提权。
+
+```
+era_adjustments = era_manager.get_era_weight_adjustments(state)
+# 返回 {category_name: boost_multiplier}，如 {"social": 2.0}
+# 候选事件的 category 匹配时，权重 ×= boost_multiplier
+```
+
+18种预定义纪元，每种指定 `category_boost`（类别提权）和 `tension_mod`（张力调节）。
 
 ### Layer 5: 伏笔权重
 
@@ -336,7 +349,7 @@ advance_year()
 | 因果伏笔 | L5 | resolves_hook 匹配提权 |
 | 剧情线关键词 | L6 | 三维匹配 ×2.5~×5.0 |
 | 命运主线关键词 | L6 | 骨骼引导血肉 |
-| 世界纪元 | 阶段6.1 | 纪元转换优先事件 |
+| 世界纪元 | L4.5, 阶段6.1 | 纪元类别提权(L4.5) + 纪元转换优先事件(6.1) |
 
 ### 来自事件自身
 
@@ -367,5 +380,5 @@ advance_year()
 | 时间步长 | {凡人:1, 练气:1-3, 筑基:3-8, 金丹:5-15, 元婴:10-30, 化神:20-50} |
 | 最大寿元 | {凡人:80, 练气:150, 筑基:300, 金丹:600, 元婴:1200, 化神:1500} |
 | 工作记忆 | 5条 |
-| NPC上限 | 20个 |
+| NPC上限 | 30个 |
 | NPC名字组合 | 10,360 (男5,880 + 女4,480) |

@@ -177,3 +177,13 @@ def get_sect_world(game_id: str):
         "relations": relations,
         "player_sect_id": state.sect_membership.get("sect_id") if state.sect_membership else None,
     }
+
+
+@router.get("/life-events/{game_id}")
+def get_life_events(game_id: str):
+    """Get full events log for life timeline review."""
+    state = get_state(game_id)
+    if state is None:
+        raise HTTPException(status_code=404, detail=f"Game {game_id} not found")
+
+    return {"events": state.events_log}
