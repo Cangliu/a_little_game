@@ -28,6 +28,8 @@ if TYPE_CHECKING:
 
 from .ai.prompt_templates import EVENT_DIRECTOR_SYSTEM, EVENT_DIRECTOR_USER, EVENT_DIRECTOR_STREAM_SYSTEM
 from .ai.llm_client import MODEL_PRO
+from .foreshadowing import build_foreshadowing_context, build_emotional_tokens_context, build_repertoire_context
+from .repertoire_pool import sample_acquisition_items
 from .life_phase import LifePhase, LifePhaseManager
 
 logger = logging.getLogger(__name__)
@@ -397,6 +399,27 @@ class EventDirector:
                 state, cand_texts, top_k=3
             )
 
+        # Foreshadowing hints (predictive narrative cues)
+        foreshadowing = build_foreshadowing_context(state)
+
+        # Emotional tokens context (随身之物)
+        emotional_tokens_ctx = build_emotional_tokens_context(state)
+
+        # Repertoire context (修行积累)
+        repertoire_ctx = build_repertoire_context(state)
+
+        # Acquisition pool (当前可获得的修行资源)
+        acquisition_items = sample_acquisition_items(state, count=3)
+        if acquisition_items:
+            pool_lines = []
+            for item in acquisition_items:
+                _cat_map = {"technique": "功法", "treasure": "法宝", "secret_art": "秘术", "puppet": "傀儡", "spirit_beast": "灵兽", "element": "天地精华"}
+                cat = _cat_map.get(item.get("category", ""), "法宝")
+                pool_lines.append(f"- [{cat}] {item['name']}：{item['desc']}")
+            acquisition_pool = "\n".join(pool_lines)
+        else:
+            acquisition_pool = "无可用资源"
+
         attrs = state.attributes
         system_prompt = EVENT_DIRECTOR_SYSTEM.format(
             realm_name=realm_name,
@@ -425,6 +448,10 @@ class EventDirector:
             world_era_context=era_context or "天下太平，无特殊大势",
             saga_context=saga_context or "无活跃长线Saga",
             causal_chains_context=chains_ctx or "无活跃因果链",
+            foreshadowing_hints=foreshadowing or "无伏笔暗线",
+            emotional_tokens_context=emotional_tokens_ctx or "无随身之物",
+            repertoire_context=repertoire_ctx or "无修行积累",
+            acquisition_pool=acquisition_pool,
         )
 
         # Append dead NPC warning after user prompt to prevent contradictions
@@ -476,7 +503,7 @@ class EventDirector:
             # Also check other known markers
             for known in ["【候选事件】", "【主角状态】", "【天地大势】",
                           "【因果暗线】", "【人际关系】", "【未了之事】",
-                          "【传记摘要】", "请选择"]:
+                          "【伏笔暗线", "【传记摘要】", "请选择"]:
                 ki = result.find(known, idx + len(marker))
                 if ki > 0:
                     next_section = min(next_section, ki)
@@ -581,7 +608,9 @@ class EventDirector:
             "narrative": narrative,
             "has_choice": has_choice,
             "branches": branches,
+            "combat_loot": self._sanitize_combat_loot(data.get("combat_loot")),
             "causal_chain": self._sanitize_causal_chain(data.get("causal_chain")),
+            "emotional_token": self._sanitize_emotional_token(data.get("emotional_token")),
         }
 
     def _sanitize_branches(self, branches: list) -> Optional[list[dict]]:
@@ -626,6 +655,18 @@ class EventDirector:
                 "consequence_tag": b.get("consequence_tag", "") or "",
                 "consequence_desc": b.get("consequence_desc", "") or "",
             }
+            # Preserve combat_risk flag for fortune+combat integration
+            if b.get("combat_risk"):
+                branch["combat_risk"] = True
+            # Preserve acquisition field for repertoire system
+            acq = b.get("acquisition")
+            if acq and isinstance(acq, dict) and acq.get("name"):
+                branch["acquisition"] = {
+                    "name": str(acq["name"])[:15],
+                    "category": acq.get("category", "treasure") if acq.get("category") in ("technique", "treasure", "secret_art", "puppet", "spirit_beast", "element") else "treasure",
+                    "desc": str(acq.get("desc", ""))[:30],
+                    "power": min(5, max(1, int(acq.get("power", 1)))) if isinstance(acq.get("power"), (int, float)) else 1,
+                }
             sanitized.append(branch)
 
         return sanitized if len(sanitized) >= 2 else None
@@ -645,6 +686,44 @@ class EventDirector:
             elif k == "add_tag" and isinstance(v, str):
                 clean_effects[k] = v[:20]
         return clean_effects
+
+    @staticmethod
+    def _sanitize_emotional_token(raw) -> Optional[dict]:
+        """Validate emotional_token from LLM output."""
+        if not isinstance(raw, dict):
+            return None
+        name = raw.get("name", "")
+        if not name:
+            return None
+        return {
+            "name": name[:6],
+            "description": raw.get("description", "")[:30],
+            "source_npc": raw.get("source_npc", "")[:10],
+            "keywords": [str(k)[:8] for k in raw.get("keywords", []) if isinstance(k, str)][:3],
+        }
+
+    @staticmethod
+    def _sanitize_combat_loot(raw) -> Optional[dict]:
+        """Validate combat_loot from LLM output (战后缴获)."""
+        if not isinstance(raw, dict):
+            return None
+        name = raw.get("name", "")
+        if not name:
+            return None
+        category = raw.get("category", "treasure")
+        valid_categories = ("technique", "treasure", "secret_art", "puppet", "spirit_beast", "element")
+        if category not in valid_categories:
+            category = "treasure"
+        try:
+            power = min(5, max(1, int(raw.get("power", 2))))
+        except (ValueError, TypeError):
+            power = 2
+        return {
+            "name": name[:15],
+            "category": category,
+            "desc": str(raw.get("desc", ""))[:30],
+            "power": power,
+        }
 
     @staticmethod
     def _sanitize_causal_chain(raw) -> Optional[dict]:

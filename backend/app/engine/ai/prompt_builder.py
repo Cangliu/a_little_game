@@ -161,6 +161,9 @@ class PromptBuilder:
         arc_context: str = "",
         hooks_context: str = "",
         recent_events: str = "",
+        foreshadowing_hints: str = "",
+        emotional_tokens_context: str = "",
+        repertoire_context: str = "",
     ) -> tuple:
         """Build context-aware prompts for narrative expansion.
 
@@ -187,6 +190,9 @@ class PromptBuilder:
             arc_context=arc_context or "无活跃剧情线",
             npc_interaction_history=npc_interaction_history or "无相关交往史",
             unresolved_hooks=hooks_context or "无未了之事",
+            foreshadowing_hints=foreshadowing_hints or "无伏笔暗线",
+            emotional_tokens_context=emotional_tokens_context or "无随身之物",
+            repertoire_context=repertoire_context or "无修行积累",
             recent_events=recent_events or "暂无近期经历",
         )
 

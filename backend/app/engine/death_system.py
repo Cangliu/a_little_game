@@ -117,6 +117,80 @@ class DeathSystem:
 
         return None  # Low-probability path: no matching death event → survive
 
+    # ── Combat death (斗法致死通路) ────────────────────────────────────────────
+
+    def check_combat_death(self, state: GameState, event: dict) -> Optional[dict]:
+        """After a danger+combat event, check for combat death.
+
+        Triggers:
+        - Event must have event_type=danger AND tags contain 'combat' or 'calamity'
+        - Base death chance: 2% (练气/筑基), 1.5% (金丹/元婴), 1% (化神)
+        - Modifiers:
+          - constitution: ×(1 - constitution×0.06)
+          - combat_wounded: ×4
+          - fortune: ×(1 - fortune×0.03)
+          - repertoire power: 每持有power>=3的修行积累，-5%相对风险
+        """
+        tags = set(event.get("tags", []))
+        if event.get("event_type") != "danger":
+            return None
+        if not (tags & {"combat", "calamity"}):
+            return None
+        # 凡人期不触发
+        if state.realm < 1:
+            return None
+
+        # Base rate by realm
+        base = 0.02 if state.realm <= 2 else 0.015 if state.realm <= 4 else 0.01
+
+        # Constitution modifier
+        rate = base * max(0.2, 1 - state.attributes.constitution * 0.06)
+
+        # Fortune modifier
+        rate *= max(0.3, 1 - state.attributes.fortune * 0.03)
+
+        # Combat wounded amplifier
+        if getattr(state, "combat_wounded", False):
+            rate *= 4.0
+
+        # Repertoire power bonus
+        high_power_count = sum(
+            1 for r in getattr(state, "combat_repertoire", [])
+            if r.get("power", 0) >= 3
+        )
+        rate *= max(0.3, 1 - high_power_count * 0.05)
+
+        if random.random() >= rate:
+            return None
+
+        # Trigger combat death
+        state.is_dead = True
+        state.death_reason = "斗法陨落"
+        return self._get_combat_death_event(state)
+
+    def _get_combat_death_event(self, state: GameState) -> dict:
+        """Pick a combat-specific death event or use fallback."""
+        combat_deaths = [
+            e for e in ALL_EVENTS
+            if e.get("category") == "death"
+            and "斗" in e.get("death_reason", "")
+            and check_conditions(e, state)
+        ]
+        if combat_deaths:
+            return random.choice(combat_deaths)
+        return {
+            "id": "combat_death_generic",
+            "text": "你在一场激烈的斗法中力竭而亡。",
+            "expanded_text": (
+                "灵力已竭，对手的最后一击如山岳压来。"
+                "你拼尽全力运起护体灵光，却已无法抵挡。"
+                "意识渐渐模糊，一切戛然而止。"
+            ),
+            "event_type": "danger",
+            "category": "death",
+            "death_reason": "斗法陨落",
+        }
+
     # ── Helpers ──────────────────────────────────────────────────────
 
     @staticmethod

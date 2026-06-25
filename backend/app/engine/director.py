@@ -174,6 +174,11 @@ class GameDirector:
         destiny_keywords = self.storyline_planner.get_destiny_keywords(state)
         if destiny_keywords:
             arc_keywords = (arc_keywords or []) + destiny_keywords
+        # Get causal chain resolution keywords (因果前瞻, ×2.5 boost via Layer 6)
+        from .foreshadowing import get_causal_chain_keywords
+        chain_keywords = get_causal_chain_keywords(state)
+        if chain_keywords:
+            arc_keywords = (arc_keywords or []) + chain_keywords
 
         # Phase 6.1: Priority events (NPC/Sect) - pure rules, no LLM
         priority_events = []
@@ -281,6 +286,13 @@ class GameDirector:
         causal_chain_data = director_result.get("causal_chain")
         if causal_chain_data and isinstance(causal_chain_data, dict):
             self.hook_manager.create_causal_chain(state, causal_chain_data, main_ev)
+        # Handle emotional token from LLM output (随身之物)
+        token = director_result.get("emotional_token")
+        if token and isinstance(token, dict):
+            token["source_age"] = state.age
+            state.emotional_tokens.append(token)
+            if len(state.emotional_tokens) > 10:
+                state.emotional_tokens = state.emotional_tokens[-10:]
         # Check for chain event trigger
         trigger_id = main_ev.get("effects", {}).get("trigger_event_id", "")
         if trigger_id:
@@ -295,6 +307,13 @@ class GameDirector:
                 event_text=main_ev.get("text", "")[:60],
             )
         events.append(main_ev)
+
+        # Phase 6.4.1: Combat wound detection (战伤标记)
+        if main_ev.get("event_type") == "danger" and {"combat", "calamity"} & set(main_ev.get("tags", [])):
+            effects = main_ev.get("effects", {})
+            if effects.get("constitution", 0) < 0 or effects.get("cultivation", 0) < -15:
+                state.combat_wounded = True
+                state.combat_wound_age = state.age
 
         # Phase 6.5: Force-resolve expired hooks
         expiring = self.hook_manager.check_expiring_hooks(state)
@@ -322,6 +341,17 @@ class GameDirector:
             # Generate main storyline on first breakthrough (骨骼初始化)
             if not state.main_storyline.get("storyline_id"):
                 self.storyline_planner.generate_storyline(state, state.realm)
+
+        # Phase 7.5: Combat death check (斗法致死)
+        if main_ev.get("event_type") == "danger" and {"combat", "calamity"} & set(main_ev.get("tags", [])):
+            combat_death = self.death_system.check_combat_death(state, main_ev)
+            if combat_death:
+                events.append(combat_death)
+                self._post_year_update(state, events)
+                return self._build_response(state, events, total_years)
+
+        # Phase 7.6: Combat loot (战后缴获 — 存活后的修行积累获取)
+        self._process_combat_loot(state, main_ev, director_result)
 
         # Phase 8: Accidental death check (based on post-event state)
         accidental_death = self.death_system.check_accidental_death(state)
@@ -420,6 +450,11 @@ class GameDirector:
         destiny_keywords = self.storyline_planner.get_destiny_keywords(state)
         if destiny_keywords:
             arc_keywords = (arc_keywords or []) + destiny_keywords
+        # Causal chain resolution keywords (因果前瞻, ×2.5 boost via Layer 6)
+        from .foreshadowing import get_causal_chain_keywords
+        chain_keywords = get_causal_chain_keywords(state)
+        if chain_keywords:
+            arc_keywords = (arc_keywords or []) + chain_keywords
 
         # Phase 6.1: Priority events
         priority_events = []
@@ -570,6 +605,13 @@ class GameDirector:
         causal_chain_data = meta_data.get("causal_chain")
         if causal_chain_data and isinstance(causal_chain_data, dict):
             self.hook_manager.create_causal_chain(state, causal_chain_data, main_ev)
+        # Handle emotional token from streaming LLM output (随身之物)
+        token = meta_data.get("emotional_token")
+        if token and isinstance(token, dict):
+            token["source_age"] = state.age
+            state.emotional_tokens.append(token)
+            if len(state.emotional_tokens) > 10:
+                state.emotional_tokens = state.emotional_tokens[-10:]
         trigger_id = main_ev.get("effects", {}).get("trigger_event_id", "")
         if trigger_id:
             state.pending_chain_events.append(trigger_id)
@@ -582,6 +624,13 @@ class GameDirector:
                 event_text=main_ev.get("text", "")[:60],
             )
         events.append(main_ev)
+
+        # Phase 6.4.1: Combat wound detection (战伤标记)
+        if main_ev.get("event_type") == "danger" and {"combat", "calamity"} & set(main_ev.get("tags", [])):
+            effects = main_ev.get("effects", {})
+            if effects.get("constitution", 0) < 0 or effects.get("cultivation", 0) < -15:
+                state.combat_wounded = True
+                state.combat_wound_age = state.age
 
         # Phase 6.5: Expired hooks
         expiring = self.hook_manager.check_expiring_hooks(state)
@@ -602,6 +651,27 @@ class GameDirector:
             self.arc_planner.plan_arcs_for_realm(state, state.realm)
             if not state.main_storyline.get("storyline_id"):
                 self.storyline_planner.generate_storyline(state, state.realm)
+
+        # Phase 7.5: Combat death check (斗法致死)
+        if main_ev.get("event_type") == "danger" and {"combat", "calamity"} & set(main_ev.get("tags", [])):
+            combat_death = self.death_system.check_combat_death(state, main_ev)
+            if combat_death:
+                events.append(combat_death)
+                self._post_year_update(state, events)
+                self._record_events_log(state, events)
+                done_data = {
+                    "ai_enhanced": ai_used_this_turn,
+                    "is_dead": state.is_dead,
+                    "is_ascended": state.is_ascended,
+                    "death_reason": state.death_reason,
+                    "has_choice": False,
+                    "years_passed": total_years,
+                }
+                yield {"event": "done", "data": done_data}
+                return
+
+        # Phase 7.6: Combat loot (战后缴获 — 存活后的修行积累获取)
+        self._process_combat_loot(state, main_ev, meta_data)
 
         # Phase 8: Accidental death (early termination like sync version)
         accidental_death = self.death_system.check_accidental_death(state)
@@ -677,6 +747,11 @@ class GameDirector:
 
     def _post_year_update(self, state: GameState, events: list) -> None:
         """End-of-year housekeeping: memory recording, NPC aging, arc advancement, destiny advancement, tension update, context update."""
+        # 战伤自动痊愈（2回合后）
+        if getattr(state, "combat_wounded", False):
+            if state.age - getattr(state, "combat_wound_age", 0) >= 2:
+                state.combat_wounded = False
+
         self.memory_manager.tick_year(state)
         self.npc_manager.age_npcs(state)
         # Advance story arcs based on events + check for saga emergence
@@ -732,6 +807,58 @@ class GameDirector:
             delta -= 3  # Injury implies negative interaction
 
         return max(-10, min(10, delta))
+
+    # ── Combat loot system (战后缴获) ─────────────────────────────────
+
+    def _process_combat_loot(self, state: GameState, main_ev: dict, director_result: dict) -> None:
+        """Process combat loot after surviving a danger+combat event.
+
+        Two paths:
+        1. LLM explicitly output a combat_loot field (validated by event_director)
+        2. Probability-based fallback: 15% base * (1 + fortune*0.03)
+        Both paths store the item in state.combat_repertoire.
+        """
+        # Only trigger for danger+combat events that the character survived
+        if main_ev.get("event_type") != "danger":
+            return
+        if not ({"combat", "calamity"} & set(main_ev.get("tags", []))):
+            return
+
+        # Path 1: LLM provided combat_loot
+        loot = director_result.get("combat_loot")
+        if loot and isinstance(loot, dict) and loot.get("name"):
+            self._store_repertoire_item(state, loot)
+            return
+
+        # Path 2: Probability-based fallback (no LLM loot)
+        fortune = getattr(state.attributes, "fortune", 5)
+        loot_chance = 0.15 * (1 + fortune * 0.03)
+        if _rand.random() < loot_chance:
+            from .repertoire_pool import sample_acquisition_items
+            items = sample_acquisition_items(state, count=1)
+            if items:
+                self._store_repertoire_item(state, items[0])
+
+    @staticmethod
+    def _store_repertoire_item(state: GameState, item: dict) -> None:
+        """Store a single repertoire item into state, respecting capacity limit."""
+        name = item.get("name", "")
+        if not name:
+            return
+        owned = {r["name"] for r in state.combat_repertoire}
+        if name in owned:
+            return  # Already owned, no duplicate
+        state.combat_repertoire.append({
+            "name": name,
+            "category": item.get("category", "treasure"),
+            "desc": str(item.get("desc", ""))[:30],
+            "power": min(5, max(1, int(item.get("power", 2)))),
+            "source_age": state.age,
+        })
+        # Capacity: 15 items max, discard lowest power
+        if len(state.combat_repertoire) > 15:
+            state.combat_repertoire.sort(key=lambda x: x.get("power", 0))
+            state.combat_repertoire = state.combat_repertoire[1:]
 
     # ── Priority event mutual exclusion ───────────────────────────────
 
@@ -915,9 +1042,44 @@ class GameDirector:
             "is_success": is_success,
         })
 
+        # 6. Handle repertoire acquisition (修行积累获取)
+        acquisition = branch.get("acquisition")
+        if acquisition and isinstance(acquisition, dict):
+            acq_name = acquisition.get("name", "")
+            if acq_name:
+                owned = {r["name"] for r in state.combat_repertoire}
+                if acq_name not in owned:
+                    state.combat_repertoire.append({
+                        "name": acq_name,
+                        "type": acquisition.get("type", ""),
+                        "desc": str(acquisition.get("desc", ""))[:30],
+                        "power": min(5, max(1, int(acquisition.get("power", 1)))),
+                        "source_age": state.age,
+                        "category": acquisition.get("category", "treasure"),
+                    })
+                    # 台账上限: 15个（超出时丢弃power最低的）
+                    if len(state.combat_repertoire) > 15:
+                        state.combat_repertoire.sort(key=lambda x: x.get("power", 0))
+                        state.combat_repertoire = state.combat_repertoire[1:]
+
+        # 7. Combat risk check (机缘中的斗法风险 — 触发斗法致死判定)
+        combat_death_result = None
+        if branch.get("combat_risk"):
+            # Construct a synthetic combat event for death check
+            combat_ev = {
+                "event_type": "danger",
+                "tags": ["combat", "fortune_combat_risk"],
+                "effects": branch.get("effects", {}) if is_success else branch.get("failure_effects", {}),
+            }
+            combat_death = self.death_system.check_combat_death(state, combat_ev)
+            if combat_death:
+                state.is_dead = True
+                state.death_reason = combat_death.get("death_reason", "斗法身亡")
+                combat_death_result = combat_death
+
         state.pending_choice = None
 
-        return {
+        result = {
             "result_text": result_text,
             "event_id": event_id,
             "choice_index": choice_index,
@@ -925,6 +1087,10 @@ class GameDirector:
             "is_success": is_success,
             "final_success_rate": final_rate,
         }
+        if combat_death_result:
+            result["combat_death"] = True
+            result["death_reason"] = state.death_reason
+        return result
 
     @staticmethod
     def _calc_choice_sentiment(branch: dict) -> int:
@@ -1148,3 +1314,4 @@ class GameDirector:
             npc_relationships=npc_rels,
             ai_enhanced=ai_used,
         )
+

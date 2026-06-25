@@ -153,8 +153,15 @@ class GameState(BaseModel):
     sect_world: dict = {}                   # {sects: {id: Sect}, relations: [SectRelation]}
     # 动态因果链系统
     causal_chains: list[dict] = []           # 活跃的因果链 (CausalChain dicts)
+    # 情感道具台账
+    emotional_tokens: list[dict] = []        # 随身信物/遗物 [{name, description, source_npc, source_age, keywords}]
+    # 修行积累台账 (斗法系统)
+    combat_repertoire: list[dict] = []       # 功法/法宝 [{name, type, desc, power, source_age, category}]
+    combat_wounded: bool = False              # 战伤状态（提高下次斗法致死率）
+    combat_wound_age: int = 0                # 受伤时年龄（2回合后自动痊愈）
     # Saga 涌现系统
     sagas: list[dict] = []                   # 活跃的 Saga
+    saga_omens: list[dict] = []              # Saga预兆记录 (未达到涌现阈值但有迹象)
     completed_arcs_history: list[dict] = []  # 已完成 Arc 的摘要 (用于 Saga 检测)
     # 世界纪元系统
     world_eras: list[dict] = []              # 历史纪元记录

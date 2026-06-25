@@ -990,3 +990,227 @@
 [2026-06-25 15:15:33] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
 [2026-06-25 15:15:33] [INFO] [app.engine.state] Persistence: loaded 7 games, cleaned 0 expired
 [2026-06-25 15:15:34] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:52:33] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:52:34] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 7 expired
+[2026-06-25 16:52:34] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:52:34] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:52:35] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:52:35] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:53:00] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:53:00] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:53:01] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:53:01] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:53:02] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:53:02] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:53:35] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:53:36] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:53:36] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:53:37] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:53:37] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:53:38] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:53:38] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:53:38] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:53:39] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:56:31] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:56:32] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:56:32] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:56:32] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:56:33] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:56:33] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:57:07] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:57:07] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:57:07] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:57:08] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:57:08] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:57:08] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:57:09] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:57:09] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:57:09] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:57:54] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:57:54] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:57:55] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:57:55] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:57:55] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:57:56] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:57:56] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:57:56] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:57:57] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:58:27] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:58:28] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:58:28] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:58:28] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:58:29] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:58:29] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:58:50] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:58:51] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:58:51] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:58:51] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:58:52] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:58:52] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:59:04] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:59:04] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:59:05] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 16:59:32] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 16:59:33] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 16:59:33] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:09:07] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:09:07] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:09:08] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:09:08] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:09:08] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:09:09] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:09:27] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:09:28] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:09:28] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:09:28] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:09:29] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:09:29] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:11:24] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:11:25] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:11:25] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:11:25] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:11:26] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:11:27] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:13:59] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:13:59] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:14:00] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:14:00] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:14:00] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:14:01] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:14:12] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:14:12] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:14:12] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:14:13] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:14:13] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:14:13] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:14:29] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:14:29] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:14:30] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:14:30] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:14:30] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:14:31] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:14:50] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:14:51] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:14:51] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:14:51] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:14:52] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:14:52] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:14:52] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:14:53] [INFO] [app.engine.state] Persistence: loaded 2 games, cleaned 0 expired
+[2026-06-25 17:14:53] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:38:16] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:38:17] [INFO] [app.engine.state] Persistence: loaded 0 games, cleaned 1 expired
+[2026-06-25 17:38:17] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:38:18] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:38:19] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:38:19] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:38:20] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:38:45] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:38:46] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:38:46] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:38:47] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:39:16] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:39:17] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:39:31] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:39:32] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:42:23] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:42:24] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:42:24] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:42:25] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:42:41] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:42:42] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:42:42] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:42:42] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:42:53] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:42:54] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:42:55] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:42:56] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:43:42] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:43:44] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:43:44] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:43:44] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:44:07] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:44:08] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:44:30] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:44:31] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:45:17] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:45:17] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:47:25] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:47:56] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:47:56] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:48:39] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:48:40] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 17:48:40] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 17:48:41] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:03:21] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:03:22] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:03:23] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:03:23] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:03:23] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:03:24] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:04:21] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:04:21] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:04:22] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:05:41] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:05:41] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:05:42] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:06:47] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:06:47] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:06:48] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:07:50] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:07:50] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:07:51] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:08:52] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:08:52] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:08:53] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:10:02] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:10:02] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:10:03] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:10:43] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:10:43] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:10:44] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:11:12] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:11:12] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:11:13] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:12:19] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:12:20] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:12:20] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:12:21] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:12:21] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:12:21] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 18:12:39] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 18:12:39] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 18:12:40] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 19:21:52] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 19:21:53] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 19:21:53] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 19:21:53] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 19:21:54] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 19:21:54] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 19:22:09] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 19:22:09] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 19:22:09] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 19:22:34] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 19:22:34] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 19:22:34] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 19:23:01] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 19:23:02] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 19:23:02] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 19:23:02] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 19:23:03] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 19:23:03] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 19:23:22] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 19:23:22] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 19:23:23] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 19:23:23] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 19:23:23] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 19:23:24] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 19:23:37] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 19:23:37] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 19:23:38] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 19:24:25] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 19:24:26] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 19:24:26] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash
+[2026-06-25 19:25:28] [INFO] [root] Logging configured: level=INFO, file=logs/game.log
+[2026-06-25 19:25:28] [INFO] [app.engine.state] Persistence: loaded 10 games, cleaned 0 expired
+[2026-06-25 19:25:29] [INFO] [app.engine.ai.llm_client] LLMClient initialized with model=deepseek-v4-flash

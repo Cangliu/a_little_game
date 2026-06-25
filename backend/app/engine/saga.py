@@ -107,6 +107,7 @@ class SagaManager:
 
         Scans completed arcs history for near-threshold patterns and returns
         an atmospheric hint text if a saga is about to form.
+        Also persists omen records in state.saga_omens for foreshadowing injection.
         Returns None if no omen is appropriate this turn.
         """
         # Only trigger omen if no saga formed recently and enough arcs exist
@@ -148,6 +149,23 @@ class SagaManager:
                     # Record this omen to avoid future repetition
                     used_omen_keys.add(omen_key)
                     state._used_omen_keys = used_omen_keys
+
+                    # Persist omen record for foreshadowing system
+                    omen_record = {
+                        "theme": theme,
+                        "involved_npcs": [n for n in [npc_a, npc_b] if n],
+                        "omen_keywords": list(kw_a & kw_b),
+                        "created_at_age": state.age,
+                        "omen_key": omen_key,
+                    }
+                    # Avoid duplicate omen records
+                    existing_keys = {o.get("omen_key") for o in state.saga_omens}
+                    if omen_key not in existing_keys:
+                        state.saga_omens.append(omen_record)
+                        # Cap at 5 omens
+                        if len(state.saga_omens) > 5:
+                            state.saga_omens = state.saga_omens[-5:]
+
                     return template.format(npc=npc, theme=theme)
 
         return None
@@ -233,6 +251,13 @@ class SagaManager:
         saga_dict = saga.model_dump()
         self._update_direction_hint(saga_dict, force=True)
         state.sagas.append(saga_dict)
+
+        # Clean up matching omens (omen → saga upgrade)
+        npc_set = set(involved_npcs)
+        state.saga_omens = [
+            o for o in state.saga_omens
+            if not (set(o.get("involved_npcs", [])) & npc_set)
+        ]
 
         logger.info(
             "Saga emerged: '%s' from arcs %s (NPCs: %s)",
