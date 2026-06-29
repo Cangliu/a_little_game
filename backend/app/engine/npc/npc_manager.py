@@ -89,8 +89,25 @@ class NPCManager:
             logger.debug("NPC limit reached (%d), skipping generation", MAX_NPCS)
             return None
 
-        # Determine NPC gender (roughly balanced)
-        gender = random.choice(["male", "female"])
+        # Determine NPC gender
+        # 道侣角色：男性主角→100%女性道侣；女性主角→50%男/50%女
+        # 一旦确定道侣性别偏好，后续道侣始终保持同一性别
+        # 其他角色：50/50随机
+        if role == "lover":
+            # 已有偏好：直接沿用
+            if state.lover_gender_pref:
+                gender = state.lover_gender_pref
+            else:
+                # 首次确定
+                player_gender = getattr(state, "gender", "male")
+                if player_gender == "male":
+                    gender = "female"
+                else:
+                    gender = random.choice(["male", "female"])
+                # 持久化偏好
+                state.lover_gender_pref = gender
+        else:
+            gender = random.choice(["male", "female"])
 
         # Determine realm (similar to or lower than player)
         if realm is None:
@@ -160,6 +177,11 @@ class NPCManager:
             interaction_count=1,
         )
         state.relationships.append(rel.model_dump())
+
+        # 同性道侣标记：用于事件过滤（排除假定异性的情色事件）
+        if rel_type == RelationType.LOVER.value and gender == state.gender:
+            if "same_sex_lover" not in state.tags:
+                state.tags.append("same_sex_lover")
 
         # Initialize destiny line for key NPCs (master/lover/rival)
         if rel_type in ("师父", "道侣", "宿敌"):
@@ -373,7 +395,7 @@ class NPCManager:
         Evolution rules (sentiment range: -100 ~ 100, 0=neutral):
         - 泛泛之交 → 挚友: sentiment≥60 and interaction_count≥5
         - 挚友/泛泛之交 → 道侣: sentiment≥80 and interaction_count≥8
-          (only if no existing 道侣 and opposite/any gender)
+          (only if no existing 道侣, any gender combination allowed)
         - Any non-宿敌 → 宿敌: sentiment≤-40 and interaction_count≥3
         """
         current_type = rel_dict.get("relation_type", "")
@@ -408,6 +430,14 @@ class NPCManager:
         if new_type and new_type != current_type:
             old_type = current_type
             rel_dict["relation_type"] = new_type
+
+            # 升级为道侣时，持久化道侣性别偏好
+            if new_type == RelationType.LOVER.value and not state.lover_gender_pref:
+                npc_gender = npc_dict.get("gender", "female")
+                state.lover_gender_pref = npc_gender
+                # 同性道侣标记
+                if npc_gender == state.gender and "same_sex_lover" not in state.tags:
+                    state.tags.append("same_sex_lover")
 
             # Record the evolution as an interaction
             evolution_text = f"与{npc_name}的关系从{old_type}变为{new_type}"

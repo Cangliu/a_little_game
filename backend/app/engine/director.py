@@ -32,6 +32,7 @@ from .story_arc import StoryArcPlanner
 from .main_storyline import MainStorylinePlanner
 from .sect import SectManager
 from .event_director import EventDirector
+from .npc.background_npc_events import BackgroundNPCEventSystem
 
 
 class GameDirector:
@@ -83,6 +84,8 @@ class GameDirector:
         )
         # Sect system (独立宗门策略系统)
         self.sect_manager = SectManager()
+        # Background NPC proactive events (LLM-driven)
+        self.bg_npc_events = BackgroundNPCEventSystem(llm_client=self.llm_client)
         # Event Director (统一LLM调用: 选事件+叙事+分支)
         self.event_director = EventDirector(
             llm_client=self.llm_client,
@@ -202,6 +205,10 @@ class GameDirector:
         # NPC regular events AFTER destiny (dead NPCs naturally skipped by is_alive check)
         npc_events = self.npc_manager.check_npc_events(state)
         priority_events.extend(npc_events)
+
+        # Background NPC proactive events (parents, childhood friends, etc.)
+        bg_npc_events = self.bg_npc_events.check_background_events(state)
+        priority_events.extend(bg_npc_events)
 
         # Periodic NPC encounter (wandering cultivators) — non-streaming path
         encounter_event = self.npc_manager.check_periodic_encounter(state)
@@ -795,14 +802,33 @@ class GameDirector:
                 "event_type": ev.get("event_type", "normal"),
             })
 
+    # ── Personality hint pools for background NPCs ──────────────────────
+    _FATHER_PERSONALITIES = [
+        "沉默寡言但内心温柔", "严厉但公正", "憨厚朴实爱讲故事",
+        "勤劳踏实话不多", "脾气暴躁但护犊子", "温和儒雅读过几年书",
+    ]
+    _MOTHER_PERSONALITIES = [
+        "温柔细腻", "唠叨但充满爱意", "坚强隐忍",
+        "手巧会做各种吃食", "爱操心性子急", "安静内敛但目光温暖",
+    ]
+    _FRIEND_PERSONALITIES = [
+        "活泼好动满身泥巴", "胆小但仗义", "鬼主意多爱闯祸",
+        "沉默寡言但跟你形影不离", "嘴甜爱笑", "倔强不服输",
+    ]
+    _ELDER_PERSONALITIES = [
+        "慈祥爱给小辈塞糕点", "严肃古板讲规矩", "年纪大了爱絮叨当年事",
+        "沉默但眼光毒辣", "和蔼可亲总叫你乳名",
+    ]
+
     def _init_background_npcs(self, state: GameState) -> None:
-        """Initialize background NPCs (parents) at game start.
+        """Initialize background NPCs at game start.
 
         Background NPCs are lightweight emotional tracking entities that:
         - Don't occupy MAX_NPCS slots
         - Don't have destiny beats
         - Provide emotional continuity anchors for LLM narrative
         - Generate "longing hints" when too long since last mention
+        - Can proactively trigger events (letters, visits, illness, death)
         """
         from .foreshadowing import register_background_npc, record_emotional_anchor
         import random
@@ -823,6 +849,14 @@ class GameDirector:
             status="alive",
             key_memories=["出生时抱起你的人"],
         )
+        # Add proactive event fields
+        for npc in state.background_npcs:
+            if npc.get("name") == f"{surname}父":
+                npc["personality_hint"] = random.choice(self._FATHER_PERSONALITIES)
+                npc["last_event_age"] = 0
+                npc["triggered_events"] = []
+                break
+
         # Mother
         register_background_npc(
             state,
@@ -832,6 +866,53 @@ class GameDirector:
             status="alive",
             key_memories=["小时候哼摇篮曲哄你入睡"],
         )
+        for npc in state.background_npcs:
+            if npc.get("name") == f"{surname}母":
+                npc["personality_hint"] = random.choice(self._MOTHER_PERSONALITIES)
+                npc["last_event_age"] = 0
+                npc["triggered_events"] = []
+                break
+
+        # ── Optional: Childhood friend (50% chance) ──
+        if random.random() < 0.5:
+            friend_names_m = ["阿牛", "铁蛋", "石头", "小虎", "二狗"]
+            friend_names_f = ["小花", "翠儿", "莲子", "阿秀", "春芽"]
+            friend_name = random.choice(
+                friend_names_m if random.random() < 0.5 else friend_names_f
+            )
+            register_background_npc(
+                state,
+                name=friend_name,
+                relation="童年玩伴",
+                bond=60,
+                status="alive",
+                key_memories=["一起在溪边捉鱼的夏天"],
+            )
+            for npc in state.background_npcs:
+                if npc.get("name") == friend_name:
+                    npc["personality_hint"] = random.choice(self._FRIEND_PERSONALITIES)
+                    npc["last_event_age"] = 0
+                    npc["triggered_events"] = []
+                    break
+
+        # ── Optional: Village elder (30% chance) ──
+        if random.random() < 0.3:
+            elder_surnames = ["孙", "钱", "赵", "周", "冯", "何"]
+            elder_name = f"{random.choice(elder_surnames)}老头" if random.random() < 0.5 else f"{random.choice(elder_surnames)}婆婆"
+            register_background_npc(
+                state,
+                name=elder_name,
+                relation="村中长辈",
+                bond=45,
+                status="alive",
+                key_memories=["小时候常给你讲修仙故事的老人"],
+            )
+            for npc in state.background_npcs:
+                if npc.get("name") == elder_name:
+                    npc["personality_hint"] = random.choice(self._ELDER_PERSONALITIES)
+                    npc["last_event_age"] = 0
+                    npc["triggered_events"] = []
+                    break
 
         # Initial emotional anchors (newborn attachment to parents)
         record_emotional_anchor(

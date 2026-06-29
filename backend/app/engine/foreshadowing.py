@@ -16,6 +16,16 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from ..models import GameState
 
+# ── 境界衰减倍率：境界越高每回合跨越年数越长，衰减应越慢 ──────────
+_REALM_DECAY_MULTIPLIER = {
+    0: 1.0,   # 凡人 — 1回合≈1年，正常衰减
+    1: 0.8,   # 练气 — 略慢
+    2: 0.5,   # 筑基 — 1回合≈2年，衰减减半
+    3: 0.3,   # 金丹
+    4: 0.2,   # 元婴
+    5: 0.15,  # 化神
+}
+
 
 def build_foreshadowing_context(state: "GameState") -> str:
     """Assemble predictive foreshadowing hints from destiny, causal chains, and sagas.
@@ -260,6 +270,10 @@ def build_emotional_state_context(state: "GameState") -> str:
             else:
                 strength = "微弱"
             line = f"- 对{target}({relation})：{strength}的{emotion_state}"
+            # Append last imagery hint for cross-turn consistency
+            last_img = anchor.get("last_imagery", "")
+            if last_img:
+                line += f"（上次关联意象：{last_img}）"
             lines.append(line)
 
     # ── Part 2: Background NPC longing hints ──
@@ -286,6 +300,10 @@ def build_emotional_state_context(state: "GameState") -> str:
             # Adjust based on bond intensity
             if bond >= 80:
                 hint += "（情感纽带极深）"
+            # Append last imagery for cross-turn consistency
+            bg_img = npc.get("last_imagery", "")
+            if bg_img:
+                hint += f"（关联意象：{bg_img}）"
             lines.append(hint)
 
         # If background NPC is "unknown" status (lost contact), add uncertainty
@@ -302,6 +320,7 @@ def record_emotional_anchor(
     emotion_state: str,
     intensity: int = 7,
     decay_rate: str = "slow",
+    last_imagery: str = "",
 ) -> None:
     """Record or update an emotional anchor in game state.
 
@@ -315,32 +334,32 @@ def record_emotional_anchor(
         emotion_state: Emotional state (e.g., "思念", "依恋", "愧疚", "感恩")
         intensity: Emotional intensity 1-10
         decay_rate: "fast"/"slow"/"none" (how quickly emotion fades)
+        last_imagery: Short imagery keyword for cross-turn consistency
+                      (e.g., "掌心温度", "劈柴的调子", "炊烟")
     """
     anchors = state.emotional_anchors
-
-    # Check if anchor for same target exists
-    for i, anchor in enumerate(anchors):
-        if anchor.get("target") == target:
-            # Update existing
-            anchors[i] = {
-                "target": target,
-                "relation": relation,
-                "state": emotion_state,
-                "intensity": min(10, intensity),
-                "source_age": state.age,
-                "decay_rate": decay_rate,
-            }
-            return
-
-    # Create new
-    anchors.append({
+    anchor_data = {
         "target": target,
         "relation": relation,
         "state": emotion_state,
         "intensity": min(10, intensity),
         "source_age": state.age,
         "decay_rate": decay_rate,
-    })
+    }
+    if last_imagery:
+        anchor_data["last_imagery"] = last_imagery
+
+    # Check if anchor for same target exists
+    for i, anchor in enumerate(anchors):
+        if anchor.get("target") == target:
+            # Preserve existing imagery if not overridden
+            if not last_imagery and anchor.get("last_imagery"):
+                anchor_data["last_imagery"] = anchor["last_imagery"]
+            anchors[i] = anchor_data
+            return
+
+    # Create new
+    anchors.append(anchor_data)
 
     # Cap at 10
     if len(anchors) > 10:
@@ -357,17 +376,25 @@ def decay_emotional_anchors(state: "GameState") -> None:
     - slow: -0.5 intensity per turn (deep bonds like parental love, first love)
     - none: no decay (permanent bonds)
 
+    Decay is further scaled by realm — higher realms span more years per turn,
+    so raw per-turn decay is multiplied by _REALM_DECAY_MULTIPLIER to prevent
+    deep emotions from evaporating too quickly at high cultivation stages.
+
     Anchors dropping below intensity 1 are removed.
     """
     anchors = state.emotional_anchors
     if not anchors:
         return
 
+    realm = getattr(state, "realm", 0)
+    realm_mult = _REALM_DECAY_MULTIPLIER.get(realm, 1.0)
+
     decay_map = {"fast": 2.0, "slow": 0.5, "none": 0.0}
     surviving = []
     for anchor in anchors:
         rate = decay_map.get(anchor.get("decay_rate", "slow"), 0.5)
-        new_intensity = anchor.get("intensity", 5) - rate
+        adjusted_rate = rate * realm_mult
+        new_intensity = anchor.get("intensity", 5) - adjusted_rate
         if new_intensity >= 1:
             anchor["intensity"] = new_intensity
             surviving.append(anchor)

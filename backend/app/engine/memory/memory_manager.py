@@ -11,6 +11,8 @@ never decay and are always available for retrieval.
 from __future__ import annotations
 
 import logging
+import json
+import re
 from typing import Optional, TYPE_CHECKING
 
 from .retriever import HybridRetriever
@@ -54,6 +56,7 @@ class MemoryManager:
         llm_client: Optional["LLMClient"] = None,
         prompt_builder: Optional["PromptBuilder"] = None,
     ):
+        self._llm = llm_client
         self._retriever = HybridRetriever()
         self._compressor = MemoryCompressor(
             llm_client=llm_client,
@@ -94,6 +97,9 @@ class MemoryManager:
 
         state.memory_working.append(memory_entry)
 
+        # Extract key facts for continuity tracking
+        self._extract_continuity_facts(state, event)
+
         # Overflow: move oldest to short-term (realm-adaptive capacity)
         capacity = self._get_working_memory_size(state)
         while len(state.memory_working) > capacity:
@@ -118,6 +124,147 @@ class MemoryManager:
         """Record multiple events from a year's advancement."""
         for event in events:
             self.record_event(state, event)
+
+    # ── Continuity facts extraction ────────────────────────────────────
+
+    # Patterns for extracting key physical facts from narrative text
+    _FACT_PATTERNS: list[tuple[re.Pattern, str]] = [
+        # Injury patterns: "X的Y被...伤/断/碎" or "X的Y肿了"
+        (re.compile(r'[的]([胳膊腿手足肩背胸腰骨头经脉丹田眼]+).*?[伤断裂碎毁肿穿]'), 'injury'),
+        # Item acquisition: "捡到/得到/获得...铜钱/剑/书/简"
+        (re.compile(r'[捡得获拾受][到得赠].*?([铜钱书简剑环令牌玠宝玉符笔丹药]{1,6})'), 'item'),
+        # Death of known person (“走了” is colloquial for 去世)
+        (re.compile(r'([爹娘父母师兄师姐师父师尊][亲]?).*?(死|亡|离世|雨落|化去|陨落|走了|去了|没了)'), 'death'),
+        # Family status change: "安顿/定居/搬到/住在"
+        (re.compile(r'[爹娘父母].*?(安顿|定居|搬到|住在|住进).*?([镇城村山谷寺庄屋]{1,6})'), 'family_location'),
+        # Realm breakthrough (capture 2-char realm name)
+        (re.compile(r'突破.*?(练气|筑基|金丹|元婴|化神)'), 'breakthrough'),
+    ]
+
+    # Maximum continuity notes to keep (prevent unbounded growth)
+    _MAX_CONTINUITY_NOTES = 30
+
+    def _extract_continuity_facts(self, state: "GameState", event: dict) -> None:
+        """Extract key physical facts from event text for continuity tracking.
+
+        Strategy: LLM extraction (high coverage) with regex fallback.
+        Facts are stored as short strings with age annotation.
+        """
+        text = event.get("expanded_text", "") or event.get("text", "")
+        if not text or len(text) < 10:
+            return
+
+        age = state.age
+        notes = getattr(state, "continuity_notes", None)
+        if notes is None:
+            state.continuity_notes = []
+            notes = state.continuity_notes
+
+        new_facts: list[str] = []
+
+        # Try LLM extraction first (higher coverage)
+        if self._llm and self._llm.available:
+            llm_facts = self._llm_extract_facts(text, age)
+            if llm_facts is not None:
+                new_facts = llm_facts
+            else:
+                # LLM failed, fall back to regex
+                new_facts = self._regex_extract_facts(text, age)
+        else:
+            new_facts = self._regex_extract_facts(text, age)
+
+        # Also extract NPC-related facts from involved_npc
+        involved = event.get("involved_npc", "")
+        if involved and event.get("event_type") in ("important", "danger"):
+            event_text_short = (event.get("text", ""))[:20]
+            fact = f"{involved}: {event_text_short}({age}岁)"
+            if not any(involved in existing and str(age) in existing for existing in notes):
+                new_facts.append(fact)
+
+        # Deduplicate against existing notes
+        if new_facts:
+            deduplicated = []
+            for fact in new_facts:
+                # Extract core keyword (first few chars before parenthesis)
+                core = fact.split("(")[0] if "(" in fact else fact
+                if not any(core[:4] in existing for existing in notes):
+                    deduplicated.append(fact)
+            if deduplicated:
+                notes.extend(deduplicated)
+                # Cap total size
+                if len(notes) > self._MAX_CONTINUITY_NOTES:
+                    state.continuity_notes = notes[-self._MAX_CONTINUITY_NOTES:]
+                logger.debug("Continuity facts extracted: %s", deduplicated)
+
+    def _llm_extract_facts(self, text: str, age: int) -> Optional[list[str]]:
+        """Use LLM to extract key facts from narrative text.
+
+        Returns list of fact strings, or None if LLM call fails.
+        """
+        from ..ai.prompt_templates import FACT_EXTRACTION_SYSTEM, FACT_EXTRACTION_USER
+
+        user_prompt = FACT_EXTRACTION_USER.format(age=age, text=text[:500])
+
+        try:
+            result = self._llm.generate_sync(
+                FACT_EXTRACTION_SYSTEM,
+                user_prompt,
+                max_tokens=150,
+                temperature=0.1,
+            )
+            if not result:
+                return None
+
+            # Parse JSON array from response
+            result = result.strip()
+            # Handle markdown code blocks
+            if result.startswith("```"):
+                result = result.split("\n", 1)[-1].rsplit("```", 1)[0].strip()
+
+            facts = json.loads(result)
+            if not isinstance(facts, list):
+                return None
+
+            # Validate and clean
+            clean_facts = []
+            for f in facts:
+                if isinstance(f, str) and 3 <= len(f) <= 40:
+                    # Ensure age annotation exists
+                    if f"{age}岁" not in f:
+                        f = f.rstrip(")") + f"({age}岁)" if "(" not in f else f
+                    clean_facts.append(f)
+
+            return clean_facts if clean_facts else []
+
+        except (json.JSONDecodeError, Exception) as e:
+            logger.debug("LLM fact extraction failed: %s", e)
+            return None
+
+    def _regex_extract_facts(self, text: str, age: int) -> list[str]:
+        """Regex-based fact extraction (fallback when LLM unavailable)."""
+        facts: list[str] = []
+
+        for pattern, fact_type in self._FACT_PATTERNS:
+            match = pattern.search(text)
+            if not match:
+                continue
+
+            matched_detail = match.group(1) if match.lastindex else match.group(0)
+            if fact_type == 'injury':
+                fact = f"{matched_detail}受伤({age}岁)"
+            elif fact_type == 'item':
+                fact = f"获得{matched_detail}({age}岁)"
+            elif fact_type == 'death':
+                fact = f"{matched_detail}离世({age}岁)"
+            elif fact_type == 'family_location':
+                fact = f"父母安顿在{matched_detail}({age}岁)"
+            elif fact_type == 'breakthrough':
+                fact = f"突破{matched_detail}期({age}岁)"
+            else:
+                continue
+            facts.append(fact)
+
+        return facts
 
     def tick_year(self, state: "GameState") -> None:
         """Called at end of each year. Handles periodic compression.
@@ -165,6 +312,11 @@ class MemoryManager:
             parts.append(f"[传记摘要] {bio}")
         else:
             parts.append("[传记摘要] 尚无往事可述")
+
+        # 1.5 Continuity notes (key physical facts, never compressed)
+        c_notes = getattr(state, "continuity_notes", [])
+        if c_notes:
+            parts.append("[关键事实] " + " | ".join(c_notes[-15:]))
 
         # 2. Important long-term memories (always available)
         if state.memory_long_term:

@@ -177,6 +177,10 @@ class GameState(BaseModel):
     emotional_anchors: list[dict] = []        # [{target, relation, state, intensity, source_age, decay_rate}]
     # 背景NPC系统 (Layer 3: 不占MAX_NPCS名额, 轻量级情感跟踪)
     background_npcs: list[dict] = []          # [{name, relation, bond, status, last_mentioned_age, key_memories}]
+    # 关键事实追踪 (continuity_notes: 跨回合物理事实不参与记忆压缩)
+    continuity_notes: list[str] = []          # ["母亲胳膊被木梁砸伤(12岁洪水)", "路边泥里捡到铜钱(17岁)", ...]
+    # 道侣性别偏好（首次确定后永久生效，确保后续道侣性别一致）
+    lover_gender_pref: Optional[str] = None   # 'male' / 'female' / None(未确定)
 
 
 class StartGameRequest(BaseModel):

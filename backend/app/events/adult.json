@@ -839,6 +839,9 @@
       "gender": "female",
       "required_tags": [
         "has_companion"
+      ],
+      "excluded_tags": [
+        "same_sex_lover"
       ]
     },
     "weight": 10,
@@ -1643,6 +1646,9 @@
       "gender": "female",
       "required_tags": [
         "has_companion"
+      ],
+      "excluded_tags": [
+        "same_sex_lover"
       ]
     },
     "effects": {
@@ -2070,6 +2076,9 @@
       "gender": "female",
       "required_tags": [
         "has_companion"
+      ],
+      "excluded_tags": [
+        "same_sex_lover"
       ]
     },
     "effects": {
@@ -3988,6 +3997,9 @@
       "gender": "female",
       "required_tags": [
         "has_companion"
+      ],
+      "excluded_tags": [
+        "same_sex_lover"
       ]
     },
     "weight": 4,
@@ -4213,6 +4225,9 @@
       "gender": "female",
       "required_tags": [
         "has_companion"
+      ],
+      "excluded_tags": [
+        "same_sex_lover"
       ]
     },
     "weight": 3,
@@ -4315,6 +4330,9 @@
       "gender": "female",
       "required_tags": [
         "has_companion"
+      ],
+      "excluded_tags": [
+        "same_sex_lover"
       ]
     },
     "weight": 3,
@@ -4470,6 +4488,9 @@
       "gender": "female",
       "required_tags": [
         "has_companion"
+      ],
+      "excluded_tags": [
+        "same_sex_lover"
       ]
     },
     "weight": 5,
@@ -4498,6 +4519,9 @@
       "gender": "female",
       "required_tags": [
         "has_companion"
+      ],
+      "excluded_tags": [
+        "same_sex_lover"
       ]
     },
     "weight": 2,
@@ -5773,5 +5797,228 @@
       "romance"
     ],
     "event_type": "normal"
+  },
+  {
+    "id": "adt_ff_001",
+    "text": "你的道侣发现你私藏的画卷，全是她的画像。",
+    "expanded_text": "她翻你玉匣时翻到了那一沓宣纸。你回来看见她坐在桌前，一张张慢慢看过去——有她练剑时的侧影，有她托腮打盹的样子，有她在雪地里回头看你时的眉眼。你僵在门口，恨不得当场遁入虚空。她翻到最后一张时停住了——那上面画的是你们并肩飞在云海之上，她的手牵着你的手。她沉默了很久，耳根慢慢红了。入夜时她把那张画别在床帏上，然后拉过你的手，十指缓缓交扣：「你画得真丑。」她的声音却在发抖。那一夜你们没有松开手。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "min_age": 24,
+      "gender": "female",
+      "required_tags": [
+        "has_companion",
+        "same_sex_lover"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "charisma": 1,
+      "comprehension": 1
+    },
+    "tags": [
+      "adult",
+      "romance"
+    ],
+    "event_type": "funny"
+  },
+  {
+    "id": "adt_ff_002",
+    "text": "你与道侣双修百年，她终于肯靠在你肩上。",
+    "expanded_text": "一百年了。你们并肩打坐、共用一炉丹火、同饮一壶灵泉——可她从不主动碰你。你以为她只是性子冷。直到这一夜，月光洒满石台，她忽然偏过头，将脸贴在你的肩窝。你浑身僵住，连呼吸都不敢了。她的发丝拂过你的脖颈，痒得你心里像生了一团火。「别动。」她闷声说，「就这样……让我靠一会儿。」你感觉到她的睫毛在你锁骨上轻轻颤抖。那一夜你们就这样坐到天明。你的肩膀酸了三天——可你什么都舍不得说。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 40,
+      "gender": "female",
+      "required_tags": [
+        "has_companion",
+        "same_sex_lover"
+      ]
+    },
+    "weight": 10,
+    "effects": {
+      "cultivation": 100,
+      "charisma": 2
+    },
+    "tags": [
+      "adult",
+      "romance"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_ff_003",
+    "text": "你与道侣灵魂共鸣，竟在识海中结出同心结。",
+    "expanded_text": "那次双修本是寻常功课。你将神识探入她的识海时，她的识海也同时涌入了你——两道神念在虚空中撞到一起，缠绕、交融、旋转。你看见了她记忆里的你：初见时你甩她一脸泥巴、第一次并肩杀妖、那个大雪天她偷偷把外袍披在你身上。她也看见了你记忆里的她。你们都哭了——在彼此的识海里，同时哭了。等你们睁开眼时，各自眉心都多了一道极淡的虹光——同心结。从此你受伤时她会心痛，她欢喜时你会微笑。门派里的人说你们越来越像了。你说是啊——因为我们本就是一个人。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "min_age": 35,
+      "gender": "female",
+      "required_tags": [
+        "has_companion",
+        "same_sex_lover"
+      ]
+    },
+    "weight": 8,
+    "effects": {
+      "willpower": 3,
+      "fortune": 2
+    },
+    "tags": [
+      "adult",
+      "romance"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_ff_004",
+    "text": "你与道侣双修圆满，竟一举突破练气期！",
+    "expanded_text": "你们第一次正式双修——她紧张得掌心全是汗。你握住她的手，灵力缓缓渡出。她的灵力像一尾柔软的鱼，怯生生地游过来缠住你的。两道阴柔灵力交汇时没有想象中的排斥，反而如两条溪流汇成一条河——温润、绵长、势不可挡。她突然睁开眼，瞳孔里映着你的脸：「好暖……」你感到丹田里有什么东西裂开了——是瓶颈。她在你怀中完成了突破，你也紧随其后。两人额头相抵，灵光将洞府照得通明。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 1,
+      "max_realm": 1,
+      "min_age": 18,
+      "max_age": 80,
+      "gender": "female",
+      "required_tags": [
+        "has_companion",
+        "same_sex_lover"
+      ]
+    },
+    "weight": 4,
+    "effects": {
+      "realm_up": true,
+      "cultivation": 50,
+      "comprehension": 1
+    },
+    "tags": [
+      "adult",
+      "cultivation",
+      "breakthrough",
+      "romance"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_ff_005",
+    "text": "你与道侣双修圆满，两道元神共鸣化出瑞光。",
+    "expanded_text": "元婴之上的修行，你们早已不是普通的灵力交换。她的元神从泥丸宫浮出，化作一个小小的她，端坐在你掌心。你的元神也浮出来，与她的元神面对面。两个小人伸出手——指尖相触的瞬间，天地变色。一道从未见过的瑞光从你们之间升起，如极光、如彩虹、如两条锦鲤在云海中追逐嬉戏。你感到寿元在延长，感到灵台前所未有地澄澈。她睁开眼时眼角挂着泪：「我看到我们白头的样子了。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 4,
+      "max_realm": 5,
+      "min_age": 50,
+      "max_age": 500,
+      "gender": "female",
+      "required_tags": [
+        "has_companion",
+        "same_sex_lover"
+      ]
+    },
+    "weight": 3,
+    "effects": {
+      "cultivation": 200,
+      "comprehension": 2,
+      "lifespan": 50
+    },
+    "tags": [
+      "adult",
+      "cultivation",
+      "romance"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_ff_006",
+    "text": "你与道侣于金丹期双修，竟一举突破至元婴！",
+    "expanded_text": "金丹期的双修凶险异常——两颗金丹必须在体内同频共振，稍有差池便是走火入魔。她闭着眼，额头抵着你的额头，鼻尖几乎碰到一起。你能感受到她的心跳、她的呼吸、她金丹转动的频率。你调整自己的金丹与她同步——快一点、再慢一点——终于，两颗金丹在同一刹那震动。轰——金丹碎裂，元婴成形。你睁开眼，看见她眼中有一个小小的你；她看着你的眼睛说：「你眼里也有一个小小的我。」",
+    "category": "social",
+    "conditions": {
+      "min_realm": 3,
+      "max_realm": 3,
+      "min_age": 40,
+      "max_age": 200,
+      "gender": "female",
+      "required_tags": [
+        "has_companion",
+        "same_sex_lover"
+      ]
+    },
+    "weight": 3,
+    "effects": {
+      "realm_up": true,
+      "cultivation": 50,
+      "comprehension": 1,
+      "lifespan": 20
+    },
+    "tags": [
+      "adult",
+      "cultivation",
+      "breakthrough",
+      "romance"
+    ],
+    "event_type": "important"
+  },
+  {
+    "id": "adt_ff_007",
+    "text": "你与道侣于药鼎旁行双阴合璧之法，反成炼丹助力。",
+    "expanded_text": "古籍上说双阴合璧乃禁术——两名女修以体为炉、以情为火，将各自阴属灵力汇于药鼎之中。你们本只是试试——她的手覆上你的手，灵力顺着掌心流淌。你的阴柔灵力如月华，她的如寒泉，两道阴力在药鼎内相遇时没有相斥，反而交织成了一张精密的灵纹网。鼎中灵药被这张网兜住，缓缓凝结成了一颗流光溢彩的丹丸。你们对视一眼——古籍说错了。双阴不是禁术，是天赐。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 2,
+      "max_realm": 5,
+      "min_age": 30,
+      "max_age": 200,
+      "gender": "female",
+      "required_tags": [
+        "has_companion",
+        "same_sex_lover"
+      ]
+    },
+    "weight": 5,
+    "effects": {
+      "cultivation": 80,
+      "charisma": 1,
+      "add_tag": "has_treasure"
+    },
+    "tags": [
+      "adult",
+      "cultivation",
+      "romance"
+    ],
+    "event_type": "fortune"
+  },
+  {
+    "id": "adt_ff_008",
+    "text": "你与道侣于度劫之时双修共度天劫。",
+    "expanded_text": "天劫降临时她站在你身边，握住了你的手。你说太危险了让她走——她笑了一声，笑得比雷劫还响：「要死一起死。」第一道雷劈下来时你们各挡一半，第二道你们背靠着背，第三道她突然把你拉进怀里，用身体替你挡了大半。你在雷光中看见她的脸——烧焦的衣角、散乱的头发、嘴角的血——她的眼睛却亮得像星星：「别怕。」最后一道雷你们一起迎上去。雷光散尽后你们倒在焦土上，手还紧紧握在一起。你转头看她——她也转头看你——然后你们笑了。劫后余生，不过如此。",
+    "category": "social",
+    "conditions": {
+      "min_realm": 5,
+      "max_realm": 5,
+      "min_age": 100,
+      "max_age": 800,
+      "gender": "female",
+      "required_tags": [
+        "has_companion",
+        "same_sex_lover"
+      ]
+    },
+    "weight": 2,
+    "effects": {
+      "cultivation": 300,
+      "lifespan": 100,
+      "comprehension": 2
+    },
+    "tags": [
+      "adult",
+      "cultivation",
+      "romance"
+    ],
+    "event_type": "important"
   }
 ]
