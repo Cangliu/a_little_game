@@ -156,10 +156,11 @@ class NarrativeProvider:
             )
 
         # Use the full contextual prompt template
-        from .foreshadowing import build_foreshadowing_context, build_emotional_tokens_context, build_repertoire_context
+        from .foreshadowing import build_foreshadowing_context, build_emotional_tokens_context, build_repertoire_context, build_emotional_state_context
         foreshadowing = build_foreshadowing_context(state)
         emotional_tokens_ctx = build_emotional_tokens_context(state)
         repertoire_ctx = build_repertoire_context(state)
+        emotional_state_ctx = build_emotional_state_context(state)
 
         return self._prompt_builder.build_contextual_narrative_prompt(
             event=event,
@@ -172,6 +173,7 @@ class NarrativeProvider:
             foreshadowing_hints=foreshadowing,
             emotional_tokens_context=emotional_tokens_ctx,
             repertoire_context=repertoire_ctx,
+            emotional_state_context=emotional_state_ctx,
         )
 
     def polish_narrative(

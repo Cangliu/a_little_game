@@ -126,10 +126,15 @@ class MemoryManager:
         - Short-term events older than SHORT_TERM_MAX_AGE → compress to long-term
         - Rebuild BM25 index
         - Update biography summary
+        - Decay emotional anchors (Layer 2)
 
         Also triggers emergency compression if short-term exceeds capacity.
         """
         years_since_compression = state.age - self._last_compression_age
+
+        # Decay emotional anchors each turn
+        from ..foreshadowing import decay_emotional_anchors
+        decay_emotional_anchors(state)
 
         # Emergency compression if short-term is overflowing
         if len(state.memory_short_term) > SHORT_TERM_MAX_SIZE:

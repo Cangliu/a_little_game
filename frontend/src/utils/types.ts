@@ -60,7 +60,7 @@ export const CATEGORY_COLORS: Record<string, string> = {
   calamity: 'text-red-600',
   world: 'text-sky-600',
   violence: 'text-rose-700',
-  adult: 'text-pink-500',
+  adult: 'text-[#b5446e]',   // 胭脂绯红
   death: 'text-gray-700',
   sect: 'text-emerald-600',
   sect_world: 'text-cyan-600',
@@ -168,12 +168,12 @@ export const REALM_NAMES: Record<number, string> = {
 };
 
 export const REALM_COLORS: Record<number, string> = {
-  0: 'text-gray-500',
-  1: 'text-green-600',
-  2: 'text-blue-600',
-  3: 'text-amber-600',
-  4: 'text-purple-600',
-  5: 'text-red-600',
+  0: 'text-stone-500',        // 凡人 — 尘泥
+  1: 'text-[#2d7a4f]',       // 练气 — 苍翠
+  2: 'text-[#1a4a7a]',       // 筑基 — 玄青
+  3: 'text-[#9a6c1a]',       // 金丹 — 赤金
+  4: 'text-[#5b21b6]',       // 元婴 — 紫霄
+  5: 'text-[#8b1a1a]',       // 化神 — 绛红
 };
 
 export const ATTR_NAMES: Record<keyof Attributes, string> = {

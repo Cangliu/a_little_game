@@ -164,6 +164,7 @@ class PromptBuilder:
         foreshadowing_hints: str = "",
         emotional_tokens_context: str = "",
         repertoire_context: str = "",
+        emotional_state_context: str = "",
     ) -> tuple:
         """Build context-aware prompts for narrative expansion.
 
@@ -193,6 +194,7 @@ class PromptBuilder:
             foreshadowing_hints=foreshadowing_hints or "无伏笔暗线",
             emotional_tokens_context=emotional_tokens_context or "无随身之物",
             repertoire_context=repertoire_context or "无修行积累",
+            emotional_state_context=emotional_state_context or "无特别情感波动",
             recent_events=recent_events or "暂无近期经历",
         )
 

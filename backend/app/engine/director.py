@@ -104,6 +104,8 @@ class GameDirector:
         self.sect_manager.initialize_world(state)
         # Initialize world era system
         self.era_manager.initialize(state)
+        # Initialize background NPCs (parents) for emotional continuity
+        self._init_background_npcs(state)
         return state
 
     def advance_year(self, game_id: str) -> NextYearResponse:
@@ -793,6 +795,62 @@ class GameDirector:
                 "event_type": ev.get("event_type", "normal"),
             })
 
+    def _init_background_npcs(self, state: GameState) -> None:
+        """Initialize background NPCs (parents) at game start.
+
+        Background NPCs are lightweight emotional tracking entities that:
+        - Don't occupy MAX_NPCS slots
+        - Don't have destiny beats
+        - Provide emotional continuity anchors for LLM narrative
+        - Generate "longing hints" when too long since last mention
+        """
+        from .foreshadowing import register_background_npc, record_emotional_anchor
+        import random
+
+        # Always create parents
+        if state.gender == "male":
+            parent_surnames = ["陈", "李", "王", "张", "刘", "赵", "周", "吴"]
+        else:
+            parent_surnames = ["林", "花", "孙", "李", "赵", "陈", "周", "吴"]
+        surname = random.choice(parent_surnames)
+
+        # Father
+        register_background_npc(
+            state,
+            name=f"{surname}父",
+            relation="父亲",
+            bond=90,
+            status="alive",
+            key_memories=["出生时抱起你的人"],
+        )
+        # Mother
+        register_background_npc(
+            state,
+            name=f"{surname}母",
+            relation="母亲",
+            bond=95,
+            status="alive",
+            key_memories=["小时候哼摇篮曲哄你入睡"],
+        )
+
+        # Initial emotional anchors (newborn attachment to parents)
+        record_emotional_anchor(
+            state,
+            target=f"{surname}父",
+            relation="父亲",
+            emotion_state="依恋",
+            intensity=9,
+            decay_rate="slow",
+        )
+        record_emotional_anchor(
+            state,
+            target=f"{surname}母",
+            relation="母亲",
+            emotion_state="依恋",
+            intensity=10,
+            decay_rate="slow",
+        )
+
     def _post_year_update(self, state: GameState, events: list) -> None:
         """End-of-year housekeeping: memory recording, NPC aging, arc advancement, destiny advancement, tension update, context update."""
         # 战伤自动痊愈（2回合后）
@@ -848,6 +906,32 @@ class GameDirector:
         # ── Peril (因果驱动危险系数) update ───────────────────────────
         self._update_peril(state, events)
         self.context.update(state, events)
+        # ── Background NPC mention tracking (情感连续性 Layer 3) ────
+        self._track_background_npc_mentions(state, events)
+
+    def _track_background_npc_mentions(self, state: GameState, events: list) -> None:
+        """Check if any background NPC names appear in this turn's narratives.
+
+        Updates last_mentioned_age so the longing hint system knows when
+        a background character was last referenced.
+        """
+        bg_npcs = state.background_npcs
+        if not bg_npcs:
+            return
+
+        # Collect all narrative text from this turn
+        all_text = ""
+        for ev in events:
+            all_text += ev.get("text", "") + ev.get("expanded_text", "")
+
+        # Check each background NPC
+        from .foreshadowing import update_background_npc_mention
+        for npc in bg_npcs:
+            name = npc.get("name", "")
+            relation = npc.get("relation", "")
+            # Check by name or relation keyword
+            if name and (name in all_text or relation in all_text):
+                update_background_npc_mention(state, name)
 
     @staticmethod
     def _calc_sentiment_delta(event: dict) -> int:

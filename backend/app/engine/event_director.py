@@ -28,7 +28,7 @@ if TYPE_CHECKING:
 
 from .ai.prompt_templates import EVENT_DIRECTOR_SYSTEM, EVENT_DIRECTOR_USER, EVENT_DIRECTOR_STREAM_SYSTEM
 from .ai.llm_client import MODEL_PRO
-from .foreshadowing import build_foreshadowing_context, build_emotional_tokens_context, build_repertoire_context
+from .foreshadowing import build_foreshadowing_context, build_emotional_tokens_context, build_repertoire_context, build_emotional_state_context
 from .repertoire_pool import sample_acquisition_items
 from .life_phase import LifePhase, LifePhaseManager
 
@@ -408,6 +408,9 @@ class EventDirector:
         # Repertoire context (修行积累)
         repertoire_ctx = build_repertoire_context(state)
 
+        # Emotional state context (情感状态: 情感锚点 + 背景NPC思念)
+        emotional_state_ctx = build_emotional_state_context(state)
+
         # Acquisition pool (当前可获得的修行资源)
         acquisition_items = sample_acquisition_items(state, count=3)
         if acquisition_items:
@@ -451,6 +454,7 @@ class EventDirector:
             foreshadowing_hints=foreshadowing or "无伏笔暗线",
             emotional_tokens_context=emotional_tokens_ctx or "无随身之物",
             repertoire_context=repertoire_ctx or "无修行积累",
+            emotional_state_context=emotional_state_ctx or "无特别情感波动",
             acquisition_pool=acquisition_pool,
         )
 

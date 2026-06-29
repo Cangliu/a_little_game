@@ -168,7 +168,6 @@ export default function GameScreen({
   } | null>(null);
   // Sect info state
   const [sectInfo, setSectInfo] = useState<SectInfo | null>(null);
-  const [showSectPanel, setShowSectPanel] = useState(false);
   const [aiEnhanced, setAiEnhanced] = useState(false);
   const [tension, setTension] = useState(0);
   const [npcNames, setNpcNames] = useState<string[]>([]);
@@ -517,39 +516,39 @@ export default function GameScreen({
               </span>
               <span className={`text-base font-kai ${genderColor}`}>{genderLabel}</span>
               <span className="text-scroll-text-dim text-sm font-kai">
-                沧浪纪 {currentDisplayAge} 年
+                <span className="text-scroll-gold tracking-wider">沧浪纪</span>
+                <span className="mx-0.5 text-scroll-gold-dim font-bold text-base" style={{ textShadow: '0 0 3px rgba(139,105,20,0.2)' }}>{currentDisplayAge}</span>
+                <span className="text-scroll-gold/80">年</span>
               </span>
             </div>
-            {/* Sect badge (click to toggle panel) */}
+            {/* Sect badge (static display, no panel) */}
             <div className="flex items-center gap-2">
               {sectInfo ? (
-                <button
-                  onClick={() => setShowSectPanel(!showSectPanel)}
-                  className="sect-badge font-kai text-xs px-2 py-0.5 rounded border border-emerald-400/40 text-emerald-700 bg-emerald-50/50 cursor-pointer"
-                >
+                <span className="font-kai text-xs px-2 py-0.5 rounded border border-emerald-400/40 text-emerald-700 bg-emerald-50/50">
                   {sectInfo.name}·{sectInfo.rank}
-                </button>
+                </span>
               ) : (
-                <span className="font-kai text-xs text-stone-400 px-2 py-0.5">散修</span>
+                <span className="font-kai text-xs text-stone-400/70 px-2 py-0.5">游方散修</span>
               )}
             </div>
           </div>
           {/* Row 2: Cultivation bar + quick buttons */}
           <div className="flex items-center gap-3">
-            {/* Cultivation progress */}
-            <div className="flex-1 cultivation-bar h-2 rounded-full bg-stone-200/60 overflow-hidden">
+            {/* Cultivation progress - 灵脉风格 */}
+            <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(139,105,20,0.08)', boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.05)' }}>
               <div
-                className="h-full rounded-full transition-all duration-500"
+                className="h-full rounded-full transition-all duration-700"
                 style={{
                   width: `${cultPercent}%`,
-                  background: 'linear-gradient(90deg, #6366f1, #a78bfa, #f59e0b)',
+                  background: 'linear-gradient(90deg, #2d7a4f 0%, #3daa70 40%, #d4b96a 80%, #8b6914 100%)',
+                  boxShadow: '0 0 4px rgba(61,170,112,0.3)',
                 }}
               />
             </div>
             <span className="text-xs text-scroll-text-dim font-kai whitespace-nowrap">
               {cultivation}/{cultivationMax}
             </span>
-            {/* 天劫气息指示器: 修仙风格的「煎」字 */}
+            {/* 天劫气息指示器: 「煞」字 */}
             {tension > 0 && (
               <div
                 className="flex items-center gap-1"
@@ -560,7 +559,7 @@ export default function GameScreen({
                   tension >= 30 ? 'text-orange-400' :
                   'text-amber-300/70'
                 }`}>
-                  煎
+                  煞
                 </span>
                 <div className="w-6 h-1.5 rounded-full bg-stone-200/40 overflow-hidden">
                   <div
@@ -577,17 +576,16 @@ export default function GameScreen({
             {/* 灵玉指示器: AI叙事状态 */}
             <div
               className="flex items-center gap-0.5"
-              title={aiEnhanced ? '灵玉开光 · AI叙事开启' : '灵玉暗淡 · 规则模式'}
+              title={aiEnhanced ? '灵玉开光 · 天道演算中' : '灵玉暗淡 · 凡俗模式'}
             >
               <span
-                className={`text-sm transition-all duration-700 ${
+                className={`font-kai text-xs transition-all duration-700 ${
                   aiEnhanced
-                    ? 'text-emerald-400 drop-shadow-[0_0_6px_rgba(52,211,153,0.8)] animate-pulse'
-                    : 'text-stone-400/60 grayscale'
+                    ? 'text-emerald-500 drop-shadow-[0_0_4px_rgba(52,211,153,0.6)] animate-pulse'
+                    : 'text-stone-400/50'
                 }`}
-                style={{ filter: aiEnhanced ? 'none' : 'saturate(0.2)' }}
               >
-                💎
+                灵
               </span>
             </div>
 
@@ -595,25 +593,6 @@ export default function GameScreen({
         </div>
       </div>
 
-      {/* Collapsible Sect Panel */}
-      {showSectPanel && (
-        <div className="border-b border-scroll-gold-dim/10 px-4 py-3 relative z-10"
-             style={{ background: 'rgba(255,253,245,0.95)' }}>
-          <div className="max-w-2xl mx-auto">
-            <div className="info-panel">
-              {sectInfo ? (
-                <div className="text-center text-xs font-kai">
-                  <span className="text-emerald-700">{sectInfo.name}</span>
-                  <span className="text-stone-400 mx-1">·</span>
-                  <span className="text-scroll-text">{sectInfo.rank}</span>
-                </div>
-              ) : (
-                <p className="text-xs text-stone-400 font-kai text-center">散修 · 无宗门归属</p>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Main Content - Event Log */}
       <div className="flex-1 flex flex-col relative z-10">
@@ -645,7 +624,9 @@ export default function GameScreen({
                   {showAge && (
                     <div className="flex items-center gap-3 mt-4 mb-2">
                       <span className="text-scroll-gold font-kai text-sm whitespace-nowrap">
-                        沧浪纪 {dispAge} 年
+                        <span className="tracking-wider">沧浪纪</span>
+                        <span className="mx-0.5 font-bold text-base" style={{ textShadow: '0 0 2px rgba(139,105,20,0.15)' }}>{dispAge}</span>
+                        <span className="opacity-80">年</span>
                       </span>
                       <div className="flex-1 h-px bg-scroll-gold/20" />
                       {event.category && (

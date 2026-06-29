@@ -211,8 +211,219 @@ def build_repertoire_context(state: "GameState") -> str:
 
     parts = []
     if tech_names:
-        parts.append("\u529f\u6cd5: " + "\u3001".join(tech_names))
+        parts.append("功法: " + "、".join(tech_names))
     if treasure_names:
-        parts.append("\u6cd5\u5b9d: " + "\u3001".join(treasure_names))
+        parts.append("法宝: " + "、".join(treasure_names))
 
     return "\n".join(parts) if parts else ""
+
+
+# ── Emotional State Context (Layer 2 + Layer 3: 情感锚点 + 背景NPC) ───────
+
+_LONGING_THRESHOLD_YEARS = 5  # 距离上次提及超过X年则触发思念提示
+
+
+def build_emotional_state_context(state: "GameState") -> str:
+    """Build emotional state context for LLM prompt injection.
+
+    Combines two sources:
+    1. Emotional anchors (Layer 2): explicit emotional state tracking
+       - Active emotions (longing, attachment, guilt, gratitude)
+       - Decayed emotions (faded but still present)
+    2. Background NPCs (Layer 3): lightweight characters with emotional bonds
+       - Parents, childhood friends, village elders etc.
+       - Generates "longing hints" when too long since last mention
+
+    Output is injected as 【情感状态】 in the LLM prompt.
+    """
+    lines = []
+
+    # ── Part 1: Emotional anchors ──
+    anchors = getattr(state, "emotional_anchors", None) or []
+    if anchors:
+        # Sort by intensity (strongest first), show top 5
+        active_anchors = sorted(
+            anchors, key=lambda a: a.get("intensity", 0), reverse=True
+        )[:5]
+        for anchor in active_anchors:
+            target = anchor.get("target", "")
+            relation = anchor.get("relation", "")
+            emotion_state = anchor.get("state", "")
+            intensity = anchor.get("intensity", 5)
+            if not target or not emotion_state:
+                continue
+            # Intensity description
+            if intensity >= 8:
+                strength = "强烈"
+            elif intensity >= 5:
+                strength = "淡淡"
+            else:
+                strength = "微弱"
+            line = f"- 对{target}({relation})：{strength}的{emotion_state}"
+            lines.append(line)
+
+    # ── Part 2: Background NPC longing hints ──
+    bg_npcs = getattr(state, "background_npcs", None) or []
+    current_age = state.age
+    for npc in bg_npcs:
+        name = npc.get("name", "")
+        relation = npc.get("relation", "")
+        bond = npc.get("bond", 50)
+        status = npc.get("status", "alive")
+        last_mentioned = npc.get("last_mentioned_age", 0)
+        if not name or status == "dead":
+            continue
+
+        years_since = current_age - last_mentioned
+        # Generate longing hint based on time since last mention and bond strength
+        if years_since >= _LONGING_THRESHOLD_YEARS and bond >= 40:
+            if years_since >= 20:
+                hint = f"- 已有{years_since}年未见{relation}{name}，心底有一块地方始终留给了这个名字"
+            elif years_since >= 10:
+                hint = f"- 离开{relation}{name}已{years_since}年，偶尔梦中会想起对方的脸"
+            else:
+                hint = f"- 近来偶尔会想起{relation}{name}"
+            # Adjust based on bond intensity
+            if bond >= 80:
+                hint += "（情感纽带极深）"
+            lines.append(hint)
+
+        # If background NPC is "unknown" status (lost contact), add uncertainty
+        if status == "unknown" and years_since >= 10:
+            lines.append(f"- {relation}{name}生死未卜，心中始终放不下")
+
+    return "\n".join(lines) if lines else "无特别情感波动"
+
+
+def record_emotional_anchor(
+    state: "GameState",
+    target: str,
+    relation: str,
+    emotion_state: str,
+    intensity: int = 7,
+    decay_rate: str = "slow",
+) -> None:
+    """Record or update an emotional anchor in game state.
+
+    If an anchor for the same target already exists, update it.
+    Otherwise create a new one. Max 10 anchors.
+
+    Args:
+        state: Current game state
+        target: Name of the emotional target (e.g., "父亲", "师父王青云")
+        relation: Relationship type (e.g., "父亲", "师父", "童年好友")
+        emotion_state: Emotional state (e.g., "思念", "依恋", "愧疚", "感恩")
+        intensity: Emotional intensity 1-10
+        decay_rate: "fast"/"slow"/"none" (how quickly emotion fades)
+    """
+    anchors = state.emotional_anchors
+
+    # Check if anchor for same target exists
+    for i, anchor in enumerate(anchors):
+        if anchor.get("target") == target:
+            # Update existing
+            anchors[i] = {
+                "target": target,
+                "relation": relation,
+                "state": emotion_state,
+                "intensity": min(10, intensity),
+                "source_age": state.age,
+                "decay_rate": decay_rate,
+            }
+            return
+
+    # Create new
+    anchors.append({
+        "target": target,
+        "relation": relation,
+        "state": emotion_state,
+        "intensity": min(10, intensity),
+        "source_age": state.age,
+        "decay_rate": decay_rate,
+    })
+
+    # Cap at 10
+    if len(anchors) > 10:
+        # Remove lowest intensity
+        anchors.sort(key=lambda a: a.get("intensity", 0))
+        state.emotional_anchors = anchors[1:]  # Remove weakest
+
+
+def decay_emotional_anchors(state: "GameState") -> None:
+    """Apply time-based decay to emotional anchors.
+
+    Called once per turn. Decay rates:
+    - fast: -2 intensity per turn (temp emotions like anger, surprise)
+    - slow: -0.5 intensity per turn (deep bonds like parental love, first love)
+    - none: no decay (permanent bonds)
+
+    Anchors dropping below intensity 1 are removed.
+    """
+    anchors = state.emotional_anchors
+    if not anchors:
+        return
+
+    decay_map = {"fast": 2.0, "slow": 0.5, "none": 0.0}
+    surviving = []
+    for anchor in anchors:
+        rate = decay_map.get(anchor.get("decay_rate", "slow"), 0.5)
+        new_intensity = anchor.get("intensity", 5) - rate
+        if new_intensity >= 1:
+            anchor["intensity"] = new_intensity
+            surviving.append(anchor)
+
+    state.emotional_anchors = surviving
+
+
+def register_background_npc(
+    state: "GameState",
+    name: str,
+    relation: str,
+    bond: int = 80,
+    status: str = "alive",
+    key_memories: list = None,
+) -> None:
+    """Register a lightweight background NPC for emotional tracking.
+
+    Background NPCs don't occupy MAX_NPCS slots and don't have
+    destiny beats. They exist purely for emotional continuity tracking.
+
+    Args:
+        state: Current game state
+        name: NPC name (e.g., "陈父", "小花")
+        relation: Relation label (e.g., "父亲", "母亲", "童年玩伴")
+        bond: Emotional bond strength 0-100
+        status: "alive" / "dead" / "unknown"
+        key_memories: List of short memory strings
+    """
+    bg_npcs = state.background_npcs
+
+    # Don't duplicate
+    for existing in bg_npcs:
+        if existing.get("name") == name:
+            # Update instead of duplicate
+            existing["bond"] = bond
+            existing["status"] = status
+            if key_memories:
+                existing.setdefault("key_memories", []).extend(key_memories)
+            return
+
+    bg_npcs.append({
+        "name": name,
+        "relation": relation,
+        "bond": bond,
+        "status": status,
+        "last_mentioned_age": state.age,
+        "key_memories": key_memories or [],
+    })
+
+
+def update_background_npc_mention(state: "GameState", name: str) -> None:
+    """Update last_mentioned_age when a background NPC is referenced in narrative.
+
+    Called after LLM generates text that mentions a background NPC.
+    """
+    for npc in state.background_npcs:
+        if npc.get("name") == name:
+            npc["last_mentioned_age"] = state.age
+            break

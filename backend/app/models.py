@@ -173,6 +173,10 @@ class GameState(BaseModel):
     next_era_check_age: int = 0              # 下次检查纪元触发的年龄
     # 上下文追踪
     last_significant_event: Optional[dict] = None  # 最近一次重大事件摘要 (AI上下文用)
+    # 情感锚点系统 (Layer 2)
+    emotional_anchors: list[dict] = []        # [{target, relation, state, intensity, source_age, decay_rate}]
+    # 背景NPC系统 (Layer 3: 不占MAX_NPCS名额, 轻量级情感跟踪)
+    background_npcs: list[dict] = []          # [{name, relation, bond, status, last_mentioned_age, key_memories}]
 
 
 class StartGameRequest(BaseModel):
