@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { LifeSummary, SectInfo, ChoiceHistoryItem, NPCRelationship, LifeEvent } from '../utils/types';
+import type { LifeSummary, SectInfo, ChoiceHistoryItem, NPCRelationship, LifeEvent, EmotionalToken } from '../utils/types';
 import { REALM_COLORS, GENDER_NAMES, CATEGORY_NAMES, CATEGORY_COLORS } from '../utils/types';
 import { getSummary, getGameState, getLifeEvents } from '../utils/api';
 import { SUMMARY_BACKGROUNDS, getPortrait } from '../config/sceneConfig';
@@ -15,6 +15,7 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
   const [sectInfo, setSectInfo] = useState<SectInfo | null>(null);
   const [choiceHistory, setChoiceHistory] = useState<ChoiceHistoryItem[]>([]);
   const [npcRelationships, setNpcRelationships] = useState<NPCRelationship[]>([]);
+  const [emotionalTokens, setEmotionalTokens] = useState<EmotionalToken[]>([]);
   const [lifeEvents, setLifeEvents] = useState<LifeEvent[]>([]);
   const [showTimeline, setShowTimeline] = useState(false);
 
@@ -28,6 +29,7 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
       if (state.sect_info) setSectInfo(state.sect_info);
       if (state.choice_history) setChoiceHistory(state.choice_history);
       if (state.npc_relationships) setNpcRelationships(state.npc_relationships);
+      if (state.emotional_tokens) setEmotionalTokens(state.emotional_tokens);
     }).catch(() => {});
   }, [gameId]);
 
@@ -44,9 +46,12 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
   const isAscended = summary.death_reason === '飞升成仙';
   const isTribulationFailed = summary.death_reason === '渡劫陨落';
   const isTrappedInWorld = summary.death_reason === '困死人间';
+  const isCombatDeath = summary.death_reason === '斗法陨落';
 
   const headerLabel = isAscended
     ? '— 飞升成仙 —'
+    : isCombatDeath
+    ? '— 斗法陨落 —'
     : isTribulationFailed
     ? '— 渡劫陨落 —'
     : isTrappedInWorld
@@ -64,6 +69,7 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
         <img
           src={
             isAscended ? SUMMARY_BACKGROUNDS.ascended
+            : isCombatDeath ? SUMMARY_BACKGROUNDS.combat_death
             : isTribulationFailed ? SUMMARY_BACKGROUNDS.tribulation_failed
             : SUMMARY_BACKGROUNDS.default
           }
@@ -115,6 +121,8 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
             className={`text-4xl font-kai tracking-[0.3em] mb-2 ${
               isAscended
                 ? 'text-scroll-gold glow-text'
+                : isCombatDeath
+                ? 'text-red-600'
                 : isTribulationFailed
                 ? 'text-orange-500'
                 : isTrappedInWorld
@@ -260,6 +268,45 @@ export default function SummaryScreen({ gameId, onRestart }: SummaryScreenProps)
                       </div>
                     );
                   })}
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* 随身之物 — 情感道具玉佩风格 */}
+          {emotionalTokens.length > 0 && (
+            <>
+              <div className="ink-divider" />
+              <div className="mb-4">
+                <h3 className="text-scroll-text-dim text-xs font-kai tracking-widest mb-3 text-center">
+                  随身之物
+                </h3>
+                <div className="space-y-2 max-h-40 overflow-y-auto">
+                  {emotionalTokens.map((token, i) => (
+                    <div key={i} className="flex items-start gap-2 px-2 py-1.5 rounded bg-amber-50/40 border border-amber-200/30">
+                      <span className="text-base shrink-0 mt-0.5" style={{ textShadow: '0 0 4px rgba(180,140,60,0.4)' }}>
+                        🧊
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-kai text-amber-800 font-bold truncate">
+                            {token.name}
+                          </span>
+                          <span className="text-xs text-stone-400 font-kai shrink-0 ml-1">
+                            {token.source_age}岁得
+                          </span>
+                        </div>
+                        <p className="text-xs text-stone-500 font-kai leading-relaxed mt-0.5 line-clamp-2">
+                          {token.description}
+                        </p>
+                        {token.source_npc && (
+                          <span className="text-xs text-amber-600/80 font-kai">
+                            —— {token.source_npc} 所赠
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </>

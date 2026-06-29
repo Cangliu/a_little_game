@@ -140,6 +140,7 @@ export const CHARACTER_PORTRAITS: Record<string, Record<string, string>> = {
 export const SUMMARY_BACKGROUNDS: Record<string, string> = {
   ascended: '/scenes/bg/仙山云海.png',
   tribulation_failed: '/scenes/bg/渡劫雷云.png',
+  combat_death: '/scenes/bg/落日孤峰.png',
   default: '/scenes/bg/云中楼阁.png',
 };
 

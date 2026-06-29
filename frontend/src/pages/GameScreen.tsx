@@ -55,14 +55,37 @@ interface GameScreenProps {
   onGameEnd: (gameId: string) => void;
 }
 
+/**
+ * Highlight NPC names in narrative text by wrapping them in styled spans.
+ */
+function highlightNpcNames(text: string, npcNames: string[]): React.ReactNode {
+  if (!text || npcNames.length === 0) return text;
+  // Build regex from NPC names (escape special chars, sort by length desc for greedy match)
+  const escaped = npcNames
+    .filter((n) => n.length >= 2)
+    .sort((a, b) => b.length - a.length)
+    .map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  if (escaped.length === 0) return text;
+  const regex = new RegExp(`(${escaped.join('|')})`, 'g');
+  const parts = text.split(regex);
+  if (parts.length === 1) return text;
+  return parts.map((part, i) =>
+    npcNames.includes(part)
+      ? <span key={i} className="npc-highlight">{part}</span>
+      : part
+  );
+}
+
 function TypewriterEvent({
   event,
   speedMs = 35,
   onDone,
+  npcNames = [],
 }: {
   event: GameEvent;
   speedMs?: number;
   onDone?: () => void;
+  npcNames?: string[];
 }) {
   const expanded = event.expanded_text || '';
   const [shown, setShown] = useState(expanded ? '' : expanded);
@@ -110,7 +133,7 @@ function TypewriterEvent({
     <div onClick={skip} className={expanded && !done ? 'cursor-pointer' : ''}>
       {expanded && (
         <div className="event-narrative">
-          {shown}
+          {done ? highlightNpcNames(shown, npcNames) : shown}
           {!done && <span className="tw-cursor">▊</span>}
         </div>
       )}
@@ -147,6 +170,8 @@ export default function GameScreen({
   const [sectInfo, setSectInfo] = useState<SectInfo | null>(null);
   const [showSectPanel, setShowSectPanel] = useState(false);
   const [aiEnhanced, setAiEnhanced] = useState(false);
+  const [tension, setTension] = useState(0);
+  const [npcNames, setNpcNames] = useState<string[]>([]);
   const [streamingNarrative, setStreamingNarrative] = useState<string>('');
   const [isStreaming, setIsStreaming] = useState(false);
   // CG system (Layer 2)
@@ -230,6 +255,10 @@ export default function GameScreen({
             if (s.events && Array.isArray(s.events)) {
               setEventLog((prev) => [...prev, ...s.events]);
             }
+            if (s.tension !== undefined) setTension(s.tension);
+            if (s.npc_relationships && Array.isArray(s.npc_relationships)) {
+              setNpcNames(s.npc_relationships.map((n: any) => n.name).filter(Boolean));
+            }
             setIsStreaming(true);
             setStreamingNarrative('');
           },
@@ -307,6 +336,10 @@ export default function GameScreen({
         setCultivationMax(result.cultivation_max);
         if (result.sect_info !== undefined) setSectInfo(result.sect_info ?? null);
         if (result.ai_enhanced !== undefined) setAiEnhanced(result.ai_enhanced);
+        if (result.tension !== undefined) setTension(result.tension);
+        if (result.npc_relationships && Array.isArray(result.npc_relationships)) {
+          setNpcNames(result.npc_relationships.map((n) => n.name).filter(Boolean));
+        }
 
         setEventLog((prev) => {
           const next = [...prev, ...result.events];
@@ -409,6 +442,7 @@ export default function GameScreen({
       case 'danger': return 'event-line event-line-danger';
       case 'fortune': return 'event-line event-line-fortune';
       case 'special': return 'event-line event-line-fortune';
+      case 'saga_omen': return 'event-line event-line-saga-omen';
       default: return 'event-line';
     }
   };
@@ -486,12 +520,15 @@ export default function GameScreen({
                 沧浪纪 {currentDisplayAge} 年
               </span>
             </div>
-            {/* Sect badge */}
+            {/* Sect badge (click to toggle panel) */}
             <div className="flex items-center gap-2">
               {sectInfo ? (
-                <span className="sect-badge font-kai text-xs px-2 py-0.5 rounded border border-emerald-400/40 text-emerald-700 bg-emerald-50/50">
+                <button
+                  onClick={() => setShowSectPanel(!showSectPanel)}
+                  className="sect-badge font-kai text-xs px-2 py-0.5 rounded border border-emerald-400/40 text-emerald-700 bg-emerald-50/50 cursor-pointer"
+                >
                   {sectInfo.name}·{sectInfo.rank}
-                </span>
+                </button>
               ) : (
                 <span className="font-kai text-xs text-stone-400 px-2 py-0.5">散修</span>
               )}
@@ -512,6 +549,31 @@ export default function GameScreen({
             <span className="text-xs text-scroll-text-dim font-kai whitespace-nowrap">
               {cultivation}/{cultivationMax}
             </span>
+            {/* 天劫气息指示器: 修仙风格的「煎」字 */}
+            {tension > 0 && (
+              <div
+                className="flex items-center gap-1"
+                title={`天劫气息: ${tension.toFixed(0)}`}
+              >
+                <span className={`font-kai text-xs transition-all duration-500 ${
+                  tension >= 60 ? 'text-red-500 animate-pulse' :
+                  tension >= 30 ? 'text-orange-400' :
+                  'text-amber-300/70'
+                }`}>
+                  煎
+                </span>
+                <div className="w-6 h-1.5 rounded-full bg-stone-200/40 overflow-hidden">
+                  <div
+                    className="h-full rounded-full transition-all duration-700"
+                    style={{
+                      width: `${Math.min(tension, 100)}%`,
+                      background: tension >= 60 ? '#ef4444' :
+                                  tension >= 30 ? '#f97316' : '#fbbf24',
+                    }}
+                  />
+                </div>
+              </div>
+            )}
             {/* 灵玉指示器: AI叙事状态 */}
             <div
               className="flex items-center gap-0.5"
@@ -528,15 +590,7 @@ export default function GameScreen({
                 💎
               </span>
             </div>
-            {/* Sect toggle button */}
-            <button
-              onClick={() => setShowSectPanel(!showSectPanel)}
-              className={`text-xs font-kai px-2 py-0.5 rounded border transition-all ${
-                showSectPanel ? 'border-emerald-500 text-emerald-600 bg-emerald-50' : 'border-stone-300/50 text-stone-500 hover:text-emerald-600'
-              }`}
-            >
-              宗门
-            </button>
+
           </div>
         </div>
       </div>
@@ -547,28 +601,14 @@ export default function GameScreen({
              style={{ background: 'rgba(255,253,245,0.95)' }}>
           <div className="max-w-2xl mx-auto">
             <div className="info-panel">
-              <h4 className="text-xs font-kai text-emerald-600 mb-2 tracking-wider">宗门信息</h4>
               {sectInfo ? (
-                <div className="space-y-1 text-xs font-kai">
-                  <div className="flex justify-between">
-                    <span className="text-stone-500">宗门</span>
-                    <span className="text-scroll-text">{sectInfo.name}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-stone-500">类型</span>
-                    <span className="text-scroll-text">{sectInfo.sect_type}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-stone-500">职位</span>
-                    <span className="text-emerald-700">{sectInfo.rank}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-stone-500">贡献</span>
-                    <span className="text-amber-700">{sectInfo.contribution}</span>
-                  </div>
+                <div className="text-center text-xs font-kai">
+                  <span className="text-emerald-700">{sectInfo.name}</span>
+                  <span className="text-stone-400 mx-1">·</span>
+                  <span className="text-scroll-text">{sectInfo.rank}</span>
                 </div>
               ) : (
-                <p className="text-xs text-stone-400 font-kai">散修 · 无宗门归属</p>
+                <p className="text-xs text-stone-400 font-kai text-center">散修 · 无宗门归属</p>
               )}
             </div>
           </div>
@@ -631,7 +671,7 @@ export default function GameScreen({
                   </div>
                   {showStreaming && streamingNarrative && (
                     <div className="event-narrative">
-                      {streamingNarrative}
+                      {highlightNpcNames(streamingNarrative, npcNames)}
                       <span className="tw-cursor">▊</span>
                     </div>
                   )}
@@ -641,10 +681,11 @@ export default function GameScreen({
                         event={event}
                         speedMs={32}
                         onDone={() => handleTyped(i)}
+                        npcNames={npcNames}
                       />
                     ) : (
                       <div className="event-narrative">
-                        {event.expanded_text}
+                        {highlightNpcNames(event.expanded_text!, npcNames)}
                       </div>
                     )
                   )}

@@ -145,6 +145,7 @@ def get_game_state(game_id: str):
         "sect_info": sect_info,
         "npc_relationships": npc_rels,
         "choice_history": state.choice_history[-20:],
+        "emotional_tokens": state.emotional_tokens[-10:],
     }
 
 

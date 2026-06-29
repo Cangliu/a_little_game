@@ -376,6 +376,15 @@
     font-weight: 700;
   }
 
+  .event-line-saga-omen {
+    border-left-color: #7c3aed;
+    color: #6d28d9;
+    font-weight: 600;
+    font-style: italic;
+    opacity: 0.85;
+    text-shadow: 0 0 8px rgba(124, 58, 237, 0.15);
+  }
+
   /* 事件扩展叙述（100-300 字轻小说）：霞鹜文楷，颜色柔和，叙事感 */
   .event-narrative {
     font-family: var(--font-wenkai);
@@ -551,6 +560,12 @@
 
   .npc-card:last-child {
     border-bottom: none;
+  }
+
+  .npc-highlight {
+    font-weight: 700;
+    color: rgba(139, 105, 20, 0.95);
+    text-shadow: 0 0 1px rgba(180, 140, 60, 0.3);
   }
 
   .sect-badge {

@@ -1,4 +1,4 @@
-import type { NextYearResponse, LifeSummary, SectInfo, NPCRelationship, ChoiceHistoryItem, LifeEvent } from './types';
+import type { NextYearResponse, LifeSummary, SectInfo, NPCRelationship, ChoiceHistoryItem, LifeEvent, EmotionalToken } from './types';
 
 const API_BASE = '/api/game';
 
@@ -67,6 +67,7 @@ export async function getGameState(gameId: string): Promise<{
   sect_info: SectInfo | null;
   npc_relationships: NPCRelationship[];
   choice_history: ChoiceHistoryItem[];
+  emotional_tokens: EmotionalToken[];
 }> {
   const res = await fetch(`${API_BASE}/state/${gameId}`);
   if (!res.ok) {

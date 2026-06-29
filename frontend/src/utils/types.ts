@@ -103,6 +103,14 @@ export interface ChoiceHistoryItem {
   consequence_tag: string;
 }
 
+export interface EmotionalToken {
+  name: string;
+  description: string;
+  source_npc: string;
+  source_age: number;
+  keywords: string[];
+}
+
 export interface NextYearResponse {
   age: number;
   realm: number;
