@@ -180,9 +180,10 @@ class StoryArcPlanner:
 
             # Check if event matches current beat
             phase = arc.get("phase", "setup")
-            threshold = 4 if phase == "climax" else 3
+            threshold = 3 if phase == "climax" else 2
             if self._event_matches_beat(event_text, event_tags, event_category, current_beat, event_npc, arc_npc, threshold=threshold):
                 arc["current_beat_index"] = idx + 1
+                arc["_last_advanced_age"] = state.age
 
                 # Update phase based on progress
                 progress = (idx + 1) / len(beats)
@@ -203,6 +204,77 @@ class StoryArcPlanner:
                 )
 
         return completed_arc
+
+    def auto_advance_stale_arcs(self, state: "GameState") -> Optional[dict]:
+        """Auto-advance arcs that have been stagnant for too long.
+
+        If an arc hasn't progressed in 8+ turns (~40-80 years depending on realm),
+        auto-advance one beat to prevent permanent stall.
+
+        Returns: The arc dict if it just completed, else None.
+        """
+        # Estimate turns-in-years: use a heuristic of ~30 years = stale
+        STALE_YEARS = 30
+        completed_arc = None
+
+        for arc in state.active_arcs:
+            if arc.get("is_completed"):
+                continue
+
+            beats = arc.get("planned_beats", [])
+            idx = arc.get("current_beat_index", 0)
+            if idx >= len(beats):
+                arc["is_completed"] = True
+                arc["phase"] = "resolution"
+                completed_arc = arc
+                continue
+
+            last_advanced = arc.get("_last_advanced_age", arc.get("_created_age", state.age - 50))
+            years_stale = state.age - last_advanced
+
+            if years_stale >= STALE_YEARS:
+                # Auto-advance
+                arc["current_beat_index"] = idx + 1
+                arc["_last_advanced_age"] = state.age
+
+                progress = (idx + 1) / len(beats)
+                if progress < 0.3:
+                    arc["phase"] = "setup"
+                elif progress < 0.7:
+                    arc["phase"] = "rising"
+                elif progress < 1.0:
+                    arc["phase"] = "climax"
+                else:
+                    arc["phase"] = "resolution"
+                    arc["is_completed"] = True
+                    completed_arc = arc
+
+                logger.debug(
+                    "Arc '%s' auto-advanced (stale %d years) to beat %d/%d",
+                    arc.get("theme", "?"), years_stale, idx + 1, len(beats)
+                )
+
+        return completed_arc
+
+    def ensure_minimum_arcs(self, state: "GameState") -> None:
+        """Ensure at least 2 active arcs exist. Replenish from archetypes if needed.
+
+        Called from _post_year_update to keep arc supply flowing for saga emergence.
+        """
+        active_count = sum(
+            1 for a in state.active_arcs if not a.get("is_completed")
+        )
+        if active_count >= 2:
+            return
+        if state.realm < 1:
+            return
+
+        # Generate arcs for current realm
+        arcs = self._plan_with_archetypes(state, state.realm)
+        if arcs:
+            state.active_arcs.extend(arcs)
+            state.active_arcs = state.active_arcs[:5]
+            logger.debug("Replenished arcs: %d new arcs added", len(arcs))
 
     def get_arcs_context_for_ai(self, state: "GameState") -> str:
         """Build context string about active arcs for AI prompts."""

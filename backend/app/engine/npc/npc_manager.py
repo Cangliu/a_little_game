@@ -22,11 +22,22 @@ logger = logging.getLogger(__name__)
 MAX_NPCS = 80
 
 # NPC event cooldowns (in years)
-MASTER_EVENT_INTERVAL = (5, 10)
-LOVER_EVENT_INTERVAL = (3, 5)
-RIVAL_EVENT_INTERVAL = (10, 20)
-REUNION_MIN_ABSENCE = 30
+MASTER_EVENT_INTERVAL = (3, 7)
+LOVER_EVENT_INTERVAL = (2, 4)
+RIVAL_EVENT_INTERVAL = (5, 12)
+REUNION_MIN_ABSENCE = 20
 REUNION_SENTIMENT_THRESHOLD = 50
+
+# Periodic encounter config (new NPC generation during gameplay)
+ENCOUNTER_INTERVAL_BY_REALM = {
+    1: (20, 30),    # 练气: 每20-30年可能邂逅
+    2: (30, 50),    # 筑基: 每30-50年
+    3: (40, 70),    # 金丹: 每40-70年
+    4: (50, 80),    # 元婴: 每50-80年
+    5: (60, 100),   # 化神: 每60-100年
+}
+ENCOUNTER_CHANCE = 0.12  # 满足时间间隔后的生成概率
+MAX_ENCOUNTER_NPCS = 3   # 邂逅NPC上限（不含觉醒/突破生成的）
 
 # ── NPC Personality Depth Pools ─────────────────────────────────────────
 
@@ -186,6 +197,87 @@ class NPCManager:
             names = ", ".join(n.name for n in generated)
             logger.info("Generated %d fellow disciples: %s", len(generated), names)
         return generated
+
+    def generate_realm_npcs(self, state: GameState, new_realm: int) -> list:
+        """Generate NPCs upon realm breakthrough.
+
+        Each realm introduces different types of NPCs:
+        - 练气→筑基: 1 同门或对手
+        - 筑基→金丹: 1 宿敌或道侣
+        - 金丹→元婴: 1 旧识或强敌
+        - 元婴→化神: 1 道友
+        """
+        generated = []
+        realm_npc_config = {
+            2: [("fellow_disciple", "同门"), ("challenger", "对手")],
+            3: [("rival", "宿敌"), ("lover", "道侣")],
+            4: [("old_acquaintance", "故交"), ("strong_enemy", "宿敌")],
+            5: [("dao_friend", "道友")],
+        }
+        options = realm_npc_config.get(new_realm, [])
+        if not options:
+            return generated
+
+        choice = random.choice(options)
+        npc = self.generate_npc(state, role=choice[0], relation_type=choice[1])
+        if npc:
+            generated.append(npc)
+            logger.info(
+                "Realm %d NPC generated: %s (%s)",
+                new_realm, npc.name, choice[1]
+            )
+        return generated
+
+    def check_periodic_encounter(self, state: GameState) -> Optional[dict]:
+        """Check if conditions are met for a periodic NPC encounter.
+
+        Returns an encounter event dict or None.
+        Generates wandering cultivators, merchants, or travelers.
+        """
+        if state.realm < 1:
+            return None
+        if len(state.npc_registry) >= MAX_NPCS:
+            return None
+        # Soft cap: limit encounter-generated NPCs
+        encounter_count = getattr(state, '_encounter_npc_count', 0)
+        if encounter_count >= MAX_ENCOUNTER_NPCS:
+            return None
+
+        interval_range = ENCOUNTER_INTERVAL_BY_REALM.get(state.realm, (20, 30))
+        last_encounter_age = getattr(state, '_last_npc_encounter_age', 0)
+        years_since = state.age - last_encounter_age
+        min_interval = random.randint(interval_range[0], interval_range[1])
+
+        if years_since < min_interval:
+            return None
+        if random.random() >= ENCOUNTER_CHANCE:
+            return None
+
+        # Generate a wandering NPC
+        encounter_roles = [
+            ("wanderer", "泛泛之交", "你在游历途中偶遇一位散修"),
+            ("merchant", "泛泛之交", "一位行商修士主动与你攀谈"),
+            ("traveler", "泛泛之交", "一位游方修士与你不期而遇"),
+            ("challenger", "对手", "一位陌生修士向你发出切磋邀请"),
+        ]
+        role, rel_type, text = random.choice(encounter_roles)
+        npc = self.generate_npc(state, role=role, relation_type=rel_type)
+        if not npc:
+            return None
+
+        state._last_npc_encounter_age = state.age
+        state._encounter_npc_count = getattr(state, '_encounter_npc_count', 0) + 1
+        event = {
+            "id": f"encounter_{npc.npc_id}",
+            "text": f"{text}，此人名为{npc.name}。",
+            "event_type": "normal",
+            "category": "social",
+            "tags": ["encounter", "npc"],
+            "involved_npc": npc.name,
+            "involved_npc_id": npc.npc_id,
+        }
+        logger.info("Periodic encounter: %s (%s)", npc.name, rel_type)
+        return event
 
     def get_or_create_for_event(
         self, state: GameState, event: dict

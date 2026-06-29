@@ -110,6 +110,9 @@ class CausalityManager:
         # Check if event resolves any dynamic causal chain (by keyword match)
         self._check_chain_resolution(state, event)
 
+        # Rule-based causal chain generation (no LLM needed)
+        self._try_rule_based_chain(state, event)
+
     def _create_hook(
         self, state: "GameState", hook_id: str, description: str,
         max_wait: int = 100, npc_id: str = "", npc_name: str = "",
@@ -160,6 +163,140 @@ class CausalityManager:
                 return
 
     # ── Dynamic Causal Chain methods ──────────────────────────────────
+
+    # Rule-based chain trigger templates
+    _RULE_CHAIN_TEMPLATES = [
+        {
+            "trigger": "danger+npc",
+            "probability": 0.40,
+            "resolution_template": "与{npc}的恩怨了结",
+            "keywords_template": ["恩怨", "对决", "了结", "报仇"],
+        },
+        {
+            "trigger": "danger_general",
+            "probability": 0.20,
+            "resolution_template": "此劫余波尚未平息",
+            "keywords_template": ["劫难", "余波", "化解", "平息"],
+        },
+        {
+            "trigger": "fortune",
+            "probability": 0.30,
+            "resolution_template": "化解机缘带来的觊觎",
+            "keywords_template": ["觊觎", "争夺", "保护", "守护"],
+        },
+        {
+            "trigger": "npc_death",
+            "probability": 0.60,
+            "resolution_template": "{npc}之死的因果了结",
+            "keywords_template": ["复仇", "悼念", "了结", "因果"],
+        },
+        {
+            "trigger": "breakthrough",
+            "probability": 0.35,
+            "resolution_template": "突破引来的注目平息",
+            "keywords_template": ["名声", "注目", "挑战", "觊觎"],
+        },
+        {
+            "trigger": "sect",
+            "probability": 0.35,
+            "resolution_template": "宗门之事尘埃落定",
+            "keywords_template": ["宗门", "门派", "化解", "归位"],
+        },
+        {
+            "trigger": "violence",
+            "probability": 0.25,
+            "resolution_template": "此仇此恨终有了结之日",
+            "keywords_template": ["仇恨", "报复", "了结", "恩怨"],
+        },
+        {
+            "trigger": "social+npc",
+            "probability": 0.15,
+            "resolution_template": "与{npc}的缘分尚未走到尽头",
+            "keywords_template": ["缘分", "重逢", "离别", "因缘"],
+        },
+        {
+            "trigger": "cultivation",
+            "probability": 0.12,
+            "resolution_template": "修行路上的隐患尚未化解",
+            "keywords_template": ["隐患", "瓶颈", "化解", "修炼"],
+        },
+    ]
+
+    def _try_rule_based_chain(self, state: "GameState", event: dict) -> None:
+        """Attempt to create a causal chain based on event type/category rules.
+
+        This provides a non-LLM path for causal chain generation, ensuring
+        chains form even without AI enhancement.
+        """
+        import random as _rng
+        from .event_system import extract_keywords
+
+        # Skip if at capacity
+        active_chains = [c for c in state.causal_chains if not c.get("is_resolved")]
+        if len(active_chains) >= MAX_CAUSAL_CHAINS:
+            return
+
+        event_type = event.get("event_type", "")
+        category = event.get("category", "")
+        tags = set(event.get("tags", []))
+        npc_name = event.get("involved_npc", "")
+        npc_id = event.get("involved_npc_id", "")
+        effects = event.get("effects", {})
+
+        matched_template = None
+
+        # Check each trigger type (order matters: most specific first)
+        if event_type == "danger" and npc_name:
+            matched_template = self._RULE_CHAIN_TEMPLATES[0]  # danger+npc
+        elif event_type == "danger" and not npc_name:
+            matched_template = self._RULE_CHAIN_TEMPLATES[1]  # danger_general
+        elif category == "fortune":
+            matched_template = self._RULE_CHAIN_TEMPLATES[2]  # fortune
+        elif effects.get("npc_kill") or effects.get("kills_npc"):
+            matched_template = self._RULE_CHAIN_TEMPLATES[3]  # npc_death
+        elif category == "breakthrough":
+            matched_template = self._RULE_CHAIN_TEMPLATES[4]  # breakthrough
+        elif "sect" in tags or "宗门" in event.get("text", ""):
+            matched_template = self._RULE_CHAIN_TEMPLATES[5]  # sect
+        elif category == "violence" or "combat" in tags:
+            matched_template = self._RULE_CHAIN_TEMPLATES[6]  # violence
+        elif category == "social" and npc_name:
+            matched_template = self._RULE_CHAIN_TEMPLATES[7]  # social+npc
+        elif category == "cultivation":
+            matched_template = self._RULE_CHAIN_TEMPLATES[8]  # cultivation
+
+        if not matched_template:
+            return
+
+        # Probability gate
+        if _rng.random() >= matched_template["probability"]:
+            return
+
+        # Avoid duplicate chains from same event type in quick succession
+        recent_causes = {
+            c.get("cause_event_text", "")[:20]
+            for c in state.causal_chains
+            if not c.get("is_resolved") and state.age - c.get("created_age", 0) < 5
+        }
+        event_text = event.get("text", "")
+        if event_text[:20] in recent_causes:
+            return
+
+        # Build chain data
+        resolution = matched_template["resolution_template"].format(
+            npc=npc_name or "某人"
+        )
+        keywords = list(matched_template["keywords_template"])
+        # Add event-specific keywords
+        event_keywords = extract_keywords(event_text, max_keywords=4)
+        keywords.extend(event_keywords[:2])
+
+        chain_data = {
+            "cause": event_text[:80],
+            "expected_resolution": resolution,
+            "keywords": keywords,
+        }
+        self.create_causal_chain(state, chain_data, event)
 
     def create_causal_chain(
         self, state: "GameState", chain_data: dict, event: dict

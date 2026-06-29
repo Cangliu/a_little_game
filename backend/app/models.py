@@ -159,6 +159,10 @@ class GameState(BaseModel):
     combat_repertoire: list[dict] = []       # 功法/法宝 [{name, type, desc, power, source_age, category}]
     combat_wounded: bool = False              # 战伤状态（提高下次斗法致死率）
     combat_wound_age: int = 0                # 受伤时年龄（2回合后自动痊愈）
+    # 因果驱动危险系数系统
+    peril_sources: list[dict] = []           # [{type, intensity, reason, source_age}]
+    peril_index: float = 0.0                 # 聚合危险系数 (0-100)
+    peril_dominant: str = ""                 # 当前最强因果线类型 (用于事件主题匹配)
     # Saga 涌现系统
     sagas: list[dict] = []                   # 活跃的 Saga
     saga_omens: list[dict] = []              # Saga预兆记录 (未达到涌现阈值但有迹象)

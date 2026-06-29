@@ -318,6 +318,23 @@ def _compute_weight(event: dict, state: GameState) -> float:
             d_mult, f_mult = TENSION_WEIGHT_MID
         w *= d_mult if et in ("danger", "important") else f_mult
 
+    # ── 6. Peril-driven danger_level weighting ──────────────────
+    # 因果危险系数高时偏向致命斗法，低时偏向轻量斗法
+    if et == "danger" and "combat" in tags:
+        dl = event.get("danger_level", 2)
+        peril = state.peril_index
+        if peril < 30:
+            level_mult = {1: 2.0, 2: 1.0, 3: 0.3}
+        elif peril > 70:
+            level_mult = {1: 0.3, 2: 1.0, 3: 2.5}
+        else:
+            level_mult = {1: 1.0, 2: 1.0, 3: 1.0}
+        w *= level_mult.get(dl, 1.0)
+        # When peril is high, ensure combat events aren't suppressed below
+        # a reasonable floor even if tension is also high (anti-cancellation)
+        if peril > 70:
+            w = max(w, 8.0)
+
     return max(w, 0.01)  # never fully zero
 
 
@@ -880,7 +897,7 @@ class EventSystem:
                     boost_score += 1.3
     
             if boost_score > 0:
-                mult = min(1.0 + boost_score, 6.0)  # Cap at ×6
+                mult = min(1.0 + boost_score, 3.0)  # Cap at ×3 (prevent single-event domination)
                 result.append((ev, w * mult))
             else:
                 result.append((ev, w))

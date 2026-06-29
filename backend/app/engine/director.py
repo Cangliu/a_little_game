@@ -10,7 +10,10 @@ from typing import Generator
 
 from ..models import GameState, NextYearResponse, LifeSummary, Realm, REALM_NAMES
 from ..endings import get_title, calculate_score
-from .config import REALM_THRESHOLDS, TIME_STEP_BY_REALM, TENSION_DECAY_PER_TURN, TENSION_BY_EVENT_TYPE
+from .config import (
+    REALM_THRESHOLDS, TIME_STEP_BY_REALM, TENSION_DECAY_PER_TURN, TENSION_BY_EVENT_TYPE,
+    PERIL_DECAY_PER_TURN, PERIL_SECT_PROTECTION, PERIL_LOW_PROFILE_BONUS, PERIL_CONTRIB,
+)
 from .life_phase import LifePhaseManager
 from .event_system import EventSystem, _extract_narrative_age, find_event_by_id
 from .realm_system import RealmSystem
@@ -198,6 +201,11 @@ class GameDirector:
         npc_events = self.npc_manager.check_npc_events(state)
         priority_events.extend(npc_events)
 
+        # Periodic NPC encounter (wandering cultivators) — non-streaming path
+        encounter_event = self.npc_manager.check_periodic_encounter(state)
+        if encounter_event:
+            priority_events.append(encounter_event)
+
         # Sect events
         sect_events = self.sect_manager.check_sect_events(state)
         priority_events.extend(sect_events)
@@ -341,17 +349,34 @@ class GameDirector:
             # Generate main storyline on first breakthrough (骨骼初始化)
             if not state.main_storyline.get("storyline_id"):
                 self.storyline_planner.generate_storyline(state, state.realm)
+            # Generate new NPCs on realm breakthrough (non-streaming path)
+            self.npc_manager.generate_realm_npcs(state, state.realm)
 
         # Phase 7.5: Combat death check (斗法致死)
         if main_ev.get("event_type") == "danger" and {"combat", "calamity"} & set(main_ev.get("tags", [])):
-            combat_death = self.death_system.check_combat_death(state, main_ev)
+            cf_sync = director_result.get("combat_factors")
+            if cf_sync:
+                cf_sync = self._validate_combat_factors(state, cf_sync)
+            combat_outcome = director_result.get("combat_outcome")
+            combat_death = self.death_system.check_combat_death(state, main_ev, cf_sync, combat_outcome)
             if combat_death:
                 events.append(combat_death)
                 self._post_year_update(state, events)
                 return self._build_response(state, events, total_years)
+            # ── 战后结局分支处理 (存活时) ──
+            self._process_combat_outcome(state, director_result, cf_sync, combat_outcome)
 
         # Phase 7.6: Combat loot (战后缴获 — 存活后的修行积累获取)
-        self._process_combat_loot(state, main_ev, director_result)
+        # 非胜利结局不产出战利品
+        combat_outcome_sync = director_result.get("combat_outcome")
+        if combat_outcome_sync in ("enemy_fled", "player_fled", "draw"):
+            pass  # 跳过战利品
+        else:
+            self._process_combat_loot(state, main_ev, director_result)
+
+        # Phase 7.7: Ally NPC risk (助战NPC可能受伤/死亡)
+        if main_ev.get("event_type") == "danger" and {"combat", "calamity"} & set(main_ev.get("tags", [])):
+            self._process_ally_risk(state, director_result.get("combat_factors"), survived=not state.is_dead)
 
         # Phase 8: Accidental death check (based on post-event state)
         accidental_death = self.death_system.check_accidental_death(state)
@@ -473,6 +498,11 @@ class GameDirector:
         # NPC regular events AFTER destiny (dead NPCs naturally skipped)
         npc_events = self.npc_manager.check_npc_events(state)
         priority_events.extend(npc_events)
+
+        # Periodic NPC encounter (wandering cultivators)
+        encounter_event = self.npc_manager.check_periodic_encounter(state)
+        if encounter_event:
+            priority_events.append(encounter_event)
 
         # Sect events
         sect_events = self.sect_manager.check_sect_events(state)
@@ -651,10 +681,16 @@ class GameDirector:
             self.arc_planner.plan_arcs_for_realm(state, state.realm)
             if not state.main_storyline.get("storyline_id"):
                 self.storyline_planner.generate_storyline(state, state.realm)
+            # Generate new NPCs on realm breakthrough
+            self.npc_manager.generate_realm_npcs(state, state.realm)
 
         # Phase 7.5: Combat death check (斗法致死)
         if main_ev.get("event_type") == "danger" and {"combat", "calamity"} & set(main_ev.get("tags", [])):
-            combat_death = self.death_system.check_combat_death(state, main_ev)
+            cf = meta_data.get("combat_factors") if meta_data else None
+            if cf:
+                cf = self._validate_combat_factors(state, cf)
+            combat_outcome = meta_data.get("combat_outcome") if meta_data else None
+            combat_death = self.death_system.check_combat_death(state, main_ev, cf, combat_outcome)
             if combat_death:
                 events.append(combat_death)
                 self._post_year_update(state, events)
@@ -669,9 +705,21 @@ class GameDirector:
                 }
                 yield {"event": "done", "data": done_data}
                 return
+            # ── 战后结局分支处理 (存活时) ──
+            self._process_combat_outcome(state, meta_data, cf, combat_outcome)
 
         # Phase 7.6: Combat loot (战后缴获 — 存活后的修行积累获取)
-        self._process_combat_loot(state, main_ev, meta_data)
+        # 非胜利结局不产出战利品
+        stream_combat_outcome = meta_data.get("combat_outcome") if meta_data else None
+        if stream_combat_outcome in ("enemy_fled", "player_fled", "draw"):
+            pass  # 跳过战利品
+        else:
+            self._process_combat_loot(state, main_ev, meta_data)
+
+        # Phase 7.7: Ally NPC risk (助战NPC可能受伤/死亡)
+        if main_ev.get("event_type") == "danger" and {"combat", "calamity"} & set(main_ev.get("tags", [])):
+            cf = meta_data.get("combat_factors") if meta_data else None
+            self._process_ally_risk(state, cf, survived=not state.is_dead)
 
         # Phase 8: Accidental death (early termination like sync version)
         accidental_death = self.death_system.check_accidental_death(state)
@@ -759,6 +807,12 @@ class GameDirector:
             completed_arc = self.arc_planner.advance_arc_beat(state, ev)
             if completed_arc:
                 self.saga_manager.on_arc_completed(state, completed_arc)
+        # Auto-advance stale arcs (prevent permanent stall)
+        stale_completed = self.arc_planner.auto_advance_stale_arcs(state)
+        if stale_completed:
+            self.saga_manager.on_arc_completed(state, stale_completed)
+        # Ensure minimum arc supply for saga emergence
+        self.arc_planner.ensure_minimum_arcs(state)
         # Check saga completion conditions
         self.saga_manager.check_saga_completion(state)
         # Advance main storyline + flesh-to-skeleton feedback (血肉反哺骨骼)
@@ -771,16 +825,28 @@ class GameDirector:
             resolution = self.hook_manager.generate_forced_resolution(state, chain)
             if resolution:
                 events.append(resolution)
+        # ── Rule-based causal chain creation for ALL events in this turn ──
+        for ev in events:
+            self.hook_manager._try_rule_based_chain(state, ev)
+        # ── Rule-based causal chain creation for ALL events in this turn ──
+        for ev in events:
+            self.hook_manager._try_rule_based_chain(state, ev)
         # ── Record ALL events into memory (after forced resolutions) ───
         self.memory_manager.record_events(state, events)
-        # ── Tension curve update ───────────────────────────────────────
+        # ── Tension curve update (with peril feedback loop) ────────────
         delta = 0.0
         for ev in events:
             et = ev.get("event_type", "normal")
             delta += TENSION_BY_EVENT_TYPE.get(et, 0.0)
         # Apply world era tension modifier
         era_tension_mod = self.era_manager.get_tension_modifier(state)
-        state.tension = max(0.0, min(100.0, state.tension + delta - TENSION_DECAY_PER_TURN + era_tension_mod))
+        # Peril-tension coupling: high peril reduces tension decay (danger lingers)
+        # At peril=100, decay is reduced to 33%; at peril=50, decay is 67%
+        peril_factor = max(0.3, 1.0 - state.peril_index / 150.0)
+        effective_decay = TENSION_DECAY_PER_TURN * peril_factor
+        state.tension = max(0.0, min(100.0, state.tension + delta - effective_decay + era_tension_mod))
+        # ── Peril (因果驱动危险系数) update ───────────────────────────
+        self._update_peril(state, events)
         self.context.update(state, events)
 
     @staticmethod
@@ -807,6 +873,301 @@ class GameDirector:
             delta -= 3  # Injury implies negative interaction
 
         return max(-10, min(10, delta))
+
+    # ── Combat factors validation & ally risk ────────────────────
+
+    @staticmethod
+    def _validate_combat_factors(state: GameState, combat_factors: dict) -> dict:
+        """Validate LLM-chosen ally_npc_id against actual game state.
+
+        If the NPC is dead or sentiment < 30, strip ally_npc_id to None.
+        """
+        if not combat_factors:
+            return combat_factors
+        ally_id = combat_factors.get("ally_npc_id")
+        if not ally_id:
+            return combat_factors
+
+        # Check NPC exists, is alive, and has sentiment >= 30
+        npc_dict = state.npc_registry.get(ally_id)
+        if not npc_dict or not npc_dict.get("is_alive", True):
+            combat_factors["ally_npc_id"] = None
+            return combat_factors
+
+        # Check relationship sentiment
+        for rel in state.relationships:
+            if rel.get("npc_id") == ally_id:
+                if rel.get("sentiment", 0) < 30:
+                    combat_factors["ally_npc_id"] = None
+                return combat_factors
+
+        # NPC exists but no relationship found -> cannot assist
+        combat_factors["ally_npc_id"] = None
+        return combat_factors
+
+    def _process_ally_risk(self, state: GameState, combat_factors: dict, survived: bool) -> None:
+        """After combat, the assisting NPC may get hurt or killed.
+
+        - 10% chance ally gets injured (sentiment +5 due to shared danger)
+        - 3% chance ally dies (creates blood_feud peril source)
+        Only triggers if character survived (dead characters don't witness ally fate).
+        """
+        if not combat_factors or not survived:
+            return
+        ally_id = combat_factors.get("ally_npc_id")
+        if not ally_id:
+            return
+
+        npc_dict = state.npc_registry.get(ally_id)
+        if not npc_dict or not npc_dict.get("is_alive", True):
+            return
+
+        roll = _rand.random()
+        if roll < 0.03:
+            # Ally killed in combat (3%)
+            npc_dict["is_alive"] = False
+            # Update relationship sentiment (grief) and sync tombstone
+            for rel in state.relationships:
+                if rel.get("npc_id") == ally_id:
+                    rel["is_dead"] = True
+                    rel["sentiment"] = max(0, rel.get("sentiment", 50) - 20)
+                    # Determine intensity based on relation type
+                    is_close = rel.get("relation_type") in ("道侣", "师父")
+                    intensity = PERIL_CONTRIB["blood_feud"] if is_close else PERIL_CONTRIB["blood_feud"] // 2
+                    state.peril_sources.append({
+                        "type": "blood_feud",
+                        "intensity": intensity,
+                        "reason": f"助战{npc_dict.get('name', 'NPC')}战死",
+                        "source_age": state.age,
+                    })
+                    break
+        elif roll < 0.13:
+            # Ally injured but survived (10%) -> shared danger bonding
+            for rel in state.relationships:
+                if rel.get("npc_id") == ally_id:
+                    rel["sentiment"] = min(100, rel.get("sentiment", 50) + 5)
+                    break
+
+    # ── Peril system (因果驱动危险系数) ────────────────────────
+
+    def _update_peril(self, state: GameState, events: list) -> None:
+        """Update peril_sources based on this turn's events, then aggregate.
+
+        Peril sources decay over time and grow when narrative causality events happen.
+        """
+        sources = state.peril_sources
+
+        # ---- 1. Decay all existing sources ----
+        has_sect = state.sect_membership is not None
+        for src in sources:
+            src["intensity"] -= PERIL_DECAY_PER_TURN
+            if has_sect:
+                src["intensity"] -= PERIL_SECT_PROTECTION
+
+        # Low-profile bonus: 3+ consecutive turns without combat/fortune
+        recent_types = [ev.get("event_type") for ev in state.events_log[-3:]] if len(state.events_log) >= 3 else []
+        if recent_types and all(t not in ("danger", "fortune") for t in recent_types):
+            for src in sources:
+                src["intensity"] -= PERIL_LOW_PROFILE_BONUS
+
+        # ---- 2. Add new peril sources from this turn's events ----
+        for ev in events:
+            et = ev.get("event_type", "")
+            tags = set(ev.get("tags", []))
+            effects = ev.get("effects", {})
+
+            # 2a. 怀璧其罪: 获得修行积累
+            loot_power = ev.get("combat_loot", {}).get("power", 0) if isinstance(ev.get("combat_loot"), dict) else 0
+            if loot_power > 0:
+                sources.append({
+                    "type": "treasure_envy",
+                    "intensity": loot_power * PERIL_CONTRIB["treasure_envy"],
+                    "reason": f"获得{ev.get('combat_loot', {}).get('name', '宝物')}",
+                    "source_age": state.age,
+                })
+
+            # 2b. fortune事件触发 (顺境招忌)
+            if et == "fortune":
+                sources.append({
+                    "type": "fortune_streak",
+                    "intensity": PERIL_CONTRIB["fortune_streak"],
+                    "reason": ev.get("text", "机缘降临")[:20],
+                    "source_age": state.age,
+                })
+
+            # 2b2. danger+combat事件 (经历杀伐→招来注目)
+            if et == "danger" and (tags & {"combat", "calamity"}):
+                sources.append({
+                    "type": "danger_exposure",
+                    "intensity": PERIL_CONTRIB.get("danger_exposure", 15),
+                    "reason": ev.get("text", "杀伐之气")[:20],
+                    "source_age": state.age,
+                })
+
+            # 2c. 突破境界 (树大招风)
+            if "breakthrough" in tags or ev.get("id", "").startswith("breakthrough"):
+                sources.append({
+                    "type": "fame",
+                    "intensity": PERIL_CONTRIB["fame"],
+                    "reason": "突破境界",
+                    "source_age": state.age,
+                })
+
+            # 2d. 宗门覆灭 (丧宗之仇)
+            if "sect_destroyed" in tags or "sect_disbanded" in tags:
+                sources.append({
+                    "type": "sect_destroyed",
+                    "intensity": PERIL_CONTRIB["sect_destroyed"],
+                    "reason": "宗门覆灭",
+                    "source_age": state.age,
+                })
+
+            # 2e. NPC死亡 (血仇驱动) - 检查NPC命运事件中的死亡
+            _DEATH_KW = ("陨落", "身亡", "殒命", "战死", "身死", "化道", "坐化", "魂飞魄散")
+            if "npc_destiny" in tags or "npc_death" in tags or "partner_death" in tags or "master_death" in tags:
+                ev_text = ev.get("text", "") + ev.get("expanded_text", "")
+                npc_died = any(kw in ev_text for kw in _DEATH_KW)
+                if not npc_died and ev.get("effects", {}).get("npc_death"):
+                    npc_died = True
+                if npc_died:
+                    # Check if the dead NPC is a close relation (道侣/师父 → higher intensity)
+                    involved_npc_id = ev.get("involved_npc_id", "")
+                    is_close = False
+                    if involved_npc_id:
+                        for rel in state.relationships:
+                            if rel.get("npc_id") == involved_npc_id:
+                                if rel.get("relation_type") in ("道侣", "师父"):
+                                    is_close = True
+                                break
+                    intensity = PERIL_CONTRIB["blood_feud"] if is_close else PERIL_CONTRIB["blood_feud"] // 2
+                    sources.append({
+                        "type": "blood_feud",
+                        "intensity": intensity,
+                        "reason": ev.get("text", "至亲被杀")[:20],
+                        "source_age": state.age,
+                    })
+
+        # 2f. 分支选择后果 (因果纠缠) - 检查choice_history最后一条
+        if state.choice_history:
+            last_choice = state.choice_history[-1]
+            if last_choice.get("age") == state.age and last_choice.get("consequence_tag"):
+                sources.append({
+                    "type": "consequence",
+                    "intensity": PERIL_CONTRIB["consequence"],
+                    "reason": last_choice.get("consequence_tag", "因果纠缠")[:20],
+                    "source_age": state.age,
+                })
+
+        # ---- 3. Dedup: keep only the highest-intensity source per (type, npc_id) ----
+        # This prevents the same NPC death from stacking multiple blood_feud entries
+        dedup_map: dict[tuple, dict] = {}
+        for src in sources:
+            if src.get("intensity", 0) <= 0:
+                continue
+            # For blood_feud, key includes the reason (contains NPC name) to distinguish
+            # For other types, key is (type, source_age) to allow same-type from different turns
+            src_type = src.get("type", "")
+            if src_type == "blood_feud":
+                # Group by type + reason prefix (NPC name in first 10 chars)
+                key = (src_type, src.get("reason", "")[:10])
+            else:
+                # Non-blood_feud: allow multiple of same type from different ages
+                key = (src_type, src.get("source_age", 0), src.get("reason", "")[:10])
+            existing = dedup_map.get(key)
+            if existing is None or src["intensity"] > existing["intensity"]:
+                dedup_map[key] = src
+        state.peril_sources = list(dedup_map.values())
+
+        # ---- 4. Aggregate peril_index and determine dominant source ----
+        if state.peril_sources:
+            state.peril_index = min(100.0, sum(s["intensity"] for s in state.peril_sources))
+            dominant = max(state.peril_sources, key=lambda s: s["intensity"])
+            state.peril_dominant = dominant["type"]
+        else:
+            state.peril_index = 0.0
+            state.peril_dominant = ""
+
+    # ── Combat outcome processing (战后结局分支) ───────────────────────
+
+    def _process_combat_outcome(self, state: GameState, director_result: dict,
+                                combat_factors: dict = None,
+                                combat_outcome: str = None) -> None:
+        """Process post-combat outcome effects when the player survives.
+
+        Outcome effects:
+        - victory: enemy NPC may die (50%) or create revenge causal chain (50%)
+        - enemy_fled: no loot, create causal chain "此仇未了", peril += danger_exposure
+        - player_fled: peril += 10, tension += 15, create causal chain
+        - draw: tension += 10
+        """
+        if not combat_outcome or combat_outcome not in ("victory", "enemy_fled", "player_fled", "draw"):
+            return
+
+        # Get enemy NPC id from combat_factors
+        enemy_npc_id = None
+        if combat_factors and isinstance(combat_factors, dict):
+            enemy_npc_id = combat_factors.get("enemy_npc_id")
+
+        if combat_outcome == "victory":
+            # 胜利: 敌方NPC 50%死亡, 50%重伤+因果链
+            if enemy_npc_id and enemy_npc_id in state.npc_registry:
+                npc = state.npc_registry[enemy_npc_id]
+                if npc.get("is_alive", True):
+                    if _rand.random() < 0.5:
+                        # 击杀敌方NPC
+                        npc["is_alive"] = False
+                        npc["death_age"] = state.age
+                        npc["death_reason"] = "斗法败亡"
+                    else:
+                        # 重伤逃脱 → 创建因果链
+                        npc_name = npc.get("name", "仇敌")
+                        self.hook_manager.create_causal_chain(state, {
+                            "cause": f"你击败{npc_name}，但未能将其斩杀",
+                            "expected_resolution": f"{npc_name}重伤遁逃，此仇必报",
+                            "keywords": [npc_name, "复仇", "重伤"],
+                        }, {"text": f"{npc_name}重伤遁逃", "involved_npc_id": enemy_npc_id, "involved_npc": npc_name})
+
+        elif combat_outcome == "enemy_fled":
+            # 敌逃: 无战利品(已在调用侧处理)，因果链 + peril
+            if enemy_npc_id and enemy_npc_id in state.npc_registry:
+                npc = state.npc_registry[enemy_npc_id]
+                npc_name = npc.get("name", "仇敌")
+                self.hook_manager.create_causal_chain(state, {
+                    "cause": f"{npc_name}见势不妙遁逃",
+                    "expected_resolution": f"{npc_name}此仇未了，日后必有纠葛",
+                    "keywords": [npc_name, "遁逃", "未了"],
+                }, {"text": f"{npc_name}遁逃", "involved_npc_id": enemy_npc_id, "involved_npc": npc_name})
+            # 增加peril (敌人逃走可能伺机报复)
+            state.peril_sources.append({
+                "type": "danger_exposure",
+                "intensity": PERIL_CONTRIB.get("danger_exposure", 15),
+                "reason": "仇敌遁逃",
+                "source_age": state.age,
+            })
+            state.peril_index = min(100.0, sum(s["intensity"] for s in state.peril_sources))
+
+        elif combat_outcome == "player_fled":
+            # 我方逃跑: peril += 10, tension += 15, 因果链
+            state.peril_sources.append({
+                "type": "danger_exposure",
+                "intensity": 10,
+                "reason": "夺路而逃",
+                "source_age": state.age,
+            })
+            state.peril_index = min(100.0, sum(s["intensity"] for s in state.peril_sources))
+            state.tension = min(100, getattr(state, "tension", 0) + 15)
+            if enemy_npc_id and enemy_npc_id in state.npc_registry:
+                npc = state.npc_registry[enemy_npc_id]
+                npc_name = npc.get("name", "仇敌")
+                self.hook_manager.create_causal_chain(state, {
+                    "cause": f"你败逃于{npc_name}之手",
+                    "expected_resolution": f"{npc_name}知你已力竭，早晚再来追杀",
+                    "keywords": [npc_name, "败逃", "追杀"],
+                }, {"text": f"败逃于{npc_name}", "involved_npc_id": enemy_npc_id, "involved_npc": npc_name})
+
+        elif combat_outcome == "draw":
+            # 平手: tension += 10, 保持对抗状态
+            state.tension = min(100, getattr(state, "tension", 0) + 10)
 
     # ── Combat loot system (战后缴获) ─────────────────────────────────
 
@@ -1065,19 +1426,34 @@ class GameDirector:
         # 7. Combat risk check (机缘中的斗法风险 — 触发斗法致死判定)
         combat_death_result = None
         if branch.get("combat_risk"):
-            # Construct a synthetic combat event for death check
+            # Construct synthetic combat_factors for fortune ambush scenarios
+            # Fortune combat typically involves surprise attacks while distracted by treasure
+            ambush_count = _rand.choice([1, 1, 2, 2, 3])  # 40% solo, 40% pair, 20% trio
+            gap = _rand.choice([-1, 0, 0, 0, 1])  # mostly same realm
+            fortune_cf = {
+                "enemy_realm_gap": gap,
+                "enemy_count": ambush_count,
+                "ally_npc_id": None,
+                "enemy_npc_id": None,
+                "terrain": "disadvantage",  # caught off guard during fortune event
+                "special_threat": None,
+            }
             combat_ev = {
                 "event_type": "danger",
                 "tags": ["combat", "fortune_combat_risk"],
                 "effects": branch.get("effects", {}) if is_success else branch.get("failure_effects", {}),
             }
-            combat_death = self.death_system.check_combat_death(state, combat_ev)
+            combat_death = self.death_system.check_combat_death(state, combat_ev, fortune_cf)
             if combat_death:
                 state.is_dead = True
                 state.death_reason = combat_death.get("death_reason", "斗法身亡")
                 combat_death_result = combat_death
 
         state.pending_choice = None
+
+        # Post-year update if combat death occurred (ensure memory/NPC aging/peril are updated)
+        if combat_death_result:
+            self._post_year_update(state, [ev, combat_death_result])
 
         result = {
             "result_text": result_text,

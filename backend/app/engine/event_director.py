@@ -458,6 +458,51 @@ class EventDirector:
         if dead_npc_warning:
             user_prompt += dead_npc_warning
 
+        # Append available ally NPC list for combat_factors.ally_npc_id
+        available_allies = []
+        for rel_dict in state.relationships:
+            npc_id = rel_dict.get("npc_id", "")
+            npc_dict_r = state.npc_registry.get(npc_id)
+            if (npc_dict_r and npc_dict_r.get("is_alive", True)
+                    and rel_dict.get("sentiment", 0) >= 30):
+                name = npc_dict_r.get("name", "???")
+                rel_type = rel_dict.get("relation_type", "")
+                available_allies.append(f"{name}(ID:{npc_id}, {rel_type}, 好感{rel_dict.get('sentiment', 0)})")
+        if available_allies:
+            allies_hint = "\n【可助战NPC】" + "、".join(available_allies) + "\n若combat事件中有NPC助战，请在ally_npc_id填写上述ID之一。"
+            user_prompt += allies_hint
+
+        # Append available enemy NPC list for combat_factors.enemy_npc_id
+        available_enemies = []
+        for rel_dict in state.relationships:
+            npc_id = rel_dict.get("npc_id", "")
+            npc_dict_r = state.npc_registry.get(npc_id)
+            if (npc_dict_r and npc_dict_r.get("is_alive", True)
+                    and rel_dict.get("sentiment", 0) <= -30):
+                name = npc_dict_r.get("name", "???")
+                rel_type = rel_dict.get("relation_type", "")
+                npc_realm = npc_dict_r.get("realm", 0)
+                from ..models import REALM_NAMES, Realm
+                realm_str = REALM_NAMES.get(Realm(npc_realm), "未知") if npc_realm in [e.value for e in Realm] else "未知"
+                available_enemies.append(f"{name}(ID:{npc_id}, {rel_type}, 好感{rel_dict.get('sentiment', 0)}, {realm_str}期)")
+        if available_enemies:
+            enemies_hint = "\n【可仇敌NPC】" + "、".join(available_enemies) + "\n若combat事件中敌方为已知仇人，请在enemy_npc_id填写上述ID之一。当peril_dominant=blood_feud时必须优先使用。"
+            user_prompt += enemies_hint
+
+        # Append peril threat context (因果驱动的威胁来源)
+        if getattr(state, 'peril_index', 0) > 30 and getattr(state, 'peril_dominant', ''):
+            _PERIL_CHINESE = {
+                "treasure_envy": "怀璧其罪：有人觊觎你的宝物",
+                "blood_feud": "血仇驱动：仇人追杀/你寻仇",
+                "sect_destroyed": "丧宗之仇：宗门余孽被清算",
+                "fame": "树大招风：慕名挑战/嫉妒者偷袭",
+                "consequence": "因果纠缠：往日选择的后患",
+                "fortune_streak": "顺境招忌：天道注目/引来觊觎",
+            }
+            threat_desc = _PERIL_CHINESE.get(state.peril_dominant, state.peril_dominant)
+            peril_hint = f"\n【当前最大威胁: {threat_desc}(危险系数{int(state.peril_index)})】—— 若选择danger+combat事件，叙事主题应围绕此威胁展开。"
+            user_prompt += peril_hint
+
         user_prompt = self._trim_prompt_if_needed(user_prompt)
 
         return system_prompt, user_prompt
@@ -609,6 +654,8 @@ class EventDirector:
             "has_choice": has_choice,
             "branches": branches,
             "combat_loot": self._sanitize_combat_loot(data.get("combat_loot")),
+            "combat_factors": self._sanitize_combat_factors(data.get("combat_factors")),
+            "combat_outcome": self._sanitize_combat_outcome(data.get("combat_outcome")),
             "causal_chain": self._sanitize_causal_chain(data.get("causal_chain")),
             "emotional_token": self._sanitize_emotional_token(data.get("emotional_token")),
         }
@@ -724,6 +771,70 @@ class EventDirector:
             "desc": str(raw.get("desc", ""))[:30],
             "power": power,
         }
+
+    @staticmethod
+    def _sanitize_combat_factors(raw) -> Optional[dict]:
+        """Validate combat_factors from LLM output (斗法多维参数).
+
+        Returns sanitized dict with:
+        - enemy_realm_gap: int (-2 to +2)
+        - enemy_count: int (1-5)
+        - ally_npc_id: str or None
+        - enemy_npc_id: str or None
+        - terrain: str (advantage/neutral/disadvantage)
+        - special_threat: str or None
+        """
+        if not isinstance(raw, dict):
+            return None
+        try:
+            enemy_realm_gap = max(-2, min(2, int(raw.get("enemy_realm_gap", 0))))
+        except (ValueError, TypeError):
+            enemy_realm_gap = 0
+        try:
+            enemy_count = max(1, min(5, int(raw.get("enemy_count", 1))))
+        except (ValueError, TypeError):
+            enemy_count = 1
+
+        ally_npc_id = raw.get("ally_npc_id")
+        if ally_npc_id and not isinstance(ally_npc_id, str):
+            ally_npc_id = None
+
+        enemy_npc_id = raw.get("enemy_npc_id")
+        if enemy_npc_id and not isinstance(enemy_npc_id, str):
+            enemy_npc_id = None
+
+        terrain = raw.get("terrain", "neutral")
+        if terrain not in ("advantage", "neutral", "disadvantage"):
+            terrain = "neutral"
+
+        special_threat = raw.get("special_threat")
+        if special_threat and not isinstance(special_threat, str):
+            special_threat = None
+        elif isinstance(special_threat, str):
+            special_threat = special_threat[:20] or None
+
+        return {
+            "enemy_realm_gap": enemy_realm_gap,
+            "enemy_count": enemy_count,
+            "ally_npc_id": ally_npc_id,
+            "enemy_npc_id": enemy_npc_id,
+            "terrain": terrain,
+            "special_threat": special_threat,
+        }
+
+    @staticmethod
+    def _sanitize_combat_outcome(raw) -> Optional[str]:
+        """Validate combat_outcome from LLM output.
+
+        Valid values: victory, enemy_fled, player_fled, draw.
+        Returns None if invalid or not provided.
+        """
+        if not raw or not isinstance(raw, str):
+            return None
+        outcome = raw.strip().lower()
+        if outcome in ("victory", "enemy_fled", "player_fled", "draw"):
+            return outcome
+        return None
 
     @staticmethod
     def _sanitize_causal_chain(raw) -> Optional[dict]:
@@ -958,6 +1069,10 @@ class EventDirector:
                 "narrative": "",  # Will be streamed separately
                 "has_choice": has_choice,
                 "branches": branches,
+                "combat_loot": self._sanitize_combat_loot(data.get("combat_loot")),
+                "combat_factors": self._sanitize_combat_factors(data.get("combat_factors")),
+                "causal_chain": self._sanitize_causal_chain(data.get("causal_chain")),
+                "emotional_token": self._sanitize_emotional_token(data.get("emotional_token")),
             }
         except (json.JSONDecodeError, TypeError, KeyError) as e:
             logger.warning("Failed to parse stream meta JSON: %s", e)
@@ -967,4 +1082,8 @@ class EventDirector:
                 "narrative": "",
                 "has_choice": False,
                 "branches": None,
+                "combat_loot": None,
+                "combat_factors": None,
+                "causal_chain": None,
+                "emotional_token": None,
             }

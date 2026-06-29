@@ -58,11 +58,11 @@ MORTAL_DEATH_TIERS: list[tuple[int, float]] = [
 # ---------------------------------------------------------------------------
 TIME_STEP_BY_REALM: dict = {
     0: (1, 1),      # 凡人: 1年/回合 (人生短暂，每年都有故事)
-    1: (1, 3),      # 练气: 1-3年/回合
-    2: (3, 8),      # 筑基: 3-8年/回合 (开始有闭关)
-    3: (5, 15),     # 金丹: 5-15年/回合 (闭关渐长)
-    4: (10, 30),    # 元婴: 10-30年/回合 (一闭关就是数十年)
-    5: (20, 50),    # 化神: 20-50年/回合 (百年弹指一挥间)
+    1: (1, 2),      # 练气: 1-2年/回合 (初入仙途，事多)
+    2: (2, 5),      # 筑基: 2-5年/回合 (开始有闭关)
+    3: (4, 12),     # 金丹: 4-12年/回合 (闭关渐长)
+    4: (8, 25),     # 元婴: 8-25年/回合 (一闭关就是数十年)
+    5: (15, 40),    # 化神: 15-40年/回合 (百年弹指一挥间)
 }
 
 # ---------------------------------------------------------------------------
@@ -90,6 +90,29 @@ TENSION_LOW_THRESHOLD: float = 30.0
 TENSION_WEIGHT_HIGH = (0.3, 2.0)    # (danger_mult, fortune_mult) when tension >= 70
 TENSION_WEIGHT_MID  = (1.0, 1.0)    # when 30 <= tension < 70
 TENSION_WEIGHT_LOW  = (2.0, 0.5)    # when tension < 30
+
+# ---------------------------------------------------------------------------
+# Peril系统配置（因果驱动动态危险系数）
+# ---------------------------------------------------------------------------
+PERIL_DECAY_PER_TURN: float = 5.0          # 每回合自然衰减（降低以允许积累）
+PERIL_SECT_PROTECTION: float = 2.0         # 有宗门时额外衰减
+PERIL_LOW_PROFILE_BONUS: float = 8.0       # 连续3回合无combat/fortune时额外衰减
+
+# 各因果类型的初始贡献值
+PERIL_CONTRIB: dict[str, int] = {
+    "treasure_envy": 8,        # 每点power贡献8
+    "sect_destroyed": 50,      # 宗门覆灭一次性+50
+    "blood_feud": 60,          # 道侣/师父被杀+60
+    "fame": 30,                # 突破/大比获胜+30
+    "consequence": 25,         # 选择后果+25
+    "fortune_streak": 18,      # fortune事件触发+18
+    "danger_exposure": 15,     # danger+combat事件+15（树大招风）
+}
+
+# danger_level阈值
+PERIL_LEVEL_THRESHOLDS: tuple = (30, 70)   # <30=偏Level1, 30-70=均匀, >70=偏Level3
+# danger_level对致死率的乘数
+DANGER_LEVEL_DEATH_MULT: dict[int, float] = {1: 0.5, 2: 1.0, 3: 2.5}
 
 # ---------------------------------------------------------------------------
 # Realm max ages (from models, re-exported for convenience)

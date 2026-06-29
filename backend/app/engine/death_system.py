@@ -7,7 +7,7 @@ import random
 from typing import Optional
 
 from ..models import GameState, Realm, REALM_MAX_AGE
-from .config import MAX_REALM, MORTAL_DEATH_TIERS
+from .config import MAX_REALM, MORTAL_DEATH_TIERS, DANGER_LEVEL_DEATH_MULT
 from .event_system import ALL_EVENTS, check_conditions
 
 
@@ -119,17 +119,29 @@ class DeathSystem:
 
     # ── Combat death (斗法致死通路) ────────────────────────────────────────────
 
-    def check_combat_death(self, state: GameState, event: dict) -> Optional[dict]:
+    def check_combat_death(self, state: GameState, event: dict,
+                           combat_factors: dict = None,
+                           combat_outcome: str = None) -> Optional[dict]:
         """After a danger+combat event, check for combat death.
 
         Triggers:
         - Event must have event_type=danger AND tags contain 'combat' or 'calamity'
         - Base death chance: 2% (练气/筑基), 1.5% (金丹/元婴), 1% (化神)
-        - Modifiers:
+        - Modifiers (character side):
           - constitution: ×(1 - constitution×0.06)
           - combat_wounded: ×4
           - fortune: ×(1 - fortune×0.03)
           - repertoire power: 每持有power>=3的修行积累，-5%相对风险
+        - Modifiers (opponent/environment from combat_factors):
+          - enemy_realm_gap: +1→×2.0, +2→×4.0, -1→×0.4, -2→×0.15
+          - enemy_count: 每多1人×1.5
+          - ally_npc: 有助战×0.5
+          - terrain: advantage×0.6, disadvantage×1.8
+          - special_threat: ×2.0
+        - Outcome modifier:
+          - player_fled: ×0.3 (逃跑成功率高)
+          - draw: ×0.5 (双方留有余力)
+          - victory/enemy_fled/None: ×1.0
         """
         tags = set(event.get("tags", []))
         if event.get("event_type") != "danger":
@@ -142,6 +154,35 @@ class DeathSystem:
 
         # Base rate by realm
         base = 0.02 if state.realm <= 2 else 0.015 if state.realm <= 4 else 0.01
+
+        # Danger level multiplier (因果驱动的事件危险等级)
+        danger_level = event.get("danger_level", 2)
+        base *= DANGER_LEVEL_DEATH_MULT.get(danger_level, 1.0)
+
+        # ── Combat factors modifiers (对手侧+环境) ─────────────
+        if combat_factors:
+            # Enemy realm gap
+            gap = combat_factors.get("enemy_realm_gap", 0)
+            gap_mult = {-2: 0.15, -1: 0.4, 0: 1.0, 1: 2.0, 2: 4.0}
+            base *= gap_mult.get(gap, 1.0)
+
+            # Enemy count (each additional enemy ×1.5)
+            enemy_count = combat_factors.get("enemy_count", 1)
+            if enemy_count > 1:
+                base *= 1.5 ** (enemy_count - 1)
+
+            # Ally NPC assistance
+            if combat_factors.get("ally_npc_id"):
+                base *= 0.5
+
+            # Terrain
+            terrain = combat_factors.get("terrain", "neutral")
+            terrain_mult = {"advantage": 0.6, "neutral": 1.0, "disadvantage": 1.8}
+            base *= terrain_mult.get(terrain, 1.0)
+
+            # Special threat
+            if combat_factors.get("special_threat"):
+                base *= 2.0
 
         # Constitution modifier
         rate = base * max(0.2, 1 - state.attributes.constitution * 0.06)
@@ -159,6 +200,12 @@ class DeathSystem:
             if r.get("power", 0) >= 3
         )
         rate *= max(0.3, 1 - high_power_count * 0.05)
+
+        # Combat outcome modifier (逃跑/平手降低致死率)
+        if combat_outcome == "player_fled":
+            rate *= 0.3
+        elif combat_outcome == "draw":
+            rate *= 0.5
 
         if random.random() >= rate:
             return None
