@@ -130,15 +130,17 @@ class MemoryManager:
     # Patterns for extracting key physical facts from narrative text
     _FACT_PATTERNS: list[tuple[re.Pattern, str]] = [
         # Injury patterns: "X的Y被...伤/断/碎" or "X的Y肿了"
-        (re.compile(r'[的]([胳膊腿手足肩背胸腰骨头经脉丹田眼]+).*?[伤断裂碎毁肿穿]'), 'injury'),
+        (re.compile(r'[的]([\u80f3\u818a\u817f\u624b\u8db3\u80a9\u80cc\u80f8\u8170\u9aa8\u5934\u7ecf\u8109\u4e39\u7530\u773c]+).*?[伤断裂碎毁肿穿]'), 'injury'),
         # Item acquisition: "捡到/得到/获得...铜钱/剑/书/简"
         (re.compile(r'[捡得获拾受][到得赠].*?([铜钱书简剑环令牌玠宝玉符笔丹药]{1,6})'), 'item'),
-        # Death of known person (“走了” is colloquial for 去世)
+        # Death of known person ("走了" is colloquial for 去世)
         (re.compile(r'([爹娘父母师兄师姐师父师尊][亲]?).*?(死|亡|离世|雨落|化去|陨落|走了|去了|没了)'), 'death'),
         # Family status change: "安顿/定居/搬到/住在"
         (re.compile(r'[爹娘父母].*?(安顿|定居|搬到|住在|住进).*?([镇城村山谷寺庄屋]{1,6})'), 'family_location'),
         # Realm breakthrough (capture 2-char realm name)
         (re.compile(r'突破.*?(练气|筑基|金丹|元婴|化神)'), 'breakthrough'),
+        # Commitment/promise: "隔X天/月下山", "答应了X", "约定了X"
+        (re.compile(r'(隔[半一两三四五六七八九十几数个]+[天月年日].{0,8}|[答应许诺发誓约定].{0,10}[了过])'), 'commitment'),
     ]
 
     # Maximum continuity notes to keep (prevent unbounded growth)
@@ -260,6 +262,8 @@ class MemoryManager:
                 fact = f"父母安顿在{matched_detail}({age}岁)"
             elif fact_type == 'breakthrough':
                 fact = f"突破{matched_detail}期({age}岁)"
+            elif fact_type == 'commitment':
+                fact = f"承诺:{matched_detail}({age}岁)"
             else:
                 continue
             facts.append(fact)
